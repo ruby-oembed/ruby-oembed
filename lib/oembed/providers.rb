@@ -11,12 +11,30 @@ module OEmbed
         end
       end
       
+      def unregister(*providers)
+        providers.each do |provider|
+          provider.urls.each do |url|
+            @@urls.delete(url)
+          end
+        end
+      end
+      
       def register_all
         register(Flickr, Viddler, Qik, Pownce, Revision3)
       end
       
       def find(url)
         @@urls[@@urls.keys.detect { |u| u =~ url }] || false
+      end
+      
+      def raw(url, options = {})
+        provider = find(url) || raise(OEmbed::Provider::NotFound)
+        provider.raw(url, options)
+      end
+      
+      def get(url, options = {})
+        provider = find(url) || raise(OEmbed::Provider::NotFound)
+        provider.get(url, options)
       end
     end
     
