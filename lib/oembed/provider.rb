@@ -18,13 +18,13 @@ module OEmbed
       @urls << Regexp.new("^#{scheme}:#{del}#{domain}#{path}")
     end
     
-    def raw(url, options = {})
+    def build(url, options = {})
       raise NotFound, "No embeddable content at '#{url}'" unless include?(url)
       query = options.merge({:url => url})
       endpoint = @endpoint.clone
       
       if format_in_url?
-        format = endpoint["{format}"] = query[:format] || @format
+        format = endpoint["{format}"] = (query[:format] || @format).to_s
         query.delete(:format)
       else
         format = query[:format] ||= @format
@@ -36,8 +36,14 @@ module OEmbed
       
       uri = URI.parse(endpoint)
       
+      [Net::HTTP::Get.new(uri.path + query_string), uri]
+    end
+    
+    def raw(url, options = {})
+      req, uri = build(url, options)
+      
       res = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.get(uri.path + query_string)
+        http.request(req)
       end
       
       case res
@@ -48,6 +54,10 @@ module OEmbed
       else
         res.body
       end
+    end
+    
+    def get(url, options = {})
+      OEmbed::Response.new(raw(url, options.merge(:format => :json)), self)
     end                   
     
     def format_in_url?
