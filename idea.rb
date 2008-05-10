@@ -14,7 +14,7 @@ qik << "http://qik.com/*"
 # Get a raw XML-file from Flickr:
 flickr.raw("http://flickr.com/photos/my_user/1231231312")
 # Get a raw JSON-file
-flickr.raw("http://flickr.com/photos/my_user/1231231312", :json)
+flickr.raw("http://flickr.com/photos/my_user/1231231312", :format => :json)
 
 # Returns a OEmbed::Response
 flickr.get("http://flickr.com/photos/my_user/1231231312")
@@ -22,7 +22,7 @@ flickr.get("http://flickr.com/photos/my_user/1231231312")
 # Register them to 
 OEmbed::Providers.register(flickr, qik)
 
-OEmbed::Providers.raw("http://qik.com/test", :xml)
+OEmbed::Providers.raw("http://qik.com/test", :format => :xml)
 
 res.is_a?(OEmbed::Response)
 res.type
