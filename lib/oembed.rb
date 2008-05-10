@@ -9,4 +9,5 @@ end
 require 'net/http'
 
 require 'oembed/provider'
+require 'oembed/providers'
 require 'oembed/response'
