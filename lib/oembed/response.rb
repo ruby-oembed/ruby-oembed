@@ -5,9 +5,6 @@ module OEmbed
     def initialize(json, provider)
       @fields = JSON.load(json)
       @provider = provider
-      
-      @provider.url ||= @fields.delete("provider_url")
-      @provider.name ||= @fields.delete("provider_name")     
     end
     
     def field(m)
