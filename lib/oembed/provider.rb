@@ -12,10 +12,10 @@ module OEmbed
     end
     
     def <<(url)
-      full, scheme, del, domain, path = *url.match(%r{([^:]*):(//)?([^/?]*)(.*)})
+      full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
       domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
       path.gsub!("*", "(.*?)")
-      @urls << Regexp.new("^#{scheme}:#{del}#{domain}#{path}")
+      @urls << Regexp.new("^#{scheme}://#{domain}#{path}")
     end
     
     def build(url, options = {})
