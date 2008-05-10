@@ -12,8 +12,10 @@ module OEmbed
     end
     
     def <<(url)
-      # TODO: Needs some fixing
-      @urls << Regexp.new(url.gsub("*", "(.*?)"))
+      full, scheme, del, domain, path = *url.match(%r{([^:]*):(//)?([^/?]*)(.*)})
+      domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
+      path.gsub!("*", "(.*?)")
+      @urls << Regexp.new("^#{scheme}:#{del}#{domain}#{path}")
     end
     
     def raw(url, options = {})
@@ -53,9 +55,7 @@ module OEmbed
     end   
     
     def include?(url)
-      # Shouldn't be used until #<< works properly
-      # @urls.detect{ |u| u =~ url } 
-      true
+      !!@urls.detect{ |u| u =~ url } 
     end
   end
 end
