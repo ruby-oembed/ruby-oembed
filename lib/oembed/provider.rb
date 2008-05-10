@@ -34,16 +34,14 @@ module OEmbed
         "#{key}=#{value}&#{memo}"
       end.chop
       
-      uri = URI.parse(endpoint)
-      
-      [Net::HTTP::Get.new(uri.path + query_string), uri]
+      URI.parse(endpoint + query_string)      
     end
     
     def raw(url, options = {})
-      req, uri = build(url, options)
+      uri = build(url, options)
       
       res = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.request(req)
+        http.get(uri.path + "?" + uri.query)
       end
       
       case res
