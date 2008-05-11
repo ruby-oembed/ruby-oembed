@@ -8,6 +8,7 @@ end
 
 require 'net/http'
 
+require 'oembed/errors'
 require 'oembed/provider'
 require 'oembed/providers'
 require 'oembed/response'

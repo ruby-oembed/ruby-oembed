@@ -28,12 +28,12 @@ module OEmbed
       end
       
       def raw(url, options = {})
-        provider = find(url) || raise(OEmbed::Provider::NotFound)
+        provider = find(url) || raise(OEmbed::NotFound)
         provider.raw(url, options)
       end
       
       def get(url, options = {})
-        provider = find(url) || raise(OEmbed::Provider::NotFound)
+        provider = find(url) || raise(OEmbed::NotFound)
         provider.get(url, options)
       end
     end

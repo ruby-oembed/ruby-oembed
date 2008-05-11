@@ -1,8 +1,5 @@
 module OEmbed
   class Provider
-    class NotFound<StandardError;end
-    class UnknownFormat<StandardError;end
-    
     attr_accessor :format, :name, :url, :urls, :endpoint
     
     def initialize(endpoint, format = :json)
