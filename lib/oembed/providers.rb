@@ -3,6 +3,10 @@ module OEmbed
     class << self
       @@urls = {}
       
+      def urls
+        @@urls
+      end
+      
       def register(*providers)
         providers.each do |provider|
           provider.urls.each do |url|
