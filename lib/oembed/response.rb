@@ -1,6 +1,6 @@
 module OEmbed
   class Response
-    METHODS = [:initialize, :provider, :field, :fields, :__send__, :__id__]
+    METHODS = [:define_methods!, :provider, :field, :fields, :__send__, :__id__]
     attr_reader :fields, :provider
     
     def initialize(json, provider)
