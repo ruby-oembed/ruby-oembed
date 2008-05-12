@@ -5,7 +5,7 @@ module OEmbed
     def initialize(endpoint, format = :json)
       @endpoint = endpoint
       @urls = []
-      @format = :json
+      @format = format
     end
     
     def <<(url)
@@ -16,7 +16,7 @@ module OEmbed
     end
     
     def build(url, options = {})
-      raise NotFound, "No embeddable content at '#{url}'" unless include?(url)
+      raise OEmbed::NotFound, "No embeddable content at '#{url}'" unless include?(url)
       query = options.merge({:url => url})
       endpoint = @endpoint.clone
       
@@ -43,13 +43,13 @@ module OEmbed
       
       case res
       when Net::HTTPNotImplemented
-        raise UnknownFormat, "The provider doesn't support the '#{format}' format"
+        raise OEmbed::UnknownFormat, "The provider doesn't support the '#{format}' format"
       when Net::HTTPNotFound
-        raise NotFound, "No embeddable content at '#{url}'"
+        raise OEmbed::NotFound, "No embeddable content at '#{url}'"
       when Net::HTTPOK
         res.body
       else
-        raise UnkownResponse, "Got unkown response (#{res.code}) from server"
+        raise OEmbed::UnknownResponse, "Got unkown response (#{res.code}) from server"
       end
     end
     
