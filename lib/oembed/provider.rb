@@ -46,8 +46,10 @@ module OEmbed
         raise UnknownFormat, "The provider doesn't support the '#{format}' format"
       when Net::HTTPNotFound
         raise NotFound, "No embeddable content at '#{url}'"
-      else
+      when Net::HTTPOK
         res.body
+      else
+        raise UnkownResponse, "Got unkown response (#{res.code}) from server"
       end
     end
     
