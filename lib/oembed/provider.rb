@@ -38,7 +38,7 @@ module OEmbed
       uri = build(url, options)
       
       res = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.get(uri.path + "?" + uri.query)
+        http.get(uri.request_uri)
       end
       
       case res
