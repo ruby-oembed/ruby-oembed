@@ -24,7 +24,7 @@ module OEmbed
       end
       
       def register_all
-        register(Flickr, Viddler, Qik, Pownce, Revision3)
+        register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu)
       end
       
       def find(url)
@@ -57,6 +57,9 @@ module OEmbed
     
     Revision3 = OEmbed::Provider.new("http://revision3.com/api/oembed/")
     Revision3 << "http://*.revision3.com/*"
+    
+    Hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}")
+    Hulu << "http://www.hulu.com/watch/*"
     
     OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/")
   end
