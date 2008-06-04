@@ -62,7 +62,7 @@ module OEmbed
     end   
     
     def include?(url)
-      !!@urls.detect{ |u| u =~ url } 
+      @urls.empty? || !!@urls.detect{ |u| u =~ url } 
     end
   end
 end
