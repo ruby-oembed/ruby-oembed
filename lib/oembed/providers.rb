@@ -57,5 +57,7 @@ module OEmbed
     
     Revision3 = OEmbed::Provider.new("http://revision3.com/api/oembed/")
     Revision3 << "http://*.revision3.com/*"
+    
+    OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/")
   end
 end
