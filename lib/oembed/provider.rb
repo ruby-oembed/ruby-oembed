@@ -16,7 +16,7 @@ module OEmbed
     end
     
     def build(url, options = {})
-      raise OEmbed::NotFound, "No embeddable content at '#{url}'" unless include?(url)
+      raise OEmbed::NotFound, url unless include?(url)
       query = options.merge({:url => url})
       endpoint = @endpoint.clone
       
@@ -31,7 +31,10 @@ module OEmbed
         "#{key}=#{value}&#{memo}"
       end.chop
       
-      URI.parse(endpoint + query_string)      
+      URI.parse(endpoint + query_string).instance_eval do
+        @format = format; def format; @format; end
+        self
+      end      
     end
     
     def raw(url, options = {})
@@ -43,13 +46,13 @@ module OEmbed
       
       case res
       when Net::HTTPNotImplemented
-        raise OEmbed::UnknownFormat, "The provider doesn't support the '#{format}' format"
+        raise OEmbed::UnknownFormat, uri.format
       when Net::HTTPNotFound
-        raise OEmbed::NotFound, "No embeddable content at '#{url}'"
+        raise OEmbed::NotFound, url
       when Net::HTTPOK
         res.body
       else
-        raise OEmbed::UnknownResponse, "Got unkown response (#{res.code}) from server"
+        raise OEmbed::UnknownResponse, res.code
       end
     end
     
