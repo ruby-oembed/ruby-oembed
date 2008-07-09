@@ -3,8 +3,21 @@ module OEmbed
     METHODS = [:define_methods!, :provider, :field, :fields, :__send__, :__id__]
     attr_reader :fields, :provider
     
-    def initialize(json, provider)
-      @fields = JSON.load(json)
+    def self.create_for(json, provider)
+      fields = JSON.load(json)
+
+      case fields['type']
+        when 'photo' : resp_type = OEmbed::Photo
+        when 'video' : resp_type = OEmbed::Video
+        when 'link'  : resp_type = OEmbed::Link
+        when 'rich'  : resp_type = OEmbed::Rich
+      end
+      
+      resp_type.new(fields, provider)
+    end
+    
+    def initialize(fields, provider)
+      @fields = fields
       @provider = provider
       define_methods!
     end

@@ -57,7 +57,7 @@ module OEmbed
     end
     
     def get(url, options = {})
-      OEmbed::Response.new(raw(url, options.merge(:format => :json)), self)
+      OEmbed::Response.create_for(raw(url, options.merge(:format => :json)), self)
     end                   
     
     def format_in_url?
