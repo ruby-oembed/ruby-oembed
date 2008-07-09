@@ -1,6 +1,6 @@
 module OEmbed
   class Photo < OEmbed::Response
-    def html_code
+    def html
       "<img src='" + self.url + "' />"
     end
   end
