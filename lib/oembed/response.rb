@@ -26,6 +26,22 @@ module OEmbed
       @fields[m.to_s]
     end
     
+    def video?
+      is_a?(OEmbed::Response::Video)
+    end
+    
+    def photo?
+      is_a?(OEmbed::Response::Photo)
+    end
+    
+    def link?
+      is_a?(OEmbed::Response::Link)
+    end
+    
+    def rich?
+      is_a?(OEmbed::Response::Rich)
+    end
+    
     private
     
     def define_methods!
