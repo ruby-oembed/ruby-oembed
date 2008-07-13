@@ -1,16 +1,17 @@
 module OEmbed
   class Response
-    METHODS = [:define_methods!, :provider, :field, :fields, :__send__, :__id__]
+    METHODS = [:define_methods!, :provider, :field, :fields]
     attr_reader :fields, :provider
     
     def self.create_for(json, provider)
       fields = JSON.load(json)
 
-      case fields['type']
-        when 'photo' : resp_type = OEmbed::Photo
-        when 'video' : resp_type = OEmbed::Video
-        when 'link'  : resp_type = OEmbed::Link
-        when 'rich'  : resp_type = OEmbed::Rich
+      resp_type = case fields['type']
+        when 'photo' : OEmbed::Response::Photo
+        when 'video' : OEmbed::Response::Video
+        when 'link'  : OEmbed::Response::Link
+        when 'rich'  : OEmbed::Response::Rich
+        else           self
       end
       
       resp_type.new(fields, provider)
@@ -46,7 +47,7 @@ module OEmbed
     
     def define_methods!
       @fields.keys.each do |key|
-        next if METHODS.include?(key.to_sym)
+        next if METHODS.include?(key.to_sym) || key[0,2]=="__" || key[-1]==??
         class << self
           self
         end.send(:define_method, key) do
