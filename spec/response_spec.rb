@@ -15,7 +15,7 @@ describe OEmbed::Response do
     
     @new_res = OEmbed::Response.new(valid_response(:object), OEmbed::Providers::OohEmbed)
     
-    @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr, nil)
+    @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr)
     @xml_res = OEmbed::Response.create_for(valid_response(:xml), @qik, :xml)
     @json_res = OEmbed::Response.create_for(valid_response(:json), @viddler, :json)
   end
@@ -36,9 +36,23 @@ describe OEmbed::Response do
     @json_res.fields.keys.should == valid_response(:object).keys
   end
   
+  it "should only allow JSON or XML" do
+    lambda do
+      OEmbed::Response.create_for(valid_response(:json), @flickr, :json)
+    end.should_not raise_error(OEmbed::FormatNotSupported)
+    
+    lambda do
+      OEmbed::Response.create_for(valid_response(:xml), @flickr, :xml)
+    end.should_not raise_error(OEmbed::FormatNotSupported)
+    
+    lambda do
+      OEmbed::Response.create_for(valid_response(:yml), @flickr, :yml)
+    end.should raise_error(OEmbed::FormatNotSupported)
+  end
+  
   it "should not parse the incorrect format" do
     lambda do
-      OEmbed::Response.create_for(valid_response(:xml), @flickr, nil)
+      OEmbed::Response.create_for(valid_response(:xml), @flickr)
     end.should raise_error(JSON::ParserError)
     
     lambda do

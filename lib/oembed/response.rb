@@ -3,16 +3,18 @@ module OEmbed
     METHODS = [:define_methods!, :provider, :field, :fields]
     attr_reader :fields, :provider, :format
     
-    def self.create_for(raw, provider, format)
+    def self.create_for(raw, provider, format = :json)
       begin
         fields = case format
+        when :json
+          JSON.load(raw)
         when :xml
           XmlSimple.xml_in(raw, {'ForceArray'=>false})
         else
-          JSON.load(raw)
+          raise OEmbed::FormatNotSupported, format.inspect
         end
       rescue NameError
-        raise OEmbed::FormatNotSupported, (format || :json).to_s
+        raise OEmbed::FormatNotSupported, format.inspect
       end
 
       resp_type = case fields['type']

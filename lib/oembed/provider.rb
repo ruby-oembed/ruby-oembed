@@ -6,23 +6,29 @@ module OEmbed
       @endpoint = endpoint
       @urls = []
       # Try to use the best available format
-      @format = format
-      case @format
-      when :json
-        begin
-          JSON.respond_to?(:load)
-        rescue NameError
-          @format = nil
-        end
-      when :xml
-        begin
-          XmlSimple.respond_to?(:xml_in)
-          @format = :xml
-        rescue NameError
-          @format = nil
-        end
-      else
-        @format = nil
+      available_formats = [
+        [:json, lambda {
+          begin
+            JSON.respond_to?(:load)
+          rescue NameError
+            false
+          end
+        }],
+        [:xml, lambda {
+          begin
+            XmlSimple.respond_to?(:xml_in)
+          rescue NameError
+            false
+          end
+        }],
+      ]
+      if format && to_try = available_formats.assoc(format)
+        available_formats.delete(to_try)
+        @format = format if to_try[1].call
+      end
+      available_formats.each do |format, to_try|
+        break unless @format.nil?
+        @format = format if to_try.call
       end
     end
     
