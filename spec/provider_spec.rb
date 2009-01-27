@@ -14,8 +14,8 @@ describe OEmbed::Provider do
     @viddler << "http://*.viddler.com/*"
   end
   
-  it "should default to nil" do
-    @flickr.format.should be_nil
+  it "should default to json" do
+    @flickr.format.should == :json
   end
   
   it "should allow xml" do
@@ -28,7 +28,7 @@ describe OEmbed::Provider do
   
   it "should not allow random formats" do
     @hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}", :yml)
-    @hulu.format.should be_nil
+    @hulu.format.should == :json
   end
   
   it "should add URL schemes" do
@@ -59,7 +59,7 @@ describe OEmbed::Provider do
       uri.path.should == "/services/oembed/"
       uri.query.include?("format=#{@flickr.format}").should be_true
       uri.query.include?("url=http://flickr.com/photos/bees/2362225867/").should be_true
-
+  
       uri = @qik.build(url(:qik))
       uri.host.should == "qik.com"
       uri.path.should == "/api/oembed.xml"
@@ -93,35 +93,35 @@ describe OEmbed::Provider do
         self
       end
       Net::HTTP.stub!(:start).and_return(res)
-
+  
       @flickr.raw(url(:flickr)).should == "raw content"
     end
-
+  
     it "should raise error on 501" do
       res = Net::HTTPNotImplemented.new("1.1", 501, "Not Implemented")
       Net::HTTP.stub!(:start).and_return(res)
-
+  
       proc do
         @flickr.raw(url(:flickr))
       end.should raise_error(OEmbed::UnknownFormat)   
     end
-
+  
     it "should raise error on 404" do
       res = Net::HTTPNotFound.new("1.1", 404, "Not Found")
       Net::HTTP.stub!(:start).and_return(res)
-
+  
       proc do
         @flickr.raw(url(:flickr))
       end.should raise_error(OEmbed::NotFound)   
     end
-
+  
     it "should raise error on all other responses" do
       Net::HTTPResponse::CODE_TO_OBJ.delete_if do |code, res|
         ["200", "404", "501"].include?(code)
       end.each do |code, res|
         r = res.new("1.1", code, "Message")
         Net::HTTP.stub!(:start).and_return(r)
-
+  
         proc do
           @flickr.raw(url(:flickr))
         end.should raise_error(OEmbed::UnknownResponse)
@@ -141,15 +141,17 @@ describe OEmbed::Provider do
         and_return(valid_response(:xml))
       @flickr.get(url(:flickr), :format=>:xml)
       
-      @flickr.should_receive(:raw).
-        with(url(:flickr), {:format=>:yml}).
-        and_return(valid_response(:json))
-      @flickr.get(url(:flickr), :format=>:yml)
+      lambda do
+        @flickr.should_receive(:raw).
+          with(url(:flickr), {:format=>:yml}).
+          and_return(valid_response(:json))
+        @flickr.get(url(:flickr), :format=>:yml)
+      end.should raise_error(OEmbed::FormatNotSupported)
     end
     
     it "should send the provider's format if none is specified" do
       @flickr.should_receive(:raw).
-        with(url(:flickr), {}).
+        with(url(:flickr), :format=>:json).
         and_return(valid_response(:json))
       @flickr.get(url(:flickr))
       
@@ -163,7 +165,7 @@ describe OEmbed::Provider do
         and_return(valid_response(:json))
       @viddler.get(url(:viddler))
     end
-
+  
     it "should return OEmbed::Response" do
       @flickr.stub!(:raw).and_return(valid_response(:json))
       @flickr.get(url(:flickr)).is_a?(OEmbed::Response).should be_true
