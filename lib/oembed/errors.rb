@@ -11,6 +11,12 @@ module OEmbed
     end
   end
   
+  class FormatNotSupported < StandardError
+    def to_s
+      "This server doesn't have the correct libraries installed to support the '#{super}' format"
+    end
+  end
+  
   class UnknownResponse < StandardError
     def to_s
       "Got unkown response (#{super}) from server"
