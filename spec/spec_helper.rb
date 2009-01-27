@@ -14,4 +14,35 @@ module OEmbedSpecHelper
     return "http://fake.com/" if site == :fake
     EXAMPLE[site]
   end
+  
+  def valid_response(format)
+    case format
+    when :object
+      {
+        "type" => "photo",
+        "version" => "1.0",
+        "fields" => "hello",
+        "__id__" => 1234
+      }
+    when :json
+      <<-JSON
+        {
+          "type": "photo",
+          "version": "1.0",
+          "fields": "hello",
+          "__id__": 1234
+        }
+      JSON
+    when :xml
+      <<-XML
+        <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+        <oembed>
+        	<type>photo</type>
+        	<version>1.0</version>
+        	<fields>hello</fields>
+        	<__id__>1234</__id__>
+        </oembed>
+      XML
+    end
+  end
 end

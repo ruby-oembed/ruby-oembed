@@ -2,10 +2,28 @@ module OEmbed
   class Provider
     attr_accessor :format, :name, :url, :urls, :endpoint
     
-    def initialize(endpoint, format = :json)
+    def initialize(endpoint, format = nil)
       @endpoint = endpoint
       @urls = []
+      # Try to use the best available format
       @format = format
+      case @format
+      when :json
+        begin
+          JSON.respond_to?(:load)
+        rescue NameError
+          @format = nil
+        end
+      when :xml
+        begin
+          XmlSimple.respond_to?(:xml_in)
+          @format = :xml
+        rescue NameError
+          @format = nil
+        end
+      else
+        @format = nil
+      end
     end
     
     def <<(url)
@@ -57,7 +75,8 @@ module OEmbed
     end
     
     def get(url, options = {})
-      OEmbed::Response.create_for(raw(url, options.merge(:format => :json)), self)
+      options[:format] ||= @format if @format
+      OEmbed::Response.create_for(raw(url, options), self, options[:format])
     end                   
     
     def format_in_url?

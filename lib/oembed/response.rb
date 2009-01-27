@@ -1,10 +1,19 @@
 module OEmbed
   class Response
     METHODS = [:define_methods!, :provider, :field, :fields]
-    attr_reader :fields, :provider
+    attr_reader :fields, :provider, :format
     
-    def self.create_for(json, provider)
-      fields = JSON.load(json)
+    def self.create_for(raw, provider, format)
+      begin
+        fields = case format
+        when :xml
+          XmlSimple.xml_in(raw, {'ForceArray'=>false})
+        else
+          JSON.load(raw)
+        end
+      rescue NameError
+        raise OEmbed::FormatNotSupported, (format || :json).to_s
+      end
 
       resp_type = case fields['type']
         when 'photo' : OEmbed::Response::Photo

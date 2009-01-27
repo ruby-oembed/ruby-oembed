@@ -1,9 +1,16 @@
 $:.unshift File.dirname(__FILE__)
 
+%w(json/ext json).each do |lib|
+  begin
+    require lib
+    break
+  rescue LoadError
+  end
+end
+
 begin
-  require 'json/ext'
+  require 'xmlsimple'
 rescue LoadError
-  require 'json'
 end
 
 require 'net/http'
