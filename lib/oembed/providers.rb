@@ -44,7 +44,7 @@ module OEmbed
     
     # Custom providers:
     Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
-    Flickr << "http://*.flickr.com/*"     
+    Flickr << "http://*.flickr.com/*"
     
     Viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/")
     Viddler << "http://*.viddler.com/*"
