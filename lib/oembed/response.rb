@@ -4,19 +4,8 @@ module OEmbed
     attr_reader :fields, :provider, :format
     
     def self.create_for(raw, provider, format = :json)
-      begin
-        fields = case format
-        when :json
-          JSON.load(raw)
-        when :xml
-          XmlSimple.xml_in(raw, {'ForceArray'=>false})
-        else
-          raise OEmbed::FormatNotSupported, format.inspect
-        end
-      rescue NameError
-        raise OEmbed::FormatNotSupported, format.inspect
-      end
-
+      fields = OEmbed::Formatters.convert(format, raw)
+      
       resp_type = case fields['type']
         when 'photo' : OEmbed::Response::Photo
         when 'video' : OEmbed::Response::Video
