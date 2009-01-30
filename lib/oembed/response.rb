@@ -7,11 +7,11 @@ module OEmbed
       fields = OEmbed::Formatters.convert(format, raw)
       
       resp_type = case fields['type']
-        when 'photo' : OEmbed::Response::Photo
-        when 'video' : OEmbed::Response::Video
-        when 'link'  : OEmbed::Response::Link
-        when 'rich'  : OEmbed::Response::Rich
-        else           self
+        when 'photo' then OEmbed::Response::Photo
+        when 'video' then OEmbed::Response::Video
+        when 'link'  then OEmbed::Response::Link
+        when 'rich'  then OEmbed::Response::Rich
+        else              self
       end
       
       resp_type.new(fields, provider)
