@@ -4,6 +4,7 @@ describe OEmbed::Provider do
   include OEmbedSpecHelper
   
   before(:all) do
+    @default = OEmbed::Formatters::DEFAULT
     @flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
     @qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
     @viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
@@ -14,8 +15,8 @@ describe OEmbed::Provider do
     @viddler << "http://*.viddler.com/*"
   end
   
-  it "should default to json" do
-    @flickr.format.should == :json
+  it "should by default use OEmbed::Formatters::DEFAULT" do
+    @flickr.format.should == @default
   end
   
   it "should allow xml" do
@@ -27,8 +28,8 @@ describe OEmbed::Provider do
   end
   
   it "should not allow random formats" do
-    @hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}", :yml)
-    @hulu.format.should == :json
+    proc { OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}", :yml) }.
+    should raise_error(OEmbed::FormatNotSupported)
   end
   
   it "should add URL schemes" do
@@ -151,8 +152,8 @@ describe OEmbed::Provider do
     
     it "should send the provider's format if none is specified" do
       @flickr.should_receive(:raw).
-        with(url(:flickr), :format=>:json).
-        and_return(valid_response(:json))
+        with(url(:flickr), :format => @default).
+        and_return(valid_response(@default))
       @flickr.get(url(:flickr))
       
       @qik.should_receive(:raw).
@@ -167,7 +168,7 @@ describe OEmbed::Provider do
     end
   
     it "should return OEmbed::Response" do
-      @flickr.stub!(:raw).and_return(valid_response(:json))
+      @flickr.stub!(:raw).and_return(valid_response(@default))
       @flickr.get(url(:flickr)).is_a?(OEmbed::Response).should be_true
     end
   end

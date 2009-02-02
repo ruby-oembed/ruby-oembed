@@ -2,34 +2,11 @@ module OEmbed
   class Provider
     attr_accessor :format, :name, :url, :urls, :endpoint
     
-    def initialize(endpoint, format = nil)
+    def initialize(endpoint, format = OEmbed::Formatters::DEFAULT)
       @endpoint = endpoint
       @urls = []
       # Try to use the best available format
-      available_formats = [
-        [:json, lambda {
-          begin
-            JSON.respond_to?(:load)
-          rescue NameError
-            false
-          end
-        }],
-        [:xml, lambda {
-          begin
-            XmlSimple.respond_to?(:xml_in)
-          rescue NameError
-            false
-          end
-        }],
-      ]
-      if format && to_try = available_formats.assoc(format)
-        available_formats.delete(to_try)
-        @format = format if to_try[1].call
-      end
-      available_formats.each do |format, to_try|
-        break unless @format.nil?
-        @format = format if to_try.call
-      end
+      @format = OEmbed::Formatters.verify?(format)
     end
     
     def <<(url)
