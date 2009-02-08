@@ -2,6 +2,7 @@ module OEmbed
   class Providers
     class << self
       @@urls = {}
+      @@fallback = []
       
       def urls
         @@urls
@@ -27,18 +28,48 @@ module OEmbed
         register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu)
       end
       
+      # Use this method to register fallback providers.
+      # When the raw or get methods are called, if the URL doesn't match
+      # any of the registerd url patters the fallback providers
+      # will be called (in order) with the URL.
+      #
+      # A common example:
+      #  OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      def register_fallback(*providers)
+        @@fallback += providers
+      end
+      
+      # Returns an array of all registerd fallback providers
+      def fallback
+        @@fallback
+      end
+      
       def find(url)
         @@urls[@@urls.keys.detect { |u| u =~ url }] || false
       end
       
       def raw(url, options = {})
-        provider = find(url) || raise(OEmbed::NotFound)
-        provider.raw(url, options)
+        provider = find(url)
+        if provider
+          provider.raw(url, options)
+        else
+          fallback.each do |p|
+            return p.raw(url, options) rescue OEmbed::Error
+          end
+          raise(OEmbed::NotFound)
+        end
       end
       
       def get(url, options = {})
-        provider = find(url) || raise(OEmbed::NotFound)
-        provider.get(url, options)
+        provider = find(url)
+        if provider
+          provider.get(url, options)
+        else
+          fallback.each do |p|
+            return p.get(url, options) rescue OEmbed::Error
+          end
+          raise(OEmbed::NotFound)
+        end
       end
     end
     
