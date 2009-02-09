@@ -28,13 +28,14 @@ module OEmbed
         register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu)
       end
       
+      # Takes an array of OEmbed::Provider instances or :discover
       # Use this method to register fallback providers.
       # When the raw or get methods are called, if the URL doesn't match
       # any of the registerd url patters the fallback providers
       # will be called (in order) with the URL.
       #
       # A common example:
-      #  OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      #  OEmbed::Providers.register_fallback(:discover, OEmbed::Providers::OohEmbed)
       def register_fallback(*providers)
         @@fallback += providers
       end

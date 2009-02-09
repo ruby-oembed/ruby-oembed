@@ -43,6 +43,12 @@ describe OEmbed::Providers do
     urls.length.should == 0
   end
   
+  it "should use the :discover fallback povider correctly" do
+    OEmbed::Providers.register_fallback(:discover)
+    
+    
+  end
+  
   it "should bridge #get and #raw to the right provider" do
     OEmbed::Providers.register_all
     all_example_urls.each do |url|
