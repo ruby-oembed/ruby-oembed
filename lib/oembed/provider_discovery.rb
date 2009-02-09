@@ -1,5 +1,6 @@
 module OEmbed
   class ProviderDiscovery
+    class << self
     def raw(url, options = {})
       provider = discover_provider(url, options)
       provider.raw(url, options)
@@ -17,32 +18,38 @@ module OEmbed
         http.get(uri.request_uri)
       end
       
-      provider_endpoint = get_provider_endpoint(res, options[:format])
-      Provider.new(provider_endpoint, options[:format])
+      case res
+      when Net::HTTPNotFound
+        raise OEmbed::NotFound, url
+      when Net::HTTPOK
+        format = options[:format]
+        
+        if format.nil? || format == :json
+          provider_endpoint ||= /<link.*href=['"]*([^\s'"]+)['"]*.*application\/json\+oembed.*>/.match(res.body) 
+          provider_endpoint ||= /<link.*application\/json\+oembed.*href=['"]*([^\s'"]+)['"]*.*>/.match(res.body) 
+          format ||= :json if provider_endpoint
+        end
+        if format.nil? || format == :xml
+          provider_endpoint ||= /<link.*href=['"]*([^\s'"]+)['"]*.*application\/xml\+oembed.*>/.match(res.body) 
+          provider_endpoint ||= /<link.*application\/xml\+oembed.*href=['"]*([^\s'"]+)['"]*.*>/.match(res.body) 
+          format ||= :xml if provider_endpoint
+        end
+        
+        begin
+          provider_endpoint = URI.parse(provider_endpoint && provider_endpoint[1])
+          provider_endpoint.query = nil
+          provider_endpoint = provider_endpoint.to_s
+        rescue URI::Error
+          raise OEmbed::NotFound, url
+        end
+        
+        
+        Provider.new(provider_endpoint, format || OEmbed::Formatters::DEFAULT)
+      else
+        raise OEmbed::UnknownResponse, res.code
+      end
     end
     
-    # get the oembed info from an HTML document
-    # for example:
-    #   ...
-    #   <link rel="alternate" href="http://vimeo.com/api/oembed.json?url=http%3A%2F%2Fvimeo.com%2F3100878" type="application/json+oembed" />
-    #   ...
-    #   => http://vimeo.com/api/oembed.json
-    #
-    # only_detect can force detection of :json or :xml endpoints
-    def get_provider_endpoint(html, only_detect=nil)
-      unless only_detect && only_detect != :json
-        md ||= /<link.*href=['"]*([^\s'"]+)['"]*.*application\/json\+oembed.*>/.match(html) 
-        md ||= /<link.*application\/json\+oembed.*href=['"]*([^\s'"]+)['"]*.*>/.match(html) 
-      end
-      unless only_detect && only_detect != :xml
-        md ||= /<link.*href=['"]*([^\s'"]+)['"]*.*application\/xml\+oembed.*>/.match(html) 
-        md ||= /<link.*application\/xml\+oembed.*href=['"]*([^\s'"]+)['"]*.*>/.match(html) 
-      end
-      
-      uri = URI.parse(md && md[1])
-      uri.query = nil
-      uri.to_s
     end
-  
   end
 end
