@@ -136,10 +136,10 @@ module OEmbed
     Scribd = OEmbed::Provider.new("http://www.scribd.com/services/oembed")
     Scribd << "http://*.scribd.com/*"
 
-    MovieCliips = OEmbed::Provider.new("http://movieclips.com/services/oembed/")
-    Movieclips << "http://movieclips.com/watch/*/*/"
+    MovieClips = OEmbed::Provider.new("http://movieclips.com/services/oembed/")
+    MovieClips << "http://movieclips.com/watch/*/*/"
 
-    TwentyThree << OEmbed::Provider.new("http://www.23hq.com/23/oembed")
+    TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
     TwentyThree << "http://www.23hq.com/*"
 
   end

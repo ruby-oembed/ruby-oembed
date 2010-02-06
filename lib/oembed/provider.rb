@@ -10,7 +10,7 @@ module OEmbed
     end
 
     def <<(url)
-      if url.is_a? Regex
+      if url.is_a? Regexp
         @urls << url
         return
       end
