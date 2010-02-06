@@ -92,6 +92,9 @@ module OEmbed
     
     Hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}")
     Hulu << "http://www.hulu.com/watch/*"
+
+    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed/")
+    Youtube << "http://*.youtube.com/*"
     
     Vimeo = OEmbed::Provider.new("http://www.vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
