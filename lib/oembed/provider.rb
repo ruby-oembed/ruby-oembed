@@ -10,6 +10,10 @@ module OEmbed
     end
 
     def <<(url)
+      if url.is_a? Regex
+        @urls << url
+        return
+      end
       full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
       domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
       path = Regexp.escape(path).gsub("\\*", "(.*?)")
