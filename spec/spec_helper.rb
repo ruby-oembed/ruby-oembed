@@ -12,19 +12,19 @@ module OEmbedSpecHelper
     :hulu => "http://www.hulu.com/watch/4569/firefly-serenity#x-0,vepisode,1",
     :google_video => "http://video.google.com/videoplay?docid=8372603330420559198",
   }
-  
+
   def example_url(site)
     return "http://fake.com/" if site == :fake
     EXAMPLE[site]
   end
-  
+
   def all_example_urls(*fallback)
     results = EXAMPLE.values
-    
+
     # By default don't return example_urls that won't be recognized by
     # the included default providers
     results.delete(example_url(:google_video))
-    
+
     # If requested, return URLs that should work with various fallback providers
     fallback.each do |f|
       case f
@@ -32,10 +32,10 @@ module OEmbedSpecHelper
         results << example_url(:google_video)
       end
     end
-    
+
     results
   end
-  
+
   def valid_response(format)
     case format
     when :object
