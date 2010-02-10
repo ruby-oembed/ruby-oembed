@@ -22,7 +22,7 @@ module OEmbed
 
   class UnknownResponse < OEmbed::Error
     def to_s
-      "Got unkown response (#{super}) from server"
+      "Got unknown response (#{super}) from server"
     end
   end
 end
