@@ -1,9 +1,9 @@
 module OEmbed
   class Response
     METHODS = [:define_methods!, :provider, :field, :fields]
-    attr_reader :fields, :provider, :format
+    attr_reader :fields, :provider, :format, :url
 
-    def self.create_for(raw, provider, format = :json)
+    def self.create_for(raw, provider, url, format = :json)
       fields = OEmbed::Formatters.convert(format, raw)
 
       resp_type = case fields['type']
@@ -14,10 +14,10 @@ module OEmbed
         else              self
       end
 
-      resp_type.new(fields, provider)
+      resp_type.new(fields, provider, url)
     end
 
-    def initialize(fields, provider)
+    def initialize(fields, provider, url)
       @fields = fields
       @provider = provider
       define_methods!

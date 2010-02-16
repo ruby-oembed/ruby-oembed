@@ -77,7 +77,7 @@ module OEmbed
 
     def get(url, options = {})
       options[:format] ||= @format if @format
-      OEmbed::Response.create_for(raw(url, options), self, options[:format])
+      OEmbed::Response.create_for(raw(url, options), self, url, options[:format])
     end
 
     def format_in_url?
