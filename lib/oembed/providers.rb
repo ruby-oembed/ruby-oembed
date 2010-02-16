@@ -102,7 +102,7 @@ module OEmbed
     Pownce << "http://*.pownce.com/*"
 
     # A general end point, which then calls other APIs and returns OEmbed info
-    OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/")
+    OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", :json)
     OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
     OohEmbed << "http://*.xkcd.com/*" # A hilarious stick figure comic
     OohEmbed << "http://*.wordpress.com/*/*/*/*" # Blogging Engine & community
