@@ -10,6 +10,7 @@ I also included a url file, provided by embedlly as well, so that the library ca
 
 There should probably two types of url checks, one for wellformedness, that doesn't make an HTTP call, and then one to see if the actual url works. 
 
+Also, Net:HTTP doesn't automatically look for redirectes, so I replaced the main fetch with a loop that checks for a location:header, and if so it does a fetch again. I have hardcoded the max redirects too 4. 
 
 
 
