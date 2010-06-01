@@ -25,7 +25,7 @@ module OEmbed
       end
 
       def register_all
-        register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo)
+        register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo, Youtube)
       end
 
       # Takes an array of OEmbed::Provider instances or OEmbed::ProviderDiscovery
@@ -75,7 +75,7 @@ module OEmbed
     end
 
     # Custom providers:
-    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed/")
+    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
 
     Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
