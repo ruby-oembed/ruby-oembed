@@ -9,11 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee"]
-<<<<<<< HEAD
   s.date = %q{2010-09-26}
-=======
-  s.date = %q{2010-08-23}
->>>>>>> Regenerated gemspec for version 0.7.0
   s.description = %q{A fork of a fork. @github[voidfiles,judofyr].  judufyr created the project and voidfiles added support for Embedly.  This is just the gem}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
