@@ -5,14 +5,14 @@ module OEmbed
     # Load XML
     begin
       require 'xmlsimple'
-      FORMATS[:xml] = proc { |r| XmlSimple.xml_in(r, 'ForceArray' => false)}
+      FORMATS[:xml] = proc { |r| XmlSimple.xml_in(StringIO.new(r), 'ForceArray' => false)}
     rescue LoadError
     end
     
     # Load JSON
     begin
       require 'json'
-      FORMATS[:json] = proc { |r| ::JSON.load(r) }
+      FORMATS[:json] = proc { |r| ::JSON.load(r.to_s) }
     rescue LoadError
     end
     

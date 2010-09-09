@@ -53,7 +53,18 @@ module OEmbed
       when Net::HTTPOK
         res.body
       else
-        raise OEmbed::UnknownResponse, res.code
+        raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
+      end
+    rescue StandardError
+      # Convert known errors into OEmbed::UnknownResponse for easy catching
+      # up the line. This is important if given a URL that doesn't support
+      # OEmbed. The following are known errors:
+      # * Net::* errors like Net::HTTPBadResponse
+      # * JSON::JSONError errors like JSON::ParserError
+      if $!.is_a?(JSON::JSONError) || $!.class.to_s =~ /\ANet::/
+        raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
+      else
+        raise $!
       end
     end
     
