@@ -12,15 +12,12 @@ module OEmbed
     def <<(url)
       if url.is_a? Regexp
         @urls << url
-        OEmbed::Providers.urls[url] = self
         return
       end
       full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
       domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
       path = Regexp.escape(path).gsub("\\*", "(.*?)")
-      url_regex = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
-      @urls << url_regex
-      OEmbed::Providers.urls[url_regex] = self
+      @urls << Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
     end
 
     def build(url, options = {})
