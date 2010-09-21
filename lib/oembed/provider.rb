@@ -47,11 +47,20 @@ module OEmbed
 
     def raw(url, options = {})
       uri = build(url, options)
-
-      res = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.get(uri.request_uri)
+      
+      found = false
+      max_redirects = 4
+      until found
+        host, port = uri.host, uri.port if uri.host && uri.port
+        res = Net::HTTP.start(uri.host, uri.port) {|http|  http.get(uri.request_uri) }
+        res.header['location'] ? uri = URI.parse(res.header['location']) : found = true
+        if max_redirects == 0
+            found = true
+        else
+            max_redirects = max_redirects - 1
+        end
       end
-
+      
       case res
       when Net::HTTPNotImplemented
         raise OEmbed::UnknownFormat, uri.format

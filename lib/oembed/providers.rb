@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'json'
+
 module OEmbed
   class Providers
     class << self
@@ -25,7 +28,7 @@ module OEmbed
       end
 
       def register_all
-        register(Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo, Youtube)
+        register(Youtube, Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo)
       end
 
       # Takes an array of OEmbed::Provider instances or OEmbed::ProviderDiscovery
@@ -103,22 +106,29 @@ module OEmbed
 
     # A general end point, which then calls other APIs and returns OEmbed info
     OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", :json)
-    OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
-    OohEmbed << "http://*.xkcd.com/*" # A hilarious stick figure comic
+    #OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
+    #OohEmbed << "http://*.xkcd.com/*" # A hilarious stick figure comic
     OohEmbed << "http://*.wordpress.com/*/*/*/*" # Blogging Engine & community
     OohEmbed << "http://*.wikipedia.org/wiki/*" # Online encyclopedia
-    OohEmbed << "http://*.twitpic.com/*" # Picture hosting for Twitter
-    OohEmbed << "http://twitter.com/*/statuses/*" # Mirco-blogging network
-    OohEmbed << "http://*.slideshare.net/*" # Share presentations online
-    OohEmbed << "http://*.phodroid.com/*/*/*" # Photo host
-    OohEmbed << "http://*.metacafe.com/watch/*" # Video host
-    OohEmbed << "http://video.google.com/videoplay?*" # Video hosting
-    OohEmbed << "http://*.funnyordie.com/videos/*" # Comedy video host
-    OohEmbed << "http://*.thedailyshow.com/video/*" # Syndicated show
-    OohEmbed << "http://*.collegehumor.com/video:*" # Comedic & original videos
-    OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
-    OohEmbed << "http://*.5min.com/Video/*" # micro-video host
+    #OohEmbed << "http://*.twitpic.com/*" # Picture hosting for Twitter
+    #OohEmbed << "http://twitter.com/*/statuses/*" # Mirco-blogging network
+    #OohEmbed << "http://*.slideshare.net/*" # Share presentations online
+    #OohEmbed << "http://*.phodroid.com/*/*/*" # Photo host
+    #OohEmbed << "http://*.metacafe.com/watch/*" # Video host
+    #OohEmbed << "http://video.google.com/videoplay?*" # Video hosting
+    #OohEmbed << "http://*.funnyordie.com/videos/*" # Comedy video host
+    #OohEmbed << "http://*.thedailyshow.com/video/*" # Syndicated show
+    #OohEmbed << "http://*.collegehumor.com/video:*" # Comedic & original videos
+    #OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
+    #OohEmbed << "http://*.5min.com/Video/*" # micro-video host
 
+    # A general end point, which then calls other APIs and returns OEmbed info
+    Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
+    urls = JSON.parse(File.open(File.dirname(__FILE__) + "/embedly_urls.json", "r").read)
+    urls.each do |url|
+        Embedly << url
+    end
+    
     PollEverywhere = OEmbed::Provider.new("http://www.polleverywhere.com/services/oembed/")
     PollEverywhere << "http://www.polleverywhere.com/polls/*"
     PollEverywhere << "http://www.polleverywhere.com/multiple_choice_polls/*"
