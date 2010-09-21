@@ -17,7 +17,7 @@ module OEmbed
       resp_type.new(fields, provider, url)
     end
 
-    def initialize(fields, provider, url)
+    def initialize(fields, provider, url = nil)
       @fields = fields
       @provider = provider
       define_methods!

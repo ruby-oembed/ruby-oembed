@@ -15,9 +15,9 @@ describe OEmbed::Response do
 
     @new_res = OEmbed::Response.new(valid_response(:object), OEmbed::Providers::OohEmbed)
 
-    @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr)
-    @xml_res = OEmbed::Response.create_for(valid_response(:xml), @qik, :xml)
-    @json_res = OEmbed::Response.create_for(valid_response(:json), @viddler, :json)
+    @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr))
+    @xml_res = OEmbed::Response.create_for(valid_response(:xml), @qik, example_url(:qik), :xml)
+    @json_res = OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
   end
 
   it "should set the provider" do
@@ -38,29 +38,29 @@ describe OEmbed::Response do
 
   it "should only allow JSON or XML" do
     lambda do
-      OEmbed::Response.create_for(valid_response(:json), @flickr, :json)
+      OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr), :json)
     end.should_not raise_error(OEmbed::FormatNotSupported)
 
     lambda do
-      OEmbed::Response.create_for(valid_response(:xml), @flickr, :xml)
+      OEmbed::Response.create_for(valid_response(:xml), @flickr, example_url(:flickr), :xml)
     end.should_not raise_error(OEmbed::FormatNotSupported)
 
     lambda do
-      OEmbed::Response.create_for(valid_response(:yml), @flickr, :yml)
+      OEmbed::Response.create_for(valid_response(:yml), @flickr, example_url(:flickr), :yml)
     end.should raise_error(OEmbed::FormatNotSupported)
   end
 
   it "should not parse the incorrect format" do
     lambda do
-      OEmbed::Response.create_for(valid_response(:xml), @flickr)
+      OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), @flickr)
     end.should raise_error(JSON::ParserError)
 
     lambda do
-      OEmbed::Response.create_for(valid_response(:xml), @viddler, :json)
+      OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), @viddler, :json)
     end.should raise_error(JSON::ParserError)
 
     lambda do
-      OEmbed::Response.create_for(valid_response(:json), @viddler, :xml)
+      OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), @viddler, :xml)
     end.should raise_error(ArgumentError)
   end
 

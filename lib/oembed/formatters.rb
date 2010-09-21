@@ -5,7 +5,18 @@ module OEmbed
     # Load XML
     begin
       require 'xmlsimple'
-      FORMATS[:xml] = proc { |r| XmlSimple.xml_in(StringIO.new(r), 'ForceArray' => false)}
+      FORMATS[:xml] = proc do |r|
+        begin
+          XmlSimple.xml_in(StringIO.new(r), 'ForceArray' => false)
+        rescue
+          case $!
+          when ::ArgumentError
+            raise $!
+          else
+            raise ::ArgumentError, "Couldn't parse the given document."
+          end
+        end
+      end
     rescue LoadError
     end
 

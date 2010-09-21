@@ -124,9 +124,8 @@ module OEmbed
 
     # A general end point, which then calls other APIs and returns OEmbed info
     Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
-    urls = JSON.parse(File.open(File.dirname(__FILE__) + "/embedly_urls.json", "r").read)
-    urls.each do |url|
-        Embedly << url
+    JSON.parse(File.open(File.dirname(__FILE__) + "/embedly_urls.json", "r").read).each do |url|
+      Embedly << url
     end
     
     PollEverywhere = OEmbed::Provider.new("http://www.polleverywhere.com/services/oembed/")
