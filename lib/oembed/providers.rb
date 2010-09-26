@@ -143,6 +143,7 @@ module OEmbed
 
     # A general end point, which then calls other APIs and returns OEmbed info
     Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
+    # An up-to-date version of this json file is available here: (http://api.embed.ly/static/data/embedly_regex.json
     JSON.parse(File.open(File.dirname(__FILE__) + "/embedly_urls.json", "r").read).each do |url|
       Embedly << url
     end
