@@ -14,17 +14,18 @@ describe OEmbed::Providers do
 
   it "should register providers" do
     OEmbed::Providers.register(@flickr, @qik)
-    urls = OEmbed::Providers.urls.dup
+    
+    OEmbed::Providers.urls.keys.should == @flickr.urls + @qik.urls
 
     @flickr.urls.each do |regexp|
-      urls.delete(regexp).should == @flickr
+      OEmbed::Providers.urls.should have_key(regexp)
+      OEmbed::Providers.urls[regexp].should include(@flickr)
     end
 
-     @qik.urls.each do |regexp|
-      urls.delete(regexp).should == @qik
+    @qik.urls.each do |regexp|
+      OEmbed::Providers.urls.should have_key(regexp)
+      OEmbed::Providers.urls[regexp].should include(@qik)
     end
-
-    urls.length.should == 0
   end
 
   it "should find by URLs" do
@@ -34,39 +35,78 @@ describe OEmbed::Providers do
 
   it "should unregister providers" do
     OEmbed::Providers.unregister(@flickr)
-    urls = OEmbed::Providers.urls.dup
+    
+    @flickr.urls.each do |regexp|
+      OEmbed::Providers.urls.should_not have_key(regexp)
+    end
+    
+    OEmbed::Providers.urls.keys.should == @qik.urls
 
     @qik.urls.each do |regexp|
-      urls.delete(regexp).should == @qik
+      OEmbed::Providers.urls.should have_key(regexp)
+      OEmbed::Providers.urls[regexp].should include(@qik)
     end
-
-    urls.length.should == 0
   end
 
-  it "should use the OEmbed::ProviderDiscovery fallback provider correctly" do
-  
+  it "should not unregister duplicate provider urls at first" do
+    @qik_mirror = OEmbed::Provider.new("http://mirror.qik.com/api/oembed.{format}")
+    @qik_mirror << "http://qik.com/*"
+    
+    @qik_mirror.urls.each do |regexp|
+      @qik.urls.should include(regexp)
+    end
+    
+    OEmbed::Providers.register(@qik_mirror)
+    
+    OEmbed::Providers.urls.keys.should == @qik.urls
 
-    # None of the registered providers should match
-  #  all_example_urls.each do |url|
-      provider = OEmbed::Providers.find('http://www.mobypicture.com/user/IadoreChrisette/view/7275748')
-      provider.should_not_receive(:raw)
-      provider.should_not_receive(:get)
-  #  end
+    @qik_mirror.urls.each do |regexp|
+      OEmbed::Providers.urls[regexp].should include(@qik_mirror)
+      OEmbed::Providers.urls[regexp].should include(@qik)
+    end
+    
+    OEmbed::Providers.find(example_url(:qik)).should == @qik
+    
+    OEmbed::Providers.unregister(@qik)
+    
+    urls = OEmbed::Providers.urls.dup
 
-    # Register the fallback
-  #  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery)
-
- #   provider = OEmbed::ProviderDiscovery
-  #  provider.should_receive(:raw).
- #     with(url, {}).
- #     and_return(valid_response(:raw))
- #   provider.should_receive(:get).
- #     with(url, {}).
-#      and_return(valid_response(:object))
-    #asdf
-
-
+    @qik_mirror.urls.each do |regexp|
+      OEmbed::Providers.urls[regexp].should include(@qik_mirror)
+    end
+    
+    OEmbed::Providers.find(example_url(:qik)).should == @qik_mirror
+    
+    OEmbed::Providers.unregister(@qik_mirror)
+    
+    @qik_mirror.urls.each do |regexp|
+      OEmbed::Providers.urls.should_not have_key(regexp)
+    end
   end
+
+  #it "should use the OEmbed::ProviderDiscovery fallback provider correctly" do
+	#  url = example_url(:vimeo)
+  #
+	#  # None of the registered providers should match
+	#  all_example_urls.each do |url|
+	#    provider = OEmbed::Providers.find(url)
+	#    if provider
+	#      provider.should_not_receive(:raw)
+	#      provider.should_not_receive(:get)
+  #    end
+	#  end
+  #
+	#  # Register the fallback
+	#  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery)
+  #
+	#  provider = OEmbed::ProviderDiscovery
+	#  provider.should_receive(:raw).
+	#    with(url, {}).
+	#    and_return(valid_response(:raw))
+	#  provider.should_receive(:get).
+	#    with(url, {}).
+	#    and_return(valid_response(:object))
+  #end
 
   it "should bridge #get and #raw to the right provider" do
     OEmbed::Providers.register_all

@@ -14,7 +14,8 @@ module OEmbed
       def register(*providers)
         providers.each do |provider|
           provider.urls.each do |url|
-            @@urls[url] = provider
+            @@urls[url] ||= []
+            @@urls[url] << provider
           end
         end
       end
@@ -22,7 +23,10 @@ module OEmbed
       def unregister(*providers)
         providers.each do |provider|
           provider.urls.each do |url|
-            @@urls.delete(url)
+            if @@urls[url].is_a?(Array)
+              @@urls[url].delete(provider)
+              @@urls.delete(url) if @@urls[url].empty?
+            end
           end
         end
       end
@@ -49,7 +53,8 @@ module OEmbed
       end
 
       def find(url)
-        @@urls[@@urls.keys.detect { |u| u =~ url }] || false
+        providers = @@urls[@@urls.keys.detect { |u| u =~ url }]
+        Array(providers).first || nil
       end
 
       def raw(url, options = {})
