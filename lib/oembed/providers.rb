@@ -111,21 +111,35 @@ module OEmbed
 
     # A general end point, which then calls other APIs and returns OEmbed info
     OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", :json)
-    #OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
-    #OohEmbed << "http://*.xkcd.com/*" # A hilarious stick figure comic
-    OohEmbed << "http://*.wordpress.com/*/*/*/*" # Blogging Engine & community
+    OohEmbed << "http://*.5min.com/Video/*" # micro-video host
+    OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
+    OohEmbed << "http://*.blip.tv/*"
+    OohEmbed << "http://*.collegehumor.com/video:*" # Comedic & original videos
+    OohEmbed << "http://*.thedailyshow.com/video/*" # Syndicated show
+    OohEmbed << "http://*.dailymotion.com/*"
+    OohEmbed << "http://dotsub.com/view/*"
+    OohEmbed << "http://*.flickr.com/photos/*"
+    OohEmbed << "http://*.funnyordie.com/videos/*" # Comedy video host
+    OohEmbed << "http://video.google.com/videoplay?*" # Video hosting
+    OohEmbed << "http://www.hulu.com/watch/*"
+    OohEmbed << "http://*.livejournal.com/"
+    OohEmbed << "http://*.metacafe.com/watch/*" # Video host
+    OohEmbed << "http://*.nfb.ca/film/*"
+    OohEmbed << "http://*.phodroid.com/*/*/*" # Photo host
+    OohEmbed << "http://qik.com/*"
+    OohEmbed << "http://*.revision3.com/*"
+    OohEmbed << "http://*.scribd.com/*"
+    OohEmbed << "http://*.slideshare.net/*" # Share presentations online
+    OohEmbed << "http://*.twitpic.com/*" # Picture hosting for Twitter
+    OohEmbed << "http://twitter.com/*/statuses/*" # Mirco-blogging network
+    OohEmbed << "http://*.viddler.com/explore/*"
+    OohEmbed << "http://www.vimeo.com/*"
+    OohEmbed << "http://www.vimeo.com/groups/*/videos/*"
     OohEmbed << "http://*.wikipedia.org/wiki/*" # Online encyclopedia
-    #OohEmbed << "http://*.twitpic.com/*" # Picture hosting for Twitter
-    #OohEmbed << "http://twitter.com/*/statuses/*" # Mirco-blogging network
-    #OohEmbed << "http://*.slideshare.net/*" # Share presentations online
-    #OohEmbed << "http://*.phodroid.com/*/*/*" # Photo host
-    #OohEmbed << "http://*.metacafe.com/watch/*" # Video host
-    #OohEmbed << "http://video.google.com/videoplay?*" # Video hosting
-    #OohEmbed << "http://*.funnyordie.com/videos/*" # Comedy video host
-    #OohEmbed << "http://*.thedailyshow.com/video/*" # Syndicated show
-    #OohEmbed << "http://*.collegehumor.com/video:*" # Comedic & original videos
-    #OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
-    #OohEmbed << "http://*.5min.com/Video/*" # micro-video host
+    OohEmbed << "http://*.wordpress.com/*/*/*/*" # Blogging Engine & community
+    OohEmbed << "http://*.xkcd.com/*" # A hilarious stick figure comic
+    OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
+    OohEmbed << "http://*.youtube.com/watch*"
 
     # A general end point, which then calls other APIs and returns OEmbed info
     Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
