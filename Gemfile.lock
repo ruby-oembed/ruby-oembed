@@ -1,0 +1,32 @@
+PATH
+  remote: .
+  specs:
+    ruby-oembed (0.7.0)
+      json
+      xml-simple
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    gemcutter (0.6.1)
+    git (1.2.5)
+    jeweler (1.4.0)
+      gemcutter (>= 0.1.0)
+      git (>= 1.2.5)
+      rubyforge (>= 2.0.0)
+    json (1.4.6)
+    json_pure (1.4.6)
+    rspec (1.3.0)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    xml-simple (1.0.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jeweler
+  json
+  rspec
+  ruby-oembed!
+  xml-simple
