@@ -3,10 +3,10 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "ruby-oembed"
     gemspec.summary = "oEmbed for Ruby"
-    gemspec.description = "A fork of a fork. @github[voidfiles,judofyr].  judufyr created the project and voidfiles added support for Embedly.  This is just the gem"
+    gemspec.description = "A fork of judofyr's ruby-embed library that has been gemefied & updated a bit."
     gemspec.email = "arisbartee@gmail.com"
     gemspec.homepage = "http://github.com/arisbartee/ruby-oembed"
-    gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee"]
+    gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee","Marcos Wright Kuhns"]
     gemspec.add_dependency("json")
     gemspec.add_dependency("xml-simple")
     gemspec.add_development_dependency("rspec")

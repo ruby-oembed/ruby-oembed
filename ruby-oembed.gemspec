@@ -8,12 +8,13 @@ Gem::Specification.new do |s|
   s.version = "0.7.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee"]
-  s.date = %q{2010-09-29}
-  s.description = %q{A fork of a fork. @github[voidfiles,judofyr].  judufyr created the project and voidfiles added support for Embedly.  This is just the gem}
+  s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
+  s.date = %q{2010-10-03}
+  s.description = %q{A fork of judofyr's ruby-embed library that has been gemefied & updated a bit.}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
-    "README.md"
+    "LICENSE",
+     "README.md"
   ]
   s.files = [
     ".gitignore",
@@ -23,7 +24,6 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "VERSION",
-     "idea.rb",
      "integration_test/test.rb",
      "integration_test/test_urls.csv",
      "lib/oembed.rb",

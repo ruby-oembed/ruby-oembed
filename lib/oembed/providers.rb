@@ -85,6 +85,7 @@ module OEmbed
     # Custom providers:
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
+    Youtube << "http://*.youtu.be/*"
 
     Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
