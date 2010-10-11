@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-oembed}
-  s.version = "0.7.5"
+  s.version = "0.7.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
   s.date = %q{2010-10-11}
-  s.description = %q{A fork of judofyr's ruby-embed library that has been gemefied & updated a bit.}
+  s.description = %q{An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of a supported web pages, based on their URLs. See http://oembed.com for more about the protocol.}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
      "spec/response_spec.rb",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/arisbartee/ruby-oembed}
+  s.homepage = %q{http://github.com/judofyr/ruby-oembed}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}

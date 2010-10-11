@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## 0.7.6 - Unreleased
+## 0.7.6 - 11 October 2010
 
+* Released all recent changes to judofyr/master on GitHub. (Marcos Wright Kuhns)
 * Added CHANGELOG & LICENSE information. (Marcos Wright Kuhns)
 
 ## 0.7.5 - 29 September 2010
