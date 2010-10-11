@@ -18,7 +18,7 @@
 
 ## 0.0.0 - May 2008 - July 2010
 
-* Initial work & release as a library
+* Initial work & release as a library (Magnus Holm, et al.)
 * Many Providers supported, including [OohEmbed][oohembed].
 * Support for JSON (via the json gem) and XML (via the xml-simple gem).
 
