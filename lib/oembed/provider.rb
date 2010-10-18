@@ -2,27 +2,43 @@ module OEmbed
   class Provider
     attr_accessor :format, :name, :url, :urls, :endpoint
 
+    # Returns a new OEmbed::Provider instance. The first argument should be the
+    # http URL of the Provider's oEmbed endpoint. The URL may also contain a
+    # "{format}" portion. In actual requests to this endpoint, this string will
+    # be replaced with a string representing the request format (e.g. "json").
+    # The second argument is an  optional Symbol that defines the default format
+    # for all oEmbed requests to this Provider.
+    #     OEmbed::Provider.new("http://my.service.com/oembed")
+    #     OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
     def initialize(endpoint, format = OEmbed::Formatters::DEFAULT)
+      endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
+      raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
+      
       @endpoint = endpoint
       @urls = []
       # Try to use the best available format
       @format = OEmbed::Formatters.verify?(format)
     end
 
+    # Adds the given URL scheme to a Provider instance. The URL scheme can be either
+    # a string containing wildcards specified with an asterisk (see
+    # http://oembed.com/#section2.1 for details) or a Regexp.
+    #    @provider << "http://my.service.com/video/*"
+    #    @provider << "*://*.service.com/photo/*/slideshow"
+    #    @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
-      if url.is_a? Regexp
-        @urls << url
-        return
+      if !url.is_a?(Regexp)
+        full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
+        domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
+        path = Regexp.escape(path).gsub("\\*", "(.*?)")
+        url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
       end
-      full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
-      domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
-      path = Regexp.escape(path).gsub("\\*", "(.*?)")
-      @urls << Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
+      @urls << url
     end
 
-    def build(url, options = {})
+    def build(url, query = {})
       raise OEmbed::NotFound, url unless include?(url)
-      query = options.merge({:url => url})
+      query = query.merge({:url => url})
       endpoint = @endpoint.clone
 
       if format_in_url?
@@ -32,11 +48,11 @@ module OEmbed
         format = query[:format] ||= @format
       end
 
-      query_string = "?" + query.inject("") do |memo, (key, value)|
+      query = "?" + query.inject("") do |memo, (key, value)|
         "#{key}=#{value}&#{memo}"
       end.chop
 
-      URI.parse(endpoint + query_string).instance_eval do
+      URI.parse(endpoint + query).instance_eval do
         @format = format; def format; @format; end
         self
       end
@@ -49,7 +65,7 @@ module OEmbed
       max_redirects = 4
       until found
         host, port = uri.host, uri.port if uri.host && uri.port
-        res = Net::HTTP.start(uri.host, uri.port) {|http|  http.get(uri.request_uri) }
+        res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
         res.header['location'] ? uri = URI.parse(res.header['location']) : found = true
         if max_redirects == 0
             found = true
