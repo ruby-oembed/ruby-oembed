@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Unreleased
+
+* Catch invalid endpoint URLs on OEmbed::Provider instantiation. (Marcos Wright Kuhns)
+* Removed the deprecated rails/init.rb file. (Marcos Wright Kuhns)
+* Jeweler uses the new OEmbed::Version Class. (Marcos Wright Kuhns)
+
 ## 0.7.6 - 11 October 2010
 
 * Released all recent changes to judofyr/master on GitHub. (Marcos Wright Kuhns)

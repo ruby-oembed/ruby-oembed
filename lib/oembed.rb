@@ -2,6 +2,7 @@ $:.unshift File.dirname(__FILE__)
 
 require 'net/http'
 
+require 'oembed/version'
 require 'oembed/errors'
 require 'oembed/formatters'
 require 'oembed/provider'
