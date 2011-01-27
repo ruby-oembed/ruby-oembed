@@ -36,7 +36,7 @@ Last but not least, ruby-oembed supports both [oohEmbed][oohembed] and [Embedly]
 
 Code for the ruby-oembed library is [hosted on GitHub][ruby-oembed].
 
-If you encounter any bug, feel free to [Create an Issue](http://github.com/judofyr/ruby-oembed/issues).
+If you encounter any bug, feel free to [create an Issue](http://github.com/judofyr/ruby-oembed/issues).
 
 To submit a patch, please [fork](http://help.github.com/forking/) the library and commit your changes along with relevant tests. Once you're happy with the changes, [send a pull request](http://help.github.com/pull-requests/).
 

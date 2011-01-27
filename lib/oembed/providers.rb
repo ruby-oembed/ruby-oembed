@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'json'
 
 module OEmbed
   class Providers
@@ -144,8 +143,8 @@ module OEmbed
 
     # A general end point, which then calls other APIs and returns OEmbed info
     Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
-    # An up-to-date version of this json file is available here: (http://api.embed.ly/static/data/embedly_regex.json
-    JSON.parse(File.open(File.dirname(__FILE__) + "/embedly_urls.json", "r").read).each do |url|
+    # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
+    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml").each do |url|
       Embedly << url
     end
     

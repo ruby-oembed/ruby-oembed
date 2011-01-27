@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = %q{2010-10-19}
+  s.date = %q{2011-01-26}
   s.description = %q{An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol.}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
@@ -63,16 +63,13 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<xml-simple>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
     else
-      s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<xml-simple>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
-    s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<xml-simple>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
   end
