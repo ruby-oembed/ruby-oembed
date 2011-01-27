@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'yaml'
 
 module OEmbed
   class Providers
@@ -144,7 +145,7 @@ module OEmbed
     # A general end point, which then calls other APIs and returns OEmbed info
     Embedly = OEmbed::Provider.new("http://api.embed.ly/v1/api/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
-    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml").each do |url|
+    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml")).each do |url|
       Embedly << url
     end
     

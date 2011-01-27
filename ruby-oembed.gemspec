@@ -28,18 +28,20 @@ Gem::Specification.new do |s|
      "integration_test/test.rb",
      "integration_test/test_urls.csv",
      "lib/oembed.rb",
-     "lib/oembed/embedly_urls.json",
      "lib/oembed/errors.rb",
      "lib/oembed/formatters.rb",
      "lib/oembed/provider.rb",
      "lib/oembed/provider_discovery.rb",
      "lib/oembed/providers.rb",
+     "lib/oembed/providers/embedly_urls.yml",
+     "lib/oembed/providers/oohembed_urls.yml",
      "lib/oembed/response.rb",
      "lib/oembed/response/link.rb",
      "lib/oembed/response/photo.rb",
      "lib/oembed/response/rich.rb",
      "lib/oembed/response/video.rb",
      "lib/oembed/version.rb",
+     "lib/tasks/providers.rake",
      "ruby-oembed.gemspec",
      "spec/provider_spec.rb",
      "spec/providers_spec.rb",
@@ -64,13 +66,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<xml-simple>, [">= 0"])
+      s.add_development_dependency(%q<json>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
     else
       s.add_dependency(%q<xml-simple>, [">= 0"])
+      s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
     s.add_dependency(%q<xml-simple>, [">= 0"])
+    s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
   end
 end
