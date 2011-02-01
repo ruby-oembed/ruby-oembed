@@ -34,6 +34,11 @@ module OEmbed
       def register_all
         register(Youtube, Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo)
       end
+      
+      def unregister_all
+        @@urls = {}
+        @@fallback = []
+      end
 
       # Takes an array of OEmbed::Provider instances or OEmbed::ProviderDiscovery
       # Use this method to register fallback providers.

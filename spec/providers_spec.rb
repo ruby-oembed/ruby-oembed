@@ -12,7 +12,13 @@ describe OEmbed::Providers do
     @qik << "http://qik.com/*"
   end
 
+  after(:each) do
+    OEmbed::Providers.unregister_all
+  end
+
   it "should register providers" do
+    OEmbed::Providers.urls.should be_empty
+    
     OEmbed::Providers.register(@flickr, @qik)
     
     OEmbed::Providers.urls.keys.should == @flickr.urls + @qik.urls
@@ -29,11 +35,15 @@ describe OEmbed::Providers do
   end
 
   it "should find by URLs" do
+    OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+    
     OEmbed::Providers.find(example_url(:flickr)).should == @flickr
     OEmbed::Providers.find(example_url(:qik)).should == @qik
   end
 
   it "should unregister providers" do
+    OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+    
     OEmbed::Providers.unregister(@flickr)
     
     @flickr.urls.each do |regexp|
@@ -56,7 +66,7 @@ describe OEmbed::Providers do
       @qik.urls.should include(regexp)
     end
     
-    OEmbed::Providers.register(@qik_mirror)
+    OEmbed::Providers.register(@qik, @qik_mirror)
     
     OEmbed::Providers.urls.keys.should == @qik.urls
 
@@ -122,6 +132,7 @@ describe OEmbed::Providers do
   end
 
   it "should raise an error if no embeddable content is found" do
+    OEmbed::Providers.register_all
     ["http://fake.com/", example_url(:google_video)].each do |url|
       proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
       proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
@@ -136,6 +147,10 @@ describe OEmbed::Providers do
   end
 
   it "should fallback to the appropriate provider when URL isn't found" do
+    OEmbed::Providers.register_all
+    OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
+    OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+    
     url = example_url(:google_video)
 
     provider = OEmbed::Providers.fallback.last
@@ -157,6 +172,10 @@ describe OEmbed::Providers do
   end
 
   it "should still raise an error if no embeddable content is found" do
+    OEmbed::Providers.register_all
+    OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
+    OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+    
     ["http://fake.com/"].each do |url|
       proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
       proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
