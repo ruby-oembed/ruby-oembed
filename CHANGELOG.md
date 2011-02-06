@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased
+
+* Fixed several errors that cropped up when the json gem wasn't installed. (Marcos Wright Kuhns)
+
 ## 0.8.0 - 6 February 2011
 
 * Added OEmbed::Formatter Backends, to remove the dependency on the json gem and make adding support for other parsing libraries easier. This also fixes GitHub Issue #1. (Marcos Wright Kuhns)

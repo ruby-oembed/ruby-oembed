@@ -8,7 +8,7 @@ module OEmbed
       # Returns a Symbol representing the default format for OEmbed requests.
       def default
         # Listed in order of preference.
-        %w{json xml}.detect { |type| supported?(type) }
+        %w{json xml}.detect { |type| supported?(type) rescue false }
       end
       
       # Returns true if there is a valid JSON backend. Otherwise, raises OEmbed::FormatNotSupported
