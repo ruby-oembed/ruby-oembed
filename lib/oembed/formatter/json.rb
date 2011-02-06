@@ -23,7 +23,6 @@ module OEmbed
         end
 
         def backend=(name)
-          puts 'start backend='
           if name.is_a?(Module)
             @backend = name
           else
