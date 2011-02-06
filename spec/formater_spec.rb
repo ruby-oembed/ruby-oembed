@@ -20,9 +20,11 @@ describe OEmbed::Formatter do
   end
   
   it "should decode a JSON String" do
-    object = {'a'=>'one'}
-    string = object.to_json
-    OEmbed::Formatter.decode(:json, string).should == object
+    decoded = OEmbed::Formatter.decode(:json, valid_response(:json))
+    # We need to compare keys & values separately because we don't expect all
+    # non-string values to be recognized correctly.
+    decoded.keys.should == valid_response(:object).keys
+    decoded.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
   end
   
   it "should support XML" do
@@ -31,8 +33,10 @@ describe OEmbed::Formatter do
   end
   
   it "should decode an XML String" do
-    object = {'a'=>'one'}
-    string = XmlSimple.xml_out(object)
-    OEmbed::Formatter.decode(:xml, string).should == object
+    decoded = OEmbed::Formatter.decode(:xml, valid_response(:xml))
+    # We need to compare keys & values separately because we don't expect all
+    # non-string values to be recognized correctly.
+    decoded.keys.should == valid_response(:object).keys
+    decoded.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
   end
 end

@@ -37,15 +37,15 @@ module OEmbedSpecHelper
   end
 
   def valid_response(format)
-    case format
-    when :object
+    case format.to_s
+    when 'object'
       {
         "type" => "photo",
         "version" => "1.0",
         "fields" => "hello",
         "__id__" => 1234
       }
-    when :json
+    when 'json'
       <<-JSON
         {
           "type": "photo",
@@ -54,7 +54,7 @@ module OEmbedSpecHelper
           "__id__": 1234
         }
       JSON
-    when :xml
+    when 'xml'
       <<-XML
         <?xml version="1.0" encoding="utf-8" standalone="yes"?>
         <oembed>

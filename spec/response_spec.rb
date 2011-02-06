@@ -29,11 +29,20 @@ describe OEmbed::Response do
   end
 
   it "should parse the data into #fields" do
+    # We need to compare keys & values separately because we don't expect all
+    # non-string values to be recognized correctly.
+    
     @new_res.fields.keys.should == valid_response(:object).keys
+    @new_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
 
     @default_res.fields.keys.should == valid_response(:object).keys
+    @default_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    
     @xml_res.fields.keys.should == valid_response(:object).keys
+    @xml_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    
     @json_res.fields.keys.should == valid_response(:object).keys
+    @json_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
   end
 
   it "should only allow JSON or XML" do
