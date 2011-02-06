@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## Unreleased
+## 0.8.0 - 6 February 2011
 
+* Added OEmbed::Formatter Backends, to remove the dependency on the json gem and make adding support for other parsing libraries easier. This also fixes GitHub Issue #1. (Marcos Wright Kuhns)
 * Catch invalid endpoint URLs on OEmbed::Provider instantiation. (Marcos Wright Kuhns)
 * Jeweler uses the new OEmbed::Version Class. (Marcos Wright Kuhns)
 * Corrected syntax for Youtube provider in the README (Ryan Richards)
