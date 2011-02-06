@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = %q{2011-02-05}
+  s.date = %q{2011-02-06}
   s.description = %q{An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol.}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
      "lib/oembed/errors.rb",
      "lib/oembed/formatter.rb",
      "lib/oembed/formatter/json.rb",
-     "lib/oembed/formatter/json/backends/active_support_json.rb",
+     "lib/oembed/formatter/json/backends/activesupportjson.rb",
      "lib/oembed/formatter/json/backends/jsongem.rb",
      "lib/oembed/formatter/xml.rb",
      "lib/oembed/formatter/xml/backends/xmlsimple.rb",
