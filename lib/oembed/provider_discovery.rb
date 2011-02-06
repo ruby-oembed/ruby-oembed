@@ -44,7 +44,7 @@ module OEmbed
         end
 
 
-        Provider.new(provider_endpoint, format || OEmbed::Formatters::DEFAULT)
+        Provider.new(provider_endpoint, format || OEmbed::Formatter.default)
       else
         raise OEmbed::UnknownResponse, res.code
       end

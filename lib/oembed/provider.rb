@@ -10,14 +10,14 @@ module OEmbed
     # for all oEmbed requests to this Provider.
     #     OEmbed::Provider.new("http://my.service.com/oembed")
     #     OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
-    def initialize(endpoint, format = OEmbed::Formatters::DEFAULT)
+    def initialize(endpoint, format = OEmbed::Formatter.default)
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
       
       @endpoint = endpoint
       @urls = []
-      # Try to use the best available format
-      @format = OEmbed::Formatters.verify?(format)
+      OEmbed::Formatter.supported?(format)
+      @format = format
     end
 
     # Adds the given URL scheme to a Provider instance. The URL scheme can be either

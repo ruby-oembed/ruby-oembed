@@ -4,7 +4,7 @@ require 'net/http'
 
 require 'oembed/version'
 require 'oembed/errors'
-require 'oembed/formatters'
+require 'oembed/formatter'
 require 'oembed/provider'
 require 'oembed/provider_discovery'
 require 'oembed/providers'

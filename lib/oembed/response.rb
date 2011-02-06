@@ -4,7 +4,7 @@ module OEmbed
     attr_reader :fields, :provider, :format, :url
 
     def self.create_for(raw, provider, url, format = :json)
-      fields = OEmbed::Formatters.convert(format, raw)
+      fields = OEmbed::Formatter.decode(format, raw)
 
       resp_type = case fields['type']
         when 'photo' then OEmbed::Response::Photo

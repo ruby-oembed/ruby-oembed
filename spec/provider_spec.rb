@@ -4,7 +4,7 @@ describe OEmbed::Provider do
   include OEmbedSpecHelper
 
   before(:all) do
-    @default = OEmbed::Formatters::DEFAULT
+    @default = OEmbed::Formatter.default
     @flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
     @qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
     @viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
@@ -146,7 +146,7 @@ describe OEmbed::Provider do
     provier.include?("gopher://foo.com/1").should be_false
   end
 
-  it "should by default use OEmbed::Formatters::DEFAULT" do
+  it "should by default use OEmbed::Formatter.default" do
     @flickr.format.should == @default
   end
 
