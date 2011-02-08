@@ -1,4 +1,4 @@
-# ruby-oembed
+# ruby-oembed ![Project status](http://stillmaintained.com/metavida/ruby-oembed.png)
 
 An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of a supported web pages, based on their URLs. See [oembed.com][oembed] for more about the protocol.
 
