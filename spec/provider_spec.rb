@@ -158,8 +158,24 @@ describe OEmbed::Provider do
     @viddler.format.should == :json
   end
 
-  it "should not allow random formats" do
-    proc { OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}", :yml) }.
+  it "should allow random formats on initialization" do
+    proc {
+      yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+      yaml_provider << "http://foo.com/*"
+    }.
+    should_not raise_error
+  end
+  
+  it "should not allow random formats to be parsed" do
+    yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+    yaml_provider << "http://foo.com/*"
+    yaml_url = "http://foo.com/video/1"
+    
+    yaml_provider.should_receive(:raw).
+      with(yaml_url, {:format=>:yml}).
+      and_return(valid_response(:json))
+    
+    proc { yaml_provider.get(yaml_url) }.
     should raise_error(OEmbed::FormatNotSupported)
   end
 

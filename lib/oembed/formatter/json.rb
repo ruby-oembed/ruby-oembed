@@ -51,6 +51,22 @@ module OEmbed
           end
         end
         
+        # Returns a pair of values. The first is a JSON string. The second is the Object
+        # we expect to get back after parsing.
+        def test_values
+          vals = []
+          vals << <<-JSON
+          {"string":"test", "int":42,"html":"<i>Cool's</i> the &quot;word&quot;", "array":[1,"two"]}
+          JSON
+          vals << {
+            "string"=>"test",
+            "int"=>42,
+            "html"=>"<i>Cool's</i> the &quot;word&quot;",
+            "array"=>[1,"two"],
+          }
+          vals
+        end
+        
       end
       
     end # JSON

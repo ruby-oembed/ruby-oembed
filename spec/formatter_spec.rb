@@ -1,7 +1,5 @@
 require File.dirname(__FILE__) + '/spec_helper'
-require 'json'
 require 'xmlsimple'
-
 
 describe OEmbed::Formatter do
   include OEmbedSpecHelper
@@ -24,7 +22,7 @@ describe OEmbed::Formatter do
     # We need to compare keys & values separately because we don't expect all
     # non-string values to be recognized correctly.
     decoded.keys.should == valid_response(:object).keys
-    decoded.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    decoded.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
   end
   
   it "should support XML" do
@@ -37,6 +35,6 @@ describe OEmbed::Formatter do
     # We need to compare keys & values separately because we don't expect all
     # non-string values to be recognized correctly.
     decoded.keys.should == valid_response(:object).keys
-    decoded.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    decoded.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
   end
 end
