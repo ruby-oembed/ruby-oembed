@@ -33,16 +33,16 @@ describe OEmbed::Response do
     # non-string values to be recognized correctly.
     
     @new_res.fields.keys.should == valid_response(:object).keys
-    @new_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    @new_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
 
     @default_res.fields.keys.should == valid_response(:object).keys
-    @default_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    @default_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
     
     @xml_res.fields.keys.should == valid_response(:object).keys
-    @xml_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    @xml_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
     
     @json_res.fields.keys.should == valid_response(:object).keys
-    @json_res.fields.values.map(&:to_s).should == valid_response(:object).values.map(&:to_s)
+    @json_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
   end
 
   it "should only allow JSON or XML" do
@@ -62,15 +62,15 @@ describe OEmbed::Response do
   it "should not parse the incorrect format" do
     lambda do
       OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), @flickr)
-    end.should raise_error(JSON::ParserError)
+    end.should raise_error(OEmbed::ParseError)
 
     lambda do
       OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), @viddler, :json)
-    end.should raise_error(JSON::ParserError)
+    end.should raise_error(OEmbed::ParseError)
 
     lambda do
       OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), @viddler, :xml)
-    end.should raise_error(ArgumentError)
+    end.should raise_error(OEmbed::ParseError)
   end
 
   it "should access the XML data through #field" do

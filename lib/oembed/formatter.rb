@@ -27,9 +27,17 @@ module OEmbed
       def decode(type, value)
         case type.to_s
         when 'json'
-          JSON.decode(value)
+          begin
+            JSON.decode(value)
+          rescue JSON.backend::ParseError
+            raise OEmbed::ParseError, $!.message
+          end
         when 'xml'
-          XML.decode(value)
+          begin
+            XML.decode(value)
+          rescue XML.backend::ParseError
+            raise OEmbed::ParseError, $!.message
+          end
         else
           raise OEmbed::FormatNotSupported, type
         end

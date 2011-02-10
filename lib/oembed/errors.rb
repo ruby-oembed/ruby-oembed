@@ -25,4 +25,11 @@ module OEmbed
       "Got unknown response (#{super}) from server"
     end
   end
+  
+  class ParseError < OEmbed::Error
+    def to_s
+      "There was an error parsing the server response (#{super})"
+    end
+  end
+    
 end
