@@ -2,7 +2,7 @@ module OEmbed
   module Formatter
     module JSON
       # Listed in order of preference.
-      DECODERS = %w(ActiveSupportJSON JSONGem)
+      DECODERS = %w(ActiveSupportJSON JSONGem Yaml)
       
       class << self
         
@@ -56,12 +56,12 @@ module OEmbed
         def test_values
           vals = []
           vals << <<-JSON
-          {"string":"test", "int":42,"html":"<i>Cool's</i> the &quot;word&quot;", "array":[1,"two"]}
+          {"string":"test", "int":42,"html":"<i>Cool's</i>\\n the \\"word\\"\\u0021", "array":[1,"two"]}
           JSON
           vals << {
             "string"=>"test",
             "int"=>42,
-            "html"=>"<i>Cool's</i> the &quot;word&quot;",
+            "html"=>"<i>Cool's</i>\n the \"word\"!",
             "array"=>[1,"two"],
           }
           vals

@@ -2,7 +2,9 @@
 
 ## Unreleased
 
+* Added support for JSON parsing using YAML. Thanks to Rails for the convert_json_to_yaml method! (Marcos Wright Kuhns)
 * Fixed several errors that cropped up when the json gem wasn't installed. (Marcos Wright Kuhns)
+* OEmbed::Formatter backends won't try to load gems that haven't already been loaded. (Marcos Wright Kuhns)
 
 ## 0.8.0 - 6 February 2011
 
