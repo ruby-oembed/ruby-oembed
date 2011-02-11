@@ -12,9 +12,8 @@ begin
     gemspec.email = "arisbartee@gmail.com"
     gemspec.homepage = "http://github.com/judofyr/ruby-oembed"
     gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee","Marcos Wright Kuhns"]
-    #gemspec.add_dependency("json")
-    gemspec.add_dependency("xml-simple")
     gemspec.add_development_dependency("json")
+    gemspec.add_development_dependency("xml-simple")
     gemspec.add_development_dependency("rspec")
   end
   Jeweler::GemcutterTasks.new

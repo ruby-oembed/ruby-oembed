@@ -51,6 +51,29 @@ module OEmbed
           end
         end
         
+        # Returns a pair of values. The first is an XML string. The second is the Object
+        # we expect to get back after parsing.
+        def test_values
+          vals = []
+          vals << <<-XML
+          <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+          <oembed>
+          	<string>test</string>
+          	<int>42</int>
+          	<html>&lt;i&gt;Cool's&lt;/i&gt;\n the &quot;word&quot;&#x21;</html>
+          	<array>1</array>
+          	<array>two</array>
+          </oembed>
+          XML
+          vals << {
+            "string"=>"test",
+            "int"=>"42",
+            "html"=>"<i>Cool's</i>\n the \"word\"!",
+            "array"=>["1","two"],
+          }
+          vals
+        end
+        
       end
       
     end # XML

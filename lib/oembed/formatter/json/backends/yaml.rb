@@ -24,6 +24,7 @@ module OEmbed
             def convert_json_to_yaml(json) #:nodoc:
               require 'strscan' unless defined? ::StringScanner
               scanner, quoting, marks, pos = ::StringScanner.new(json), false, [], nil
+              scanner.scan_until(/\{/)
               while scanner.scan_until(/(\\['"]|['":,\\]|\\.)/)
                 case char = scanner[1]
                 when '"', "'"
@@ -39,18 +40,10 @@ module OEmbed
                   scanner.skip(/\\/)
                 end
               end
+              raise ParseError unless scanner.scan_until(/\}/)
 
               if marks.empty?
-                json.gsub(/\\([\\\/]|u[[:xdigit:]]{4})/) do
-                  ustr = $1
-                  if ustr.index('u') == 0
-                    [ustr[1..-1].to_i(16)].pack("U")
-                  elsif ustr == '\\'
-                    '\\\\'
-                  else
-                    ustr
-                  end
-                end
+                raise ParseError
               else
                 left_pos  = [-1].push(*marks)
                 right_pos = marks << scanner.pos + scanner.rest_size

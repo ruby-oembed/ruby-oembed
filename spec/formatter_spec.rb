@@ -4,10 +4,6 @@ require 'xmlsimple'
 describe OEmbed::Formatter do
   include OEmbedSpecHelper
 
-  before(:all) do
-
-  end
-
   it "should support JSON" do
     proc { OEmbed::Formatter.support?(:json) }.
     should_not raise_error(OEmbed::FormatNotSupported)

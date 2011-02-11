@@ -1,4 +1,5 @@
-require 'xmlsimple' unless defined?(XmlSimple)
+# Only allow this backend the xml-simple gem is already loaded
+raise LoadError unless defined?(XmlSimple)
 
 module OEmbed
   module Formatter
@@ -27,4 +28,11 @@ module OEmbed
       end
     end
   end
+end
+
+# Only allow this backend if it parses XML strings the way we expect it to
+begin
+ raise unless OEmbed::Formatter::XML::Backends::XmlSimple.decode(OEmbed::Formatter::XML.test_values[0]) == OEmbed::Formatter::XML.test_values[1]
+rescue
+  raise LoadError
 end
