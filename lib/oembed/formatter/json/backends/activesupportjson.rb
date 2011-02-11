@@ -22,7 +22,7 @@ end
 
 # Only allow this backend if it parses JSON strings the way we expect it to
 begin
- raise unless OEmbed::Formatter::JSON::Backends::ActiveSupportJSON.decode(OEmbed::Formatter::JSON.test_values[0]) == OEmbed::Formatter::JSON.test_values[1]
+  raise unless OEmbed::Formatter::JSON::Backends::ActiveSupportJSON.decode(OEmbed::Formatter::JSON.test_values[0]) == OEmbed::Formatter::JSON.test_values[1]
 rescue
   raise LoadError
 end

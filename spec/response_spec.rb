@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/spec_helper'
-require 'xmlsimple'
 
 describe OEmbed::Response do
   include OEmbedSpecHelper

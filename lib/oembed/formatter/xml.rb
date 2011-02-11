@@ -2,7 +2,7 @@ module OEmbed
   module Formatter
     module XML
       # Listed in order of preference.
-      DECODERS = %w(XmlSimple)
+      DECODERS = %w(XmlSimple REXML)
       
       class << self
         

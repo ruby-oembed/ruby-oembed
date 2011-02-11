@@ -11,7 +11,7 @@ module OEmbedSpecHelper
     :rev3 => "http://revision3.com/diggnation/2008-04-17xsanned/",
     :hulu => "http://www.hulu.com/watch/4569/firefly-serenity#x-0,vepisode,1",
     :google_video => "http://video.google.com/videoplay?docid=8372603330420559198",
-  }
+  } unless defined?(EXAMPLE)
 
   def example_url(site)
     return "http://fake.com/" if site == :fake
