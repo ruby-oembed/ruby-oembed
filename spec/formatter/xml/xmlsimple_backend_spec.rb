@@ -4,11 +4,9 @@ describe "OEmbed::Formatter::XML::Backends::XmlSimple" do
   include OEmbedSpecHelper
 
   before(:all) do
-    # At the moment the xmlsimple gem is required in serveral other tests,
-    # causing this assertion to fail when the whole suite is run.
-    #lambda {
-    #  OEmbed::Formatter::XML.backend = 'XmlSimple'
-    #}.should raise_error(LoadError)
+    lambda {
+      OEmbed::Formatter::XML.backend = 'XmlSimple'
+    }.should raise_error(LoadError)
     
     require 'xmlsimple'
     

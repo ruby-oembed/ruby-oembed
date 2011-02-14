@@ -1,15 +1,41 @@
 module OEmbed
+  # An OEmbed::Provider has information about an individual oEmbed enpoint.
   class Provider
-    attr_accessor :format, :name, :url, :urls, :endpoint
+    
+    # @return [String] the http URI of the Provider's oEmbed endpoint.
+    #  The URL may also contain a {{format}} portion. In actual requests to
+    #  this Provider, this string will be replaced with a string representing
+    #  the request format (e.g. "json").
+    attr_accessor :endpoint
+    
+    # @return [String, Symbol] the name of the default format for all request
+    #  to this Provider. (e.g. 'json') 
+    attr_accessor :format
+    
+    # @return [String] the human-readable name of the Provider
+    # @deprecated This accessor currently isn't used anywhere in the codebase.
+    attr_accessor :name
+    
+    # @deprecated Added in a fork of the gem, a while back. I really would like
+    #  to get rid of it, though. --Marcos
+    attr_accessor :url
+    
+    # @return [Array] an Array of all URL schemes supported by this Provider.
+    attr_accessor :urls
+    
+    
 
-    # Returns a new OEmbed::Provider instance. The first argument should be the
-    # http URL of the Provider's oEmbed endpoint. The URL may also contain a
-    # "{format}" portion. In actual requests to this endpoint, this string will
-    # be replaced with a string representing the request format (e.g. "json").
-    # The second argument is an  optional Symbol that defines the default format
-    # for all oEmbed requests to this Provider.
-    #     OEmbed::Provider.new("http://my.service.com/oembed")
-    #     OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
+    # Construct a new OEmbed::Provider instance, pointing at a specific oEmbed
+    # endpoint.
+    # @param [String] endpoint the http URI of the Provider's oEmbed endpoint.
+    #  The URL may also contain a {{format}} portion. In actual requests to
+    #  this Provider, this string will be replaced with a string representing
+    #  the request format (e.g. "json").
+    # @param [String, Symbol] format the name of the default format for all request
+    #  to this Provider. (e.g. 'json')
+    # @example
+    #   OEmbed::Provider.new("http://my.service.com/oembed")
+    #   OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
     def initialize(endpoint, format = OEmbed::Formatter.default)
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
@@ -19,12 +45,14 @@ module OEmbed
       @format = format
     end
 
-    # Adds the given URL scheme to a Provider instance. The URL scheme can be either
-    # a string containing wildcards specified with an asterisk (see
-    # http://oembed.com/#section2.1 for details) or a Regexp.
-    #    @provider << "http://my.service.com/video/*"
-    #    @provider << "*://*.service.com/photo/*/slideshow"
-    #    @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
+    # Adds the given URL scheme to this Provider instance.
+    # @param [String, Regexp] The URL scheme can be either a String,
+    #  containing wildcards specified with an asterisk, (see
+    #  http://oembed.com/#section2.1 for details), or a Regexp.
+    # @example
+    #   @provider << "http://my.service.com/video/*"
+    #   @provider << "*://*.service.com/photo/*/slideshow"
+    #   @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
       if !url.is_a?(Regexp)
         full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
@@ -35,12 +63,35 @@ module OEmbed
       @urls << url
     end
 
+    # Send a request to the Provider endpoint to get information about the
+    # given URL.
+    # @param [String] url the URL about which we want to get information using oEmbed.
+    # @param [Hash] query these values will be sent as query parameters in this
+    #  request to the Provider endpoint, with the following special cases:
+    # @option query [String, Symbol] :format overrides this Provider's default 
+    #  request format.
+    # @option query [String] :url will be ignored, replaced by the url param.
+    # @raise [OEmbed::NotFound] if the given url is not suppoted by this Provider.
+    def get(url, query = {})
+      query[:format] ||= @format if @format
+      OEmbed::Response.create_for(raw(url, query), self, url, query[:format])
+    end
+    
+    # Determine whether this URL is supported by this Provider by matching
+    # against the Provider's URL schemes.
+    # @param [String] url the URL we want to know whether this Provider supports.
+    def include?(url)
+      @urls.empty? || !!@urls.detect{ |u| u =~ url }
+    end
+
+    # @private
     def build(url, query = {})
       raise OEmbed::NotFound, url unless include?(url)
+
       query = query.merge({:url => url})
       endpoint = @endpoint.clone
 
-      if format_in_url?
+      if @endpoint.include?("{format}")
         format = endpoint["{format}"] = (query[:format] || @format).to_s
         query.delete(:format)
       else
@@ -57,8 +108,9 @@ module OEmbed
       end
     end
 
-    def raw(url, options = {})
-      uri = build(url, options)
+    # @private
+    def raw(url, query = {})
+      uri = build(url, query)
       
       found = false
       max_redirects = 4
@@ -94,19 +146,6 @@ module OEmbed
       else
         raise $!
       end
-    end
-
-    def get(url, options = {})
-      options[:format] ||= @format if @format
-      OEmbed::Response.create_for(raw(url, options), self, url, options[:format])
-    end
-
-    def format_in_url?
-      @endpoint.include?("{format}")
-    end
-
-    def include?(url)
-      @urls.empty? || !!@urls.detect{ |u| u =~ url }
     end
   end
 end

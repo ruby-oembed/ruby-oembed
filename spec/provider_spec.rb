@@ -190,32 +190,28 @@ describe OEmbed::Provider do
     @qik.include?(example_url(:qik)).should be_true
   end
 
-  it "should detect if the format is in the URL" do
-    @flickr.format_in_url?.should be_false
-    @qik.format_in_url?.should be_true
-  end
-
   it "should raise error if the URL is invalid" do
-    proc{ @flickr.build(example_url(:fake)) }.should raise_error(OEmbed::NotFound)
-    proc{ @qik.build(example_url(:fake)) }.should raise_error(OEmbed::NotFound)
+    proc{ @flickr.send(:build, example_url(:fake)) }.should raise_error(OEmbed::NotFound)
+    proc{ @qik.send(:build, example_url(:fake)) }.should raise_error(OEmbed::NotFound)
   end
 
   describe "#build" do
     it "should return a proper URL" do
-      uri = @flickr.build(example_url(:flickr))
+      uri = @flickr.send(:build, example_url(:flickr))
       uri.host.should == "www.flickr.com"
       uri.path.should == "/services/oembed/"
       uri.query.include?("format=#{@flickr.format}").should be_true
       uri.query.include?("url=http://flickr.com/photos/bees/2362225867/").should be_true
 
-      uri = @qik.build(example_url(:qik))
+      uri = @qik.send(:build, example_url(:qik))
       uri.host.should == "qik.com"
       uri.path.should == "/api/oembed.xml"
+      uri.query.include?("format=#{@qik.format}").should be_false
       uri.query.should == "url=http://qik.com/video/49565"
     end
 
     it "should accept parameters" do
-      uri = @flickr.build(example_url(:flickr),
+      uri = @flickr.send(:build, example_url(:flickr),
         :maxwidth => 600,
         :maxheight => 200,
         :format => :xml,
@@ -228,7 +224,7 @@ describe OEmbed::Provider do
     end
 
     it "should build correctly when format is in the endpoint URL" do
-      uri = @qik.build(example_url(:qik), :format => :json)
+      uri = @qik.send(:build, example_url(:qik), :format => :json)
       uri.path.should == "/api/oembed.json"
     end
   end
@@ -242,7 +238,7 @@ describe OEmbed::Provider do
       end
       Net::HTTP.stub!(:start).and_return(res)
 
-      @flickr.raw(example_url(:flickr)).should == "raw content"
+      @flickr.send(:raw, example_url(:flickr)).should == "raw content"
     end
 
     it "should raise error on 501" do
@@ -250,7 +246,7 @@ describe OEmbed::Provider do
       Net::HTTP.stub!(:start).and_return(res)
 
       proc do
-        @flickr.raw(example_url(:flickr))
+        @flickr.send(:raw, example_url(:flickr))
       end.should raise_error(OEmbed::UnknownFormat)
     end
 
@@ -259,7 +255,7 @@ describe OEmbed::Provider do
       Net::HTTP.stub!(:start).and_return(res)
 
       proc do
-        @flickr.raw(example_url(:flickr))
+        @flickr.send(:raw, example_url(:flickr))
       end.should raise_error(OEmbed::NotFound)
     end
 
@@ -271,7 +267,7 @@ describe OEmbed::Provider do
         Net::HTTP.stub!(:start).and_return(r)
 
         proc do
-          @flickr.raw(example_url(:flickr))
+          @flickr.send(:raw, example_url(:flickr))
         end.should raise_error(OEmbed::UnknownResponse)
       end
     end
