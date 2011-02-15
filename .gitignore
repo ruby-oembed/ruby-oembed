@@ -3,3 +3,4 @@
 /rails_oembed
 /.yardoc
 /doc
+.DS_Store

@@ -3,8 +3,7 @@ require 'lib/oembed/version'
 begin
   require 'jeweler'
   
-  Dir[File.join(File.dirname(__FILE__), "lib/oembed/tasks/*.rake")].sort.each { |ext| load ext }
-  require 'lib/oembed/tasks/doc'
+  Dir[File.join(File.dirname(__FILE__), "lib/tasks/*.rake")].sort.each { |ext| load ext }
   
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "ruby-oembed"
@@ -18,7 +17,13 @@ begin
     gemspec.add_development_dependency("json")
     gemspec.add_development_dependency("xml-simple")
     gemspec.add_development_dependency("rspec")
-    gemspec.add_development_dependency("yard")
+    
+    gemspec.rdoc_options = %W(
+      --main README.md
+      --title #{gemspec.full_name}
+      --inline-source
+      CHANGELOG.md
+    )
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
