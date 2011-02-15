@@ -19,10 +19,10 @@ begin
     gemspec.add_development_dependency("rspec")
     
     gemspec.rdoc_options = %W(
-      --main README.md
+      --main README.rdoc
       --title #{gemspec.full_name}
       --inline-source
-      CHANGELOG.md
+      CHANGELOG.rdoc
     )
   end
   Jeweler::GemcutterTasks.new

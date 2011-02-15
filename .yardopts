@@ -1,7 +1,0 @@
---readme README.md
---title Documentation for ruby-oembed
---query '@api.text != "hidden"'
---no-private
-lib/**/*.rb
-CHANGELOG.md
-LICENSE
