@@ -31,11 +31,9 @@ module OEmbed
           if name.is_a?(Module)
             @backend = name
           else
-            @backend = OEmbed::Formatter::XML::Backends::const_get(name) rescue nil
-            if @backend.nil?
-              require "oembed/formatter/xml/backends/#{name.to_s.downcase}"
-              @backend = OEmbed::Formatter::XML::Backends::const_get(name)
-            end
+            already_required = OEmbed::Formatter::XML::Backends.const_defined?(name) rescue nil
+            require "oembed/formatter/xml/backends/#{name.to_s.downcase}" unless already_required
+            @backend = OEmbed::Formatter::XML::Backends.const_get(name)
           end
           @parse_error = @backend::ParseError
         end

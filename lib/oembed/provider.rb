@@ -95,12 +95,12 @@ module OEmbed
       raise OEmbed::NotFound, url unless include?(url)
 
       query = query.merge({:url=>url})
-      query[:format] ||= @format.to_s
+      this_format = (query[:format] ||= @format.to_s).to_s
       
       endpoint = @endpoint.clone
 
       if endpoint.include?("{format}")
-        endpoint["{format}"] = (query[:format] || @format).to_s
+        endpoint["{format}"] = this_format
         query.delete(:format)
       end
 
@@ -109,8 +109,8 @@ module OEmbed
       end.chop
 
       URI.parse(endpoint + query).instance_eval do
-        @format = format
-        def format # :nodoc:
+        @format = this_format
+        def format
           @format
         end
         self

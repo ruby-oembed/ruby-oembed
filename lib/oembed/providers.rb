@@ -2,6 +2,8 @@ require 'rubygems'
 require 'yaml'
 
 module OEmbed
+  # Allows OEmbed to perform tasks across several, registered, Providers
+  # at once.
   class Providers
     class << self
       @@urls = {}

@@ -1,4 +1,6 @@
 module OEmbed
+  # Uses {oEmbed Discover}[http://oembed.com/#section4] to generate a new Provider
+  # instance about a URL for which a Provider didn't previously exist.
   class ProviderDiscovery
     class << self
     def raw(url, options = {})
