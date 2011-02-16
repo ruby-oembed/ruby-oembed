@@ -5,11 +5,12 @@ module OEmbed
   module Formatter
     module JSON
       module Backends
+        # Use the YAML library, part of the standard library, to parse JSON values that has been converted to YAML.
         module Yaml
           ParseError = ::StandardError
           extend self
 
-          # Parses a JSON string or IO and converts it into an object
+          # Parses a JSON string or IO and converts it into an object.
           def decode(json)
             if json.respond_to?(:read)
               json = json.read
@@ -78,7 +79,7 @@ end
 
 # Only allow this backend if it parses JSON strings the way we expect it to
 begin
-  raise unless OEmbed::Formatter::JSON::Backends::Yaml.decode(OEmbed::Formatter::JSON.test_values[0]) == OEmbed::Formatter::JSON.test_values[1]
+  raise unless OEmbed::Formatter.test_backend(OEmbed::Formatter::JSON::Backends::Yaml)
 rescue
-  raise LoadError
+  raise LoadError, "The version of the YAML library you have installed isn't parsing JSON like ruby-oembed expected."
 end

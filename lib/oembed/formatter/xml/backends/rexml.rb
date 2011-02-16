@@ -5,6 +5,7 @@ module OEmbed
   module Formatter
     module XML
       module Backends
+        # Use the REXML library, part of the standard library, to parse XML values.
         module REXML
           ParseError = ::REXML::ParseException
           extend self
@@ -17,14 +18,7 @@ module OEmbed
             obj = {}
             doc = ::REXML::Document.new(xml)
             doc.elements[1].elements.each do |el|
-              obj[el.name] = case obj[el.name]
-              when nil
-                el.text
-              when Array
-                obj[el.name] << el.text
-              else
-                [obj[el.name], el.text]
-              end
+              obj[el.name] = el.text
             end
             obj
           rescue
@@ -44,7 +38,7 @@ end
 
 # Only allow this backend if it parses XML strings the way we expect it to
 begin
-  raise unless OEmbed::Formatter::XML::Backends::REXML.decode(OEmbed::Formatter::XML.test_values[0]) == OEmbed::Formatter::XML.test_values[1]
+  raise unless OEmbed::Formatter.test_backend(OEmbed::Formatter::XML::Backends::REXML)
 rescue
-  raise LoadError
+  raise LoadError, "The version of the REXML library you have installed isn't parsing XML like ruby-oembed expected."
 end

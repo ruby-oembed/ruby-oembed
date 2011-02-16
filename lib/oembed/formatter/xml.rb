@@ -1,7 +1,8 @@
 module OEmbed
   module Formatter
+    # Handles parsing XML values using the best available backend.
     module XML
-      # Listed in order of preference.
+      # A Array of all available backends, listed in order of preference.
       DECODERS = %w(XmlSimple REXML)
       
       class << self
@@ -16,22 +17,33 @@ module OEmbed
           backend.decode(xml)
         end
         
+        # Returns the current XML backend.
         def backend
           set_default_backend unless defined?(@backend)
           raise OEmbed::FormatNotSupported, :xml unless defined?(@backend)
           @backend
         end
         
+        # Sets the current XML backend. Raises a LoadError if the given
+        # backend cannot be loaded
+        #   OEmbed::Formatter::XML.backend = 'REXML'
         def backend=(name)
           if name.is_a?(Module)
             @backend = name
           else
-            require "oembed/formatter/xml/backends/#{name.to_s.downcase}"
-            @backend = OEmbed::Formatter::XML::Backends::const_get(name)
+            @backend = OEmbed::Formatter::XML::Backends::const_get(name) rescue nil
+            if @backend.nil?
+              require "oembed/formatter/xml/backends/#{name.to_s.downcase}"
+              @backend = OEmbed::Formatter::XML::Backends::const_get(name)
+            end
           end
           @parse_error = @backend::ParseError
         end
         
+        # Perform a set of operations using a backend other than the current one.
+        #   OEmbed::Formatter::XML.with_backend('XmlSimple') do
+        #     OEmbed::Formatter::XML.decode(xml_value)
+        #   end
         def with_backend(name)
           old_backend, self.backend = backend, name
           yield
@@ -49,29 +61,6 @@ module OEmbed
               false
             end
           end
-        end
-        
-        # Returns a pair of values. The first is an XML string. The second is the Object
-        # we expect to get back after parsing.
-        def test_values
-          vals = []
-          vals << <<-XML
-          <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-          <oembed>
-          	<string>test</string>
-          	<int>42</int>
-          	<html>&lt;i&gt;Cool's&lt;/i&gt;\n the &quot;word&quot;&#x21;</html>
-          	<array>1</array>
-          	<array>two</array>
-          </oembed>
-          XML
-          vals << {
-            "string"=>"test",
-            "int"=>"42",
-            "html"=>"<i>Cool's</i>\n the \"word\"!",
-            "array"=>["1","two"],
-          }
-          vals
         end
         
       end

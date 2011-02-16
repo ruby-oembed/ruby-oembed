@@ -1,7 +1,8 @@
 module OEmbed
   module Formatter
+    # Handles parsing JSON values using the best available backend.
     module JSON
-      # Listed in order of preference.
+      # A Array of all available backends, listed in order of preference.
       DECODERS = %w(ActiveSupportJSON JSONGem Yaml)
       
       class << self
@@ -16,6 +17,7 @@ module OEmbed
           backend.decode(json)
         end
         
+        # Returns the current JSON backend.
         def backend
           set_default_backend unless defined?(@backend)
           raise OEmbed::FormatNotSupported, :json unless defined?(@backend)
@@ -26,8 +28,11 @@ module OEmbed
           if name.is_a?(Module)
             @backend = name
           else
-            require "oembed/formatter/json/backends/#{name.to_s.downcase}"
-            @backend = OEmbed::Formatter::JSON::Backends::const_get(name)
+            @backend = OEmbed::Formatter::JSON::Backends::const_get(name) rescue nil
+            if @backend.nil?
+              require "oembed/formatter/json/backends/#{name.to_s.downcase}"
+              @backend = OEmbed::Formatter::JSON::Backends::const_get(name)
+            end
           end
           @parse_error = @backend::ParseError
         end
@@ -49,22 +54,6 @@ module OEmbed
               false
             end
           end
-        end
-        
-        # Returns a pair of values. The first is a JSON string. The second is the Object
-        # we expect to get back after parsing.
-        def test_values
-          vals = []
-          vals << <<-JSON
-          {"string":"test", "int":42,"html":"<i>Cool's</i>\\n the \\"word\\"\\u0021", "array":[1,"two"]}
-          JSON
-          vals << {
-            "string"=>"test",
-            "int"=>42,
-            "html"=>"<i>Cool's</i>\n the \"word\"!",
-            "array"=>[1,"two"],
-          }
-          vals
         end
         
       end

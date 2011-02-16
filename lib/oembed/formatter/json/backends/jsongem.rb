@@ -1,5 +1,5 @@
 # Only allow this backend the json gem is already loaded
-raise LoadError unless defined?(JSON)
+raise LoadError, "The json library isn't available. require 'json'" unless defined?(JSON)
 
 module OEmbed
   module Formatter
@@ -9,7 +9,7 @@ module OEmbed
           ParseError = ::JSON::ParserError
           extend self
 
-          # Parses a JSON string or IO and convert it into an object
+          # Parses a JSON string or IO and convert it into an object.
           def decode(json)
             if json.respond_to?(:read)
               json = json.read
@@ -25,7 +25,7 @@ end
 
 # Only allow this backend if it parses JSON strings the way we expect it to
 begin
-  raise unless OEmbed::Formatter::JSON::Backends::JSONGem.decode(OEmbed::Formatter::JSON.test_values[0]) == OEmbed::Formatter::JSON.test_values[1]
+  raise unless OEmbed::Formatter.test_backend(OEmbed::Formatter::JSON::Backends::JSONGem)
 rescue
-  raise LoadError
+  raise LoadError, "The version of the json library you have installed isn't parsing JSON like ruby-oembed expected."
 end

@@ -13,36 +13,32 @@ module OEmbed
   class Error < StandardError
   end
 
-  # @api hidden
-  class NotFound < OEmbed::Error
+  # This is a test
+  class NotFound < OEmbed::Error # :nodoc:
     def to_s
       "No embeddable content at '#{super}'"
     end
   end
 
-  # @api hidden
-  class UnknownFormat < OEmbed::Error
+  class UnknownFormat < OEmbed::Error # :nodoc:
     def to_s
       "The provider doesn't support the '#{super}' format"
     end
   end
 
-  # @api hidden
-  class FormatNotSupported < OEmbed::Error
+  class FormatNotSupported < OEmbed::Error # :nodoc:
     def to_s
       "This server doesn't have the correct libraries installed to support the '#{super}' format"
     end
   end
 
-  # @api hidden
-  class UnknownResponse < OEmbed::Error
+  class UnknownResponse < OEmbed::Error # :nodoc:
     def to_s
       "Got unknown response (#{super}) from server"
     end
   end
 
-  # @api hidden
-  class ParseError < OEmbed::Error
+  class ParseError < OEmbed::Error # :nodoc:
     def to_s
       "There was an error parsing the server response (#{super})"
     end
