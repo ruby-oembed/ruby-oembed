@@ -1,13 +1,12 @@
 PATH
   remote: .
   specs:
-    ruby-oembed (0.7.0)
-      json
-      xml-simple
+    ruby-oembed (0.8.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    diff-lcs (1.1.2)
     gemcutter (0.6.1)
     git (1.2.5)
     jeweler (1.4.0)
@@ -16,7 +15,14 @@ GEM
       rubyforge (>= 2.0.0)
     json (1.4.6)
     json_pure (1.4.6)
-    rspec (1.3.0)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
     rubyforge (2.0.4)
       json_pure (>= 1.1.7)
     xml-simple (1.0.12)
@@ -27,6 +33,6 @@ PLATFORMS
 DEPENDENCIES
   jeweler
   json
-  rspec
+  rspec (>= 2.0)
   ruby-oembed!
   xml-simple

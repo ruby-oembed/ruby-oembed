@@ -16,7 +16,7 @@ begin
     gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee","Marcos Wright Kuhns"]
     gemspec.add_development_dependency("json")
     gemspec.add_development_dependency("xml-simple")
-    gemspec.add_development_dependency("rspec")
+    gemspec.add_development_dependency("rspec", ">=2.0")
     
     gemspec.rdoc_options = %W(
       --main README.rdoc

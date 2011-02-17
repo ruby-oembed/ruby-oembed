@@ -32,16 +32,25 @@ If you'd like to use a provider that isn't included in the library, it's easy to
 
 To use multiple Providers at once, simply register them.
 
-    OEmbed::Providers.register(OEmbed::Providers::Youtube, my_provider)
-    resource = OEmbed::Providers.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k") #=> OEmbed::Response
-    resource.type #=> "video"
-    resource.provider.name #=> "Youtube"
+  OEmbed::Providers.register(OEmbed::Providers::Youtube, my_provider)
+  resource = OEmbed::Providers.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k") #=> OEmbed::Response
+  resource.type #=> "video"
+  resource.provider.name #=> "Youtube"
 
 Last but not least, ruby-oembed supports both {oohEmbed}[http://oohembed.com] and {Embedly}[http://embed.ly]. These services are provider aggregators. Each supports a wide array of websites ranging from {Amazon.com}[http://www.amazon.com] to {xkcd}[http://www.xkcd.com].
 
 = Lend a Hand
 
 Code for the ruby-oembed library is {hosted on GitHub}[http://github.com/judofyr/ruby-oembed].
+
+  # Get the code.
+  git clone git://github.com/judofyr/ruby-oembed.git
+  cd ruby-openid
+  # Install all development-related gems.
+  gem install bundler
+  bundle install
+  # Run the tests.
+  rake spec
 
 If you encounter any bug, feel free to {create an Issue}[http://github.com/judofyr/ruby-oembed/issues].
 
