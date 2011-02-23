@@ -12,7 +12,7 @@ describe "OEmbed::Formatter::JSON::Backends::Yaml" do
   end
 
   it "should support JSON" do
-    proc { OEmbed::Formatter.support?(:json) }.
+    proc { OEmbed::Formatter.supported?(:json) }.
     should_not raise_error(OEmbed::FormatNotSupported)
   end
   

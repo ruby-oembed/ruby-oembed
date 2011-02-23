@@ -1,4 +1,4 @@
-require 'lib/oembed/version'
+require File.join(__FILE__, '../lib/oembed/version')
 
 begin
   require 'jeweler'

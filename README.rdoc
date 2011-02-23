@@ -50,7 +50,7 @@ Code for the ruby-oembed library is {hosted on GitHub}[http://github.com/judofyr
   gem install bundler
   bundle install
   # Run the tests.
-  rake spec
+  rake specs
 
 If you encounter any bug, feel free to {create an Issue}[http://github.com/judofyr/ruby-oembed/issues].
 

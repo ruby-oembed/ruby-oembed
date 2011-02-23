@@ -16,7 +16,7 @@ describe "OEmbed::Formatter::XML::Backends::XmlSimple" do
   end
 
   it "should support XML" do
-    proc { OEmbed::Formatter.support?(:xml) }.
+    proc { OEmbed::Formatter.supported?(:xml) }.
     should_not raise_error(OEmbed::FormatNotSupported)
   end
   

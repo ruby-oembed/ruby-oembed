@@ -31,7 +31,15 @@ module OEmbed
           if name.is_a?(Module)
             @backend = name
           else
-            already_required = OEmbed::Formatter::XML::Backends.const_defined?(name) rescue nil
+            already_required = false
+            begin 
+              already_required = OEmbed::Formatter::XML::Backends.const_defined?(name, false)
+            rescue ArgumentError # we're dealing with ruby < 1.9 where const_defined? only takes 1 argument, but behaves the way we want it to.
+              already_required = OEmbed::Formatter::XML::Backends.const_defined?(name)
+            rescue NameError # no backends have been loaded yet
+              already_required = false
+            end
+            
             require "oembed/formatter/xml/backends/#{name.to_s.downcase}" unless already_required
             @backend = OEmbed::Formatter::XML::Backends.const_get(name)
           end
