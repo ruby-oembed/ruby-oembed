@@ -3,16 +3,26 @@ module OEmbed
   # instance about a URL for which a Provider didn't previously exist.
   class ProviderDiscovery
     class << self
-    def raw(url, options = {})
-      provider = discover_provider(url, options)
+
+    # Discover the Provider for the given url, then call Provider#raw on that provider.
+    # The query parameter will be passed to both discover_provider and Provider#raw
+    def raw(url, query={})
+      provider = discover_provider(url, query)
       provider.raw(url, options)
     end
 
-    def get(url, options = {})
-      provider = discover_provider(url, options)
-      provider.get(url, options)
+    # Discover the Provider for the given url, then call Provider#get on that provider.
+    # The query parameter will be passed to both discover_provider and Provider#get
+    def get(url, query={})
+      provider = discover_provider(url, query)
+      provider.get(url, query)
     end
 
+    # Returns a new Provider instance based on information from oEmbed discovery
+    # performed on the given url.
+    #
+    # The options Hash recognizes the following keys:
+    # :format:: If given only discover endpoints for the given format. If not format is given, use the first available format found.
     def discover_provider(url, options = {})
       uri = URI.parse(url)
 
@@ -44,7 +54,6 @@ module OEmbed
         rescue URI::Error
           raise OEmbed::NotFound, url
         end
-
 
         Provider.new(provider_endpoint, format || OEmbed::Formatter.default)
       else
