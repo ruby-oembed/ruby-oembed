@@ -7,7 +7,12 @@
 * OEmbed::Formatter backends won't try to load gems that haven't already been loaded. (Marcos Wright Kuhns)
 * Better code documentation, all around. (Marcos Wright Kuhns)
 
-== 0.8.0 - 6 February 2011
+=== Deprecations & Changes
+
+* All direct raw calls will be made private at some point in the future (i.e. Provider#raw, Providers#raw, and ProviderDiscovery#raw)
+* OEmbed::Provders::Pownce has been removed since pownce.com is no longer active.
+
+== 0.8.0 - Unreleased
 
 * Added OEmbed::Formatter Backends, to remove the dependency on the json gem and make adding support for other parsing libraries easier. This also fixes GitHub Issue =1. (Marcos Wright Kuhns)
 * Catch invalid endpoint URLs on OEmbed::Provider instantiation. (Marcos Wright Kuhns)

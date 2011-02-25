@@ -6,6 +6,7 @@ module OEmbed
 
     # Discover the Provider for the given url, then call Provider#raw on that provider.
     # The query parameter will be passed to both discover_provider and Provider#raw
+    # @deprecated *Note*: This method will be made private in the future.
     def raw(url, query={})
       provider = discover_provider(url, query)
       provider.raw(url, options)

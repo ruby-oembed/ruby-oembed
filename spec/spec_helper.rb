@@ -7,7 +7,6 @@ module OEmbedSpecHelper
     :viddler => "http://www.viddler.com/explore/cdevroe/videos/424/",
     :qik => "http://qik.com/video/49565",
     :vimeo => "http://vimeo.com/3100878",
-    :pownce => "http://pownce.com/mmalone/notes/1756545/",
     :rev3 => "http://revision3.com/diggnation/2008-04-17xsanned/",
     :hulu => "http://www.hulu.com/watch/4569/firefly-serenity#x-0,vepisode,1",
     :google_video => "http://video.google.com/videoplay?docid=8372603330420559198",
