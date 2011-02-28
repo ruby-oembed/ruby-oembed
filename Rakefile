@@ -10,7 +10,7 @@ begin
     gemspec.version = OEmbed::Version
     gemspec.homepage = "http://github.com/judofyr/ruby-oembed"
     gemspec.summary = "oEmbed for Ruby"
-    gemspec.description = "An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
+    gemspec.description = "An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
     gemspec.license = "MIT"
     gemspec.email = "arisbartee@gmail.com"
     gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee","Marcos Wright Kuhns"]
