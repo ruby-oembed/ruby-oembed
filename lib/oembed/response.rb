@@ -14,16 +14,16 @@ module OEmbed
     # The Provider instance that generated this Response
     attr_reader :provider
     
-    # A string representing the format used get this data from the Provider.
-    attr_reader :format
-    
     # The URL that was sent to the provider, that this Response contains data about.
     attr_reader :request_url
+    
+    # The name of the format used get this data from the Provider (e.g. 'json').
+    attr_reader :format
 
     # Create a new Response instance of the correct type given raw
     # which is data from the provider, about the url, in the given
     # format that needs to be decoded.
-    def self.create_for(raw, provider, url, format = :json)
+    def self.create_for(raw, provider, url, format)
       fields = OEmbed::Formatter.decode(format, raw)
 
       resp_type = case fields['type']
@@ -34,12 +34,14 @@ module OEmbed
         else              self
       end
 
-      resp_type.new(fields, provider, url)
+      resp_type.new(fields, provider, url, format)
     end
 
-    def initialize(fields, provider, url = nil)
+    def initialize(fields, provider, url=nil, format=nil)
       @fields = fields
       @provider = provider
+      @request_url = url
+      @format = format
       define_methods!
     end
 

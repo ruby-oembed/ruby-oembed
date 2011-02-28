@@ -6,6 +6,7 @@
 * Fixed several errors that cropped up when the json gem wasn't installed. (Marcos Wright Kuhns)
 * OEmbed::Response#field now always return Strings. Previously, some JSON values were parsed into other Object types, like Integer and Float instances.
 * OEmbed::Response#url has been renamed OEmbed::Response#request_url because OEmbed::Response::Photo#url should be the URL of the static photo to be used by the oEmbed consumer.
+* OEmbed::Response.create_for now requires the format parameter.
 * OEmbed::Formatter backends won't try to load gems that haven't already been loaded. (Marcos Wright Kuhns)
 * Better code documentation, all around. (Marcos Wright Kuhns)
 
@@ -13,6 +14,7 @@
 
 * Removed the OEmbed::Response::METHODS constant.
 * OEmbed::Provders::Pownce has been removed since pownce.com is no longer active.
+* Provider#url and Provider#name will be removed at some point in the future.
 * All direct raw calls will be made private at some point in the future (i.e. Provider#raw, Providers#raw, and ProviderDiscovery#raw)
 
 == 0.8.0 - Unreleased

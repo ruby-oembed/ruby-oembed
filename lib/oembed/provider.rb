@@ -81,7 +81,7 @@ module OEmbed
     # :url:: will be ignored, replaced by the url param.
     def get(url, query = {})
       query[:format] ||= @format
-      OEmbed::Response.create_for(raw(url, query), self, url, query[:format])
+      OEmbed::Response.create_for(raw(url, query), self, url, query[:format].to_s)
     end
     
     # Determine whether the given url is supported by this Provider by matching
@@ -95,6 +95,7 @@ module OEmbed
       raise OEmbed::NotFound, url unless include?(url)
 
       query = query.merge({:url=>url})
+      # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
       
       endpoint = @endpoint.clone
