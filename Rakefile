@@ -1,4 +1,4 @@
-require File.join(__FILE__, '../lib/oembed/version')
+require File.expand_path(File.join(__FILE__, '../lib/oembed/version'))
 
 begin
   require 'jeweler'
@@ -7,7 +7,7 @@ begin
   
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "ruby-oembed"
-    gemspec.version = OEmbed::VERSION
+    gemspec.version = OEmbed::Version
     gemspec.homepage = "http://github.com/judofyr/ruby-oembed"
     gemspec.summary = "oEmbed for Ruby"
     gemspec.description = "An oEmbed client written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
@@ -22,6 +22,7 @@ begin
       --main README.rdoc
       --title #{gemspec.full_name}
       --inline-source
+      --exclude tasks
       CHANGELOG.rdoc
     )
   end
