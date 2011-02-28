@@ -72,7 +72,7 @@ module OEmbed
     end
 
     # Send a request to the Provider endpoint to get information about the
-    # given url.
+    # given url and return the appropriate OEmbed::Response.
     #
     # The query parameter should be a Hash of values which will be
     # sent as query parameters in this request to the Provider endpoint. The

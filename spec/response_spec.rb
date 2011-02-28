@@ -18,6 +18,22 @@ describe OEmbed::Response do
     @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr))
     @xml_res = OEmbed::Response.create_for(valid_response(:xml), @qik, example_url(:qik), :xml)
     @json_res = OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
+
+    # These keys should be turned into helper methods
+    @expected_helpers = {
+      "type" => "random",
+      "version" => "1.0",
+      "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
+      "url" => "http://foo.com/bar",
+    }
+    # These keys should already be defined 
+    @expected_skipped = {
+      "fields" => "hello",
+      "__id__" => 1234,
+      "provider" => "oohEmbed",
+      "to_s" => "random string",
+    }
+    @all_expected = @expected_helpers.merge(@expected_skipped)
   end
 
   it "should set the provider" do
@@ -31,16 +47,16 @@ describe OEmbed::Response do
   it "should parse the data into #fields" do
     # We need to compare keys & values separately because we don't expect all
     # non-string values to be recognized correctly.
-    
+
     @new_res.fields.keys.should == valid_response(:object).keys
     @new_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
 
     @default_res.fields.keys.should == valid_response(:object).keys
     @default_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
-    
+
     @xml_res.fields.keys.should == valid_response(:object).keys
     @xml_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
-    
+
     @json_res.fields.keys.should == valid_response(:object).keys
     @json_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
   end
@@ -84,16 +100,53 @@ describe OEmbed::Response do
     @json_res.field(:type).should == "photo"
     @json_res.field(:version).should == "1.0"
     @json_res.field(:fields).should == "hello"
-    @json_res.field(:__id__).should == 1234
+    @json_res.field(:__id__).should == "1234"
   end
 
   it "should automagically define helpers" do
-    @default_res.type.should == "photo"
-    @default_res.version.should == "1.0"
+    local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+
+    @all_expected.each do |method, value|
+      local_res.should respond_to(method)
+    end
+    @expected_helpers.each do |method, value|
+      local_res.send(method).should == value
+    end
+    @expected_skipped.each do |method, value|
+      local_res.send(method).should_not == value
+    end
   end
 
-  it "should protect important methods" do
-    @default_res.fields.should_not == @default_res.field(:fields)
-    @default_res.__id__.should_not == @default_res.field(:__id__)
+  it "should protect most already defined methods" do
+    Object.new.should respond_to('__id__')
+    Object.new.should respond_to('to_s')
+
+    @all_expected.keys.should include('__id__')
+    @all_expected.keys.should include('to_s')
+
+    local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+
+    local_res.__id__.should_not == local_res.field('__id__')
+    local_res.to_s.should_not == local_res.field('to_s')
   end
+
+  it "should not protect already defined methods that are specifically overridable" do
+    class Object
+      def version
+        "two point oh"
+      end
+    end
+
+    Object.new.should respond_to('version')
+    String.new.should respond_to('version')
+
+    @all_expected.keys.should include('version')
+    @all_expected['version'].should_not == String.new.version
+
+    local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+
+    local_res.version.should == local_res.field('version')
+    local_res.version.should_not == String.new.version
+  end
+
 end

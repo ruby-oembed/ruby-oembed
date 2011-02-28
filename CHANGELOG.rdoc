@@ -4,13 +4,16 @@
 
 * Removed all dependencies on external gems. XML is parsed using REXML and JSON can be parsed using YAML thanks to the convert_json_to_yaml method borrowed from Rails! (Marcos Wright Kuhns)
 * Fixed several errors that cropped up when the json gem wasn't installed. (Marcos Wright Kuhns)
+* OEmbed::Response#field now always return Strings. Previously, some JSON values were parsed into other Object types, like Integer and Float instances.
+* OEmbed::Response#url has been renamed OEmbed::Response#request_url because OEmbed::Response::Photo#url should be the URL of the static photo to be used by the oEmbed consumer.
 * OEmbed::Formatter backends won't try to load gems that haven't already been loaded. (Marcos Wright Kuhns)
 * Better code documentation, all around. (Marcos Wright Kuhns)
 
-=== Deprecations & Changes
+=== Deprecations & Removals
 
-* All direct raw calls will be made private at some point in the future (i.e. Provider#raw, Providers#raw, and ProviderDiscovery#raw)
+* Removed the OEmbed::Response::METHODS constant.
 * OEmbed::Provders::Pownce has been removed since pownce.com is no longer active.
+* All direct raw calls will be made private at some point in the future (i.e. Provider#raw, Providers#raw, and ProviderDiscovery#raw)
 
 == 0.8.0 - Unreleased
 
