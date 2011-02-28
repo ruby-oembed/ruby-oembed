@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-oembed}
-  s.version = "0.8.0"
+  s.version = "0.8.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
@@ -64,7 +64,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/judofyr/ruby-oembed}
   s.licenses = ["MIT"]
-  s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-0.8.0", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
+  s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-0.8.1", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{oEmbed for Ruby}
