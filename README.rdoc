@@ -80,14 +80,14 @@ We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oemb
 
 Thanks to the following people for their contributions to this gem, both large and small:
 
-Alex Kessinger
-Aris Bartee
-Colin Shea
-Hans de Graff
-Magnus Holm (original author of this library)
-Marcos Wright Kuhns (current maintainer)
-Ryan Richards
-Todd Fisher
+* Alex Kessinger
+* Aris Bartee
+* Colin Shea
+* Hans de Graff
+* Magnus Holm (original author of this library)
+* Marcos Wright-Kuhns (current maintainer)
+* Ryan Richards
+* Todd Fisher
 
 
 = License
