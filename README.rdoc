@@ -1,4 +1,4 @@
-= ruby-oembed http://stillmaintained.com/metavida/ruby-oembed.png http://travis-ci.org/metavida/ruby-oembed.png
+= ruby-oembed http://stillmaintained.com/metavida/ruby-oembed.png
 
 An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See {oembed.com}[http://oembed.com] for more about the protocol.
 
@@ -72,7 +72,23 @@ Code for the ruby-oembed library is {hosted on GitHub}[http://github.com/judofyr
 
 If you encounter any bug, feel free to {create an Issue}[http://github.com/judofyr/ruby-oembed/issues].
 
-To submit a patch, please {fork}[http://help.github.com/forking/] the library and commit your changes along with relevant tests. Once you're happy with the changes, {send a pull request}[http://help.github.com/pull-requests/].
+We gladly accept pull requests! Just {fork}[http://help.github.com/forking/] the library and commit your changes along with relevant tests. Once you're happy with the changes, {send a pull request}[http://help.github.com/pull-requests/].
+
+We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oembed] http://travis-ci.org/metavida/ruby-oembed.png
+
+= Contributors
+
+Thanks to the following people for their contributions to this gem, both large and small:
+
+Alex Kessinger
+Aris Bartee
+Colin Shea
+Hans de Graff
+Magnus Holm (original author of this library)
+Marcos Wright Kuhns (current maintainer)
+Ryan Richards
+Todd Fisher
+
 
 = License
 
