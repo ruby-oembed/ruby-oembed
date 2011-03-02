@@ -1,4 +1,4 @@
-= ruby-oembed http://stillmaintained.com/metavida/ruby-oembed.png
+= ruby-oembed http://stillmaintained.com/metavida/ruby-oembed.png http://travis-ci.org/metavida/ruby-oembed.png
 
 An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See {oembed.com}[http://oembed.com] for more about the protocol.
 
