@@ -4,6 +4,7 @@
 - http://*.bandcamp.com/track/*
 - http://*.blip.tv/file/*
 - http://*.craigslist.org/*/*
+- http://*.crocodoc.com/*
 - http://*.dailymotion.com/*/video/*
 - http://*.dailymotion.com/video/*
 - http://*.deviantart.com
@@ -95,6 +96,7 @@
 - http://cnbc.com/id/*/play/1/video/*
 - http://cnbc.com/id/*?*video*
 - http://confreaks.net/videos/*
+- http://crocodoc.com/*
 - http://crunchbase.com/*/*
 - http://dailybooth.com/*/*
 - http://dipdive.com/media/*
@@ -204,6 +206,8 @@
 - http://questionablecontent.net/comics/*.png
 - http://questionablecontent.net/view.php*
 - http://radionomy.com/*/radio/*
+- http://radioreddit.com/?q=songs*
+- http://radioreddit.com/songs*
 - http://redux.com/f/*/*
 - http://redux.com/stream/item/*/*
 - http://s*.photobucket.com/albums/*
@@ -396,6 +400,8 @@
 - http://www.qwantz.com/index.php?comic=*
 - http://www.qwiki.com/q/*
 - http://www.radionomy.com/*/radio/*
+- http://www.radioreddit.com/?q=songs*
+- http://www.radioreddit.com/songs*
 - http://www.rdio.com/#/artist/*/album/*
 - http://www.rdio.com/artist/*/album/*
 - http://www.redux.com/f/*/*
@@ -482,6 +488,14 @@
 - http://xiami.com/song/*
 - http://xkcd.com/*
 - http://youtu.be/*
+- https://*.crocodoc.com/*
 - https://app.wistia.com/embed/medias/*
+- https://crocodoc.com/*
 - https://img.skitch.com/*
+- https://mobile.twitter.com/*/status/*
+- https://mobile.twitter.com/*/statuses/*
 - https://skitch.com/*/*/*
+- https://twitter.com/*/status/*
+- https://twitter.com/*/statuses/*
+- https://www.twitter.com/*/status/*
+- https://www.twitter.com/*/statuses/*
