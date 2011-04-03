@@ -43,7 +43,7 @@ Last but not least, ruby-oembed supports both {oohEmbed}[http://oohembed.com] an
 
 == Formatters
 
-This library works wonderfully on it's on, but can get a speed boost by using 3rd party libraries to parse oEmbed data. To use a 3rd party Formatter, just be sure to require the library _before_ ruby-oembed.
+This library works wonderfully on its own, but can get a speed boost by using 3rd party libraries to parse oEmbed data. To use a 3rd party Formatter, just be sure to require the library _before_ ruby-oembed.
 
   require 'json'
   require 'xmlsimple'
@@ -59,7 +59,7 @@ The following, optional, backends are currently supported:
 
 = Lend a Hand
 
-Code for the ruby-oembed library is {hosted on GitHub}[http://github.com/judofyr/ruby-oembed].
+Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/judofyr/ruby-oembed].
 
   # Get the code.
   git clone git://github.com/judofyr/ruby-oembed.git
@@ -70,7 +70,7 @@ Code for the ruby-oembed library is {hosted on GitHub}[http://github.com/judofyr
   # Run the tests.
   rake specs
 
-If you encounter any bug, feel free to {create an Issue}[http://github.com/judofyr/ruby-oembed/issues].
+If you encounter any bug, feel free to {create an Issue}[https://github.com/judofyr/ruby-oembed/issues].
 
 We gladly accept pull requests! Just {fork}[http://help.github.com/forking/] the library and commit your changes along with relevant tests. Once you're happy with the changes, {send a pull request}[http://help.github.com/pull-requests/].
 
@@ -80,15 +80,15 @@ We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oemb
 
 Thanks to the following people for their contributions to this gem, both large and small:
 
-* Alex Kessinger
-* Aris Bartee
-* Colin Shea
-* Hans de Graff
-* Magnus Holm (original author of this library)
-* Marcos Wright-Kuhns (current maintainer)
-* Ryan Richards
-* Todd Fisher
-
+* {Aris Bartee}[https://github.com/arisbartee]
+* {Todd Fisher}[https://github.com/taf2]
+* {Hans de Graff}[https://github.com/graaff]
+* {Magnus Holm}[https://github.com/judofyr] (original author of this library)
+* {Alex Kessinger}[https://github.com/voidfiles]
+* {Ryan Richards}[https://github.com/rrichards]
+* {Colin Shea}[https://github.com/evaryont]
+* {Kyle Slattery}[https://github.com/kyleslattery]
+* {Marcos Wright-Kuhns}[https://github.com/metavida] (current maintainer)
 
 = License
 
