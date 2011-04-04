@@ -38,22 +38,24 @@ module OEmbed
       def decode(format, value)
         supported?(format)
         
-        case format.to_s
-        when 'json'
-          begin
-            JSON.decode(value)
-          rescue JSON.backend.parse_error
-            raise OEmbed::ParseError, $!.message
+        begin
+          case format.to_s
+          when 'json'
+            begin
+              JSON.decode(value)
+            rescue JSON.backend.parse_error
+              raise OEmbed::ParseError, $!.message
+            end
+          when 'xml'
+            begin
+              XML.decode(value)
+            rescue XML.backend.parse_error
+              raise OEmbed::ParseError, $!.message
+            end
           end
-        when 'xml'
-          begin
-            XML.decode(value)
-          rescue XML.backend.parse_error
-            raise OEmbed::ParseError, $!.message
-          end
+        rescue
+          raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
         end
-      rescue
-        raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
       end
       
       # Test the given backend to make sure it parses known values correctly.
