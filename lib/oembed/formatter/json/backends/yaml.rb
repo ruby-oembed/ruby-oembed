@@ -7,7 +7,6 @@ module OEmbed
       module Backends
         # Use the YAML library, part of the standard library, to parse JSON values that has been converted to YAML.
         module Yaml
-          ParseError = ::StandardError
           extend self
 
           # Parses a JSON string or IO and converts it into an object.
@@ -17,7 +16,15 @@ module OEmbed
             end
             YAML.load(convert_json_to_yaml(json))
           rescue ArgumentError
-            raise ParseError, "Invalid JSON string"
+            raise parse_error, "Invalid JSON string"
+          end
+          
+          def decode_fail_msg
+            "The version of the YAML library you have installed isn't parsing JSON like ruby-oembed expected."
+          end
+          
+          def parse_error
+            ::StandardError
           end
 
           protected
@@ -41,10 +48,10 @@ module OEmbed
                   scanner.skip(/\\/)
                 end
               end
-              raise ParseError unless scanner.scan_until(/\}/)
+              raise parse_error unless scanner.scan_until(/\}/)
 
               if marks.empty?
-                raise ParseError
+                raise parse_error
               else
                 left_pos  = [-1].push(*marks)
                 right_pos = marks << scanner.pos + scanner.rest_size
@@ -75,11 +82,4 @@ module OEmbed
       end
     end
   end
-end
-
-# Only allow this backend if it parses JSON strings the way we expect it to
-begin
-  raise unless OEmbed::Formatter.test_backend(OEmbed::Formatter::JSON::Backends::Yaml)
-rescue
-  raise LoadError, "The version of the YAML library you have installed isn't parsing JSON like ruby-oembed expected."
 end

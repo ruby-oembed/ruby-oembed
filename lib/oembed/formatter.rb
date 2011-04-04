@@ -1,3 +1,4 @@
+require 'oembed/formatter/base'
 require 'oembed/formatter/json'
 require 'oembed/formatter/xml'
 
@@ -41,13 +42,13 @@ module OEmbed
         when 'json'
           begin
             JSON.decode(value)
-          rescue JSON.backend::ParseError
+          rescue JSON.backend.parse_error
             raise OEmbed::ParseError, $!.message
           end
         when 'xml'
           begin
             XML.decode(value)
-          rescue XML.backend::ParseError
+          rescue XML.backend.parse_error
             raise OEmbed::ParseError, $!.message
           end
         end
@@ -91,7 +92,7 @@ module OEmbed
           !actual.detect { |key, value| value.to_s != expected[key].to_s }
       end
       
-    end
+    end # self
     
   end
 end

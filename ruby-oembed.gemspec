@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = %q{2011-03-01}
+  s.date = %q{2011-04-03}
   s.description = %q{An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol.}
   s.email = %q{arisbartee@gmail.com}
   s.extra_rdoc_files = [
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/oembed.rb",
      "lib/oembed/errors.rb",
      "lib/oembed/formatter.rb",
+     "lib/oembed/formatter/base.rb",
      "lib/oembed/formatter/json.rb",
      "lib/oembed/formatter/json/backends/activesupportjson.rb",
      "lib/oembed/formatter/json/backends/jsongem.rb",
@@ -52,6 +53,7 @@ Gem::Specification.new do |s|
      "lib/tasks/oembed.rake",
      "lib/tasks/rspec.rake",
      "ruby-oembed.gemspec",
+     "spec/formatter/ducktype_backend_spec.rb",
      "spec/formatter/json/.DS_Store",
      "spec/formatter/json/jsongem_backend_spec.rb",
      "spec/formatter/json/yaml_backend_spec.rb",
@@ -70,7 +72,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{oEmbed for Ruby}
   s.test_files = [
-    "spec/formatter/json/jsongem_backend_spec.rb",
+    "spec/formatter/ducktype_backend_spec.rb",
+     "spec/formatter/json/jsongem_backend_spec.rb",
      "spec/formatter/json/yaml_backend_spec.rb",
      "spec/formatter/xml/rexml_backend_spec.rb",
      "spec/formatter/xml/xmlsimple_backend_spec.rb",

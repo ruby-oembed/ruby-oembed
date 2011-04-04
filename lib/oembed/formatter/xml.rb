@@ -6,55 +6,13 @@ module OEmbed
       DECODERS = %w(XmlSimple REXML)
       
       class << self
-        
-        # Returns true if there is a valid XML backend. Otherwise, raises OEmbed::FormatNotSupported
-        def supported?
-          !!backend
-        end
-        
-        # Parses an XML string or IO and convert it into an object
-        def decode(xml)
-          backend.decode(xml)
-        end
+        include ::OEmbed::Formatter::Base
         
         # Returns the current XML backend.
         def backend
           set_default_backend unless defined?(@backend)
           raise OEmbed::FormatNotSupported, :xml unless defined?(@backend)
           @backend
-        end
-        
-        # Sets the current XML backend. Raises a LoadError if the given
-        # backend cannot be loaded
-        #   OEmbed::Formatter::XML.backend = 'REXML'
-        def backend=(name)
-          if name.is_a?(Module)
-            @backend = name
-          else
-            already_required = false
-            begin 
-              already_required = OEmbed::Formatter::XML::Backends.const_defined?(name, false)
-            rescue ArgumentError # we're dealing with ruby < 1.9 where const_defined? only takes 1 argument, but behaves the way we want it to.
-              already_required = OEmbed::Formatter::XML::Backends.const_defined?(name)
-            rescue NameError # no backends have been loaded yet
-              already_required = false
-            end
-            
-            require "oembed/formatter/xml/backends/#{name.to_s.downcase}" unless already_required
-            @backend = OEmbed::Formatter::XML::Backends.const_get(name)
-          end
-          @parse_error = @backend::ParseError
-        end
-        
-        # Perform a set of operations using a backend other than the current one.
-        #   OEmbed::Formatter::XML.with_backend('XmlSimple') do
-        #     OEmbed::Formatter::XML.decode(xml_value)
-        #   end
-        def with_backend(name)
-          old_backend, self.backend = backend, name
-          yield
-        ensure
-          self.backend = old_backend
         end
         
         def set_default_backend
@@ -69,7 +27,25 @@ module OEmbed
           end
         end
         
-      end
+        private
+        
+        def backend_path
+          'xml/backends'
+        end
+        
+        def test_value
+          <<-XML
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<oembed>
+  <version>1.0</version>
+  <string>test</string>
+  <int>42</int>
+  <html>&lt;i&gt;Cool's&lt;/i&gt;\n the &quot;word&quot;&#x21;</html>
+</oembed>
+          XML
+        end
+        
+      end # self
       
     end # XML
   end

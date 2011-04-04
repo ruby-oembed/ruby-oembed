@@ -1,5 +1,10 @@
 = CHANGELOG
 
+== 0.8.2 - Unreleased
+
+* Improved support (and error detection) for custom OEmbed::Formatter backends. (Marcos Wright Kuhns)
+* DRYed up OEmbed::Formatter::JSON and XML methods into OEmbed::Formatter::Base (Marcos Wright Kuhns)
+
 == 0.8.1 - 27 February 2011
 
 * Removed all dependencies on external gems. XML is parsed using REXML and JSON can be parsed using YAML thanks to the convert_json_to_yaml method borrowed from Rails! (Marcos Wright Kuhns)
@@ -17,7 +22,7 @@
 * Provider#url and Provider#name will be removed at some point in the future.
 * All direct raw calls will be made private at some point in the future (i.e. Provider#raw, Providers#raw, and ProviderDiscovery#raw)
 
-== 0.8.0 - Unreleased
+== 0.8.0 - Not Publicly Released
 
 * Added OEmbed::Formatter Backends, to remove the dependency on the json gem and make adding support for other parsing libraries easier. This also fixes GitHub Issue =1. (Marcos Wright Kuhns)
 * Catch invalid endpoint URLs on OEmbed::Provider instantiation. (Marcos Wright Kuhns)
