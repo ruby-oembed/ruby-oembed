@@ -20,7 +20,6 @@
 - http://*.dipdive.com/v/*
 - http://*.kinomap.com/*
 - http://*.posterous.com/*
-- http://*.scribd.com/doc/*
 - http://*.smugmug.com/*
 - http://*.smugmug.com/*#*
 - http://*.status.net/notice/*
@@ -36,6 +35,7 @@
 - http://*amazon.*/*/ASIN/*
 - http://*amazon.*/*/dp/*
 - http://*amazon.*/dp/*
+- http://*amazon.*/gp/aw/d/*
 - http://*amazon.*/gp/offer-listing/*
 - http://*amazon.*/gp/product/*
 - http://*amazon.*/gp/product/images/*
@@ -95,6 +95,7 @@
 - http://clipshack.com/Clip.aspx?*
 - http://cnbc.com/id/*/play/1/video/*
 - http://cnbc.com/id/*?*video*
+- http://color.com/s/*
 - http://confreaks.net/videos/*
 - http://crocodoc.com/*
 - http://crunchbase.com/*/*
@@ -149,6 +150,7 @@
 - http://indymogul.com/*/episode/*
 - http://indymogul.com/episode/*
 - http://instagr.am/p/*
+- http://instagram.com/p/*
 - http://investigation.discovery.com/videos/*
 - http://issuu.com/*/docs/*
 - http://listen.grooveshark.com/s/*
@@ -179,6 +181,7 @@
 - http://my.opera.com/*/albums/showpic.dml?album=*&picture=*
 - http://myloc.me/*
 - http://nzonscreen.com/title/*
+- http://ow.ly/i/*
 - http://pastebin.com/*
 - http://pastie.org/*
 - http://phodroid.com/*/*/*
@@ -211,10 +214,13 @@
 - http://redux.com/f/*/*
 - http://redux.com/stream/item/*/*
 - http://s*.photobucket.com/albums/*
+- http://say.ly/*
 - http://science.discovery.com/videos/*
 - http://screencast.com/*/media/*
 - http://screencast.com/t/*
 - http://screenr.com/*
+- http://scribd.com/doc/*
+- http://scribd.com/mobile/documents/*
 - http://sendables.jibjab.com/originals/*
 - http://sendables.jibjab.com/view/*
 - http://share.ovi.com/media/*/*
@@ -224,6 +230,7 @@
 - http://slidesha.re/*
 - http://snd.sc/*
 - http://snotr.com/video/*
+- http://socialcam.com/v/*
 - http://some.ly/*
 - http://someecards.com/*/*
 - http://soundcloud.com/*
@@ -270,11 +277,14 @@
 - http://v.youku.com/v_playlist/*.html
 - http://v.youku.com/v_show/*.html
 - http://video.allthingsd.com/video/*
+- http://video.forbes.com/fvn/*
 - http://video.google.com/videoplay?*
+- http://video.jardenberg.se/*
 - http://video.nationalgeographic.com/*/*/*.html
 - http://video.pbs.org/video/*
 - http://video.yahoo.com/network/*
 - http://video.yahoo.com/watch/*/*
+- http://videos.nymag.com/*
 - http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid*
 - http://vimeo.com/*
 - http://vimeo.com/groups/*/videos/*
@@ -418,12 +428,15 @@
 - http://www.scrapblog.com/viewer/viewer.aspx*
 - http://www.screencast.com/*/media/*
 - http://www.screencast.com/t/*
+- http://www.scribd.com/doc/*
+- http://www.scribd.com/mobile/documents/*
 - http://www.shopstyle.com/action/apiVisitRetailer*
 - http://www.shopstyle.com/action/viewLook*
 - http://www.shopstyle.com/browse*
 - http://www.slideshare.net/*/*
 - http://www.slideshare.net/mobile/*/*
 - http://www.snotr.com/video/*
+- http://www.socialcam.com/v/*
 - http://www.some.ly/*
 - http://www.someecards.com/*/*
 - http://www.spike.com/video/*
@@ -477,6 +490,9 @@
 - http://www.washingtonpost.com/wp-dyn/*/video/*/*/*/*
 - http://www.whitehouse.gov/photos-and-video/video/*
 - http://www.whitehouse.gov/video/*
+- http://www.whosay.com/content/*
+- http://www.whosay.com/photos/*
+- http://www.whosay.com/videos/*
 - http://www.worldstarhiphop.com/videos/video*.php?v=*
 - http://www.xiami.com/song/*
 - http://www.xkcd.com/*
