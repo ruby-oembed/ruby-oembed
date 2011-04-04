@@ -4,6 +4,7 @@
 
 * Improved support (and error detection) for custom OEmbed::Formatter backends. (Marcos Wright Kuhns)
 * DRYed up OEmbed::Formatter::JSON and XML methods into OEmbed::Formatter::Base (Marcos Wright Kuhns)
+* More consistently raise an OEmbed::Parse error if there is any sort of problem parsing the server response, whether it's an expected error type or not. (Marcos Wright Kuhns)
 
 == 0.8.1 - 27 February 2011
 

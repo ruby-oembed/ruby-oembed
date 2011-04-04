@@ -27,4 +27,28 @@ describe "OEmbed::Formatter::XML::Backends::REXML" do
     decoded.keys.should == valid_response(:object).keys
     decoded.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
   end
+  
+  it "should raise an OEmbed::ParseError when decoding an invalid XML String" do
+    lambda {
+      decode = OEmbed::Formatter.decode(:xml, invalid_response('unclosed_container', :xml))
+    }.should raise_error(OEmbed::ParseError)
+    lambda {
+      decode = OEmbed::Formatter.decode(:xml, invalid_response('unclosed_tag', :xml))
+    }.should raise_error(OEmbed::ParseError)
+    lambda {
+      decode = OEmbed::Formatter.decode(:xml, invalid_response('invalid_syntax', :xml))
+    }.should raise_error(OEmbed::ParseError)
+  end
+  
+  it "should raise an OEmbed::ParseError when decoding fails with an unexpected error" do
+    error_to_raise = ArgumentError
+    OEmbed::Formatter::XML.backend.parse_error.should_not be_kind_of(error_to_raise)
+    
+    ::REXML::Document.should_receive(:new).
+      and_raise(error_to_raise.new("unknown error"))
+    
+    lambda {
+      decode = OEmbed::Formatter.decode(:xml, valid_response(:xml))
+    }.should raise_error(OEmbed::ParseError)
+  end
 end

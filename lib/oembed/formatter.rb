@@ -52,6 +52,8 @@ module OEmbed
             raise OEmbed::ParseError, $!.message
           end
         end
+      rescue
+        raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
       end
       
       # Test the given backend to make sure it parses known values correctly.

@@ -65,4 +65,32 @@ module OEmbedSpecHelper
       XML
     end
   end
+  
+  def invalid_response(case_name, format)
+    format = format.to_s
+    valid = valid_response(format)
+    case case_name.to_s
+    when 'unclosed_container'
+      case format
+      when 'json'
+        valid_response(format).gsub(/\}\s*\z/, '')
+      when 'xml'
+        valid_response(format).gsub(%r{</oembed[^>]*>}, '')
+      end
+    when 'unclosed_tag'
+      case format
+      when 'json'
+        valid_response(format).gsub('"photo"', '"photo')
+      when 'xml'
+        valid_response(format).gsub('</type>', '')
+      end
+    when 'invalid_syntax'
+      case format
+      when 'json'
+        valid_response(format).gsub('"type"', '"type":')
+      when 'xml'
+        valid_response(format).gsub('type', 'ty><pe')
+      end
+    end
+  end
 end
