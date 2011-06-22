@@ -2,7 +2,7 @@
 - http://*.bandcamp.com/
 - http://*.bandcamp.com/album/*
 - http://*.bandcamp.com/track/*
-- http://*.blip.tv/file/*
+- http://*.blip.tv/*/*
 - http://*.craigslist.org/*/*
 - http://*.crocodoc.com/*
 - http://*.dailymotion.com/*/video/*
@@ -29,9 +29,11 @@
 - http://*.twitrpix.com/*
 - http://*.uservoice.com/*/suggestions/*
 - http://*.youtube.com/*#*/*
+- http://*.youtube.com/playlist*
 - http://*.youtube.com/profile*
 - http://*.youtube.com/user/*
 - http://*.youtube.com/v/*
+- http://*.youtube.com/view_play_list*
 - http://*amazon.*/*/ASIN/*
 - http://*amazon.*/*/dp/*
 - http://*amazon.*/dp/*
@@ -79,7 +81,8 @@
 - http://barelypolitical.com/episode/*
 - http://bigthink.com/ideas/*
 - http://bigthink.com/series/*
-- http://blip.tv/file/*
+- http://blip.tv/*/*
+- http://bnter.com/convo/*
 - http://boo.fm/b*
 - http://boston.com/video*
 - http://brainbird.net/notice/*
@@ -95,6 +98,8 @@
 - http://clipshack.com/Clip.aspx?*
 - http://cnbc.com/id/*/play/1/video/*
 - http://cnbc.com/id/*?*video*
+- http://collegehumor.com/video/*
+- http://collegehumor.com/video:*
 - http://color.com/s/*
 - http://confreaks.net/videos/*
 - http://crocodoc.com/*
@@ -132,6 +137,7 @@
 - http://google.com/buzz/*/*/*
 - http://google.com/profiles/*
 - http://grindtv.com/*/video/*
+- http://grooveshark.com/*
 - http://guardian.co.uk/*/video/*/*/*/*
 - http://health.discovery.com/videos/*
 - http://huffduffer.com/*/*
@@ -153,8 +159,8 @@
 - http://instagram.com/p/*
 - http://investigation.discovery.com/videos/*
 - http://issuu.com/*/docs/*
-- http://listen.grooveshark.com/s/*
 - http://liveleak.com/view?*
+- http://lockerz.com/s/*
 - http://logotv.com/video/*
 - http://lonelyplanet.com/Clip.aspx?*
 - http://m.youtube.com/index*
@@ -168,6 +174,7 @@
 - http://meetu.ps/*
 - http://military.discovery.com/videos/*
 - http://mixergy.com/*
+- http://mlkshk.com/p/*
 - http://mobile.twitter.com/*/status/*
 - http://mobile.twitter.com/*/statuses/*
 - http://moby.to/*
@@ -190,14 +197,11 @@
 - http://picasaweb.google.com*/*/*
 - http://picasaweb.google.com*/*/*#*
 - http://picasaweb.google.com*/lh/photo/*
-- http://picplz.com/user/*/pic/*/
+- http://picplz.com/*
 - http://pics.brizzly.com/*.jpg
 - http://pikchur.com/*
 - http://ping.fm/p/*
 - http://planetgreen.discovery.com/videos/*
-- http://plixi.com/*
-- http://plixi.com/p/*
-- http://plixi.com/profile/home/*
 - http://polldaddy.com/community/poll/*
 - http://polldaddy.com/poll/*
 - http://post.ly/*
@@ -216,6 +220,8 @@
 - http://s*.photobucket.com/albums/*
 - http://say.ly/*
 - http://science.discovery.com/videos/*
+- http://sciencestage.com/a/*.html
+- http://sciencestage.com/v/*.html
 - http://screencast.com/*/media/*
 - http://screencast.com/t/*
 - http://screenr.com/*
@@ -264,7 +270,6 @@
 - http://tv.digg.com/diggdialogg/*
 - http://tv.digg.com/diggnation/*
 - http://tv.digg.com/diggreel/*
-- http://tweetphoto.com/*
 - http://twitgoo.com/*
 - http://twitlonger.com/show/*
 - http://twitpic.com/*
@@ -318,6 +323,7 @@
 - http://www.channelfrederator.com/*/episode/*
 - http://www.channelfrederator.com/episode/*
 - http://www.clikthrough.com/theater/video/*
+- http://www.clipfish.de/*/*/video/*
 - http://www.clipshack.com/Clip.aspx?*
 - http://www.cnbc.com/id/*/play/1/video/*
 - http://www.cnbc.com/id/*?*video*
@@ -325,12 +331,12 @@
 - http://www.colbertnation.com/full-episodes/*
 - http://www.colbertnation.com/the-colbert-report-collections/*
 - http://www.colbertnation.com/the-colbert-report-videos/*
+- http://www.collegehumor.com/video/*
 - http://www.collegehumor.com/video:*
 - http://www.comedycentral.com/videos/index.jhtml?*
 - http://www.confreaks.net/videos/*
 - http://www.crunchbase.com/*/*
 - http://www.dailymile.com/people/*/entries/*
-- http://www.entertonement.com/clips/*
 - http://www.escapistmagazine.com/videos/*
 - http://www.facebook.com/photo.php*
 - http://www.facebook.com/v/*
@@ -349,11 +355,13 @@
 - http://www.globalpost.com/video/*
 - http://www.godtube.com/featured/video/*
 - http://www.godtube.com/watch/*
+- http://www.gogoyoko.com/song/*
 - http://www.google.com/buzz/*
 - http://www.google.com/buzz/*/*/*
 - http://www.google.com/profiles/*
 - http://www.grindtv.com/*/video/*
 - http://www.guardian.co.uk/*/video/*/*/*/*
+- http://www.hark.com/clips/*
 - http://www.howcast.com/videos/*
 - http://www.hulu.com/w/*
 - http://www.hulu.com/watch*
@@ -392,6 +400,7 @@
 - http://www.msnbc.msn.com/id/*/ns/*
 - http://www.msnbc.msn.com/id/*/vp/*
 - http://www.myspace.com/index.cfm?fuseaction=*&videoid*
+- http://www.myvideo.de/watch/*
 - http://www.npr.org/*/*/*/*/*
 - http://www.npr.org/*/*/*/*/*/*
 - http://www.npr.org/*/*/*/*/*/*/*
@@ -425,6 +434,8 @@
 - http://www.schuelervz.net/Groups/Overview/*
 - http://www.schuelervz.net/Profile/*
 - http://www.schuelervz.net/l/*
+- http://www.sciencestage.com/a/*.html
+- http://www.sciencestage.com/v/*.html
 - http://www.scrapblog.com/viewer/viewer.aspx*
 - http://www.screencast.com/*/media/*
 - http://www.screencast.com/t/*
@@ -493,6 +504,8 @@
 - http://www.whosay.com/content/*
 - http://www.whosay.com/photos/*
 - http://www.whosay.com/videos/*
+- http://www.wikimedia.org/wiki/File*
+- http://www.wikipedia.org/wiki/*
 - http://www.worldstarhiphop.com/videos/video*.php?v=*
 - http://www.xiami.com/song/*
 - http://www.xkcd.com/*
@@ -505,6 +518,8 @@
 - http://xkcd.com/*
 - http://youtu.be/*
 - https://*.crocodoc.com/*
+- https://*.youtube.com/v/*
+- https://*youtube.com/watch*
 - https://app.wistia.com/embed/medias/*
 - https://crocodoc.com/*
 - https://img.skitch.com/*
@@ -513,5 +528,8 @@
 - https://skitch.com/*/*/*
 - https://twitter.com/*/status/*
 - https://twitter.com/*/statuses/*
+- https://www.facebook.com/photo.php*
+- https://www.facebook.com/v/*
+- https://www.facebook.com/video/video.php*
 - https://www.twitter.com/*/status/*
 - https://www.twitter.com/*/statuses/*
