@@ -142,6 +142,21 @@ module OEmbed
     Vimeo = OEmbed::Provider.new("http://www.vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "http://*.vimeo.com/groups/*/videos/*"
+    
+    # Provider for instagram.com
+    Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
+    Instagram << "http://instagr.am/p/*"
+    Instagram << "http://instagram.com/p/*"
+    
+    # Provider for slideshare.net
+    Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2", :xml)
+    Slideshare << "http://www.slideshare.net/*/*"
+    Slideshare << "http://www.slideshare.net/mobile/*/*"
+    
+    # Provider for yfrog
+    Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
+    Yfrog << "http://yfrog.com/*"
+    
 
     # pownce.com closed in 2008
     #Pownce = OEmbed::Provider.new("http://api.pownce.com/2.1/oembed.{format}")
