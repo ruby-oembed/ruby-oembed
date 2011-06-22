@@ -149,7 +149,7 @@ module OEmbed
     Instagram << "http://instagram.com/p/*"
     
     # Provider for slideshare.net
-    Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2", :xml)
+    Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2")
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     
