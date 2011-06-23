@@ -14,6 +14,7 @@ begin
     gemspec.license = "MIT"
     gemspec.email = "arisbartee@gmail.com"
     gemspec.authors = ["Magnus Holm","Alex Kessinger","Aris Bartee","Marcos Wright Kuhns"]
+    gemspec.add_development_dependency("rake")
     gemspec.add_development_dependency("json")
     gemspec.add_development_dependency("xml-simple")
     gemspec.add_development_dependency("rspec", ">=2.0")
