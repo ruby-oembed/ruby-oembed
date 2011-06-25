@@ -74,7 +74,7 @@ If you encounter any bug, feel free to {create an Issue}[https://github.com/judo
 
 We gladly accept pull requests! Just {fork}[http://help.github.com/forking/] the library and commit your changes along with relevant tests. Once you're happy with the changes, {send a pull request}[http://help.github.com/pull-requests/].
 
-We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oembed] http://travis-ci.org/metavida/ruby-oembed.png
+We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oembed] https://secure.travis-ci.org/metavida/ruby-oembed.png
 
 = Contributors
 

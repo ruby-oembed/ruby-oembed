@@ -113,19 +113,23 @@ module OEmbed
     # Custom providers:
     
     # Provider for youtube.com
+    # http://apiblog.youtube.com/2009/10/oembed-support.html
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
 
     # Provider for flickr.com
+    # http://developer.yahoo.com/blogs/ydn/posts/2008/05/oembed_embeddin/
     Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
 
     # Provider for viddler.com
+    # http://developers.viddler.com/documentation/services/oembed/
     Viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/")
     Viddler << "http://*.viddler.com/*"
 
     # Provider for qik.com
+    # http://qik.com/blog/qik-embraces-oembed-for-embedding-videos/
     Qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}")
     Qik << "http://qik.com/*"
     Qik << "http://qik.com/video/*"
@@ -139,21 +143,25 @@ module OEmbed
     Hulu << "http://www.hulu.com/watch/*"
 
     # Provider for vimeo.com
+    # http://vimeo.com/api/docs/oEmbed
     Vimeo = OEmbed::Provider.new("http://www.vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "http://*.vimeo.com/groups/*/videos/*"
     
     # Provider for instagram.com
+    # http://instagr.am/developer/embedding/
     Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
     
     # Provider for slideshare.net
+    # http://www.slideshare.net/developers/oembed
     Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2")
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     
     # Provider for yfrog
+    # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
     Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     
@@ -214,6 +222,7 @@ module OEmbed
     PollEverywhere << "http://www.polleverywhere.com/free_text_polls/*"
 
     # Provider for my.opera.com
+    # http://my.opera.com/devblog/blog/2008/12/02/embedding-my-opera-content-oembed
     MyOpera = OEmbed::Provider.new("http://my.opera.com/service/oembed", :json)
     MyOpera << "http://my.opera.com/*"
 
