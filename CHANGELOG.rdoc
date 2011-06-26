@@ -2,9 +2,11 @@
 
 == 0.8.2 - Unreleased
 
+* Added built-in providers for Instagram, Slideshare and Yfrog
 * Improved support (and error detection) for custom OEmbed::Formatter backends. (Marcos Wright Kuhns)
 * DRYed up OEmbed::Formatter::JSON and XML methods into OEmbed::Formatter::Base (Marcos Wright Kuhns)
 * More consistently raise an OEmbed::Parse error if there is any sort of problem parsing the server response, whether it's an expected error type or not. (Marcos Wright Kuhns)
+* Added in-code comments about the oohEmbed service becoming part of Embed.ly
 
 == 0.8.1 - 27 February 2011
 
