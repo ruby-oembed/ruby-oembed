@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.2 - Unreleased
+== 0.8.2 - 25 June 2011
 
 * Added built-in providers for Instagram, Slideshare and Yfrog (Florian Günther)
 * Improved support (and error detection) for custom OEmbed::Formatter backends. (Marcos Wright Kuhns)
