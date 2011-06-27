@@ -1,4 +1,9 @@
-# A sample Gemfile
-source "http://rubygems.org"
-gem 'jeweler'
-gemspec
+source :rubygems
+
+group :development, :test do
+  gem 'jeweler'
+  gem 'rake'
+  gem 'json'
+  gem 'xml-simple'
+  gem 'rspec', '>=2.0'
+end
