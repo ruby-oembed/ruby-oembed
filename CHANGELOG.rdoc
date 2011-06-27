@@ -1,6 +1,10 @@
 = CHANGELOG
 
-== 0.8.2 - Unreleased
+== 0.8.3 - 26 June 2011
+
+* Fixing a circular dependency introduced during my recent Jeweler upgrade. (Marcos Wright Kuhns)
+
+== 0.8.2 - 25 June 2011
 
 * Added built-in providers for Instagram, Slideshare and Yfrog
 * Improved support (and error detection) for custom OEmbed::Formatter backends. (Marcos Wright Kuhns)
