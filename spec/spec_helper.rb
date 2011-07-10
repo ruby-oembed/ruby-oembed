@@ -45,7 +45,7 @@ module OEmbedSpecHelper
         "__id__" => 1234
       }
     when 'json'
-      <<-JSON
+      <<-JSON.strip
         {
           "type": "photo",
           "version": "1.0",
@@ -54,7 +54,7 @@ module OEmbedSpecHelper
         }
       JSON
     when 'xml'
-      <<-XML
+      <<-XML.strip
         <?xml version="1.0" encoding="utf-8" standalone="yes"?>
         <oembed>
         	<type>photo</type>

@@ -68,7 +68,7 @@ Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/judofy
   gem install bundler
   bundle install
   # Run the tests.
-  rake specs
+  bundle exec rake
 
 If you encounter any bug, feel free to {create an Issue}[https://github.com/judofyr/ruby-oembed/issues].
 
@@ -78,17 +78,7 @@ We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oemb
 
 = Contributors
 
-Thanks to the following people for their contributions to this gem, both large and small:
-
-* {Aris Bartee}[https://github.com/arisbartee]
-* {Todd Fisher}[https://github.com/taf2]
-* {Hans de Graff}[https://github.com/graaff]
-* {Magnus Holm}[https://github.com/judofyr] (original author of this library)
-* {Alex Kessinger}[https://github.com/voidfiles]
-* {Ryan Richards}[https://github.com/rrichards]
-* {Colin Shea}[https://github.com/evaryont]
-* {Kyle Slattery}[https://github.com/kyleslattery]
-* {Marcos Wright-Kuhns}[https://github.com/metavida] (current maintainer)
+Thanks to {all who have made contributions}[https://github.com/judofyr/ruby-oembed/contributors] to this gem, both large and small.
 
 = License
 

@@ -14,7 +14,7 @@ module OEmbed
             if !xml.respond_to?(:read)
               xml = StringIO.new(xml)
             end
-            ::XmlSimple.xml_in(xml, 'ForceArray'=>false)    
+            ::XmlSimple.xml_in(xml, 'ForceArray'=>false)
           rescue
             case $!
             when parse_error
