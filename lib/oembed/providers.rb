@@ -167,6 +167,11 @@ module OEmbed
     Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     
+    # provider for mlg-tv
+    # http://tv.majorleaguegaming.com/oembed
+    MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
+    MlgTv << "http://tv.majorleaguegaming.com/video/*"
+    MlgTv << "http://mlg.tv/video/*"
 
     # pownce.com closed in 2008
     #Pownce = OEmbed::Provider.new("http://api.pownce.com/2.1/oembed.{format}")
