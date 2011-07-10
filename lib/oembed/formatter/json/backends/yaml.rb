@@ -15,7 +15,7 @@ module OEmbed
               json = json.read
             end
             YAML.load(convert_json_to_yaml(json))
-          rescue ArgumentError
+          rescue ArgumentError, Psych::SyntaxError
             raise parse_error, "Invalid JSON string"
           end
           
