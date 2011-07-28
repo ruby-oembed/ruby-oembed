@@ -115,7 +115,7 @@ module OEmbed
     # Provider for youtube.com
     # http://apiblog.youtube.com/2009/10/oembed-support.html
     # To get the iframe embed code, instead of flash-based, pass
-    # :flash=>1 as a query in your get request.
+    # :iframe=>1 as a query in your get request.
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
