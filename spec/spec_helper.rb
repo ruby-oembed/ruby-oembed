@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'vcr'
 require File.dirname(__FILE__) + '/../lib/oembed'
 
 module OEmbedSpecHelper
