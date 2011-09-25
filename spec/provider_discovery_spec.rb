@@ -6,9 +6,15 @@ VCR.config do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.stub_with :fakeweb
 end
-VCR.insert_cassette('OEmbed_ProviderDiscovery')
 
 describe OEmbed::ProviderDiscovery do
+  before(:all) do
+    VCR.insert_cassette('OEmbed_ProviderDiscovery')
+  end
+  after(:all) do
+    VCR.eject_cassette
+  end
+  
   include OEmbedSpecHelper
   
   {
@@ -17,8 +23,21 @@ describe OEmbed::ProviderDiscovery do
       'http://www.youtube.com/oembed',
       :json,
     ],
-    #'noteflight' => 'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
-    #'wordpress' => 'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/',
+    'vimeo' => [
+      'http://vimeo.com/27953845',
+      {:json=>'http://vimeo.com/api/oembed.json',:xml=>'http://vimeo.com/api/oembed.xml'},
+      :json,
+    ],
+    #'noteflight' => [
+    #  'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
+    #  'http://www.noteflight.com/services/oembed',
+    #  :json,
+    #],
+    #'wordpress' => [
+    #  'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/',
+    #  'http://public-api.wordpress.com/oembed/1.0/',
+    #  :json,
+    #],
   }.each do |context, urls|
     
     given_url, expected_endpoint, expected_format = urls
@@ -40,9 +59,15 @@ describe OEmbed::ProviderDiscovery do
         end
 
         it "should detect the correct URL" do
-          @provider_default.endpoint.should eq(expected_endpoint)
-          @provider_json.endpoint.should eq(expected_endpoint)
-          @provider_xml.endpoint.should eq(expected_endpoint)
+          if expected_endpoint.is_a?(Hash)
+            @provider_json.endpoint.should eq(expected_endpoint[expected_format])
+            @provider_json.endpoint.should eq(expected_endpoint[:json])
+            @provider_xml.endpoint.should eq(expected_endpoint[:xml])
+          else
+            @provider_default.endpoint.should eq(expected_endpoint)
+            @provider_json.endpoint.should eq(expected_endpoint)
+            @provider_xml.endpoint.should eq(expected_endpoint)
+          end
         end
 
         it "should return the correct format" do
@@ -52,45 +77,40 @@ describe OEmbed::ProviderDiscovery do
         end
       end # discover_provider
 
-      #describe "get" do
-      #
-      #  before(:all) do
-      #    @response_default = OEmbed::ProviderDiscovery.get(given_url)
-      #    @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
-      #    @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
-      #  end
-      #
-      #  it "should return the correct Class" do
-      #    @response_default.should be_kind_of(OEmbed::Response)
-      #    @response_json.should be_kind_of(OEmbed::Response)
-      #    @response_xml.should be_kind_of(OEmbed::Response)
-      #  end
-      #
-      #  it "should return the correct format" do
-      #    @response_default.format.should eq(expected_format.to_s)
-      #    @response_json.format.should eq('json')
-      #    @response_xml.format.should eq('xml')
-      #  end
-      #
-      #  it "should return the correct data" do
-      #    @response_default.type.should_not be_nil
-      #    @response_json.type.should_not be_nil
-      #    @response_xml.type.should_not be_nil
-      #    
-      #    # Technically, the following values _could_ be blank, but for the 
-      #    # examples urls we're using we expect them not to be.
-      #    @response_default.title.should_not be_nil
-      #    @response_json.title.should_not be_nil
-      #    @response_xml.title.should_not be_nil
-      #  end
-      #end # get
+      describe "get" do
+      
+        before(:all) do
+          @response_default = OEmbed::ProviderDiscovery.get(given_url)
+          @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
+          @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
+        end
+      
+        it "should return the correct Class" do
+          @response_default.should be_kind_of(OEmbed::Response)
+          @response_json.should be_kind_of(OEmbed::Response)
+          @response_xml.should be_kind_of(OEmbed::Response)
+        end
+      
+        it "should return the correct format" do
+          @response_default.format.should eq(expected_format.to_s)
+          @response_json.format.should eq('json')
+          @response_xml.format.should eq('xml')
+        end
+      
+        it "should return the correct data" do
+          @response_default.type.should_not be_nil
+          @response_json.type.should_not be_nil
+          @response_xml.type.should_not be_nil
+          
+          # Technically, the following values _could_ be blank, but for the 
+          # examples urls we're using we expect them not to be.
+          @response_default.title.should_not be_nil
+          @response_json.title.should_not be_nil
+          @response_xml.title.should_not be_nil
+        end
+      end # get
     end
     
-  end
-  
-  #before(:all) do
-  #  @wordpress_url = 'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/'
-  #end
-  
+  end # each service
   
 end
