@@ -28,5 +28,16 @@ describe OEmbed::ProviderDiscovery do
       provider = OEmbed::ProviderDiscovery.discover_provider(@wordpress_url)
       provider.endpoint.should eq('http://public-api.wordpress.com/oembed/1.0/')
     end
+    
+    it "should return the first format it comes to" do
+      provider = OEmbed::ProviderDiscovery.discover_provider(@wordpress_url)
+      provider.format.should eq(:json)
+    end
+    
+    it "should return the format requested" do
+      provider = OEmbed::ProviderDiscovery.discover_provider(@wordpress_url, :format=>:xml)
+      provider.endpoint.should eq('http://public-api.wordpress.com/oembed/1.0/')
+      provider.format.should eq(:xml)
+    end
   end # discover_provider
 end
