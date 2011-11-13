@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.4 - Unreleased
+== 0.8.5 - 14 November 2011
 
 * Fixed problems ProviderDiscovery and some xml endpoints. Also added much better test coverage. (Marcos Wright Kuhns)
 * Added support for XML parsing using {Nokogiri}[http://nokogiri.org/] (Marcos Wright Kuhns)
