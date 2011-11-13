@@ -5,6 +5,8 @@
 * Fixed problems ProviderDiscovery and some xml endpoints. Also added much better test coverage. (Marcos Wright Kuhns)
 * Added support for XML parsing using {Nokogiri}[http://nokogiri.org/] (Marcos Wright Kuhns)
 * Added built-in providers for MLG.TV (Matt Wilson)
+* Added https support to the built-in YouTube provider (Marcos Wright Kuhns)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright Kuhns)
 
 == 0.8.3 - 26 June 2011
 

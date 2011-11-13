@@ -118,7 +118,9 @@ module OEmbed
     # :iframe=>1 as a query in your get request.
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
+    Youtube << "https://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
+    Youtube << "https://*.youtu.be/*"
 
     # Provider for flickr.com
     # http://developer.yahoo.com/blogs/ydn/posts/2008/05/oembed_embeddin/
