@@ -8,8 +8,9 @@ VCR.config do |c|
 end
 
 if ENV['NO_VCR']
-  puts 'Disabling VCR for these tests.'
-  VCR.turn_off!(:ignore_cassettes => true)
+  puts 'Ignoring the NO_VCR flag.'
+  #puts 'Disabling VCR for these tests.'
+  #VCR.turn_off!(:ignore_cassettes => true)
 else
   puts "Using VCR for these tests."
 end

@@ -36,7 +36,7 @@ module OEmbed
       case res
       when Net::HTTPNotFound
         raise OEmbed::NotFound, url
-      when Net::HTTPOK
+      when Net::HTTPSuccess
         format = options[:format]
 
         if format.nil? || format == :json
