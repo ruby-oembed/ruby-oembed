@@ -30,8 +30,6 @@ module OEmbed
       res = Net::HTTP.start(uri.host, uri.port) do |http|
         http.get(uri.request_uri)
       end
-      
-      puts res.inspect
 
       case res
       when Net::HTTPNotFound

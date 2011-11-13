@@ -140,7 +140,7 @@ module OEmbed
         raise OEmbed::UnknownFormat, format
       when Net::HTTPNotFound
         raise OEmbed::NotFound, url
-      when Net::HTTPOK
+      when Net::HTTPSuccess
         res.body
       else
         raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
