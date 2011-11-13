@@ -266,7 +266,8 @@ describe OEmbed::Provider do
 
     it "should raise error on all other responses" do
       Net::HTTPResponse::CODE_TO_OBJ.delete_if do |code, res|
-        ["200", "404", "501"].include?(code)
+        ("200".."299").include?(code) ||
+        ["404", "501"].include?(code)
       end.each do |code, res|
         r = res.new("1.1", code, "Message")
         Net::HTTP.stub!(:start).and_return(r)
