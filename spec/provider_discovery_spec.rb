@@ -7,6 +7,10 @@ VCR.config do |c|
   c.stub_with :fakeweb
 end
 
+if ENV['NO_VCR']
+  VCR.turn_off!(:ignore_cassettes => true)
+end
+
 describe OEmbed::ProviderDiscovery do
   before(:all) do
     VCR.insert_cassette('OEmbed_ProviderDiscovery')
