@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== 0.8.6 - Unreleased
+
+* Work on support for https provider endpoints; Issue #16
+
 == 0.8.5 - 14 November 2011
 
 * Fixed problems ProviderDiscovery and some xml endpoints. Also added much better test coverage. (Marcos Wright Kuhns)

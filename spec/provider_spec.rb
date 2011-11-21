@@ -1,6 +1,20 @@
 require File.dirname(__FILE__) + '/spec_helper'
+require 'vcr'
+
+VCR.config do |c|
+  c.default_cassette_options = { :record => :new_episodes }
+  c.cassette_library_dir = 'spec/cassettes'
+  c.stub_with :fakeweb
+end
 
 describe OEmbed::Provider do
+  before(:all) do
+    VCR.insert_cassette('OEmbed_Provider')
+  end
+  after(:all) do
+    VCR.eject_cassette
+  end
+  
   include OEmbedSpecHelper
 
   before(:all) do
@@ -244,6 +258,16 @@ describe OEmbed::Provider do
       Net::HTTP.stub!(:start).and_return(res)
 
       @flickr.send(:raw, example_url(:flickr)).should == "raw content"
+    end
+    
+    it "should return the body on 200 even over https" do
+      @vimeo_ssl = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
+      @vimeo_ssl << "http://*.vimeo.com/*"
+      @vimeo_ssl << "https://*.vimeo.com/*"
+
+      proc do
+        @vimeo_ssl.send(:raw, example_url(:vimeo_ssl)).should_not be_blank
+      end.should_not raise_error
     end
 
     it "should raise error on 501" do

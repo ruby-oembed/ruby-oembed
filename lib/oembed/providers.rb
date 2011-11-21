@@ -150,7 +150,7 @@ module OEmbed
     # http://vimeo.com/api/docs/oEmbed
     Vimeo = OEmbed::Provider.new("http://www.vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
-    Vimeo << "http://*.vimeo.com/groups/*/videos/*"
+    Vimeo << "https://*.vimeo.com/*"
     
     # Provider for instagram.com
     # http://instagr.am/developer/embedding/
