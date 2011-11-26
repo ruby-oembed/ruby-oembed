@@ -125,13 +125,20 @@ module OEmbed
       found = false
       max_redirects = 4
       until found
-        host, port = uri.host, uri.port if uri.host && uri.port
-        res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = uri.scheme == 'https'
+        http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+        
+        %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
+        res = http.request(Net::HTTP::Get.new(uri.to_s))
+        
+        #res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
+        
         res.header['location'] ? uri = URI.parse(res.header['location']) : found = true
         if max_redirects == 0
-            found = true
+          found = true
         else
-            max_redirects = max_redirects - 1
+          max_redirects -= 1
         end
       end
       
