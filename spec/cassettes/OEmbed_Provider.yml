@@ -42,6 +42,154 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/404
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 404
+      message: Not Found
+    headers:
+      date:
+      - Sat, 26 Nov 2011 01:53:45 GMT
+      p3p:
+      - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+      set-cookie:
+      - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
+        domain=.flickr.com
+      cache-control:
+      - private
+      x-served-by:
+      - www129.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-type:
+      - application/json
+      age:
+      - '0'
+      via:
+      - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
+        r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
+      server:
+      - YTS/1.20.9
+    body: ! ' '
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/405
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 405
+      message: Method Not Allowed
+    headers:
+      date:
+      - Sat, 26 Nov 2011 01:53:45 GMT
+      p3p:
+      - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+      set-cookie:
+      - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
+        domain=.flickr.com
+      cache-control:
+      - private
+      x-served-by:
+      - www129.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-type:
+      - application/json
+      age:
+      - '0'
+      via:
+      - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
+        r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
+      server:
+      - YTS/1.20.9
+    body: ! ' '
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/500
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 500
+      message: Internal Server Error
+    headers:
+      date:
+      - Sat, 26 Nov 2011 01:53:45 GMT
+      p3p:
+      - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+      set-cookie:
+      - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
+        domain=.flickr.com
+      cache-control:
+      - private
+      x-served-by:
+      - www129.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-type:
+      - application/json
+      age:
+      - '0'
+      via:
+      - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
+        r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
+      server:
+      - YTS/1.20.9
+    body: ! ' '
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/501
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 501
+      message: Not Implemented
+    headers:
+      date:
+      - Sat, 26 Nov 2011 01:53:45 GMT
+      p3p:
+      - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+      set-cookie:
+      - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
+        domain=.flickr.com
+      cache-control:
+      - private
+      x-served-by:
+      - www129.flickr.mud.yahoo.com
+      vary:
+      - Accept-Encoding
+      content-type:
+      - application/json
+      age:
+      - '0'
+      via:
+      - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
+        r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
+      server:
+      - YTS/1.20.9
+    body: ! ' '
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
     uri: https://vimeo.com:443/api/oembed.json?url=https://vimeo.com/31158841
     body: !!null 
     headers: !!null 

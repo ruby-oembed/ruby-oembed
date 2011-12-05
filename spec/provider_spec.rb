@@ -263,41 +263,42 @@ describe OEmbed::Provider do
       end.should_not raise_error
     end
 
-    it "should raise error on 501" do
-      pending("Either VCR or the inner changes to OEmbed::Provider broke these mocks") do
-      res = Net::HTTPNotImplemented.new("1.1", 501, "Not Implemented")
-      Net::HTTP.stub!(:start).and_return(res)
-
+    it "should raise an UnknownFormat error on 501" do
+      # Note: This test relies on a custom-written VCR response in the
+      # cassettes/OEmbed_Provider.yml file.
+      
       proc do
-        @flickr.send(:raw, example_url(:flickr))
+        @flickr.send(:raw, File.join(example_url(:flickr), '501'))
       end.should raise_error(OEmbed::UnknownFormat)
-      end
     end
 
-    it "should raise error on 404" do
-      pending("Either VCR or the inner changes to OEmbed::Provider broke these mocks") do
-      res = Net::HTTPNotFound.new("1.1", 404, "Not Found")
-      Net::HTTP.stub!(:start).and_return(res)
-
+    it "should raise a NotFound error on 404" do
+      # Note: This test relies on a custom-written VCR response in the
+      # cassettes/OEmbed_Provider.yml file.
+      
       proc do
-        @flickr.send(:raw, example_url(:flickr))
+        @flickr.send(:raw, File.join(example_url(:flickr), '404'))
       end.should raise_error(OEmbed::NotFound)
-      end
     end
 
-    it "should raise error on all other responses" do
-      pending("Either VCR or the inner changes to OEmbed::Provider broke these mocks") do
-      Net::HTTPResponse::CODE_TO_OBJ.delete_if do |code, res|
-        ("200".."299").include?(code) ||
-        ["404", "501"].include?(code)
-      end.each do |code, res|
-        r = res.new("1.1", code, "Message")
-        Net::HTTP.stub!(:start).and_return(r)
-
+    it "should raise an UnknownResponse error on other responses" do
+      # Note: This test relies on a custom-written VCR response in the
+      # cassettes/OEmbed_Provider.yml file.
+      
+      statuses_to_check = ['405', '500']
+      
+      statuses_to_check.each do |status|
         proc do
-          @flickr.send(:raw, example_url(:flickr))
-        end.should raise_error(OEmbed::UnknownResponse)
+          proc do
+            @flickr.send(:raw, File.join(example_url(:flickr), status))
+          end.should_not raise_error(OEmbed::NotFound)
+        end.should_not raise_error(OEmbed::UnknownResponse)
       end
+      
+      statuses_to_check.each do |status|
+        proc do
+          @flickr.send(:raw, File.join(example_url(:flickr), status))
+        end.should raise_error(OEmbed::UnknownResponse)
       end
     end
   end

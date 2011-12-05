@@ -2,7 +2,7 @@
 
 == 0.8.6 - Unreleased
 
-* Work on support for https provider endpoints; Issue #16
+* Support for https provider endpoints; Issue #16
 
 == 0.8.5 - 14 November 2011
 
