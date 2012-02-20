@@ -261,6 +261,10 @@ module OEmbed
     TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
     TwentyThree << "http://www.23hq.com/*"
     
+    # Provider for soundcloud.com
+    SoundCloud = OEmbed::Provider.new("http://soundcloud.com/oembed", :json)
+    SoundCloud << "http://*.soundcloud.com/*"
+
     # Provider for clikthrough.com
     #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
     #Clickthrough << "http://*.clikthrough.com/theater/video/*"
