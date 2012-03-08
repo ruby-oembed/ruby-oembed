@@ -191,12 +191,16 @@ describe OEmbed::Providers do
   end
 
   describe ".register_all" do
+    after(:each) do
+      OEmbed::Providers.send(:remove_const, :Fake) if defined?(OEmbed::Providers::Fake)
+    end
+    
     it "should not register a provider that is not marked as official" do
-      unless defined?(OEmbed::Providers::Fake)
-        class OEmbed::Providers
-          Fake = OEmbed::Provider.new("http://fa.ke/oembed/")
-          Fake << "http://fa.ke/*"
-        end
+      defined?(OEmbed::Providers::Fake).should_not be
+      
+      class OEmbed::Providers
+        Fake = OEmbed::Provider.new("http://fa.ke/oembed/")
+        Fake << "http://fa.ke/*"
       end
       
       OEmbed::Providers.register_all
@@ -208,12 +212,12 @@ describe OEmbed::Providers do
     
     describe 'add_official_provider' do
       it "should register a provider that is marked as official" do
-        unless defined?(OEmbed::Providers::Fake)
-          class OEmbed::Providers
-            Fake = OEmbed::Provider.new("http://fa.ke/oembed/")
-            Fake << "http://fa.ke/*"
-            add_official_provider(Fake)
-          end
+        defined?(OEmbed::Providers::Fake).should_not be
+        
+        class OEmbed::Providers
+          Fake = OEmbed::Provider.new("http://fa.ke/oembed/")
+          Fake << "http://fa.ke/*"
+          add_official_provider(Fake)
         end
 
         OEmbed::Providers.register_all
