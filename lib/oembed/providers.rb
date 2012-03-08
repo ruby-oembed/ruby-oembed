@@ -42,19 +42,13 @@ module OEmbed
       end
 
       # Register all Providers built into this gem.
-      # Available Options:
-      # * :agregators: If true, also register provider agregator endpoints like Embedly
-      def register_all(opts={})
-        to_register = [
-          Youtube, Flickr, Viddler, Qik, Revision3, Hulu, Vimeo,
-          Instagram, Slideshare, Yfrog, MlgTv, PollEverywhere,
-          MyOpera, ClearspringWidgets, NFBCanada, Scribd, MovieClips,
-          TwentyThree, SoundCloud
-        ]
-        to_register << Embedly if opts[:agregators]
-        
+      # The including_sub_type parameter should be one of the following values:
+      # * :aggregators: also register provider agregator endpoints, like Embedly
+      def register_all(*including_sub_type)
         register(*@@to_register[""])
-        register(*@@to_register["agregators"]) if opts[:agregators]
+        including_sub_type.each do |sub_type|
+          register(*@@to_register[sub_type.to_s])
+        end
       end
 
       # Unregister all currently-registered Provider instances.
@@ -117,14 +111,13 @@ module OEmbed
       private
       
       # Takes an OEmbed::Provider instance and registers it so that when we call
-      # the register_all method, they all register. The sub_type should be one
-      # of the following values:
+      # the register_all method, they all register. The sub_type can be be any value
+      # used to uniquely group providers. Official sub_types are:
       # * nil: a normal provider
-      # * :aggregator: an endpoint for an OEmbed aggregator
+      # * :aggregators: an endpoint for an OEmbed aggregator
       def add_official_provider(provider_class, sub_type=nil)
         raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
-        sub_type = nil unless %w{aggregator}.include?(sub_type)
         
         @@to_register[sub_type.to_s] ||= []
         @@to_register[sub_type.to_s] << provider_class
@@ -318,5 +311,6 @@ module OEmbed
     YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml")).each do |url|
       Embedly << url
     end
+    add_official_provider(Embedly, :aggregators)
   end
 end
