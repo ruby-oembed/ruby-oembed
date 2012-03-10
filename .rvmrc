@@ -1,1 +1,1 @@
-rvm default@oembed
+rvm --create use default@oembed
