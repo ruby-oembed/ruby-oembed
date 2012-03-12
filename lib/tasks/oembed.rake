@@ -1,4 +1,5 @@
 begin
+  require 'yaml'
   require 'json'
   require 'open-uri'
 

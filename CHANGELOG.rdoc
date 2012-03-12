@@ -1,16 +1,18 @@
 = CHANGELOG
 
-== 0.8.6 - Unreleased
+== 0.8.6 - 11 March 2012
 
 * Support for https provider endpoints; Issue #16 (Marcos Wright Kuhns)
 * OEmbed::Providers.register_all now actually registers all bundled providers; Issue #18 (Marcos Wright Kuhns)
-* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright Kuhns) 
+* Added built-in provider for SoundCloud (Hendrik Mans)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright Kuhns)
+* For developers who work on this gem, the rvmrc now automatically creates an oembed gemset; Issue #20 (Florian Staudacher)
 
 == 0.8.5 - 14 November 2011
 
 * Fixed problems ProviderDiscovery and some xml endpoints. Also added much better test coverage. (Marcos Wright Kuhns)
 * Added support for XML parsing using {Nokogiri}[http://nokogiri.org/] (Marcos Wright Kuhns)
-* Added built-in providers for MLG.TV (Matt Wilson)
+* Added built-in provider for MLG.TV (Matt Wilson)
 * Added https support to the built-in YouTube provider (Marcos Wright Kuhns)
 * Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright Kuhns)
 
