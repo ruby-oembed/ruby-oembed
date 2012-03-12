@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "ruby-oembed"
-  s.version = "0.8.5"
+  s.version = "0.8.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = "2011-11-15"
+  s.date = "2012-03-08"
   s.description = "An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
   s.email = "arisbartee@gmail.com"
   s.extra_rdoc_files = [
@@ -54,6 +54,7 @@ Gem::Specification.new do |s|
     "lib/tasks/oembed.rake",
     "lib/tasks/rspec.rake",
     "ruby-oembed.gemspec",
+    "spec/cassettes/OEmbed_Provider.yml",
     "spec/cassettes/OEmbed_ProviderDiscovery.yml",
     "spec/formatter/ducktype_backend_spec.rb",
     "spec/formatter/json/.DS_Store",
@@ -67,11 +68,12 @@ Gem::Specification.new do |s|
     "spec/provider_spec.rb",
     "spec/providers_spec.rb",
     "spec/response_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/spec_helper_examples.yml"
   ]
   s.homepage = "http://github.com/judofyr/ruby-oembed"
   s.licenses = ["MIT"]
-  s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-0.8.5", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
+  s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-0.8.6", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"
   s.summary = "oEmbed for Ruby"
