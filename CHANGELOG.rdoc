@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.6 - 11 March 2012
+== 0.8.7 - 11 March 2012
 
 * Support for https provider endpoints; Issue #16 (Marcos Wright Kuhns)
 * OEmbed::Providers.register_all now actually registers all bundled providers; Issue #18 (Marcos Wright Kuhns)
