@@ -43,7 +43,7 @@ module OEmbed
 
       # Register all Providers built into this gem.
       # The including_sub_type parameter should be one of the following values:
-      # * :aggregators: also register provider agregator endpoints, like Embedly
+      # * :aggregators: also register provider aggregator endpoints, like Embedly
       def register_all(*including_sub_type)
         register(*@@to_register[""])
         including_sub_type.each do |sub_type|
@@ -261,7 +261,7 @@ module OEmbed
     #Kinomap << "http://www.kinomap.com/*"
     #add_official_provider(Kinomap)
 
-    # Provider for oohembed.com, which is a provider agregator. See
+    # Provider for oohembed.com, which is a provider aggregator. See
     # OEmbed::Providers::OohEmbed.urls for a full list of supported url schemas.
     # Embed.ly has taken over the oohembed.com domain and as of July 20 all oohEmbed
     # request will require you use an API key. For details on the transition see
@@ -301,7 +301,7 @@ module OEmbed
     OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
     OohEmbed << "http://*.youtube.com/watch*"
 
-    # Provider for Embedly.com, which is a provider agregator. See
+    # Provider for Embedly.com, which is a provider aggregator. See
     # OEmbed::Providers::Embedly.urls for a full list of supported url schemas.
     # http://embed.ly/docs/endpoints/1/oembed
     # You'll need to add your Embed.ly API key to each request as the "key"
