@@ -250,6 +250,7 @@ module OEmbed
     add_official_provider(SoundCloud)
 
     # Provider for skitch.com
+    # http://skitch.com/oembed/%3C/endpoint
     Skitch = OEmbed::Provider.new("http://skitch.com/oembed")
     Skitch << "http://*.skitch.com/*"
     Skitch << "https://*.skitch.com/*"
