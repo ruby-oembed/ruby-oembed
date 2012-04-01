@@ -249,6 +249,12 @@ module OEmbed
     SoundCloud << "http://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
 
+    # Provider for skitch.com
+    Skitch = OEmbed::Provider.new("http://skitch.com/oembed")
+    Skitch << "http://*.skitch.com/*"
+    Skitch << "https://*.skitch.com/*"
+    add_official_provider(Skitch)
+
     ## Provider for clikthrough.com
     # http://corporate.clikthrough.com/wp/?p=275
     #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
