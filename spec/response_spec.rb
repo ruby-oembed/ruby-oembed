@@ -9,6 +9,10 @@ describe OEmbed::Response do
     flickr
   }
 
+  let(:skitch) {
+    OEmbed::Provider.new("https://skitch.com/oembed")
+  }
+
   let(:qik) {
     qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
     qik << "http://qik.com/video/*"
@@ -185,6 +189,20 @@ describe OEmbed::Response do
 
       local_res.version.should == local_res.field('version')
       local_res.version.should_not == String.new.version
+    end
+  end
+
+  describe "photo response" do
+    it "with title attribute" do
+      response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
+      response.html.should_not be_nil
+      response.html.should match(/alt='Bacon Lollys'/)
+    end
+
+    it "generate html without title attribute" do
+      response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
+      response.html.should_not be_nil
+      response.html.should match(/alt=''/)
     end
   end
 
