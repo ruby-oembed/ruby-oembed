@@ -3,22 +3,42 @@ require File.dirname(__FILE__) + '/spec_helper'
 describe OEmbed::Response do
   include OEmbedSpecHelper
 
+  let(:flickr) {
+    flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
+    flickr << "http://*.flickr.com/*"
+    flickr
+  }
+
+  let(:qik) {
+    qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
+    qik << "http://qik.com/video/*"
+    qik << "http://qik.com/*"
+    qik
+  }
+
+  let(:viddler) {
+    viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
+    viddler << "http://*.viddler.com/*"
+    viddler
+  }
+
+  let(:new_res) {
+    OEmbed::Response.new(valid_response(:object), OEmbed::Providers::OohEmbed)
+  }
+
+  let(:default_res) {
+    OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr), :json)
+  }
+
+  let(:xml_res) {
+    OEmbed::Response.create_for(valid_response(:xml), @qik, example_url(:qik), :xml)
+  }
+
+  let(:json_res) {
+    OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
+  }
+
   before(:all) do
-    @flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
-    @qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
-    @viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
-
-    @flickr << "http://*.flickr.com/*"
-    @qik << "http://qik.com/video/*"
-    @qik << "http://qik.com/*"
-    @viddler << "http://*.viddler.com/*"
-
-    @new_res = OEmbed::Response.new(valid_response(:object), OEmbed::Providers::OohEmbed)
-
-    @default_res = OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr), :json)
-    @xml_res = OEmbed::Response.create_for(valid_response(:xml), @qik, example_url(:qik), :xml)
-    @json_res = OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
-
     # These keys should be turned into helper methods
     @expected_helpers = {
       "type" => "random",
@@ -41,83 +61,83 @@ describe OEmbed::Response do
       # We need to compare keys & values separately because we don't expect all
       # non-string values to be recognized correctly.
 
-      @new_res.fields.keys.should == valid_response(:object).keys
-      @new_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      new_res.fields.keys.should == valid_response(:object).keys
+      new_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
 
-      @default_res.fields.keys.should == valid_response(:object).keys
-      @default_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      default_res.fields.keys.should == valid_response(:object).keys
+      default_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
 
-      @xml_res.fields.keys.should == valid_response(:object).keys
-      @xml_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      xml_res.fields.keys.should == valid_response(:object).keys
+      xml_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
 
-      @json_res.fields.keys.should == valid_response(:object).keys
-      @json_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      json_res.fields.keys.should == valid_response(:object).keys
+      json_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
     end
 
     it "should set the provider" do
-      @new_res.provider.should == OEmbed::Providers::OohEmbed
-      @default_res.provider.should == @flickr
-      @xml_res.provider.should == @qik
-      @json_res.provider.should == @viddler
+      new_res.provider.should == OEmbed::Providers::OohEmbed
+      default_res.provider.should == @flickr
+      xml_res.provider.should == @qik
+      json_res.provider.should == @viddler
     end
 
     it "should set the format" do
-      @new_res.format.should be_nil
-      @default_res.format.to_s.should == 'json'
-      @xml_res.format.to_s.should == 'xml'
-      @json_res.format.to_s.should == 'json'
+      new_res.format.should be_nil
+      default_res.format.to_s.should == 'json'
+      xml_res.format.to_s.should == 'xml'
+      json_res.format.to_s.should == 'json'
     end
 
     it "should set the request_url" do
-      @new_res.request_url.should be_nil
-      @default_res.request_url.to_s.should == example_url(:flickr)
-      @xml_res.request_url.to_s.should == example_url(:qik)
-      @json_res.request_url.to_s.should == example_url(:viddler)
+      new_res.request_url.should be_nil
+      default_res.request_url.to_s.should == example_url(:flickr)
+      xml_res.request_url.to_s.should == example_url(:qik)
+      json_res.request_url.to_s.should == example_url(:viddler)
     end
   end
 
   describe "create_for" do
     it "should only allow JSON or XML" do
       lambda do
-        OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr), :json)
+        OEmbed::Response.create_for(valid_response(:json), flickr, example_url(:flickr), :json)
       end.should_not raise_error(OEmbed::FormatNotSupported)
 
       lambda do
-        OEmbed::Response.create_for(valid_response(:xml), @flickr, example_url(:flickr), :xml)
+        OEmbed::Response.create_for(valid_response(:xml), flickr, example_url(:flickr), :xml)
       end.should_not raise_error(OEmbed::FormatNotSupported)
 
       lambda do
-        OEmbed::Response.create_for(valid_response(:yml), @flickr, example_url(:flickr), :yml)
+        OEmbed::Response.create_for(valid_response(:yml), flickr, example_url(:flickr), :yml)
       end.should raise_error(OEmbed::FormatNotSupported)
     end
 
     it "should not parse the incorrect format" do
       lambda do
-        OEmbed::Response.create_for(valid_response(:object), example_url(:flickr), @flickr, :json)
+        OEmbed::Response.create_for(valid_response(:object), example_url(:flickr), flickr, :json)
       end.should raise_error(OEmbed::ParseError)
 
       lambda do
-        OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), @viddler, :json)
+        OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), viddler, :json)
       end.should raise_error(OEmbed::ParseError)
 
       lambda do
-        OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), @viddler, :xml)
+        OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), viddler, :xml)
       end.should raise_error(OEmbed::ParseError)
     end
   end
 
   it "should access the XML data through #field" do
-    @xml_res.field(:type).should == "photo"
-    @xml_res.field(:version).should == "1.0"
-    @xml_res.field(:fields).should == "hello"
-    @xml_res.field(:__id__).should == "1234"
+    xml_res.field(:type).should == "photo"
+    xml_res.field(:version).should == "1.0"
+    xml_res.field(:fields).should == "hello"
+    xml_res.field(:__id__).should == "1234"
   end
 
   it "should access the JSON data through #field" do
-    @json_res.field(:type).should == "photo"
-    @json_res.field(:version).should == "1.0"
-    @json_res.field(:fields).should == "hello"
-    @json_res.field(:__id__).should == "1234"
+    json_res.field(:type).should == "photo"
+    json_res.field(:version).should == "1.0"
+    json_res.field(:fields).should == "hello"
+    json_res.field(:__id__).should == "1234"
   end
 
   describe "#define_methods!" do
