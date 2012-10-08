@@ -1,3 +1,4 @@
+require 'cgi'
 module OEmbed
   # An OEmbed::Provider has information about an individual oEmbed enpoint.
   class Provider
@@ -94,7 +95,7 @@ module OEmbed
     def build(url, query = {})
       raise OEmbed::NotFound, url unless include?(url)
 
-      query = query.merge({:url=>url})
+      query = query.merge({:url => ::CGI.escape(url)})
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
       
