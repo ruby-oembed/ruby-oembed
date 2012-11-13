@@ -168,7 +168,7 @@ describe OEmbed::Provider do
     provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
     provider << 'http://*.youtube.com/*'
     provider.include?('http://youtube.com/watch?v=M3r2XDceM6A').should be_true
-    provider.build('http://youtube.com/watch?v=M3r2XDceM6A').to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http://youtube.com/watch?v=M3r2XDceM6A'
+    provider.build('http://youtube.com/watch?v=M3r2XDceM6A').to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http%3A%2F%2Fyoutube.com%2Fwatch%3Fv%3DM3r2XDceM6A'
   end
 
   it "should by default use OEmbed::Formatter.default" do
