@@ -3,7 +3,6 @@
 == 0.8.8 - Unreleased
 
 * OEmbed::Response::Photo#html now includes alt attribute (François de Metz)
-** TODO: make sure the above change doesn't cause problems if no title is returned in the oEmbed response.
 * Always escape the url query param when requesting a resource from a provider; Pull #26 (Michael Cohen)
 * Allow query params in a provider endpoint URL; Pull #27 (Michael Andrews)
 * Added built-in provider for Skitch (François de Metz)

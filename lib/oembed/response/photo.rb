@@ -4,7 +4,7 @@ module OEmbed
     class Photo < self
       # Returns an <img> tag pointing at the appropraite URL.
       def html
-        "<img src='#{self.url}' alt='#{self.title}' />"
+        "<img src='#{self.url}' alt='#{(self.respond_to?(:title) ? self.title : nil)}' />"
       end
       
       private
