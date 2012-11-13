@@ -164,13 +164,6 @@ describe OEmbed::Provider do
     provier.include?("gopher://foo.com/1").should be_false
   end
 
-  it 'should allow a query parameters in URI schema' do
-    provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
-    provider << 'http://*.youtube.com/*'
-    provider.include?('http://youtube.com/watch?v=M3r2XDceM6A').should be_true
-    provider.build('http://youtube.com/watch?v=M3r2XDceM6A').to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http%3A%2F%2Fyoutube.com%2Fwatch%3Fv%3DM3r2XDceM6A'
-  end
-
   it "should by default use OEmbed::Formatter.default" do
     @flickr.format.should == @default
   end
@@ -251,6 +244,14 @@ describe OEmbed::Provider do
     it "should build correctly when format is in the endpoint URL" do
       uri = @qik.send(:build, example_url(:qik), :format => :json)
       uri.path.should == "/api/oembed.json"
+    end
+    
+    it "should build correctly with query parameters in the endpoint URL" do
+      provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
+      provider << 'http://*.youtube.com/*'
+      url = 'http://youtube.com/watch?v=M3r2XDceM6A'
+      provider.include?(url).should be_true
+      provider.send(:build, url).to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http%3A%2F%2Fyoutube.com%2Fwatch%3Fv%3DM3r2XDceM6A'
     end
   end
 
