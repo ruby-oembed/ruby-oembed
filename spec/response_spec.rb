@@ -42,23 +42,27 @@ describe OEmbed::Response do
     OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
   }
 
-  before(:all) do
-    # These keys should be turned into helper methods
-    @expected_helpers = {
+  let(:expected_helpers) {
+    {
       "type" => "random",
       "version" => "1.0",
       "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
       "url" => "http://foo.com/bar",
     }
-    # These keys should already be defined 
-    @expected_skipped = {
+  }
+  
+  let(:expected_skipped) {
+    {
       "fields" => "hello",
       "__id__" => 1234,
       "provider" => "oohEmbed",
       "to_s" => "random string",
     }
-    @all_expected = @expected_helpers.merge(@expected_skipped)
-  end
+  }
+  
+  let(:all_expected) {
+    expected_helpers.merge(expected_skipped)
+  }
 
   describe "#initialize" do
     it "should parse the data into fields" do
@@ -146,15 +150,15 @@ describe OEmbed::Response do
 
   describe "#define_methods!" do
     it "should automagically define helpers" do
-      local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
-      @all_expected.each do |method, value|
+      all_expected.each do |method, value|
         local_res.should respond_to(method)
       end
-      @expected_helpers.each do |method, value|
+      expected_helpers.each do |method, value|
         local_res.send(method).should == value
       end
-      @expected_skipped.each do |method, value|
+      expected_skipped.each do |method, value|
         local_res.send(method).should_not == value
       end
     end
@@ -163,10 +167,10 @@ describe OEmbed::Response do
       Object.new.should respond_to('__id__')
       Object.new.should respond_to('to_s')
 
-      @all_expected.keys.should include('__id__')
-      @all_expected.keys.should include('to_s')
+      all_expected.keys.should include('__id__')
+      all_expected.keys.should include('to_s')
 
-      local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       local_res.__id__.should_not == local_res.field('__id__')
       local_res.to_s.should_not == local_res.field('to_s')
@@ -182,10 +186,10 @@ describe OEmbed::Response do
       Object.new.should respond_to('version')
       String.new.should respond_to('version')
 
-      @all_expected.keys.should include('version')
-      @all_expected['version'].should_not == String.new.version
+      all_expected.keys.should include('version')
+      all_expected['version'].should_not == String.new.version
 
-      local_res = OEmbed::Response.new(@all_expected, OEmbed::Providers::OohEmbed)
+      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       local_res.version.should == local_res.field('version')
       local_res.version.should_not == String.new.version
