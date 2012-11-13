@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -42,7 +42,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/404
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F404
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -79,7 +79,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/405
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F405
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -116,7 +116,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/500
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F500
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -153,7 +153,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/501
+    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F501
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -190,7 +190,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: https://vimeo.com:443/api/oembed.json?url=https://vimeo.com/31158841
+    uri: https://vimeo.com:443/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F31158841
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
