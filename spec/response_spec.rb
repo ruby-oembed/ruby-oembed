@@ -196,17 +196,24 @@ describe OEmbed::Response do
     end
   end
 
-  describe "photo response" do
-    it "with title attribute" do
-      response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
-      response.html.should_not be_nil
-      response.html.should match(/alt='Bacon Lollys'/)
-    end
+  describe "OEmbed::Response::Photo" do
+    describe "#html" do
+      it "should include the title, if given" do
+        response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
+        response.should respond_to(:title)
+        response.title.should_not be_empty
+        
+        response.html.should_not be_nil
+        response.html.should match(/alt='#{response.title}'/)
+      end
 
-    it "generate html without title attribute" do
-      response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
-      response.html.should_not be_nil
-      response.html.should match(/alt=''/)
+      it "should work just fine, without a title" do
+        response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
+        response.should_not respond_to(:title)
+        
+        response.html.should_not be_nil
+        response.html.should match(/alt=''/)
+      end
     end
   end
 
