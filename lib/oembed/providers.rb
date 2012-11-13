@@ -128,8 +128,14 @@ module OEmbed
     
     # Provider for youtube.com
     # http://apiblog.youtube.com/2009/10/oembed-support.html
-    # To get the iframe embed code, instead of flash-based, pass
-    # :iframe=>1 as a query in your get request.
+    #
+    # Options:
+    # * To get the iframe embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?iframe=1"
+    # * To get the flash/object embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?iframe=0"
+    # * To require https embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?scheme=https"
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
     Youtube << "https://*.youtube.com/*"
@@ -304,8 +310,11 @@ module OEmbed
     # Provider for Embedly.com, which is a provider agregator. See
     # OEmbed::Providers::Embedly.urls for a full list of supported url schemas.
     # http://embed.ly/docs/endpoints/1/oembed
-    # You'll need to add your Embed.ly API key to each request as the "key"
-    # parameter. To get an API key you'll need to sign up here: http://embed.ly/pricing
+    #
+    # You can append your Embed.ly API key to the provider so that all requests are signed
+    #     OEmbed::Providers::Embedly.endpoint += "?key=#{my_embedly_key}"
+    # 
+    # If you don't yet have an API key you'll need to sign up here: http://embed.ly/pricing
     Embedly = OEmbed::Provider.new("http://api.embed.ly/1/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
     YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml")).each do |url|
