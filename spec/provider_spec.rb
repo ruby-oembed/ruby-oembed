@@ -164,6 +164,13 @@ describe OEmbed::Provider do
     provier.include?("gopher://foo.com/1").should be_false
   end
 
+  it 'should allow a query parameters in URI schema' do
+    provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
+    provider << 'http://*.youtube.com/*'
+    provider.include?('http://youtube.com/watch?v=M3r2XDceM6A').should be_true
+    provider.build('http://youtube.com/watch?v=M3r2XDceM6A').to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http://youtube.com/watch?v=M3r2XDceM6A'
+  end
+
   it "should by default use OEmbed::Formatter.default" do
     @flickr.format.should == @default
   end

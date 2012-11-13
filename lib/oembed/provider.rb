@@ -105,7 +105,8 @@ module OEmbed
         query.delete(:format)
       end
 
-      query = "?" + query.inject("") do |memo, (key, value)|
+      base = endpoint.include?('?') ? '&' : '?'
+      query = base + query.inject("") do |memo, (key, value)|
         "#{key}=#{value}&#{memo}"
       end.chop
 
