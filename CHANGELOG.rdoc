@@ -5,6 +5,7 @@
 * OEmbed::Response::Photo#html now includes alt attribute (François de Metz)
 ** TODO: make sure the above change doesn't cause problems if no title is returned in the oEmbed response.
 * Added built-in provider for Skitch (François de Metz)
+* Updated built-in Vimeo provider (Marcos Wright Kuhns)
 
 == 0.8.7 - 11 March 2012
 
