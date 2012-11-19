@@ -1,11 +1,11 @@
 = CHANGELOG
 
-== 0.8.8 - Unreleased
+== 0.8.8 - 18 November 2012
 
-* OEmbed::Response::Photo#html now includes alt attribute (François de Metz)
+* OEmbed::Response::Photo#html now includes alt attribute; Pull #23 & #25 (François de Metz)
 * Always escape the url query param when requesting a resource from a provider; Pull #26 (Michael Cohen)
 * Allow query params in a provider endpoint URL; Pull #27 (Michael Andrews)
-* Added built-in provider for Skitch (François de Metz)
+* Added built-in provider for Skitch; Pull #24 (François de Metz)
 * Updated built-in Vimeo provider (Marcos Wright Kuhns)
 * For developers who work on this gem, removed the dependency on jeweler (Marcos Wright Kuhns)
 
