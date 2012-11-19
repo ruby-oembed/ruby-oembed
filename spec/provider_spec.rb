@@ -251,7 +251,10 @@ describe OEmbed::Provider do
       provider << 'http://*.youtube.com/*'
       url = 'http://youtube.com/watch?v=M3r2XDceM6A'
       provider.include?(url).should be_true
-      provider.send(:build, url).to_s.should == 'http://www.youtube.com/oembed?scheme=https&format=json&url=http%3A%2F%2Fyoutube.com%2Fwatch%3Fv%3DM3r2XDceM6A'
+      
+      uri = provider.send(:build, url)
+      uri.query.include?("scheme=https").should be_true
+      uri.query.include?("url=#{CGI.escape url}").should be_true
     end
   end
 
