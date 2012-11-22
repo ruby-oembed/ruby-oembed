@@ -45,9 +45,12 @@ module OEmbed
       # The including_sub_type parameter should be one of the following values:
       # * :aggregators: also register provider aggregator endpoints, like Embedly
       def register_all(*including_sub_type)
-        register(*@@to_register[""])
-        including_sub_type.each do |sub_type|
-          register(*@@to_register[sub_type.to_s])
+        if including_sub_type.any?
+          including_sub_type.each do |sub_type|
+            register(*@@to_register[sub_type.to_s])
+          end
+        else
+          register(*@@to_register[""])
         end
       end
 

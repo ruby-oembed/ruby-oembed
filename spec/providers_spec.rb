@@ -253,6 +253,34 @@ describe OEmbed::Providers do
           provider.should be_a(OEmbed::Provider)
         end
       end
+
+      it "should only register either default provider or sub_type providers but not both" do
+        defined?(OEmbed::Providers::Fake).should_not be
+
+        class OEmbed::Providers
+          Default = OEmbed::Provider.new("http://default.com/oembed/")
+          Default << "http://default.com/*"
+          add_official_provider(Default)
+
+          SubType = OEmbed::Provider.new("http://subtype.net/oembed/")
+          SubType << "http://subtype.net/*"
+          add_official_provider(SubType, :subtype)
+        end
+
+        OEmbed::Providers.register_all
+        ["http://subtype.net/123"].each do |url|
+          provider = OEmbed::Providers.find(url)
+          provider.should_not be_a(OEmbed::Provider)
+        end
+
+        OEmbed::Providers.unregister_all
+
+        OEmbed::Providers.register_all(:subtype)
+        ["http://default.com/123"].each do |url|
+          provider = OEmbed::Providers.find(url)
+          provider.should_not be_a(OEmbed::Provider)
+        end
+      end
     end
   end
 end
