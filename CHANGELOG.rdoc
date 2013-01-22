@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.7 - Unreleased
+== 0.8.9 - Unreleased
 
 * SoundCloud provider supports https URLs; Pull #30 (Greg Tangey)
 
