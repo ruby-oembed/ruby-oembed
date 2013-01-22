@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== 0.8.7 - Unreleased
+
+* SoundCloud provider supports https URLs; Pull #30 (Greg Tangey)
+
 == 0.8.8 - 18 November 2012
 
 * OEmbed::Response::Photo#html now includes alt attribute; Pull #23 & #25 (François de Metz)
