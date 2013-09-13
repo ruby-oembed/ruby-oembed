@@ -108,11 +108,11 @@ describe OEmbed::Response do
     it "should only allow JSON or XML" do
       lambda do
         OEmbed::Response.create_for(valid_response(:json), flickr, example_url(:flickr), :json)
-      end.should_not raise_error(OEmbed::FormatNotSupported)
+      end.should_not raise_error
 
       lambda do
         OEmbed::Response.create_for(valid_response(:xml), flickr, example_url(:flickr), :xml)
-      end.should_not raise_error(OEmbed::FormatNotSupported)
+      end.should_not raise_error
 
       lambda do
         OEmbed::Response.create_for(valid_response(:yml), flickr, example_url(:flickr), :yml)

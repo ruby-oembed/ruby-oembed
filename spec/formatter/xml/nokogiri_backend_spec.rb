@@ -17,7 +17,7 @@ describe "OEmbed::Formatter::XML::Backends::Nokogiri" do
 
   it "should support XML" do
     proc { OEmbed::Formatter.supported?(:xml) }.
-    should_not raise_error(OEmbed::FormatNotSupported)
+    should_not raise_error
   end
   
   it "should be using the Nokogiri backend" do
