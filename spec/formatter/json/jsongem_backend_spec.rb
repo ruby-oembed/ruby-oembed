@@ -17,7 +17,7 @@ describe "OEmbed::Formatter::JSON::Backends::JSONGem" do
 
   it "should support JSON" do
     proc { OEmbed::Formatter.supported?(:json) }.
-    should_not raise_error(OEmbed::FormatNotSupported)
+    should_not raise_error
   end
   
   it "should be using the JSONGem backend" do

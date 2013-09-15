@@ -14,7 +14,7 @@ describe OEmbed::Provider do
   after(:all) do
     VCR.eject_cassette
   end
-  
+
   include OEmbedSpecHelper
 
   before(:all) do
@@ -31,17 +31,17 @@ describe OEmbed::Provider do
 
   it "should require a valid endpoint for a new instance" do
     proc { OEmbed::Provider.new("http://foo.com/oembed/") }.
-    should_not raise_error(ArgumentError)
-    
+    should_not raise_error
+
     proc { OEmbed::Provider.new("https://foo.com/oembed/") }.
-    should_not raise_error(ArgumentError)
+    should_not raise_error
   end
-  
+
   it "should allow a {format} string in the endpoint for a new instance" do
     proc { OEmbed::Provider.new("http://foo.com/oembed.{format}/get") }.
-    should_not raise_error(ArgumentError)
+    should_not raise_error
   end
-  
+
   it "should raise an ArgumentError given an invalid endpoint for a new instance" do
     [
       "httpx://foo.com/oembed/",
@@ -57,7 +57,7 @@ describe OEmbed::Provider do
 
   it "should allow no URI schema to be given" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
-    
+
     provier.include?("http://foo.com/1").should be_true
     provier.include?("http://bar.foo.com/1").should be_true
     provier.include?("http://bar.foo.com/show/1").should be_true
@@ -69,82 +69,82 @@ describe OEmbed::Provider do
   it "should allow a String as a URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://bar.foo.com/*"
-    
+
     provier.include?("http://bar.foo.com/1").should be_true
     provier.include?("http://bar.foo.com/show/1").should be_true
-    
+
     provier.include?("https://bar.foo.com/1").should be_false
     provier.include?("http://foo.com/1").should be_false
   end
-  
+
   it "should allow multiple path wildcards in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://bar.foo.com/*/show/*"
-    
+
     provier.include?("http://bar.foo.com/photo/show/1").should be_true
     provier.include?("http://bar.foo.com/video/show/2").should be_true
     provier.include?("http://bar.foo.com/help/video/show/2").should be_true
-    
+
     provier.include?("https://bar.foo.com/photo/show/1").should be_false
     provier.include?("http://foo.com/video/show/2").should be_false
     provier.include?("http://bar.foo.com/show/1").should be_false
     provier.include?("http://bar.foo.com/1").should be_false
   end
-  
+
   it "should NOT allow multiple domain wildcards in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
-    
+
     pending("We don't yet validate URL schema strings") do
       proc { provier << "http://*.com/*" }.
       should raise_error(ArgumentError)
     end
-    
+
     provier.include?("http://foo.com/1").should be_false
   end
-  
+
   it "should allow a sub-domain wildcard in String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://*.foo.com/*"
-    
+
     provier.include?("http://bar.foo.com/1").should be_true
     provier.include?("http://foo.foo.com/2").should be_true
     provier.include?("http://foo.com/3").should be_true
-    
+
     provier.include?("https://bar.foo.com/1").should be_false
     provier.include?("http://my.bar.foo.com/1").should be_false
-    
+
     provier << "http://my.*.foo.com/*"
   end
-  
+
   it "should allow multiple sub-domain wildcards in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://*.my.*.foo.com/*"
-    
+
     provier.include?("http://my.bar.foo.com/1").should be_true
     provier.include?("http://my.foo.com/2").should be_true
     provier.include?("http://bar.my.bar.foo.com/3").should be_true
-    
+
     provier.include?("http://bar.foo.com/1").should be_false
     provier.include?("http://foo.bar.foo.com/1").should be_false
   end
-  
+
   it "should NOT allow a scheme wildcard in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
-    
+
     pending("We don't yet validate URL schema strings") do
       proc { provier << "*://foo.com/*" }.
       should raise_error(ArgumentError)
     end
-    
+
     provier.include?("http://foo.com/1").should be_false
   end
 
   it "should allow a scheme other than http in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "https://foo.com/*"
-    
+
     provier.include?("https://foo.com/1").should be_true
-    
+
     gopher_url = "gopher://foo.com/1"
     provier.include?(gopher_url).should be_false
     provier << "gopher://foo.com/*"
@@ -154,12 +154,12 @@ describe OEmbed::Provider do
   it "should allow a Regexp as a URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
-    
+
     provier.include?("http://bar.foo.com/1").should be_true
     provier.include?("http://bar.foo.com/show/1").should be_true
     provier.include?("http://foo.com/1").should be_true
     provier.include?("https://bar.foo.com/1").should be_true
-    
+
     provier.include?("http://bar.foo.com/video/1").should be_false
     provier.include?("gopher://foo.com/1").should be_false
   end
@@ -183,16 +183,16 @@ describe OEmbed::Provider do
     }.
     should_not raise_error
   end
-  
+
   it "should not allow random formats to be parsed" do
     yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
     yaml_provider << "http://foo.com/*"
     yaml_url = "http://foo.com/video/1"
-    
+
     yaml_provider.should_receive(:raw).
       with(yaml_url, {:format=>:yml}).
       and_return(valid_response(:json))
-    
+
     proc { yaml_provider.get(yaml_url) }.
     should raise_error(OEmbed::FormatNotSupported)
   end
@@ -245,13 +245,13 @@ describe OEmbed::Provider do
       uri = @qik.send(:build, example_url(:qik), :format => :json)
       uri.path.should == "/api/oembed.json"
     end
-    
+
     it "should build correctly with query parameters in the endpoint URL" do
       provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
       provider << 'http://*.youtube.com/*'
       url = 'http://youtube.com/watch?v=M3r2XDceM6A'
       provider.include?(url).should be_true
-      
+
       uri = provider.send(:build, url)
       uri.query.include?("scheme=https").should be_true
       uri.query.include?("url=#{CGI.escape url}").should be_true
@@ -263,53 +263,45 @@ describe OEmbed::Provider do
       res = @flickr.send(:raw, example_url(:flickr))
       res.should == example_body(:flickr)
     end
-    
+
     it "should return the body on 200 even over https" do
       @vimeo_ssl = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
       @vimeo_ssl << "http://*.vimeo.com/*"
       @vimeo_ssl << "https://*.vimeo.com/*"
 
-      proc do
+      expect {
         @vimeo_ssl.send(:raw, example_url(:vimeo_ssl)).should == example_body(:vimeo_ssl)
-      end.should_not raise_error
+      }.not_to raise_error
     end
 
     it "should raise an UnknownFormat error on 501" do
       # Note: This test relies on a custom-written VCR response in the
       # cassettes/OEmbed_Provider.yml file.
-      
-      proc do
+
+      expect {
         @flickr.send(:raw, File.join(example_url(:flickr), '501'))
-      end.should raise_error(OEmbed::UnknownFormat)
+      }.to raise_error(OEmbed::UnknownFormat)
     end
 
     it "should raise a NotFound error on 404" do
       # Note: This test relies on a custom-written VCR response in the
       # cassettes/OEmbed_Provider.yml file.
-      
-      proc do
+
+      expect {
         @flickr.send(:raw, File.join(example_url(:flickr), '404'))
-      end.should raise_error(OEmbed::NotFound)
+      }.to raise_error(OEmbed::NotFound)
     end
 
     it "should raise an UnknownResponse error on other responses" do
       # Note: This test relies on a custom-written VCR response in the
       # cassettes/OEmbed_Provider.yml file.
-      
+
       statuses_to_check = ['405', '500']
-      
+
       statuses_to_check.each do |status|
-        proc do
-          proc do
-            @flickr.send(:raw, File.join(example_url(:flickr), status))
-          end.should_not raise_error(OEmbed::NotFound)
-        end.should_not raise_error(OEmbed::UnknownResponse)
-      end
-      
-      statuses_to_check.each do |status|
-        proc do
+        expect {
           @flickr.send(:raw, File.join(example_url(:flickr), status))
-        end.should raise_error(OEmbed::UnknownResponse)
+        }.to raise_error(OEmbed::UnknownResponse)
       end
     end
   end
@@ -326,31 +318,31 @@ describe OEmbed::Provider do
         and_return(valid_response(:xml))
       @flickr.get(example_url(:flickr), :format=>:xml)
 
-      lambda do
+      expect {
         @flickr.should_receive(:raw).
           with(example_url(:flickr), {:format=>:yml}).
           and_return(valid_response(:json))
         @flickr.get(example_url(:flickr), :format=>:yml)
-      end.should raise_error(OEmbed::FormatNotSupported)
+      }.to raise_error(OEmbed::FormatNotSupported)
     end
-    
+
     it "should return OEmbed::Response" do
-      @flickr.stub!(:raw).and_return(valid_response(@default))
+      @flickr.stub(:raw).and_return(valid_response(@default))
       @flickr.get(example_url(:flickr)).should be_a(OEmbed::Response)
     end
 
     it "should be calling OEmbed::Response#create_for internally" do
-      @flickr.stub!(:raw).and_return(valid_response(@default))
+      @flickr.stub(:raw).and_return(valid_response(@default))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(@default), @flickr, example_url(:flickr), @default.to_s)
       @flickr.get(example_url(:flickr))
 
-      @qik.stub!(:raw).and_return(valid_response(:xml))
+      @qik.stub(:raw).and_return(valid_response(:xml))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(:xml), @qik, example_url(:qik), 'xml')
       @qik.get(example_url(:qik))
 
-      @viddler.stub!(:raw).and_return(valid_response(:json))
+      @viddler.stub(:raw).and_return(valid_response(:json))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(:json), @viddler, example_url(:viddler), 'json')
       @viddler.get(example_url(:viddler))

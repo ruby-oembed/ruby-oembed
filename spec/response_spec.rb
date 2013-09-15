@@ -50,7 +50,7 @@ describe OEmbed::Response do
       "url" => "http://foo.com/bar",
     }
   }
-  
+
   let(:expected_skipped) {
     {
       "fields" => "hello",
@@ -59,7 +59,7 @@ describe OEmbed::Response do
       "to_s" => "random string",
     }
   }
-  
+
   let(:all_expected) {
     expected_helpers.merge(expected_skipped)
   }
@@ -106,31 +106,31 @@ describe OEmbed::Response do
 
   describe "create_for" do
     it "should only allow JSON or XML" do
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:json), flickr, example_url(:flickr), :json)
-      end.should_not raise_error(OEmbed::FormatNotSupported)
+      }.not_to raise_error
 
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:xml), flickr, example_url(:flickr), :xml)
-      end.should_not raise_error(OEmbed::FormatNotSupported)
+      }.not_to raise_error
 
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:yml), flickr, example_url(:flickr), :yml)
-      end.should raise_error(OEmbed::FormatNotSupported)
+      }.to raise_error(OEmbed::FormatNotSupported)
     end
 
     it "should not parse the incorrect format" do
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:object), example_url(:flickr), flickr, :json)
-      end.should raise_error(OEmbed::ParseError)
+      }.to raise_error(OEmbed::ParseError)
 
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), viddler, :json)
-      end.should raise_error(OEmbed::ParseError)
+      }.to raise_error(OEmbed::ParseError)
 
-      lambda do
+      expect {
         OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), viddler, :xml)
-      end.should raise_error(OEmbed::ParseError)
+      }.to raise_error(OEmbed::ParseError)
     end
   end
 
@@ -202,7 +202,7 @@ describe OEmbed::Response do
         response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
         response.should respond_to(:title)
         response.title.should_not be_empty
-        
+
         response.html.should_not be_nil
         response.html.should match(/alt='#{response.title}'/)
       end
@@ -210,7 +210,7 @@ describe OEmbed::Response do
       it "should work just fine, without a title" do
         response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
         response.should_not respond_to(:title)
-        
+
         response.html.should_not be_nil
         response.html.should match(/alt=''/)
       end
