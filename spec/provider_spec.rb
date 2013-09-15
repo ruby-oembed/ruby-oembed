@@ -269,27 +269,27 @@ describe OEmbed::Provider do
       @vimeo_ssl << "http://*.vimeo.com/*"
       @vimeo_ssl << "https://*.vimeo.com/*"
 
-      expect do
+      expect {
         @vimeo_ssl.send(:raw, example_url(:vimeo_ssl)).should == example_body(:vimeo_ssl)
-      end.should_not raise_error
+      }.not_to raise_error
     end
 
     it "should raise an UnknownFormat error on 501" do
       # Note: This test relies on a custom-written VCR response in the
       # cassettes/OEmbed_Provider.yml file.
 
-      expect do
+      expect {
         @flickr.send(:raw, File.join(example_url(:flickr), '501'))
-      end.should raise_error(OEmbed::UnknownFormat)
+      }.to raise_error(OEmbed::UnknownFormat)
     end
 
     it "should raise a NotFound error on 404" do
       # Note: This test relies on a custom-written VCR response in the
       # cassettes/OEmbed_Provider.yml file.
 
-      expect do
+      expect {
         @flickr.send(:raw, File.join(example_url(:flickr), '404'))
-      end.should raise_error(OEmbed::NotFound)
+      }.to raise_error(OEmbed::NotFound)
     end
 
     it "should raise an UnknownResponse error on other responses" do
@@ -299,17 +299,17 @@ describe OEmbed::Provider do
       statuses_to_check = ['405', '500']
 
       statuses_to_check.each do |status|
-        expect do
-          expect do
+        expect {
+          expect {
             @flickr.send(:raw, File.join(example_url(:flickr), status))
-          end.to_not raise_error(OEmbed::NotFound)
-        end.to_not raise_error(OEmbed::UnknownResponse)
+          }.not_to raise_error(OEmbed::NotFound)
+        }.not_to raise_error(OEmbed::UnknownResponse)
       end
 
       statuses_to_check.each do |status|
-        expect do
+        expect {
           @flickr.send(:raw, File.join(example_url(:flickr), status))
-        end.should raise_error(OEmbed::UnknownResponse)
+        }.to raise_error(OEmbed::UnknownResponse)
       end
     end
   end
@@ -326,12 +326,12 @@ describe OEmbed::Provider do
         and_return(valid_response(:xml))
       @flickr.get(example_url(:flickr), :format=>:xml)
 
-      lambda do
+      expect {
         @flickr.should_receive(:raw).
           with(example_url(:flickr), {:format=>:yml}).
           and_return(valid_response(:json))
         @flickr.get(example_url(:flickr), :format=>:yml)
-      end.should raise_error(OEmbed::FormatNotSupported)
+      }.to raise_error(OEmbed::FormatNotSupported)
     end
 
     it "should return OEmbed::Response" do
