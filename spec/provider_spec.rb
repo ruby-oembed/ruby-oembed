@@ -300,14 +300,6 @@ describe OEmbed::Provider do
 
       statuses_to_check.each do |status|
         expect {
-          expect {
-            @flickr.send(:raw, File.join(example_url(:flickr), status))
-          }.not_to raise_error(OEmbed::NotFound)
-        }.not_to raise_error(OEmbed::UnknownResponse)
-      end
-
-      statuses_to_check.each do |status|
-        expect {
           @flickr.send(:raw, File.join(example_url(:flickr), status))
         }.to raise_error(OEmbed::UnknownResponse)
       end
