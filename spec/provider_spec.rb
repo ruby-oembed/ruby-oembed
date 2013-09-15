@@ -335,22 +335,22 @@ describe OEmbed::Provider do
     end
 
     it "should return OEmbed::Response" do
-      @flickr.stub!(:raw).and_return(valid_response(@default))
+      @flickr.stub(:raw).and_return(valid_response(@default))
       @flickr.get(example_url(:flickr)).should be_a(OEmbed::Response)
     end
 
     it "should be calling OEmbed::Response#create_for internally" do
-      @flickr.stub!(:raw).and_return(valid_response(@default))
+      @flickr.stub(:raw).and_return(valid_response(@default))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(@default), @flickr, example_url(:flickr), @default.to_s)
       @flickr.get(example_url(:flickr))
 
-      @qik.stub!(:raw).and_return(valid_response(:xml))
+      @qik.stub(:raw).and_return(valid_response(:xml))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(:xml), @qik, example_url(:qik), 'xml')
       @qik.get(example_url(:qik))
 
-      @viddler.stub!(:raw).and_return(valid_response(:json))
+      @viddler.stub(:raw).and_return(valid_response(:json))
       OEmbed::Response.should_receive(:create_for).
         with(valid_response(:json), @viddler, example_url(:viddler), 'json')
       @viddler.get(example_url(:viddler))
