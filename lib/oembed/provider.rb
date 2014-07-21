@@ -78,6 +78,7 @@ module OEmbed
     # The query parameter should be a Hash of values which will be
     # sent as query parameters in this request to the Provider endpoint. The
     # following special cases apply to the query Hash:
+    # :timeout:: specifies the timeout (in seconds) for the http request.
     # :format:: overrides this Provider's default request format.
     # :url:: will be ignored, replaced by the url param.
     def get(url, query = {})
@@ -96,6 +97,8 @@ module OEmbed
       raise OEmbed::NotFound, url unless include?(url)
 
       query = query.merge({:url => ::CGI.escape(url)})
+      query.delete(:timeout)
+
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
       
@@ -130,6 +133,7 @@ module OEmbed
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == 'https'
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+        http.read_timeout = http.open_timeout = query[:timeout] if query[:timeout]
         
         %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
         res = http.request(Net::HTTP::Get.new(uri.to_s))

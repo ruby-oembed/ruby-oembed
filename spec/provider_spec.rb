@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 require 'vcr'
 
 VCR.config do |c|
-  c.default_cassette_options = { :record => :new_episodes }
+  c.default_cassette_options = { :record => :none }
   c.cassette_library_dir = 'spec/cassettes'
   c.stub_with :fakeweb
 end
@@ -256,6 +256,15 @@ describe OEmbed::Provider do
       uri.query.include?("scheme=https").should be_true
       uri.query.include?("url=#{CGI.escape url}").should be_true
     end
+
+    it "should not include the :timeout parameter in the query string" do
+      uri = @flickr.send(:build, example_url(:flickr),
+        :timeout => 5,
+        :another => "test")
+
+      uri.query.include?("timeout=5").should be_false
+      uri.query.include?("another=test").should be_true
+    end
   end
 
   describe "#raw" do
@@ -363,6 +372,12 @@ describe OEmbed::Provider do
         with(example_url(:viddler), :format=>:json).
         and_return(valid_response(:json))
       @viddler.get(example_url(:viddler))
+    end
+
+    it "handles the :timeout option" do
+      Net::HTTP.any_instance.should_receive(:open_timeout=).with(5)
+      Net::HTTP.any_instance.should_receive(:read_timeout=).with(5)
+      @flickr.get(example_url(:flickr), :timeout => 5)
     end
   end
 end
