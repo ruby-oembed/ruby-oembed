@@ -258,8 +258,8 @@ describe OEmbed::Provider do
         :timeout => 5,
         :another => "test")
 
-      uri.query.include?("timeout=5").should be_false
-      uri.query.include?("another=test").should be_true
+      uri.query.include?("timeout=5").should be_falsey
+      uri.query.include?("another=test").should be_truthy
     end
   end
 
