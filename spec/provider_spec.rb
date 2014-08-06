@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 require 'vcr'
 
 VCR.config do |c|
-  c.default_cassette_options = { :record => :new_episodes }
+  c.default_cassette_options = { :record => :none }
   c.cassette_library_dir = 'spec/cassettes'
   c.stub_with :fakeweb
 end
@@ -260,6 +260,15 @@ describe OEmbed::Provider do
 
       uri.query.include?("timeout=5").should be_falsey
       uri.query.include?("another=test").should be_truthy
+    end
+
+    it "should not include the :timeout parameter in the query string" do
+      uri = @flickr.send(:build, example_url(:flickr),
+        :timeout => 5,
+        :another => "test")
+
+      uri.query.include?("timeout=5").should be_false
+      uri.query.include?("another=test").should be_true
     end
   end
 
