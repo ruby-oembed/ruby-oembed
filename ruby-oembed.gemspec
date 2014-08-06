@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<json>, [">= 0"])
       s.add_development_dependency(%q<xml-simple>, [">= 0"])
       s.add_development_dependency(%q<nokogiri>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.0"])
+      s.add_development_dependency(%q<rspec>, ["~> 3.0"])
       s.add_development_dependency(%q<vcr>, ["~> 1.0"])
       s.add_development_dependency(%q<fakeweb>, [">= 0"])
     else
@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<xml-simple>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.0"])
+      s.add_dependency(%q<rspec>, ["~> 3.0"])
       s.add_dependency(%q<vcr>, ["~> 1.0"])
       s.add_dependency(%q<fakeweb>, [">= 0"])
     end
@@ -52,7 +52,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<xml-simple>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.0"])
+    s.add_dependency(%q<rspec>, ["~> 3.0"])
     s.add_dependency(%q<vcr>, ["~> 1.0"])
     s.add_dependency(%q<fakeweb>, [">= 0"])
   end
