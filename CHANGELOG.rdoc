@@ -2,6 +2,7 @@
 
 == 0.8.10 - Unreleased
 
+* Add support for specifying a Provider#get `:timeout`; Pull #35 (Blake Thomson)
 * Upgrade to RSpec 3.x
 
 == 0.8.9 - 15 September 2013

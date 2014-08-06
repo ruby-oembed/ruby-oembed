@@ -252,6 +252,15 @@ describe OEmbed::Provider do
       uri.query.include?("scheme=https").should be_truthy
       uri.query.include?("url=#{CGI.escape url}").should be_truthy
     end
+
+    it "should not include the :timeout parameter in the query string" do
+      uri = @flickr.send(:build, example_url(:flickr),
+        :timeout => 5,
+        :another => "test")
+
+      uri.query.include?("timeout=5").should be_falsey
+      uri.query.include?("another=test").should be_truthy
+    end
   end
 
   describe "#raw" do
@@ -359,6 +368,12 @@ describe OEmbed::Provider do
         with(example_url(:viddler), :format=>:json).
         and_return(valid_response(:json))
       @viddler.get(example_url(:viddler))
+    end
+
+    it "handles the :timeout option" do
+      Net::HTTP.any_instance.should_receive(:open_timeout=).with(5)
+      Net::HTTP.any_instance.should_receive(:read_timeout=).with(5)
+      @flickr.get(example_url(:flickr), :timeout => 5)
     end
   end
 end
