@@ -58,60 +58,58 @@ describe OEmbed::Provider do
   it "should allow no URI schema to be given" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
 
-    provier.include?("http://foo.com/1").should be_true
-    provier.include?("http://bar.foo.com/1").should be_true
-    provier.include?("http://bar.foo.com/show/1").should be_true
-    provier.include?("https://bar.foo.com/1").should be_true
-    provier.include?("http://asdf.com/1").should be_true
-    provier.include?("asdf").should be_true
+    provier.include?("http://foo.com/1").should be_truthy
+    provier.include?("http://bar.foo.com/1").should be_truthy
+    provier.include?("http://bar.foo.com/show/1").should be_truthy
+    provier.include?("https://bar.foo.com/1").should be_truthy
+    provier.include?("http://asdf.com/1").should be_truthy
+    provier.include?("asdf").should be_truthy
   end
 
   it "should allow a String as a URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://bar.foo.com/*"
 
-    provier.include?("http://bar.foo.com/1").should be_true
-    provier.include?("http://bar.foo.com/show/1").should be_true
+    provier.include?("http://bar.foo.com/1").should be_truthy
+    provier.include?("http://bar.foo.com/show/1").should be_truthy
 
-    provier.include?("https://bar.foo.com/1").should be_false
-    provier.include?("http://foo.com/1").should be_false
+    provier.include?("https://bar.foo.com/1").should be_falsey
+    provier.include?("http://foo.com/1").should be_falsey
   end
 
   it "should allow multiple path wildcards in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://bar.foo.com/*/show/*"
 
-    provier.include?("http://bar.foo.com/photo/show/1").should be_true
-    provier.include?("http://bar.foo.com/video/show/2").should be_true
-    provier.include?("http://bar.foo.com/help/video/show/2").should be_true
+    provier.include?("http://bar.foo.com/photo/show/1").should be_truthy
+    provier.include?("http://bar.foo.com/video/show/2").should be_truthy
+    provier.include?("http://bar.foo.com/help/video/show/2").should be_truthy
 
-    provier.include?("https://bar.foo.com/photo/show/1").should be_false
-    provier.include?("http://foo.com/video/show/2").should be_false
-    provier.include?("http://bar.foo.com/show/1").should be_false
-    provier.include?("http://bar.foo.com/1").should be_false
+    provier.include?("https://bar.foo.com/photo/show/1").should be_falsey
+    provier.include?("http://foo.com/video/show/2").should be_falsey
+    provier.include?("http://bar.foo.com/show/1").should be_falsey
+    provier.include?("http://bar.foo.com/1").should be_falsey
   end
 
-  it "should NOT allow multiple domain wildcards in a String URI schema" do
+  it "should NOT allow multiple domain wildcards in a String URI schema", :pending => true do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
 
-    pending("We don't yet validate URL schema strings") do
-      proc { provier << "http://*.com/*" }.
-      should raise_error(ArgumentError)
-    end
+    proc { provier << "http://*.com/*" }.
+    should raise_error(ArgumentError)
 
-    provier.include?("http://foo.com/1").should be_false
+    provier.include?("http://foo.com/1").should be_falsey
   end
 
   it "should allow a sub-domain wildcard in String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://*.foo.com/*"
 
-    provier.include?("http://bar.foo.com/1").should be_true
-    provier.include?("http://foo.foo.com/2").should be_true
-    provier.include?("http://foo.com/3").should be_true
+    provier.include?("http://bar.foo.com/1").should be_truthy
+    provier.include?("http://foo.foo.com/2").should be_truthy
+    provier.include?("http://foo.com/3").should be_truthy
 
-    provier.include?("https://bar.foo.com/1").should be_false
-    provier.include?("http://my.bar.foo.com/1").should be_false
+    provier.include?("https://bar.foo.com/1").should be_falsey
+    provier.include?("http://my.bar.foo.com/1").should be_falsey
 
     provier << "http://my.*.foo.com/*"
   end
@@ -120,48 +118,46 @@ describe OEmbed::Provider do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "http://*.my.*.foo.com/*"
 
-    provier.include?("http://my.bar.foo.com/1").should be_true
-    provier.include?("http://my.foo.com/2").should be_true
-    provier.include?("http://bar.my.bar.foo.com/3").should be_true
+    provier.include?("http://my.bar.foo.com/1").should be_truthy
+    provier.include?("http://my.foo.com/2").should be_truthy
+    provier.include?("http://bar.my.bar.foo.com/3").should be_truthy
 
-    provier.include?("http://bar.foo.com/1").should be_false
-    provier.include?("http://foo.bar.foo.com/1").should be_false
+    provier.include?("http://bar.foo.com/1").should be_falsey
+    provier.include?("http://foo.bar.foo.com/1").should be_falsey
   end
 
-  it "should NOT allow a scheme wildcard in a String URI schema" do
+  it "should NOT allow a scheme wildcard in a String URI schema", :pending => true do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
 
-    pending("We don't yet validate URL schema strings") do
-      proc { provier << "*://foo.com/*" }.
-      should raise_error(ArgumentError)
-    end
+    proc { provier << "*://foo.com/*" }.
+    should raise_error(ArgumentError)
 
-    provier.include?("http://foo.com/1").should be_false
+    provier.include?("http://foo.com/1").should be_falsey
   end
 
   it "should allow a scheme other than http in a String URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << "https://foo.com/*"
 
-    provier.include?("https://foo.com/1").should be_true
+    provier.include?("https://foo.com/1").should be_truthy
 
     gopher_url = "gopher://foo.com/1"
-    provier.include?(gopher_url).should be_false
+    provier.include?(gopher_url).should be_falsey
     provier << "gopher://foo.com/*"
-    provier.include?(gopher_url).should be_true
+    provier.include?(gopher_url).should be_truthy
   end
 
   it "should allow a Regexp as a URI schema" do
     provier = OEmbed::Provider.new("http://foo.com/oembed")
     provier << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
 
-    provier.include?("http://bar.foo.com/1").should be_true
-    provier.include?("http://bar.foo.com/show/1").should be_true
-    provier.include?("http://foo.com/1").should be_true
-    provier.include?("https://bar.foo.com/1").should be_true
+    provier.include?("http://bar.foo.com/1").should be_truthy
+    provier.include?("http://bar.foo.com/show/1").should be_truthy
+    provier.include?("http://foo.com/1").should be_truthy
+    provier.include?("https://bar.foo.com/1").should be_truthy
 
-    provier.include?("http://bar.foo.com/video/1").should be_false
-    provier.include?("gopher://foo.com/1").should be_false
+    provier.include?("http://bar.foo.com/video/1").should be_falsey
+    provier.include?("gopher://foo.com/1").should be_falsey
   end
 
   it "should by default use OEmbed::Formatter.default" do
@@ -204,8 +200,8 @@ describe OEmbed::Provider do
   end
 
   it "should match URLs" do
-    @flickr.include?(example_url(:flickr)).should be_true
-    @qik.include?(example_url(:qik)).should be_true
+    @flickr.include?(example_url(:flickr)).should be_truthy
+    @qik.include?(example_url(:qik)).should be_truthy
   end
 
   it "should raise error if the URL is invalid" do
@@ -218,13 +214,13 @@ describe OEmbed::Provider do
       uri = @flickr.send(:build, example_url(:flickr))
       uri.host.should == "www.flickr.com"
       uri.path.should == "/services/oembed/"
-      uri.query.include?("format=#{@flickr.format}").should be_true
-      uri.query.include?("url=#{CGI.escape 'http://flickr.com/photos/bees/2362225867/'}").should be_true
+      uri.query.include?("format=#{@flickr.format}").should be_truthy
+      uri.query.include?("url=#{CGI.escape 'http://flickr.com/photos/bees/2362225867/'}").should be_truthy
 
       uri = @qik.send(:build, example_url(:qik))
       uri.host.should == "qik.com"
       uri.path.should == "/api/oembed.xml"
-      uri.query.include?("format=#{@qik.format}").should be_false
+      uri.query.include?("format=#{@qik.format}").should be_falsey
       uri.query.should == "url=#{CGI.escape 'http://qik.com/video/49565'}"
     end
 
@@ -235,10 +231,10 @@ describe OEmbed::Provider do
         :format => :xml,
         :another => "test")
 
-      uri.query.include?("maxwidth=600").should be_true
-      uri.query.include?("maxheight=200").should be_true
-      uri.query.include?("format=xml").should be_true
-      uri.query.include?("another=test").should be_true
+      uri.query.include?("maxwidth=600").should be_truthy
+      uri.query.include?("maxheight=200").should be_truthy
+      uri.query.include?("format=xml").should be_truthy
+      uri.query.include?("another=test").should be_truthy
     end
 
     it "should build correctly when format is in the endpoint URL" do
@@ -250,11 +246,11 @@ describe OEmbed::Provider do
       provider = OEmbed::Provider.new('http://www.youtube.com/oembed?scheme=https')
       provider << 'http://*.youtube.com/*'
       url = 'http://youtube.com/watch?v=M3r2XDceM6A'
-      provider.include?(url).should be_true
+      provider.include?(url).should be_truthy
 
       uri = provider.send(:build, url)
-      uri.query.include?("scheme=https").should be_true
-      uri.query.include?("url=#{CGI.escape url}").should be_true
+      uri.query.include?("scheme=https").should be_truthy
+      uri.query.include?("url=#{CGI.escape url}").should be_truthy
     end
   end
 
