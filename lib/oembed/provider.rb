@@ -136,7 +136,9 @@ module OEmbed
         http.read_timeout = http.open_timeout = query[:timeout] if query[:timeout]
         
         %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
-        res = http.request(Net::HTTP::Get.new(uri.to_s))
+        req = Net::HTTP::Get.new(uri.to_s)
+        req['User-Agent'] = "Mozilla/5.0 AppleWebKit (KHTML, like Gecko) Chrome Safari"
+        res = http.request(req)
         
         #res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
         
