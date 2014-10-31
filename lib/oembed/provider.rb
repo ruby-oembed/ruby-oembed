@@ -137,7 +137,7 @@ module OEmbed
         
         %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
         req = Net::HTTP::Get.new(uri.to_s)
-        req['User-Agent'] = "Mozilla/5.0 AppleWebKit (KHTML, like Gecko) Chrome Safari"
+        req['User-Agent'] = "Mozilla/5.0 (compatible; ruby-oembed/#{OEmbed::VERSION})"
         res = http.request(req)
         
         #res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
