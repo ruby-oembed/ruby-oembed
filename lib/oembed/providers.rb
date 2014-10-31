@@ -256,6 +256,15 @@ module OEmbed
     SoundCloud << "https://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
 
+    # Provider for spotify.com
+    Spotify = OEmbed::Provider.new("https://embed.spotify.com/oembed/")
+    Spotify << "http://open.spotify.com/*"
+    Spotify << "https://open.spotify.com/*"
+    Spotify << "http://play.spotify.com/*"
+    Spotify << "https://play.spotify.com/*"
+    Spotify << /^spotify\:(.*?)/
+    add_official_provider(Spotify)
+
     # Provider for skitch.com
     # http://skitch.com/oembed/%3C/endpoint
     Skitch = OEmbed::Provider.new("http://skitch.com/oembed")
