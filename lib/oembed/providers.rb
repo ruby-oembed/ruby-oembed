@@ -45,9 +45,12 @@ module OEmbed
       # The including_sub_type parameter should be one of the following values:
       # * :aggregators: also register provider aggregator endpoints, like Embedly
       def register_all(*including_sub_type)
-        register(*@@to_register[""])
-        including_sub_type.each do |sub_type|
-          register(*@@to_register[sub_type.to_s])
+        if including_sub_type.any?
+          including_sub_type.each do |sub_type|
+            register(*@@to_register[sub_type.to_s])
+          end
+        else
+          register(*@@to_register[""])
         end
       end
 
@@ -134,8 +137,6 @@ module OEmbed
     #     OEmbed::Providers::Youtube.endpoint += "?iframe=1"
     # * To get the flash/object embed code
     #     OEmbed::Providers::Youtube.endpoint += "?iframe=0"
-    # * To require https embed code
-    #     OEmbed::Providers::Youtube.endpoint += "?scheme=https"
     Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
     Youtube << "http://*.youtube.com/*"
     Youtube << "https://*.youtube.com/*"
@@ -143,11 +144,22 @@ module OEmbed
     Youtube << "https://*.youtu.be/*"
     add_official_provider(Youtube)
 
+    YoutubeHttps = OEmbed::Provider.new("http://www.youtube.com/oembed?scheme=https")
+    YoutubeHttps << "http://*.youtube.com/*"
+    YoutubeHttps << "https://*.youtube.com/*"
+    YoutubeHttps << "http://*.youtu.be/*"
+    YoutubeHttps << "https://*.youtu.be/*"
+    add_official_provider(YoutubeHttps, :https)
+
     # Provider for flickr.com
     # http://developer.yahoo.com/blogs/ydn/posts/2008/05/oembed_embeddin/
     Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
     add_official_provider(Flickr)
+
+    FlickrHttps = OEmbed::Provider.new("https://www.flickr.com/services/oembed/")
+    FlickrHttps << "http://*.flickr.com/*"
+    add_official_provider(FlickrHttps, :https)
 
     # Provider for viddler.com
     # http://developers.viddler.com/documentation/services/oembed/
@@ -178,6 +190,11 @@ module OEmbed
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
+
+    VimeoHttps = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
+    VimeoHttps << "http://*.vimeo.com/*"
+    VimeoHttps << "https://*.vimeo.com/*"
+    add_official_provider(VimeoHttps, :https)
     
     # Provider for instagram.com
     # http://instagr.am/developer/embedding/
@@ -192,6 +209,11 @@ module OEmbed
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
+
+    SlideshareHttps = OEmbed::Provider.new("https://www.slideshare.net/api/oembed/2")
+    SlideshareHttps << "http://www.slideshare.net/*/*"
+    SlideshareHttps << "http://www.slideshare.net/mobile/*/*"
+    add_official_provider(SlideshareHttps, :https)
     
     # Provider for yfrog
     # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
