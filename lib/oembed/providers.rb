@@ -107,9 +107,9 @@ module OEmbed
           raise(OEmbed::NotFound)
         end
       end
-      
+
       private
-      
+
       # Takes an OEmbed::Provider instance and registers it so that when we call
       # the register_all method, they all register. The sub_type can be be any value
       # used to uniquely group providers. Official sub_types are:
@@ -118,14 +118,14 @@ module OEmbed
       def add_official_provider(provider_class, sub_type=nil)
         raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
-        
+
         @@to_register[sub_type.to_s] ||= []
         @@to_register[sub_type.to_s] << provider_class
       end
     end
 
     # Custom providers:
-    
+
     # Provider for youtube.com
     # http://apiblog.youtube.com/2009/10/oembed-support.html
     #
@@ -178,27 +178,27 @@ module OEmbed
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
-    
+
     # Provider for instagram.com
     # http://instagr.am/developer/embedding/
     Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
     add_official_provider(Instagram)
-    
+
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
     Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2")
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
-    
+
     # Provider for yfrog
     # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
     Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
-    
+
     # provider for mlg-tv
     # http://tv.majorleaguegaming.com/oembed
     MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
@@ -248,7 +248,7 @@ module OEmbed
     TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
     TwentyThree << "http://www.23hq.com/*"
     add_official_provider(TwentyThree)
-    
+
     # Provider for soundcloud.com
     # http://developers.soundcloud.com/docs/oembed
     SoundCloud = OEmbed::Provider.new("http://soundcloud.com/oembed", :json)
@@ -257,6 +257,8 @@ module OEmbed
     add_official_provider(SoundCloud)
 
     # Provider for spotify.com
+    # https://twitter.com/nicklas2k/status/330094611202723840
+    # http://blog.embed.ly/post/45149936446/oembed-for-spotify
     Spotify = OEmbed::Provider.new("https://embed.spotify.com/oembed/")
     Spotify << "http://open.spotify.com/*"
     Spotify << "https://open.spotify.com/*"
@@ -277,7 +279,7 @@ module OEmbed
     #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
     #Clickthrough << "http://*.clikthrough.com/theater/video/*"
     #add_official_provider(Clickthrough)
-    
+
     ## Provider for kinomap.com
     # http://www.kinomap.com/#!oEmbed
     #Kinomap = OEmbed::Provider.new("http://www.kinomap.com/oembed")
@@ -330,7 +332,7 @@ module OEmbed
     #
     # You can append your Embed.ly API key to the provider so that all requests are signed
     #     OEmbed::Providers::Embedly.endpoint += "?key=#{my_embedly_key}"
-    # 
+    #
     # If you don't yet have an API key you'll need to sign up here: http://embed.ly/pricing
     Embedly = OEmbed::Provider.new("http://api.embed.ly/1/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
