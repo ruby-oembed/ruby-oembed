@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.11 - Unreleased
+== 0.8.11 - 7 November 2014
 
 * Add built-in provider for Spotify; Pull #36 (Sami Kukkonen)
 * Update Travis CI configuration to test with modern Rails; Pull #37 (Sami Kukkonen)

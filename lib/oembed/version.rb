@@ -2,7 +2,7 @@ module OEmbed
   class Version
     MAJOR = 0
     MINOR = 8
-    PATCH = 10
+    PATCH = 11
     STRING = "#{MAJOR}.#{MINOR}.#{PATCH}"
 
     class << self
