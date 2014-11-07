@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== 0.8.11 - Unreleased
+
+* Add built-in provider for Spotify; Pull #36 (Sami Kukkonen)
+
 == 0.8.10 - 6 August 2014
 
 * Add support for specifying a Provider#get `:timeout`; Pull #35 (Blake Thomson)
