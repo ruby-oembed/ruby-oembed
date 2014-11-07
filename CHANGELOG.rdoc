@@ -3,6 +3,7 @@
 == 0.8.11 - Unreleased
 
 * Add built-in provider for Spotify; Pull #36 (Sami Kukkonen)
+* Update Travis CI configuration to test with modern Rails; Pull #37 (Sami Kukkonen)
 
 == 0.8.10 - 6 August 2014
 
