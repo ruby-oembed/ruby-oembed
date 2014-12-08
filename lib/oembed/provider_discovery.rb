@@ -27,13 +27,18 @@ module OEmbed
     def discover_provider(url, options = {})
       uri = URI.parse(url)
 
-      res = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.get(uri.request_uri)
-      end
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = uri.scheme == 'https'
+      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      res = http.get(uri.request_uri)
 
       case res
       when Net::HTTPNotFound
         raise OEmbed::NotFound, url
+      when Net::HTTPRedirection
+        options[:redirect_counter] ||= 0
+        raise OEmbed::TooManyRedirects if (options[:redirect_counter] += 1) == 5
+        discover_provider(res['location'], options)
       when Net::HTTPSuccess
         format = options[:format]
 
