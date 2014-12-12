@@ -120,4 +120,12 @@ describe OEmbed::ProviderDiscovery do
       }.to raise_error(OEmbed::NotFound)
     end
   end
+
+  context "when returning 301" do
+    it "does redirect http to https" do
+      expect{
+        OEmbed::ProviderDiscovery.discover_provider('http://www.youtube.com/watch?v=dFs9WO2B8uI')
+      }.not_to raise_error
+    end
+  end
 end
