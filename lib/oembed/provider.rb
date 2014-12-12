@@ -132,7 +132,7 @@ module OEmbed
       raise OEmbed::UnknownFormat, format
     end
 
-    def self.http_get(uri, options)
+    def self.http_get(uri, options = {})
       found = false
       max_redirects = 4
       until found
