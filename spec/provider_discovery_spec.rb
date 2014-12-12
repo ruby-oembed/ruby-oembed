@@ -110,7 +110,14 @@ describe OEmbed::ProviderDiscovery do
         end
       end # get
     end
-    
+
   end # each service
-  
+
+  context "when returning 404" do
+    it "raises OEmbed::NotFound" do
+      expect{
+        OEmbed::ProviderDiscovery.discover_provider('https://www.youtube.com/watch?v=123123123')
+      }.to raise_error(OEmbed::NotFound)
+    end
+  end
 end
