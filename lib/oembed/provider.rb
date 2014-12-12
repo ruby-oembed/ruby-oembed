@@ -126,14 +126,20 @@ module OEmbed
     # @deprecated *Note*: This method will be made private in the future.
     def raw(url, query = {})
       uri = build(url, query)
-      
+      self.class.http_get(uri, query)
+    rescue OEmbed::UnknownFormat
+      # raise with format to be backward compatible
+      raise OEmbed::UnknownFormat, format
+    end
+
+    def self.http_get(uri, options)
       found = false
       max_redirects = 4
       until found
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == 'https'
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-        http.read_timeout = http.open_timeout = query[:timeout] if query[:timeout]
+        http.read_timeout = http.open_timeout = options[:timeout] if options[:timeout]
         
         %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
         req = Net::HTTP::Get.new(uri.to_s)
@@ -152,9 +158,9 @@ module OEmbed
       
       case res
       when Net::HTTPNotImplemented
-        raise OEmbed::UnknownFormat, format
+        raise OEmbed::UnknownFormat
       when Net::HTTPNotFound
-        raise OEmbed::NotFound, url
+        raise OEmbed::NotFound, uri
       when Net::HTTPSuccess
         res.body
       else
