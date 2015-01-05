@@ -135,7 +135,12 @@ module OEmbed
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
         http.read_timeout = http.open_timeout = query[:timeout] if query[:timeout]
         
-        %w{scheme userinfo host port registry}.each { |method| uri.send("#{method}=", nil) }
+        methods = if RUBY_VERSION < "2.2"
+            %w{scheme userinfo host port registry}
+        else
+            %w{scheme userinfo host port}
+        end
+        methods.each { |method| uri.send("#{method}=", nil) }
         req = Net::HTTP::Get.new(uri.to_s)
         req['User-Agent'] = "Mozilla/5.0 (compatible; ruby-oembed/#{OEmbed::VERSION})"
         res = http.request(req)
