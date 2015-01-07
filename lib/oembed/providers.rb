@@ -212,6 +212,12 @@ module OEmbed
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
 
+    # Provider for imgur.com
+    Imgur = OEmbed::Provider.new("https://api.imgur.com/oembed.{format}")
+    Imgur << "https://*.imgur.com/gallery/*"
+    Imgur << "http://*.imgur.com/gallery/*"
+    add_official_provider(Imgur)
+
     # provider for mlg-tv
     # http://tv.majorleaguegaming.com/oembed
     MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
