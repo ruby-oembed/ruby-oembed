@@ -179,6 +179,19 @@ module OEmbed
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
 
+    # Provider for twitter.com
+    # https://dev.twitter.com/rest/reference/get/statuses/oembed
+    Twitter = OEmbed::Provider.new("https://api.twitter.com/1/statuses/oembed.{format}")
+    Twitter << "https://*.twitter.com/*/status/*"
+    add_official_provider(Twitter)
+
+    # Provider for vine.co
+    # https://dev.twitter.com/web/vine/oembed
+    Vine = OEmbed::Provider.new("https://vine.co/oembed.{format}")
+    Vine << "http://*.vine.co/v/*"
+    Vine << "https://*.vine.co/v/*"
+    add_official_provider(Vine)
+
     # Provider for instagram.com
     # http://instagr.am/developer/embedding/
     Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
@@ -198,6 +211,12 @@ module OEmbed
     Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
+
+    # Provider for imgur.com
+    Imgur = OEmbed::Provider.new("https://api.imgur.com/oembed.{format}")
+    Imgur << "https://*.imgur.com/gallery/*"
+    Imgur << "http://*.imgur.com/gallery/*"
+    add_official_provider(Imgur)
 
     # provider for mlg-tv
     # http://tv.majorleaguegaming.com/oembed
