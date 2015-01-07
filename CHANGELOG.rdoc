@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== 0.8.12 - Unreleased
+
+* Add built-in providers for Twitter, Vine, & Imgur; Pull #42 (Eliot Shepard)
+
 == 0.8.11 - 7 November 2014
 
 * Add built-in provider for Spotify; Pull #36 (Sami Kukkonen)
