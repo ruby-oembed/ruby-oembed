@@ -1,10 +1,35 @@
 = CHANGELOG
 
-== 0.8.8 - Unreleased
+== 0.8.12 - 7 January 2015
 
-* OEmbed::Response::Photo#html now includes alt attribute (François de Metz)
-** TODO: make sure the above change doesn't cause problems if no title is returned in the oEmbed response.
-* Added built-in provider for Skitch (François de Metz)
+* Fix URI error in Ruby 2.2; Pull #41, Issue #43 (Maxim Bublis)
+* Change built-in YouTube provider to return https embeds; Pull #34, Issue #33 (Fla)
+* Add built-in providers for Twitter, Vine, & Imgur; Pull #42 (Eliot Shepard)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
+
+== 0.8.11 - 7 November 2014
+
+* Add built-in provider for Spotify; Pull #36 (Sami Kukkonen)
+* Update Travis CI configuration to test with modern Rails; Pull #37 (Sami Kukkonen)
+
+== 0.8.10 - 6 August 2014
+
+* Add support for specifying a Provider#get `:timeout`; Pull #35 (Blake Thomson)
+* Upgrade to RSpec 3.x
+
+== 0.8.9 - 15 September 2013
+
+* SoundCloud provider supports https URLs; Pull #30 (Greg Tangey)
+* Address rspec DEPRECATION warnings; Pull metavida#3 (Marcos Wright Kuhns)
+
+== 0.8.8 - 18 November 2012
+
+* OEmbed::Response::Photo#html now includes alt attribute; Pull #23 & #25 (François de Metz)
+* Always escape the url query param when requesting a resource from a provider; Pull #26 (Michael Cohen)
+* Allow query params in a provider endpoint URL; Pull #27 (Michael Andrews)
+* Added built-in provider for Skitch; Pull #24 (François de Metz)
+* Updated built-in Vimeo provider (Marcos Wright Kuhns)
+* For developers who work on this gem, removed the dependency on jeweler (Marcos Wright Kuhns)
 
 == 0.8.7 - 11 March 2012
 

@@ -14,7 +14,7 @@ begin
     
       url_regexps = []
       services.each do |service|
-        url_regexps += service['regex']
+        url_regexps += service['regex'].map{|r| r.strip }
       end
       url_regexps.sort!
     

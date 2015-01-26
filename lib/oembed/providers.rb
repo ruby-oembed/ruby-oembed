@@ -107,9 +107,9 @@ module OEmbed
           raise(OEmbed::NotFound)
         end
       end
-      
+
       private
-      
+
       # Takes an OEmbed::Provider instance and registers it so that when we call
       # the register_all method, they all register. The sub_type can be be any value
       # used to uniquely group providers. Official sub_types are:
@@ -118,19 +118,25 @@ module OEmbed
       def add_official_provider(provider_class, sub_type=nil)
         raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
-        
+
         @@to_register[sub_type.to_s] ||= []
         @@to_register[sub_type.to_s] << provider_class
       end
     end
 
     # Custom providers:
-    
+
     # Provider for youtube.com
     # http://apiblog.youtube.com/2009/10/oembed-support.html
-    # To get the iframe embed code, instead of flash-based, pass
-    # :iframe=>1 as a query in your get request.
-    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed")
+    #
+    # Options:
+    # * To get the iframe embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?iframe=1"
+    # * To get the flash/object embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?iframe=0"
+    # * To require https embed code
+    #     OEmbed::Providers::Youtube.endpoint += "?scheme=https"
+    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed?scheme=https")
     Youtube << "http://*.youtube.com/*"
     Youtube << "https://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
@@ -167,32 +173,51 @@ module OEmbed
     add_official_provider(Hulu)
 
     # Provider for vimeo.com
-    # http://vimeo.com/api/docs/oEmbed
-    Vimeo = OEmbed::Provider.new("http://www.vimeo.com/api/oembed.{format}")
+    # http://developer.vimeo.com/apis/oembed
+    Vimeo = OEmbed::Provider.new("http://vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
-    
+
+    # Provider for twitter.com
+    # https://dev.twitter.com/rest/reference/get/statuses/oembed
+    Twitter = OEmbed::Provider.new("https://api.twitter.com/1/statuses/oembed.{format}")
+    Twitter << "https://*.twitter.com/*/status/*"
+    add_official_provider(Twitter)
+
+    # Provider for vine.co
+    # https://dev.twitter.com/web/vine/oembed
+    Vine = OEmbed::Provider.new("https://vine.co/oembed.{format}")
+    Vine << "http://*.vine.co/v/*"
+    Vine << "https://*.vine.co/v/*"
+    add_official_provider(Vine)
+
     # Provider for instagram.com
     # http://instagr.am/developer/embedding/
     Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
     add_official_provider(Instagram)
-    
+
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
     Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2")
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
-    
+
     # Provider for yfrog
     # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
     Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
-    
+
+    # Provider for imgur.com
+    Imgur = OEmbed::Provider.new("https://api.imgur.com/oembed.{format}")
+    Imgur << "https://*.imgur.com/gallery/*"
+    Imgur << "http://*.imgur.com/gallery/*"
+    add_official_provider(Imgur)
+
     # provider for mlg-tv
     # http://tv.majorleaguegaming.com/oembed
     MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
@@ -242,12 +267,24 @@ module OEmbed
     TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
     TwentyThree << "http://www.23hq.com/*"
     add_official_provider(TwentyThree)
-    
+
     # Provider for soundcloud.com
     # http://developers.soundcloud.com/docs/oembed
     SoundCloud = OEmbed::Provider.new("http://soundcloud.com/oembed", :json)
     SoundCloud << "http://*.soundcloud.com/*"
+    SoundCloud << "https://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
+
+    # Provider for spotify.com
+    # https://twitter.com/nicklas2k/status/330094611202723840
+    # http://blog.embed.ly/post/45149936446/oembed-for-spotify
+    Spotify = OEmbed::Provider.new("https://embed.spotify.com/oembed/")
+    Spotify << "http://open.spotify.com/*"
+    Spotify << "https://open.spotify.com/*"
+    Spotify << "http://play.spotify.com/*"
+    Spotify << "https://play.spotify.com/*"
+    Spotify << /^spotify\:(.*?)/
+    add_official_provider(Spotify)
 
     # Provider for skitch.com
     # http://skitch.com/oembed/%3C/endpoint
@@ -261,7 +298,7 @@ module OEmbed
     #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
     #Clickthrough << "http://*.clikthrough.com/theater/video/*"
     #add_official_provider(Clickthrough)
-    
+
     ## Provider for kinomap.com
     # http://www.kinomap.com/#!oEmbed
     #Kinomap = OEmbed::Provider.new("http://www.kinomap.com/oembed")
@@ -311,8 +348,11 @@ module OEmbed
     # Provider for Embedly.com, which is a provider aggregator. See
     # OEmbed::Providers::Embedly.urls for a full list of supported url schemas.
     # http://embed.ly/docs/endpoints/1/oembed
-    # You'll need to add your Embed.ly API key to each request as the "key"
-    # parameter. To get an API key you'll need to sign up here: http://embed.ly/pricing
+    #
+    # You can append your Embed.ly API key to the provider so that all requests are signed
+    #     OEmbed::Providers::Embedly.endpoint += "?key=#{my_embedly_key}"
+    #
+    # If you don't yet have an API key you'll need to sign up here: http://embed.ly/pricing
     Embedly = OEmbed::Provider.new("http://api.embed.ly/1/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
     YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml")).each do |url|

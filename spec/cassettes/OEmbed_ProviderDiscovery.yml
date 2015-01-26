@@ -542,7 +542,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.youtube.com:80/oembed?format=json&url=http://www.youtube.com/watch?v=u6XAPnuFjJc
+    uri: http://www.youtube.com:80/oembed?format=json&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Du6XAPnuFjJc
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
@@ -704,7 +704,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.youtube.com:80/oembed?format=json&url=http://www.youtube.com/watch?v=u6XAPnuFjJc
+    uri: http://www.youtube.com:80/oembed?format=json&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Du6XAPnuFjJc
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
@@ -866,7 +866,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.youtube.com:80/oembed?format=xml&url=http://www.youtube.com/watch?v=u6XAPnuFjJc
+    uri: http://www.youtube.com:80/oembed?format=xml&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Du6XAPnuFjJc
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
@@ -2919,7 +2919,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://vimeo.com:80/api/oembed.json?format=json&url=http://vimeo.com/27953845
+    uri: http://vimeo.com:80/api/oembed.json?format=json&url=http%3A%2F%2Fvimeo.com%2F27953845
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
@@ -3455,7 +3455,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://vimeo.com:80/api/oembed.json?format=json&url=http://vimeo.com/27953845
+    uri: http://vimeo.com:80/api/oembed.json?format=json&url=http%3A%2F%2Fvimeo.com%2F27953845
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
@@ -3991,7 +3991,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://vimeo.com:80/api/oembed.xml?format=xml&url=http://vimeo.com/27953845
+    uri: http://vimeo.com:80/api/oembed.xml?format=xml&url=http%3A%2F%2Fvimeo.com%2F27953845
     body: 
     headers: 
   response: !ruby/struct:VCR::Response 
