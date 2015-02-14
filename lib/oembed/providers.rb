@@ -174,7 +174,7 @@ module OEmbed
 
     # Provider for vimeo.com
     # http://developer.vimeo.com/apis/oembed
-    Vimeo = OEmbed::Provider.new("http://vimeo.com/api/oembed.{format}")
+    Vimeo = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
