@@ -197,6 +197,8 @@ module OEmbed
     Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
+    Instagram << "https://instagr.am/p/*"
+    Instagram << "https://instagram.com/p/*"
     add_official_provider(Instagram)
 
     # Provider for slideshare.net
