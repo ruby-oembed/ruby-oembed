@@ -14,9 +14,9 @@ describe OEmbed::ProviderDiscovery do
   after(:all) do
     VCR.eject_cassette
   end
-  
+
   include OEmbedSpecHelper
-  
+
   {
     'youtube' => [
       'http://www.youtube.com/watch?v=u6XAPnuFjJc',
@@ -39,11 +39,11 @@ describe OEmbed::ProviderDiscovery do
     #  :json,
     #],
   }.each do |context, urls|
-    
+
     given_url, expected_endpoint, expected_format = urls
-    
+
     context "with #{context} url" do
-      
+
       describe "discover_provider" do
 
         before(:all) do
@@ -53,60 +53,60 @@ describe OEmbed::ProviderDiscovery do
         end
 
         it "should return the correct Class" do
-          @provider_default.should be_instance_of(OEmbed::Provider)
-          @provider_json.should be_instance_of(OEmbed::Provider)
-          @provider_xml.should be_instance_of(OEmbed::Provider)
+          expect(@provider_default).to be_instance_of(OEmbed::Provider)
+          expect(@provider_json).to be_instance_of(OEmbed::Provider)
+          expect(@provider_xml).to be_instance_of(OEmbed::Provider)
         end
 
         it "should detect the correct URL" do
           if expected_endpoint.is_a?(Hash)
-            @provider_json.endpoint.should eq(expected_endpoint[expected_format])
-            @provider_json.endpoint.should eq(expected_endpoint[:json])
-            @provider_xml.endpoint.should eq(expected_endpoint[:xml])
+            expect(@provider_json.endpoint).to eq(expected_endpoint[expected_format])
+            expect(@provider_json.endpoint).to eq(expected_endpoint[:json])
+            expect(@provider_xml.endpoint).to eq(expected_endpoint[:xml])
           else
-            @provider_default.endpoint.should eq(expected_endpoint)
-            @provider_json.endpoint.should eq(expected_endpoint)
-            @provider_xml.endpoint.should eq(expected_endpoint)
+            expect(@provider_default.endpoint).to eq(expected_endpoint)
+            expect(@provider_json.endpoint).to eq(expected_endpoint)
+            expect(@provider_xml.endpoint).to eq(expected_endpoint)
           end
         end
 
         it "should return the correct format" do
-          @provider_default.format.should eq(expected_format)
-          @provider_json.format.should eq(:json)
-          @provider_xml.format.should eq(:xml)
+          expect(@provider_default.format).to eq(expected_format)
+          expect(@provider_json.format).to eq(:json)
+          expect(@provider_xml.format).to eq(:xml)
         end
       end # discover_provider
 
       describe "get" do
-      
+
         before(:all) do
           @response_default = OEmbed::ProviderDiscovery.get(given_url)
           @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
           @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
         end
-      
+
         it "should return the correct Class" do
-          @response_default.should be_kind_of(OEmbed::Response)
-          @response_json.should be_kind_of(OEmbed::Response)
-          @response_xml.should be_kind_of(OEmbed::Response)
+          expect(@response_default).to be_kind_of(OEmbed::Response)
+          expect(@response_json).to be_kind_of(OEmbed::Response)
+          expect(@response_xml).to be_kind_of(OEmbed::Response)
         end
-      
+
         it "should return the correct format" do
-          @response_default.format.should eq(expected_format.to_s)
-          @response_json.format.should eq('json')
-          @response_xml.format.should eq('xml')
+          expect(@response_default.format).to eq(expected_format.to_s)
+          expect(@response_json.format).to eq('json')
+          expect(@response_xml.format).to eq('xml')
         end
-      
+
         it "should return the correct data" do
-          @response_default.type.should_not be_nil
-          @response_json.type.should_not be_nil
-          @response_xml.type.should_not be_nil
-          
-          # Technically, the following values _could_ be blank, but for the 
+          expect(@response_default.type).to_not be_nil
+          expect(@response_json.type).to_not be_nil
+          expect(@response_xml.type).to_not be_nil
+
+          # Technically, the following values _could_ be blank, but for the
           # examples urls we're using we expect them not to be.
-          @response_default.title.should_not be_nil
-          @response_json.title.should_not be_nil
-          @response_xml.title.should_not be_nil
+          expect(@response_default.title).to_not be_nil
+          expect(@response_json.title).to_not be_nil
+          expect(@response_xml.title).to_not be_nil
         end
       end # get
     end

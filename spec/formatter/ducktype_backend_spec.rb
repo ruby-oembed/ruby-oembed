@@ -9,7 +9,7 @@ class WorkingDuck
     end
     def parse_error; RuntimeError; end
   end
-  
+
   # A WorkingDuck instance should work as a Backend
   def decode(value)
     self.class.decode(value)
@@ -29,33 +29,33 @@ describe "OEmbed::Formatter::JSON::Backends::DuckType" do
   include OEmbedSpecHelper
 
   it "should work with WorkingDuck Class" do
-    lambda {
+    expect {
       OEmbed::Formatter::JSON.backend = WorkingDuck
-    }.should_not raise_error
-    OEmbed::Formatter::JSON.backend.should equal(WorkingDuck)
+    }.not_to raise_error
+    expect(OEmbed::Formatter::JSON.backend).to be WorkingDuck
   end
-  
+
   it "should work with a WorkingDuck instance" do
     instance = WorkingDuck.new
-    lambda {
+    expect {
       OEmbed::Formatter::JSON.backend = instance
-    }.should_not raise_error
-    OEmbed::Formatter::JSON.backend.should equal(instance)
+    }.to_not raise_error
+    expect(OEmbed::Formatter::JSON.backend).to be instance
   end
-  
+
   it "should fail with FailingDuckDecode Class" do
-    lambda {
+    expect {
       OEmbed::Formatter::JSON.backend = FailingDuckDecode
-    }.should raise_error(LoadError)
-    OEmbed::Formatter::JSON.backend.should_not equal(FailingDuckDecode)
+    }.to raise_error(LoadError)
+    expect(OEmbed::Formatter::JSON.backend).to_not be(FailingDuckDecode)
   end
-  
+
   it "should fail with a FailingDuckDecode instance" do
     instance = FailingDuckDecode.new
-    lambda {
+    expect {
       OEmbed::Formatter::JSON.backend = instance
-    }.should raise_error(LoadError)
-    OEmbed::Formatter::JSON.backend.should_not equal(instance)
+    }.to raise_error(LoadError)
+    expect(OEmbed::Formatter::JSON.backend).to_not be(instance)
   end
 end
 
@@ -63,32 +63,32 @@ describe "OEmbed::Formatter::XML::Backends::DuckType" do
   include OEmbedSpecHelper
 
   it "should work with WorkingDuck Class" do
-    lambda {
+    expect {
       OEmbed::Formatter::XML.backend = WorkingDuck
-    }.should_not raise_error
-    OEmbed::Formatter::XML.backend.should equal(WorkingDuck)
+    }.to_not raise_error
+    expect(OEmbed::Formatter::XML.backend).to be(WorkingDuck)
   end
-  
+
   it "should work with a WorkingDuck instance" do
     instance = WorkingDuck.new
-    lambda {
+    expect {
       OEmbed::Formatter::XML.backend = instance
-    }.should_not raise_error
-    OEmbed::Formatter::XML.backend.should equal(instance)
+    }.to_not raise_error
+    expect(OEmbed::Formatter::XML.backend).to be(instance)
   end
-  
+
   it "should fail with FailingDuckDecode Class" do
-    lambda {
+    expect {
       OEmbed::Formatter::XML.backend = FailingDuckDecode
-    }.should raise_error(LoadError)
-    OEmbed::Formatter::XML.backend.should_not equal(FailingDuckDecode)
+    }.to raise_error(LoadError)
+    expect(OEmbed::Formatter::XML.backend).to_not be(FailingDuckDecode)
   end
-  
+
   it "should fail with a FailingDuckDecode instance" do
     instance = FailingDuckDecode.new
-    lambda {
+    expect {
       OEmbed::Formatter::XML.backend = instance
-    }.should raise_error(LoadError)
-    OEmbed::Formatter::XML.backend.should_not equal(instance)
+    }.to raise_error(LoadError)
+    expect(OEmbed::Formatter::XML.backend).to_not be(instance)
   end
 end
