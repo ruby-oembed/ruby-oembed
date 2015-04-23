@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== Unreleased - 23 April 2015
+== 0.8.13 - 23 April 2015
 
 * Change built-in Instagram provider to recognize https URLs; Pull #35 (Philipp Bosch)
 * Change built-in Instagram provider to use https oembed/API endpoint. (Marcos Wright-Kuhns)
