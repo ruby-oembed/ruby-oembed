@@ -193,10 +193,12 @@ module OEmbed
     add_official_provider(Vine)
 
     # Provider for instagram.com
-    # http://instagr.am/developer/embedding/
-    Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
+    # https://instagr.am/developer/embedding/
+    Instagram = OEmbed::Provider.new("https://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
+    Instagram << "https://instagr.am/p/*"
+    Instagram << "https://instagram.com/p/*"
     add_official_provider(Instagram)
 
     # Provider for slideshare.net
