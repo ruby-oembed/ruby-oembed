@@ -4,6 +4,7 @@
 
 * Change built-in Instagram provider to recognize https URLs; Pull #35 (Philipp Bosch)
 * Change built-in Instagram provider to use https oembed/API endpoint. (Marcos Wright-Kuhns)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
 
 == 0.8.12 - 7 January 2015
 
