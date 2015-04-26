@@ -127,9 +127,9 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_all
       all_example_urls.each do |url|
         provider = OEmbed::Providers.find(url)
-        provider.should_receive(:raw).
+        expect(provider).should_receive(:raw).
           with(url, {})
-        provider.should_receive(:get).
+        expect(provider).should_receive(:get).
           with(url, {})
         OEmbed::Providers.raw(url)
         OEmbed::Providers.get(url)
