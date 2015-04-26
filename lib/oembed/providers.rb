@@ -144,10 +144,11 @@ module OEmbed
     add_official_provider(Youtube)
 
     # Provider for flickr.com
-    # http://developer.yahoo.com/blogs/ydn/posts/2008/05/oembed_embeddin/
     Flickr = OEmbed::Provider.new("https://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
     Flickr << "https://*.flickr.com/*"
+    Flickr << "http://flic.kr/*"
+    Flickr << "https://flic.kr/*"
     add_official_provider(Flickr)
 
     # Provider for viddler.com
