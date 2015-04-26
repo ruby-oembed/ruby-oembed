@@ -173,7 +173,7 @@ module OEmbed
     add_official_provider(Hulu)
 
     # Provider for vimeo.com
-    # http://developer.vimeo.com/apis/oembed
+    # https://developer.vimeo.com/apis/oembed
     Vimeo = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
