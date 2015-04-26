@@ -3,6 +3,8 @@
 == 0.8.14 - Unreleased
 
 * Change built-in Vimeo provider to use https oembed endpoint; Pull #44 (Jonne Haß)
+* Change built-in Flickr provider to use https oembed endpoint; Pull #46 (Javan Makhmali)
+* Change built-in Flickr provider to recognize https URLs and short flic.kr URLs (Javan Makhmali & Marcos Wright-Kuhns)
 
 == 0.8.13 - 23 April 2015
 
