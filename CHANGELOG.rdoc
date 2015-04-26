@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.8.14 - Unreleased
+== 0.8.14 - 25 April 2015
 
 * Change built-in Vimeo provider to use https oembed endpoint; Pull #44 (Jonne Haß)
 * Change built-in Flickr provider to use https oembed endpoint; Pull #46 (Javan Makhmali)
