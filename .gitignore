@@ -5,3 +5,6 @@
 Gemfile.lock
 .yardoc
 .DS_Store
+/.rvm
+/.ruby-version
+/.ruby-gemset
