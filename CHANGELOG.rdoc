@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== 0.8.14 - Unreleased
+
+* Change built-in Vimeo provider to use https oembed endpoint; Pull #44 (Jonne Haß)
+
 == 0.8.13 - 23 April 2015
 
 * Change built-in Instagram provider to recognize https URLs; Pull #35 (Philipp Bosch)
