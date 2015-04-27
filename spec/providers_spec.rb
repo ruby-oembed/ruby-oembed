@@ -18,7 +18,7 @@ describe OEmbed::Providers do
 
   describe ".register" do
     it "should register providers" do
-      OEmbed::Providers.urls.should be_empty
+      expect(OEmbed::Providers.urls).to be_empty
 
       OEmbed::Providers.register(@flickr, @qik)
 
