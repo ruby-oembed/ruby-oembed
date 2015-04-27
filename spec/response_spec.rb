@@ -69,38 +69,38 @@ describe OEmbed::Response do
       # We need to compare keys & values separately because we don't expect all
       # non-string values to be recognized correctly.
 
-      new_res.fields.keys.should == valid_response(:object).keys
-      new_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      expect(new_res.fields.keys).to eq(valid_response(:object).keys)
+      expect(new_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
 
-      default_res.fields.keys.should == valid_response(:object).keys
-      default_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      expect(default_res.fields.keys).to eq(valid_response(:object).keys)
+      expect(default_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
 
-      xml_res.fields.keys.should == valid_response(:object).keys
-      xml_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      expect(xml_res.fields.keys).to eq(valid_response(:object).keys)
+      expect(xml_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
 
-      json_res.fields.keys.should == valid_response(:object).keys
-      json_res.fields.values.map{|v|v.to_s}.should == valid_response(:object).values.map{|v|v.to_s}
+      expect(json_res.fields.keys).to eq(valid_response(:object).keys)
+      expect(json_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
     end
 
     it "should set the provider" do
-      new_res.provider.should == OEmbed::Providers::OohEmbed
-      default_res.provider.should == @flickr
-      xml_res.provider.should == @qik
-      json_res.provider.should == @viddler
+      expect(new_res.provider).to eq(OEmbed::Providers::OohEmbed)
+      expect(default_res.provider).to eq(@flickr)
+      expect(xml_res.provider).to eq(@qik)
+      expect(json_res.provider).to eq(@viddler)
     end
 
     it "should set the format" do
       new_res.format.should be_nil
-      default_res.format.to_s.should == 'json'
-      xml_res.format.to_s.should == 'xml'
-      json_res.format.to_s.should == 'json'
+      expect(default_res.format.to_s).to eq('json')
+      expect(xml_res.format.to_s).to eq('xml')
+      expect(json_res.format.to_s).to eq('json')
     end
 
     it "should set the request_url" do
       new_res.request_url.should be_nil
-      default_res.request_url.to_s.should == example_url(:flickr)
-      xml_res.request_url.to_s.should == example_url(:qik)
-      json_res.request_url.to_s.should == example_url(:viddler)
+      expect(default_res.request_url.to_s).to eq(example_url(:flickr))
+      expect(xml_res.request_url.to_s).to eq(example_url(:qik))
+      expect(json_res.request_url.to_s).to eq(example_url(:viddler))
     end
   end
 
@@ -135,17 +135,17 @@ describe OEmbed::Response do
   end
 
   it "should access the XML data through #field" do
-    xml_res.field(:type).should == "photo"
-    xml_res.field(:version).should == "1.0"
-    xml_res.field(:fields).should == "hello"
-    xml_res.field(:__id__).should == "1234"
+    expect(xml_res.field(:type)).to eq("photo")
+    expect(xml_res.field(:version)).to eq("1.0")
+    expect(xml_res.field(:fields)).to eq("hello")
+    expect(xml_res.field(:__id__)).to eq("1234")
   end
 
   it "should access the JSON data through #field" do
-    json_res.field(:type).should == "photo"
-    json_res.field(:version).should == "1.0"
-    json_res.field(:fields).should == "hello"
-    json_res.field(:__id__).should == "1234"
+    expect(json_res.field(:type)).to eq("photo")
+    expect(json_res.field(:version)).to eq("1.0")
+    expect(json_res.field(:fields)).to eq("hello")
+    expect(json_res.field(:__id__)).to eq("1234")
   end
 
   describe "#define_methods!" do
@@ -156,7 +156,7 @@ describe OEmbed::Response do
         local_res.should respond_to(method)
       end
       expected_helpers.each do |method, value|
-        local_res.send(method).should == value
+        expect(local_res.send(method)).to eq(value)
       end
       expected_skipped.each do |method, value|
         local_res.send(method).should_not == value
@@ -191,7 +191,7 @@ describe OEmbed::Response do
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
-      local_res.version.should == local_res.field('version')
+      expect(local_res.version).to eq(local_res.field('version'))
       local_res.version.should_not == String.new.version
     end
   end

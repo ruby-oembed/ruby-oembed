@@ -22,7 +22,7 @@ describe OEmbed::Providers do
 
       OEmbed::Providers.register(@flickr, @qik)
 
-      OEmbed::Providers.urls.keys.should == @flickr.urls + @qik.urls
+      expect(OEmbed::Providers.urls.keys).to eq(@flickr.urls + @qik.urls)
 
       @flickr.urls.each do |regexp|
         OEmbed::Providers.urls.should have_key(regexp)
@@ -38,8 +38,8 @@ describe OEmbed::Providers do
     it "should find by URLs" do
       OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
 
-      OEmbed::Providers.find(example_url(:flickr)).should == @flickr
-      OEmbed::Providers.find(example_url(:qik)).should == @qik
+      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
     end
   end
 
@@ -53,7 +53,7 @@ describe OEmbed::Providers do
         OEmbed::Providers.urls.should_not have_key(regexp)
       end
 
-      OEmbed::Providers.urls.keys.should == @qik.urls
+      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
 
       @qik.urls.each do |regexp|
         OEmbed::Providers.urls.should have_key(regexp)
@@ -71,14 +71,14 @@ describe OEmbed::Providers do
 
       OEmbed::Providers.register(@qik, @qik_mirror)
 
-      OEmbed::Providers.urls.keys.should == @qik.urls
+      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
 
       @qik_mirror.urls.each do |regexp|
         OEmbed::Providers.urls[regexp].should include(@qik_mirror)
         OEmbed::Providers.urls[regexp].should include(@qik)
       end
 
-      OEmbed::Providers.find(example_url(:qik)).should == @qik
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
 
       OEmbed::Providers.unregister(@qik)
 
@@ -88,7 +88,7 @@ describe OEmbed::Providers do
         OEmbed::Providers.urls[regexp].should include(@qik_mirror)
       end
 
-      OEmbed::Providers.find(example_url(:qik)).should == @qik_mirror
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik_mirror)
 
       OEmbed::Providers.unregister(@qik_mirror)
 
@@ -150,7 +150,7 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
 
-      OEmbed::Providers.fallback.should == [ OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed]
+      expect(OEmbed::Providers.fallback).to eq([ OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
