@@ -18,82 +18,82 @@ describe OEmbed::Providers do
 
   describe ".register" do
     it "should register providers" do
-      OEmbed::Providers.urls.should be_empty
-    
+      expect(OEmbed::Providers.urls).to be_empty
+
       OEmbed::Providers.register(@flickr, @qik)
-    
-      OEmbed::Providers.urls.keys.should == @flickr.urls + @qik.urls
+
+      expect(OEmbed::Providers.urls.keys).to eq(@flickr.urls + @qik.urls)
 
       @flickr.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@flickr)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@flickr)
       end
 
       @qik.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
       end
     end
 
     it "should find by URLs" do
       OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
-    
-      OEmbed::Providers.find(example_url(:flickr)).should == @flickr
-      OEmbed::Providers.find(example_url(:qik)).should == @qik
+
+      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
     end
   end
 
   describe ".unregister" do
     it "should unregister providers" do
       OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
-    
+
       OEmbed::Providers.unregister(@flickr)
-    
+
       @flickr.urls.each do |regexp|
-        OEmbed::Providers.urls.should_not have_key(regexp)
+        expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
-    
-      OEmbed::Providers.urls.keys.should == @qik.urls
+
+      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
 
       @qik.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
       end
     end
 
     it "should not unregister duplicate provider urls at first" do
       @qik_mirror = OEmbed::Provider.new("http://mirror.qik.com/api/oembed.{format}")
       @qik_mirror << "http://qik.com/*"
-    
-      @qik_mirror.urls.each do |regexp|
-        @qik.urls.should include(regexp)
-      end
-    
-      OEmbed::Providers.register(@qik, @qik_mirror)
-    
-      OEmbed::Providers.urls.keys.should == @qik.urls
 
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls[regexp].should include(@qik_mirror)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(@qik.urls).to include(regexp)
       end
-    
-      OEmbed::Providers.find(example_url(:qik)).should == @qik
-    
+
+      OEmbed::Providers.register(@qik, @qik_mirror)
+
+      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
+
+      @qik_mirror.urls.each do |regexp|
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
+      end
+
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+
       OEmbed::Providers.unregister(@qik)
-    
+
       urls = OEmbed::Providers.urls.dup
 
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls[regexp].should include(@qik_mirror)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
       end
-    
-      OEmbed::Providers.find(example_url(:qik)).should == @qik_mirror
-    
+
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik_mirror)
+
       OEmbed::Providers.unregister(@qik_mirror)
-    
+
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls.should_not have_key(regexp)
+        expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
     end
   end
@@ -114,10 +114,10 @@ describe OEmbed::Providers do
 	#  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery)
   #
 	#  provider = OEmbed::ProviderDiscovery
-	#  provider.should_receive(:raw).
+	#  expect(provider).to receive(:raw).
 	#    with(url, {}).
 	#    and_return(valid_response(:raw))
-	#  provider.should_receive(:get).
+	#  expect(provider).to receive(:get).
 	#    with(url, {}).
 	#    and_return(valid_response(:object))
   #end
@@ -139,8 +139,8 @@ describe OEmbed::Providers do
     it "should raise an error if no embeddable content is found" do
       OEmbed::Providers.register_all
       ["http://fake.com/", example_url(:google_video)].each do |url|
-        proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
-        proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
@@ -150,28 +150,28 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
 
-      OEmbed::Providers.fallback.should == [ OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed]
+      expect(OEmbed::Providers.fallback).to eq([ OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
       OEmbed::Providers.register_all
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
-    
+
       url = example_url(:google_video)
 
       provider = OEmbed::Providers.fallback.last
-      provider.should_receive(:raw).
+      expect(provider).to receive(:raw).
         with(url, {}).
         and_return(valid_response(:raw))
-      provider.should_receive(:get).
+      expect(provider).to receive(:get).
         with(url, {}).
         and_return(valid_response(:object))
 
       OEmbed::Providers.fallback.each do |p|
         next if p == provider
-        p.should_receive(:raw).and_raise(OEmbed::NotFound)
-        p.should_receive(:get).and_raise(OEmbed::NotFound)
+        expect(p).to receive(:raw).and_raise(OEmbed::NotFound)
+        expect(p).to receive(:get).and_raise(OEmbed::NotFound)
       end
 
       OEmbed::Providers.raw(url)
@@ -182,10 +182,10 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_all
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
-    
+
       ["http://fa.ke/"].each do |url|
-        proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
-        proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
@@ -194,26 +194,26 @@ describe OEmbed::Providers do
     after(:each) do
       OEmbed::Providers.send(:remove_const, :Fake) if defined?(OEmbed::Providers::Fake)
     end
-    
+
     it "should not register a provider that is not marked as official" do
-      defined?(OEmbed::Providers::Fake).should_not be
-      
+      expect(defined?(OEmbed::Providers::Fake)).to_not be
+
       class OEmbed::Providers
         Fake = OEmbed::Provider.new("http://new.fa.ke/oembed/")
         Fake << "http://new.fa.ke/*"
       end
-      
+
       OEmbed::Providers.register_all
       ["http://new.fa.ke/20C285E0"].each do |url|
         provider = OEmbed::Providers.find(url)
-        provider.should be_nil
+        expect(provider).to be_nil
       end
     end
-    
+
     describe 'add_official_provider' do
       it "should register a new official provider" do
-        defined?(OEmbed::Providers::Fake).should_not be
-        
+        expect(defined?(OEmbed::Providers::Fake)).to_not be
+
         class OEmbed::Providers
           Fake = OEmbed::Provider.new("http://official.fa.ke/oembed/")
           Fake << "http://official.fa.ke/*"
@@ -222,19 +222,19 @@ describe OEmbed::Providers do
 
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should_not be_a(OEmbed::Provider)
+          expect(provider).to_not be_a(OEmbed::Provider)
         end
-        
+
         OEmbed::Providers.register_all
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should be_a(OEmbed::Provider)
+          expect(provider).to be_a(OEmbed::Provider)
         end
       end
 
       it "should register an official sub_type provider separately" do
-        defined?(OEmbed::Providers::Fake).should_not be
-        
+        expect(defined?(OEmbed::Providers::Fake)).to_not be
+
         class OEmbed::Providers
           Fake = OEmbed::Provider.new("http://sub.fa.ke/oembed/")
           Fake << "http://sub.fa.ke/*"
@@ -244,13 +244,13 @@ describe OEmbed::Providers do
         OEmbed::Providers.register_all
         ["http://sub.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should_not be_a(OEmbed::Provider)
+          expect(provider).to_not be_a(OEmbed::Provider)
         end
-        
+
         OEmbed::Providers.register_all(:fakes)
         ["http://sub.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should be_a(OEmbed::Provider)
+          expect(provider).to be_a(OEmbed::Provider)
         end
       end
     end
