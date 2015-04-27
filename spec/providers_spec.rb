@@ -114,10 +114,10 @@ describe OEmbed::Providers do
 	#  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery)
   #
 	#  provider = OEmbed::ProviderDiscovery
-	#  provider.should_receive(:raw).
+	#  expect(provider).to receive(:raw).
 	#    with(url, {}).
 	#    and_return(valid_response(:raw))
-	#  provider.should_receive(:get).
+	#  expect(provider).to receive(:get).
 	#    with(url, {}).
 	#    and_return(valid_response(:object))
   #end
@@ -161,17 +161,17 @@ describe OEmbed::Providers do
       url = example_url(:google_video)
 
       provider = OEmbed::Providers.fallback.last
-      provider.should_receive(:raw).
+      expect(provider).to receive(:raw).
         with(url, {}).
         and_return(valid_response(:raw))
-      provider.should_receive(:get).
+      expect(provider).to receive(:get).
         with(url, {}).
         and_return(valid_response(:object))
 
       OEmbed::Providers.fallback.each do |p|
         next if p == provider
-        p.should_receive(:raw).and_raise(OEmbed::NotFound)
-        p.should_receive(:get).and_raise(OEmbed::NotFound)
+        expect(p).to receive(:raw).and_raise(OEmbed::NotFound)
+        expect(p).to receive(:get).and_raise(OEmbed::NotFound)
       end
 
       OEmbed::Providers.raw(url)
