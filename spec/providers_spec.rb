@@ -139,8 +139,8 @@ describe OEmbed::Providers do
     it "should raise an error if no embeddable content is found" do
       OEmbed::Providers.register_all
       ["http://fake.com/", example_url(:google_video)].each do |url|
-        proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
-        proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
@@ -184,8 +184,8 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
 
       ["http://fa.ke/"].each do |url|
-        proc { OEmbed::Providers.get(url) }.should raise_error(OEmbed::NotFound)
-        proc { OEmbed::Providers.raw(url) }.should raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
+        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
