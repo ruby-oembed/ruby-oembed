@@ -50,7 +50,7 @@ describe OEmbed::Providers do
       OEmbed::Providers.unregister(@flickr)
 
       @flickr.urls.each do |regexp|
-        OEmbed::Providers.urls.should_not have_key(regexp)
+        expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
 
       expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
@@ -93,7 +93,7 @@ describe OEmbed::Providers do
       OEmbed::Providers.unregister(@qik_mirror)
 
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls.should_not have_key(regexp)
+        expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
     end
   end
@@ -196,7 +196,7 @@ describe OEmbed::Providers do
     end
 
     it "should not register a provider that is not marked as official" do
-      defined?(OEmbed::Providers::Fake).should_not be
+      expect(defined?(OEmbed::Providers::Fake)).to_not be
 
       class OEmbed::Providers
         Fake = OEmbed::Provider.new("http://new.fa.ke/oembed/")
@@ -212,7 +212,7 @@ describe OEmbed::Providers do
 
     describe 'add_official_provider' do
       it "should register a new official provider" do
-        defined?(OEmbed::Providers::Fake).should_not be
+        expect(defined?(OEmbed::Providers::Fake)).to_not be
 
         class OEmbed::Providers
           Fake = OEmbed::Provider.new("http://official.fa.ke/oembed/")
@@ -222,7 +222,7 @@ describe OEmbed::Providers do
 
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should_not be_a(OEmbed::Provider)
+          expect(provider).to_not be_a(OEmbed::Provider)
         end
 
         OEmbed::Providers.register_all
@@ -233,7 +233,7 @@ describe OEmbed::Providers do
       end
 
       it "should register an official sub_type provider separately" do
-        defined?(OEmbed::Providers::Fake).should_not be
+        expect(defined?(OEmbed::Providers::Fake)).to_not be
 
         class OEmbed::Providers
           Fake = OEmbed::Provider.new("http://sub.fa.ke/oembed/")
@@ -244,7 +244,7 @@ describe OEmbed::Providers do
         OEmbed::Providers.register_all
         ["http://sub.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should_not be_a(OEmbed::Provider)
+          expect(provider).to_not be_a(OEmbed::Provider)
         end
 
         OEmbed::Providers.register_all(:fakes)

@@ -197,12 +197,12 @@ describe OEmbed::Response do
       expect(String.new).to respond_to('version')
 
       expect(all_expected.keys).to include('version')
-      all_expected['version'].should_not == String.new.version
+      expect(all_expected['version']).to_not eq(String.new.version)
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       expect(local_res.version).to eq(local_res.field('version'))
-      local_res.version.should_not == String.new.version
+      expect(local_res.version).to_not eq(String.new.version)
     end
   end
 
@@ -211,17 +211,17 @@ describe OEmbed::Response do
       it "should include the title, if given" do
         response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
         expect(response).to respond_to(:title)
-        response.title.should_not be_empty
+        expect(response.title).to_not be_empty
 
-        response.html.should_not be_nil
+        expect(response.html).to_not be_nil
         expect(response.html).to match(/alt='#{response.title}'/)
       end
 
       it "should work just fine, without a title" do
         response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
-        response.should_not respond_to(:title)
+        expect(response).to_not respond_to(:title)
 
-        response.html.should_not be_nil
+        expect(response.html).to_not be_nil
         expect(response.html).to match(/alt=''/)
       end
     end
