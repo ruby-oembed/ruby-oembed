@@ -90,14 +90,14 @@ describe OEmbed::Response do
     end
 
     it "should set the format" do
-      new_res.format.should be_nil
+      expect(new_res.format).to be_nil
       expect(default_res.format.to_s).to eq('json')
       expect(xml_res.format.to_s).to eq('xml')
       expect(json_res.format.to_s).to eq('json')
     end
 
     it "should set the request_url" do
-      new_res.request_url.should be_nil
+      expect(new_res.request_url).to be_nil
       expect(default_res.request_url.to_s).to eq(example_url(:flickr))
       expect(xml_res.request_url.to_s).to eq(example_url(:qik))
       expect(json_res.request_url.to_s).to eq(example_url(:viddler))
@@ -153,7 +153,7 @@ describe OEmbed::Response do
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       all_expected.each do |method, value|
-        local_res.should respond_to(method)
+        expect(local_res).to respond_to(method)
       end
       expected_helpers.each do |method, value|
         expect(local_res.send(method)).to eq(value)
@@ -164,11 +164,11 @@ describe OEmbed::Response do
     end
 
     it "should protect most already defined methods" do
-      Object.new.should respond_to('__id__')
-      Object.new.should respond_to('to_s')
+      expect(Object.new).to respond_to('__id__')
+      expect(Object.new).to respond_to('to_s')
 
-      all_expected.keys.should include('__id__')
-      all_expected.keys.should include('to_s')
+      expect(all_expected.keys).to include('__id__')
+      expect(all_expected.keys).to include('to_s')
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
@@ -183,10 +183,10 @@ describe OEmbed::Response do
         end
       end
 
-      Object.new.should respond_to('version')
-      String.new.should respond_to('version')
+      expect(Object.new).to respond_to('version')
+      expect(String.new).to respond_to('version')
 
-      all_expected.keys.should include('version')
+      expect(all_expected.keys).to include('version')
       all_expected['version'].should_not == String.new.version
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
@@ -200,11 +200,11 @@ describe OEmbed::Response do
     describe "#html" do
       it "should include the title, if given" do
         response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
-        response.should respond_to(:title)
+        expect(response).to respond_to(:title)
         response.title.should_not be_empty
 
         response.html.should_not be_nil
-        response.html.should match(/alt='#{response.title}'/)
+        expect(response.html).to match(/alt='#{response.title}'/)
       end
 
       it "should work just fine, without a title" do
@@ -212,7 +212,7 @@ describe OEmbed::Response do
         response.should_not respond_to(:title)
 
         response.html.should_not be_nil
-        response.html.should match(/alt=''/)
+        expect(response.html).to match(/alt=''/)
       end
     end
   end

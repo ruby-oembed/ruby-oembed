@@ -25,13 +25,13 @@ describe OEmbed::Providers do
       expect(OEmbed::Providers.urls.keys).to eq(@flickr.urls + @qik.urls)
 
       @flickr.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@flickr)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@flickr)
       end
 
       @qik.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
       end
     end
 
@@ -56,8 +56,8 @@ describe OEmbed::Providers do
       expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
 
       @qik.urls.each do |regexp|
-        OEmbed::Providers.urls.should have_key(regexp)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
       end
     end
 
@@ -66,7 +66,7 @@ describe OEmbed::Providers do
       @qik_mirror << "http://qik.com/*"
 
       @qik_mirror.urls.each do |regexp|
-        @qik.urls.should include(regexp)
+        expect(@qik.urls).to include(regexp)
       end
 
       OEmbed::Providers.register(@qik, @qik_mirror)
@@ -74,8 +74,8 @@ describe OEmbed::Providers do
       expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
 
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls[regexp].should include(@qik_mirror)
-        OEmbed::Providers.urls[regexp].should include(@qik)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
       end
 
       expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
@@ -85,7 +85,7 @@ describe OEmbed::Providers do
       urls = OEmbed::Providers.urls.dup
 
       @qik_mirror.urls.each do |regexp|
-        OEmbed::Providers.urls[regexp].should include(@qik_mirror)
+        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
       end
 
       expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik_mirror)
@@ -206,7 +206,7 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_all
       ["http://new.fa.ke/20C285E0"].each do |url|
         provider = OEmbed::Providers.find(url)
-        provider.should be_nil
+        expect(provider).to be_nil
       end
     end
 
@@ -228,7 +228,7 @@ describe OEmbed::Providers do
         OEmbed::Providers.register_all
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should be_a(OEmbed::Provider)
+          expect(provider).to be_a(OEmbed::Provider)
         end
       end
 
@@ -250,7 +250,7 @@ describe OEmbed::Providers do
         OEmbed::Providers.register_all(:fakes)
         ["http://sub.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
-          provider.should be_a(OEmbed::Provider)
+          expect(provider).to be_a(OEmbed::Provider)
         end
       end
     end
