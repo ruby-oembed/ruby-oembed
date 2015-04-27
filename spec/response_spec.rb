@@ -1,5 +1,27 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
+def expected_helpers
+  {
+    "type" => "random",
+    "version" => "1.0",
+    "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
+    "url" => "http://foo.com/bar",
+  }.freeze
+end
+
+def expected_skipped
+  {
+    "fields" => "hello",
+    "__id__" => 1234,
+    "provider" => "oohEmbed",
+    "to_s" => "random string",
+  }.freeze
+end
+
+def all_expected
+  expected_helpers.merge(expected_skipped).freeze
+end
+
 describe OEmbed::Response do
   include OEmbedSpecHelper
 
@@ -40,28 +62,6 @@ describe OEmbed::Response do
 
   let(:json_res) {
     OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
-  }
-
-  let(:expected_helpers) {
-    {
-      "type" => "random",
-      "version" => "1.0",
-      "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
-      "url" => "http://foo.com/bar",
-    }
-  }
-
-  let(:expected_skipped) {
-    {
-      "fields" => "hello",
-      "__id__" => 1234,
-      "provider" => "oohEmbed",
-      "to_s" => "random string",
-    }
-  }
-
-  let(:all_expected) {
-    expected_helpers.merge(expected_skipped)
   }
 
   describe "#initialize" do
@@ -149,17 +149,27 @@ describe OEmbed::Response do
   end
 
   describe "#define_methods!" do
-    it "should automagically define helpers" do
-      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
-
+    context "with automagic" do
       all_expected.each do |method, value|
-        expect(local_res).to respond_to(method)
+        before do
+          @local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
+        end
+
+        it "should define the #{method} method" do
+          expect(@local_res).to respond_to(method)
+        end
       end
+
       expected_helpers.each do |method, value|
-        expect(local_res.send(method)).to eq(value)
+        it "should define #{method} to return #{value.inspect}" do
+          expect(@local_res.send(method)).to eq(value)
+        end
       end
+
       expected_skipped.each do |method, value|
-        local_res.send(method).should_not == value
+        it "should NOT override #{method} to not return #{value.inspect}" do
+          expect(@local_res.send(method)).to_not eq(value)
+        end
       end
     end
 
@@ -172,8 +182,8 @@ describe OEmbed::Response do
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
-      local_res.__id__.should_not == local_res.field('__id__')
-      local_res.to_s.should_not == local_res.field('to_s')
+      expect(local_res.__id__).to_not eq(local_res.field('__id__'))
+      expect(local_res.to_s).to_not eq(local_res.field('to_s'))
     end
 
     it "should not protect already defined methods that are specifically overridable" do
