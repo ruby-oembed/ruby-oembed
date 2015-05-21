@@ -1,5 +1,17 @@
 = CHANGELOG
 
+== 0.8.14 - 25 April 2015
+
+* Change built-in Vimeo provider to use https oembed endpoint; Pull #44 (Jonne Haß)
+* Change built-in Flickr provider to use https oembed endpoint; Pull #46 (Javan Makhmali)
+* Change built-in Flickr provider to recognize https URLs and short flic.kr URLs (Javan Makhmali & Marcos Wright-Kuhns)
+
+== 0.8.13 - 23 April 2015
+
+* Change built-in Instagram provider to recognize https URLs; Pull #35 (Philipp Bosch)
+* Change built-in Instagram provider to use https oembed/API endpoint. (Marcos Wright-Kuhns)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
+
 == 0.8.12 - 7 January 2015
 
 * Fix URI error in Ruby 2.2; Pull #41, Issue #43 (Maxim Bublis)

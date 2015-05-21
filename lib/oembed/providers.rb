@@ -144,9 +144,11 @@ module OEmbed
     add_official_provider(Youtube)
 
     # Provider for flickr.com
-    # http://developer.yahoo.com/blogs/ydn/posts/2008/05/oembed_embeddin/
-    Flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
+    Flickr = OEmbed::Provider.new("https://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
+    Flickr << "https://*.flickr.com/*"
+    Flickr << "http://flic.kr/*"
+    Flickr << "https://flic.kr/*"
     add_official_provider(Flickr)
 
     # Provider for viddler.com
@@ -173,8 +175,8 @@ module OEmbed
     add_official_provider(Hulu)
 
     # Provider for vimeo.com
-    # http://developer.vimeo.com/apis/oembed
-    Vimeo = OEmbed::Provider.new("http://vimeo.com/api/oembed.{format}")
+    # https://developer.vimeo.com/apis/oembed
+    Vimeo = OEmbed::Provider.new("https://vimeo.com/api/oembed.{format}")
     Vimeo << "http://*.vimeo.com/*"
     Vimeo << "https://*.vimeo.com/*"
     add_official_provider(Vimeo)
@@ -193,10 +195,12 @@ module OEmbed
     add_official_provider(Vine)
 
     # Provider for instagram.com
-    # http://instagr.am/developer/embedding/
-    Instagram = OEmbed::Provider.new("http://api.instagram.com/oembed", :json)
+    # https://instagr.am/developer/embedding/
+    Instagram = OEmbed::Provider.new("https://api.instagram.com/oembed", :json)
     Instagram << "http://instagr.am/p/*"
     Instagram << "http://instagram.com/p/*"
+    Instagram << "https://instagr.am/p/*"
+    Instagram << "https://instagram.com/p/*"
     add_official_provider(Instagram)
 
     # Provider for slideshare.net
