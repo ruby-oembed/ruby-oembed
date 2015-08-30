@@ -136,7 +136,7 @@ module OEmbed
     #     OEmbed::Providers::Youtube.endpoint += "?iframe=0"
     # * To require https embed code
     #     OEmbed::Providers::Youtube.endpoint += "?scheme=https"
-    Youtube = OEmbed::Provider.new("http://www.youtube.com/oembed?scheme=https")
+    Youtube = OEmbed::Provider.new("https://www.youtube.com/oembed?scheme=https")
     Youtube << "http://*.youtube.com/*"
     Youtube << "https://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
@@ -205,14 +205,14 @@ module OEmbed
 
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
-    Slideshare = OEmbed::Provider.new("http://www.slideshare.net/api/oembed/2")
+    Slideshare = OEmbed::Provider.new("https://www.slideshare.net/api/oembed/2")
     Slideshare << "http://www.slideshare.net/*/*"
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
 
     # Provider for yfrog
     # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
-    Yfrog = OEmbed::Provider.new("http://www.yfrog.com/api/oembed", :json)
+    Yfrog = OEmbed::Provider.new("https://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
 
@@ -258,7 +258,7 @@ module OEmbed
     add_official_provider(NFBCanada)
 
     # Provider for scribd.com
-    Scribd = OEmbed::Provider.new("http://www.scribd.com/services/oembed")
+    Scribd = OEmbed::Provider.new("https://www.scribd.com/services/oembed")
     Scribd << "http://*.scribd.com/*"
     add_official_provider(Scribd)
 
@@ -274,7 +274,7 @@ module OEmbed
 
     # Provider for soundcloud.com
     # http://developers.soundcloud.com/docs/oembed
-    SoundCloud = OEmbed::Provider.new("http://soundcloud.com/oembed", :json)
+    SoundCloud = OEmbed::Provider.new("https://soundcloud.com/oembed", :json)
     SoundCloud << "http://*.soundcloud.com/*"
     SoundCloud << "https://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
