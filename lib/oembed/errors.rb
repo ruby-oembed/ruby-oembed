@@ -1,5 +1,5 @@
 module OEmbed
-  
+
   # A generic OEmbed-related Error. The OEmbed library does its best to capture all internal
   # errors and wrap them in an OEmbed::Error class so that the error-handling code in your
   # application can more easily identify the source of errors.
@@ -17,6 +17,12 @@ module OEmbed
   class NotFound < OEmbed::Error # :nodoc:
     def to_s
       "No embeddable content at '#{super}'"
+    end
+  end
+
+  class TooManyRedirects < OEmbed::Error # :nodoc:
+    def to_s
+      "Too many HTTP redirects have occurred"
     end
   end
 
@@ -43,5 +49,5 @@ module OEmbed
       "There was an error parsing the server response (#{super})"
     end
   end
-    
+
 end
