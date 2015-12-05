@@ -2,6 +2,12 @@ require 'rubygems'
 require 'vcr'
 require File.dirname(__FILE__) + '/../lib/oembed'
 
+RSpec.configure do |config|
+  config.raise_errors_for_deprecations!
+  config.tty = true
+  config.color = true
+end
+
 module OEmbedSpecHelper
   EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))) unless defined?(EXAMPLE)
 
@@ -27,7 +33,7 @@ module OEmbedSpecHelper
 
     results
   end
-  
+
   def example_body(site)
     EXAMPLE[site][:body]
   end
@@ -62,7 +68,7 @@ module OEmbedSpecHelper
       XML
     end
   end
-  
+
   def invalid_response(case_name, format)
     format = format.to_s
     valid = valid_response(format)
