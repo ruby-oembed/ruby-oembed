@@ -130,8 +130,8 @@ describe OEmbed::ProviderDiscovery do
   end
 
   it "does passes the timeout option to Net::Http" do
-    Net::HTTP.any_instance.should_receive(:open_timeout=).with(5)
-    Net::HTTP.any_instance.should_receive(:read_timeout=).with(5)
+    expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
+    expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
     OEmbed::ProviderDiscovery.discover_provider('https://www.youtube.com/watch?v=dFs9WO2B8uI', :timeout => 5)
   end
 end
