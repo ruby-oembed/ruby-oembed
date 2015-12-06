@@ -1,15 +1,19 @@
+require 'oembed/http_helper'
+
 module OEmbed
   # Uses {oEmbed Discover}[http://oembed.com/#section4] to generate a new Provider
   # instance about a URL for which a Provider didn't previously exist.
   class ProviderDiscovery
     class << self
 
+    include OEmbed::HttpHelper
+
     # Discover the Provider for the given url, then call Provider#raw on that provider.
     # The query parameter will be passed to both discover_provider and Provider#raw
     # @deprecated *Note*: This method will be made private in the future.
     def raw(url, query={})
       provider = discover_provider(url, query)
-      provider.raw(url, options)
+      provider.raw(url, query)
     end
 
     # Discover the Provider for the given url, then call Provider#get on that provider.
@@ -24,10 +28,11 @@ module OEmbed
     #
     # The options Hash recognizes the following keys:
     # :format:: If given only discover endpoints for the given format. If not format is given, use the first available format found.
+    # :timeout:: specifies the timeout (in seconds) for the http request.
     def discover_provider(url, options = {})
       uri = URI.parse(url)
 
-      res = Provider.http_get(uri, options)
+      res = http_get(uri, options)
       format = options[:format]
 
       if format.nil? || format == :json

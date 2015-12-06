@@ -1,33 +1,36 @@
 require 'cgi'
+require 'oembed/http_helper'
+
 module OEmbed
   # An OEmbed::Provider has information about an individual oEmbed enpoint.
   class Provider
-    
+    include OEmbed::HttpHelper
+
     # The String that is the http URI of the Provider's oEmbed endpoint.
     # This URL may also contain a {{format}} portion. In actual requests to
     # this Provider, this string will be replaced with a string representing
     # the request format (e.g. "json").
     attr_accessor :endpoint
-    
+
     # The name of the default format for all request to this Provider (e.g. 'json').
     attr_accessor :format
-    
+
     # An Array of all URL schemes supported by this Provider.
     attr_accessor :urls
-    
+
     # The human-readable name of the Provider.
     #
     # @deprecated *Note*: This accessor currently isn't used anywhere in the codebase.
     attr_accessor :name
-    
+
     # @deprecated *Note*: Added in a fork of the gem, a while back. I really would like
     # to get rid of it, though. --Marcos
     attr_accessor :url
-    
+
 
     # Construct a new OEmbed::Provider instance, pointing at a specific oEmbed
     # endpoint.
-    # 
+    #
     # The endpoint should be a String representing the http URI of the Provider's
     # oEmbed endpoint. The endpoint String may also contain a {format} portion.
     # In actual requests to this Provider, this string will be replaced with a String
@@ -35,7 +38,7 @@ module OEmbed
     #
     # If give, the format should be the name of the default format for all request
     # to this Provider (e.g. 'json'). Defaults to OEmbed::Formatter.default
-    # 
+    #
     # For example:
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed?format=#{OEmbed::Formatter.default}"
@@ -47,7 +50,7 @@ module OEmbed
     def initialize(endpoint, format = OEmbed::Formatter.default)
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
-      
+
       @endpoint = endpoint
       @urls = []
       @format = format
@@ -57,7 +60,7 @@ module OEmbed
     # The url scheme can be either a String, containing wildcards specified
     # with an asterisk, (see http://oembed.com/#section2.1 for details),
     # or a Regexp.
-    # 
+    #
     # For example:
     #   @provider << "http://my.service.com/video/*"
     #   @provider << "http://*.service.com/photo/*/slideshow"
@@ -85,7 +88,7 @@ module OEmbed
       query[:format] ||= @format
       OEmbed::Response.create_for(raw(url, query), self, url, query[:format].to_s)
     end
-    
+
     # Determine whether the given url is supported by this Provider by matching
     # against the Provider's URL schemes.
     def include?(url)
@@ -101,7 +104,7 @@ module OEmbed
 
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
-      
+
       endpoint = @endpoint.clone
 
       if endpoint.include?("{format}")
@@ -126,62 +129,10 @@ module OEmbed
     # @deprecated *Note*: This method will be made private in the future.
     def raw(url, query = {})
       uri = build(url, query)
-      self.class.http_get(uri, query)
+      http_get(uri, query)
     rescue OEmbed::UnknownFormat
       # raise with format to be backward compatible
       raise OEmbed::UnknownFormat, format
-    end
-
-    def self.http_get(uri, options = {})
-      found = false
-      max_redirects = 4
-      until found
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = uri.scheme == 'https'
-        http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-        http.read_timeout = http.open_timeout = options[:timeout] if options[:timeout]
-        
-        methods = if RUBY_VERSION < "2.2"
-            %w{scheme userinfo host port registry}
-        else
-            %w{scheme userinfo host port}
-        end
-        methods.each { |method| uri.send("#{method}=", nil) }
-        req = Net::HTTP::Get.new(uri.to_s)
-        req['User-Agent'] = "Mozilla/5.0 (compatible; ruby-oembed/#{OEmbed::VERSION})"
-        res = http.request(req)
-        
-        #res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
-        
-        res.header['location'] ? uri = URI.parse(res.header['location']) : found = true
-        if max_redirects == 0
-          found = true
-        else
-          max_redirects -= 1
-        end
-      end
-      
-      case res
-      when Net::HTTPNotImplemented
-        raise OEmbed::UnknownFormat
-      when Net::HTTPNotFound
-        raise OEmbed::NotFound, uri
-      when Net::HTTPSuccess
-        res.body
-      else
-        raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
-      end
-    rescue StandardError
-      # Convert known errors into OEmbed::UnknownResponse for easy catching
-      # up the line. This is important if given a URL that doesn't support
-      # OEmbed. The following are known errors:
-      # * Net::* errors like Net::HTTPBadResponse
-      # * JSON::JSONError errors like JSON::ParserError
-      if defined?(::JSON) && $!.is_a?(::JSON::JSONError) || $!.class.to_s =~ /\ANet::/
-        raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
-      else
-        raise $!
-      end
     end
   end
 end
