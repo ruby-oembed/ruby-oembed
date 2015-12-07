@@ -7,9 +7,10 @@ module OEmbed
     #
     # The options Hash recognizes the following keys:
     # :timeout:: specifies the timeout (in seconds) for the http request.
+    # :max_redirects:: the number of times this request will follow 3XX redirects before throwing an error. Default: 4
     def http_get(uri, options = {})
       found = false
-      max_redirects = 4
+      max_redirects = options[:max_redirects] ? options[:max_redirects].to_i : 4
       until found
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == 'https'

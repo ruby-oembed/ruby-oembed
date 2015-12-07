@@ -84,6 +84,7 @@ module OEmbed
     # :timeout:: specifies the timeout (in seconds) for the http request.
     # :format:: overrides this Provider's default request format.
     # :url:: will be ignored, replaced by the url param.
+    # :max_redirects:: the number of times this request will follow 3XX redirects before throwing an error. Default: 4
     def get(url, query = {})
       query[:format] ||= @format
       OEmbed::Response.create_for(raw(url, query), self, url, query[:format].to_s)
@@ -101,6 +102,7 @@ module OEmbed
 
       query = query.merge({:url => ::CGI.escape(url)})
       query.delete(:timeout)
+      query.delete(:max_redirects)
 
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
