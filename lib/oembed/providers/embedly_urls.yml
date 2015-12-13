@@ -747,6 +747,7 @@
 - http://zeit.de/video/*
 - http://zie.nl/video/*
 - https://*.23video.com/*
+- https://*.accredible.com/*
 - https://*.brainsonic.com/*
 - https://*.cartodb.com/*/*
 - https://*.crocodoc.com/*
@@ -766,6 +767,7 @@
 - https://*vidyard.com/*
 - https://*youtube.com/watch*
 - https://23video.com/*
+- https://accredible.com/*
 - https://alpha.vrchive.com/*
 - https://animoto.com/play/*
 - https://api.lovelive.tv/v1/*
@@ -807,6 +809,7 @@
 - https://google.*/maps/*
 - https://hackpad.com/*
 - https://ifttt.com/recipes/*
+- https://iloopit.net/*/*
 - https://img.skitch.com/*
 - https://invis.io/*
 - https://it.youtube.com/*
@@ -870,6 +873,7 @@
 - https://tr.instela.com/*
 - https://tun.in/*
 - https://tunein.com/*
+- https://uploadly.com/*
 - https://urtak.com/clr/*
 - https://urtak.com/u/*
 - https://vid.me/*
