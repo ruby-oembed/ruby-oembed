@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== 0.9.0 - Unreleased
+== 0.9.0 - 12 December 2015
 
 * Add support for HTTP redirects in ProviderDiscovery; Pull #39 (Sebastian de Castelberg) and Pull #38 (Sven Schwyn)
 * Add support for a :max_redirects option to Provider#get and ProviderDiscovery#get  (Marcos Wright-Kuhns)
