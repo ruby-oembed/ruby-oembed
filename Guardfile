@@ -32,4 +32,9 @@ group :red_green_refactor, :halt_on_fail => true do
       f
     end
   end
+
+  guard :rubocop, :cmd => "bundle exec rubocop" do
+    watch(/.+\.rb$/)
+    watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
+  end
 end
