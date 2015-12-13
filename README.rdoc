@@ -48,7 +48,7 @@ This library works wonderfully on its own, but can get a speed boost by using 3r
   require 'json'
   require 'xmlsimple'
   require 'oembed'
-  
+
   OEmbed::Formatter::JSON.backend #=> OEmbed::Formatter::JSON::Backends::JSONGem
   OEmbed::Formatter::XML.backend  #=> OEmbed::Formatter::XML::Backends::XmlSimple
 
@@ -69,6 +69,8 @@ Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/judofy
   bundle install
   # Run the tests.
   bundle exec rake
+  # or run the test continually
+  bundle exec guard
 
 If you encounter any bug, feel free to {create an Issue}[https://github.com/judofyr/ruby-oembed/issues].
 
