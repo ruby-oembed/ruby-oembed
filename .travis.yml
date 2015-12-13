@@ -1,4 +1,6 @@
 language: ruby
+before_install:
+  - gem install bundler --version="~> 1.10"
 cache: bundler
 rvm:
   - 1.9.3
