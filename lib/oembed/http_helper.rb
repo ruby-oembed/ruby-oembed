@@ -10,7 +10,7 @@ module OEmbed
     # :max_redirects:: the number of times this request will follow 3XX redirects before throwing an error. Default: 4
     def http_get(uri, options = {})
       found = false
-      max_redirects = options[:max_redirects] ? options[:max_redirects].to_i : 4
+      remaining_redirects = options[:max_redirects] ? options[:max_redirects].to_i : 4
       until found
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == 'https'
@@ -27,13 +27,13 @@ module OEmbed
         req['User-Agent'] = "Mozilla/5.0 (compatible; ruby-oembed/#{OEmbed::VERSION})"
         res = http.request(req)
 
-        #res = Net::HTTP.start(uri.host, uri.port) {|http| http.get(uri.request_uri) }
-
-        res.header['location'] ? uri = URI.parse(res.header['location']) : found = true
-        if max_redirects == 0
+        if remaining_redirects == 0
           found = true
+        elsif res.is_a?(Net::HTTPRedirection) && res.header['location']
+          uri = URI.parse(res.header['location'])
+          remaining_redirects -= 1
         else
-          max_redirects -= 1
+          found = true
         end
       end
 
