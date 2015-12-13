@@ -29,6 +29,7 @@ module OEmbed
     # The options Hash recognizes the following keys:
     # :format:: If given only discover endpoints for the given format. If not format is given, use the first available format found.
     # :timeout:: specifies the timeout (in seconds) for the http request.
+    # :max_redirects:: the number of times this request will follow 3XX redirects before throwing an error. Default: 4
     def discover_provider(url, options = {})
       uri = URI.parse(url)
 
