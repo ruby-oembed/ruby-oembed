@@ -1,5 +1,12 @@
 = CHANGELOG
 
+== 0.9.0 - Unreleased
+
+* Add support for HTTP redirects in ProviderDiscovery; Pull #39 (Sebastian de Castelberg) and Pull #38 (Sven Schwyn)
+* Add support for a :max_redirects option to Provider#get and ProviderDiscovery#get  (Marcos Wright-Kuhns)
+* Change built-in Instagram provider to recognize URLs in the www subdomain; Pull #52 (Javan Makhmali)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
+
 == 0.8.14 - 25 April 2015
 
 * Change built-in Vimeo provider to use https oembed endpoint; Pull #44 (Jonne Haß)

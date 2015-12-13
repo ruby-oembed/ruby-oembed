@@ -113,4 +113,25 @@ describe OEmbed::ProviderDiscovery do
 
   end # each service
 
+  context "when returning 404" do
+    let(:url) { 'https://www.youtube.com/watch?v=123123123' }
+
+    it "raises OEmbed::NotFound" do
+      expect{ OEmbed::ProviderDiscovery.discover_provider(url) }.to raise_error(OEmbed::NotFound)
+    end
+  end
+
+  context "when returning 301" do
+    let(:url) { 'http://www.youtube.com/watch?v=dFs9WO2B8uI' }
+
+    it "does redirect http to https" do
+      expect{ OEmbed::ProviderDiscovery.discover_provider(url) }.not_to raise_error
+    end
+  end
+
+  it "does passes the timeout option to Net::Http" do
+    expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
+    expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
+    OEmbed::ProviderDiscovery.discover_provider('https://www.youtube.com/watch?v=dFs9WO2B8uI', :timeout => 5)
+  end
 end
