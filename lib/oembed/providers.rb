@@ -151,24 +151,6 @@ module OEmbed
     Flickr << "https://flic.kr/*"
     add_official_provider(Flickr)
 
-    # Provider for viddler.com
-    # http://developers.viddler.com/documentation/services/oembed/
-    Viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/")
-    Viddler << "http://*.viddler.com/*"
-    add_official_provider(Viddler)
-
-    # Provider for qik.com
-    # http://qik.com/blog/qik-embraces-oembed-for-embedding-videos/
-    Qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}")
-    Qik << "http://qik.com/*"
-    Qik << "http://qik.com/video/*"
-    add_official_provider(Qik)
-
-    # Provider for revision3.com
-    Revision3 = OEmbed::Provider.new("http://revision3.com/api/oembed/")
-    Revision3 << "http://*.revision3.com/*"
-    add_official_provider(Revision3)
-
     # Provider for hulu.com
     Hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}")
     Hulu << "http://www.hulu.com/watch/*"
@@ -212,29 +194,11 @@ module OEmbed
     Slideshare << "http://www.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
 
-    # Provider for yfrog
-    # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
-    Yfrog = OEmbed::Provider.new("https://www.yfrog.com/api/oembed", :json)
-    Yfrog << "http://yfrog.com/*"
-    add_official_provider(Yfrog)
-
     # Provider for imgur.com
     Imgur = OEmbed::Provider.new("https://api.imgur.com/oembed.{format}")
     Imgur << "https://*.imgur.com/gallery/*"
     Imgur << "http://*.imgur.com/gallery/*"
     add_official_provider(Imgur)
-
-    # provider for mlg-tv
-    # http://tv.majorleaguegaming.com/oembed
-    MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
-    MlgTv << "http://tv.majorleaguegaming.com/video/*"
-    MlgTv << "http://mlg.tv/video/*"
-    add_official_provider(MlgTv)
-
-    # pownce.com closed in 2008
-    #Pownce = OEmbed::Provider.new("http://api.pownce.com/2.1/oembed.{format}")
-    #Pownce << "http://*.pownce.com/*"
-    #add_official_provider(Pownce)
 
     # Provider for polleverywhere.com
     PollEverywhere = OEmbed::Provider.new("http://www.polleverywhere.com/services/oembed/")
@@ -243,31 +207,16 @@ module OEmbed
     PollEverywhere << "http://www.polleverywhere.com/free_text_polls/*"
     add_official_provider(PollEverywhere)
 
-    # Provider for my.opera.com
-    # http://my.opera.com/devblog/blog/2008/12/02/embedding-my-opera-content-oembed
-    MyOpera = OEmbed::Provider.new("http://my.opera.com/service/oembed", :json)
-    MyOpera << "http://my.opera.com/*"
-    add_official_provider(MyOpera)
-
-    # Provider for clearspring.com
-    ClearspringWidgets = OEmbed::Provider.new("http://widgets.clearspring.com/widget/v1/oembed/")
-    ClearspringWidgets << "http://www.clearspring.com/widgets/*"
-    add_official_provider(ClearspringWidgets)
-
     # Provider for nfb.ca
-    NFBCanada = OEmbed::Provider.new("http://www.nfb.ca/remote/services/oembed/")
+    NFBCanada = OEmbed::Provider.new("http://www.nfb.ca/remote/services/oembed/", :xml)
     NFBCanada << "http://*.nfb.ca/film/*"
+    NFBCanada << "https://*.nfb.ca/film/*"
     add_official_provider(NFBCanada)
 
     # Provider for scribd.com
     Scribd = OEmbed::Provider.new("https://www.scribd.com/services/oembed")
     Scribd << "http://*.scribd.com/*"
     add_official_provider(Scribd)
-
-    # Provider for movieclips.com
-    MovieClips = OEmbed::Provider.new("http://movieclips.com/services/oembed/")
-    MovieClips << "http://movieclips.com/watch/*/*/"
-    add_official_provider(MovieClips)
 
     # Provider for 23hq.com
     TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
@@ -292,24 +241,11 @@ module OEmbed
     Spotify << /^spotify\:(.*?)/
     add_official_provider(Spotify)
 
-    # Provider for skitch.com
-    # http://skitch.com/oembed/%3C/endpoint
-    Skitch = OEmbed::Provider.new("http://skitch.com/oembed")
-    Skitch << "http://*.skitch.com/*"
-    Skitch << "https://*.skitch.com/*"
-    add_official_provider(Skitch)
-
-    ## Provider for clikthrough.com
-    # http://corporate.clikthrough.com/wp/?p=275
-    #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
-    #Clickthrough << "http://*.clikthrough.com/theater/video/*"
-    #add_official_provider(Clickthrough)
-
-    ## Provider for kinomap.com
-    # http://www.kinomap.com/#!oEmbed
-    #Kinomap = OEmbed::Provider.new("http://www.kinomap.com/oembed")
-    #Kinomap << "http://www.kinomap.com/*"
-    #add_official_provider(Kinomap)
+    # Provider for tumblr.com
+    Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", :json)
+    Tumblr << "http://*.tumblr.com/post/*"
+    Tumblr << "https://*.tumblr.com/post/*"
+    add_official_provider(Tumblr)
 
     # Provider for oohembed.com, which is a provider aggregator. See
     # OEmbed::Providers::OohEmbed.urls for a full list of supported url schemas.
