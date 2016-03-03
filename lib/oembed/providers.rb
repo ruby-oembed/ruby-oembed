@@ -318,6 +318,12 @@ module OEmbed
     Skitch << "https://*.skitch.com/*"
     add_official_provider(Skitch)
 
+    # Provider for tumblr.com
+    Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", :json)
+    Tumblr << "http://*.tumblr.com/post/*"
+    Tumblr << "https://*.tumblr.com/post/*"
+    add_official_provider(Tumblr)
+
     ## Provider for clikthrough.com
     # http://corporate.clikthrough.com/wp/?p=275
     #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
