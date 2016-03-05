@@ -18,6 +18,11 @@ describe OEmbed::ProviderDiscovery do
   include OEmbedSpecHelper
 
   {
+    # 'name' => [
+    #   'given_page_url',
+    #   'expected_endpoint' || {:json=>'expected_json_endpoint', :xml=>'expected_xml_endpoint},
+    #   :expected_format,
+    # ]
     'youtube' => [
       'http://www.youtube.com/watch?v=u6XAPnuFjJc',
       'http://www.youtube.com/oembed',
@@ -27,6 +32,16 @@ describe OEmbed::ProviderDiscovery do
       'http://vimeo.com/27953845',
       {:json=>'http://vimeo.com/api/oembed.json',:xml=>'http://vimeo.com/api/oembed.xml'},
       :json,
+    ],
+    'facebook-photo' => [
+      'https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater',
+      'https://www.facebook.com/plugins/post/oembed.json/',
+      :json,
+    ],
+    'tumblr' => [
+      'http://kittehkats.tumblr.com/post/140525169406/katydid-and-the-egg-happy-forest-family',
+      'https://www.tumblr.com/oembed/1.0',
+      :json
     ],
     #'noteflight' => [
     #  'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
