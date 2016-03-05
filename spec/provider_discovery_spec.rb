@@ -1,3 +1,4 @@
+require 'json'
 require File.dirname(__FILE__) + '/spec_helper'
 require 'vcr'
 
@@ -56,21 +57,30 @@ describe OEmbed::ProviderDiscovery do
   }.each do |context, urls|
 
     given_url, expected_endpoint, expected_format = urls
+    expected_endpoints = expected_endpoint.is_a?(Hash) ? expected_endpoint.keys : [expected_format]
 
     context "with #{context} url" do
 
-      describe "discover_provider" do
+      describe ".discover_provider" do
 
         before(:all) do
           @provider_default = OEmbed::ProviderDiscovery.discover_provider(given_url)
-          @provider_json = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:json)
-          @provider_xml = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:xml)
+          if expected_endpoints.include?(:json)
+            @provider_json = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:json)
+          end
+          if expected_endpoints.include?(:xml)
+            @provider_xml = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:xml)
+          end
         end
 
         it "should return the correct Class" do
           expect(@provider_default).to be_instance_of(OEmbed::Provider)
-          expect(@provider_json).to be_instance_of(OEmbed::Provider)
-          expect(@provider_xml).to be_instance_of(OEmbed::Provider)
+          if expected_endpoints.include?(:json)
+            expect(@provider_json).to be_instance_of(OEmbed::Provider)
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@provider_xml).to be_instance_of(OEmbed::Provider)
+          end
         end
 
         it "should detect the correct URL" do
@@ -80,48 +90,76 @@ describe OEmbed::ProviderDiscovery do
             expect(@provider_xml.endpoint).to eq(expected_endpoint[:xml])
           else
             expect(@provider_default.endpoint).to eq(expected_endpoint)
-            expect(@provider_json.endpoint).to eq(expected_endpoint)
-            expect(@provider_xml.endpoint).to eq(expected_endpoint)
+            if expected_endpoints.include?(:json)
+              expect(@provider_json.endpoint).to eq(expected_endpoint)
+            end
+            if expected_endpoints.include?(:xml)
+              expect(@provider_xml.endpoint).to eq(expected_endpoint)
+            end
           end
         end
 
         it "should return the correct format" do
           expect(@provider_default.format).to eq(expected_format)
-          expect(@provider_json.format).to eq(:json)
-          expect(@provider_xml.format).to eq(:xml)
+          if expected_endpoints.include?(:json)
+            expect(@provider_json.format).to eq(:json)
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@provider_xml.format).to eq(:xml)
+          end
         end
       end # discover_provider
 
-      describe "get" do
+      describe ".get" do
 
         before(:all) do
           @response_default = OEmbed::ProviderDiscovery.get(given_url)
-          @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
-          @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
+          if expected_endpoints.include?(:json)
+            @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
+          end
+          if expected_endpoints.include?(:xml)
+            @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
+          end
         end
 
         it "should return the correct Class" do
           expect(@response_default).to be_kind_of(OEmbed::Response)
-          expect(@response_json).to be_kind_of(OEmbed::Response)
-          expect(@response_xml).to be_kind_of(OEmbed::Response)
+          if expected_endpoints.include?(:json)
+            expect(@response_json).to be_kind_of(OEmbed::Response)
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@response_xml).to be_kind_of(OEmbed::Response)
+          end
         end
 
         it "should return the correct format" do
           expect(@response_default.format).to eq(expected_format.to_s)
-          expect(@response_json.format).to eq('json')
-          expect(@response_xml.format).to eq('xml')
+          if expected_endpoints.include?(:json)
+            expect(@response_json.format).to eq('json')
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@response_xml.format).to eq('xml')
+          end
         end
 
         it "should return the correct data" do
           expect(@response_default.type).to_not be_nil
-          expect(@response_json.type).to_not be_nil
-          expect(@response_xml.type).to_not be_nil
+          if expected_endpoints.include?(:json)
+            expect(@response_json.type).to_not be_nil
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@response_xml.type).to_not be_nil
+          end
 
           # Technically, the following values _could_ be blank, but for the
           # examples urls we're using we expect them not to be.
           expect(@response_default.title).to_not be_nil
-          expect(@response_json.title).to_not be_nil
-          expect(@response_xml.title).to_not be_nil
+          if expected_endpoints.include?(:json)
+            expect(@response_json.title).to_not be_nil
+          end
+          if expected_endpoints.include?(:xml)
+            expect(@response_xml.title).to_not be_nil
+          end
         end
       end # get
     end
