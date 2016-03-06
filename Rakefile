@@ -5,3 +5,5 @@ rescue LoadError
 end
 
 Dir[File.join(File.dirname(__FILE__), 'lib/tasks/*.rake')].sort.each { |ext| load ext }
+
+task :default => [:rubocop, :specs]
