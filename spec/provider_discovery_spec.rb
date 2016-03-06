@@ -1,5 +1,5 @@
-require 'json'
 require File.dirname(__FILE__) + '/spec_helper'
+require 'json'
 require 'vcr'
 
 VCR.config do |c|
@@ -10,6 +10,7 @@ end
 
 describe OEmbed::ProviderDiscovery do
   before(:all) do
+    OEmbed::Formatter::JSON.backend = 'JSONGem'
     VCR.insert_cassette('OEmbed_ProviderDiscovery')
   end
   after(:all) do
@@ -86,11 +87,18 @@ describe OEmbed::ProviderDiscovery do
           end
 
           it "should return the correct data" do
-            expect(response.type).to_not be_nil
+            expect(response.type).to_not be_empty
 
-            # Technically, the following values _could_ be blank, but for the
-            # examples urls we're using we expect them not to be.
-            expect(response.title).to_not be_nil
+            case response.type
+            when 'video', 'rich'
+              expect(response.html).to_not be_empty
+              expect(response.width).to_not be_nil
+              expect(response.height).to_not be_nil
+            when 'photo'
+              expect(response.url).to_not be_empty
+              expect(response.width).to_not be_nil
+              expect(response.height).to_not be_nil
+            end
           end
         end # get
       end
