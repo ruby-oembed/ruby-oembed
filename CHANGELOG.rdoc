@@ -1,5 +1,12 @@
 = CHANGELOG
 
+== 0.10.0 - 6 March 2016
+
+* Add built-in Tumblr provider; Pull #55 (unknown)
+* Add bulit-in FacebookPost and FacebookVideo providers; Pull #54 (John Crowe)
+* Change ProviderDiscovery.discover_provider to better find tags on some sites; Issue #56 + Pull #57 (Marcos Wright-Kuhns)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
+
 == 0.9.0 - 12 December 2015
 
 * Add support for HTTP redirects in ProviderDiscovery; Pull #39 (Sebastian de Castelberg) and Pull #38 (Sven Schwyn)
