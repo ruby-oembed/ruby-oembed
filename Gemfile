@@ -10,6 +10,8 @@ gem 'bundler', '~>1.10'
 
 gemspec
 
+gem 'rubocop', '~> 0.20'
+
 group :guard do
   gem 'guard-rspec'
   gem 'guard-bundler'
