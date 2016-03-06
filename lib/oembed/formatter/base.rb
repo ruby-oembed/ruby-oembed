@@ -80,13 +80,12 @@ module OEmbed
       end
 
       def already_loaded?(new_backend)
-        already_loaded = false
         begin
-          already_loaded = self::Backends.const_defined?(new_backend, false)
+          self::Backends.const_defined?(new_backend, false)
         rescue ArgumentError # we're dealing with ruby < 1.9 where const_defined? only takes 1 argument, but behaves the way we want it to.
-          already_loaded = self::Backends.const_defined?(new_backend)
+          self::Backends.const_defined?(new_backend)
         rescue NameError # no backends have been loaded yet
-          already_loaded = false
+          false
         end
       end
 
