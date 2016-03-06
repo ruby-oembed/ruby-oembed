@@ -1,5 +1,5 @@
 # Only allow this backend the json gem is already loaded
-raise LoadError, "The json library isn't available. require 'json'" unless defined?(JSON)
+raise LoadError, "The json library isn't available. require 'json'" unless OEmbed.const_defined?('::JSON')
 
 module OEmbed
   module Formatter
@@ -15,15 +15,15 @@ module OEmbed
             end
             ::JSON.parse(json)
           end
-          
+
           def decode_fail_msg
             "The version of the json library you have installed isn't parsing JSON like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::JSON::ParserError
           end
-        
+
         end
       end
     end
