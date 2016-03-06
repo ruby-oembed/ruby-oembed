@@ -1,3 +1,5 @@
+require 'openssl'
+
 module OEmbed
   module HttpHelper
 
