@@ -1,2 +1,6 @@
 Style/HashSyntax:
   EnforcedStyle: 'hash_rockets'
+
+Metrics/LineLength:
+  Exclude:
+    - ruby-oembed.gemspec
