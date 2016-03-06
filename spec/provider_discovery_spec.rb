@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/spec_helper'
+require 'json'
 require 'vcr'
 
 VCR.config do |c|
@@ -9,6 +10,7 @@ end
 
 describe OEmbed::ProviderDiscovery do
   before(:all) do
+    OEmbed::Formatter::JSON.backend = 'JSONGem'
     VCR.insert_cassette('OEmbed_ProviderDiscovery')
   end
   after(:all) do
@@ -18,97 +20,111 @@ describe OEmbed::ProviderDiscovery do
   include OEmbedSpecHelper
 
   {
+    # 'name' => [
+    #   'given_page_url',
+    #   'expected_endpoint' || {:json=>'expected_json_endpoint', :xml=>'expected_xml_endpoint},
+    #   :expected_format,
+    # ]
     'youtube' => [
       'http://www.youtube.com/watch?v=u6XAPnuFjJc',
-      'http://www.youtube.com/oembed',
+      {:json=>'http://www.youtube.com/oembed', :xml=>'http://www.youtube.com/oembed'},
       :json,
     ],
     'vimeo' => [
       'http://vimeo.com/27953845',
-      {:json=>'http://vimeo.com/api/oembed.json',:xml=>'http://vimeo.com/api/oembed.xml'},
+      {:json=>'http://vimeo.com/api/oembed.json', :xml=>'http://vimeo.com/api/oembed.xml'},
       :json,
     ],
-    #'noteflight' => [
-    #  'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
-    #  'http://www.noteflight.com/services/oembed',
-    #  :json,
-    #],
+    'facebook-photo' => [
+      'https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater',
+      'https://www.facebook.com/plugins/post/oembed.json/',
+      :json,
+    ],
+    'tumblr' => [
+      'http://kittehkats.tumblr.com/post/140525169406/katydid-and-the-egg-happy-forest-family',
+      'https://www.tumblr.com/oembed/1.0',
+      :json
+    ],
+    'noteflight' => [
+      'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
+      {:json=>'http://www.noteflight.com/services/oembed', :xml=>'http://www.noteflight.com/services/oembed'},
+      :json,
+    ],
+    # TODO: Enhance ProviderDiscovery to support arbitrary query parameters. See https://github.com/judofyr/ruby-oembed/issues/15
     #'wordpress' => [
     #  'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/',
-    #  'http://public-api.wordpress.com/oembed/1.0/',
+    #  {:json=>'https://public-api.wordpress.com/oembed/1.0/', :xml=>'https://public-api.wordpress.com/oembed/1.0/'},
     #  :json,
     #],
   }.each do |context, urls|
 
-    given_url, expected_endpoint, expected_format = urls
+    given_url, expected_endpoints, expected_format = urls
+    expected_endpoints = {expected_format=>expected_endpoints} unless expected_endpoints.is_a?(Hash)
 
-    context "with #{context} url" do
+    context "given a #{context} url" do
 
-      describe "discover_provider" do
+      shared_examples "a discover_provider call" do |endpoint, format|
+        describe ".discover_provider" do
+          it "should return the correct Class" do
+            expect(provider).to be_instance_of(OEmbed::Provider)
+          end
 
-        before(:all) do
-          @provider_default = OEmbed::ProviderDiscovery.discover_provider(given_url)
-          @provider_json = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:json)
-          @provider_xml = OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:xml)
-        end
+          it "should detect the correct URL" do
+            expect(provider.endpoint).to eq(endpoint)
+          end
 
-        it "should return the correct Class" do
-          expect(@provider_default).to be_instance_of(OEmbed::Provider)
-          expect(@provider_json).to be_instance_of(OEmbed::Provider)
-          expect(@provider_xml).to be_instance_of(OEmbed::Provider)
-        end
-
-        it "should detect the correct URL" do
-          if expected_endpoint.is_a?(Hash)
-            expect(@provider_json.endpoint).to eq(expected_endpoint[expected_format])
-            expect(@provider_json.endpoint).to eq(expected_endpoint[:json])
-            expect(@provider_xml.endpoint).to eq(expected_endpoint[:xml])
-          else
-            expect(@provider_default.endpoint).to eq(expected_endpoint)
-            expect(@provider_json.endpoint).to eq(expected_endpoint)
-            expect(@provider_xml.endpoint).to eq(expected_endpoint)
+          it "should return the correct format" do
+            expect(provider.format).to eq(format)
           end
         end
 
-        it "should return the correct format" do
-          expect(@provider_default.format).to eq(expected_format)
-          expect(@provider_json.format).to eq(:json)
-          expect(@provider_xml.format).to eq(:xml)
+        describe ".get" do
+          it "should return the correct Class" do
+            expect(response).to be_kind_of(OEmbed::Response)
+          end
+
+          it "should return the correct format" do
+            expect(response.format).to eq(format.to_s)
+          end
+
+          it "should return the correct data" do
+            expect(response.type).to_not be_empty
+
+            case response.type
+            when 'video', 'rich'
+              expect(response.html).to_not be_empty
+              expect(response.width).to_not be_nil
+              expect(response.height).to_not be_nil
+            when 'photo'
+              expect(response.url).to_not be_empty
+              expect(response.width).to_not be_nil
+              expect(response.height).to_not be_nil
+            end
+          end
+        end # get
+      end
+
+      context "with no format specified" do
+        let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url) }
+        let(:response) { OEmbed::ProviderDiscovery.get(given_url) }
+        include_examples "a discover_provider call", expected_endpoints[expected_format], expected_format
+      end
+
+      if expected_endpoints.include?(:json)
+        context "with json format specified" do
+          let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:json) }
+          let(:response) { OEmbed::ProviderDiscovery.get(given_url, :format=>:json) }
+          include_examples "a discover_provider call", expected_endpoints[:json], :json
         end
-      end # discover_provider
+      end
 
-      describe "get" do
-
-        before(:all) do
-          @response_default = OEmbed::ProviderDiscovery.get(given_url)
-          @response_json = OEmbed::ProviderDiscovery.get(given_url, :format=>:json)
-          @response_xml = OEmbed::ProviderDiscovery.get(given_url, :format=>:xml)
+      if expected_endpoints.include?(:xml)
+        context "with json format specified" do
+          let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url, :format=>:xml) }
+          let(:response) { OEmbed::ProviderDiscovery.get(given_url, :format=>:xml) }
+          include_examples "a discover_provider call", expected_endpoints[:xml], :xml
         end
-
-        it "should return the correct Class" do
-          expect(@response_default).to be_kind_of(OEmbed::Response)
-          expect(@response_json).to be_kind_of(OEmbed::Response)
-          expect(@response_xml).to be_kind_of(OEmbed::Response)
-        end
-
-        it "should return the correct format" do
-          expect(@response_default.format).to eq(expected_format.to_s)
-          expect(@response_json.format).to eq('json')
-          expect(@response_xml.format).to eq('xml')
-        end
-
-        it "should return the correct data" do
-          expect(@response_default.type).to_not be_nil
-          expect(@response_json.type).to_not be_nil
-          expect(@response_xml.type).to_not be_nil
-
-          # Technically, the following values _could_ be blank, but for the
-          # examples urls we're using we expect them not to be.
-          expect(@response_default.title).to_not be_nil
-          expect(@response_json.title).to_not be_nil
-          expect(@response_xml.title).to_not be_nil
-        end
-      end # get
+      end
     end
 
   end # each service
