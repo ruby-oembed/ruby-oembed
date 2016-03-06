@@ -30329,3 +30329,567 @@
       eC5qcz9fdj0yMTVlZGRmNTc1MDQ4M2QzZjI2ZmE4MDQ0YjQ4NmNmYSI+PC9z
       Y3JpcHQ+Cgo8L2JvZHk+DQo8L2h0bWw+
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - Z8u2aWSmQpgl8PaLCZd8ZxmBVyagGNmw/sZYKkk0yoykpAReZtXhE4ICXyAZWoL3m18OpmWxYYAZHw1QeO7XnA==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - QwPes5qt/Fg4PPsdRWx6F2+cH4kvVue3jClzjTTe95pdTsupaoc0MFPF3/vWTtLdMvgAUiW40HgOCnD1Sprepg==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - 6R6kIIGU2B31Cdscjd18R/27Jwo71RmmMTPfno/oEtaOSfNvl5rrfdwYDpkTS4K6wNy9/Pfe7XX5UArdUgvAsA==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - p2hQMCNb4BKhd91tElmEsSyOf6kYB1XNE5+B9UzG3pJNTQgGZhn7p0N1LiZ3FVXQ38zHbKyfS9ziJG6StP1oRg==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - xHTbprfBJSiPmbi+SdLiJV63fst2C8H6lEh12U7HtTb7raPAKFoAV8SQxW0W5k2uSjSA4/3QLEWdvmaL1Prnzg==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.facebook.com:443/plugins/post/oembed.json/?url=https%3A%2F%2Fwww.facebook.com%2FFederer%2Fphotos%2Fpb.64760994940.-2207520000.1456668968.%2F10153235368269941%2F%3Ftype%3D3%26theater&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      public-key-pins-report-only:
+      - max-age=500; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=";
+        pin-sha256="q4PO2G2cbkZhZ82+JgmRUyGMoAeozA+BSXVXQWB8XWQ="; report-uri="http://reports.fb.com/hpkp/"
+      strict-transport-security:
+      - max-age=15552000; preload
+      x-xss-protection:
+      - '0'
+      content-type:
+      - text/javascript; charset=UTF-8
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      vary:
+      - Accept-Encoding
+      x-fb-debug:
+      - ca6wmnXuAMC197iWGNHPB5J/FR7+RsxOhb7rvcvjrKlU4LivAuA7OlmQeECkrxAaE5xfisHW4hZKhtkwKPU7Sw==
+      date:
+      - Sun, 06 Mar 2016 05:09:44 GMT
+    body: '{"author_name":"Roger Federer","author_url":"https://www.facebook.com/Federer/","provider_url":"https://www.facebook.com","provider_name":"Facebook","success":true,"height":null,"html":"\u003Cdiv
+      id=\"fb-root\">\u003C/div>\n\u003Cscript>(function(d, s, id) {\n  var js, fjs
+      = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js =
+      d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";\n  fjs.parentNode.insertBefore(js,
+      fjs);\n}(document, ''script'', ''facebook-jssdk''));\u003C/script>\u003Cdiv
+      class=\"fb-post\" data-href=\"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&amp;theater\"
+      data-width=\"552\">\u003Cdiv class=\"fb-xfbml-parse-ignore\">\u003Cblockquote
+      cite=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Posted
+      by \u003Ca href=\"https://www.facebook.com/Federer/\">Roger Federer\u003C/a>
+      on&nbsp;\u003Ca href=\"https://www.facebook.com/Federer/photos/a.70795379940.71425.64760994940/10153235368269941/?type=3\">Tuesday,
+      April 21, 2015\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater","width":552}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb994627b40080248420; expires=Wed, 04-Mar-2026 05:09:45 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb99e083b70742344910; expires=Wed, 04-Mar-2026 05:09:45 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb9a8f83410517754790; expires=Wed, 04-Mar-2026 05:09:46 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb9b3b1ad70101592540; expires=Wed, 04-Mar-2026 05:09:47 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb9bd7aa570691866980; expires=Wed, 04-Mar-2026 05:09:47 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://www.tumblr.com:443/oembed/1.0?url=http%3A%2F%2Fkittehkats.tumblr.com%2Fpost%2F140525169406%2Fkatydid-and-the-egg-happy-forest-family&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.9.0)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 06 Mar 2016 05:09:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      set-cookie:
+      - tmgioct=56dbbb9c9d28310691951540; expires=Wed, 04-Mar-2026 05:09:48 GMT; Max-Age=315360000;
+        path=/; httponly
+      p3p:
+      - 'CP="Tumblr''s privacy policy is available here: https://www.tumblr.com/policy/en/privacy"'
+      x-frame-options:
+      - deny
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+    body: '{"cache_age":3600,"url":"http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family","provider_url":"http:\/\/www.tumblr.com","provider_name":"Tumblr","author_name":"Kitteh
+      Kats","version":"1.0","author_url":"http:\/\/kittehkats.tumblr.com\/","type":"rich","html":"\u003Cdiv
+      class=\u0022tumblr-post\u0022 data-href=\u0022https:\/\/embed.tumblr.com\/embed\/post\/4mvmP7S9Ilu2IOMcqpZqEQ\/140525169406\u0022
+      data-did=\u00225ca96e0251d443372e687f5dff2e9c3a762e623b\u0022  \u003E\u003Ca
+      href=\u0022http:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u0022\u003Ehttp:\/\/kittehkats.tumblr.com\/post\/140525169406\/katydid-and-the-egg-happy-forest-family\u003C\/a\u003E\u003C\/div\u003E\u003Cscript
+      async src=\u0022https:\/\/secure.assets.tumblr.com\/post.js\u0022\u003E\u003C\/script\u003E","height":null,"width":540}'
+    http_version: '1.1'
