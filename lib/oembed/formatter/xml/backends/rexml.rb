@@ -11,9 +11,7 @@ module OEmbed
 
           # Parses an XML string or IO and convert it into an object
           def decode(xml)
-            if !xml.respond_to?(:read)
-              xml = StringIO.new(xml)
-            end
+            xml = StringIO.new(xml) unless xml.respond_to?(:read)
             obj = {}
             doc = ::REXML::Document.new(xml)
             doc.elements[1].elements.each do |el|
@@ -21,22 +19,21 @@ module OEmbed
             end
             obj
           rescue
-            case $!
+            case $ERROR_INFO
             when parse_error
-              raise $!
+              raise $ERROR_INFO
             else
               raise parse_error, "Couldn't parse the given document."
-            end  
+            end
           end
-          
+
           def decode_fail_msg
             "The version of the REXML library you have installed isn't parsing XML like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::REXML::ParseException
           end
-        
         end
       end
     end

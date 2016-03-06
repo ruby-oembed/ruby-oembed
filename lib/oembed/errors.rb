@@ -1,5 +1,4 @@
 module OEmbed
-  
   # A generic OEmbed-related Error. The OEmbed library does its best to capture all internal
   # errors and wrap them in an OEmbed::Error class so that the error-handling code in your
   # application can more easily identify the source of errors.
@@ -43,5 +42,4 @@ module OEmbed
       "There was an error parsing the server response (#{super})"
     end
   end
-    
 end

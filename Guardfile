@@ -1,11 +1,11 @@
-guard "bundler" do
-  watch("Gemfile")
+guard 'bundler' do
+  watch('Gemfile')
 end
 
 group :red_green_refactor, :halt_on_fail => true do
-  guard "rspec", :cmd => "bundle exec rspec" do
+  guard 'rspec', :cmd => 'bundle exec rspec' do
     watch(%r{^spec/.+_spec\.rb$})
-    watch(%r{^spec/cassettes/.+.yml$}) { "spec" }
+    watch(%r{^spec/cassettes/.+.yml$}) { 'spec' }
     watch(%r{^lib/(.+)\.rb$}) do |m|
       # Split up the file path into an Array
       path_parts = []
@@ -22,18 +22,18 @@ group :red_green_refactor, :halt_on_fail => true do
       # Special case for formatter specs
       if path_parts.include?('formatter') && path_parts.include?('backends')
         path_parts.delete('backends')
-        path_parts.last.gsub!(/$/, "_backend")
+        path_parts.last.gsub!(/$/, '_backend')
       end
       # Add on the _spec.rb postfix
-      path_parts.last.gsub!(/$/, "_spec.rb")
+      path_parts.last.gsub!(/$/, '_spec.rb')
 
-      f = File.join("spec", *path_parts)
+      f = File.join('spec', *path_parts)
       puts "#{m.inspect} => #{f.inspect}"
       f
     end
   end
 
-  guard :rubocop, :cmd => "bundle exec rubocop" do
+  guard :rubocop, :cmd => 'bundle exec rubocop' do
     watch(/.+\.rb$/)
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end

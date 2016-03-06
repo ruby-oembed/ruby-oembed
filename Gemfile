@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Travis CI was running into several bundler-related bug
 # * https://github.com/bundler/bundler/pull/3559
@@ -11,8 +11,8 @@ gem 'bundler', '~>1.10'
 gemspec
 
 group :guard do
-  gem "guard-rspec"
-  gem "guard-bundler"
-  gem "guard-rubocop"
-  gem "rb-fsevent"
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'guard-rubocop'
+  gem 'rb-fsevent'
 end

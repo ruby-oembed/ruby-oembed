@@ -27,7 +27,6 @@ module OEmbed
     # to get rid of it, though. --Marcos
     attr_accessor :url
 
-
     # Construct a new OEmbed::Provider instance, pointing at a specific oEmbed
     # endpoint.
     #
@@ -48,8 +47,12 @@ module OEmbed
     #   # "http://my.service.com/oembed.xml"
     #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
     def initialize(endpoint, format = OEmbed::Formatter.default)
-      endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
-      raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
+      endpoint_uri = begin
+                       URI.parse(endpoint.gsub(/[\{\}]/, ''))
+                     rescue
+                       nil
+                     end
+      fail ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint}" unless endpoint_uri.is_a?(URI::HTTP)
 
       @endpoint = endpoint
       @urls = []
@@ -66,10 +69,10 @@ module OEmbed
     #   @provider << "http://*.service.com/photo/*/slideshow"
     #   @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
-      if !url.is_a?(Regexp)
+      unless url.is_a?(Regexp)
         full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
-        domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
-        path = Regexp.escape(path).gsub("\\*", "(.*?)")
+        domain = Regexp.escape(domain).gsub('\\*', '(.*?)').gsub('(.*?)\\.', '([^\\.]+\\.)?')
+        path = Regexp.escape(path).gsub('\\*', '(.*?)')
         url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
       end
       @urls << url
@@ -93,14 +96,14 @@ module OEmbed
     # Determine whether the given url is supported by this Provider by matching
     # against the Provider's URL schemes.
     def include?(url)
-      @urls.empty? || !!@urls.detect{ |u| u =~ url }
+      @urls.empty? || !!@urls.detect { |u| u =~ url }
     end
 
     # @deprecated *Note*: This method will be made private in the future.
     def build(url, query = {})
-      raise OEmbed::NotFound, url unless include?(url)
+      fail OEmbed::NotFound, url unless include?(url)
 
-      query = query.merge({:url => ::CGI.escape(url)})
+      query = query.merge(:url => ::CGI.escape(url))
       query.delete(:timeout)
       query.delete(:max_redirects)
 
@@ -109,21 +112,19 @@ module OEmbed
 
       endpoint = @endpoint.clone
 
-      if endpoint.include?("{format}")
-        endpoint["{format}"] = this_format
+      if endpoint.include?('{format}')
+        endpoint['{format}'] = this_format
         query.delete(:format)
       end
 
       base = endpoint.include?('?') ? '&' : '?'
-      query = base + query.inject("") do |memo, (key, value)|
+      query = base + query.inject('') do |memo, (key, value)|
         "#{key}=#{value}&#{memo}"
       end.chop
 
       URI.parse(endpoint + query).instance_eval do
         @format = this_format
-        def format
-          @format
-        end
+        attr_reader :format
         self
       end
     end

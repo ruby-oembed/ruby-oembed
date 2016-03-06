@@ -2,7 +2,6 @@ require 'openssl'
 
 module OEmbed
   module HttpHelper
-
     private
 
     # Given a URI, make an HTTP request
@@ -19,10 +18,10 @@ module OEmbed
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
         http.read_timeout = http.open_timeout = options[:timeout] if options[:timeout]
 
-        methods = if RUBY_VERSION < "2.2"
-            %w{scheme userinfo host port registry}
-        else
-            %w{scheme userinfo host port}
+        methods = if RUBY_VERSION < '2.2'
+                    %w(scheme userinfo host port registry)
+                  else
+                    %w(scheme userinfo host port)
         end
         methods.each { |method| uri.send("#{method}=", nil) }
         req = Net::HTTP::Get.new(uri.to_s)
@@ -41,13 +40,13 @@ module OEmbed
 
       case res
       when Net::HTTPNotImplemented
-        raise OEmbed::UnknownFormat
+        fail OEmbed::UnknownFormat
       when Net::HTTPNotFound
-        raise OEmbed::NotFound, uri
+        fail OEmbed::NotFound, uri
       when Net::HTTPSuccess
         res.body
       else
-        raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
+        fail OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
       end
     rescue StandardError
       # Convert known errors into OEmbed::UnknownResponse for easy catching
@@ -55,12 +54,11 @@ module OEmbed
       # OEmbed. The following are known errors:
       # * Net::* errors like Net::HTTPBadResponse
       # * JSON::JSONError errors like JSON::ParserError
-      if defined?(::JSON) && $!.is_a?(::JSON::JSONError) || $!.class.to_s =~ /\ANet::/
+      if defined?(::JSON) && $ERROR_INFO.is_a?(::JSON::JSONError) || $ERROR_INFO.class.to_s =~ /\ANet::/
         raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
       else
-        raise $!
+        raise $ERROR_INFO
       end
     end
-
   end
 end
