@@ -45,16 +45,11 @@ describe OEmbed::ProviderDiscovery do
       'https://www.tumblr.com/oembed/1.0',
       :json
     ],
-    #'noteflight' => [
-    #  'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
-    #  'http://www.noteflight.com/services/oembed',
-    #  :json,
-    #],
-    #'wordpress' => [
-    #  'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/',
-    #  'http://public-api.wordpress.com/oembed/1.0/',
-    #  :json,
-    #],
+    'noteflight' => [
+      'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
+      {:json=>'http://www.noteflight.com/services/oembed', :xml=>'http://www.noteflight.com/services/oembed'},
+      :json,
+    ],
   }.each do |context, urls|
 
     given_url, expected_endpoints, expected_format = urls
