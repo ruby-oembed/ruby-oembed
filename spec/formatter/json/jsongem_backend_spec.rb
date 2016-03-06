@@ -5,7 +5,7 @@ describe "Setting JSON.backend = 'JSONGem'" do
   context "without the JSON object defined" do
     it "should fail" do
       expect(OEmbed::Formatter::JSON).to receive(:already_loaded?).with('JSONGem').and_return(false)
-      expect(OEmbed).to receive(:const_defined?).with('::JSON').and_return(false)
+      expect(Object).to receive(:const_defined?).with('JSON').and_return(false)
 
       expect {
         OEmbed::Formatter::JSON.backend = 'JSONGem'
