@@ -27,12 +27,12 @@ describe OEmbed::ProviderDiscovery do
     # ]
     'youtube' => [
       'http://www.youtube.com/watch?v=u6XAPnuFjJc',
-      'http://www.youtube.com/oembed',
+      {:json=>'http://www.youtube.com/oembed', :xml=>'http://www.youtube.com/oembed'},
       :json,
     ],
     'vimeo' => [
       'http://vimeo.com/27953845',
-      {:json=>'http://vimeo.com/api/oembed.json',:xml=>'http://vimeo.com/api/oembed.xml'},
+      {:json=>'http://vimeo.com/api/oembed.json', :xml=>'http://vimeo.com/api/oembed.xml'},
       :json,
     ],
     'facebook-photo' => [
