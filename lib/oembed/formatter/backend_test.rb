@@ -3,13 +3,14 @@ module OEmbed
     # Some quick verification of Formatter Backend classes
     class BackendTest
       # Instantiate & run the confirmation
-      def self.confirm(backend)
-        new(backend).confirm
+      def self.confirm(formatter_class, backend)
+        new(formatter_class, backend).confirm
       end
 
-      attr_accessor :backend
+      attr_accessor :formatter_class, :backend
 
-      def initialize(backend)
+      def initialize(formatter_class, backend)
+        @formatter_class = formatter_class
         @backend = backend
       end
 
@@ -60,7 +61,7 @@ module OEmbed
       end
 
       def decode_test_values
-        backend.send(:test_value)
+        formatter_class.send(:test_value)
       end
 
       def decode_fail_msg

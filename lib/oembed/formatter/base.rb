@@ -26,7 +26,7 @@ module OEmbed
       def backend=(new_backend)
         new_backend = get_backend_obj(new_backend)
 
-        OEmbed::Formatter::BackendTest.confirm(new_backend)
+        OEmbed::Formatter::BackendTest.confirm(self, new_backend)
 
         @backend = new_backend
       rescue

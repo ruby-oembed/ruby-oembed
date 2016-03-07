@@ -19,7 +19,7 @@ class WorkingDuck
   end
 
   def parse_error
-    RuntimeError
+    self.class.parse_error
   end
 end
 
