@@ -1,11 +1,14 @@
+require 'oembed/formatter/backend_test'
+
 module OEmbed
   module Formatter
     # These are methods that are shared by the OEmbed::Formatter sub-classes
     # (i.e. OEmbed::Formatter:JSON and OEmbed::Formatter::XML).
     module Base
-      # Returns true if there is a valid backend. Otherwise, raises OEmbed::FormatNotSupported
+      # Returns true if there is a valid backend.
+      # Otherwise, raises OEmbed::FormatNotSupported
       def supported?
-        !!backend
+        !backend.nil?
       end
 
       # Parses a String or IO and convert it into an Object
@@ -13,29 +16,24 @@ module OEmbed
         backend.decode(value)
       end
 
-      # Given either a String (the name of the backend to use) or an Object (which
-      # must respond to the decode method), sets the current backend. Raises a LoadError
-      # if the given backend cannot be loaded (e.g. an invalid String name, or the
-      # decode method doesn't work properly).
+      # Given either a String (the name of the backend to use) or an Object
+      # (which must respond to the decode method), sets the current backend.
+      # Raises a LoadError if the given backend cannot be loaded
+      # (e.g. an invalid String name, or the decode method
+      # doesn't work properly).
       #   OEmbed::Formatter::XML.backend = 'REXML'
       #   OEmbed::Formatter::JSON.backend = MyCustomJsonDecoder.new
       def backend=(new_backend)
-        new_backend_obj = case new_backend
-                          when String
-                            unless already_loaded?(new_backend)
-                              load "oembed/formatter/#{backend_path}/#{new_backend.downcase}.rb"
-                            end
-                            self::Backends.const_get(new_backend)
-                          else
-                            new_backend
-        end
+        new_backend = get_backend_obj(new_backend)
 
-        test_backend(new_backend_obj)
+        OEmbed::Formatter::BackendTest.confirm(new_backend)
 
-        @backend = new_backend_obj
-
+        @backend = new_backend
       rescue
-        raise LoadError, "There was an error setting the backend: #{new_backend.inspect} - #{$ERROR_INFO.message}"
+        # rubocop:disable Metrics/LineLength
+        raise LoadError,
+              "There was an error setting the backend: #{new_backend.inspect} - #{$ERROR_INFO.message}"
+        # rubocop:enable Metrics/LineLength
       end
 
       # Perform a set of operations using a backend other than the current one.
@@ -52,44 +50,33 @@ module OEmbed
 
       private
 
-      # Makes sure the given backend can correctly parse values using the decode
-      # method.
-      def test_backend(new_backend)
-        fail LoadError, "The given backend must respond to the decode method: #{new_backend.inspect}" unless new_backend.respond_to?(:decode)
-
-        expected = {
-          'version' => 1.0,
-          'string' => 'test',
-          'int' => 42,
-          'html' => "<i>Cool's</i>\n the \"word\"!"
-        }
-
-        actual = new_backend.decode(test_value)
-
-        # For the test to be true the actual output Hash should have the
-        # exact same list of keys _and_ the values should be the same
-        # if we ignoring typecasting.
-        if
-          actual.keys.sort != expected.keys.sort ||
-          actual.detect { |key, value| value.to_s != expected[key].to_s }
-
-          msg = begin
-                  new_backend.decode_fail_msg
-                rescue
-                  nil
-                end
-          msg ||= 'The given backend failed to decode the test string correctly'
-          fail LoadError, "#{msg}: #{new_backend.inspect}"
+      # Return a back-end class.
+      # If given a string, ensure the class is loaded first.
+      def get_backend_obj(new_backend)
+        case new_backend
+        when String
+          unless already_loaded?(new_backend)
+            load "oembed/formatter/#{backend_path}/#{new_backend.downcase}.rb"
+          end
+          self::Backends.const_get(new_backend)
+        else
+          new_backend
         end
       end
 
+      # Returns true if the Backend class has already been loaded.
       def already_loaded?(new_backend)
         self::Backends.const_defined?(new_backend, false)
-      rescue ArgumentError # we're dealing with ruby < 1.9 where const_defined? only takes 1 argument, but behaves the way we want it to.
+      rescue ArgumentError
+        # We're dealing with ruby < 1.9
+        # where const_defined? only takes 1 argument,
+        # but fortunately it behaves the way we want it to.
         self::Backends.const_defined?(new_backend)
       rescue NameError # no backends have been loaded yet
         false
       end
+
+      # rubocop:disable Metrics/LineLength
 
       # Must return a String representing the sub-directory where in-library
       # backend rb files live (e.g. 'json/backends')
@@ -97,7 +84,8 @@ module OEmbed
         fail 'This method must be defined by a format-specific OEmbed::Formatter sub-class.'
       end
 
-      # Must return a String that when parsed by a backend returns the following ruby Hash
+      # Must return a String that when parsed by a backend
+      # returns the following ruby Hash:
       #   {
       #     "version"=>1.0,
       #     "string"=>"test",
