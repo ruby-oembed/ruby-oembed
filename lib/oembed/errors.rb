@@ -1,7 +1,9 @@
 module OEmbed
-  # A generic OEmbed-related Error. The OEmbed library does its best to capture all internal
-  # errors and wrap them in an OEmbed::Error class so that the error-handling code in your
-  # application can more easily identify the source of errors.
+  # A generic OEmbed-related Error.
+  # The OEmbed library does its best to capture
+  # all internal errors and wrap them in an OEmbed::Error class
+  # so that the error-handling code in your application
+  # can more easily identify the source of errors.
   #
   # The following Classes inherit from OEmbed::Error
   # * OEmbed::FormatNotSupported
@@ -27,7 +29,9 @@ module OEmbed
 
   class FormatNotSupported < OEmbed::Error # :nodoc:
     def to_s
+      # rubocop:disable Metrics/LineLength
       "This server doesn't have the correct libraries installed to support the '#{super}' format"
+      # rubocop:enable Metrics/LineLength
     end
   end
 
