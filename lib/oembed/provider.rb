@@ -70,7 +70,7 @@ module OEmbed
     #   @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
       unless url.is_a?(Regexp)
-        full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
+        _full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
         domain = Regexp.escape(domain).gsub('\\*', '(.*?)').gsub('(.*?)\\.', '([^\\.]+\\.)?')
         path = Regexp.escape(path).gsub('\\*', '(.*?)')
         url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
@@ -122,11 +122,7 @@ module OEmbed
         "#{key}=#{value}&#{memo}"
       end.chop
 
-      URI.parse(endpoint + query).instance_eval do
-        @format = this_format
-        attr_reader :format
-        self
-      end
+      URI.parse(endpoint + query)
     end
 
     # @deprecated *Note*: This method will be made private in the future.
