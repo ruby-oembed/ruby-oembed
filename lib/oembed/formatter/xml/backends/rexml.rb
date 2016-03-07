@@ -19,9 +19,9 @@ module OEmbed
             end
             obj
           rescue
-            case $ERROR_INFO
+            case $!
             when parse_error
-              raise $ERROR_INFO
+              raise $!
             else
               raise parse_error, "Couldn't parse the given document."
             end

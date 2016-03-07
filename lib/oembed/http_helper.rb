@@ -54,10 +54,10 @@ module OEmbed
       # OEmbed. The following are known errors:
       # * Net::* errors like Net::HTTPBadResponse
       # * JSON::JSONError errors like JSON::ParserError
-      if defined?(::JSON) && $ERROR_INFO.is_a?(::JSON::JSONError) || $ERROR_INFO.class.to_s =~ /\ANet::/
+      if defined?(::JSON) && $!.is_a?(::JSON::JSONError) || $!.class.to_s =~ /\ANet::/
         raise OEmbed::UnknownResponse, res && res.respond_to?(:code) ? res.code : 'Error'
       else
-        raise $ERROR_INFO
+        raise $!
       end
     end
   end

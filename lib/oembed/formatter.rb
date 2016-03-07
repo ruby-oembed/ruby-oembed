@@ -49,17 +49,17 @@ module OEmbed
             begin
               JSON.decode(value)
             rescue JSON.backend.parse_error
-              raise OEmbed::ParseError, $ERROR_INFO.message
+              raise OEmbed::ParseError, $!.message
             end
           when 'xml'
             begin
               XML.decode(value)
             rescue XML.backend.parse_error
-              raise OEmbed::ParseError, $ERROR_INFO.message
+              raise OEmbed::ParseError, $!.message
             end
           end
         rescue
-          raise OEmbed::ParseError, "#{$ERROR_INFO.class}: #{$ERROR_INFO.message}"
+          raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
         end
       end
 
