@@ -2,6 +2,9 @@ Style/HashSyntax:
   EnforcedStyle: 'hash_rockets'
 Style/SpecialGlobalVars:
   Enabled: false
+Style/Documentation:
+  Exclude:
+    - lib/oembed/version.rb
 
 Metrics/LineLength:
   Exclude:

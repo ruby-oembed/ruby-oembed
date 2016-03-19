@@ -1,4 +1,5 @@
 module OEmbed
+  # Contains info about the current Version of this library
   class Version
     MAJOR = 0
     MINOR = 10

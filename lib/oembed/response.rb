@@ -1,7 +1,8 @@
 module OEmbed
-  # Contains oEmbed data about a URL, as returned by an OEmbed::Provider. The data
-  # stored in Response instances can be accessed by either using the field method
-  # _or_ by using the appropriate automatically-defined helper method.
+  # Contains oEmbed data about a URL, as returned by an OEmbed::Provider.
+  # The data stored in Response instances can be accessed by
+  # either using the field method _or_ by using the appropriate
+  # automatically-defined helper method.
   #
   # For example:
   #   @response.type #=> 'rich'
@@ -14,7 +15,8 @@ module OEmbed
     # The Provider instance that generated this Response
     attr_reader :provider
 
-    # The URL that was sent to the provider, that this Response contains data about.
+    # The URL that was sent to the provider,
+    # about which this Response contains data.
     attr_reader :request_url
 
     # The name of the format used get this data from the Provider (e.g. 'json').
@@ -32,7 +34,7 @@ module OEmbed
                   when 'link'  then OEmbed::Response::Link
                   when 'rich'  then OEmbed::Response::Rich
                   else              self
-      end
+                  end
 
       resp_type.new(fields, provider, url, format)
     end
@@ -45,9 +47,10 @@ module OEmbed
       define_methods!
     end
 
-    # The String value associated with this key. While you can use helper methods
-    # like Response#version, the field method is helpful if the Provider returns
-    # non-standard values that conflict with Ruby methods.
+    # The String value associated with this key.
+    # While you can use helper methods like Response#version,
+    # the field method is helpful if the Provider returns non-standard values
+    # that conflict with Ruby methods.
     #
     # For example, if the Provider returns a "clone" value of "true":
     #   # The following calls the Object#clone method
@@ -81,10 +84,13 @@ module OEmbed
 
     private
 
-    # An Array of helper methods names define_methods! must be able to override
-    # when is's called. In general, define_methods! tries its best _not_ to override
-    # existing methods, so this Array is important if some other library has
-    # defined a method that uses an oEmbed name. For example: Object#version
+    # An Array of helper methods names
+    # which define_methods! must be able to override when is's called.
+    # In general, define_methods! tries its best
+    # _not_ to override existing methods,
+    # so this Array is important if some other library
+    # has defined a method that uses an oEmbed name.
+    # For example: Object#version
     def must_override
       %w(
         type version
