@@ -13,22 +13,26 @@ module OEmbed
     #                  3XX redirects before throwing an error. Default: 4
     def http_get(uri, options = {})
       # rubocop:disable Lint/ShadowingOuterLocalVariable
-      Internals.handle_response(uri, options) do |uri, options|
-        Internals.follow_redirects(uri, options) do |uri, options|
-          http = Internals.get_http(uri, options)
-          req = Internals.get_req(uri)
-          http.request(req)
-        end
+      res = Internals.follow_redirects(uri, options) do |uri, options|
+        http = Internals.get_http(uri, options)
+        req = Internals.get_req(uri)
+        http.request(req)
       end
       # rubocop:enable Lint/ShadowingOuterLocalVariable
+      Response.handle(res, uri)
+    rescue StandardError
+      Internals.response_error_catch_all($!)
     end
 
-    # An abstraction for converting various Net::HTTPResponse classes
+    # An abstraction for converting various Net::HTTPResponse instances
     # into a correct OEmbed::Error class
     # or a String if everything actually worked.
     class Response
       class << self
-        def new(http_response, uri)
+        # Takes a Net::HTTPResponse instance
+        # finds the appropriate Response sub-class
+        # and handles it appropriately.
+        def handle(http_response, uri)
           klass = get_matching_class(http_response)
           klass ||= UnknownResponse
 
@@ -123,15 +127,6 @@ module OEmbed
           end
 
           res
-        end
-
-        # Convert Net::HTTP response codes
-        # into appropriate OEmbed::Error failures.
-        def handle_response(uri, options)
-          http_res = yield(uri, options)
-          Response.new(http_res, uri)
-        rescue StandardError
-          response_error_catch_all($!)
         end
 
         def response_error_catch_all(err)
