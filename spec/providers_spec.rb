@@ -122,16 +122,13 @@ describe OEmbed::Providers do
 	 #    and_return(valid_response(:object))
   # end
 
-  describe '#raw and #get' do
-    it 'should bridge #get and #raw to the right provider' do
+  describe '#get' do
+    it 'should bridge #get to the right provider' do
       OEmbed::Providers.register_all
       all_example_urls.each do |url|
         provider = OEmbed::Providers.find(url)
-        expect(provider).to receive(:raw)
-          .with(url, {})
         expect(provider).to receive(:get)
           .with(url, {})
-        OEmbed::Providers.raw(url)
         OEmbed::Providers.get(url)
       end
     end
@@ -161,20 +158,15 @@ describe OEmbed::Providers do
       url = example_url(:google_video)
 
       provider = OEmbed::Providers.fallback.last
-      expect(provider).to receive(:raw)
-        .with(url, {})
-        .and_return(valid_response(:raw))
       expect(provider).to receive(:get)
         .with(url, {})
         .and_return(valid_response(:object))
 
       OEmbed::Providers.fallback.each do |p|
         next if p == provider
-        expect(p).to receive(:raw).and_raise(OEmbed::NotFound)
         expect(p).to receive(:get).and_raise(OEmbed::NotFound)
       end
 
-      OEmbed::Providers.raw(url)
       OEmbed::Providers.get(url)
     end
 

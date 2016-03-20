@@ -12,47 +12,44 @@ module OEmbed
     # the request format (e.g. "json").
     attr_accessor :endpoint
 
-    # The name of the default format for all request to this Provider (e.g. 'json').
+    # The name of the default format
+    # for all request to this Provider (e.g. 'json').
     attr_accessor :format
 
     # An Array of all URL schemes supported by this Provider.
     attr_accessor :urls
 
-    # The human-readable name of the Provider.
+    # Construct a new OEmbed::Provider instance,
+    # pointing at a specific oEmbed endpoint.
     #
-    # @deprecated *Note*: This accessor currently isn't used anywhere in the codebase.
-    attr_accessor :name
-
-    # @deprecated *Note*: Added in a fork of the gem, a while back. I really would like
-    # to get rid of it, though. --Marcos
-    attr_accessor :url
-
-    # Construct a new OEmbed::Provider instance, pointing at a specific oEmbed
-    # endpoint.
+    # The endpoint should be a String representing
+    # the http URI of the Provider's oEmbed endpoint.
+    # The endpoint String may also contain a {format} portion.
+    # In actual requests to this Provider, this string will be replaced
+    # with a String representing the request format (e.g. "json").
     #
-    # The endpoint should be a String representing the http URI of the Provider's
-    # oEmbed endpoint. The endpoint String may also contain a {format} portion.
-    # In actual requests to this Provider, this string will be replaced with a String
-    # representing the request format (e.g. "json").
-    #
-    # If give, the format should be the name of the default format for all request
-    # to this Provider (e.g. 'json'). Defaults to OEmbed::Formatter.default
+    # If give, the format should be the name of the default format
+    # for all request to this Provider (e.g. 'json').
+    # Defaults to OEmbed::Formatter.default
     #
     # For example:
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed?format=#{OEmbed::Formatter.default}"
-    #   @provider = OEmbed::Provider.new("http://my.service.com/oembed")
+    #   provider = OEmbed::Provider.new("http://my.service.com/oembed")
     #
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed.xml"
-    #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
+    #   provider = OEmbed::Provider.new(
+    #     "http://my.service.com/oembed.{format}", :xml
+    #   )
     def initialize(endpoint, format = OEmbed::Formatter.default)
-      endpoint_uri = begin
-                       URI.parse(endpoint.gsub(/[\{\}]/, ''))
-                     rescue
-                       nil
-                     end
-      fail ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint}" unless endpoint_uri.is_a?(URI::HTTP)
+      # rubocop:disable Style/RescueModifier
+      endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/, '')) rescue nil
+      # rubocop:enable Style/RescueModifier
+      fail(
+        ArgumentError,
+        "The given endpoint isn't a valid http(s) URI: #{endpoint}"
+      ) unless endpoint_uri.is_a?(URI::HTTP)
 
       @endpoint = endpoint
       @urls = []
@@ -71,7 +68,9 @@ module OEmbed
     def <<(url)
       unless url.is_a?(Regexp)
         _full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
-        domain = Regexp.escape(domain).gsub('\\*', '(.*?)').gsub('(.*?)\\.', '([^\\.]+\\.)?')
+        domain = Regexp.escape(domain)
+        domain.gsub!('\\*', '(.*?)')
+        domain.gsub!('(.*?)\\.', '([^\\.]+\\.)?')
         path = Regexp.escape(path).gsub('\\*', '(.*?)')
         url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
       end
@@ -87,19 +86,26 @@ module OEmbed
     # :timeout:: specifies the timeout (in seconds) for the http request.
     # :format:: overrides this Provider's default request format.
     # :url:: will be ignored, replaced by the url param.
-    # :max_redirects:: the number of times this request will follow 3XX redirects before throwing an error. Default: 4
+    # :max_redirects:: number of times this request will follow 3XX redirects
+    #                  before throwing an error. Default: 4
     def get(url, query = {})
       query[:format] ||= @format
-      OEmbed::Response.create_for(raw(url, query), self, url, query[:format].to_s)
+      OEmbed::Response.create_for(
+        raw(url, query),
+        self,
+        url,
+        query[:format].to_s
+      )
     end
 
     # Determine whether the given url is supported by this Provider by matching
     # against the Provider's URL schemes.
     def include?(url)
-      @urls.empty? || !!@urls.detect { |u| u =~ url }
+      @urls.empty? || @urls.any? { |u| u =~ url }
     end
 
-    # @deprecated *Note*: This method will be made private in the future.
+    private
+
     def build(url, query = {})
       fail OEmbed::NotFound, url unless include?(url)
 
@@ -125,7 +131,6 @@ module OEmbed
       URI.parse(endpoint + query)
     end
 
-    # @deprecated *Note*: This method will be made private in the future.
     def raw(url, query = {})
       uri = build(url, query)
       http_get(uri, query)

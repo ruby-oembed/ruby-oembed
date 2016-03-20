@@ -1,5 +1,25 @@
 = CHANGELOG
 
+== Unreleased
+
+=== Breaking Changes
+
+* Removed the following public methods:
+  * OEmbed::Provider#name
+  * OEmbed::Provider#url
+  * OEmbed::Provider#build
+  * OEmbed::Provider#raw
+
+=== New
+
+* Begin using rubocop to enforce code consistency.
+
+=== Changes
+
+* Lots of internal refactoring & code cleanup to reach base rubocop standards.
+
+=== Fixes
+
 == 0.10.0 - 6 March 2016
 
 * Add built-in Tumblr provider; Pull #55 (unknown)
