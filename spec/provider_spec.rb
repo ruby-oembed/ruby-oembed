@@ -175,7 +175,10 @@ describe OEmbed::Provider do
 
   it 'should allow random formats on initialization' do
     expect {
-      yaml_provider = OEmbed::Provider.new('http://foo.com/api/oembed.{format}', :yml)
+      yaml_provider = OEmbed::Provider.new(
+        'http://foo.com/api/oembed.{format}',
+        :yml
+      )
       yaml_provider << 'http://foo.com/*'
     }
       .not_to raise_error
@@ -189,7 +192,7 @@ describe OEmbed::Provider do
     yaml_url = 'http://foo.com/video/1'
 
     expect(yaml_provider).to receive(:raw)
-      .with(yaml_url, { :format => 'yml' })
+      .with(yaml_url, :format => 'yml')
       .and_return(valid_response(:json))
 
     expect { yaml_provider.get(yaml_url) }
@@ -198,8 +201,10 @@ describe OEmbed::Provider do
 
   it 'should add URL schemes' do
     expect(flickr.urls).to eq([%r{^http://([^\.]+\.)?flickr\.com/(.*?)}])
-    expect(qik.urls).to eq([%r{^http://qik\.com/video/(.*?)},
-                             %r{^http://qik\.com/(.*?)}])
+    expect(qik.urls).to eq([
+      %r{^http://qik\.com/video/(.*?)},
+      %r{^http://qik\.com/(.*?)}
+    ])
   end
 
   it 'should match URLs' do
@@ -208,8 +213,12 @@ describe OEmbed::Provider do
   end
 
   it 'should raise error if the URL is invalid' do
-    expect { flickr.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
-    expect { qik.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
+    expect {
+      flickr.send(:build, example_url(:fake))
+    }.to raise_error(OEmbed::NotFound)
+    expect {
+      qik.send(:build, example_url(:fake))
+    }.to raise_error(OEmbed::NotFound)
   end
 
   describe '#build' do
@@ -218,7 +227,9 @@ describe OEmbed::Provider do
       expect(uri.host).to eq('www.flickr.com')
       expect(uri.path).to eq('/services/oembed/')
       expect(uri.query).to include("format=#{flickr.format}")
-      expect(uri.query).to include("url=#{CGI.escape 'http://flickr.com/photos/bees/2362225867/'}")
+      expect(uri.query).to include(
+        "url=#{CGI.escape 'http://flickr.com/photos/bees/2362225867/'}"
+      )
 
       uri = qik.send(:build, example_url(:qik), :format => 'xml')
       expect(uri.host).to eq('qik.com')
@@ -340,18 +351,18 @@ describe OEmbed::Provider do
   describe '#get' do
     it 'should send the specified format' do
       expect(flickr).to receive(:raw)
-        .with(example_url(:flickr), { :format => 'json' })
+        .with(example_url(:flickr), :format => 'json')
         .and_return(valid_response(:json))
       flickr.get(example_url(:flickr), :format => :json)
 
       expect(flickr).to receive(:raw)
-        .with(example_url(:flickr), { :format => 'xml' })
+        .with(example_url(:flickr), :format => 'xml')
         .and_return(valid_response(:xml))
       flickr.get(example_url(:flickr), :format => :xml)
 
       expect {
         expect(flickr).to receive(:raw)
-          .with(example_url(:flickr), { :format => 'yml' })
+          .with(example_url(:flickr), :format => 'yml')
           .and_return(valid_response(:json))
         flickr.get(example_url(:flickr), :format => :yml)
       }.to raise_error(OEmbed::FormatNotSupported)
@@ -365,7 +376,7 @@ describe OEmbed::Provider do
     it 'should be calling OEmbed::Response#create_for internally' do
       allow(flickr).to receive(:raw).and_return(valid_response(default))
       expect(OEmbed::Response).to receive(:create_for)
-        .with(valid_response(default), flickr, example_url(:flickr), default.to_s)
+        .with(valid_response(default), flickr, example_url(:flickr), default)
       flickr.get(example_url(:flickr))
 
       allow(qik).to receive(:raw).and_return(valid_response(:xml))

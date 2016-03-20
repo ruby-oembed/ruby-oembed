@@ -5,6 +5,9 @@ Style/SpecialGlobalVars:
 Style/Documentation:
   Exclude:
     - lib/oembed/version.rb
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
 
 Metrics/LineLength:
   Exclude:
