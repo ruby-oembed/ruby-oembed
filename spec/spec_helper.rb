@@ -1,5 +1,9 @@
 require 'rubygems'
 require 'vcr'
+
+require 'coveralls'
+Coveralls.wear!
+
 require File.dirname(__FILE__) + '/../lib/oembed'
 
 RSpec.configure do |config|
