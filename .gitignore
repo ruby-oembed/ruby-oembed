@@ -1,10 +1,18 @@
-/pkg
+# Ignore config files
 /.bundle
-/rails_oembed
-/doc
-Gemfile.lock
-.yardoc
-.DS_Store
-/.rvm
 /.ruby-version
 /.ruby-gemset
+/.rvm
+/.yardoc
+
+# This is a library. Don't lock dependencies.
+/Gemfile.lock
+
+# OSX files
+.DS_Store
+
+# Generated files
+/doc/
+/coverage/
+/rails_oembed/
+/pkg/
