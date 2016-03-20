@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.date = Date.today.to_s
   s.description = "An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
   s.email = "webmaster@wrightkuhns.com"
-  s.homepage = "http://github.com/judofyr/ruby-oembed"
+  s.homepage = "https://github.com/ruby-oembed/ruby-oembed"
   s.licenses = ["MIT"]
 
   s.files = `git ls-files`.split("\n")

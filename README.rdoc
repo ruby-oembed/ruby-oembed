@@ -59,10 +59,10 @@ The following, optional, backends are currently supported:
 
 = Lend a Hand
 
-Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/judofyr/ruby-oembed].
+Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/ruby-oembed/ruby-oembed].
 
   # Get the code.
-  git clone git://github.com/judofyr/ruby-oembed.git
+  git clone git://github.com/ruby-oembed/ruby-oembed.git
   cd ruby-oembed
   # Install all development-related gems.
   gem install bundler
@@ -72,7 +72,7 @@ Code for the ruby-oembed library is {hosted on GitHub}[https://github.com/judofy
   # or run the test continually
   bundle exec guard
 
-If you encounter any bug, feel free to {create an Issue}[https://github.com/judofyr/ruby-oembed/issues].
+If you encounter any bug, feel free to {create an Issue}[https://github.com/ruby-oembed/ruby-oembed/issues].
 
 We gladly accept pull requests! Just {fork}[http://help.github.com/forking/] the library and commit your changes along with relevant tests. Once you're happy with the changes, {send a pull request}[http://help.github.com/pull-requests/].
 
@@ -80,7 +80,7 @@ We do our best to {keep our tests green}[http://travis-ci.org/metavida/ruby-oemb
 
 = Contributors
 
-Thanks to {all who have made contributions}[https://github.com/judofyr/ruby-oembed/contributors] to this gem, both large and small.
+Thanks to {all who have made contributions}[https://github.com/ruby-oembed/ruby-oembed/contributors] to this gem, both large and small.
 
 = License
 
