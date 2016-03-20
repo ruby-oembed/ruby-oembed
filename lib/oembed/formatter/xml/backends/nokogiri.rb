@@ -1,5 +1,5 @@
 # Only allow this backend the nokogiri gem is already loaded
-fail ::LoadError, "The nokogiri library isn't available. require 'nokogiri'" unless defined?(Nokogiri)
+raise ::LoadError, "The nokogiri library isn't available. require 'nokogiri'" unless defined?(Nokogiri)
 
 module OEmbed
   module Formatter

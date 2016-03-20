@@ -1,5 +1,5 @@
 # Only allow this backend if ActiveSupport::JSON is already loaded
-fail LoadError, "ActiveSupport::JSON isn't available. require 'activesupport/json'" unless defined?(ActiveSupport::JSON)
+raise LoadError, "ActiveSupport::JSON isn't available. require 'activesupport/json'" unless defined?(ActiveSupport::JSON)
 
 module OEmbed
   module Formatter

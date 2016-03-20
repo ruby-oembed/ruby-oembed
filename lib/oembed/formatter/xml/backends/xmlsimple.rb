@@ -1,5 +1,5 @@
 # Only allow this backend the xml-simple gem is already loaded
-fail ::LoadError, "The xml-simple library isn't available. require 'xmlsimple'" unless defined?(XmlSimple)
+raise ::LoadError, "The xml-simple library isn't available. require 'xmlsimple'" unless defined?(XmlSimple)
 
 module OEmbed
   module Formatter

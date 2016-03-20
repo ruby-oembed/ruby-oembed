@@ -3,7 +3,7 @@ module OEmbed
     # Handles parsing JSON values using the best available backend.
     module JSON
       # A Array of all available backends, listed in order of preference.
-      DECODERS = %w(ActiveSupportJSON JSONGem Yaml)
+      DECODERS = %w(ActiveSupportJSON JSONGem Yaml).freeze
 
       class << self
         include ::OEmbed::Formatter::Base
@@ -11,7 +11,7 @@ module OEmbed
         # Returns the current JSON backend.
         def backend
           set_default_backend unless defined?(@backend)
-          fail OEmbed::FormatNotSupported, :json unless defined?(@backend)
+          raise OEmbed::FormatNotSupported, :json unless defined?(@backend)
           @backend
         end
 

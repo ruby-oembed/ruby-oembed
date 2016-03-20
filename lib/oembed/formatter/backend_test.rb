@@ -28,8 +28,8 @@ module OEmbed
         return true if backend.respond_to?(:decode)
 
         # rubocop:disable Metrics/LineLength
-        fail LoadError,
-             "The given backend must respond to the decode method: #{backend.inspect}"
+        raise LoadError,
+              "The given backend must respond to the decode method: #{backend.inspect}"
         # rubocop:enable Metrics/LineLength
       end
 
@@ -47,7 +47,7 @@ module OEmbed
 
         msg = decode_fail_msg
         msg ||= 'The given backend failed to decode the test string correctly'
-        fail LoadError, "#{msg}: #{backend.inspect}"
+        raise LoadError, "#{msg}: #{backend.inspect}"
       end
       # rubocop:enable Metrics/AbcSize
 

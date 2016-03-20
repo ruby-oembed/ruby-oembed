@@ -46,7 +46,7 @@ module OEmbed
       # rubocop:disable Style/RescueModifier
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/, '')) rescue nil
       # rubocop:enable Style/RescueModifier
-      fail(
+      raise(
         ArgumentError,
         "The given endpoint isn't a valid http(s) URI: #{endpoint}"
       ) unless endpoint_uri.is_a?(URI::HTTP)
@@ -108,7 +108,7 @@ module OEmbed
     private
 
     def build(url, query = {})
-      fail OEmbed::NotFound, url unless include?(url)
+      raise OEmbed::NotFound, url unless include?(url)
 
       query = query.merge(:url => ::CGI.escape(url))
       query.delete(:timeout)

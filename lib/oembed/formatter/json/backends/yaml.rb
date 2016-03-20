@@ -50,10 +50,10 @@ module OEmbed
                 scanner.skip(/\\/)
               end
             end
-            fail parse_error unless scanner.scan_until(/\}/)
+            raise parse_error unless scanner.scan_until(/\}/)
 
             if marks.empty?
-              fail parse_error
+              raise parse_error
             else
               left_pos  = [-1].push(*marks)
               right_pos = marks << scanner.pos + scanner.rest_size

@@ -8,7 +8,7 @@ describe 'OEmbed::Formatter::XML::Backends::REXML' do
       OEmbed::Formatter::XML.backend = 'REXML'
     }.to_not raise_error
 
-    expect((!!defined?(REXML))).to eq(true)
+    expect(!!defined?(REXML)).to eq(true)
   end
 
   it 'should support XML' do

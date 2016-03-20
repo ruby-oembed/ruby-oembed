@@ -2,19 +2,19 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 def expected_helpers
   {
-    "type" => "random",
-    "version" => "1.0",
-    "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
-    "url" => "http://foo.com/bar",
+    'type' => 'random',
+    'version' => '1.0',
+    'html' => '&lt;em&gt;Hello world!&lt;/em&gt;',
+    'url' => 'http://foo.com/bar'
   }.freeze
 end
 
 def expected_skipped
   {
-    "fields" => "hello",
-    "__id__" => 1234,
-    "provider" => "oohEmbed",
-    "to_s" => "random string",
+    'fields' => 'hello',
+    '__id__' => 1234,
+    'provider' => 'oohEmbed',
+    'to_s' => 'random string'
   }.freeze
 end
 
@@ -26,25 +26,25 @@ describe OEmbed::Response do
   include OEmbedSpecHelper
 
   let(:flickr) {
-    flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
-    flickr << "http://*.flickr.com/*"
+    flickr = OEmbed::Provider.new('http://www.flickr.com/services/oembed/')
+    flickr << 'http://*.flickr.com/*'
     flickr
   }
 
   let(:skitch) {
-    OEmbed::Provider.new("https://skitch.com/oembed")
+    OEmbed::Provider.new('https://skitch.com/oembed')
   }
 
   let(:qik) {
-    qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
-    qik << "http://qik.com/video/*"
-    qik << "http://qik.com/*"
+    qik = OEmbed::Provider.new('http://qik.com/api/oembed.{format}', :xml)
+    qik << 'http://qik.com/video/*'
+    qik << 'http://qik.com/*'
     qik
   }
 
   let(:viddler) {
-    viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
-    viddler << "http://*.viddler.com/*"
+    viddler = OEmbed::Provider.new('http://lab.viddler.com/services/oembed/', :json)
+    viddler << 'http://*.viddler.com/*'
     viddler
   }
 
@@ -64,39 +64,39 @@ describe OEmbed::Response do
     OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
   }
 
-  describe "#initialize" do
-    it "should parse the data into fields" do
+  describe '#initialize' do
+    it 'should parse the data into fields' do
       # We need to compare keys & values separately because we don't expect all
       # non-string values to be recognized correctly.
 
       expect(new_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(new_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(new_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
 
       expect(default_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(default_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(default_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
 
       expect(xml_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(xml_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(xml_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
 
       expect(json_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(json_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(json_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
     end
 
-    it "should set the provider" do
+    it 'should set the provider' do
       expect(new_res.provider).to eq(OEmbed::Providers::OohEmbed)
       expect(default_res.provider).to eq(@flickr)
       expect(xml_res.provider).to eq(@qik)
       expect(json_res.provider).to eq(@viddler)
     end
 
-    it "should set the format" do
+    it 'should set the format' do
       expect(new_res.format).to be_nil
       expect(default_res.format.to_s).to eq('json')
       expect(xml_res.format.to_s).to eq('xml')
       expect(json_res.format.to_s).to eq('json')
     end
 
-    it "should set the request_url" do
+    it 'should set the request_url' do
       expect(new_res.request_url).to be_nil
       expect(default_res.request_url.to_s).to eq(example_url(:flickr))
       expect(xml_res.request_url.to_s).to eq(example_url(:qik))
@@ -104,8 +104,8 @@ describe OEmbed::Response do
     end
   end
 
-  describe "create_for" do
-    it "should only allow JSON or XML" do
+  describe 'create_for' do
+    it 'should only allow JSON or XML' do
       expect {
         OEmbed::Response.create_for(valid_response(:json), flickr, example_url(:flickr), :json)
       }.not_to raise_error
@@ -119,7 +119,7 @@ describe OEmbed::Response do
       }.to raise_error(OEmbed::FormatNotSupported)
     end
 
-    it "should not parse the incorrect format" do
+    it 'should not parse the incorrect format' do
       expect {
         OEmbed::Response.create_for(valid_response(:object), example_url(:flickr), flickr, :json)
       }.to raise_error(OEmbed::ParseError)
@@ -134,23 +134,23 @@ describe OEmbed::Response do
     end
   end
 
-  it "should access the XML data through #field" do
-    expect(xml_res.field(:type)).to eq("photo")
-    expect(xml_res.field(:version)).to eq("1.0")
-    expect(xml_res.field(:fields)).to eq("hello")
-    expect(xml_res.field(:__id__)).to eq("1234")
+  it 'should access the XML data through #field' do
+    expect(xml_res.field(:type)).to eq('photo')
+    expect(xml_res.field(:version)).to eq('1.0')
+    expect(xml_res.field(:fields)).to eq('hello')
+    expect(xml_res.field(:__id__)).to eq('1234')
   end
 
-  it "should access the JSON data through #field" do
-    expect(json_res.field(:type)).to eq("photo")
-    expect(json_res.field(:version)).to eq("1.0")
-    expect(json_res.field(:fields)).to eq("hello")
-    expect(json_res.field(:__id__)).to eq("1234")
+  it 'should access the JSON data through #field' do
+    expect(json_res.field(:type)).to eq('photo')
+    expect(json_res.field(:version)).to eq('1.0')
+    expect(json_res.field(:fields)).to eq('hello')
+    expect(json_res.field(:__id__)).to eq('1234')
   end
 
-  describe "#define_methods!" do
-    context "with automagic" do
-      all_expected.each do |method, value|
+  describe '#define_methods!' do
+    context 'with automagic' do
+      all_expected.each do |method, _value|
         before do
           @local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
         end
@@ -173,7 +173,7 @@ describe OEmbed::Response do
       end
     end
 
-    it "should protect most already defined methods" do
+    it 'should protect most already defined methods' do
       expect(Object.new).to respond_to('__id__')
       expect(Object.new).to respond_to('to_s')
 
@@ -186,29 +186,29 @@ describe OEmbed::Response do
       expect(local_res.to_s).to_not eq(local_res.field('to_s'))
     end
 
-    it "should not protect already defined methods that are specifically overridable" do
+    it 'should not protect already defined methods that are specifically overridable' do
       class Object
         def version
-          "two point oh"
+          'two point oh'
         end
       end
 
       expect(Object.new).to respond_to('version')
-      expect(String.new).to respond_to('version')
+      expect('').to respond_to('version')
 
       expect(all_expected.keys).to include('version')
-      expect(all_expected['version']).to_not eq(String.new.version)
+      expect(all_expected['version']).to_not eq(''.version)
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       expect(local_res.version).to eq(local_res.field('version'))
-      expect(local_res.version).to_not eq(String.new.version)
+      expect(local_res.version).to_not eq(''.version)
     end
   end
 
-  describe "OEmbed::Response::Photo" do
-    describe "#html" do
-      it "should include the title, if given" do
+  describe 'OEmbed::Response::Photo' do
+    describe '#html' do
+      it 'should include the title, if given' do
         response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
         expect(response).to respond_to(:title)
         expect(response.title).to_not be_empty
@@ -217,7 +217,7 @@ describe OEmbed::Response do
         expect(response.html).to match(/alt='#{response.title}'/)
       end
 
-      it "should work just fine, without a title" do
+      it 'should work just fine, without a title' do
         response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
         expect(response).to_not respond_to(:title)
 
@@ -226,5 +226,4 @@ describe OEmbed::Response do
       end
     end
   end
-
 end

@@ -94,7 +94,7 @@ module OEmbed
               OEmbed::Error
             end
           end
-          fail(OEmbed::NotFound)
+          raise(OEmbed::NotFound)
         end
       end
 
@@ -112,7 +112,7 @@ module OEmbed
               OEmbed::Error
             end
           end
-          fail(OEmbed::NotFound)
+          raise(OEmbed::NotFound)
         end
       end
 
@@ -124,7 +124,7 @@ module OEmbed
       # * nil: a normal provider
       # * :aggregators: an endpoint for an OEmbed aggregator
       def add_official_provider(provider_class, sub_type = nil)
-        fail TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
+        raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
 
         @@to_register[sub_type.to_s] ||= []

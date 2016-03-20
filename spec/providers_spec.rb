@@ -98,12 +98,12 @@ describe OEmbed::Providers do
     end
   end
 
-   # it "should use the OEmbed::ProviderDiscovery fallback provider correctly" do
-   #  url = example_url(:vimeo)
-   #
-   #  # None of the registered providers should match
-   #  all_example_urls.each do |url|
-   #    provider = OEmbed::Providers.find(url)
+  # it "should use the OEmbed::ProviderDiscovery fallback provider correctly" do
+  #  url = example_url(:vimeo)
+  #
+  #  # None of the registered providers should match
+  #  all_example_urls.each do |url|
+  #    provider = OEmbed::Providers.find(url)
   #    if provider
   #      provider.should_not_receive(:raw)
   #      provider.should_not_receive(:get)
@@ -118,8 +118,8 @@ describe OEmbed::Providers do
   #    with(url, {}).
   #    and_return(valid_response(:raw))
   #  expect(provider).to receive(:get).
-	 #    with(url, {}).
-	 #    and_return(valid_response(:object))
+  #    with(url, {}).
+  #    and_return(valid_response(:object))
   # end
 
   describe '#get' do

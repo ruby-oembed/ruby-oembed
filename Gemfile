@@ -10,8 +10,8 @@ gem 'bundler', '~>1.10'
 
 gemspec
 
-gem 'rubocop', '~> 0.20', require: false
-gem 'coveralls', require: false
+gem 'rubocop', '~> 0.20', :require => false
+gem 'coveralls', :require => false
 
 group :guard do
   gem 'guard-rspec'

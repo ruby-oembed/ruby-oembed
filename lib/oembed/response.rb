@@ -101,7 +101,7 @@ module OEmbed
 
     def define_methods!
       @fields.keys.each do |key|
-        next if self.respond_to?(key) && !must_override.include?(key.to_s)
+        next if respond_to?(key) && !must_override.include?(key.to_s)
         class << self
           self
         end.send(:define_method, key) do

@@ -201,10 +201,12 @@ describe OEmbed::Provider do
 
   it 'should add URL schemes' do
     expect(flickr.urls).to eq([%r{^http://([^\.]+\.)?flickr\.com/(.*?)}])
-    expect(qik.urls).to eq([
-      %r{^http://qik\.com/video/(.*?)},
-      %r{^http://qik\.com/(.*?)}
-    ])
+    expect(qik.urls).to eq(
+      [
+        %r{^http://qik\.com/video/(.*?)},
+        %r{^http://qik\.com/(.*?)}
+      ]
+    )
   end
 
   it 'should match URLs' do

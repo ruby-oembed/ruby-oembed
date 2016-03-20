@@ -16,12 +16,12 @@ module OEmbedSpecHelper
   EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))) unless defined?(EXAMPLE)
 
   def example_url(site)
-    return "http://fake.com/" if site == :fake
+    return 'http://fake.com/' if site == :fake
     EXAMPLE[site][:url]
   end
 
   def all_example_urls(*fallback)
-    results = EXAMPLE.values.map{ |v| v[:url] }
+    results = EXAMPLE.values.map { |v| v[:url] }
 
     # By default don't return example_urls that won't be recognized by
     # the included default providers
@@ -46,10 +46,10 @@ module OEmbedSpecHelper
     case format.to_s
     when 'object'
       {
-        "type" => "photo",
-        "version" => "1.0",
-        "fields" => "hello",
-        "__id__" => 1234
+        'type' => 'photo',
+        'version' => '1.0',
+        'fields' => 'hello',
+        '__id__' => 1234
       }
     when 'json'
       <<-JSON.strip

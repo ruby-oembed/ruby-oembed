@@ -56,7 +56,7 @@ module OEmbed
         when 'xml'
           XML
         else
-          fail OEmbed::FormatNotSupported, format
+          raise OEmbed::FormatNotSupported, format
         end
       end
     end # self

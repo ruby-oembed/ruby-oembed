@@ -81,7 +81,7 @@ module OEmbed
       # Must return a String representing the sub-directory where in-library
       # backend rb files live (e.g. 'json/backends')
       def backend_path
-        fail 'This method must be defined by a format-specific OEmbed::Formatter sub-class.'
+        raise 'This method must be defined by a format-specific OEmbed::Formatter sub-class.'
       end
 
       # Must return a String that when parsed by a backend
@@ -93,7 +93,7 @@ module OEmbed
       #     "html"=>"<i>Cool's</i>\n the \"word\"!",
       #   }
       def test_value
-        fail 'This method must be defined by a format-specific OEmbed::Formatter sub-class.'
+        raise 'This method must be defined by a format-specific OEmbed::Formatter sub-class.'
       end
     end # SharedMethods
   end

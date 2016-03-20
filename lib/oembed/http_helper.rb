@@ -59,14 +59,14 @@ module OEmbed
       # Handle a Net::HTTPNotImplemented response
       class HTTPNotImplemented
         def self.new(*_args)
-          fail OEmbed::UnknownFormat
+          raise OEmbed::UnknownFormat
         end
       end
 
       # Handle a Net::HTTPNotFound response
       class HTTPNotFound
         def self.new(_http_response, uri)
-          fail OEmbed::NotFound, uri
+          raise OEmbed::NotFound, uri
         end
       end
 
@@ -77,7 +77,7 @@ module OEmbed
           if http_response && http_response.respond_to?(:code)
             code = http_response.code
           end
-          fail OEmbed::UnknownResponse, code
+          raise OEmbed::UnknownResponse, code
         end
       end
     end
@@ -134,14 +134,12 @@ module OEmbed
           # OEmbed. The following are known errors:
           # * Net::* errors like Net::HTTPBadResponse
           # * JSON::JSONError errors like JSON::ParserError
-          if (
-            defined?(::JSON) && err.is_a?(::JSON::JSONError)
-          ) || (
-            err.class.to_s =~ /\ANet::/
-          )
-            fail OEmbed::UnknownResponse, 'Error'
+          if defined?(::JSON) && err.is_a?(::JSON::JSONError) ||
+             err.class.to_s.start_with?('Net::')
+
+            raise OEmbed::UnknownResponse, 'Error'
           else
-            fail err
+            raise err
           end
         end
       end
