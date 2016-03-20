@@ -50,7 +50,7 @@ describe OEmbed::ProviderDiscovery do
       { :json => 'http://www.noteflight.com/services/oembed', :xml => 'http://www.noteflight.com/services/oembed' },
       :json
     ],
-    # TODO: Enhance ProviderDiscovery to support arbitrary query parameters. See https://github.com/judofyr/ruby-oembed/issues/15
+    # TODO: Enhance ProviderDiscovery to support arbitrary query parameters. See https://github.com/ruby-oembed/ruby-oembed/issues/15
     # 'wordpress' => [
     #  'http://sweetandweak.wordpress.com/2011/09/23/nothing-starts-the-morning-like-a-good-dose-of-panic/',
     #  {:json=>'https://public-api.wordpress.com/oembed/1.0/', :xml=>'https://public-api.wordpress.com/oembed/1.0/'},
