@@ -19,7 +19,7 @@ module OEmbed
         http.request(req)
       end
       # rubocop:enable Lint/ShadowingOuterLocalVariable
-      Response.handle(res, uri)
+      HTTPResponseHandler.handle(res, uri)
     rescue StandardError
       Internals.response_error_catch_all($!)
     end
@@ -27,10 +27,10 @@ module OEmbed
     # An abstraction for converting various Net::HTTPResponse instances
     # into a correct OEmbed::Error class
     # or a String if everything actually worked.
-    class Response
+    class HTTPResponseHandler
       class << self
         # Takes a Net::HTTPResponse instance
-        # finds the appropriate Response sub-class
+        # finds the appropriate HTTPResponseHandler sub-class
         # and handles it appropriately.
         def handle(http_response, uri)
           klass = get_matching_class(http_response)
@@ -39,13 +39,12 @@ module OEmbed
           klass.new(http_response, uri)
         end
 
-        # Get the Response sub-class that matches the Net::HTTP class
+        # Get the HTTPResponseHandler sub-class matching the Net::HTTP class
         # Example
-        #   Net::HTTPNotImplemented => Response::HTTPNotImplemented
+        #   Net::HTTPNotImplemented => HTTPResponseHandler::HTTPNotImplemented
         def get_matching_class(http_response)
           const = http_response.class.to_s.match(/(::)?([^:]+)$/)
-          const && (OEmbed::HttpHelper::Response.const_defined?(const[2]) &&
-            OEmbed::HttpHelper::Response.const_get(const[2]))
+          const && const_defined?(const[2]) && const_get(const[2])
         end
       end
 
