@@ -89,12 +89,13 @@ module OEmbed
     # :max_redirects:: number of times this request will follow 3XX redirects
     #                  before throwing an error. Default: 4
     def get(url, query = {})
-      query[:format] ||= @format
+      query = query.dup
+      query[:format] = (query[:format] || @format).to_s
       OEmbed::Response.create_for(
         raw(url, query),
         self,
         url,
-        query[:format].to_s
+        query[:format]
       )
     end
 
@@ -113,13 +114,10 @@ module OEmbed
       query.delete(:timeout)
       query.delete(:max_redirects)
 
-      # TODO: move this code exclusively into the get method, once build is private.
-      this_format = (query[:format] ||= @format.to_s).to_s
-
       endpoint = @endpoint.clone
 
       if endpoint.include?('{format}')
-        endpoint['{format}'] = this_format
+        endpoint['{format}'] = query[:format]
         query.delete(:format)
       end
 
