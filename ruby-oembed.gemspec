@@ -11,10 +11,10 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = "2012-11-19"
+  s.date = Date.today.to_s
   s.description = "An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
-  s.email = "arisbartee@gmail.com"
-  s.homepage = "http://github.com/judofyr/ruby-oembed"
+  s.email = "webmaster@wrightkuhns.com"
+  s.homepage = "https://github.com/ruby-oembed/ruby-oembed"
   s.licenses = ["MIT"]
 
   s.files = `git ls-files`.split("\n")
