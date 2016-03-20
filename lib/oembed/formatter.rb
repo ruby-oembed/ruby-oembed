@@ -23,14 +23,7 @@ module OEmbed
       # true if there is a valid backend. If there is no backend, raises
       # OEmbed::FormatNotSupported.
       def supported?(format)
-        case format.to_s
-        when 'json'
-          JSON.supported?
-        when 'xml'
-          XML.supported?
-        else
-          fail OEmbed::FormatNotSupported, format
-        end
+        formater_class(format).supported?
       end
 
       # Convert the given value into a nice Hash of values. The format should
@@ -45,22 +38,25 @@ module OEmbed
         supported?(format)
 
         begin
-          case format.to_s
-          when 'json'
-            begin
-              JSON.decode(value)
-            rescue JSON.backend.parse_error
-              raise OEmbed::ParseError, $!.message
-            end
-          when 'xml'
-            begin
-              XML.decode(value)
-            rescue XML.backend.parse_error
-              raise OEmbed::ParseError, $!.message
-            end
-          end
+          formater_class(format).decode(value)
+        rescue formater_class(format).backend.parse_error
+          raise OEmbed::ParseError, $!.message
         rescue
           raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
+        end
+      end
+
+      private
+
+      # Returns the OEmbed::Formatter sub-class for the given format string
+      def formater_class(format)
+        case format.to_s
+        when 'json'
+          JSON
+        when 'xml'
+          XML
+        else
+          fail OEmbed::FormatNotSupported, format
         end
       end
     end # self
