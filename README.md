@@ -2,6 +2,7 @@
 
 [![Gem](https://img.shields.io/gem/v/ruby-oembed.svg)](https://rubygems.org/gems/ruby-oembed)
 [![Travis branch](https://img.shields.io/travis/ruby-oembed/ruby-oembed/master.svg)](https://travis-ci.org/ruby-oembed/ruby-oembed/branches)
+[![Code Climate](https://img.shields.io/codeclimate/github/ruby-oembed/ruby-oembed.svg)](https://codeclimate.com/github/ruby-oembed/ruby-oembed)
 [![Coveralls](https://coveralls.io/repos/github/ruby-oembed/ruby-oembed/badge.svg?branch=coveralls)](https://coveralls.io/github/ruby-oembed/ruby-oembed?branch=coveralls)
 <!--[![Coveralls](https://img.shields.io/coveralls/ruby-oembed/ruby-oembed.svg)](https://coveralls.io/github/ruby-oembed/ruby-oembed)-->
 ![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)
