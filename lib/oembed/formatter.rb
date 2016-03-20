@@ -3,7 +3,8 @@ require 'oembed/formatter/json'
 require 'oembed/formatter/xml'
 
 module OEmbed
-  # Takes the raw response from an oEmbed server and turns it into a nice Hash of data.
+  # Takes the raw response from an oEmbed server
+  # and turns it into a nice Hash of data.
   module Formatter
     class << self
       # Returns the default format for OEmbed::Provider requests as a String.
@@ -11,10 +12,10 @@ module OEmbed
         # Listed in order of preference.
         %w(json xml).detect do |type|
           begin
-                                       supported?(type)
-                                     rescue
-                                       false
-                                     end
+            supported?(type)
+          rescue
+            false
+          end
         end
       end
 
@@ -37,9 +38,9 @@ module OEmbed
       # a String or IO containing the response from an oEmbed server.
       #
       # For example:
-      #   value = '{"version": "1.0", "type": "link", "title": "Some Cool News Article"}'
+      #   value = '{"version": "1.0", "type": "link", "title": "Cool Article"}'
       #   OEmbed::Formatter.decode('json', value)
-      #   #=> {"version": "1.0", "type": "link", "title": "Some Cool News Article"}
+      #   #=> {"version": "1.0", "type": "link", "title": "Cool Article"}
       def decode(format, value)
         supported?(format)
 
@@ -61,42 +62,6 @@ module OEmbed
         rescue
           raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
         end
-      end
-
-      # Test the given backend to make sure it parses known values correctly.
-      # The backend_module should be either a JSON or XML backend.
-      def test_backend(backend_module)
-        expected = {
-          'version' => 1.0,
-          'string' => 'test',
-          'int' => 42,
-          'html' => "<i>Cool's</i>\n the \"word\"!"
-        }
-
-        given_value = case backend_module.to_s
-                      when /OEmbed::Formatter::JSON::Backends::/
-                        <<-JSON
-{"version":"1.0", "string":"test", "int":42,"html":"<i>Cool's</i>\\n the \\"word\\"\\u0021"}
-          JSON
-                      when /OEmbed::Formatter::XML::Backends::/
-                        <<-XML
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<oembed>
-  <version>1.0</version>
-  <string>test</string>
-  <int>42</int>
-  <html>&lt;i&gt;Cool's&lt;/i&gt;\n the &quot;word&quot;&#x21;</html>
-</oembed>
-          XML
-                      end
-
-        actual = backend_module.decode(given_value)
-
-        # For the test to be true the actual output Hash should have the
-        # exact same list of keys _and_ the values should be the same
-        # if we ignoring typecasting.
-        actual.keys.sort == expected.keys.sort &&
-          !actual.detect { |key, value| value.to_s != expected[key].to_s }
       end
     end # self
   end
