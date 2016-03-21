@@ -74,23 +74,19 @@ module OEmbed
       end
 
       def get_oembed_url_for(html, content_types)
-        content_types = content_types.map do |content_type|
-          Regexp.escape(content_type)
-        end
+        content_types.map! { |content_type| Regexp.escape(content_type) }
 
-        found_url = nil
         {
-          :url => %r{href=['"]*([^\s'"]+)['"]},
-          :type => %r{(#{content_types.join('|')})}
-        }.to_a.permutation.each do |regexps|
-          found_url = try_getting_a_url(
-            html,
-            regexps.map { |_k,v| v },
-            regexps.index { |k,_v| k == :url }
-          )
-          break if found_url
+          :url => /href=['"]*([^\s'"]+)['"]/,
+          :type => /(#{content_types.join('|')})/
+        }.to_a.permutation.inject(nil) do |found_url, regexps|
+          found_url ||
+            try_getting_a_url(
+              html,
+              regexps.map { |_k, v| v },
+              regexps.index { |k, _v| k == :url }
+            )
         end
-        found_url
       end
 
       def try_getting_a_url(html, regexps, match_index)
@@ -103,7 +99,7 @@ module OEmbed
         regexp_array += regexps
         regexp_array += [/>/]
         Regexp.new(
-          regexp_array.map{|r| r.source}.join("[^>]*")
+          regexp_array.map { |r| r.source }.join('[^>]*')
         )
       end
     end

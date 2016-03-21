@@ -1,14 +1,24 @@
+# For ruby 1.8 support
 Style/HashSyntax:
   EnforcedStyle: 'hash_rockets'
+Style/SymbolProc:
+  Enabled: false
+
+# TODO: Figure out/remember why I disabled this one
 Style/SpecialGlobalVars:
   Enabled: false
+
+# Because it's just silly for this file
 Style/Documentation:
   Exclude:
     - lib/oembed/version.rb
+
+# Because I perefer {...} blocks in rspec
 Style/BlockDelimiters:
   Exclude:
     - spec/**/*
 
+# Our gemspec is long. That's ok.
 Metrics/LineLength:
   Exclude:
     - ruby-oembed.gemspec
