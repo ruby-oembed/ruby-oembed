@@ -9,6 +9,7 @@
   * OEmbed::Provider#url
   * OEmbed::Provider#build
   * OEmbed::Provider#raw
+  * OEmbed::ProviderDiscovery#raw
 
 === New
 
