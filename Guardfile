@@ -18,7 +18,8 @@ group :red_green_refactor, :halt_on_fail => true do
       path_parts.reverse!
 
       # Specs don't contain an oembed subdir
-      path_parts.shift
+      path_parts.shift if path_parts.size > 1
+
       # Special case for formatter specs
       if path_parts.include?('formatter') && path_parts.include?('backends')
         path_parts.delete('backends')
