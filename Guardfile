@@ -1,3 +1,5 @@
+require 'yaml'
+
 guard 'bundler' do
   watch('Gemfile')
 end
@@ -37,5 +39,27 @@ group :red_green_refactor, :halt_on_fail => true do
   guard :rubocop, :cmd => 'bundle exec rubocop', :keep_failed => false do
     watch(/.+\.rb$/)
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
+  end
+
+  guard :code_climate do
+    # Watch config files
+    watch(%r{(?:.+/)?\.(rubocop|codeclimate)\.yml$}) { |m| File.dirname(m[0]) }
+
+    # Watch all files being rated by CodeClimate
+    begin
+      config_file = File.open('.codeclimate.yml', 'r')
+      config = YAML.load(config_file.read)
+
+      config["ratings"]["paths"].each do |path|
+        regexp = Regexp.escape(path)
+        regexp.gsub!('\*\*', '.+')
+        watch(Regexp.new(regexp))
+      end
+    rescue
+      puts "Error reading/parsing .codeclimage.yml"
+      puts $!.message
+    ensure
+      config_file && config_file.close
+    end
   end
 end

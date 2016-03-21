@@ -17,5 +17,6 @@ group :guard do
   gem 'guard-rspec'
   gem 'guard-bundler'
   gem 'guard-rubocop'
+  gem 'guard-codeclimate', :github => 'metavida/guard-codeclimate'
   gem 'rb-fsevent'
 end
