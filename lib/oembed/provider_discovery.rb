@@ -33,41 +33,44 @@ module OEmbed
         res = http_get(uri, options)
         format = options[:format]
 
-        provider_endpoint, format = discover_oembed_url(res, format)
-
-        begin
-          provider_endpoint = URI.parse(provider_endpoint)
-          provider_endpoint.query = nil
-          provider_endpoint = provider_endpoint.to_s
-        rescue URI::Error
-          raise OEmbed::NotFound, url
-        end
+        resource_url, format = discover_oembed_resource_url(res, format)
+        provider_endpoint = convert_resource_url_to_endpoint_url(resource_url)
 
         Provider.new(provider_endpoint, format || OEmbed::Formatter.default)
       end
 
       private
 
-      def discover_oembed_url(html, format)
+      def discover_oembed_resource_url(html, format)
         provider_endpoint = nil
 
-        if format.nil? || format == :json
-          provider_endpoint = get_oembed_url_for(
-            html,
-            %w(application/json+oembed)
-          )
-          format ||= :json if provider_endpoint
-        end
+        # Search for each format of oEmbed endpoint
+        # based on a specific content type
+        # expected in a <link> tag in the given HTML
+        [
+          [:json, %w(application/json+oembed)],
+          # {The specification}[http://oembed.com/#section4] says
+          # XML discovery should have type="text/xml+oembed"
+          # but some providers use type="application/xml+oembed"
+          [:xml, %w(text/xml+oembed application/xml+oembed)]
+        ].each do |format_to_search, content_types|
+          # Skip this iteration if we're searching for a speicif format
+          # and this iteration isn't going to search for it.
+          next if format && format != format_to_search
 
-        if !provider_endpoint && format.nil? || format == :xml
-          provider_endpoint, format = get_oembed_url_for(
-            html,
-            %w(application/xml+oembed text/xml+oembed)
-          )
-          format ||= :xml if provider_endpoint
+          provider_endpoint = get_oembed_url_for(html, content_types)
+          format = format_to_search if provider_endpoint
         end
 
         [provider_endpoint, format]
+      end
+
+      def convert_resource_url_to_endpoint_url(resource_url)
+        provider_endpoint = URI.parse(resource_url)
+        provider_endpoint.query = nil
+        provider_endpoint.to_s
+      rescue URI::Error
+        raise OEmbed::NotFound, url
       end
 
       def get_oembed_url_for(html, content_types)
