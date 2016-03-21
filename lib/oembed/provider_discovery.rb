@@ -66,6 +66,8 @@ module OEmbed
       end
 
       def convert_resource_url_to_endpoint_url(resource_url)
+        raise URI::Error, 'nil url given' if resource_url.nil?
+
         provider_endpoint = URI.parse(resource_url)
         provider_endpoint.query = nil
         provider_endpoint.to_s
@@ -76,22 +78,24 @@ module OEmbed
       def get_oembed_url_for(html, content_types)
         content_types.map! { |content_type| Regexp.escape(content_type) }
 
-        {
+        regexp_combinations = {
           :url => /href=['"]*([^\s'"]+)['"]/,
           :type => /(#{content_types.join('|')})/
-        }.to_a.permutation.inject(nil) do |found_url, regexps|
-          found_url ||
-            try_getting_a_url(
-              html,
-              regexps.map { |_k, v| v },
-              regexps.index { |k, _v| k == :url }
-            )
-        end
+        }.to_a.permutation
+
+        matching_the_url(html, regexp_combinations)
       end
 
-      def try_getting_a_url(html, regexps, match_index)
-        match = html.match(build_link_url_regexp(regexps))
-        match && match[match_index + 1]
+      def matching_the_url(html, regexp_combinations)
+        regexp_combinations.inject(nil) do |found_url, regexp_info|
+          regexps = regexp_info.map { |_k, v| v }
+          match_index = regexp_info.index { |k, _v| k == :url } + 1
+
+          found_url || (
+            match = html.match(build_link_url_regexp(regexps))
+            match && match[match_index]
+          )
+        end
       end
 
       def build_link_url_regexp(regexps)
