@@ -33,40 +33,7 @@ module OEmbed
         res = http_get(uri, options)
         format = options[:format]
 
-        if format.nil? || format == :json
-          begin
-            provider_endpoint ||= \
-              %r{<link[^>]*href=['"]*([^\s'"]+)['"]*[^>]*application/json\+oembed[^>]*>}.match(res)[1]
-          rescue
-          end
-
-          begin
-            provider_endpoint ||= \
-              %r{<link[^>]*application/json\+oembed[^>]*href=['"]*([^\s'"]+)['"]*[^>]*>}.match(res)[1]
-          rescue
-          end
-
-          format ||= :json if provider_endpoint
-        end
-
-        if format.nil? || format == :xml
-          # {The specification}[http://oembed.com/#section4] says
-          # XML discovery should have type="text/xml+oembed"
-          # but some providers use type="application/xml+oembed"
-          begin
-            provider_endpoint ||= \
-              %r{<link[^>]*href=['"]*([^\s'"]+)['"]*[^>]*(application|text)/xml\+oembed[^>]*>}.match(res)[1]
-          rescue
-          end
-
-          begin
-          provider_endpoint ||= \
-            %r{<link[^>]*(application|text)\/xml\+oembed[^>]*href=['"]*([^\s'"]+)['"]*[^>]*>}.match(res)[2]
-          rescue
-          end
-
-          format ||= :xml if provider_endpoint
-        end
+        provider_endpoint, format = discover_oembed_url(res, format)
 
         begin
           provider_endpoint = URI.parse(provider_endpoint)
@@ -77,6 +44,64 @@ module OEmbed
         end
 
         Provider.new(provider_endpoint, format || OEmbed::Formatter.default)
+      end
+
+      private
+
+      def discover_oembed_url(html, format)
+        provider_endpoint = nil
+
+        if format.nil? || format == :json
+          provider_endpoint = get_oembed_url_for(
+            html,
+            %w(application/json+oembed)
+          )
+          format ||= :json if provider_endpoint
+        end
+
+        if !provider_endpoint && format.nil? || format == :xml
+          provider_endpoint, format = get_oembed_url_for(
+            html,
+            %w(application/xml+oembed text/xml+oembed)
+          )
+          format ||= :xml if provider_endpoint
+        end
+
+        [provider_endpoint, format]
+      end
+
+      def get_oembed_url_for(html, content_types)
+        content_types = content_types.map do |content_type|
+          Regexp.escape(content_type)
+        end
+
+        found_url = nil
+        {
+          :url => %r{href=['"]*([^\s'"]+)['"]},
+          :type => %r{(#{content_types.join('|')})}
+        }.to_a.permutation.each do |regexps|
+          found_url = try_getting_a_url(
+            html,
+            regexps.map { |_k,v| v },
+            regexps.index { |k,_v| k == :url }
+          )
+          break if found_url
+        end
+        found_url
+      end
+
+      def try_getting_a_url(html, regexps, match_index)
+        match = html.match(build_link_url_regexp(regexps))
+        match && match[match_index + 1]
+      end
+
+      def build_link_url_regexp(regexps)
+        regexp_array = [/<link\s/]
+        regexp_array += regexps
+        regexp_array += [/>/]
+        Regexp.new(
+          regexp_array.map{|r| r.source}.join("[^>]*")
+        )
       end
     end
   end
