@@ -5,11 +5,10 @@ describe OEmbed::Providers do
 
   before(:all) do
     @flickr = OEmbed::Provider.new('http://www.flickr.com/services/oembed/')
-    @qik = OEmbed::Provider.new('http://qik.com/api/oembed.{format}')
+    @hulu = OEmbed::Provider.new('http://www.hulu.com/api/oembed.{format}')
 
     @flickr << 'http://*.flickr.com/*'
-    @qik << 'http://qik.com/video/*'
-    @qik << 'http://qik.com/*'
+    @hulu << 'http://www.hulu.com/watch/*'
   end
 
   after(:each) do
@@ -20,32 +19,32 @@ describe OEmbed::Providers do
     it 'should register providers' do
       expect(OEmbed::Providers.urls).to be_empty
 
-      OEmbed::Providers.register(@flickr, @qik)
+      OEmbed::Providers.register(@flickr, @hulu)
 
-      expect(OEmbed::Providers.urls.keys).to eq(@flickr.urls + @qik.urls)
+      expect(OEmbed::Providers.urls.keys).to eq(@flickr.urls + @hulu.urls)
 
       @flickr.urls.each do |regexp|
         expect(OEmbed::Providers.urls).to have_key(regexp)
         expect(OEmbed::Providers.urls[regexp]).to include(@flickr)
       end
 
-      @qik.urls.each do |regexp|
+      @hulu.urls.each do |regexp|
         expect(OEmbed::Providers.urls).to have_key(regexp)
-        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
+        expect(OEmbed::Providers.urls[regexp]).to include(@hulu)
       end
     end
 
     it 'should find by URLs' do
-      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+      OEmbed::Providers.register(@flickr, @hulu) # tested in "should register providers"
 
       expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      expect(OEmbed::Providers.find(example_url(:hulu))).to eq(@hulu)
     end
   end
 
   describe '.unregister' do
     it 'should unregister providers' do
-      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+      OEmbed::Providers.register(@flickr, @hulu) # tested in "should register providers"
 
       OEmbed::Providers.unregister(@flickr)
 
@@ -53,46 +52,44 @@ describe OEmbed::Providers do
         expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
 
-      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
+      expect(OEmbed::Providers.urls.keys).to eq(@hulu.urls)
 
-      @qik.urls.each do |regexp|
+      @hulu.urls.each do |regexp|
         expect(OEmbed::Providers.urls).to have_key(regexp)
-        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
+        expect(OEmbed::Providers.urls[regexp]).to include(@hulu)
       end
     end
 
     it 'should not unregister duplicate provider urls at first' do
-      @qik_mirror = OEmbed::Provider.new('http://mirror.qik.com/api/oembed.{format}')
-      @qik_mirror << 'http://qik.com/*'
+      @hulu_mirror = OEmbed::Provider.new('http://mirror.qik.com/api/oembed.{format}')
+      @hulu_mirror << 'http://www.hulu.com/watch/*'
 
-      @qik_mirror.urls.each do |regexp|
-        expect(@qik.urls).to include(regexp)
+      @hulu_mirror.urls.each do |regexp|
+        expect(@hulu.urls).to include(regexp)
       end
 
-      OEmbed::Providers.register(@qik, @qik_mirror)
+      OEmbed::Providers.register(@hulu, @hulu_mirror)
 
-      expect(OEmbed::Providers.urls.keys).to eq(@qik.urls)
+      expect(OEmbed::Providers.urls.keys).to eq(@hulu.urls)
 
-      @qik_mirror.urls.each do |regexp|
-        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
-        expect(OEmbed::Providers.urls[regexp]).to include(@qik)
+      @hulu_mirror.urls.each do |regexp|
+        expect(OEmbed::Providers.urls[regexp]).to include(@hulu_mirror)
+        expect(OEmbed::Providers.urls[regexp]).to include(@hulu)
       end
 
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      expect(OEmbed::Providers.find(example_url(:hulu))).to eq(@hulu)
 
-      OEmbed::Providers.unregister(@qik)
+      OEmbed::Providers.unregister(@hulu)
 
-      urls = OEmbed::Providers.urls.dup
-
-      @qik_mirror.urls.each do |regexp|
-        expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
+      @hulu_mirror.urls.each do |regexp|
+        expect(OEmbed::Providers.urls[regexp]).to include(@hulu_mirror)
       end
 
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik_mirror)
+      expect(OEmbed::Providers.find(example_url(:hulu))).to eq(@hulu_mirror)
 
-      OEmbed::Providers.unregister(@qik_mirror)
+      OEmbed::Providers.unregister(@hulu_mirror)
 
-      @qik_mirror.urls.each do |regexp|
+      @hulu_mirror.urls.each do |regexp|
         expect(OEmbed::Providers.urls).to_not have_key(regexp)
       end
     end
@@ -123,13 +120,15 @@ describe OEmbed::Providers do
   # end
 
   describe '#get' do
-    it 'should bridge #get to the right provider' do
-      OEmbed::Providers.register_all
-      all_example_urls.each do |url|
-        provider = OEmbed::Providers.find(url)
-        expect(provider).to receive(:get)
-          .with(url, {})
-        OEmbed::Providers.get(url)
+    EXAMPLE_URLS.each do |url|
+      context "with #{url}" do
+        before { OEmbed::Providers.register_all }
+        it 'should bridge #get to the right provider' do
+          provider = OEmbed::Providers.find(url)
+          expect(provider).to receive(:get)
+            .with(url, {})
+          OEmbed::Providers.get(url)
+        end
       end
     end
 
@@ -145,15 +144,15 @@ describe OEmbed::Providers do
   describe '.register_fallback' do
     it 'should register fallback providers' do
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
-      expect(OEmbed::Providers.fallback).to eq([OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed])
+      expect(OEmbed::Providers.fallback).to eq([OEmbed::Providers::Hulu, OEmbed::Providers::Embedly])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
       OEmbed::Providers.register_all
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
       url = example_url(:google_video)
 
@@ -173,7 +172,7 @@ describe OEmbed::Providers do
     it 'should still raise an error if no embeddable content is found' do
       OEmbed::Providers.register_all
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
       ['http://fa.ke/'].each do |url|
         expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)

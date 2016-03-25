@@ -64,7 +64,9 @@ module OEmbed
       # will be called (in order) with the URL.
       #
       # A common example:
-      #  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery, OEmbed::Providers::OohEmbed)
+      #  OEmbed::Providers.register_fallback(
+      #    OEmbed::ProviderDiscovery, OEmbed::Providers::Embedly
+      #  )
       def register_fallback(*providers)
         @@fallback += providers
       end
@@ -132,4 +134,12 @@ module OEmbed
       end
     end
   end
+end
+
+# Require all of our built-in OEmbed::Providers
+# TODO: Figure out if/how we want to differentate between default & minor
+Dir.glob(
+  File.join(File.dirname(__FILE__), 'providers/*/*.rb')
+).each do |provider|
+  require provider.gsub(/\.rb$/, '')
 end

@@ -49,7 +49,7 @@ describe OEmbed::Response do
   }
 
   let(:new_res) {
-    OEmbed::Response.new(valid_response(:object), OEmbed::Providers::OohEmbed)
+    OEmbed::Response.new(valid_response(:object), OEmbed::Providers::Embedly)
   }
 
   let(:default_res) {
@@ -83,7 +83,7 @@ describe OEmbed::Response do
     end
 
     it 'should set the provider' do
-      expect(new_res.provider).to eq(OEmbed::Providers::OohEmbed)
+      expect(new_res.provider).to eq(OEmbed::Providers::Embedly)
       expect(default_res.provider).to eq(@flickr)
       expect(xml_res.provider).to eq(@qik)
       expect(json_res.provider).to eq(@viddler)
@@ -152,7 +152,7 @@ describe OEmbed::Response do
     context 'with automagic' do
       all_expected.each do |method, _value|
         before do
-          @local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
+          @local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::Embedly)
         end
 
         it "should define the #{method} method" do
@@ -180,7 +180,7 @@ describe OEmbed::Response do
       expect(all_expected.keys).to include('__id__')
       expect(all_expected.keys).to include('to_s')
 
-      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
+      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::Embedly)
 
       expect(local_res.__id__).to_not eq(local_res.field('__id__'))
       expect(local_res.to_s).to_not eq(local_res.field('to_s'))
@@ -199,7 +199,7 @@ describe OEmbed::Response do
       expect(all_expected.keys).to include('version')
       expect(all_expected['version']).to_not eq(''.version)
 
-      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
+      local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::Embedly)
 
       expect(local_res.version).to eq(local_res.field('version'))
       expect(local_res.version).to_not eq(''.version)

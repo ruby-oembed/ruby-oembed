@@ -12,34 +12,37 @@ RSpec.configure do |config|
   config.color = true
 end
 
+EXAMPLES = Hash.new do |hash, key|
+  raise(
+    ArgumentError,
+    "No site exists for the key #{key.inspect} in spec_helper_examples.yml"
+  ) unless hash.include?(key)
+end.merge(
+  YAML.load_file(
+    File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))
+  )
+)
+EXAMPLE_URLS = EXAMPLES.map do |k, v|
+  case k
+  when :google_video, :qik, :skitch
+    nil
+  else
+    v[:url]
+  end
+end.compact
+
 module OEmbedSpecHelper
-  EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))) unless defined?(EXAMPLE)
+  def all_examples
+    EXAMPLES
+  end
 
   def example_url(site)
     return 'http://fake.com/' if site == :fake
-    EXAMPLE[site][:url]
-  end
-
-  def all_example_urls(*fallback)
-    results = EXAMPLE.values.map { |v| v[:url] }
-
-    # By default don't return example_urls that won't be recognized by
-    # the included default providers
-    results.delete(example_url(:google_video))
-
-    # If requested, return URLs that should work with various fallback providers
-    fallback.each do |f|
-      case f
-      when OEmbed::Providers::OohEmbed
-        results << example_url(:google_video)
-      end
-    end
-
-    results
+    all_examples[site][:url]
   end
 
   def example_body(site)
-    EXAMPLE[site][:body]
+    all_examples[site][:body]
   end
 
   def valid_response(format)
