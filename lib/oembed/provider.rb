@@ -107,6 +107,9 @@ module OEmbed
 
     private
 
+    # Given a URL string & an optional hash of query parameters
+    # returns the oEmbed endpoint with the correct parameters configured
+    # to get details about the given URL.
     def build(url, query = {})
       raise OEmbed::NotFound, url unless include?(url)
 
@@ -114,19 +117,36 @@ module OEmbed
       query.delete(:timeout)
       query.delete(:max_redirects)
 
-      endpoint = @endpoint.clone
+      built_url = endpoint_with_format(query)
+      built_url = add_query_string(built_url, query)
 
-      if endpoint.include?('{format}')
-        endpoint['{format}'] = query[:format]
+      URI.parse(built_url)
+    end
+
+    # Given a query hash
+    # if this Provider's endpoint contains the string '{format}'
+    # remove the :format value from the query hash
+    # interpolate that value into the endpoint string
+    # and return the resulting interpolated endpoint string.
+    def endpoint_with_format(query)
+      @_interpolate_endpoint_format ||= endpoint.include?('{format}')
+      formatted = endpoint.clone
+      if @_interpolate_endpoint_format
+        formatted['{format}'] = query[:format]
         query.delete(:format)
       end
+      formatted
+    end
 
-      base = endpoint.include?('?') ? '&' : '?'
-      query = base + query.inject('') do |memo, (key, value)|
+    # Given a URL String and a query Hash
+    # append each of the query key/values to the URL
+    # and return the resulting string.
+    def add_query_string(url, query)
+      query_string = url.include?('?') ? '&' : '?'
+      query_string += query.inject('') do |memo, (key, value)|
         "#{key}=#{value}&#{memo}"
       end.chop
-
-      URI.parse(endpoint + query)
+      url + query_string
     end
 
     def raw(url, query = {})
