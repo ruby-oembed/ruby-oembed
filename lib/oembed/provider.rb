@@ -129,13 +129,14 @@ module OEmbed
     # interpolate that value into the endpoint string
     # and return the resulting interpolated endpoint string.
     def endpoint_with_format(query)
-      @_interpolate_endpoint_format ||= endpoint.include?('{format}')
-      formatted = endpoint.clone
-      if @_interpolate_endpoint_format
+      if endpoint.include?('{format}')
+        formatted = endpoint.clone
         formatted['{format}'] = query[:format]
         query.delete(:format)
+        formatted
+      else
+        endpoint
       end
-      formatted
     end
 
     # Given a URL String and a query Hash
