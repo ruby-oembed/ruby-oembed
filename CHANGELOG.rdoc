@@ -10,13 +10,23 @@
   * OEmbed::Provider#build
   * OEmbed::Provider#raw
   * OEmbed::ProviderDiscovery#raw
+* Removed the following built-in OEmbed::Providers
+  * OEmbed::Providers::OohEmbed
+  * OEmbed::Providers::Skitch
+  * OEmbed::Providers::Qik
+  * OEmbed::Providers::Yfrog
 
 === New
 
 * Begin using rubocop to enforce code consistency.
 
+* Added the following built-in OEmbed::Providers
+  * OEmbed::Providers::Kinomap (Minor)
+
 === Changes
 
+* Divided built-in OEmbed::Providers into categories:
+  Default, Minor, & Aggregators
 * Lots of internal refactoring & code cleanup to reach base rubocop standards.
 
 === Fixes
