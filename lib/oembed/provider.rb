@@ -107,8 +107,9 @@ module OEmbed
     end
 
     # Provider instances are only equal if their
-    # endpoint, format, AND, urls are the same.
+    # class, endpoint, format, AND, urls are the same.
     def <=>(other)
+      return 1 unless self.class == other.class
       [
         @endpoint <=> other.endpoint,
         @format <=> other.format,
