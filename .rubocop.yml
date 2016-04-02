@@ -12,7 +12,7 @@ Style/SpecialGlobalVars:
 Style/Documentation:
   Exclude:
     - lib/oembed/version.rb
-    - lib/oembed/providers/*.rb
+    - lib/oembed/providers/**/*.rb
 
 # Because I perefer {...} blocks in rspec
 Style/BlockDelimiters:
