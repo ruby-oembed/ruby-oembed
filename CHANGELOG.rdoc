@@ -4,6 +4,8 @@
 
 === Breaking Changes
 
+* Data from OEmbed::Providers.urls and OEmbed::Providers.fallback accessors
+  are longer mutable.
 * Removed the following public methods:
   * OEmbed::Provider#name
   * OEmbed::Provider#url

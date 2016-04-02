@@ -5,16 +5,21 @@ module OEmbed
   # Allows OEmbed to perform tasks across several, registered, Providers
   # at once.
   class Providers
-    class << self
-      @@urls = {}
-      @@fallback = []
-      @@to_register = {}
+    @urls = {}
+    @fallback = []
+    @to_register = {}
 
+    class << self
       # A Hash of all url schemes, where the keys represent schemes supported by
       # all registered Provider instances and values are an Array of Providers
       # that support that scheme.
       def urls
-        @@urls
+        Marshal.load(Marshal.dump(@urls)).freeze
+      end
+
+      # Returns an array of all registerd fallback Provider instances.
+      def fallback
+        Marshal.load(Marshal.dump(@fallback)).freeze
       end
 
       # Given one ore more Provider instances, register their url schemes for
@@ -22,8 +27,8 @@ module OEmbed
       def register(*providers)
         providers.each do |provider|
           provider.urls.each do |url|
-            @@urls[url] ||= []
-            @@urls[url] << provider
+            @urls[url] ||= []
+            @urls[url] << provider
           end
         end
       end
@@ -33,9 +38,9 @@ module OEmbed
       def unregister(*providers)
         providers.each do |provider|
           provider.urls.each do |url|
-            if @@urls[url].is_a?(Array)
-              @@urls[url].delete(provider)
-              @@urls.delete(url) if @@urls[url].empty?
+            if @urls[url].is_a?(Array)
+              @urls[url].delete(provider)
+              @urls.delete(url) if @urls[url].empty?
             end
           end
         end
@@ -45,16 +50,16 @@ module OEmbed
       # The including_sub_type parameter should be one of the following values:
       # * :aggregators: also register provider aggregator endpoints, like Embedly
       def register_all(*including_sub_type)
-        register(*@@to_register[''])
+        register(*@to_register[''])
         including_sub_type.each do |sub_type|
-          register(*@@to_register[sub_type.to_s])
+          register(*@to_register[sub_type.to_s])
         end
       end
 
       # Unregister all currently-registered Provider instances.
       def unregister_all
-        @@urls = {}
-        @@fallback = []
+        @urls = {}
+        @fallback = []
       end
 
       # Takes an array of Provider instances or ProviderDiscovery
@@ -68,30 +73,25 @@ module OEmbed
       #    OEmbed::ProviderDiscovery, OEmbed::Providers::Embedly
       #  )
       def register_fallback(*providers)
-        @@fallback += providers
-      end
-
-      # Returns an array of all registerd fallback Provider instances.
-      def fallback
-        @@fallback
+        @fallback += providers
       end
 
       # Returns a Provider instance who's url scheme matches the given url.
       def find(url)
-        providers = @@urls[@@urls.keys.detect { |u| u =~ url }]
+        providers = @urls[@urls.keys.detect { |u| u =~ url }]
         Array(providers).first || nil
       end
 
       # Finds the appropriate Provider for this url and return the raw response.
       # @deprecated *Note*: This method will be made private in the future.
       def raw(url, options = {})
-        provider = find(url)
-        if provider
-          provider.raw(url, options)
+        found_provider = find(url)
+        if found_provider
+          found_provider.raw(url, options)
         else
-          fallback.each do |p|
+          fallback.each do |fallback_provider|
             begin
-              return p.raw(url, options)
+              return fallback_provider.raw(url, options)
             rescue
               OEmbed::Error
             end
@@ -103,13 +103,13 @@ module OEmbed
       # Finds the appropriate Provider for this url and returns an OEmbed::Response,
       # using Provider#get.
       def get(url, options = {})
-        provider = find(url)
-        if provider
-          provider.get(url, options)
+        found_provider = find(url)
+        if found_provider
+          found_provider.get(url, options)
         else
-          fallback.each do |p|
+          @fallback.each do |fallback_provider|
             begin
-              return p.get(url, options)
+              return fallback_provider.get(url, options)
             rescue
               OEmbed::Error
             end
@@ -129,8 +129,8 @@ module OEmbed
         raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
 
-        @@to_register[sub_type.to_s] ||= []
-        @@to_register[sub_type.to_s] << provider_class
+        @to_register[sub_type.to_s] ||= []
+        @to_register[sub_type.to_s] << provider_class
       end
     end
   end

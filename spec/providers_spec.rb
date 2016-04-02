@@ -146,7 +146,9 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
-      expect(OEmbed::Providers.fallback).to eq([OEmbed::Providers::Hulu, OEmbed::Providers::Embedly])
+      expect(OEmbed::Providers.fallback).to eq([
+        OEmbed::Providers::Hulu, OEmbed::Providers::Embedly
+      ])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
@@ -156,14 +158,18 @@ describe OEmbed::Providers do
 
       url = example_url(:google_video)
 
-      provider = OEmbed::Providers.fallback.last
-      expect(provider).to receive(:get)
-        .with(url, {})
-        .and_return(valid_response(:object))
-
-      OEmbed::Providers.fallback.each do |p|
-        next if p == provider
-        expect(p).to receive(:get).and_raise(OEmbed::NotFound)
+      # Because OEmbed::Providers.fallback returns copies of the originals
+      # We need to get a bit creative/hacky to stub
+      # out the actuall fallback Provider instances.
+      to_stub = OEmbed::Providers.instance_variable_get(:@fallback)
+      to_stub.each_with_index do |provider, i|
+        if i == to_stub.size - 1
+          expect(provider).to receive(:get)
+            .with(url, {})
+            .and_return(valid_response(:object))
+        else
+          expect(provider).to receive(:get).and_raise(OEmbed::NotFound)
+        end
       end
 
       OEmbed::Providers.get(url)

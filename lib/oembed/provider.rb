@@ -5,6 +5,7 @@ module OEmbed
   # An OEmbed::Provider has information about an individual oEmbed enpoint.
   class Provider
     include OEmbed::HttpHelper
+    include Comparable
 
     # The String that is the http URI of the Provider's oEmbed endpoint.
     # This URL may also contain a {{format}} portion. In actual requests to
@@ -103,6 +104,16 @@ module OEmbed
     # against the Provider's URL schemes.
     def include?(url)
       @urls.empty? || @urls.any? { |u| u =~ url }
+    end
+
+    # Provider instances are only equal if their
+    # endpoint, format, AND, urls are the same.
+    def <=>(other)
+      [
+        @endpoint <=> other.endpoint,
+        @format <=> other.format,
+        @urls <=> other.urls
+      ].uniq <=> [0]
     end
 
     private
