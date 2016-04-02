@@ -5,12 +5,14 @@
 === Breaking Changes
 
 * Data from OEmbed::Providers.urls and OEmbed::Providers.fallback accessors
-  are longer mutable.
+  are longer mutable. Please always use OEmbed::Providers.register and
+  OEmbed::Providers.register_fallback to add providers.
 * Removed the following public methods:
   * OEmbed::Provider#name
   * OEmbed::Provider#url
   * OEmbed::Provider#build
   * OEmbed::Provider#raw
+  * OEmbed::Providers#raw
   * OEmbed::ProviderDiscovery#raw
 * Removed the following built-in OEmbed::Providers
   * OEmbed::Providers::OohEmbed

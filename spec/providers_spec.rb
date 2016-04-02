@@ -102,7 +102,6 @@ describe OEmbed::Providers do
   #  all_example_urls.each do |url|
   #    provider = OEmbed::Providers.find(url)
   #    if provider
-  #      provider.should_not_receive(:raw)
   #      provider.should_not_receive(:get)
   #    end
   #  end
@@ -111,9 +110,6 @@ describe OEmbed::Providers do
   #  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery)
   #
   #  provider = OEmbed::ProviderDiscovery
-  #  expect(provider).to receive(:raw).
-  #    with(url, {}).
-  #    and_return(valid_response(:raw))
   #  expect(provider).to receive(:get).
   #    with(url, {}).
   #    and_return(valid_response(:object))
@@ -136,7 +132,6 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_all
       ['http://fake.com/', example_url(:google_video)].each do |url|
         expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
-        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
@@ -182,7 +177,6 @@ describe OEmbed::Providers do
 
       ['http://fa.ke/'].each do |url|
         expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
-        expect { OEmbed::Providers.raw(url) }.to raise_error(OEmbed::NotFound)
       end
     end
   end
