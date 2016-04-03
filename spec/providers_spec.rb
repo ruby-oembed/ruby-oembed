@@ -141,9 +141,8 @@ describe OEmbed::Providers do
       OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
       OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
-      expect(OEmbed::Providers.fallback).to eq([
-        OEmbed::Providers::Hulu, OEmbed::Providers::Embedly
-      ])
+      expect(OEmbed::Providers.fallback)
+        .to eq([OEmbed::Providers::Hulu, OEmbed::Providers::Embedly])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
@@ -189,9 +188,11 @@ describe OEmbed::Providers do
     it 'should not register a provider that is not marked as official' do
       expect(defined?(OEmbed::Providers::Fake)).to_not be
 
-      class OEmbed::Providers
-        Fake = OEmbed::Provider.new('http://new.fa.ke/oembed/')
-        Fake << 'http://new.fa.ke/*'
+      module OEmbed
+        class Providers
+          Fake = OEmbed::Provider.new('http://new.fa.ke/oembed/')
+          Fake << 'http://new.fa.ke/*'
+        end
       end
 
       OEmbed::Providers.register_all
@@ -205,10 +206,12 @@ describe OEmbed::Providers do
       it 'should register a new official provider' do
         expect(defined?(OEmbed::Providers::Fake)).to_not be
 
-        class OEmbed::Providers
-          Fake = OEmbed::Provider.new('http://official.fa.ke/oembed/')
-          Fake << 'http://official.fa.ke/*'
-          add_official_provider(Fake)
+        module OEmbed
+          class Providers
+            Fake = OEmbed::Provider.new('http://official.fa.ke/oembed/')
+            Fake << 'http://official.fa.ke/*'
+            add_official_provider(Fake)
+          end
         end
 
         ['http://official.fa.ke/20C285E0'].each do |url|
@@ -226,10 +229,12 @@ describe OEmbed::Providers do
       it 'should register an official sub_type provider separately' do
         expect(defined?(OEmbed::Providers::Fake)).to_not be
 
-        class OEmbed::Providers
-          Fake = OEmbed::Provider.new('http://sub.fa.ke/oembed/')
-          Fake << 'http://sub.fa.ke/*'
-          add_official_provider(Fake, :fakes)
+        module OEmbed
+          class Providers
+            Fake = OEmbed::Provider.new('http://sub.fa.ke/oembed/')
+            Fake << 'http://sub.fa.ke/*'
+            add_official_provider(Fake, :fakes)
+          end
         end
 
         OEmbed::Providers.register_all

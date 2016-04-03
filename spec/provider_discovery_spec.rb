@@ -19,6 +19,7 @@ describe OEmbed::ProviderDiscovery do
 
   include OEmbedSpecHelper
 
+  # rubocop:disable Metrics/LineLength
   {
     # 'name' => [
     #   'given_page_url',
@@ -56,9 +57,12 @@ describe OEmbed::ProviderDiscovery do
     #  {:json=>'https://public-api.wordpress.com/oembed/1.0/', :xml=>'https://public-api.wordpress.com/oembed/1.0/'},
     #  :json,
     # ],
+    # rubocop:enable Metrics/LineLength
   }.each do |context, urls|
     given_url, expected_endpoints, expected_format = urls
-    expected_endpoints = { expected_format => expected_endpoints } unless expected_endpoints.is_a?(Hash)
+    expected_endpoints = {
+      expected_format => expected_endpoints
+    } unless expected_endpoints.is_a?(Hash)
 
     context "given a #{context} url" do
       shared_examples 'a discover_provider call' do |endpoint, format|
@@ -105,21 +109,33 @@ describe OEmbed::ProviderDiscovery do
       context 'with no format specified' do
         let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url) }
         let(:response) { OEmbed::ProviderDiscovery.get(given_url) }
-        include_examples 'a discover_provider call', expected_endpoints[expected_format], expected_format
+        include_examples(
+          'a discover_provider call',
+          expected_endpoints[expected_format],
+          expected_format
+        )
       end
 
       if expected_endpoints.include?(:json)
         context 'with json format specified' do
-          let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url, :format => :json) }
-          let(:response) { OEmbed::ProviderDiscovery.get(given_url, :format => :json) }
+          let(:provider) {
+            OEmbed::ProviderDiscovery.discover_provider(given_url, :format => :json)
+          }
+          let(:response) {
+            OEmbed::ProviderDiscovery.get(given_url, :format => :json)
+          }
           include_examples 'a discover_provider call', expected_endpoints[:json], :json
         end
       end
 
       if expected_endpoints.include?(:xml)
         context 'with json format specified' do
-          let(:provider) { OEmbed::ProviderDiscovery.discover_provider(given_url, :format => :xml) }
-          let(:response) { OEmbed::ProviderDiscovery.get(given_url, :format => :xml) }
+          let(:provider) {
+            OEmbed::ProviderDiscovery.discover_provider(given_url, :format => :xml)
+          }
+          let(:response) {
+            OEmbed::ProviderDiscovery.get(given_url, :format => :xml)
+          }
           include_examples 'a discover_provider call', expected_endpoints[:xml], :xml
         end
       end
@@ -130,7 +146,9 @@ describe OEmbed::ProviderDiscovery do
     let(:url) { 'https://www.youtube.com/watch?v=123123123' }
 
     it 'raises OEmbed::NotFound' do
-      expect { OEmbed::ProviderDiscovery.discover_provider(url) }.to raise_error(OEmbed::NotFound)
+      expect {
+        OEmbed::ProviderDiscovery.discover_provider(url)
+      }.to raise_error(OEmbed::NotFound)
     end
   end
 
@@ -138,13 +156,17 @@ describe OEmbed::ProviderDiscovery do
     let(:url) { 'http://www.youtube.com/watch?v=dFs9WO2B8uI' }
 
     it 'does redirect http to https' do
-      expect { OEmbed::ProviderDiscovery.discover_provider(url) }.not_to raise_error
+      expect {
+        OEmbed::ProviderDiscovery.discover_provider(url)
+      }.not_to raise_error
     end
   end
 
   it 'does passes the timeout option to Net::Http' do
     expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
     expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
-    OEmbed::ProviderDiscovery.discover_provider('https://www.youtube.com/watch?v=dFs9WO2B8uI', :timeout => 5)
+    OEmbed::ProviderDiscovery.discover_provider(
+      'https://www.youtube.com/watch?v=dFs9WO2B8uI', :timeout => 5
+    )
   end
 end
