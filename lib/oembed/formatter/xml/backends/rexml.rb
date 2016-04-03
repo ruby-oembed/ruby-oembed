@@ -5,10 +5,9 @@ module OEmbed
   module Formatter
     module XML
       module Backends
-        # Use the REXML library, part of the standard library, to parse XML values.
+        # Use the REXML library, part of the standard library,
+        # to parse XML values.
         module REXML
-          extend self
-
           # Parses an XML string or IO and convert it into an object
           def decode(xml)
             xml = StringIO.new(xml) unless xml.respond_to?(:read)
@@ -23,17 +22,20 @@ module OEmbed
             when parse_error
               raise $!
             else
-              raise parse_error, "Couldn't parse the given document."
+              raise parse_error, 'Couldn\'t parse the given document.'
             end
           end
 
           def decode_fail_msg
-            "The version of the REXML library you have installed isn't parsing XML like ruby-oembed expected."
+            'The version of the REXML library you have installed'\
+              'isn\'t parsing XML like ruby-oembed expected.'
           end
 
           def parse_error
             ::REXML::ParseException
           end
+
+          public_instance_methods.each { |method| module_function(method) }
         end
       end
     end
