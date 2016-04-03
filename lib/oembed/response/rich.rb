@@ -1,7 +1,7 @@
 module OEmbed
   class Response
-    # A Response used for representing rich HTML content that does not fall under
-    # one of the other Response categories.
+    # A Response used for representing rich HTML content
+    # that does not fall under one of the other Response categories.
     class Rich < self
       private
 

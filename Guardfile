@@ -8,6 +8,7 @@ group :red_green_refactor, :halt_on_fail => true do
   guard 'rspec', :cmd => 'bundle exec rspec' do
     watch(%r{^spec/.+_spec\.rb$})
     watch(%r{^spec/cassettes/.+.yml$}) { 'spec' }
+    watch(/.+\.rake$/) { 'spec' }
     watch(%r{^lib/(.+)\.rb$}) do |m|
       # Split up the file path into an Array
       path_parts = []
@@ -38,6 +39,7 @@ group :red_green_refactor, :halt_on_fail => true do
 
   guard :rubocop, :cmd => 'bundle exec rubocop', :keep_failed => false do
     watch(/.+\.rb$/)
+    watch(/.+\.rake$/)
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end
 
