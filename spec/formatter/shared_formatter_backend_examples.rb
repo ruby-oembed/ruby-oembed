@@ -33,24 +33,6 @@ RSpec.shared_examples 'an OEmbed::Formatter backend' do
       .to eq(valid_response(:object).values.map(&:to_s))
   end
 
-  RSpec.shared_examples 'a backend' do
-    around(:example) do |example|
-      RSpec::Expectations
-        .configuration.warn_about_potential_false_positives = false
-
-      example.run
-
-      RSpec::Expectations
-        .configuration.warn_about_potential_false_positives = true
-    end
-
-    it 'should not catch that error when decoding' do
-      expect {
-        backend_module.decode(backend_format, given_input)
-      }.to raise_error
-    end
-  end
-
   context 'given an unclosed xml continer' do
     let(:given_input) { invalid_response('unclosed_container', backend_format) }
     it_behaves_like 'a backend'
@@ -79,5 +61,23 @@ RSpec.shared_examples 'an OEmbed::Formatter backend' do
         backend_module.decode(valid_response(backend_format))
       }.to raise_error(error_to_raise)
     end
+  end
+end
+
+RSpec.shared_examples 'a backend' do
+  around(:example) do |example|
+    RSpec::Expectations
+      .configuration.warn_about_potential_false_positives = false
+
+    example.run
+
+    RSpec::Expectations
+      .configuration.warn_about_potential_false_positives = true
+  end
+
+  it 'should not catch that error when decoding' do
+    expect {
+      backend_module.decode(backend_format, given_input)
+    }.to raise_error
   end
 end
