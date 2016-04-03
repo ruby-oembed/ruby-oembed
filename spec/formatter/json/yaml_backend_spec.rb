@@ -13,7 +13,7 @@ describe 'OEmbed::Formatter::JSON::Backends::Yaml' do
   end
 
   let(:backend_module) { OEmbed::Formatter::JSON::Backends::Yaml }
-  let(:object_for_decode) { OEmbed::Formatter::JSON::Backends::Yaml }
+  let(:object_for_decode) { OEmbed::Formatter::JSON::Backends::Yaml::Internal }
   let(:method_for_decode) { :convert_json_to_yaml }
 
   it_behaves_like 'a JSON backend'

@@ -1,6 +1,6 @@
 # Only allow this backend the nokogiri gem is already loaded
 raise(
-  ::LoadError, 'The nokogiri library isn\'t available. require \'nokogiri\''
+  ::LoadError, "The nokogiri library isn't available. require 'nokogiri'"
 ) unless defined?(Nokogiri)
 
 module OEmbed
