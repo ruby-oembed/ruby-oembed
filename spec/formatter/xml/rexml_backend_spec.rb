@@ -69,7 +69,7 @@ describe 'OEmbed::Formatter::XML::Backends::REXML' do
 
   context 'given an unexpected error when parsing xml' do
     it 'should not catch that error when decoding' do
-      error_to_raise = Interrupt
+      error_to_raise = ZeroDivisionError
       expect(OEmbed::Formatter::XML::Backends::REXML.parse_error)
         .to_not be_kind_of(error_to_raise)
 
