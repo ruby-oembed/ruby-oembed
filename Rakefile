@@ -8,4 +8,4 @@ Dir[File.join(File.dirname(__FILE__), 'lib/tasks/*.rake')].sort.each do |ext|
   load ext
 end
 
-task :default => [:rubocop, :specs]
+task :default => [:specs, :rubocop]
