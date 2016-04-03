@@ -17,13 +17,6 @@ module OEmbed
               obj[el.name] = el.text
             end
             obj
-          rescue
-            case $!
-            when parse_error
-              raise $!
-            else
-              raise parse_error, 'Couldn\'t parse the given document.'
-            end
           end
 
           def decode_fail_msg

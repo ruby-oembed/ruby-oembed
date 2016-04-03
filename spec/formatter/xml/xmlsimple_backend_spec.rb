@@ -73,7 +73,7 @@ describe 'OEmbed::Formatter::XML::Backends::XmlSimple' do
 
   context 'given an unexpected error when parsing xml' do
     it 'should not catch that error when decoding' do
-      error_to_raise = RuntimeError
+      error_to_raise = Interrupt
       expect(OEmbed::Formatter::XML.backend.parse_error)
         .to_not be_kind_of(error_to_raise)
 
