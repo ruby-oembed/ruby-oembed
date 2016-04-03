@@ -20,5 +20,5 @@ describe 'OEmbed::Formatter::XML::Backends::Nokogiri' do
   let(:object_for_decode) { ::Nokogiri::XML::Document }
   let(:method_for_decode) { :parse }
 
-  it_behaves_like 'an OEmbed::Formatter::XML backend'
+  it_behaves_like 'an XML backend'
 end

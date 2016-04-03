@@ -20,5 +20,5 @@ describe 'OEmbed::Formatter::XML::Backends::XmlSimple' do
   let(:object_for_decode) { ::XmlSimple }
   let(:method_for_decode) { :xml_in }
 
-  it_behaves_like 'an OEmbed::Formatter::XML backend'
+  it_behaves_like 'an XML backend'
 end

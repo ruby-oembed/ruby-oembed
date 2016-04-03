@@ -16,5 +16,5 @@ describe 'OEmbed::Formatter::XML::Backends::REXML' do
   let(:object_for_decode) { ::REXML::Document }
   let(:method_for_decode) { :new }
 
-  it_behaves_like 'an OEmbed::Formatter::XML backend'
+  it_behaves_like 'an XML backend'
 end
