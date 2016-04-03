@@ -29,7 +29,9 @@ module OEmbed
 
           # Methods to be used only internally by Backends::Yaml
           class Internal
-            # Ensure that ":" and "," are always followed by a space
+            # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
+            # rubocop:disable Metrics/MethodLength, Metrics/PerceivedComplexity
+            # rubocop:disable Lint/UselessAssignment
             def self.convert_json_to_yaml(json) #:nodoc:
               require 'strscan' unless defined? ::StringScanner
               scanner = ::StringScanner.new(json)
@@ -78,6 +80,9 @@ module OEmbed
               output.gsub!(%r{\\/}, '/')
               output
             end
+            # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity
+            # rubocop:enable Metrics/MethodLength, Metrics/PerceivedComplexity
+            # rubocop:enable Lint/UselessAssignment
           end
         end
       end
