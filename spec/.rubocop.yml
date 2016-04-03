@@ -1,0 +1,14 @@
+inherit_from:
+  - ../.rubocop.yml
+
+# I perefer {...} blocks in rspec
+Style/BlockDelimiters:
+  Enabled: false
+
+# It's not quite so important to document all classes, etc in tests
+Style/Documentation:
+  Enabled: false
+
+# I don't care quite so much about line length in tests
+Metrics/LineLength:
+  Max: 90

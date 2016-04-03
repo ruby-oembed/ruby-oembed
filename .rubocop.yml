@@ -14,11 +14,6 @@ Style/Documentation:
     - lib/oembed/version.rb
     - lib/oembed/providers/**/*.rb
 
-# Because I perefer {...} blocks in rspec
-Style/BlockDelimiters:
-  Exclude:
-    - spec/**/*
-
 # Our gemspec is long. That's ok.
 Metrics/LineLength:
   Exclude:

@@ -213,7 +213,6 @@ describe OEmbed::Response do
     end
 
     it 'should not protect already defined methods that are overridable' do
-      # A dummy object
       class Object
         def version
           'two point oh'
