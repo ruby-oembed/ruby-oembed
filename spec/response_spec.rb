@@ -43,7 +43,9 @@ describe OEmbed::Response do
   }
 
   let(:viddler) {
-    viddler = OEmbed::Provider.new('http://lab.viddler.com/services/oembed/', :json)
+    viddler = OEmbed::Provider.new(
+      'http://lab.viddler.com/services/oembed/', :json
+    )
     viddler << 'http://*.viddler.com/*'
     viddler
   }
@@ -53,15 +55,21 @@ describe OEmbed::Response do
   }
 
   let(:default_res) {
-    OEmbed::Response.create_for(valid_response(:json), @flickr, example_url(:flickr), :json)
+    OEmbed::Response.create_for(
+      valid_response(:json), @flickr, example_url(:flickr), :json
+    )
   }
 
   let(:xml_res) {
-    OEmbed::Response.create_for(valid_response(:xml), @qik, example_url(:qik), :xml)
+    OEmbed::Response.create_for(
+      valid_response(:xml), @qik, example_url(:qik), :xml
+    )
   }
 
   let(:json_res) {
-    OEmbed::Response.create_for(valid_response(:json), @viddler, example_url(:viddler), :json)
+    OEmbed::Response.create_for(
+      valid_response(:json), @viddler, example_url(:viddler), :json
+    )
   }
 
   describe '#initialize' do
@@ -70,16 +78,20 @@ describe OEmbed::Response do
       # non-string values to be recognized correctly.
 
       expect(new_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(new_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
+      expect(new_res.fields.values.map(&:to_s))
+        .to eq(valid_response(:object).values.map(&:to_s))
 
       expect(default_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(default_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
+      expect(default_res.fields.values.map(&:to_s))
+        .to eq(valid_response(:object).values.map(&:to_s))
 
       expect(xml_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(xml_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
+      expect(xml_res.fields.values.map(&:to_s))
+        .to eq(valid_response(:object).values.map(&:to_s))
 
       expect(json_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(json_res.fields.values.map(&:to_s)).to eq(valid_response(:object).values.map(&:to_s))
+      expect(json_res.fields.values.map(&:to_s))
+        .to eq(valid_response(:object).values.map(&:to_s))
     end
 
     it 'should set the provider' do
@@ -107,29 +119,41 @@ describe OEmbed::Response do
   describe 'create_for' do
     it 'should only allow JSON or XML' do
       expect {
-        OEmbed::Response.create_for(valid_response(:json), flickr, example_url(:flickr), :json)
+        OEmbed::Response.create_for(
+          valid_response(:json), flickr, example_url(:flickr), :json
+        )
       }.not_to raise_error
 
       expect {
-        OEmbed::Response.create_for(valid_response(:xml), flickr, example_url(:flickr), :xml)
+        OEmbed::Response.create_for(
+          valid_response(:xml), flickr, example_url(:flickr), :xml
+        )
       }.not_to raise_error
 
       expect {
-        OEmbed::Response.create_for(valid_response(:yml), flickr, example_url(:flickr), :yml)
+        OEmbed::Response.create_for(
+          valid_response(:yml), flickr, example_url(:flickr), :yml
+        )
       }.to raise_error(OEmbed::FormatNotSupported)
     end
 
     it 'should not parse the incorrect format' do
       expect {
-        OEmbed::Response.create_for(valid_response(:object), example_url(:flickr), flickr, :json)
+        OEmbed::Response.create_for(
+          valid_response(:object), example_url(:flickr), flickr, :json
+        )
       }.to raise_error(OEmbed::ParseError)
 
       expect {
-        OEmbed::Response.create_for(valid_response(:xml), example_url(:flickr), viddler, :json)
+        OEmbed::Response.create_for(
+          valid_response(:xml), example_url(:flickr), viddler, :json
+        )
       }.to raise_error(OEmbed::ParseError)
 
       expect {
-        OEmbed::Response.create_for(valid_response(:json), example_url(:flickr), viddler, :xml)
+        OEmbed::Response.create_for(
+          valid_response(:json), example_url(:flickr), viddler, :xml
+        )
       }.to raise_error(OEmbed::ParseError)
     end
   end
@@ -152,7 +176,9 @@ describe OEmbed::Response do
     context 'with automagic' do
       all_expected.each do |method, _value|
         before do
-          @local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::Embedly)
+          @local_res = OEmbed::Response.new(
+            all_expected, OEmbed::Providers::Embedly
+          )
         end
 
         it "should define the #{method} method" do
@@ -186,7 +212,8 @@ describe OEmbed::Response do
       expect(local_res.to_s).to_not eq(local_res.field('to_s'))
     end
 
-    it 'should not protect already defined methods that are specifically overridable' do
+    it 'should not protect already defined methods that are overridable' do
+      # A dummy object
       class Object
         def version
           'two point oh'
@@ -209,7 +236,9 @@ describe OEmbed::Response do
   describe 'OEmbed::Response::Photo' do
     describe '#html' do
       it 'should include the title, if given' do
-        response = OEmbed::Response.create_for(example_body(:flickr), example_url(:flickr), flickr, :json)
+        response = OEmbed::Response.create_for(
+          example_body(:flickr), example_url(:flickr), flickr, :json
+        )
         expect(response).to respond_to(:title)
         expect(response.title).to_not be_empty
 
@@ -218,7 +247,9 @@ describe OEmbed::Response do
       end
 
       it 'should work just fine, without a title' do
-        response = OEmbed::Response.create_for(example_body(:skitch), example_url(:skitch), skitch, :json)
+        response = OEmbed::Response.create_for(
+          example_body(:skitch), example_url(:skitch), skitch, :json
+        )
         expect(response).to_not respond_to(:title)
 
         expect(response.html).to_not be_nil
