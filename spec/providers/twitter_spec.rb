@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), '../spec_helper')
+require 'support/shared_examples_for_providers'
 
 describe 'OEmbed::Providers::Twitter' do
   before(:all) do
@@ -10,6 +11,8 @@ describe 'OEmbed::Providers::Twitter' do
 
   include OEmbedSpecHelper
 
+  let(:provider_class) { OEmbed::Providers::Twitter }
+
   expected_valid_urls = %w(
     https://twitter.com/RailsGirlsSoC/status/702136612822634496
     https://www.twitter.com/bpoweski/status/71633762
@@ -19,47 +22,21 @@ describe 'OEmbed::Providers::Twitter' do
     https://twitter.es/FCBarcelona_es/status/734194638697959424
   )
 
-  expected_valid_urls.each do |valid_url|
-    context "given the valid URL #{valid_url}" do
-      describe ".include?" do
-        it "should be true" do
-          expect(OEmbed::Providers::Twitter.include?(valid_url)).to be_truthy
-        end
-      end
+  it_should_behave_like(
+    "an OEmbed::Proviers instance",
+    expected_valid_urls,
+    expected_invalid_urls
+  )
 
-      describe ".get" do
-        it "should return a response" do
-          response = nil
-          expect {
-            response = OEmbed::Providers::Twitter.get(valid_url)
-          }.to_not raise_error
-          expect(response).to be_a(OEmbed::Response)
-        end
-
-        context "using XML" do
+  context "using XML" do
+    expected_valid_urls.each do |valid_url|
+      context "given the valid URL #{valid_url}" do
+        describe ".get" do
           it "should encounter a 410 error" do
             expect {
-              OEmbed::Providers::Twitter.get(valid_url, :format=>:xml)
+              provider_class.get(valid_url, :format=>:xml)
             }.to raise_error(OEmbed::UnknownResponse, /\b410\b/)
           end
-        end
-      end
-    end
-  end
-
-  expected_invalid_urls.each do |invalid_url|
-    context "given the invalid URL #{invalid_url}" do
-      describe ".include?" do
-        it "should be false" do
-          expect(OEmbed::Providers::Twitter.include?(invalid_url)).to be_falsey
-        end
-      end
-
-      describe ".get" do
-        it "should not find a response" do
-          expect {
-            OEmbed::Providers::Twitter.get(invalid_url)
-          }.to raise_error(OEmbed::NotFound)
         end
       end
     end
