@@ -21,7 +21,7 @@ describe 'OEmbed::Providers::Slideshare' do
           # Even though Slideshare's oEmbed endpoint
           # is supposed to /mobile/ URLs,
           # as of 2016-05-21 it's returning 404 results for these URLs.
-          #'/mobile/gabriele.lana/the-magic-of-elixir',
+          # '/mobile/gabriele.lana/the-magic-of-elixir',
         ].map do |path|
           File.join(protocol, host, path)
         end
@@ -35,7 +35,7 @@ describe 'OEmbed::Providers::Slideshare' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    'an OEmbed::Proviers instance',
     expected_valid_urls,
     expected_invalid_urls
   )

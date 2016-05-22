@@ -23,18 +23,18 @@ describe 'OEmbed::Providers::Twitter' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    'an OEmbed::Proviers instance',
     expected_valid_urls,
     expected_invalid_urls
   )
 
-  context "using XML" do
+  context 'using XML' do
     expected_valid_urls.each do |valid_url|
       context "given the valid URL #{valid_url}" do
-        describe ".get" do
-          it "should encounter a 400 error" do
+        describe '.get' do
+          it 'should encounter a 400 error' do
             expect {
-              provider_class.get(valid_url, :format=>:xml)
+              provider_class.get(valid_url, :format => :xml)
             }.to raise_error(OEmbed::UnknownResponse, /\b400\b/)
           end
         end
