@@ -3,7 +3,7 @@ module OEmbed
   class Version
     MAJOR = 0
     MINOR = 10
-    PATCH = 0
+    PATCH = 1
     STRING = "#{MAJOR}.#{MINOR}.#{PATCH}".freeze
 
     class << self

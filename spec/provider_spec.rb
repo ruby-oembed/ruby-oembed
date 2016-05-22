@@ -1,11 +1,4 @@
 require File.dirname(__FILE__) + '/spec_helper'
-require 'vcr'
-
-VCR.config do |c|
-  c.default_cassette_options = { :record => :new_episodes }
-  c.cassette_library_dir = 'spec/cassettes'
-  c.stub_with :fakeweb
-end
 
 describe OEmbed::Provider do
   before(:all) do

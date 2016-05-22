@@ -35,6 +35,12 @@
 
 === Fixes
 
+== 0.10.1 - 21 May 2016
+
+* Update built-in Twitter provider to use the new Twitter oEmbed endpoint; Pull #60 (Ben Ramsey)
+* Update built-in SlideShare provider to accept https URLs and URLs from various subdomains; Pull #59 (Axel Wahlen)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes. (Marcos Wright-Kuhns)
+
 == 0.10.0 - 6 March 2016
 
 * Add built-in Tumblr provider; Pull #55 (unknown)
