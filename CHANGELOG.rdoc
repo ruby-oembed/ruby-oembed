@@ -1,6 +1,6 @@
 = CHANGELOG
 
-== Unreleased
+== 0.10.1 - 21 May 2016
 
 * Update built-in Twitter provider to use the new Twitter oEmbed endpoint; Pull #60 (Ben Ramsey)
 * Update built-in SlideShare provider to accept https URLs and URLs from various subdomains; Pull #59 (Axel Wahlen)
