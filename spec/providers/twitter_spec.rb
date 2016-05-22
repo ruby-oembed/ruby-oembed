@@ -32,10 +32,10 @@ describe 'OEmbed::Providers::Twitter' do
     expected_valid_urls.each do |valid_url|
       context "given the valid URL #{valid_url}" do
         describe ".get" do
-          it "should encounter a 410 error" do
+          it "should encounter a 400 error" do
             expect {
               provider_class.get(valid_url, :format=>:xml)
-            }.to raise_error(OEmbed::UnknownResponse, /\b410\b/)
+            }.to raise_error(OEmbed::UnknownResponse, /\b400\b/)
           end
         end
       end
