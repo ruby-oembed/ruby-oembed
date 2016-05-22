@@ -74,6 +74,8 @@ The following, optional, backends are currently supported:
 
 # Lend a Hand
 
+**Note:** Work is under way on a v1.0 of ruby-oembed. If you'd like to contribute, take a look at [the rubocop branch!](https://github.com/ruby-oembed/ruby-oembed/tree/rubocop)
+
 Code for the ruby-oembed library is [hosted on GitHub](https://github.com/ruby-oembed/ruby-oembed).
 
 ```bash
