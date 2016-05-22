@@ -16,10 +16,13 @@ describe 'OEmbed::Providers::Slideshare' do
   expected_valid_urls = (
     %w(https:// http://).map do |protocol|
       %w(slideshare.net www.slideshare.net de.slideshare.net).map do |host|
-        %w(
-          /gabriele.lana/the-magic-of-elixir
-          /mobile/gabriele.lana/the-magic-of-elixir
-        ).map do |path|
+        [
+          '/gabriele.lana/the-magic-of-elixir',
+          # Even though Slideshare's oEmbed endpoint
+          # is supposed to /mobile/ URLs,
+          # as of 2016-05-21 it's returning 404 results for these URLs.
+          #'/mobile/gabriele.lana/the-magic-of-elixir',
+        ].map do |path|
           File.join(protocol, host, path)
         end
       end
@@ -27,8 +30,8 @@ describe 'OEmbed::Providers::Slideshare' do
   ).flatten
 
   expected_invalid_urls = %w(
-    http://twitter.com/RailsGirlsSoC/status/702136612822634496
-    https://twitter.es/FCBarcelona_es/status/734194638697959424
+    http://www.slideshare.net
+    http://www.slideshare.net/gabriele.lana
   )
 
   it_should_behave_like(
