@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
-require 'english'
+require 'English'
 require 'net/http'
 
 require 'oembed/version'
