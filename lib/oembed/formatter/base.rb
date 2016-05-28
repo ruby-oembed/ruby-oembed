@@ -32,7 +32,7 @@ module OEmbed
       rescue
         # rubocop:disable Metrics/LineLength
         raise LoadError,
-              "There was an error setting the backend: #{new_backend.inspect} - #{$!.message}"
+              "There was an error setting the backend: #{new_backend.inspect} - #{$ERROR_INFO.message}"
         # rubocop:enable Metrics/LineLength
       end
 

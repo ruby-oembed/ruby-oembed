@@ -63,7 +63,7 @@ group :red_green_refactor, :halt_on_fail => true do
   #     end
   #   rescue
   #     puts "Error reading/parsing .codeclimage.yml"
-  #     puts $!.message
+  #     puts $ERROR_INFO.message
   #   ensure
   #     config_file && config_file.close
   #   end

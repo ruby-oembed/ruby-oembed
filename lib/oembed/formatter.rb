@@ -40,9 +40,10 @@ module OEmbed
         begin
           formater_class(format).decode(value)
         rescue formater_class(format).backend.parse_error
-          raise OEmbed::ParseError, $!.message
+          raise OEmbed::ParseError, $ERROR_INFO.message
         rescue
-          raise OEmbed::ParseError, "#{$!.class}: #{$!.message}"
+          raise OEmbed::ParseError,
+                "#{$ERROR_INFO.class}: #{$ERROR_INFO.message}"
         end
       end
 

@@ -4,10 +4,6 @@ Style/HashSyntax:
 Style/SymbolProc:
   Enabled: false
 
-# TODO: Figure out/remember why I disabled this one
-Style/SpecialGlobalVars:
-  Enabled: false
-
 # Because it's just silly for this file
 Style/Documentation:
   Exclude:

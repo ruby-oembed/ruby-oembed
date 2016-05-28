@@ -21,7 +21,7 @@ module OEmbed
       # rubocop:enable Lint/ShadowingOuterLocalVariable
       HTTPResponseHandler.handle(res, uri)
     rescue StandardError
-      Internals.response_error_catch_all($!)
+      Internals.response_error_catch_all($ERROR_INFO)
     end
 
     # An abstraction for converting various Net::HTTPResponse instances
