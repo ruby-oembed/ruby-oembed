@@ -30,7 +30,7 @@
 === Changes
 
 * Divided built-in OEmbed::Providers into categories:
-  Default, Minor, & Aggregators
+  Default, Minor, & Aggregator
 * Lots of internal refactoring & code cleanup to reach base rubocop standards.
 
 === Fixes

@@ -10,7 +10,7 @@ begin
       json_uri = URI.parse('http://api.embed.ly/1/services')
       yaml_path = File.join(
         File.dirname(__FILE__),
-        '../oembed/providers/aggregators/embedly_urls.yml'
+        '../oembed/providers/aggregator/embedly_urls.yml'
       )
 
       services = JSON.parse(json_uri.read)
