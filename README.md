@@ -6,7 +6,6 @@
 [![Coveralls](https://coveralls.io/repos/github/ruby-oembed/ruby-oembed/badge.svg?branch=coveralls)](https://coveralls.io/github/ruby-oembed/ruby-oembed?branch=coveralls)
 ![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)
 
-
 An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See [oembed.com](http://oembed.com) for more about the protocol.
 
 # Installation
@@ -33,7 +32,7 @@ resource.html #=> <<-HTML
 HTML
 ```
 
-If you'd like to use a provider that isn't included in the library, it's easy to create one. Just provide the oEmbed API endpoint and URL scheme(s).
+If you'd like to use a provider that isn't included in the library, it's easy to create one. Just specify the oEmbed API endpoint and URL scheme(s).
 
 ```ruby
 my_provider = OEmbed::Provider.new("http://my.cool-service.com/api/oembed_endpoint.{format}")
@@ -46,10 +45,10 @@ resource.provider.name #=> "My Cool Service"
 To use multiple Providers at once, simply register them.
 
 ```ruby
-OEmbed::Providers.register(OEmbed::Providers::Youtube, my_provider)
-resource = OEmbed::Providers.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k") #=> OEmbed::Response
+OEmbed.register(OEmbed::Providers::Youtube, my_provider)
+resource = OEmbed.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k") #=> OEmbed::Response
 resource.type #=> "video"
-resource.provider.name #=> "Youtube"
+resource.provider.endpoint #=> "https://www.youtube.com/oembed?scheme=https"
 ```
 
 Last but not least, ruby-oembed supports both [oohEmbed](http://oohembed.com) and [Embedly](http://embed.ly). These services are provider aggregators. Each supports a wide array of websites ranging from [Amazon.com](http://www.amazon.com) to [xkcd](http://www.xkcd.com).

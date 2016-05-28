@@ -22,8 +22,8 @@
 
 === New
 
+* Any method use used to call on OEmbed::Providers can now be called on OEmbed directly (e.g. OEmbed.register_all)
 * Begin using rubocop to enforce code consistency.
-
 * Added the following built-in OEmbed::Providers
   * OEmbed::Providers::Kinomap (Minor)
 

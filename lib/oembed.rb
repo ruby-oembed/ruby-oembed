@@ -14,3 +14,12 @@ require 'oembed/response/photo'
 require 'oembed/response/video'
 require 'oembed/response/link'
 require 'oembed/response/rich'
+
+# Use the top-level OEmbed methods
+# as if you were using OEmbed::Providers
+module OEmbed
+  class << self
+    extend Forwardable
+    def_delegators ::OEmbed::Providers, *Providers.public_methods(false)
+  end
+end
