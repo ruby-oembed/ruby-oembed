@@ -1,0 +1,1410 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://publish.twitter.com:443/oembed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - must-revalidate, max-age=3153600000
+      content-disposition:
+      - attachment; filename=json.json
+      content-length:
+      - '513'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 31 May 2016 04:01:56 GMT
+      expires:
+      - Thu, 07 May 2116 04:01:56 GMT
+      last-modified:
+      - Tue, 31 May 2016 04:01:56 GMT
+      server:
+      - tsa_a
+      set-cookie:
+      - guest_id=v1%3A146466731681023743; Domain=.twitter.com; Path=/; Expires=Thu,
+        31-May-2018 04:01:56 UTC
+      strict-transport-security:
+      - max-age=631138519
+      x-connection-hash:
+      - bf7a83394ed47f60f883d003aaac549d
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-response-time:
+      - '15'
+      x-xss-protection:
+      - 1; mode=block
+    body: !binary |-
+      eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0Nc
+      L3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJS
+      YWlscyBHaXJscyBTb0MiLCJhdXRob3JfdXJsIjoiaHR0cHM6XC9cL3R3aXR0
+      ZXIuY29tXC9SYWlsc0dpcmxzU29DIiwiaHRtbCI6Ilx1MDAzQ2Jsb2NrcXVv
+      dGUgY2xhc3M9XCJ0d2l0dGVyLXR3ZWV0XCJcdTAwM0VcdTAwM0NwIGxhbmc9
+      XCJlblwiIGRpcj1cImx0clwiXHUwMDNFT3VyIDIwMTYgZnVuZHJhaXNpbmcg
+      Y2FtcGFpZ24gaXMgbm93IG9wZW4hISBMZXTigJlzIG1ha2UgYW5vdGhlciBh
+      bWF6aW5nIHN1bW1lciBoYXBwZW4h4pyoXHVEODNEXHVEQzlDXHVEODNEXHVE
+      Q0FBXHVEODNEXHVEQzlB4pyoXHVEODNEXHVEQzQ5IFx1MDAzQ2EgaHJlZj1c
+      Imh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XCJcdTAwM0VodHRwczpcL1wv
+      dC5jb1wvUjhKZzM2eGFReFx1MDAzQ1wvYVx1MDAzRSBcdTAwM0NhIGhyZWY9
+      XCJodHRwczpcL1wvdC5jb1wvbUl3S1IwZnpHUlwiXHUwMDNFcGljLnR3aXR0
+      ZXIuY29tXC9tSXdLUjBmekdSXHUwMDNDXC9hXHUwMDNFXHUwMDNDXC9wXHUw
+      MDNFJm1kYXNoOyBSYWlscyBHaXJscyBTb0MgKEBSYWlsc0dpcmxzU29DKSBc
+      dTAwM0NhIGhyZWY9XCJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2ly
+      bHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2XCJcdTAwM0VGZWJy
+      dWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90
+      ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cIlwvXC9wbGF0Zm9y
+      bS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwi
+      XHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0UiLCJ3aWR0aCI6NTUwLCJoZWln
+      aHQiOm51bGwsInR5cGUiOiJyaWNoIiwiY2FjaGVfYWdlIjoiMzE1MzYwMDAw
+      MCIsInByb3ZpZGVyX25hbWUiOiJUd2l0dGVyIiwicHJvdmlkZXJfdXJsIjoi
+      aHR0cHM6XC9cL3R3aXR0ZXIuY29tIiwidmVyc2lvbiI6IjEuMCJ9
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://publish.twitter.com:443/oembed?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - must-revalidate, max-age=3153600000
+      content-disposition:
+      - attachment; filename=json.json
+      content-length:
+      - '376'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 31 May 2016 04:01:57 GMT
+      expires:
+      - Thu, 07 May 2116 04:01:57 GMT
+      last-modified:
+      - Tue, 31 May 2016 04:01:57 GMT
+      server:
+      - tsa_a
+      set-cookie:
+      - guest_id=v1%3A146466731708987347; Domain=.twitter.com; Path=/; Expires=Thu,
+        31-May-2018 04:01:57 UTC
+      strict-transport-security:
+      - max-age=631138519
+      x-connection-hash:
+      - f909fa0c9944099495655fbb93d75fe6
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-response-time:
+      - '15'
+      x-xss-protection:
+      - 1; mode=block
+    body: '{"url":"https:\/\/twitter.com\/bpoweski\/status\/71633762","author_name":"Ben
+      Poweski","author_url":"https:\/\/twitter.com\/bpoweski","html":"\u003Cblockquote
+      class=\"twitter-tweet\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003Eworking on
+      my Ruby Security book\u003C\/p\u003E&mdash; Ben Poweski (@bpoweski) \u003Ca
+      href=\"https:\/\/twitter.com\/bpoweski\/status\/71633762\"\u003EMay 20, 2007\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript
+      async src=\"\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://publish.twitter.com:443/oembed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 400
+      message: Bad Request
+    headers:
+      content-disposition:
+      - attachment; filename=json.json
+      content-length:
+      - '60'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 31 May 2016 04:01:57 GMT
+      server:
+      - tsa_a
+      set-cookie:
+      - guest_id=v1%3A146466731741595189; Domain=.twitter.com; Path=/; Expires=Thu,
+        31-May-2018 04:01:57 UTC
+      strict-transport-security:
+      - max-age=631138519
+      x-connection-hash:
+      - e59f96ad6db26e030242becfab31611a
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-response-time:
+      - '6'
+      x-xss-protection:
+      - 1; mode=block
+    body: '{"errors":["xml not implemented"]}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://publish.twitter.com:443/oembed?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 400
+      message: Bad Request
+    headers:
+      content-disposition:
+      - attachment; filename=json.json
+      content-length:
+      - '60'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 31 May 2016 04:01:57 GMT
+      server:
+      - tsa_a
+      set-cookie:
+      - guest_id=v1%3A146466731757910642; Domain=.twitter.com; Path=/; Expires=Thu,
+        31-May-2018 04:01:57 UTC
+      strict-transport-security:
+      - max-age=631138519
+      x-connection-hash:
+      - 60b9a06ac0bcf5da541ac61e5d37092a
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-response-time:
+      - '5'
+      x-xss-protection:
+      - 1; mode=block
+    body: '{"errors":["xml not implemented"]}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:24 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1921-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 3d2771e6fb8ebdf1fe565625bbd8f45fd378b4d536da90523950fe364ce84799
+      content-length:
+      - '1123'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:24 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1727-ORD, cache-sea1923-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"provider_name":"Twitter","type":"rich","url":"https://twitter.com/RailsGirlsSoC/status/702136612822634496","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div class=\"tweet_user\">\n    <div
+      class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/RailsGirlsSoC\"
+      target=\"_blank\">\n        <img height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/3767942211/5d122cdf7e08a30ab07180cf92122cbc_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/RailsGirlsSoC\" target=\"_blank\">\n        <span
+      class=\"tweet_screen_name\">Rails Girls SoC</span><br>\n        <span class=\"tweet_real_name\">RailsGirlsSoC</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>Our 2016 fundraising campaign is now open!!
+      Let&rsquo;s make another amazing summer happen!&#x2728;&#x1F49C;&#x1F4AA;&#x1F49A;&#x2728;&#x1F449;
+      <a href=\"http://railsgirlssummerofcode.org/blog/2016-02-23-crowdfunding-campaign-is-open\"
+      target=\"_blank\">railsgirlssummerofcode.org/blog/2016-02-2&hellip;</a> <a href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496/photo/1\"
+      target=\"_blank\">pic.twitter.com/mIwKR0fzGR</a></div>\n<p><img height=\"510\"
+      src=\"https://noembed.com/i/https://pbs.twimg.com/media/Cb59h0SWwAQoJ59.png\"
+      width=\"680\"></p>\n  </div>\n  <div class=\"tweet_info\">\n    <a target=\"_blank\"
+      href=\"http://www.twitter.com/RailsGirlsSoC/status/702136612822634496\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-82096c2fe44180d99d986892563bb2f697ea6c9f\">Tue
+      Feb 23 14:23:08 +0000 2016</span>\n    </a>\n    via <a href=\"http://tapbots.com/software/tweetbot/mac\"
+      rel=\"nofollow\">Tweetbot for Mac</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-82096c2fe44180d99d986892563bb2f697ea6c9f\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"https://twitter.com/RailsGirlsSoC/status/702136612822634496\"
+      href=\"https://twitter.com/RailsGirlsSoC/status/702136612822634496\">https://twitter.com/RailsGirlsSoC/status/702136612</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","title":"Tweet
+      by Rails Girls SoC"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:24 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1924-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - cd8d33052e06493e50409110dbf5b3952b6e9dd3f0fdabdde469fc85876cd322
+      content-length:
+      - '1116'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:25 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1724-ORD, cache-sea1920-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"url":"http://twitter.com/RailsGirlsSoC/status/702136612822634496","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div class=\"tweet_user\">\n    <div
+      class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/RailsGirlsSoC\"
+      target=\"_blank\">\n        <img height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/3767942211/5d122cdf7e08a30ab07180cf92122cbc_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/RailsGirlsSoC\" target=\"_blank\">\n        <span
+      class=\"tweet_screen_name\">Rails Girls SoC</span><br>\n        <span class=\"tweet_real_name\">RailsGirlsSoC</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>Our 2016 fundraising campaign is now open!!
+      Let&rsquo;s make another amazing summer happen!&#x2728;&#x1F49C;&#x1F4AA;&#x1F49A;&#x2728;&#x1F449;
+      <a href=\"http://railsgirlssummerofcode.org/blog/2016-02-23-crowdfunding-campaign-is-open\"
+      target=\"_blank\">railsgirlssummerofcode.org/blog/2016-02-2&hellip;</a> <a href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496/photo/1\"
+      target=\"_blank\">pic.twitter.com/mIwKR0fzGR</a></div>\n<p><img height=\"510\"
+      src=\"https://noembed.com/i/https://pbs.twimg.com/media/Cb59h0SWwAQoJ59.png\"
+      width=\"680\"></p>\n  </div>\n  <div class=\"tweet_info\">\n    <a target=\"_blank\"
+      href=\"http://www.twitter.com/RailsGirlsSoC/status/702136612822634496\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-f7890af6ffd7b7550424982867d53d1e574516c2\">Tue
+      Feb 23 14:23:08 +0000 2016</span>\n    </a>\n    via <a href=\"http://tapbots.com/software/tweetbot/mac\"
+      rel=\"nofollow\">Tweetbot for Mac</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-f7890af6ffd7b7550424982867d53d1e574516c2\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496\"
+      href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496\">http://twitter.com/RailsGirlsSoC/status/7021366128</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","title":"Tweet
+      by Rails Girls SoC","provider_name":"Twitter","type":"rich"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:25 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1927-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 701a3d70260a236b9757deec5f5fc920c6833d51ffd5d213afc604f8bb402ccb
+      content-length:
+      - '1114'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:02:25 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1737-ORD, cache-sea1925-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"html":"\n<div class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div
+      class=\"noembed-embed-inner noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div
+      class=\"tweet_user\">\n    <div class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/RailsGirlsSoC\"
+      target=\"_blank\">\n        <img height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/3767942211/5d122cdf7e08a30ab07180cf92122cbc_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/RailsGirlsSoC\" target=\"_blank\">\n        <span
+      class=\"tweet_screen_name\">Rails Girls SoC</span><br>\n        <span class=\"tweet_real_name\">RailsGirlsSoC</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>Our 2016 fundraising campaign is now open!!
+      Let&rsquo;s make another amazing summer happen!&#x2728;&#x1F49C;&#x1F4AA;&#x1F49A;&#x2728;&#x1F449;
+      <a href=\"http://railsgirlssummerofcode.org/blog/2016-02-23-crowdfunding-campaign-is-open\"
+      target=\"_blank\">railsgirlssummerofcode.org/blog/2016-02-2&hellip;</a> <a href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496/photo/1\"
+      target=\"_blank\">pic.twitter.com/mIwKR0fzGR</a></div>\n<p><img height=\"510\"
+      src=\"https://noembed.com/i/https://pbs.twimg.com/media/Cb59h0SWwAQoJ59.png\"
+      width=\"680\"></p>\n  </div>\n  <div class=\"tweet_info\">\n    <a target=\"_blank\"
+      href=\"http://www.twitter.com/RailsGirlsSoC/status/702136612822634496\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-ec3ffc04ccc0afa1af4c6a5e57606e897f5f13da\">Tue
+      Feb 23 14:23:08 +0000 2016</span>\n    </a>\n    via <a href=\"http://tapbots.com/software/tweetbot/mac\"
+      rel=\"nofollow\">Tweetbot for Mac</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-ec3ffc04ccc0afa1af4c6a5e57606e897f5f13da\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"https://twitter.com/RailsGirlsSoC/status/702136612822634496\"
+      href=\"https://twitter.com/RailsGirlsSoC/status/702136612822634496\">https://twitter.com/RailsGirlsSoC/status/702136612</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","url":"https://twitter.com/RailsGirlsSoC/status/702136612822634496","title":"Tweet
+      by Rails Girls SoC","provider_name":"Twitter","type":"rich"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:20:18 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1921-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 10c20ffa8cb4703bfa6a87735c7a00dc58c9b7402b7aafa396ba35617dd8c797
+      content-length:
+      - '882'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:20:19 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1739-ORD, cache-sea1922-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"type":"rich","provider_name":"Twitter","title":"Tweet by Ben Poweski","url":"https://mobile.twitter.com/bpoweski/status/71633762","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div class=\"tweet_user\">\n    <div
+      class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/bpoweski\" target=\"_blank\">\n        <img
+      height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/589608995805007874/273mRh5a_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/bpoweski\" target=\"_blank\">\n        <span class=\"tweet_screen_name\">Ben
+      Poweski</span><br>\n        <span class=\"tweet_real_name\">bpoweski</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>working on my Ruby Security book</div>\n  </div>\n  <div
+      class=\"tweet_info\">\n    <a target=\"_blank\" href=\"http://www.twitter.com/bpoweski/status/71633762\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-93db2afea2fca8c70dc06da0e2ee981fd42e7290\">Sun
+      May 20 20:54:52 +0000 2007</span>\n    </a>\n    via <a href=\"http://twitter.com\"
+      rel=\"nofollow\">Twitter Web Client</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-93db2afea2fca8c70dc06da0e2ee981fd42e7290\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"https://mobile.twitter.com/bpoweski/status/71633762\"
+      href=\"https://mobile.twitter.com/bpoweski/status/71633762\">https://mobile.twitter.com/bpoweski/status/7163376</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=xml
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:20:19 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1927-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=https%3A%2F%2Fmobile.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - dda22bd4ec8981d6a089482813814a4da3b4515fbb6ef6d8915d3694484b3de1
+      content-length:
+      - '890'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:20:19 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1747-ORD, cache-sea1921-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"title":"Tweet by Ben Poweski","url":"https://mobile.twitter.com/bpoweski/status/71633762","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div class=\"tweet_user\">\n    <div
+      class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/bpoweski\" target=\"_blank\">\n        <img
+      height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/589608995805007874/273mRh5a_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/bpoweski\" target=\"_blank\">\n        <span class=\"tweet_screen_name\">Ben
+      Poweski</span><br>\n        <span class=\"tweet_real_name\">bpoweski</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>working on my Ruby Security book</div>\n  </div>\n  <div
+      class=\"tweet_info\">\n    <a target=\"_blank\" href=\"http://www.twitter.com/bpoweski/status/71633762\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-424a869002fa6d11771a2b59fad5e1058b97a7ca\">Sun
+      May 20 20:54:52 +0000 2007</span>\n    </a>\n    via <a href=\"http://twitter.com\"
+      rel=\"nofollow\">Twitter Web Client</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-424a869002fa6d11771a2b59fad5e1058b97a7ca\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"https://mobile.twitter.com/bpoweski/status/71633762\"
+      href=\"https://mobile.twitter.com/bpoweski/status/71633762\">https://mobile.twitter.com/bpoweski/status/7163376</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","type":"rich","provider_name":"Twitter"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:21:01 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1920-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=http%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 481850fa883ddfcc17939e98d1174d6ee0c5ba7463eb70a0c5c2e873c6bb2912
+      content-length:
+      - '1116'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:21:02 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1733-ORD, cache-sea1927-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"url":"http://twitter.com/RailsGirlsSoC/status/702136612822634496","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-twitter\">\n  \n<div class=\"tweet_main\">\n  <div class=\"tweet_user\">\n    <div
+      class=\"tweet_image\">\n      <a href=\"http://www.twitter.com/RailsGirlsSoC\"
+      target=\"_blank\">\n        <img height=\"36\" src=\"https://noembed.com/i/http://pbs.twimg.com/profile_images/3767942211/5d122cdf7e08a30ab07180cf92122cbc_normal.png\"
+      width=\"36\">\n      </a>\n    </div>\n    <div class=\"tweet_name\">\n      <a
+      href=\"http://www.twitter.com/RailsGirlsSoC\" target=\"_blank\">\n        <span
+      class=\"tweet_screen_name\">Rails Girls SoC</span><br>\n        <span class=\"tweet_real_name\">RailsGirlsSoC</span>\n      </a>\n    </div>\n  </div>\n  <div
+      class=\"tweet_text\">\n    <div>Our 2016 fundraising campaign is now open!!
+      Let&rsquo;s make another amazing summer happen!&#x2728;&#x1F49C;&#x1F4AA;&#x1F49A;&#x2728;&#x1F449;
+      <a href=\"http://railsgirlssummerofcode.org/blog/2016-02-23-crowdfunding-campaign-is-open\"
+      target=\"_blank\">railsgirlssummerofcode.org/blog/2016-02-2&hellip;</a> <a href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496/photo/1\"
+      target=\"_blank\">pic.twitter.com/mIwKR0fzGR</a></div>\n<p><img height=\"510\"
+      src=\"https://noembed.com/i/https://pbs.twimg.com/media/Cb59h0SWwAQoJ59.png\"
+      width=\"680\"></p>\n  </div>\n  <div class=\"tweet_info\">\n    <a target=\"_blank\"
+      href=\"http://www.twitter.com/RailsGirlsSoC/status/702136612822634496\">\n      <span
+      class=\"tweet_created_at\" id=\"noembed-timestamp-ae7d0ce6dff2e98991a81f6819f8c6918f3c507a\">Tue
+      Feb 23 14:23:08 +0000 2016</span>\n    </a>\n    via <a href=\"http://tapbots.com/software/tweetbot/mac\"
+      rel=\"nofollow\">Tweetbot for Mac</a>\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var
+      months = [''Jan'',''Feb'',''Mar'',''Apr'',''May'',''June'',''July'',''Aug'',''Sept'',''Oct'',''Nov'',''Dec''];\n  var
+      elem = document.getElementById(\"noembed-timestamp-ae7d0ce6dff2e98991a81f6819f8c6918f3c507a\");\n  var
+      date = new Date(elem.innerHTML);\n\n  if (date) {\n    var hours = date.getHours();\n    var
+      minutes = date.getMinutes();\n    if (minutes < 10) minutes = \"0\"+minutes.toString();\n\n    elem.innerHTML
+      =  hours + \":\" + minutes+ \" \" + (months[date.getMonth()])\n                   +
+      \" \" + date.getDate() + \", \" + date.getFullYear();\n  }\n</script>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Twitter</td>\n        <td
+      align=\"right\">\n          <a title=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496\"
+      href=\"http://twitter.com/RailsGirlsSoC/status/702136612822634496\">http://twitter.com/RailsGirlsSoC/status/7021366128</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","title":"Tweet
+      by Rails Girls SoC","provider_name":"Twitter","type":"rich"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=http%3A%2F%2Fwww.theonion.com%2Farticles%2Fnew-poll-finds-majority-of-americans-thought-wed-l-33412&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=http%3A%2F%2Fwww.theonion.com%2Farticles%2Fnew-poll-finds-majority-of-americans-thought-wed-l-33412&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:25:20 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1923-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=http%3A%2F%2Fwww.theonion.com%2Farticles%2Fnew-poll-finds-majority-of-americans-thought-wed-l-33412&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - d8600118fe38fba3df95c204556c4d8ef7170e8cdadc669a3ceebbf032b25253
+      content-length:
+      - '597'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:25:22 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1737-ORD, cache-sea1921-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: !binary |-
+      eyJwcm92aWRlcl9uYW1lIjoiVGhlIE9uaW9uIiwidHlwZSI6InJpY2giLCJ1
+      cmwiOiJodHRwOi8vd3d3LnRoZW9uaW9uLmNvbS9yLzMzNDEyIiwiaHRtbCI6
+      IlxuPGRpdiBjbGFzcz1cIm5vZW1iZWQtZW1iZWQgXCI+XG4gIDxkaXYgY2xh
+      c3M9XCJub2VtYmVkLXdyYXBwZXJcIj5cbiAgICBcbjxkaXYgY2xhc3M9XCJu
+      b2VtYmVkLWVtYmVkLWlubmVyIG5vZW1iZWQtdHdpdHRlcmNhcmRcIj5cbiAg
+      XG48aW1nIGhlaWdodD1cIjUwXCIgc3JjPVwiaHR0cHM6Ly9ub2VtYmVkLmNv
+      bS9pL2h0dHA6Ly9pLm9uaW9uc3RhdGljLmNvbS9vbmlvbi8yMzA5LzAvMTZ4
+      OS8xMjAwLmpwZ1wiIHdpZHRoPVwiNTBcIj5cbjxoMj48YSBocmVmPVwiaHR0
+      cDovL3d3dy50aGVvbmlvbi5jb20vci8zMzQxMlwiPk5ldyBQb2xsIEZpbmRz
+      IE1ham9yaXR5IG9mIEFtZXJpY2FucyBUaG91Z2h0IFdl4oCZZCBMaXZlIElu
+      c2lkZSBDb21wdXRlcnMgQnkgTm93PC9hPjwvaDI+XG48cD5XQVNISU5HVE9O
+      4oCUQWNjb3JkaW5nIHRvIGEgbmF0aW9ud2lkZSBwb2xsIHB1Ymxpc2hlZCBU
+      aHVyc2RheSBieSB0aGUgUGV3IFJlc2VhcmNoIENlbnRlciwgYW4gb3Zlcndo
+      ZWxtaW5nIG1ham9yaXR5IG9mIEFtZXJpY2FucyBzYWlkIHRoZXkgd2VyZSBz
+      dXJwcmlzZWQgdGhhdCB0ZWNobm9sb2d5IGhhZCBub3QgeWV0IGFkdmFuY2Vk
+      IHRvIHRoZSBwb2ludCBhdCB3aGljaCBldmVyeW9uZSBsaXZlcyBpbnNpZGUg
+      b2YgY29tcHV0ZXJzLiBBcy4uLjwvcD5cblxuPC9kaXY+XG5cbiAgICA8dGFi
+      bGUgY2xhc3M9XCJub2VtYmVkLW1ldGEtaW5mb1wiPlxuICAgICAgPHRyPlxu
+      ICAgICAgICA8dGQ+VGhlIE9uaW9uPC90ZD5cbiAgICAgICAgPHRkIGFsaWdu
+      PVwicmlnaHRcIj5cbiAgICAgICAgICA8YSB0aXRsZT1cImh0dHA6Ly93d3cu
+      dGhlb25pb24uY29tL3IvMzM0MTJcIiBocmVmPVwiaHR0cDovL3d3dy50aGVv
+      bmlvbi5jb20vci8zMzQxMlwiPmh0dHA6Ly93d3cudGhlb25pb24uY29tL3Iv
+      MzM0MTI8L2E+XG4gICAgICAgIDwvdGQ+XG4gICAgICA8L3RyPlxuICAgIDwv
+      dGFibGU+XG4gIDwvZGl2PlxuPC9kaXY+XG4iLCJ0aXRsZSI6Ik5ldyBQb2xs
+      IEZpbmRzIE1ham9yaXR5IG9mIEFtZXJpY2FucyBUaG91Z2h0IFdl4oCZZCBM
+      aXZlIEluc2lkZSBDb21wdXRlcnMgQnkgTm93IiwiaW1hZ2UiOiJodHRwOi8v
+      aS5vbmlvbnN0YXRpYy5jb20vb25pb24vMjMwOS8wLzE2eDkvMTIwMC5qcGci
+      LCJkZXNjcmlwdGlvbiI6IldBU0hJTkdUT07igJRBY2NvcmRpbmcgdG8gYSBu
+      YXRpb253aWRlIHBvbGwgcHVibGlzaGVkIFRodXJzZGF5IGJ5IHRoZSBQZXcg
+      UmVzZWFyY2ggQ2VudGVyLCBhbiBvdmVyd2hlbG1pbmcgbWFqb3JpdHkgb2Yg
+      QW1lcmljYW5zIHNhaWQgdGhleSB3ZXJlIHN1cnByaXNlZCB0aGF0IHRlY2hu
+      b2xvZ3kgaGFkIG5vdCB5ZXQgYWR2YW5jZWQgdG8gdGhlIHBvaW50IGF0IHdo
+      aWNoIGV2ZXJ5b25lIGxpdmVzIGluc2lkZSBvZiBjb21wdXRlcnMuIEFzLi4u
+      In0=
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=http%3A%2F%2Famzn.com%2FB00X4WHP5E&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=http%3A%2F%2Famzn.com%2FB00X4WHP5E&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:29:25 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1926-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=http%3A%2F%2Famzn.com%2FB00X4WHP5E&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - c7f8e03411e1f30abc3a5b4a98809d6ab4b72960e977db29ff7866b87016177b
+      content-length:
+      - '2310'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:29:25 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1739-ORD, cache-sea1922-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"type":"rich","provider_name":"Amazon","title":"Amazon Echo","url":"http://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E%3FSubscriptionId%3DAKIAI74YOWY4ZJC4NAEA%26tag%3Dusealiceorg-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00X4WHP5E","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-amazon\">\n  \n<img height=\"110\" src=\"https://noembed.com/i/http://ecx.images-amazon.com/images/I/5117P1Ua4sL._SL110_.jpg\"
+      width=\"110\">\n<h2><a target=\"_blank\" href=\"http://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E%3FSubscriptionId%3DAKIAI74YOWY4ZJC4NAEA%26tag%3Dusealiceorg-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00X4WHP5E\">Amazon
+      Echo</a></h2>\n<ul>\n  <li>Amazon Home</li>\n  <li>$179.99</li>\n</ul>\n\n<p><div
+      class=\"aplus\"><div class=\"leftImage\"><img /=\"/\" alt=\"What is AMAZON ECHO?\"
+      src=\"https://noembed.com/i/https://images-na.ssl-images-amazon.com/images/G/01/kindle/dp/2016/D/mobile-feature-hero.jpg\"
+      width=\"100%\"></div><p>Amazon Echo is a hands-free speaker you control with
+      your voice. Echo connects to the Alexa Voice Service to play music, provide
+      information, news, sports scores, weather, and more&mdash;instantly. All you
+      have to do is ask.<p>Echo has seven microphones and beam forming technology
+      so it can hear you from across the room&mdash;even while music is playing. Echo
+      is also an expertly tuned speaker that can fill any room with 360&deg; immersive
+      sound. When you want to use Echo, just say the wake word &quot;Alexa&quot; and
+      Echo responds instantly. If you have more than one Echo or Echo Dot, you can
+      set a different wake word for each&mdash;you can pick &quot;Amazon&quot;, &quot;Alexa&quot;
+      or &quot;Echo&quot; as the wake word. <div class=\"leftImage\"><img /=\"/\"
+      alt=\"Voice Control YOUR MUSIC\" src=\"https://noembed.com/i/https://images-na.ssl-images-amazon.com/images/G/01/kindle/dp/2016/D/mobile-feature-music.jpg\"
+      width=\"100%\"></div><p>Echo provides hands-free voice control for Amazon Music,
+      Prime Music, Spotify, Pandora, iHeartRadio, and TuneIn. Plus, Echo is Bluetooth-enabled
+      so you can stream other popular music services like iTunes from your phone or
+      tablet.<p>Echo has been fine-tuned to deliver crisp vocals with dynamic bass
+      response. Its dual downward-firing speakers produce 360&deg; omni-directional
+      audio to fill any room with immersive sound. <div class=\"leftImage\"><img /=\"/\"
+      alt=\"Far-field Voice Recognition\" src=\"https://noembed.com/i/https://images-na.ssl-images-amazon.com/images/G/01/kindle/dp/2016/D/mobile-feature-farfield.jpg\"
+      width=\"100%\"></div><p>Tucked under the light ring is an array of seven microphones
+      that use beam-forming technology and enhanced noise cancellation. With far-field
+      voice recognition, Echo can hear you ask a question from any direction&mdash;even
+      while playing music. <p>When you want to use Echo, simply say the wake word,
+      &quot;Alexa,&quot; and Echo lights up and streams audio to the cloud, where
+      the Alexa Voice Service is leveraged to recognize and respond to your request
+      instantly.<h1>Always Getting Smarter</h1><p>Alexa&mdash;the brain behind Echo&mdash;is
+      built in the cloud, so it is always getting smarter. The more you use Echo,
+      the more it adapts to your speech patterns, vocabulary, and personal preferences.
+      And because Echo is always connected, updates are delivered automatically.<p>Just
+      in the last few months we&#39;ve added local search from Yelp, movie showtimes,
+      Samsung SmartThings support, Google Calendar, Audible audiobooks, text-to-speech
+      for Kindle eBooks, and over 100 new skills from third-party developers. <h1>Echo
+      has Skills</h1><p>Skills add even more capabilities like ordering a pizza from
+      Domino&#39;s, requesting a ride from Uber, opening your garage with Garageio,
+      and more. Enabling skills lets your Echo do even more&mdash;simply discover
+      and enable the skills you want to use in the Alexa App.<p>New skills are being
+      added all the time. You can also see ratings and reviews to learn what other
+      customers are saying about skills in the Alexa App. <h1>Control Your Smart Home</h1><p>Use
+      Echo to switch on the lamp before getting out of bed, turn on the fan or space
+      heater while reading in your favorite chair, or dim the lights from the couch
+      to watch a movie&mdash;all without lifting a finger.<p>Echo works with smart
+      home devices such as lights, switches, thermostats, and more from WeMo, Philips
+      Hue, SmartThings, Insteon, Nest, ecobee, Wink, and more.<h1>Do More with the
+      Alexa App</h1><p>With the free Alexa App on Fire OS, Android, iOS, and desktop
+      browsers, you can easily setup and manage your Echo.<p>Use the Alexa App to
+      connect services you already use like Spotify, Pandora, and Google Calendar.
+      Setup your smart home devices from WeMo, Philips Hue, SmartThings, Insteon,
+      ecobee, and more. See what books are available to read from your Kindle and
+      Audible libraries. View shopping and to-do lists while on the go. Control your
+      timers and set custom tones for your alarms, and much more. The Alexa App is
+      also where you discover and enable third-party skills.</div></p>\n\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Amazon</td>\n        <td
+      align=\"right\">\n          <a title=\"http://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E%3FSubscriptionId%3DAKIAI74YOWY4ZJC4NAEA%26tag%3Dusealiceorg-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00X4WHP5E\"
+      href=\"http://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E%3FSubscriptionId%3DAKIAI74YOWY4ZJC4NAEA%26tag%3Dusealiceorg-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00X4WHP5E\">http://www.amazon.com/Amazon-Echo-Bluetooth-Speake</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=https%3A%2F%2Finstagram.com%2Fp%2FBCJslIGxvfB%2F&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=https%3A%2F%2Finstagram.com%2Fp%2FBCJslIGxvfB%2F&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:37:11 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1925-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=https%3A%2F%2Finstagram.com%2Fp%2FBCJslIGxvfB%2F&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 43bb21467891a65866812e0cd1d32f5b26e4b3adefc7aee52385dfc23f050c47
+      content-length:
+      - '1579'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:37:11 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1735-ORD, cache-sea1925-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"thumbnail_height":640,"author_name":"metavida","author_id":1207479540,"thumbnail_url":"https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12783928_771497499622737_1784964904_n.jpg?ig_cache_key=MTE5MTY3OTY0MTc4Njk3MjA5Nw%3D%3D.2","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-oembed\">\n  <blockquote class=\"instagram-media\" data-instgrm-captioned
+      data-instgrm-version=\"7\" style=\" background:#FFF; border:0; border-radius:3px;
+      box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+      1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px);
+      width:calc(100% - 2px);\"><div style=\"padding:8px;\"> <div style=\" background:#F8F8F8;
+      line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;\">
+      <div style=\" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC);
+      display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+      width:44px;\"></div></div> <p style=\" margin:8px 0 0 0; padding:0 4px;\"> <a
+      href=\"https://www.instagram.com/p/BCJslIGxvfB/\" style=\" color:#000; font-family:Arial,sans-serif;
+      font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;
+      word-wrap:break-word;\" target=\"_blank\">Had a great walk with our eldest child,
+      this morning</a></p> <p style=\" color:#c9c8cd; font-family:Arial,sans-serif;
+      font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden;
+      padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;\">A
+      photo posted by Marcos Wright-Kuhns (@metavida) on <time style=\" font-family:Arial,sans-serif;
+      font-size:14px; line-height:17px;\" datetime=\"2016-02-24T02:01:45+00:00\">Feb
+      23, 2016 at 6:01pm PST</time></p></div></blockquote>\n<script async defer src=\"//platform.instagram.com/en_US/embeds.js\"></script>\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Instagram</td>\n        <td
+      align=\"right\">\n          <a title=\"https://instagram.com/p/BCJslIGxvfB/\"
+      href=\"https://instagram.com/p/BCJslIGxvfB/\">https://instagram.com/p/BCJslIGxvfB/</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","url":"https://instagram.com/p/BCJslIGxvfB/","title":"Had
+      a great walk with our eldest child, this morning","media_id":"1191679641786972097_1207479540","provider_url":"https://www.instagram.com","height":null,"width":658,"provider_name":"Instagram","thumbnail_width":640,"type":"rich","author_url":"https://www.instagram.com/metavida","version":"1.0"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://noembed.com:80/embed?url=http%3A%2F%2Finstagr.am%2Fp%2FBCJslIGxvfB&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - Varnish
+      retry-after:
+      - '0'
+      location:
+      - https://noembed.com/embed?url=http%3A%2F%2Finstagr.am%2Fp%2FBCJslIGxvfB&format=json
+      content-length:
+      - '0'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:37:11 GMT
+      via:
+      - 1.1 varnish
+      x-served-by:
+      - cache-sea1925-SEA
+      x-cache:
+      - HIT
+      x-cache-hits:
+      - '0'
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://noembed.com:443/embed?url=http%3A%2F%2Finstagr.am%2Fp%2FBCJslIGxvfB&format=json
+    body: 
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.10.1)
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.1
+      content-type:
+      - text/javascript; charset=utf-8
+      via:
+      - 1.1 varnish
+      - 1.1 varnish
+      fastly-debug-digest:
+      - 083f0e0ec896614df9a0e59c32b83c613f9b5db2db0ed0e57a0d2f1d9de2413c
+      content-length:
+      - '1579'
+      accept-ranges:
+      - bytes
+      date:
+      - Tue, 31 May 2016 04:37:11 GMT
+      age:
+      - '0'
+      x-served-by:
+      - cache-ord1724-ORD, cache-sea1924-SEA
+      x-cache:
+      - MISS, MISS
+      x-cache-hits:
+      - 0, 0
+      vary:
+      - Accept-Encoding
+      access-control-allow-headers:
+      - Origin, Accept, Content-Type
+      access-control-allow-methods:
+      - GET
+      access-control-allow-origin:
+      - "*"
+    body: '{"media_id":"1191679641786972097_1207479540","provider_url":"https://www.instagram.com","thumbnail_width":640,"provider_name":"Instagram","width":658,"height":null,"thumbnail_height":640,"title":"Had
+      a great walk with our eldest child, this morning","url":"http://instagr.am/p/BCJslIGxvfB","html":"\n<div
+      class=\"noembed-embed \">\n  <div class=\"noembed-wrapper\">\n    \n<div class=\"noembed-embed-inner
+      noembed-oembed\">\n  <blockquote class=\"instagram-media\" data-instgrm-captioned
+      data-instgrm-version=\"7\" style=\" background:#FFF; border:0; border-radius:3px;
+      box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+      1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px);
+      width:calc(100% - 2px);\"><div style=\"padding:8px;\"> <div style=\" background:#F8F8F8;
+      line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;\">
+      <div style=\" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC);
+      display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+      width:44px;\"></div></div> <p style=\" margin:8px 0 0 0; padding:0 4px;\"> <a
+      href=\"https://www.instagram.com/p/BCJslIGxvfB/\" style=\" color:#000; font-family:Arial,sans-serif;
+      font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;
+      word-wrap:break-word;\" target=\"_blank\">Had a great walk with our eldest child,
+      this morning</a></p> <p style=\" color:#c9c8cd; font-family:Arial,sans-serif;
+      font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden;
+      padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;\">A
+      photo posted by Marcos Wright-Kuhns (@metavida) on <time style=\" font-family:Arial,sans-serif;
+      font-size:14px; line-height:17px;\" datetime=\"2016-02-24T02:01:45+00:00\">Feb
+      23, 2016 at 6:01pm PST</time></p></div></blockquote>\n<script async defer src=\"//platform.instagram.com/en_US/embeds.js\"></script>\n</div>\n\n    <table
+      class=\"noembed-meta-info\">\n      <tr>\n        <td>Instagram</td>\n        <td
+      align=\"right\">\n          <a title=\"http://instagr.am/p/BCJslIGxvfB\" href=\"http://instagr.am/p/BCJslIGxvfB\">http://instagr.am/p/BCJslIGxvfB</a>\n        </td>\n      </tr>\n    </table>\n  </div>\n</div>\n","thumbnail_url":"https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12783928_771497499622737_1784964904_n.jpg?ig_cache_key=MTE5MTY3OTY0MTc4Njk3MjA5Nw%3D%3D.2","author_id":1207479540,"author_name":"metavida","version":"1.0","author_url":"https://www.instagram.com/metavida","type":"rich"}'
+    http_version: '1.1'
