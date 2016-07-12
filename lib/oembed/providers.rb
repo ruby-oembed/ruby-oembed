@@ -345,7 +345,7 @@ module OEmbed
     # http://blog.embed.ly/oohembed
     OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", :json)
     OohEmbed << "http://*.5min.com/Video/*" # micro-video host
-    OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
+    OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|co.jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
     OohEmbed << "http://*.blip.tv/*"
     OohEmbed << "http://*.clikthrough.com/theater/video/*"
     OohEmbed << "http://*.collegehumor.com/video:*" # Comedic & original videos
