@@ -4,7 +4,7 @@
 [![Travis branch](https://img.shields.io/travis/ruby-oembed/ruby-oembed/master.svg)](https://travis-ci.org/ruby-oembed/ruby-oembed/branches)
 [![Code Climate](https://img.shields.io/codeclimate/github/ruby-oembed/ruby-oembed.svg)](https://codeclimate.com/github/ruby-oembed/ruby-oembed)
 [![Coveralls](https://coveralls.io/repos/github/ruby-oembed/ruby-oembed/badge.svg?branch=coveralls)](https://coveralls.io/github/ruby-oembed/ruby-oembed?branch=coveralls)
-![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)
+![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)
 
 
 An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See [oembed.com](http://oembed.com) for more about the protocol.
