@@ -3,6 +3,8 @@
 == Unreleased (0.11.0)
 
 * Add built-in Speaker Deck provider; Issue #67 (Camille Roux)
+* Update built-in Hulu provider to support https
+* 
 
 == 0.10.1 - 21 May 2016
 

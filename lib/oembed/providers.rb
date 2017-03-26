@@ -170,8 +170,9 @@ module OEmbed
     add_official_provider(Revision3)
 
     # Provider for hulu.com
-    Hulu = OEmbed::Provider.new("http://www.hulu.com/api/oembed.{format}")
+    Hulu = OEmbed::Provider.new("https://www.hulu.com/api/oembed.{format}")
     Hulu << "http://www.hulu.com/watch/*"
+    Hulu << "https://www.hulu.com/watch/*"
     add_official_provider(Hulu)
 
     # Provider for vimeo.com
