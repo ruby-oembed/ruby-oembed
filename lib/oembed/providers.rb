@@ -285,6 +285,13 @@ module OEmbed
     Scribd << "http://*.scribd.com/*"
     add_official_provider(Scribd)
 
+    # Provider for speakerdeck.com
+    # https://speakerdeck.com/faq#oembed
+    SpeakerDeck = OEmbed::Provider.new("https://speakerdeck.com/oembed.json")
+    SpeakerDeck << "http://speakerdeck.com/*/*"
+    SpeakerDeck << "https://speakerdeck.com/*/*"
+    add_official_provider(SpeakerDeck)
+
     # Provider for movieclips.com
     MovieClips = OEmbed::Provider.new("http://movieclips.com/services/oembed/")
     MovieClips << "http://movieclips.com/watch/*/*/"

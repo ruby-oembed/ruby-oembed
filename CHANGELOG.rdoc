@@ -1,5 +1,9 @@
 = CHANGELOG
 
+== Unreleased (0.11.0)
+
+* Add built-in Speaker Deck provider; Issue #67 (Camille Roux)
+
 == 0.10.1 - 21 May 2016
 
 * Update built-in Twitter provider to use the new Twitter oEmbed endpoint; Pull #60 (Ben Ramsey)
