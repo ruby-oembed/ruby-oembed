@@ -3,6 +3,7 @@
 == Unreleased (0.11.1)
 
 * Add a Noembed aggregator; Issue #32 (github.com/evaryont and Arnaud Leymet)
+* Updated the list of {Embedly}[http://embed.ly] URL schemes.
 * Remove the `rake oembed:update_oohembed` task.
 
 == 0.11.0 - 26 March 2017
