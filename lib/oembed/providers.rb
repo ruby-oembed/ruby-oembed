@@ -410,6 +410,17 @@ module OEmbed
     OohEmbed << %r{http://yfrog.(com|ru|com.tr|it|fr|co.il|co.uk|com.pl|pl|eu|us)/(.*?)} # image & video hosting
     OohEmbed << "http://*.youtube.com/watch*"
 
+    # Provider for noembed.com, which is a provider aggregator. See
+    # OEmbed::Providers::Noembed.urls for a full list of supported url schemas.
+    # https://noembed.com/#supported-sites
+    Noembed = OEmbed::Provider.new("https://noembed.com/embed")
+    # Add all known URL regexps for Noembed.
+    # To update this list run `rake oembed:update_noembed`
+    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/noembed_urls.yml")).each do |url|
+      Noembed << Regexp.new(url)
+    end
+    add_official_provider(Noembed, :aggregators)
+
     # Provider for Embedly.com, which is a provider aggregator. See
     # OEmbed::Providers::Embedly.urls for a full list of supported url schemas.
     # http://embed.ly/docs/endpoints/1/oembed
