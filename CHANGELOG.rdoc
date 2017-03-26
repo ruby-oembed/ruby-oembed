@@ -4,6 +4,8 @@
 
 * Add built-in Speaker Deck provider; Issue #67 (Camille Roux)
 * Add built-in Giphy provider
+* Add built-in Kickstarter provider
+* Add built-in TED provider
 * Add built-in CodePen provider
 * Update built-in Hulu provider to support https
 

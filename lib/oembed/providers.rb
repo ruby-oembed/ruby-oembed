@@ -258,6 +258,12 @@ module OEmbed
     Imgur << "http://*.imgur.com/gallery/*"
     add_official_provider(Imgur)
 
+    # Provider for Kickstarter
+    Kickstarter = OEmbed::Provider.new("https://www.kickstarter.com/services/oembed")
+    Kickstarter << "http://www.kickstarter.com/projects/*"
+    Kickstarter << "https://www.kickstarter.com/projects/*"
+    add_official_provider(Kickstarter)
+
     # provider for mlg-tv
     # http://tv.majorleaguegaming.com/oembed
     MlgTv = OEmbed::Provider.new("http://tv.majorleaguegaming.com/oembed")
@@ -339,6 +345,12 @@ module OEmbed
     Skitch << "http://*.skitch.com/*"
     Skitch << "https://*.skitch.com/*"
     add_official_provider(Skitch)
+
+    # Provider for TED
+    Ted = OEmbed::Provider.new("https://www.ted.com/talks/oembed.{format}")
+    Ted << "http://*.ted.com/talks/*"
+    Ted << "https://*.ted.com/talks/*"
+    add_official_provider(Ted)
 
     # Provider for tumblr.com
     Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", :json)
