@@ -1,6 +1,9 @@
 = CHANGELOG
 
-== Unreleased (0.11.0)
+== Unreleased (0.11.1)
+
+
+== 0.11.0 - 26 March 2017
 
 * Add built-in Speaker Deck provider; Issue #67 (Camille Roux)
 * Add built-in Giphy provider
