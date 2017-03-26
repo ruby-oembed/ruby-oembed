@@ -1,6 +1,9 @@
 = CHANGELOG
 
-== Unreleased (0.11.1)
+== Unreleased (0.12.1)
+
+
+== 0.12.0 - 26 March 2017
 
 * Add a Noembed aggregator; Issue #32 (github.com/evaryont and Arnaud Leymet)
 * Updated the list of {Embedly}[http://embed.ly] URL schemes.
