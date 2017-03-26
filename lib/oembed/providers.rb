@@ -64,7 +64,7 @@ module OEmbed
       # will be called (in order) with the URL.
       #
       # A common example:
-      #  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery, OEmbed::Providers::OohEmbed)
+      #  OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery, OEmbed::Providers::Noembed)
       def register_fallback(*providers)
         @@fallback += providers
       end

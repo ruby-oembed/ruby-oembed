@@ -15,12 +15,13 @@ An oEmbed consumer library written in Ruby, letting you easily get embeddable HT
 
 # Get Started
 
-## Providers
+## Built-in Providers
 
-Get information about a URL via an OEmbed::Provider. This library comes with many Providers built right in, to make your life easy.
+The easiest way to use this library is to make use of the built-in providers.
 
 ```ruby
-resource = OEmbed::Providers::Youtube.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k")
+OEmbed::Providers.register_all
+resource = OEmbed::Providers.get('http://www.youtube.com/watch?v=2BYXBC8WQ5k')
 resource.video? #=> true
 resource.thumbnail_url #=> "http://i3.ytimg.com/vi/2BYXBC8WQ5k/hqdefault.jpg"
 resource.html #=> <<-HTML
@@ -33,30 +34,41 @@ resource.html #=> <<-HTML
 HTML
 ```
 
+## Custom Providers
+
 If you'd like to use a provider that isn't included in the library, it's easy to create one. Just provide the oEmbed API endpoint and URL scheme(s).
 
 ```ruby
 my_provider = OEmbed::Provider.new("http://my.cool-service.com/api/oembed_endpoint.{format}")
 my_provider << "http://*.cool-service.com/image/*"
 my_provider << "http://*.cool-service.com/video/*"
-resource = my_provider.get("http://a.cool-service.com/video/1") #=> OEmbed::Response
-resource.provider.name #=> "My Cool Service"
 ```
 
-To use multiple Providers at once, simply register them.
+You can then use your new custom provider *or* you can register it along with the rest of the built-in providers.
 
 ```ruby
-OEmbed::Providers.register(OEmbed::Providers::Youtube, my_provider)
-resource = OEmbed::Providers.get("http://www.youtube.com/watch?v=2BYXBC8WQ5k") #=> OEmbed::Response
-resource.type #=> "video"
-resource.provider.name #=> "Youtube"
+resource = my_provider.get("http://a.cool-service.com/video/1") #=> OEmbed::Response
+resource.provider.name #=> "My Cool Service"
+
+OEmbed::Providers.register(my_provider)
+resource = OEmbed::Providers.get("http://a.cool-service.com/video/2") #=> OEmbed::Response
 ```
 
-Last but not least, ruby-oembed supports both [oohEmbed](http://oohembed.com) and [Embedly](http://embed.ly). These services are provider aggregators. Each supports a wide array of websites ranging from [Amazon.com](http://www.amazon.com) to [xkcd](http://www.xkcd.com).
+## Fallback Providers
+
+Last but not least, ruby-oembed supports [Noembed](https://noembed.com/), [Embedly](http://embed.ly), provider discovery. The first two are provider aggregators. Each supports a wide array of websites ranging from [Amazon.com](http://www.amazon.com) to [xkcd](http://www.xkcd.com). The later is part of the oEmbed specification that allows websites to advertise support for the oEmbed protocol.
+
+```ruby
+OEmbed::Providers.register_fallback(
+  OEmbed::ProviderDiscovery,
+  OEmbed::Providers::Noembed
+)
+OEmbed::Providers.get('https://www.xkcd.com/802/') #=> OEmbed::Response
+```
 
 ## Formatters
 
-This library works wonderfully on its own, but can get a speed boost by using 3rd party libraries to parse oEmbed data. To use a 3rd party Formatter, just be sure to require the library _before_ ruby-oembed.
+This library works wonderfully on its own, but can get a speed boost by using 3rd party libraries to parse oEmbed data. To use a 3rd party Formatter, just be sure to require the library _before_ ruby-oembed (or include them in your Gemfile before ruby-oembed).
 
 ```ruby
 require 'json'
