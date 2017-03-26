@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Magnus Holm", "Alex Kessinger", "Aris Bartee", "Marcos Wright Kuhns"]
-  s.date = Date.today.to_s
+  s.date = Time.now.strftime("%F")
   s.description = "An oEmbed consumer library written in Ruby, letting you easily get embeddable HTML representations of supported web pages, based on their URLs. See http://oembed.com for more information about the protocol."
   s.email = "webmaster@wrightkuhns.com"
   s.homepage = "https://github.com/ruby-oembed/ruby-oembed"
@@ -57,4 +57,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fakeweb>, [">= 0"])
   end
 end
-
