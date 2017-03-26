@@ -130,13 +130,22 @@ describe OEmbed::ProviderDiscovery do
     end
   end
 
-  context "when returning 301" do
+  context "when returning 301 with absolute URI" do
     let(:url) { 'http://www.youtube.com/watch?v=dFs9WO2B8uI' }
 
     it "does redirect http to https" do
       expect{ OEmbed::ProviderDiscovery.discover_provider(url) }.not_to raise_error
     end
   end
+
+  context "when returning 301 with relative URI" do
+    let(:url) { 'https://vimeo.com/wemakeit/wieso-unterstuetzt-du-projekte-bei-wemakeit' }
+
+    it "does redirect long to short URI" do
+      expect{ OEmbed::ProviderDiscovery.discover_provider(url) }.not_to raise_error
+    end
+  end
+
 
   it "does passes the timeout option to Net::Http" do
     expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)

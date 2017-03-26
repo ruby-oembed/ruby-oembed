@@ -13,9 +13,10 @@ module OEmbed
     def http_get(uri, options = {})
       found = false
       remaining_redirects = options[:max_redirects] ? options[:max_redirects].to_i : 4
+      original_scheme, original_host, original_port = uri.scheme, uri.host, uri.port
       until found
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = uri.scheme == 'https'
+        http = Net::HTTP.new(uri.host || original_host, uri.port || original_port)
+        http.use_ssl = (uri.scheme || original_scheme) == 'https'
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
         http.read_timeout = http.open_timeout = options[:timeout] if options[:timeout]
 
