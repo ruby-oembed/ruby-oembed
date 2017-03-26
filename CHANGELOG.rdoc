@@ -2,6 +2,8 @@
 
 == Unreleased (0.11.1)
 
+* Add a Noembed aggregator; Issue #32 (github.com/evaryont and Arnaud Leymet)
+* Remove the `rake oembed:update_oohembed` task.
 
 == 0.11.0 - 26 March 2017
 
