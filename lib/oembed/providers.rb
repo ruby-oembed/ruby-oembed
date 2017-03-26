@@ -143,6 +143,12 @@ module OEmbed
     Youtube << "https://*.youtu.be/*"
     add_official_provider(Youtube)
 
+    # Provider for codepen.io
+    CodePen = OEmbed::Provider.new("https://codepen.io/api/oembed")
+    CodePen << "http://codepen.io/*"
+    CodePen << "https://codepen.io/*"
+    add_official_provider(CodePen)
+
     # Provider for flickr.com
     Flickr = OEmbed::Provider.new("https://www.flickr.com/services/oembed/")
     Flickr << "http://*.flickr.com/*"
@@ -239,6 +245,12 @@ module OEmbed
     Yfrog = OEmbed::Provider.new("https://www.yfrog.com/api/oembed", :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
+
+    # Provider for Giphy
+    Giphy = OEmbed::Provider.new("http://giphy.com/services/oembed")
+    Giphy << "http://giphy.com/*"
+    Giphy << "https://giphy.com/*"
+    add_official_provider(Giphy)
 
     # Provider for imgur.com
     Imgur = OEmbed::Provider.new("https://api.imgur.com/oembed.{format}")
