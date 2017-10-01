@@ -50,7 +50,7 @@ module OEmbed
       end
 
       begin
-        provider_endpoint = URI.parse(provider_endpoint)
+        provider_endpoint = URI.parse(provider_endpoint.sub(%r{^//}, 'http://'))
         provider_endpoint.query = nil
         provider_endpoint = provider_endpoint.to_s
       rescue URI::Error
