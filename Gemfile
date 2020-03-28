@@ -12,8 +12,9 @@ gemspec
 
 gem 'coveralls', require: false
 
-group :guard do
-  gem "guard-rspec"
-  gem "guard-bundler"
-  gem "rb-fsevent"
+group :test do
+  gem 'rake'
+  gem 'rspec'
+  gem 'vcr', '1.11.3'
+  gem 'fakeweb', '1.3.0'
 end
