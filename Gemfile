@@ -15,6 +15,6 @@ gem 'coveralls', require: false
 group :test do
   gem 'rake'
   gem 'rspec'
-  gem 'vcr', '1.11.3'
-  gem 'fakeweb', '1.3.0'
+  gem 'vcr'#, '1.11.3'
+  gem 'webmock'#, '1.3.0'
 end

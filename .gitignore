@@ -8,3 +8,5 @@ Gemfile.lock
 /.rvm
 /.ruby-version
 /.ruby-gemsetcoverage
+.rspec-status
+coverage
