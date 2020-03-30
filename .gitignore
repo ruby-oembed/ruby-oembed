@@ -7,6 +7,7 @@ Gemfile.lock
 .DS_Store
 /.rvm
 /.ruby-version
-/.ruby-gemsetcoverage
+/.ruby-gemset
+coverage
 .rspec-status
 coverage
