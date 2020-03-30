@@ -27,6 +27,6 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.19"
   s.summary = "oEmbed for Ruby"
 
-  s.add_dependency(%q<xml-simple>, [">= 0"])
-  s.add_dependency(%q<nokogiri>, [">= 0"])
+  s.add_development_dependency 'xml-simple', '>= 0'
+  s.add_development_dependency 'nokogiri', '>= 0'
 end
