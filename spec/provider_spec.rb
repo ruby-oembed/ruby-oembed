@@ -276,7 +276,6 @@ describe OEmbed::Provider do
 
       expect {
         result = @flickr.send(:raw, File.join(example_url(:flickr), '501'))
-        puts result
       }.to raise_error(OEmbed::UnknownFormat)
     end
 
@@ -356,6 +355,12 @@ describe OEmbed::Provider do
         with(example_url(:viddler), :format=>:json).
         and_return(valid_response(:json))
       @viddler.get(example_url(:viddler))
+    end
+
+    it "handles the :timeout option", pending: true do
+      expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
+      expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
+      @flickr.get(example_url(:flickr), :timeout => 5)
     end
   end
 end
