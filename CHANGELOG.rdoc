@@ -2,6 +2,11 @@
 
 == Unreleased (0.12.1)
 
+* *BREAKING* Remove support for very old versions of Rubygems (older than 1.2.0 which was released in 2008)
+* *DEPRECATION* Remove CI testing for EOLed Ruby versions; now only testing on Ruby 2.4.1 and newer
+* Updated the list of {Embedly}[https://embed.ly/] and {Noembed}[https://noembed.com/] URL schemes.
+
+A *huge* thank you to {Ian Ker-Seymer}[https://github.com/ianks] for his recent PR that implemented _all_ of the above improvements!
 
 == 0.12.0 - 26 March 2017
 
