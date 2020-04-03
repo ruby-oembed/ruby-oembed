@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.12.1)
+== Unreleased (0.13.1)
+
+== 0.13.0 - 3 April 2020
 
 * *BREAKING* Remove support for very old versions of Rubygems (older than 1.2.0 which was released in 2008)
 * *DEPRECATION* Remove CI testing for EOLed Ruby versions; now only testing on Ruby 2.4.1 and newer
