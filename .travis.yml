@@ -1,7 +1,8 @@
 language: ruby
 sudo: false
 before_install:
-  - gem install bundler 
+  - gem install bundler
+bundler_args: --without guard
 cache: bundler
 rvm:
   - 2.4.1
