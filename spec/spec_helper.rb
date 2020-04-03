@@ -4,9 +4,10 @@ require 'vcr'
 VCR.config do |c|
   c.default_cassette_options = { :record => :new_episodes }
   c.cassette_library_dir = 'spec/cassettes'
-  c.stub_with :fakeweb
+  c.hook_into :webmock
 end
 
+require 'webmock/rspec'
 require 'coveralls'
 Coveralls.wear!
 
@@ -16,6 +17,7 @@ RSpec.configure do |config|
   config.raise_errors_for_deprecations!
   config.tty = true
   config.color = true
+  config.example_status_persistence_file_path = '.rspec-status'
 end
 
 module OEmbedSpecHelper

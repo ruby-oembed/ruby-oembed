@@ -24,8 +24,8 @@ describe OEmbed::ProviderDiscovery do
       :json,
     ],
     'vimeo' => [
-      'http://vimeo.com/27953845',
-      {:json=>'http://vimeo.com/api/oembed.json', :xml=>'http://vimeo.com/api/oembed.xml'},
+      'https://vimeo.com/27953845',
+      {:json=>'https://vimeo.com/api/oembed.json', :xml=>'https://vimeo.com/api/oembed.xml'},
       :json,
     ],
     'facebook-photo' => [
@@ -37,11 +37,6 @@ describe OEmbed::ProviderDiscovery do
       'http://kittehkats.tumblr.com/post/140525169406/katydid-and-the-egg-happy-forest-family',
       'https://www.tumblr.com/oembed/1.0',
       :json
-    ],
-    'noteflight' => [
-      'http://www.noteflight.com/scores/view/09665392c94475f65dfaf5f30aadb6ed0921939d',
-      {:json=>'http://www.noteflight.com/services/oembed', :xml=>'http://www.noteflight.com/services/oembed'},
-      :json,
     ],
     # TODO: Enhance ProviderDiscovery to support arbitrary query parameters. See https://github.com/ruby-oembed/ruby-oembed/issues/15
     #'wordpress' => [

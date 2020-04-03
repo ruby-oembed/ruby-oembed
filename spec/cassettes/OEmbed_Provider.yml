@@ -1,224 +1,987 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+http_interactions:
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 01:53:45 GMT
-      p3p:
+      P3p:
       - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
         TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
         ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
-      set-cookie:
+      Set-Cookie:
       - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
         domain=.flickr.com
-      cache-control:
+      Cache-Control:
       - private
-      x-served-by:
+      X-Served-By:
       - www129.flickr.mud.yahoo.com
-      vary:
+      Vary:
       - Accept-Encoding
-      content-type:
+      Content-Type:
       - application/json
-      age:
+      Age:
       - '0'
-      via:
+      Via:
       - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
         r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
-      server:
+      Server:
       - YTS/1.20.9
-    body: ! '{"version":"1.0","type":"photo","author_url":"http:\/\/www.flickr.com\/photos\/bees\/","cache_age":3600,"provider_name":"Flickr","provider_url":"http:\/\/www.flickr.com\/","title":"Bacon
-      Lollys","author_name":"\u202e\u202d\u202cbees\u202c","width":"500","height":"375","url":"http:\/\/farm4.staticflickr.com\/3040\/2362225867_4a87ab8baf.jpg"}
+    body:
+      encoding: UTF-8
+      string: '{"version":"1.0","type":"photo","author_url":"http:\/\/www.flickr.com\/photos\/bees\/","cache_age":3600,"provider_name":"Flickr","provider_url":"http:\/\/www.flickr.com\/","title":"Bacon
+        Lollys","author_name":"\u202e\u202d\u202cbees\u202c","width":"500","height":"375","url":"http:\/\/farm4.staticflickr.com\/3040\/2362225867_4a87ab8baf.jpg"}
 
-'
+        '
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F404
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F404
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 404
       message: Not Found
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 01:53:45 GMT
-      p3p:
+      P3p:
       - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
         TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
         ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
-      set-cookie:
+      Set-Cookie:
       - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
         domain=.flickr.com
-      cache-control:
+      Cache-Control:
       - private
-      x-served-by:
+      X-Served-By:
       - www129.flickr.mud.yahoo.com
-      vary:
+      Vary:
       - Accept-Encoding
-      content-type:
+      Content-Type:
       - application/json
-      age:
+      Age:
       - '0'
-      via:
+      Via:
       - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
         r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
-      server:
+      Server:
       - YTS/1.20.9
-    body: ! ' '
+    body:
+      encoding: UTF-8
+      string: " "
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F405
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F405
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 405
       message: Method Not Allowed
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 01:53:45 GMT
-      p3p:
+      P3p:
       - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
         TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
         ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
-      set-cookie:
+      Set-Cookie:
       - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
         domain=.flickr.com
-      cache-control:
+      Cache-Control:
       - private
-      x-served-by:
+      X-Served-By:
       - www129.flickr.mud.yahoo.com
-      vary:
+      Vary:
       - Accept-Encoding
-      content-type:
+      Content-Type:
       - application/json
-      age:
+      Age:
       - '0'
-      via:
+      Via:
       - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
         r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
-      server:
+      Server:
       - YTS/1.20.9
-    body: ! ' '
+    body:
+      encoding: UTF-8
+      string: " "
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F500
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F500
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 500
       message: Internal Server Error
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 01:53:45 GMT
-      p3p:
+      P3p:
       - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
         TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
         ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
-      set-cookie:
+      Set-Cookie:
       - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
         domain=.flickr.com
-      cache-control:
+      Cache-Control:
       - private
-      x-served-by:
+      X-Served-By:
       - www129.flickr.mud.yahoo.com
-      vary:
+      Vary:
       - Accept-Encoding
-      content-type:
+      Content-Type:
       - application/json
-      age:
+      Age:
       - '0'
-      via:
+      Via:
       - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
         r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
-      server:
+      Server:
       - YTS/1.20.9
-    body: ! ' '
+    body:
+      encoding: UTF-8
+      string: " "
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://www.flickr.com:80/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F501
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F501
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 501
       message: Not Implemented
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 01:53:45 GMT
-      p3p:
+      P3p:
       - policyref="http://p3p.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
         TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
         ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
-      set-cookie:
+      Set-Cookie:
       - localization=en-us%3Bus%3Bus; expires=Sat, 23-Nov-2013 01:53:45 GMT; path=/;
         domain=.flickr.com
-      cache-control:
+      Cache-Control:
       - private
-      x-served-by:
+      X-Served-By:
       - www129.flickr.mud.yahoo.com
-      vary:
+      Vary:
       - Accept-Encoding
-      content-type:
+      Content-Type:
       - application/json
-      age:
+      Age:
       - '0'
-      via:
+      Via:
       - HTTP/1.1 r08.ycpi.ne1.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ]), HTTP/1.1
         r22.ycpi.sp2.yahoo.net (YahooTrafficServer/1.20.9 [cMsSf ])
-      server:
+      Server:
       - YTS/1.20.9
-    body: ! ' '
+    body:
+      encoding: UTF-8
+      string: " "
     http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: https://vimeo.com:443/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F31158841
-    body: !!null 
-    headers: !!null 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F31158841
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      date:
+      Date:
       - Sat, 26 Nov 2011 02:02:58 GMT
-      server:
+      Server:
       - Apache
-      x-powered-by:
+      X-Powered-By:
       - PHP/5.3.5-0.dotdeb.0
-      expires:
+      Expires:
       - Fri, 25 Nov 2011 14:02:58 GMT
-      cache-control:
+      Cache-Control:
       - no-store, no-cache, must-revalidate
       - post-check=0, pre-check=0
-      vary:
+      Vary:
       - Accept-Encoding
-      content-length:
+      Content-Length:
       - '697'
-      content-type:
+      Content-Type:
       - application/json
-    body: ! '{"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"http:\/\/vimeo.com\/","title":"Murmuration","author_name":"Sophie
-      Windsor Clive","author_url":"http:\/\/vimeo.com\/user3069761","is_plus":"0","html":"<iframe
-      src=\"https:\/\/player.vimeo.com\/video\/31158841\" width=\"640\" height=\"512\"
-      frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen><\/iframe>","width":640,"height":512,"duration":120,"description":"A
-      chance encounter and shared moment with one of natures greatest and most fleeting
-      phenomena.","thumbnail_url":"https:\/\/secure-b.vimeocdn.com\/ts\/209\/801\/209801744_640.jpg","thumbnail_width":640,"thumbnail_height":512,"video_id":31158841}'
+    body:
+      encoding: UTF-8
+      string: '{"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"http:\/\/vimeo.com\/","title":"Murmuration","author_name":"Sophie
+        Windsor Clive","author_url":"http:\/\/vimeo.com\/user3069761","is_plus":"0","html":"<iframe
+        src=\"https:\/\/player.vimeo.com\/video\/31158841\" width=\"640\" height=\"512\"
+        frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen><\/iframe>","width":640,"height":512,"duration":120,"description":"A
+        chance encounter and shared moment with one of natures greatest and most fleeting
+        phenomena.","thumbnail_url":"https:\/\/secure-b.vimeocdn.com\/ts\/209\/801\/209801744_640.jpg","thumbnail_width":640,"thumbnail_height":512,"video_id":31158841}'
     http_version: '1.1'
+  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Sat, 28 Mar 2020 02:41:56 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '183'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 ddc14df677efd7b1d5720c8e54d0226c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL52-C1
+      X-Amz-Cf-Id:
+      - W1Y7_7mihzcTydTLGWldBDvOjpTLKbCmm8KgpCKtV6LGay2qTssQCA==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:41:56 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1067'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 28 Mar 2020 02:41:57 GMT
+      Server:
+      - Apache/2.4.41 (Ubuntu)
+      Set-Cookie:
+      - flrb=55; expires=Sat, 28-Mar-2020 03:41:57 GMT; Max-Age=3600; path=/; domain=.flickr.com;
+        httponly
+      - flrbgdrp=1585363317-1fcdb5a3d2899f6b05f41835a530f323de4ab6ee; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgmrp=1585363317-71db1d23b8683cb0940619e36d75c8390ea8ff0e; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgrp=1585363317-ed0a4a626e401cf5dcfbebcee4b85107dc24bc58; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbp=1585363317-659978ac6f96759b4ecf46b6205bc30fbfe8e2de; expires=Thu, 24-Sep-2020
+        02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrgs=1585363317-7ca66a6707ecf14aa57a31cfe60b42869960d665; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrp=1585363317-325bf0eb36bcedd3ed010a8535b688848c834f3e; expires=Thu, 24-Sep-2020
+        02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrst=1585363317-ba17147d7205f56f04054fffc80a8b62a167fcba; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbs=1585363317-31ad272c4ac97f0204a3fe99f9fb1aaea690f352; expires=Thu, 24-Sep-2020
+        02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrtags=1585363317-c757a5b7a5716961c12a3973f52294e837cb765e; expires=Thu,
+        24-Sep-2020 02:41:57 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - localization=en-us%3Bus%3Bus; expires=Sat, 26-Mar-2022 02:41:57 GMT; Max-Age=62899200;
+        path=/; domain=.flickr.com
+      - xb=948493; expires=Tue, 26-Mar-2030 02:41:57 GMT; Max-Age=315360000; path=/;
+        domain=.flickr.com
+      Content-Security-Policy:
+      - 'default-src ''unsafe-inline'' https://*.flickr.com https://*.staticflickr.com
+        https://*.flickr.net https://*.braintreegateway.com https://*.kaptcha.com
+        https://*.paypal.com http://api.flickr.com https://*.pinterest.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://tpc.googlesyndication.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org; img-src data: blob:
+        https://*.flickr.com https://*.flickr.net http://*.flickr.net https://*.staticflickr.com
+        http://*.staticflickr.com https://*.yimg.com https://*.yahoo.com https://image.maps.api.here.com
+        https://*.paypal.com https://*.pinterest.com http://*.static-alpha.flickr.com
+        https://connect.facebook.net https://*.facebook.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://creativecommons.org https://hexagon-analytics.com
+        https://*.2o7.net https://tagmanager.google.com https://www.googletagmanager.com
+        https://*.google.com https://*.google-analytics.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.doubleclick.com https://*.doubleclick.de
+        https://*.doubleclick.net https://*.googletagservices.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.googleapis.com https://api.mapbox.com;
+        script-src ''unsafe-eval'' ''unsafe-inline'' https://*.flickr.com http://*.flickr.net
+        https://*.flickr.net https://*.staticflickr.com https://*.analytics.yahoo.com
+        https://yep.video.yahoo.com https://video.media.yql.yahoo.com https://*.yahooapis.com
+        https://*.braintreegateway.com https://*.paypalobjects.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://assets.adobedtm.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://*.google.com
+        https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.doubleclick.com https://*.doubleclick.de https://*.doubleclick.net
+        https://*.googletagservices.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.googleapis.com; connect-src https://*.flickr.com https://*.flickr.net
+        http://*.flickr.net https://*.staticflickr.com https://geo.query.yahoo.com
+        https://*.yahooapis.com http://api.flickr.com https://*.pinterest.com http://*.yahoo.com
+        https://*.maps.api.here.com https://*.maps.cit.api.here.com https://cdn.siftscience.com
+        https://*.demdex.net https://securepubads.g.doubleclick.net; report-uri https://csp.flickr.com/beacon/csp?src=adsecflickr;'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1716d0061009c0dbc61f0fe9ba525cca.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL52-C1
+      X-Amz-Cf-Id:
+      - NyFz-p8n2gRoI6XqPxEDJdoV0YL3NigPvegFvra_BJiiy2nbaJcsFw==
+    body:
+      encoding: UTF-8
+      string: '{"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All
+        Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\"
+        title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\"
+        width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
+        charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
+
+        '
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:41:57 GMT
+- request:
+    method: get
+    uri: https://vimeo.com/api/oembed.json?url=https://vimeo.com/31158841
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - sameorigin
+      Cache-Control:
+      - max-age=60
+      Expires:
+      - Sat, 28 Mar 2020 02:42:57 GMT
+      Last-Modified:
+      - Thu, 26 Mar 2020 07:56:19 GMT
+      Etag:
+      - '"1e3e269e19237de73599d3103751e7347bbbea9f"'
+      X-Ua-Compatible:
+      - IE=edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: data: blob: wss: ''unsafe-inline'' ''unsafe-eval''; report-uri
+        /_csp'
+      X-Vimeo-Dc:
+      - ge
+      Via:
+      - 1.1 varnish
+      - 1.1 varnish
+      Content-Length:
+      - '602'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 28 Mar 2020 02:41:57 GMT
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-bwi5149-BWI, cache-fty21382-FTY
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1585363317.201568,VS0,VE50
+      Vary:
+      - User-Agent,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"https:\/\/vimeo.com\/","title":"Murmuration","author_name":"Islands
+        & Rivers","author_url":"https:\/\/vimeo.com\/islandsandrivers","is_plus":"0","account_type":"basic","html":"<iframe
+        src=\"https:\/\/player.vimeo.com\/video\/31158841?app_id=122963\" width=\"400\"
+        height=\"320\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen
+        title=\"Murmuration\"><\/iframe>","width":400,"height":320,"duration":123,"description":"A
+        chance encounter and shared moment with one of natures greatest and most fleeting
+        phenomena.\n\nFacebook: Islands And Rivers\nFor licensing information contact
+        Dale Dobson - dale@iconiclinx.com","thumbnail_url":"https:\/\/i.vimeocdn.com\/video\/448600816_295x166.jpg","thumbnail_width":295,"thumbnail_height":221,"thumbnail_url_with_play_button":"https:\/\/i.vimeocdn.com\/filter\/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F448600816_295x166.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png","upload_date":"2011-10-26
+        14:43:13","video_id":31158841,"uri":"\/videos\/31158841"}'
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:41:57 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/501
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Sat, 28 Mar 2020 02:43:37 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '183'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F501
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 d080bc95ab54e9eca177a7793658f680.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - DhB6N7DT9eITtxex9p6G9hdg3ISMHRrxTOH9ZxicN_FShNre0AIttw==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/501
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 28 Mar 2020 02:43:37 GMT
+      Server:
+      - Apache/2.4.41 (Ubuntu)
+      Set-Cookie:
+      - flrb=28; expires=Sat, 28-Mar-2020 04:43:37 GMT; Max-Age=7200; path=/; domain=.flickr.com;
+        httponly
+      - flrbgdrp=1585363417-911aea019f2f99792b840d89e66049f3af5f1ec1; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgmrp=1585363417-870056ed0733615608151fd451d01b2ceae44650; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgrp=1585363417-bd44834886b29a01e27d1931818be9e18c43d040; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbp=1585363417-3230129335a72f15e944f555305811ec3d8ca0ca; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrgs=1585363417-dff7f1507b915490c5083e35edca20d5cefd1636; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrp=1585363417-286e786b4ffcb19bbf7573d56147525f28bc6096; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrst=1585363417-1fc7357a21f3e3c4172cfb4fbb888d2d821fffb7; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbs=1585363417-6470722ed5accee55a7a838927397dceb9ded1f6; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrtags=1585363417-10d540c5d37adf95cfd123009bc6466570a0dd77; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - localization=en-us%3Bus%3Bus; expires=Sat, 26-Mar-2022 02:43:37 GMT; Max-Age=62899200;
+        path=/; domain=.flickr.com
+      - xb=506442; expires=Tue, 26-Mar-2030 02:43:37 GMT; Max-Age=315360000; path=/;
+        domain=.flickr.com
+      Content-Security-Policy:
+      - 'default-src ''unsafe-inline'' https://*.flickr.com https://*.staticflickr.com
+        https://*.flickr.net https://*.braintreegateway.com https://*.kaptcha.com
+        https://*.paypal.com http://api.flickr.com https://*.pinterest.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://tpc.googlesyndication.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org; img-src data: blob:
+        https://*.flickr.com https://*.flickr.net http://*.flickr.net https://*.staticflickr.com
+        http://*.staticflickr.com https://*.yimg.com https://*.yahoo.com https://image.maps.api.here.com
+        https://*.paypal.com https://*.pinterest.com http://*.static-alpha.flickr.com
+        https://connect.facebook.net https://*.facebook.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://creativecommons.org https://hexagon-analytics.com
+        https://*.2o7.net https://tagmanager.google.com https://www.googletagmanager.com
+        https://*.google.com https://*.google-analytics.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.doubleclick.com https://*.doubleclick.de
+        https://*.doubleclick.net https://*.googletagservices.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.googleapis.com https://api.mapbox.com;
+        script-src ''unsafe-eval'' ''unsafe-inline'' https://*.flickr.com http://*.flickr.net
+        https://*.flickr.net https://*.staticflickr.com https://*.analytics.yahoo.com
+        https://yep.video.yahoo.com https://video.media.yql.yahoo.com https://*.yahooapis.com
+        https://*.braintreegateway.com https://*.paypalobjects.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://assets.adobedtm.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://*.google.com
+        https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.doubleclick.com https://*.doubleclick.de https://*.doubleclick.net
+        https://*.googletagservices.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.googleapis.com; connect-src https://*.flickr.com https://*.flickr.net
+        http://*.flickr.net https://*.staticflickr.com https://geo.query.yahoo.com
+        https://*.yahooapis.com http://api.flickr.com https://*.pinterest.com http://*.yahoo.com
+        https://*.maps.api.here.com https://*.maps.cit.api.here.com https://cdn.siftscience.com
+        https://*.demdex.net https://securepubads.g.doubleclick.net; report-uri https://csp.flickr.com/beacon/csp?src=adsecflickr;'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c94a55f383f4c17b074cd4924d6b7542.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - O7Mn6sdh6D9NpYJnzaP53BWLEQoS4kweOEnGyPmFWXwM1w_7L8ebRg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All
+        Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\"
+        title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\"
+        width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
+        charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
+
+        '
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/404
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Sat, 28 Mar 2020 02:43:37 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '183'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F404
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 15375386c325d451a8c6d6c307441555.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - gIDW5ZPSsNVjc3kHFN0adLyDugPkdTfP5Zyw-SoE_hPO0tS01ws7GA==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/404
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 28 Mar 2020 02:43:37 GMT
+      Server:
+      - Apache/2.4.41 (Ubuntu)
+      Set-Cookie:
+      - flrb=30; expires=Sat, 28-Mar-2020 04:43:37 GMT; Max-Age=7200; path=/; domain=.flickr.com;
+        httponly
+      - flrbgdrp=1585363417-911aea019f2f99792b840d89e66049f3af5f1ec1; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgmrp=1585363417-870056ed0733615608151fd451d01b2ceae44650; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgrp=1585363417-bd44834886b29a01e27d1931818be9e18c43d040; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbp=1585363417-3230129335a72f15e944f555305811ec3d8ca0ca; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrgs=1585363417-dff7f1507b915490c5083e35edca20d5cefd1636; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrp=1585363417-286e786b4ffcb19bbf7573d56147525f28bc6096; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrst=1585363417-1fc7357a21f3e3c4172cfb4fbb888d2d821fffb7; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbs=1585363417-6470722ed5accee55a7a838927397dceb9ded1f6; expires=Thu, 24-Sep-2020
+        02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrtags=1585363417-10d540c5d37adf95cfd123009bc6466570a0dd77; expires=Thu,
+        24-Sep-2020 02:43:37 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - localization=en-us%3Bus%3Bus; expires=Sat, 26-Mar-2022 02:43:37 GMT; Max-Age=62899200;
+        path=/; domain=.flickr.com
+      - xb=922650; expires=Tue, 26-Mar-2030 02:43:37 GMT; Max-Age=315360000; path=/;
+        domain=.flickr.com
+      Content-Security-Policy:
+      - 'default-src ''unsafe-inline'' https://*.flickr.com https://*.staticflickr.com
+        https://*.flickr.net https://*.braintreegateway.com https://*.kaptcha.com
+        https://*.paypal.com http://api.flickr.com https://*.pinterest.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://tpc.googlesyndication.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org; img-src data: blob:
+        https://*.flickr.com https://*.flickr.net http://*.flickr.net https://*.staticflickr.com
+        http://*.staticflickr.com https://*.yimg.com https://*.yahoo.com https://image.maps.api.here.com
+        https://*.paypal.com https://*.pinterest.com http://*.static-alpha.flickr.com
+        https://connect.facebook.net https://*.facebook.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://creativecommons.org https://hexagon-analytics.com
+        https://*.2o7.net https://tagmanager.google.com https://www.googletagmanager.com
+        https://*.google.com https://*.google-analytics.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.doubleclick.com https://*.doubleclick.de
+        https://*.doubleclick.net https://*.googletagservices.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.googleapis.com https://api.mapbox.com;
+        script-src ''unsafe-eval'' ''unsafe-inline'' https://*.flickr.com http://*.flickr.net
+        https://*.flickr.net https://*.staticflickr.com https://*.analytics.yahoo.com
+        https://yep.video.yahoo.com https://video.media.yql.yahoo.com https://*.yahooapis.com
+        https://*.braintreegateway.com https://*.paypalobjects.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://assets.adobedtm.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://*.google.com
+        https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.doubleclick.com https://*.doubleclick.de https://*.doubleclick.net
+        https://*.googletagservices.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.googleapis.com; connect-src https://*.flickr.com https://*.flickr.net
+        http://*.flickr.net https://*.staticflickr.com https://geo.query.yahoo.com
+        https://*.yahooapis.com http://api.flickr.com https://*.pinterest.com http://*.yahoo.com
+        https://*.maps.api.here.com https://*.maps.cit.api.here.com https://cdn.siftscience.com
+        https://*.demdex.net https://securepubads.g.doubleclick.net; report-uri https://csp.flickr.com/beacon/csp?src=adsecflickr;'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 52e2243a8168629f98bb0607016f7225.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - ra_w7iLpgsurGguLS6l9rvYAipHMZYgJHJ4YNBhIZmpLMUfed45UIA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All
+        Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\"
+        title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\"
+        width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
+        charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
+
+        '
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/405
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Sat, 28 Mar 2020 02:43:37 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '183'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.flickr.com/services/oembed/?format=json&url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F405
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 c16faabca2bde802416dbf463b649626.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - Kz8BtyA1nIShBZy0xZ9CSaEl_mPX4R00ougTLy_mQmtaigwrAIE7Ag==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/405
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sat, 28 Mar 2020 02:43:38 GMT
+      Server:
+      - Apache/2.4.41 (Ubuntu)
+      Set-Cookie:
+      - flrb=12; expires=Sat, 28-Mar-2020 03:43:38 GMT; Max-Age=3600; path=/; domain=.flickr.com;
+        httponly
+      - flrbgdrp=1585363418-93de24c751003a82d0242eb573b3db42b5da51df; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgmrp=1585363418-3d423b53f450cc4494be3f924995d65ec080b1a6; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbgrp=1585363418-c6f050ac18e0506c7f6b6ae073d59f9c761b54c4; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbp=1585363418-06583a41a378ea7a399ce073603454e12b858397; expires=Thu, 24-Sep-2020
+        02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrgs=1585363418-1e6f55ea87acd96315398cff34ecedc698cae50e; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrp=1585363418-67bc1e082e7fa80e05ae433ced6fd33f5df37582; expires=Thu, 24-Sep-2020
+        02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbrst=1585363418-a959997c80543768349655edec2858d47f7e0588; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrbs=1585363418-e5270dfc99d24fd413cc44f306c9d4dc94b0b110; expires=Thu, 24-Sep-2020
+        02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - flrtags=1585363418-b60b56e775d249e1fa0a88c8568a1fa5b8f7ca84; expires=Thu,
+        24-Sep-2020 02:43:38 GMT; Max-Age=15552000; path=/; domain=.flickr.com; httponly
+      - localization=en-us%3Bus%3Bus; expires=Sat, 26-Mar-2022 02:43:38 GMT; Max-Age=62899200;
+        path=/; domain=.flickr.com
+      - xb=132498; expires=Tue, 26-Mar-2030 02:43:38 GMT; Max-Age=315360000; path=/;
+        domain=.flickr.com
+      Content-Security-Policy:
+      - 'default-src ''unsafe-inline'' https://*.flickr.com https://*.staticflickr.com
+        https://*.flickr.net https://*.braintreegateway.com https://*.kaptcha.com
+        https://*.paypal.com http://api.flickr.com https://*.pinterest.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://tpc.googlesyndication.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org; img-src data: blob:
+        https://*.flickr.com https://*.flickr.net http://*.flickr.net https://*.staticflickr.com
+        http://*.staticflickr.com https://*.yimg.com https://*.yahoo.com https://image.maps.api.here.com
+        https://*.paypal.com https://*.pinterest.com http://*.static-alpha.flickr.com
+        https://connect.facebook.net https://*.facebook.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://creativecommons.org https://hexagon-analytics.com
+        https://*.2o7.net https://tagmanager.google.com https://www.googletagmanager.com
+        https://*.google.com https://*.google-analytics.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.doubleclick.com https://*.doubleclick.de
+        https://*.doubleclick.net https://*.googletagservices.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.googleapis.com https://api.mapbox.com;
+        script-src ''unsafe-eval'' ''unsafe-inline'' https://*.flickr.com http://*.flickr.net
+        https://*.flickr.net https://*.staticflickr.com https://*.analytics.yahoo.com
+        https://yep.video.yahoo.com https://video.media.yql.yahoo.com https://*.yahooapis.com
+        https://*.braintreegateway.com https://*.paypalobjects.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://assets.adobedtm.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://*.google.com
+        https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.doubleclick.com https://*.doubleclick.de https://*.doubleclick.net
+        https://*.googletagservices.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.googleapis.com; connect-src https://*.flickr.com https://*.flickr.net
+        http://*.flickr.net https://*.staticflickr.com https://geo.query.yahoo.com
+        https://*.yahooapis.com http://api.flickr.com https://*.pinterest.com http://*.yahoo.com
+        https://*.maps.api.here.com https://*.maps.cit.api.here.com https://cdn.siftscience.com
+        https://*.demdex.net https://securepubads.g.doubleclick.net; report-uri https://csp.flickr.com/beacon/csp?src=adsecflickr;'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 71e79e1e6108b748582f22a7451be223.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL51-C1
+      X-Amz-Cf-Id:
+      - KfK6Ty7ESi6WbxeMC61EPuOzGVNo35WCb8gqlN-H2lZIldfyeRepqQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All
+        Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\"
+        title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\"
+        width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
+        charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
+
+        '
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:43:38 GMT
+- request:
+    method: get
+    uri: http://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Sat, 28 Mar 2020 02:57:10 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '183'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.flickr.com/services/oembed/?url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F&format=json
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 2c7edebcbef52f9edd55fa61e184e994.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - ATL50-C1
+      X-Amz-Cf-Id:
+      - 4mWSYObHfwwAlJ3dB1CGmK3mHk7v_D_JW8tQ7VkJwenHrNMPXkMMww==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Sat, 28 Mar 2020 02:57:10 GMT
+recorded_with: VCR 5.1.0

@@ -1,11 +1,9 @@
 --- 
 :flickr: 
   :url: "http://flickr.com/photos/bees/2362225867/"
-  :body: !
-    '{"version":"1.0","type":"photo","author_url":"http:\/\/www.flickr.com\/photos\/bees\/","cache_age":3600,"provider_name":"Flickr","provider_url":"http:\/\/www.flickr.com\/","title":"Bacon
-      Lollys","author_name":"\u202e\u202d\u202cbees\u202c","width":"500","height":"375","url":"http:\/\/farm4.staticflickr.com\/3040\/2362225867_4a87ab8baf.jpg"}
+  :body: |
+    {"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\" title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\" width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\" charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
 
-'
 :skitch:
   :url: "http://skitch.com/sethferreira/nmbr8/the-kings-new-toy"
   :body: ! '{"type":"photo","version":"1.0","author_name":"sethferreira","author_url":"http:\/\/skitch.com\/sethferreira\/","provider_name":"Skitch.com","provider_url":"http:\/\/skitch.com\/","width":804,"height":804,"url":"https:\/\/img.skitch.com\/20091210-m9cq9r2e6cy1j1sn23acn38kx.jpg","thumbnail_width":337,"thumbnail_height":337,"thumbnail_url":"https:\/\/img.skitch.com\/20091210-m9cq9r2e6cy1j1sn23acn38kx.preview.jpg","cache_age":86400}'
@@ -15,20 +13,12 @@
   :url: "http://qik.com/video/49565"
 :vimeo: 
   :url: "http://vimeo.com/3100878"
-  :body: ! '{"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"http:\/\/vimeo.com\/","title":"Murmuration","author_name":"Sophie
-    Windsor Clive","author_url":"http:\/\/vimeo.com\/user3069761","is_plus":"0","html":"<iframe
-    src=\"https:\/\/player.vimeo.com\/video\/31158841\" width=\"640\" height=\"512\"
-    frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen><\/iframe>","width":640,"height":512,"duration":120,"description":"A
-    chance encounter and shared moment with one of natures greatest and most fleeting
-    phenomena.","thumbnail_url":"https:\/\/secure-b.vimeocdn.com\/ts\/209\/801\/209801744_640.jpg","thumbnail_width":640,"thumbnail_height":512,"video_id":31158841}'
+  :body: |
+    {"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"https:\/\/vimeo.com\/","title":"Murmuration","author_name":"Islands & Rivers","author_url":"https:\/\/vimeo.com\/islandsandrivers","is_plus":"0","account_type":"basic","html":"<iframe src=\"https:\/\/player.vimeo.com\/video\/31158841?app_id=122963\" width=\"400\" height=\"320\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen title=\"Murmuration\"><\/iframe>","width":400,"height":320,"duration":123,"description":"A chance encounter and shared moment with one of natures greatest and most fleeting phenomena.\n\nFacebook: Islands And Rivers\nFor licensing information contact Dale Dobson - dale@iconiclinx.com","thumbnail_url":"https:\/\/i.vimeocdn.com\/video\/448600816_295x166.jpg","thumbnail_width":295,"thumbnail_height":221,"thumbnail_url_with_play_button":"https:\/\/i.vimeocdn.com\/filter\/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F448600816_295x166.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png","upload_date":"2011-10-26 14:43:13","video_id":31158841,"uri":"\/videos\/31158841"}
 :vimeo_ssl: 
   :url: "https://vimeo.com/31158841"
-  :body: ! '{"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"http:\/\/vimeo.com\/","title":"Murmuration","author_name":"Sophie
-    Windsor Clive","author_url":"http:\/\/vimeo.com\/user3069761","is_plus":"0","html":"<iframe
-    src=\"https:\/\/player.vimeo.com\/video\/31158841\" width=\"640\" height=\"512\"
-    frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen><\/iframe>","width":640,"height":512,"duration":120,"description":"A
-    chance encounter and shared moment with one of natures greatest and most fleeting
-    phenomena.","thumbnail_url":"https:\/\/secure-b.vimeocdn.com\/ts\/209\/801\/209801744_640.jpg","thumbnail_width":640,"thumbnail_height":512,"video_id":31158841}'
+  :body: |
+    {"type":"video","version":"1.0","provider_name":"Vimeo","provider_url":"https:\/\/vimeo.com\/","title":"Murmuration","author_name":"Islands & Rivers","author_url":"https:\/\/vimeo.com\/islandsandrivers","is_plus":"0","account_type":"basic","html":"<iframe src=\"https:\/\/player.vimeo.com\/video\/31158841?app_id=122963\" width=\"400\" height=\"320\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen title=\"Murmuration\"><\/iframe>","width":400,"height":320,"duration":123,"description":"A chance encounter and shared moment with one of natures greatest and most fleeting phenomena.\n\nFacebook: Islands And Rivers\nFor licensing information contact Dale Dobson - dale@iconiclinx.com","thumbnail_url":"https:\/\/i.vimeocdn.com\/video\/448600816_295x166.jpg","thumbnail_width":295,"thumbnail_height":221,"thumbnail_url_with_play_button":"https:\/\/i.vimeocdn.com\/filter\/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F448600816_295x166.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png","upload_date":"2011-10-26 14:43:13","video_id":31158841,"uri":"\/videos\/31158841"}
 :rev3: 
   :url: "http://revision3.com/diggnation/2008-04-17xsanned/"
 :hulu: 

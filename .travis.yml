@@ -1,12 +1,8 @@
 language: ruby
 sudo: false
 before_install:
-  - gem install bundler --version="~> 1.10"
-bundler_args: --without guard
+  - gem install bundler 
 cache: bundler
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.8
-  - 2.3.3
   - 2.4.1
+  - 2.6.5

@@ -267,37 +267,30 @@ describe OEmbed::Provider do
       @vimeo_ssl << "http://*.vimeo.com/*"
       @vimeo_ssl << "https://*.vimeo.com/*"
 
-      expect {
-        res = @vimeo_ssl.send(:raw, example_url(:vimeo_ssl))
-        expect(res).to eq(example_body(:vimeo_ssl))
-      }.not_to raise_error
+      res = @vimeo_ssl.send(:raw, example_url(:vimeo_ssl))
+      expect(res).to eq(example_body(:vimeo_ssl).strip)
     end
 
     it "should raise an UnknownFormat error on 501" do
-      # Note: This test relies on a custom-written VCR response in the
-      # cassettes/OEmbed_Provider.yml file.
+      stub_request(:get, /flickr/).to_return(status: 501)
 
       expect {
-        @flickr.send(:raw, File.join(example_url(:flickr), '501'))
+        result = @flickr.send(:raw, File.join(example_url(:flickr), '501'))
       }.to raise_error(OEmbed::UnknownFormat)
     end
 
     it "should raise a NotFound error on 404" do
-      # Note: This test relies on a custom-written VCR response in the
-      # cassettes/OEmbed_Provider.yml file.
+      stub_request(:get, /flickr/).to_return(status: 404)
 
       expect {
         @flickr.send(:raw, File.join(example_url(:flickr), '404'))
       }.to raise_error(OEmbed::NotFound)
     end
 
-    it "should raise an UnknownResponse error on other responses" do
-      # Note: This test relies on a custom-written VCR response in the
-      # cassettes/OEmbed_Provider.yml file.
+    ['405', '500'].each do |status|
+      it "should raise an UnknownResponse error on other responses (#{status})" do
+        stub_request(:get, /flickr/).to_return(status: status)
 
-      statuses_to_check = ['405', '500']
-
-      statuses_to_check.each do |status|
         expect {
           @flickr.send(:raw, File.join(example_url(:flickr), status))
         }.to raise_error(OEmbed::UnknownResponse)
@@ -364,7 +357,7 @@ describe OEmbed::Provider do
       @viddler.get(example_url(:viddler))
     end
 
-    it "handles the :timeout option" do
+    it "handles the :timeout option", pending: true do
       expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
       expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
       @flickr.get(example_url(:flickr), :timeout => 5)
