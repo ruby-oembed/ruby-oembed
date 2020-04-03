@@ -1,13 +1,19 @@
+# Build and local dev artifacts
 /pkg
 /.bundle
 /rails_oembed
-/doc
 Gemfile.lock
+/doc
 .yardoc
-.DS_Store
-/.rvm
-/.ruby-version
-/.ruby-gemset
 coverage
 .rspec-status
-coverage
+
+# MacOS Things
+.DS_Store
+
+# Version management files
+# (We want each developer to be able to use the version of their choosing)
+/.rvm
+/.tool-versions
+/.ruby-version
+/.ruby-gemset
