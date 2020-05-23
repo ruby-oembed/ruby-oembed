@@ -210,6 +210,12 @@ module OEmbed
     Instagram << "https://instagr.am/p/*"
     Instagram << "https://instagram.com/p/*"
     Instagram << "https://www.instagram.com/p/*"
+    Instagram << "http://instagr.am/tv/*"
+    Instagram << "http://instagram.com/tv/*"
+    Instagram << "http://www.instagram.com/tv/*"
+    Instagram << "https://instagr.am/tv/*"
+    Instagram << "https://instagram.com/tv/*"
+    Instagram << "https://www.instagram.com/tv/*"
     add_official_provider(Instagram)
 
     # Providers for Facebook Posts & Videos
