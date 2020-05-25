@@ -1,6 +1,10 @@
 = CHANGELOG
 
-== Unreleased (0.13.1)
+== Unreleased (0.13.2)
+
+== 0.13.1 - 25 May 2020
+
+* Update built-in Instagram provider to support Instgram TV URLs; Pull #72 (github.com/Alexey1100)
 
 == 0.13.0 - 3 April 2020
 
