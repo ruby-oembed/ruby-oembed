@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'yaml'
+
+require 'oembed/providers/facebook_post'
+require 'oembed/providers/facebook_video'
 require 'oembed/providers/instagram'
 
 module OEmbed
@@ -201,25 +204,6 @@ module OEmbed
     Vine << "http://*.vine.co/v/*"
     Vine << "https://*.vine.co/v/*"
     add_official_provider(Vine)
-
-    # Providers for Facebook Posts & Videos
-    # https://developers.facebook.com/docs/plugins/oembed-endpoints
-    FacebookPost = OEmbed::Provider.new('https://www.facebook.com/plugins/post/oembed.json/', :json)
-    FacebookPost << 'https://www.facebook.com/*/posts/*'
-    FacebookPost << 'https://www.facebook.com/*/activity/*'
-    FacebookPost << 'https://www.facebook.com/photo*'
-    FacebookPost << 'https://www.facebook.com/photos*'
-    FacebookPost << 'https://www.facebook.com/*/photos*'
-    FacebookPost << 'https://www.facebook.com/permalink*'
-    FacebookPost << 'https://www.facebook.com/media*'
-    FacebookPost << 'https://www.facebook.com/questions*'
-    FacebookPost << 'https://www.facebook.com/notes*'
-    add_official_provider(FacebookPost)
-
-    FacebookVideo = OEmbed::Provider.new('https://www.facebook.com/plugins/video/oembed.json/', :json)
-    FacebookVideo << 'https://www.facebook.com/*/videos/*'
-    FacebookVideo << 'https://www.facebook.com/video*'
-    add_official_provider(FacebookVideo)
 
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
