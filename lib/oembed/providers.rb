@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'yaml'
+require 'oembed/providers/instagram'
 
 module OEmbed
   # Allows OEmbed to perform tasks across several, registered, Providers
@@ -200,23 +201,6 @@ module OEmbed
     Vine << "http://*.vine.co/v/*"
     Vine << "https://*.vine.co/v/*"
     add_official_provider(Vine)
-
-    # Provider for instagram.com
-    # https://instagr.am/developer/embedding/
-    Instagram = OEmbed::Provider.new("https://api.instagram.com/oembed", :json)
-    Instagram << "http://instagr.am/p/*"
-    Instagram << "http://instagram.com/p/*"
-    Instagram << "http://www.instagram.com/p/*"
-    Instagram << "https://instagr.am/p/*"
-    Instagram << "https://instagram.com/p/*"
-    Instagram << "https://www.instagram.com/p/*"
-    Instagram << "http://instagr.am/tv/*"
-    Instagram << "http://instagram.com/tv/*"
-    Instagram << "http://www.instagram.com/tv/*"
-    Instagram << "https://instagr.am/tv/*"
-    Instagram << "https://instagram.com/tv/*"
-    Instagram << "https://www.instagram.com/tv/*"
-    add_official_provider(Instagram)
 
     # Providers for Facebook Posts & Videos
     # https://developers.facebook.com/docs/plugins/oembed-endpoints
