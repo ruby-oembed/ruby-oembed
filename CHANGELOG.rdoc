@@ -5,7 +5,7 @@
 
 == 0.14.0 - 5 November 2020
 
-* Add support for Facebook/Instragram access tokens; Pull #75 (Inge Jørgensen)
+* Add support for Facebook/Instagram access tokens; Pull #75 (Inge Jørgensen)
 
 == 0.13.1 - 25 May 2020
 
