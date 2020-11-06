@@ -1,6 +1,10 @@
 require 'rubygems'
 require 'yaml'
 
+require 'oembed/providers/facebook_post'
+require 'oembed/providers/facebook_video'
+require 'oembed/providers/instagram'
+
 module OEmbed
   # Allows OEmbed to perform tasks across several, registered, Providers
   # at once.
@@ -44,8 +48,11 @@ module OEmbed
       # Register all Providers built into this gem.
       # The including_sub_type parameter should be one of the following values:
       # * :aggregators: also register provider aggregator endpoints, like Embedly
-      def register_all(*including_sub_type)
+      # The access_token keys can be one of the following:
+      # * :facebook: See https://developers.facebook.com/docs/instagram/oembed#access-tokens
+      def register_all(*including_sub_type, access_tokens: {})
         register(*@@to_register[""])
+        register_access_token_providers(access_tokens)
         including_sub_type.each do |sub_type|
           register(*@@to_register[sub_type.to_s])
         end
@@ -121,6 +128,20 @@ module OEmbed
 
         @@to_register[sub_type.to_s] ||= []
         @@to_register[sub_type.to_s] << provider_class
+      end
+
+      # Takes a Hash of tokens, and registers providers that use the given tokens.
+      # Also supports "OEMBED_*_TOKEN" environment variables.
+      # Currently supported tokens:
+      # * facebook: See https://developers.facebook.com/docs/instagram/oembed#access-tokens
+      def register_access_token_providers(access_tokens)
+        tokens = { facebook: ENV['OEMBED_FACEBOOK_TOKEN'] }.merge(access_tokens)
+
+        if tokens[:facebook]
+          register OEmbed::Providers::FacebookPost.new(access_token: tokens[:facebook])
+          register OEmbed::Providers::FacebookVideo.new(access_token: tokens[:facebook])
+          register OEmbed::Providers::Instagram.new(access_token: tokens[:facebook])
+        end
       end
     end
 
@@ -200,42 +221,6 @@ module OEmbed
     Vine << "http://*.vine.co/v/*"
     Vine << "https://*.vine.co/v/*"
     add_official_provider(Vine)
-
-    # Provider for instagram.com
-    # https://instagr.am/developer/embedding/
-    Instagram = OEmbed::Provider.new("https://api.instagram.com/oembed", :json)
-    Instagram << "http://instagr.am/p/*"
-    Instagram << "http://instagram.com/p/*"
-    Instagram << "http://www.instagram.com/p/*"
-    Instagram << "https://instagr.am/p/*"
-    Instagram << "https://instagram.com/p/*"
-    Instagram << "https://www.instagram.com/p/*"
-    Instagram << "http://instagr.am/tv/*"
-    Instagram << "http://instagram.com/tv/*"
-    Instagram << "http://www.instagram.com/tv/*"
-    Instagram << "https://instagr.am/tv/*"
-    Instagram << "https://instagram.com/tv/*"
-    Instagram << "https://www.instagram.com/tv/*"
-    add_official_provider(Instagram)
-
-    # Providers for Facebook Posts & Videos
-    # https://developers.facebook.com/docs/plugins/oembed-endpoints
-    FacebookPost = OEmbed::Provider.new('https://www.facebook.com/plugins/post/oembed.json/', :json)
-    FacebookPost << 'https://www.facebook.com/*/posts/*'
-    FacebookPost << 'https://www.facebook.com/*/activity/*'
-    FacebookPost << 'https://www.facebook.com/photo*'
-    FacebookPost << 'https://www.facebook.com/photos*'
-    FacebookPost << 'https://www.facebook.com/*/photos*'
-    FacebookPost << 'https://www.facebook.com/permalink*'
-    FacebookPost << 'https://www.facebook.com/media*'
-    FacebookPost << 'https://www.facebook.com/questions*'
-    FacebookPost << 'https://www.facebook.com/notes*'
-    add_official_provider(FacebookPost)
-
-    FacebookVideo = OEmbed::Provider.new('https://www.facebook.com/plugins/video/oembed.json/', :json)
-    FacebookVideo << 'https://www.facebook.com/*/videos/*'
-    FacebookVideo << 'https://www.facebook.com/video*'
-    add_official_provider(FacebookVideo)
 
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
@@ -422,7 +407,7 @@ module OEmbed
     Noembed = OEmbed::Provider.new("https://noembed.com/embed")
     # Add all known URL regexps for Noembed.
     # To update this list run `rake oembed:update_noembed`
-    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/noembed_urls.yml")).each do |url|
+    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/aggregators/noembed_urls.yml")).each do |url|
       Noembed << Regexp.new(url)
     end
     add_official_provider(Noembed, :aggregators)
@@ -437,7 +422,7 @@ module OEmbed
     # If you don't yet have an API key you'll need to sign up here: http://embed.ly/pricing
     Embedly = OEmbed::Provider.new("http://api.embed.ly/1/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
-    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/embedly_urls.yml")).each do |url|
+    YAML.load_file(File.join(File.dirname(__FILE__), "/providers/aggregators/embedly_urls.yml")).each do |url|
       Embedly << url
     end
     add_official_provider(Embedly, :aggregators)
