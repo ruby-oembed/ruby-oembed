@@ -48,6 +48,8 @@ module OEmbed
       # Register all Providers built into this gem.
       # The including_sub_type parameter should be one of the following values:
       # * :aggregators: also register provider aggregator endpoints, like Embedly
+      # The access_token keys can be one of the following:
+      # * :facebook: See https://developers.facebook.com/docs/instagram/oembed#access-tokens
       def register_all(*including_sub_type, access_tokens: {})
         register(*@@to_register[""])
         register_access_token_providers(access_tokens)
@@ -128,6 +130,10 @@ module OEmbed
         @@to_register[sub_type.to_s] << provider_class
       end
 
+      # Takes a Hash of tokens, and registers providers that use the given tokens.
+      # Also supports "OEMBED_*_TOKEN" environment variables.
+      # Currently supported tokens:
+      # * facebook: See https://developers.facebook.com/docs/instagram/oembed#access-tokens
       def register_access_token_providers(access_tokens)
         tokens = { facebook: ENV['OEMBED_FACEBOOK_TOKEN'] }.merge(access_tokens)
 
