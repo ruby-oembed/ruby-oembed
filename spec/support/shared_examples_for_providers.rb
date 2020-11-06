@@ -1,4 +1,4 @@
-RSpec.shared_examples "an OEmbed::Proviers instance" do |expected_valid_urls, expected_invalid_urls|
+RSpec.shared_examples "an OEmbed::Providers instance" do |expected_valid_urls, expected_invalid_urls|
   expected_valid_urls.each do |valid_url|
     context "given the valid URL #{valid_url}" do
       describe ".include?" do
