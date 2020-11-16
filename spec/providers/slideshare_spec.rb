@@ -4,7 +4,7 @@ describe 'OEmbed::Providers::Slideshare' do
   use_custom_vcr_casette('OEmbed_Providers_Slideshare')
   include OEmbedSpecHelper
 
-  subject { OEmbed::Providers::Slideshare }
+  let(:provider) { OEmbed::Providers::Slideshare }
 
   expected_valid_urls = (
     %w(https:// http://).map do |protocol|
@@ -28,7 +28,7 @@ describe 'OEmbed::Providers::Slideshare' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    "an OEmbed::Providers instance",
     expected_valid_urls,
     expected_invalid_urls
   )

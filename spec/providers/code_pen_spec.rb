@@ -4,7 +4,7 @@ describe 'OEmbed::Providers::CodePen' do
   use_custom_vcr_casette('OEmbed_Providers_CodePen')
   include OEmbedSpecHelper
 
-  subject { OEmbed::Providers::CodePen }
+  let(:provider) { OEmbed::Providers::CodePen }
 
   expected_valid_urls = %w(
     https://codepen.io/maximakymenko/pen/mdbpeXm
@@ -14,7 +14,7 @@ describe 'OEmbed::Providers::CodePen' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    "an OEmbed::Providers instance",
     expected_valid_urls,
     expected_invalid_urls
   )

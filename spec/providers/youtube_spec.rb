@@ -4,7 +4,7 @@ describe 'OEmbed::Providers::Youtube' do
   use_custom_vcr_casette('OEmbed_Providers_Youtube')
   include OEmbedSpecHelper
 
-  subject { OEmbed::Providers::Youtube }
+  let(:provider) { OEmbed::Providers::Youtube }
 
   expected_valid_urls = %w(
     https://www.youtube.com/watch?v=pO5L6vXtxsI
@@ -16,7 +16,7 @@ describe 'OEmbed::Providers::Youtube' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    "an OEmbed::Providers instance",
     expected_valid_urls,
     expected_invalid_urls
   )

@@ -4,7 +4,7 @@ describe 'OEmbed::Providers::Twitter' do
   use_custom_vcr_casette('OEmbed_Providers_Twitter')
   include OEmbedSpecHelper
 
-  subject { OEmbed::Providers::Twitter }
+  let(:provider) { OEmbed::Providers::Twitter }
 
   expected_valid_urls = %w(
     https://twitter.com/RailsGirlsSoC/status/702136612822634496
@@ -16,7 +16,7 @@ describe 'OEmbed::Providers::Twitter' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    "an OEmbed::Providers instance",
     expected_valid_urls,
     expected_invalid_urls
   )
@@ -27,7 +27,7 @@ describe 'OEmbed::Providers::Twitter' do
         describe ".get" do
           it "should encounter a 400 error" do
             expect {
-              subject.get(valid_url, :format=>:xml)
+              provider.get(valid_url, :format=>:xml)
             }.to raise_error(OEmbed::UnknownResponse, /\b400\b/)
           end
         end
