@@ -1,0 +1,359 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/oembed/?format=json&url=https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Vary:
+      - Accept-Language, Cookie
+      Content-Language:
+      - en
+      Date:
+      - Mon, 16 Nov 2020 05:57:24 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'report-uri https://www.instagram.com/security/csp_report/; default-src ''self''
+        https://www.instagram.com; img-src data: blob: https://*.fbcdn.net https://*.instagram.com
+        https://*.cdninstagram.com https://*.facebook.com https://*.giphy.com; font-src
+        data: https://*.fbcdn.net https://*.instagram.com https://*.cdninstagram.com;
+        media-src ''self'' blob: https://www.instagram.com https://*.cdninstagram.com
+        https://*.fbcdn.net; manifest-src ''self'' https://www.instagram.com; script-src
+        ''self'' https://instagram.com https://www.instagram.com https://*.www.instagram.com
+        https://*.cdninstagram.com wss://www.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net ''unsafe-inline'' ''unsafe-eval''
+        blob:; style-src ''self'' https://*.www.instagram.com https://www.instagram.com
+        ''unsafe-inline''; connect-src ''self'' https://instagram.com https://www.instagram.com
+        https://*.www.instagram.com https://graph.instagram.com https://*.graph.instagram.com
+        https://*.cdninstagram.com https://api.instagram.com https://i.instagram.com
+        wss://www.instagram.com wss://edge-chat.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net chrome-extension://boadgeojelhgndaghljhdicfkmllpafd
+        blob:; worker-src ''self'' blob: https://www.instagram.com; frame-src ''self''
+        https://instagram.com https://www.instagram.com https://staticxx.facebook.com
+        https://www.facebook.com https://web.facebook.com https://connect.facebook.net
+        https://m.facebook.com; object-src ''none''; upgrade-insecure-requests'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Aed:
+      - '30'
+      Access-Control-Expose-Headers:
+      - X-IG-Set-WWW-Claim
+      Set-Cookie:
+      - csrftoken=tQDwcURPuHvlgMvV2PI8gMWlej4r9pg3; Domain=.instagram.com; expires=Mon,
+        15-Nov-2021 05:57:24 GMT; Max-Age=31449600; Path=/; Secure
+      - ig_did=33AF9DF5-6D7B-48C5-8340-754E12704553; Domain=.instagram.com; expires=Wed,
+        16-Nov-2022 05:57:24 GMT; HttpOnly; Max-Age=63072000; Path=/; Secure
+      - ig_nrcb=1; Domain=.instagram.com; expires=Tue, 16-Nov-2021 05:57:24 GMT; Max-Age=31536000;
+        Path=/; Secure
+      - mid=X7IUxAAEAAG6MeZaJ2XAHDHJKZc6; Domain=.instagram.com; expires=Wed, 16-Nov-2022
+        05:57:24 GMT; Max-Age=63072000; Path=/; Secure
+      X-Fb-Trip-Id:
+      - '2050670934'
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+    body:
+      encoding: UTF-8
+      string: '{"provider_url":"https:\/\/www.youtube.com\/","thumbnail_url":"https:\/\/i.ytimg.com\/vi\/pO5L6vXtxsI\/hqdefault.jpg","version":"1.0","thumbnail_height":360,"author_url":"https:\/\/www.youtube.com\/user\/CKEditor","title":"CKEditor
+        4.5 - Embedding Media Resources with oEmbed","width":480,"provider_name":"YouTube","height":270,"author_name":"CKEditor
+        Ecosystem","html":"\u003ciframe width=\"480\" height=\"270\" src=\"https:\/\/www.youtube.com\/embed\/pO5L6vXtxsI?feature=oembed\"
+        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c\/iframe\u003e","type":"video","thumbnail_width":480}'
+  recorded_at: Mon, 16 Nov 2020 05:57:24 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/oembed/?format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Vary:
+      - Accept-Language, Cookie
+      Content-Language:
+      - en
+      Date:
+      - Mon, 16 Nov 2020 05:57:24 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'report-uri https://www.instagram.com/security/csp_report/; default-src ''self''
+        https://www.instagram.com; img-src data: blob: https://*.fbcdn.net https://*.instagram.com
+        https://*.cdninstagram.com https://*.facebook.com https://*.giphy.com; font-src
+        data: https://*.fbcdn.net https://*.instagram.com https://*.cdninstagram.com;
+        media-src ''self'' blob: https://www.instagram.com https://*.cdninstagram.com
+        https://*.fbcdn.net; manifest-src ''self'' https://www.instagram.com; script-src
+        ''self'' https://instagram.com https://www.instagram.com https://*.www.instagram.com
+        https://*.cdninstagram.com wss://www.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net ''unsafe-inline'' ''unsafe-eval''
+        blob:; style-src ''self'' https://*.www.instagram.com https://www.instagram.com
+        ''unsafe-inline''; connect-src ''self'' https://instagram.com https://www.instagram.com
+        https://*.www.instagram.com https://graph.instagram.com https://*.graph.instagram.com
+        https://*.cdninstagram.com https://api.instagram.com https://i.instagram.com
+        wss://www.instagram.com wss://edge-chat.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net chrome-extension://boadgeojelhgndaghljhdicfkmllpafd
+        blob:; worker-src ''self'' blob: https://www.instagram.com; frame-src ''self''
+        https://instagram.com https://www.instagram.com https://staticxx.facebook.com
+        https://www.facebook.com https://web.facebook.com https://connect.facebook.net
+        https://m.facebook.com; object-src ''none''; upgrade-insecure-requests'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Aed:
+      - '30'
+      Access-Control-Expose-Headers:
+      - X-IG-Set-WWW-Claim
+      Set-Cookie:
+      - csrftoken=mHC8NYh98BnoZN6Y4dvPTfqvnDpWEZnA; Domain=.instagram.com; expires=Mon,
+        15-Nov-2021 05:57:24 GMT; Max-Age=31449600; Path=/; Secure
+      - ig_did=EA764741-889D-4670-B958-6D46E2F677A0; Domain=.instagram.com; expires=Wed,
+        16-Nov-2022 05:57:24 GMT; HttpOnly; Max-Age=63072000; Path=/; Secure
+      - ig_nrcb=1; Domain=.instagram.com; expires=Tue, 16-Nov-2021 05:57:24 GMT; Max-Age=31536000;
+        Path=/; Secure
+      - mid=X7IUxAAEAAHmBvDmWK_1JEkTR9cq; Domain=.instagram.com; expires=Wed, 16-Nov-2022
+        05:57:24 GMT; Max-Age=63072000; Path=/; Secure
+      X-Fb-Trip-Id:
+      - '1781455057'
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+    body:
+      encoding: UTF-8
+      string: '{"provider_url":"https:\/\/www.youtube.com\/","thumbnail_url":"https:\/\/i.ytimg.com\/vi\/pO5L6vXtxsI\/hqdefault.jpg","version":"1.0","thumbnail_height":360,"author_url":"https:\/\/www.youtube.com\/user\/CKEditor","title":"CKEditor
+        4.5 - Embedding Media Resources with oEmbed","width":480,"provider_name":"YouTube","height":270,"author_name":"CKEditor
+        Ecosystem","html":"\u003ciframe width=\"480\" height=\"270\" src=\"https:\/\/www.youtube.com\/embed\/pO5L6vXtxsI?feature=oembed\"
+        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c\/iframe\u003e","type":"video","thumbnail_width":480}'
+  recorded_at: Mon, 16 Nov 2020 05:57:24 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/oembed/?format=json&url=https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Vary:
+      - Accept-Language, Cookie
+      Content-Language:
+      - en
+      Date:
+      - Mon, 16 Nov 2020 05:57:25 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'report-uri https://www.instagram.com/security/csp_report/; default-src ''self''
+        https://www.instagram.com; img-src data: blob: https://*.fbcdn.net https://*.instagram.com
+        https://*.cdninstagram.com https://*.facebook.com https://*.giphy.com; font-src
+        data: https://*.fbcdn.net https://*.instagram.com https://*.cdninstagram.com;
+        media-src ''self'' blob: https://www.instagram.com https://*.cdninstagram.com
+        https://*.fbcdn.net; manifest-src ''self'' https://www.instagram.com; script-src
+        ''self'' https://instagram.com https://www.instagram.com https://*.www.instagram.com
+        https://*.cdninstagram.com wss://www.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net ''unsafe-inline'' ''unsafe-eval''
+        blob:; style-src ''self'' https://*.www.instagram.com https://www.instagram.com
+        ''unsafe-inline''; connect-src ''self'' https://instagram.com https://www.instagram.com
+        https://*.www.instagram.com https://graph.instagram.com https://*.graph.instagram.com
+        https://*.cdninstagram.com https://api.instagram.com https://i.instagram.com
+        wss://www.instagram.com wss://edge-chat.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net chrome-extension://boadgeojelhgndaghljhdicfkmllpafd
+        blob:; worker-src ''self'' blob: https://www.instagram.com; frame-src ''self''
+        https://instagram.com https://www.instagram.com https://staticxx.facebook.com
+        https://www.facebook.com https://web.facebook.com https://connect.facebook.net
+        https://m.facebook.com; object-src ''none''; upgrade-insecure-requests'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Aed:
+      - '30'
+      Access-Control-Expose-Headers:
+      - X-IG-Set-WWW-Claim
+      Set-Cookie:
+      - csrftoken=vMGMl4q07RaOBzhLXexP1Ghx8ZlsEugD; Domain=.instagram.com; expires=Mon,
+        15-Nov-2021 05:57:25 GMT; Max-Age=31449600; Path=/; Secure
+      - ig_did=538F856C-D401-4202-9612-DC49BB6E9543; Domain=.instagram.com; expires=Wed,
+        16-Nov-2022 05:57:25 GMT; HttpOnly; Max-Age=63072000; Path=/; Secure
+      - ig_nrcb=1; Domain=.instagram.com; expires=Tue, 16-Nov-2021 05:57:25 GMT; Max-Age=31536000;
+        Path=/; Secure
+      - mid=X7IUxQAEAAHeUPesG99sfSA-B4MZ; Domain=.instagram.com; expires=Wed, 16-Nov-2022
+        05:57:25 GMT; Max-Age=63072000; Path=/; Secure
+      X-Fb-Trip-Id:
+      - '1781455057'
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+    body:
+      encoding: UTF-8
+      string: '{"provider_url":"https:\/\/www.youtube.com\/","thumbnail_url":"https:\/\/i.ytimg.com\/vi\/pO5L6vXtxsI\/hqdefault.jpg","version":"1.0","thumbnail_height":360,"author_url":"https:\/\/www.youtube.com\/user\/CKEditor","title":"CKEditor
+        4.5 - Embedding Media Resources with oEmbed","width":480,"provider_name":"YouTube","height":270,"author_name":"CKEditor
+        Ecosystem","html":"\u003ciframe width=\"480\" height=\"270\" src=\"https:\/\/www.youtube.com\/embed\/pO5L6vXtxsI?feature=oembed\"
+        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c\/iframe\u003e","type":"video","thumbnail_width":480}'
+  recorded_at: Mon, 16 Nov 2020 05:57:25 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/oembed/?format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Vary:
+      - Accept-Language, Cookie
+      Content-Language:
+      - en
+      Date:
+      - Mon, 16 Nov 2020 05:57:25 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - 'report-uri https://www.instagram.com/security/csp_report/; default-src ''self''
+        https://www.instagram.com; img-src data: blob: https://*.fbcdn.net https://*.instagram.com
+        https://*.cdninstagram.com https://*.facebook.com https://*.giphy.com; font-src
+        data: https://*.fbcdn.net https://*.instagram.com https://*.cdninstagram.com;
+        media-src ''self'' blob: https://www.instagram.com https://*.cdninstagram.com
+        https://*.fbcdn.net; manifest-src ''self'' https://www.instagram.com; script-src
+        ''self'' https://instagram.com https://www.instagram.com https://*.www.instagram.com
+        https://*.cdninstagram.com wss://www.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net ''unsafe-inline'' ''unsafe-eval''
+        blob:; style-src ''self'' https://*.www.instagram.com https://www.instagram.com
+        ''unsafe-inline''; connect-src ''self'' https://instagram.com https://www.instagram.com
+        https://*.www.instagram.com https://graph.instagram.com https://*.graph.instagram.com
+        https://*.cdninstagram.com https://api.instagram.com https://i.instagram.com
+        wss://www.instagram.com wss://edge-chat.instagram.com https://*.facebook.com
+        https://*.fbcdn.net https://*.facebook.net chrome-extension://boadgeojelhgndaghljhdicfkmllpafd
+        blob:; worker-src ''self'' blob: https://www.instagram.com; frame-src ''self''
+        https://instagram.com https://www.instagram.com https://staticxx.facebook.com
+        https://www.facebook.com https://web.facebook.com https://connect.facebook.net
+        https://m.facebook.com; object-src ''none''; upgrade-insecure-requests'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      X-Aed:
+      - '30'
+      Access-Control-Expose-Headers:
+      - X-IG-Set-WWW-Claim
+      Set-Cookie:
+      - csrftoken=8X51eYgyoZdzibW2AxJ4PaoL2iXRv0lD; Domain=.instagram.com; expires=Mon,
+        15-Nov-2021 05:57:25 GMT; Max-Age=31449600; Path=/; Secure
+      - ig_did=DB293F5C-3AB7-4C6F-A333-2D42180A7AF7; Domain=.instagram.com; expires=Wed,
+        16-Nov-2022 05:57:25 GMT; HttpOnly; Max-Age=63072000; Path=/; Secure
+      - ig_nrcb=1; Domain=.instagram.com; expires=Tue, 16-Nov-2021 05:57:25 GMT; Max-Age=31536000;
+        Path=/; Secure
+      - mid=X7IUxQAEAAFZEYFxgPeapbbYUIM7; Domain=.instagram.com; expires=Wed, 16-Nov-2022
+        05:57:25 GMT; Max-Age=63072000; Path=/; Secure
+      X-Fb-Trip-Id:
+      - '1781455057'
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+    body:
+      encoding: UTF-8
+      string: '{"provider_url":"https:\/\/www.youtube.com\/","thumbnail_url":"https:\/\/i.ytimg.com\/vi\/pO5L6vXtxsI\/hqdefault.jpg","version":"1.0","thumbnail_height":360,"author_url":"https:\/\/www.youtube.com\/user\/CKEditor","title":"CKEditor
+        4.5 - Embedding Media Resources with oEmbed","width":480,"provider_name":"YouTube","height":270,"author_name":"CKEditor
+        Ecosystem","html":"\u003ciframe width=\"480\" height=\"270\" src=\"https:\/\/www.youtube.com\/embed\/pO5L6vXtxsI?feature=oembed\"
+        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c\/iframe\u003e","type":"video","thumbnail_width":480}'
+  recorded_at: Mon, 16 Nov 2020 05:57:25 GMT
+recorded_with: VCR 6.0.0
