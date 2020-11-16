@@ -11,6 +11,8 @@ require 'webmock/rspec'
 require 'coveralls'
 Coveralls.wear!
 
+require 'support/shared_examples_for_providers'
+
 require File.dirname(__FILE__) + '/../lib/oembed'
 
 RSpec.configure do |config|
@@ -20,6 +22,11 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec-status'
   config.filter_run_including :focus => true unless ENV['RUN_ALL_TESTS']
   config.run_all_when_everything_filtered = true
+end
+
+def use_custom_vcr_casette(casette_name)
+  before(:all) { VCR.insert_cassette(casette_name) }
+  after(:all) { VCR.eject_cassette }
 end
 
 module OEmbedSpecHelper
