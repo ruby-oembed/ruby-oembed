@@ -18,6 +18,8 @@ RSpec.configure do |config|
   config.tty = true
   config.color = true
   config.example_status_persistence_file_path = '.rspec-status'
+  config.filter_run_including :focus => true unless ENV['RUN_ALL_TESTS']
+  config.run_all_when_everything_filtered = true
 end
 
 module OEmbedSpecHelper

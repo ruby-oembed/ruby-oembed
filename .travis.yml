@@ -7,3 +7,6 @@ cache: bundler
 rvm:
   - 2.4.1
   - 2.6.5
+env:
+  global:
+    - RUN_ALL_TESTS=true
