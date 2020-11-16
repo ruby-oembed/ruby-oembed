@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:29 GMT
+      - Mon, 16 Nov 2020 05:47:47 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,7 +31,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - k/OJpa44253O7oTVHym3aw==
+      - 53Oxa1cek4bMx/t0+G8ZpA==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -51,26 +51,26 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - '081390a7aad052c66f3e3b5418c83563'
+      - 379e755bc95533d8a86ec97ddcc9bf55
       X-Runtime:
-      - '0.052196'
+      - '0.057835'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
       Set-Cookie:
-      - bcookie="v=2&0d5d8525-0466-4da8-8468-8b977c58e1ec"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:01 GMT; SameSite=None
+      - bcookie="v=2&78c3cef8-f231-41a6-86f4-4ec57aff70d4"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:19 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:29
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:47
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - N3txKbbXRxYwa2KkoisAAA==
+      - tlZO/+XmRxbwmokBcCsAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -83,7 +83,7 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:29 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:47 GMT
 - request:
     method: get
     uri: https://www.slideshare.net/api/oembed/2?format=json&url=https://www.slideshare.net/gabriele.lana/the-magic-of-elixir
@@ -103,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:30 GMT
+      - Mon, 16 Nov 2020 05:47:48 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -115,7 +115,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - W6IIC1tJ15OCgIBSriMa9Q==
+      - O1xoFF5wFPz9CZGTGzJaOA==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -135,26 +135,26 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - af4bf0602939b1cb50fef57b4ab50046
+      - fd8d4dbcef9a87df71b4f409eacbbdfc
       X-Runtime:
-      - '0.036200'
+      - '0.054333'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
       Set-Cookie:
-      - bcookie="v=2&b21e025b-3e8b-4d13-8115-ce93ea5d2148"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:02 GMT; SameSite=None
+      - bcookie="v=2&e14022ab-9371-4a23-8bbe-a94fd54a7acb"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:20 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:30
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:48
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - 2hDlVLbXRxawZGdFgCsAAA==
+      - 3TzSJObmRxYARhlq/yoAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -167,7 +167,7 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:30 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:48 GMT
 - request:
     method: get
     uri: https://www.slideshare.net/api/oembed/2?format=json&url=https://de.slideshare.net/gabriele.lana/the-magic-of-elixir
@@ -187,7 +187,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:30 GMT
+      - Mon, 16 Nov 2020 05:47:48 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -199,7 +199,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - hPmgXHzQqjxYwcy2NnkZJA==
+      - l6NjklZLckqBhLr9hlgsXA==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -219,30 +219,26 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4aca44b7f3664c8094f291245defd7fd
+      - 914e175738510189addeeab988c08f99
       X-Runtime:
-      - '0.040089'
+      - '0.060373'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
-      Report-To:
-      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://www.linkedin.com/li/rep"}],"include_subdomains":true}'
-      Nel:
-      - '{"report_to":"network-errors","max_age":1296000,"success_fraction":0.00066,"failure_fraction":1,"include_subdomains":true}'
       Set-Cookie:
-      - bcookie="v=2&08e3ff2c-cff7-4375-8f15-9af929f1e062"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:02 GMT; SameSite=None
+      - bcookie="v=2&9f632bcf-c13a-44d7-82d7-3728a46a57f6"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:20 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:30
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:48
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - wx6Fb7bXRxZgLpiFHCsAAA==
+      - iUw9QebmRxZAIE7C9ioAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -255,7 +251,7 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:30 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:48 GMT
 - request:
     method: get
     uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://slideshare.net/gabriele.lana/the-magic-of-elixir
@@ -275,7 +271,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:31 GMT
+      - Mon, 16 Nov 2020 05:47:49 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -287,7 +283,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - rqpUqZnpdZM6ONb630+VWg==
+      - 1YrWQDk426/UtadQO857rA==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -307,26 +303,26 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9c79b5f9bc5b827d5901bb3240f04873
+      - 4c8ef9d1095429f69826f9d64f6eff48
       X-Runtime:
-      - '0.068306'
+      - '0.075772'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
       Set-Cookie:
-      - bcookie="v=2&92d53b10-e446-41f9-8ad4-ecc027deecbb"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:03 GMT; SameSite=None
+      - bcookie="v=2&f69ccaf1-1d6d-4aea-8463-da76557e6a72"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:21 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:31
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:49
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - i5HwibbXRxYAzf17ZSsAAA==
+      - LeSuXubmRxbQbGAEvioAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -339,7 +335,7 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:31 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:49 GMT
 - request:
     method: get
     uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://www.slideshare.net/gabriele.lana/the-magic-of-elixir
@@ -359,7 +355,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:31 GMT
+      - Mon, 16 Nov 2020 05:47:49 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -371,7 +367,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - "/UMAJYDscqPCq6zmWbWG0A=="
+      - jBzSAu+ko4lwn+7jp23dzg==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -391,30 +387,26 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 49cba16f1277fd6886d6578d207bc983
+      - 0b0ca824219825593a9fe99fe0014388
       X-Runtime:
-      - '0.058994'
+      - '0.073560'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
-      Report-To:
-      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://www.linkedin.com/li/rep"}],"include_subdomains":true}'
-      Nel:
-      - '{"report_to":"network-errors","max_age":1296000,"success_fraction":0.00066,"failure_fraction":1,"include_subdomains":true}'
       Set-Cookie:
-      - bcookie="v=2&19fae28f-dd3b-42f5-840f-c1e806b4cc6f"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:03 GMT; SameSite=None
+      - bcookie="v=2&59881dd4-0d9a-455d-815c-a60d5888043d"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:21 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:31
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:49
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - 2fOqpbbXRxbAcQpMHysAAA==
+      - kY5He+bmRxZAy3N6OCsAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -427,7 +419,7 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:31 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:49 GMT
 - request:
     method: get
     uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://de.slideshare.net/gabriele.lana/the-magic-of-elixir
@@ -447,7 +439,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 01:09:32 GMT
+      - Mon, 16 Nov 2020 05:47:50 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -459,7 +451,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Uuid:
-      - "+gXH7CaRHGFxRep58hm6iw=="
+      - TWu+crXgP3pqfTY8Pf+KqQ==
       X-Content-Type-Options:
       - nosniff
       - nosniff
@@ -479,26 +471,30 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 494690adfa259668d259725f4ee28ac2
+      - f9f37d8d16fa52df4598521f95c40daa
       X-Runtime:
-      - '0.038918'
+      - '0.034391'
       P3p:
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
       X-Li-Fabric:
       - prod-ltx1
+      Report-To:
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://www.linkedin.com/li/rep"}],"include_subdomains":true}'
+      Nel:
+      - '{"report_to":"network-errors","max_age":1296000,"success_fraction":0.00066,"failure_fraction":1,"include_subdomains":true}'
       Set-Cookie:
-      - bcookie="v=2&05ecfa22-0074-4e5b-8c93-bbfda06cf17c"; domain=.slideshare.net;
-        Path=/; Secure; Expires=Wed, 16-Nov-2022 12:47:04 GMT; SameSite=None
+      - bcookie="v=2&e1402c25-12da-4dc2-8f47-33b9cb24ec07"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:22 GMT; SameSite=None
       - language=**; path=/; secure
-      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 01:09:32
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:50
         GMT; SameSite=None
       X-Li-Pop:
       - prod-edc2
       X-Li-Proto:
       - http/1.0
       X-Li-Uuid:
-      - XchMwbbXRxbQODZ62yoAAA==
+      - n/CDmebmRxYgj9VOJSsAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
@@ -511,5 +507,513 @@ http_interactions:
         title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
         \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
         target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
-  recorded_at: Mon, 16 Nov 2020 01:09:32 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:50 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=https://slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - z+0NWBmhEB/bVxjB7H7VtQ==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 158cf554bd43a6d191edf7d4d1765060
+      X-Runtime:
+      - '0.060942'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&8b1a176f-a666-41a8-842d-d1c49bd34660"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:22 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:50
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      X-Li-Uuid:
+      - lftgvebmRxYwoWXTxyoAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:51 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=https://www.slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - Ez/Vp5c2cprPh64D5QlNtg==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 455a7eac6a3b18a87740b8e0fc4d0930
+      X-Runtime:
+      - '0.049223'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&e062f910-c36a-4954-8b8f-06dbc49bb3b5"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:23 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:51
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      X-Li-Uuid:
+      - xszm2ubmRxaAK8XSxyoAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:51 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=https://de.slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - 4/dV/cQn4cFhKtnhfn6RQw==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6c5266fcc7c955b0bf551332e43f0aa7
+      X-Runtime:
+      - '0.048173'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&85e774d6-4b77-48e6-8ca2-bcb2a5d7fabf"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:23 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:51
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      X-Li-Uuid:
+      - 7cCK9ebmRxag30/gUysAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:51 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - 0MjWuGxrh/QF/5kpNcu2Sw==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 31d2d7e4f9eda5da2c62ef243e4468d9
+      X-Runtime:
+      - '0.048237'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&8f851b5d-b5bb-47b7-84f7-1de181d58914"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:24 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:52
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      Report-To:
+      - '{"group":"network-errors","max_age":2592000,"endpoints":[{"url":"https://www.linkedin.com/li/rep"}],"include_subdomains":true}'
+      Nel:
+      - '{"report_to":"network-errors","max_age":1296000,"success_fraction":0.00066,"failure_fraction":1,"include_subdomains":true}'
+      X-Li-Uuid:
+      - ni4GEufmRxZwe1zgVSsAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:52 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://www.slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - Rp9RVJ68DghEer1U37NkbA==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3343cfbce5d1860b0231af20980d90f7
+      X-Runtime:
+      - '0.039186'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&8d608e53-84d8-4b16-8c04-3a8525118ca1"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:24 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:52
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      X-Li-Uuid:
+      - PxaIL+fmRxawAIyHrioAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:52 GMT
+- request:
+    method: get
+    uri: https://www.slideshare.net/api/oembed/2?format=json&url=http://de.slideshare.net/gabriele.lana/the-magic-of-elixir
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Request-Uuid:
+      - CWLUHzA3REiHHFNYU6/J0Q==
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      - nosniff
+      X-Fruc-Version:
+      - FRUC
+      X-Ss-Make-Cacheable:
+      - 'true'
+      X-Bench-Route:
+      - oembed/get_oembed_code
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"a688e6ac5a9c81ca62b865551be5673a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 26a03ab225d65847bbd1296cfc120d74
+      X-Runtime:
+      - '0.041940'
+      P3p:
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      - CP="OTI DSP COR CUR ADM DEV PSD IVD CONo OUR IND"
+      X-Li-Fabric:
+      - prod-ltx1
+      Set-Cookie:
+      - bcookie="v=2&2f2f13ef-b367-4db3-8265-a77cd58c5e6b"; domain=.slideshare.net;
+        Path=/; Secure; Expires=Wed, 16-Nov-2022 17:25:25 GMT; SameSite=None
+      - language=**; path=/; secure
+      - lissc=1; domain=.linkedin.net; Path=/; Secure; Expires=Tue, 16-Nov-2021 05:47:53
+        GMT; SameSite=None
+      X-Li-Pop:
+      - prod-edc2
+      X-Li-Proto:
+      - http/1.0
+      X-Li-Uuid:
+      - 8wsvSufmRxbwa9KPDSsAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","type":"rich","title":"The Magic Of Elixir","author_name":"Gabriele
+        Lana","author_url":"https://www.slideshare.net/gabriele.lana","provider_name":"SlideShare","provider_url":"https://www2.slideshare.net/","html":"\u003Ciframe
+        src=\"https://www.slideshare.net/slideshow/embed_code/key/avVsGA62TMDu6n\"
+        width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+        scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px;
+        max-width: 100%;\" allowfullscreen\u003E \u003C/iframe\u003E \u003Cdiv style=\"margin-bottom:5px\"\u003E
+        \u003Cstrong\u003E \u003Ca href=\"https://www.slideshare.net/gabriele.lana/the-magic-of-elixir\"
+        title=\"The Magic Of Elixir\" target=\"_blank\"\u003EThe Magic Of Elixir\u003C/a\u003E
+        \u003C/strong\u003E from \u003Cstrong\u003E\u003Ca href=\"https://www.slideshare.net/gabriele.lana\"
+        target=\"_blank\"\u003EGabriele Lana\u003C/a\u003E\u003C/strong\u003E \u003C/div\u003E\n\n","width":425,"height":355,"thumbnail":"//cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_url":"https://cdn.slidesharecdn.com/ss_thumbnails/the-magic-of-elixir-150401151316-conversion-gate01-thumbnail.jpg?cb=1427901293","thumbnail_width":170,"thumbnail_height":128,"total_slides":96,"conversion_version":2,"slide_image_baseurl":"//image.slidesharecdn.com/the-magic-of-elixir-150401151316-conversion-gate01/95/slide-","slide_image_baseurl_suffix":"-1024.jpg","version_no":"1427901293","slideshow_id":46553440}'
+  recorded_at: Mon, 16 Nov 2020 05:47:53 GMT
 recorded_with: VCR 6.0.0
