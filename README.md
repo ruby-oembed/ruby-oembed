@@ -34,6 +34,26 @@ resource.html #=> <<-HTML
 HTML
 ```
 
+### Providers requiring an access token
+
+Some built-in providers require authorization in order to work. These providers won't be registered unless an access token is provided. You can either pass access tokens to the `register_app` method.
+
+```ruby
+OEmbed::Providers.register_all(access_tokens: { facebook: @my_facebook_token })
+```
+
+Or you can provide access tokens via environment variable
+```ruby
+ENV['OEMBED_FACEBOOK_TOKEN'] #=> 'my-access-token'
+OEmbed::Providers.register_all
+```
+
+#### Currently supported access tokens
+
+| access_token | environment variable    | Associaed Providers |
+|--------------|-------------------------|---------------------|
+| `:facebook`  | `OEMBED_FACEBOOK_TOKEN` | `FacebookPost`, `FacebookVideo`, `Instagram` |
+
 ## Custom Providers
 
 If you'd like to use a provider that isn't included in the library, it's easy to create one. Just provide the oEmbed API endpoint and URL scheme(s).

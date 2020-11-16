@@ -8,7 +8,7 @@ begin
     task :update_noembed do
       # Details at http://api.embed.ly/docs/service
       json_uri = URI.parse("https://noembed.com/providers")
-      yaml_path = File.join(File.dirname(__FILE__), "../oembed/providers/noembed_urls.yml")
+      yaml_path = File.join(File.dirname(__FILE__), "../oembed/providers/aggregators/noembed_urls.yml")
 
       services = JSON.parse(json_uri.read)
 
@@ -25,7 +25,7 @@ begin
     task :update_embedly do
       # Details at http://api.embed.ly/docs/service
       json_uri = URI.parse("http://api.embed.ly/1/services")
-      yaml_path = File.join(File.dirname(__FILE__), "../oembed/providers/embedly_urls.yml")
+      yaml_path = File.join(File.dirname(__FILE__), "../oembed/providers/aggregators/embedly_urls.yml")
 
       services = JSON.parse(json_uri.read)
 
