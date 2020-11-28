@@ -32,19 +32,4 @@ describe 'Facebook providers' do
       expect(provider).to include(embed_url)
     end
   end
-
-  describe 'Instagram provider' do
-    let(:provider) { OEmbed::Providers::Instagram.new(access_token: access_token) }
-    let(:embed_url) { 'https://www.instagram.com/p/r4nd0m1mg/' }
-
-    it 'sets the endpoint URL' do
-      expect(provider.endpoint).to(
-        eq("https://graph.facebook.com/v8.0/instagram_oembed?access_token=#{access_token}")
-      )
-    end
-
-    it 'recognizes embed URLs' do
-      expect(provider).to include(embed_url)
-    end
-  end
 end
