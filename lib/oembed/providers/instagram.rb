@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module OEmbed
   class Providers
     # Provider for instagram.com
@@ -22,7 +24,18 @@ module OEmbed
          "https://instagr.am/tv/*",
          "https://instagram.com/tv/*",
          "https://www.instagram.com/tv/*"].each { |u| self << u }
+        end
       end
-    end
+
+      # To maintain backwards compatibliity with v0.13.1
+      # we want this class to be able to respond to core OEmbed::Provider instance methods.
+      class Instagram
+        @provider = self.new(access_token: ENV['OEMBED_FACEBOOK_TOKEN'])
+
+        class << self
+          extend Forwardable
+          def_delegators :@provider, :urls, :get, :include?
+        end
+      end
   end
 end
