@@ -29,6 +29,9 @@ def use_custom_vcr_casette(casette_name)
   after(:all) { VCR.eject_cassette }
 end
 
+# Try to prevent a real-world Facebook token from being recorded by VCR
+ENV['OEMBED_FACEBOOK_TOKEN'] = 'A_FAKE_TOKEN_FOR_TESTS'
+
 module OEmbedSpecHelper
   EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))) unless defined?(EXAMPLE)
 

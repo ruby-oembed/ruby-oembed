@@ -30,11 +30,13 @@ module OEmbed
       # To maintain backwards compatibliity with v0.13.1
       # we want this class to be able to respond to core OEmbed::Provider instance methods.
       class Instagram
-        @provider = self.new(access_token: ENV['OEMBED_FACEBOOK_TOKEN'])
-
         class << self
           extend Forwardable
-          def_delegators :@provider, :urls, :get, :include?
+          def_delegators :provider, :urls, :get, :include?
+
+          def provider
+            @provider ||= self.new(access_token: ENV['OEMBED_FACEBOOK_TOKEN'])
+          end
         end
       end
   end
