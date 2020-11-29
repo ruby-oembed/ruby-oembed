@@ -97,6 +97,86 @@ describe OEmbed::Provider do
       expect(provier).to include("http://asdf.com/1")
       expect(provier).to include("asdf")
     end
+
+    describe "the required_query_params option" do
+      let(:provider) {
+        OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: 'PROVIDER_ENV_VAR' })
+      }
+
+      around(:example) { |example|
+        orig_value = ENV['PROVIDER_ENV_VAR']
+        ENV['PROVIDER_ENV_VAR'] = env_var_value
+        example.run
+        ENV['PROVIDER_ENV_VAR'] = orig_value
+      }
+
+      context "with a non-blank env var" do
+        let(:env_var_value) { 'non-blank-value' }
+
+        it "has a working getter" do
+          expect(provider.send_with_query).to eq(env_var_value)
+        end
+
+        it "has a working setter" do
+          provider.send_with_query = env_var_value.succ
+          expect(provider.send_with_query).to eq(env_var_value.succ)
+        end
+
+        it "still throws NoMethodError errors generally" do
+          # puts provider.other_query
+
+          expect { provider.other_query }
+          .to raise_error(NoMethodError)
+
+          expect { provider.other_query = 'val' }
+          .to raise_error(NoMethodError)
+        end
+      end
+
+      context "with a nil env var" do
+        let(:env_var_value) { nil }
+
+        it "has a working getter" do
+          expect(provider.send_with_query).to be_nil
+        end
+
+        it "has a working setter" do
+          provider.send_with_query = 'a-new-val'
+          expect(provider.send_with_query).to eq('a-new-val')
+        end
+
+        it "still throws NoMethodError errors generally" do
+          # puts provider.other_query
+
+          expect { provider.other_query }
+          .to raise_error(NoMethodError)
+
+          expect { provider.other_query = 'val' }
+          .to raise_error(NoMethodError)
+        end
+      end
+
+      context "where the required_query_param conflicts with an existing method name" do
+        let(:provider) {
+          OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { get: 'PROVIDER_ENV_VAR' })
+        }
+        let(:env_var_value) { 'a-conflicted-val' }
+
+        it "does NOT override the get method" do
+          expect { provider.get }
+          .to raise_error(ArgumentError) # because get requires arguments!
+        end
+
+        it "still sets up the @required_query_params internals correctly" do
+          expect(provider.instance_variable_get('@required_query_params')).to eq({ get: env_var_value })
+        end
+
+        it "DOES have a working setter" do
+          provider.get = 'a-new-val'
+          expect(provider.instance_variable_get('@required_query_params')).to eq({ get: 'a-new-val' })
+        end
+      end
+    end
   end
 
   describe "<<" do
