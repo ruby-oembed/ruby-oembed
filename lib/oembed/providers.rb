@@ -211,7 +211,7 @@ module OEmbed
 
     # Provider for twitter.com
     # https://dev.twitter.com/rest/reference/get/statuses/oembed
-    Twitter = OEmbed::Provider.new("https://publish.twitter.com/oembed", :json)
+    Twitter = OEmbed::Provider.new("https://publish.twitter.com/oembed", format: :json)
     Twitter << "https://*.twitter.com/*/status/*"
     add_official_provider(Twitter)
 
@@ -233,7 +233,7 @@ module OEmbed
 
     # Provider for yfrog
     # http://code.google.com/p/imageshackapi/wiki/OEMBEDSupport
-    Yfrog = OEmbed::Provider.new("https://www.yfrog.com/api/oembed", :json)
+    Yfrog = OEmbed::Provider.new("https://www.yfrog.com/api/oembed", format: :json)
     Yfrog << "http://yfrog.com/*"
     add_official_provider(Yfrog)
 
@@ -276,7 +276,7 @@ module OEmbed
 
     # Provider for my.opera.com
     # http://my.opera.com/devblog/blog/2008/12/02/embedding-my-opera-content-oembed
-    MyOpera = OEmbed::Provider.new("http://my.opera.com/service/oembed", :json)
+    MyOpera = OEmbed::Provider.new("http://my.opera.com/service/oembed", format: :json)
     MyOpera << "http://my.opera.com/*"
     add_official_provider(MyOpera)
 
@@ -314,7 +314,7 @@ module OEmbed
 
     # Provider for soundcloud.com
     # http://developers.soundcloud.com/docs/oembed
-    SoundCloud = OEmbed::Provider.new("https://soundcloud.com/oembed", :json)
+    SoundCloud = OEmbed::Provider.new("https://soundcloud.com/oembed", format: :json)
     SoundCloud << "http://*.soundcloud.com/*"
     SoundCloud << "https://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
@@ -344,7 +344,7 @@ module OEmbed
     add_official_provider(Ted)
 
     # Provider for tumblr.com
-    Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", :json)
+    Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", format: :json)
     Tumblr << "http://*.tumblr.com/post/*"
     Tumblr << "https://*.tumblr.com/post/*"
     add_official_provider(Tumblr)
@@ -366,7 +366,7 @@ module OEmbed
     # Embed.ly has taken over the oohembed.com domain and as of July 20 all oohEmbed
     # request will require you use an API key. For details on the transition see
     # http://blog.embed.ly/oohembed
-    OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", :json)
+    OohEmbed = OEmbed::Provider.new("http://oohembed.com/oohembed/", format: :json)
     OohEmbed << "http://*.5min.com/Video/*" # micro-video host
     OohEmbed << %r{http://(.*?).amazon.(com|co.uk|de|ca|jp)/(.*?)/(gp/product|o/ASIN|obidos/ASIN|dp)/(.*?)} # Online product shopping
     OohEmbed << "http://*.blip.tv/*"

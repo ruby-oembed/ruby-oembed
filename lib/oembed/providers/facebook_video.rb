@@ -3,7 +3,7 @@ module OEmbed
     # Provider for Facebook videos
     class FacebookVideo < OEmbed::Provider
       def initialize(access_token:)
-        super("https://graph.facebook.com/v8.0/oembed_video?access_token=#{access_token}", :json)
+        super("https://graph.facebook.com/v8.0/oembed_video?access_token=#{access_token}", format: :json)
         register_urls!
       end
 

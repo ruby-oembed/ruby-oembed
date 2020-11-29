@@ -27,7 +27,7 @@ describe 'OEmbed::Providers::Twitter' do
         describe ".get" do
           it "should encounter a 400 error" do
             expect {
-              provider.get(valid_url, :format=>:xml)
+              provider.get(valid_url, format: :xml)
             }.to raise_error(OEmbed::UnknownResponse, /\b400\b/)
           end
         end

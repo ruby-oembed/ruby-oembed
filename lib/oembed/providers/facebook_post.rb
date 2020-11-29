@@ -3,7 +3,7 @@ module OEmbed
     # Provider for Facebook posts
     class FacebookPost < OEmbed::Provider
       def initialize(access_token:)
-        super("https://graph.facebook.com/v8.0/oembed_post?access_token=#{access_token}", :json)
+        super("https://graph.facebook.com/v8.0/oembed_post?access_token=#{access_token}", format: :json)
         register_urls!
       end
 

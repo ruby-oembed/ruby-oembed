@@ -13,8 +13,8 @@ describe OEmbed::Provider do
   before(:all) do
     @default = OEmbed::Formatter.default
     @flickr = OEmbed::Provider.new("http://www.flickr.com/services/oembed/")
-    @qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
-    @viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
+    @qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", format: :xml)
+    @viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", format: :json)
 
     @flickr << "http://*.flickr.com/*"
     @qik << "http://qik.com/video/*"
@@ -24,15 +24,20 @@ describe OEmbed::Provider do
 
   describe "initialize" do
     it "should by default use OEmbed::Formatter.default" do
-      expect(@flickr.format).to eq(@default)
+      provider = OEmbed::Provider.new("http://foo.com/oembed/")
+      expect(provider.format).to eq(OEmbed::Formatter.default)
     end
 
-    it "should allow xml" do
-      expect(@qik.format).to eq(:xml)
-    end
+    [:xml, :json].each do |given_format|
+      it "should allow #{given_format} format via positional argument" do
+        provider = OEmbed::Provider.new("http://foo.com/oembed/", given_format)
+        expect( provider.format ).to eq(given_format)
+      end
 
-    it "should allow json" do
-      expect(@viddler.format).to eq(:json)
+      it "should allow #{given_format} format via named argument" do
+        provider = OEmbed::Provider.new("http://foo.com/oembed/", format: given_format)
+        expect( provider.format ).to eq(given_format)
+      end
     end
 
     it "should require a valid endpoint for a new instance" do
@@ -63,14 +68,14 @@ describe OEmbed::Provider do
 
     it "should allow random formats on initialization" do
       expect {
-        yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+        yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", format: :yml)
         yaml_provider << "http://foo.com/*"
       }.
       not_to raise_error
     end
 
     it "should not allow random formats to be parsed" do
-      yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+      yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", format: :yml)
       yaml_provider << "http://foo.com/*"
       yaml_url = "http://foo.com/video/1"
 

@@ -39,6 +39,8 @@ module OEmbed
     # If give, the format should be the name of the default format for all request
     # to this Provider (e.g. 'json'). Defaults to OEmbed::Formatter.default
     #
+    # # @deprecated *Note*: The `positional_format` is deprecated. Please used the named argument instead.
+    #
     # For example:
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed?format=#{OEmbed::Formatter.default}"
@@ -46,14 +48,14 @@ module OEmbed
     #
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed.xml"
-    #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
-    def initialize(endpoint, format = OEmbed::Formatter.default)
+    #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", format: :xml)
+    def initialize(endpoint, positional_format = OEmbed::Formatter.default, format: nil)
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
 
       @endpoint = endpoint
       @urls = []
-      @format = format
+      @format = format || positional_format
     end
 
     # Adds the given url scheme to this Provider instance.
