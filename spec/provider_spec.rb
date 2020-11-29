@@ -22,187 +22,193 @@ describe OEmbed::Provider do
     @viddler << "http://*.viddler.com/*"
   end
 
-  it "should require a valid endpoint for a new instance" do
-    expect { OEmbed::Provider.new("http://foo.com/oembed/") }.
-    not_to raise_error
+  describe "initialize" do
+    it "should by default use OEmbed::Formatter.default" do
+      expect(@flickr.format).to eq(@default)
+    end
 
-    expect { OEmbed::Provider.new("https://foo.com/oembed/") }.
-    not_to raise_error
-  end
+    it "should allow xml" do
+      expect(@qik.format).to eq(:xml)
+    end
 
-  it "should allow a {format} string in the endpoint for a new instance" do
-    expect { OEmbed::Provider.new("http://foo.com/oembed.{format}/get") }.
-    not_to raise_error
-  end
+    it "should allow json" do
+      expect(@viddler.format).to eq(:json)
+    end
 
-  it "should raise an ArgumentError given an invalid endpoint for a new instance" do
-    [
-      "httpx://foo.com/oembed/",
-      "ftp://foo.com/oembed/",
-      "foo.com/oembed/",
-      "http://not a uri",
-      nil, 1,
-    ].each do |endpoint|
-      expect { OEmbed::Provider.new(endpoint) }.
-      to raise_error(ArgumentError)
+    it "should require a valid endpoint for a new instance" do
+      expect { OEmbed::Provider.new("http://foo.com/oembed/") }.
+      not_to raise_error
+
+      expect { OEmbed::Provider.new("https://foo.com/oembed/") }.
+      not_to raise_error
+    end
+
+    it "should allow a {format} string in the endpoint for a new instance" do
+      expect { OEmbed::Provider.new("http://foo.com/oembed.{format}/get") }.
+      not_to raise_error
+    end
+
+    it "should raise an ArgumentError given an invalid endpoint for a new instance" do
+      [
+        "httpx://foo.com/oembed/",
+        "ftp://foo.com/oembed/",
+        "foo.com/oembed/",
+        "http://not a uri",
+        nil, 1,
+      ].each do |endpoint|
+        expect { OEmbed::Provider.new(endpoint) }.
+        to raise_error(ArgumentError)
+      end
+    end
+
+    it "should allow random formats on initialization" do
+      expect {
+        yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+        yaml_provider << "http://foo.com/*"
+      }.
+      not_to raise_error
+    end
+
+    it "should not allow random formats to be parsed" do
+      yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
+      yaml_provider << "http://foo.com/*"
+      yaml_url = "http://foo.com/video/1"
+
+      expect(yaml_provider).to receive(:raw).
+        with(yaml_url, {:format=>:yml}).
+        and_return(valid_response(:json))
+
+      expect { yaml_provider.get(yaml_url) }.
+      to raise_error(OEmbed::FormatNotSupported)
+    end
+
+    it "should allow no URI schema to be given" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+
+      expect(provier).to include("http://foo.com/1")
+      expect(provier).to include("http://bar.foo.com/1")
+      expect(provier).to include("http://bar.foo.com/show/1")
+      expect(provier).to include("https://bar.foo.com/1")
+      expect(provier).to include("http://asdf.com/1")
+      expect(provier).to include("asdf")
     end
   end
 
-  it "should allow no URI schema to be given" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
+  describe "<<" do
+    it "should add URL schemes" do
+      expect(@flickr.urls).to eq([%r{^http://([^\.]+\.)?flickr\.com/(.*?)}])
+      expect(@qik.urls).to eq([
+        %r{^http://qik\.com/video/(.*?)},
+        %r{^http://qik\.com/(.*?)}
+      ])
+    end
 
-    expect(provier).to include("http://foo.com/1")
-    expect(provier).to include("http://bar.foo.com/1")
-    expect(provier).to include("http://bar.foo.com/show/1")
-    expect(provier).to include("https://bar.foo.com/1")
-    expect(provier).to include("http://asdf.com/1")
-    expect(provier).to include("asdf")
-  end
+    it "should match URLs" do
+      expect(@flickr).to include(example_url(:flickr))
+      expect(@qik).to include(example_url(:qik))
+    end
 
-  it "should allow a String as a URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << "http://bar.foo.com/*"
+    it "should allow a String as a URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << "http://bar.foo.com/*"
 
-    expect(provier).to include("http://bar.foo.com/1")
-    expect(provier).to include("http://bar.foo.com/show/1")
+      expect(provier).to include("http://bar.foo.com/1")
+      expect(provier).to include("http://bar.foo.com/show/1")
 
-    expect(provier).to_not include("https://bar.foo.com/1")
-    expect(provier).to_not include("http://foo.com/1")
-  end
+      expect(provier).to_not include("https://bar.foo.com/1")
+      expect(provier).to_not include("http://foo.com/1")
+    end
 
-  it "should allow multiple path wildcards in a String URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << "http://bar.foo.com/*/show/*"
+    it "should allow multiple path wildcards in a String URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << "http://bar.foo.com/*/show/*"
 
-    expect(provier).to include("http://bar.foo.com/photo/show/1")
-    expect(provier).to include("http://bar.foo.com/video/show/2")
-    expect(provier).to include("http://bar.foo.com/help/video/show/2")
+      expect(provier).to include("http://bar.foo.com/photo/show/1")
+      expect(provier).to include("http://bar.foo.com/video/show/2")
+      expect(provier).to include("http://bar.foo.com/help/video/show/2")
 
-    expect(provier).to_not include("https://bar.foo.com/photo/show/1")
-    expect(provier).to_not include("http://foo.com/video/show/2")
-    expect(provier).to_not include("http://bar.foo.com/show/1")
-    expect(provier).to_not include("http://bar.foo.com/1")
-  end
+      expect(provier).to_not include("https://bar.foo.com/photo/show/1")
+      expect(provier).to_not include("http://foo.com/video/show/2")
+      expect(provier).to_not include("http://bar.foo.com/show/1")
+      expect(provier).to_not include("http://bar.foo.com/1")
+    end
 
-  it "should NOT allow multiple domain wildcards in a String URI schema", :pending => true do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
+    it "should NOT allow multiple domain wildcards in a String URI schema", :pending => true do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
 
-    expect { provier << "http://*.com/*" }.
-    to raise_error(ArgumentError)
+      expect { provier << "http://*.com/*" }.
+      to raise_error(ArgumentError)
 
-    expect(provier).to_not include("http://foo.com/1")
-  end
+      expect(provier).to_not include("http://foo.com/1")
+    end
 
-  it "should allow a sub-domain wildcard in String URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << "http://*.foo.com/*"
+    it "should allow a sub-domain wildcard in String URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << "http://*.foo.com/*"
 
-    expect(provier).to include("http://bar.foo.com/1")
-    expect(provier).to include("http://foo.foo.com/2")
-    expect(provier).to include("http://foo.com/3")
+      expect(provier).to include("http://bar.foo.com/1")
+      expect(provier).to include("http://foo.foo.com/2")
+      expect(provier).to include("http://foo.com/3")
 
-    expect(provier).to_not include("https://bar.foo.com/1")
-    expect(provier).to_not include("http://my.bar.foo.com/1")
+      expect(provier).to_not include("https://bar.foo.com/1")
+      expect(provier).to_not include("http://my.bar.foo.com/1")
 
-    provier << "http://my.*.foo.com/*"
-  end
+      provier << "http://my.*.foo.com/*"
+    end
 
-  it "should allow multiple sub-domain wildcards in a String URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << "http://*.my.*.foo.com/*"
+    it "should allow multiple sub-domain wildcards in a String URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << "http://*.my.*.foo.com/*"
 
-    expect(provier).to include("http://my.bar.foo.com/1")
-    expect(provier).to include("http://my.foo.com/2")
-    expect(provier).to include("http://bar.my.bar.foo.com/3")
+      expect(provier).to include("http://my.bar.foo.com/1")
+      expect(provier).to include("http://my.foo.com/2")
+      expect(provier).to include("http://bar.my.bar.foo.com/3")
 
-    expect(provier).to_not include("http://bar.foo.com/1")
-    expect(provier).to_not include("http://foo.bar.foo.com/1")
-  end
+      expect(provier).to_not include("http://bar.foo.com/1")
+      expect(provier).to_not include("http://foo.bar.foo.com/1")
+    end
 
-  it "should NOT allow a scheme wildcard in a String URI schema", :pending => true do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
+    it "should NOT allow a scheme wildcard in a String URI schema", :pending => true do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
 
-    expect { provier << "*://foo.com/*" }.
-    to raise_error(ArgumentError)
+      expect { provier << "*://foo.com/*" }.
+      to raise_error(ArgumentError)
 
-    expect(provier).to_not include("http://foo.com/1")
-  end
+      expect(provier).to_not include("http://foo.com/1")
+    end
 
-  it "should allow a scheme other than http in a String URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << "https://foo.com/*"
+    it "should allow a scheme other than http in a String URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << "https://foo.com/*"
 
-    expect(provier).to include("https://foo.com/1")
+      expect(provier).to include("https://foo.com/1")
 
-    gopher_url = "gopher://foo.com/1"
-    expect(provier).to_not include(gopher_url)
-    provier << "gopher://foo.com/*"
-    expect(provier).to include(gopher_url)
-  end
+      gopher_url = "gopher://foo.com/1"
+      expect(provier).to_not include(gopher_url)
+      provier << "gopher://foo.com/*"
+      expect(provier).to include(gopher_url)
+    end
 
-  it "should allow a Regexp as a URI schema" do
-    provier = OEmbed::Provider.new("http://foo.com/oembed")
-    provier << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
+    it "should allow a Regexp as a URI schema" do
+      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provier << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
 
-    expect(provier).to include("http://bar.foo.com/1")
-    expect(provier).to include("http://bar.foo.com/show/1")
-    expect(provier).to include("http://foo.com/1")
-    expect(provier).to include("https://bar.foo.com/1")
+      expect(provier).to include("http://bar.foo.com/1")
+      expect(provier).to include("http://bar.foo.com/show/1")
+      expect(provier).to include("http://foo.com/1")
+      expect(provier).to include("https://bar.foo.com/1")
 
-    expect(provier).to_not include("http://bar.foo.com/video/1")
-    expect(provier).to_not include("gopher://foo.com/1")
-  end
-
-  it "should by default use OEmbed::Formatter.default" do
-    expect(@flickr.format).to eq(@default)
-  end
-
-  it "should allow xml" do
-    expect(@qik.format).to eq(:xml)
-  end
-
-  it "should allow json" do
-    expect(@viddler.format).to eq(:json)
-  end
-
-  it "should allow random formats on initialization" do
-    expect {
-      yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
-      yaml_provider << "http://foo.com/*"
-    }.
-    not_to raise_error
-  end
-
-  it "should not allow random formats to be parsed" do
-    yaml_provider = OEmbed::Provider.new("http://foo.com/api/oembed.{format}", :yml)
-    yaml_provider << "http://foo.com/*"
-    yaml_url = "http://foo.com/video/1"
-
-    expect(yaml_provider).to receive(:raw).
-      with(yaml_url, {:format=>:yml}).
-      and_return(valid_response(:json))
-
-    expect { yaml_provider.get(yaml_url) }.
-    to raise_error(OEmbed::FormatNotSupported)
-  end
-
-  it "should add URL schemes" do
-    expect(@flickr.urls).to eq([%r{^http://([^\.]+\.)?flickr\.com/(.*?)}])
-    expect(@qik.urls).to eq([%r{^http://qik\.com/video/(.*?)},
-                         %r{^http://qik\.com/(.*?)}])
-  end
-
-  it "should match URLs" do
-    expect(@flickr).to include(example_url(:flickr))
-    expect(@qik).to include(example_url(:qik))
-  end
-
-  it "should raise error if the URL is invalid" do
-    expect{ @flickr.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
-    expect{ @qik.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
+      expect(provier).to_not include("http://bar.foo.com/video/1")
+      expect(provier).to_not include("gopher://foo.com/1")
+    end
   end
 
   describe "#build" do
+    it "should raise error if the URL is invalid" do
+      expect{ @flickr.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
+      expect{ @qik.send(:build, example_url(:fake)) }.to raise_error(OEmbed::NotFound)
+    end
+
     it "should return a proper URL" do
       uri = @flickr.send(:build, example_url(:flickr))
       expect(uri.host).to eq("www.flickr.com")
