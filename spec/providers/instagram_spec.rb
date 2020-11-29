@@ -14,15 +14,13 @@ describe 'OEmbed::Providers::Instagram' do
     https://www.instagram.com/u/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
   )
 
-  describe 'behaving like a custom OEmbed::Provider class' do
-    let(:access_token) { 'my-fake-access-token' }
+  describe 'DEPRECATED: behaves like a custom OEmbed::Provider class for v0.14.0 backwards compatibility' do
+    let(:access_token) { 'A_FAKE_TOKEN_FOR_TESTS' }
     let(:provider_instance) { provider.new(access_token: access_token) }
     let(:embed_url) { expected_valid_urls.first }
 
-    it 'sets the endpoint URL' do
-      expect(provider_instance.endpoint).to(
-        eq("https://graph.facebook.com/v8.0/instagram_oembed?access_token=#{access_token}")
-      )
+    it 'sets the access_token' do
+      expect(provider_instance.access_token).to eq(access_token)
     end
 
     it 'recognizes embed URLs' do
