@@ -119,7 +119,9 @@ module OEmbed
 
     # Determine whether the given url is supported by this Provider by matching
     # against the Provider's URL schemes.
+    # It will always return false of a provider has required_query_params that are not set.
     def include?(url)
+      return false if @required_query_params.values.include?(nil)
       @urls.empty? || !!@urls.detect{ |u| u =~ url }
     end
 

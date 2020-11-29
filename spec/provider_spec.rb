@@ -448,6 +448,26 @@ describe OEmbed::Provider do
       @viddler.get(example_url(:viddler))
     end
 
+    context "with require_query_params" do
+      let(:provider) { OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: 'PROVIDER_ENV_VAR' }) }
+
+      it "should add the required_query_params to the URI" do
+        provider.send_with_query = 'non-blank-value'
+
+        expect(provider).to receive(:http_get).
+          with(have_attributes(query: match(/send_with_query=non-blank-value/)), :format => @default).
+          and_return(valid_response(:json))
+        provider.get(example_url(:fake))
+      end
+
+      it "should claim to not match if the required_query_params are missing" do
+        allow(provider).to receive(:http_get).and_return(valid_response(:json))
+
+        expect { provider.get(example_url(:fake)) }.
+        to raise_error(OEmbed::NotFound)
+      end
+    end
+
     it "handles the :timeout option", pending: true do
       expect_any_instance_of(Net::HTTP).to receive(:open_timeout=).with(5)
       expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(5)
