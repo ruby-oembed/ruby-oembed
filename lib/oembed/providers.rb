@@ -81,7 +81,7 @@ module OEmbed
         @@fallback
       end
 
-      # Returns a Provider instance who's url scheme matches the given url.
+      # Returns a Provider instance whose url scheme matches the given url.
       def find(url)
         providers = @@urls[@@urls.keys.detect { |u| u =~ url }]
         Array(providers).first || nil

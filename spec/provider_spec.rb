@@ -474,4 +474,51 @@ describe OEmbed::Provider do
       @flickr.get(example_url(:flickr), :timeout => 5)
     end
   end
+
+  describe "#set_required_query_params" do
+    let(:provider) { OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: 'PROVIDER_ENV_VAR' }) }
+
+    around(:example) { |example|
+      orig_value = ENV['PROVIDER_ENV_VAR']
+      ENV['PROVIDER_ENV_VAR'] = 'a non-nil value'
+      example.run
+      ENV['PROVIDER_ENV_VAR'] = orig_value
+    }
+
+    it 'META: the around works as expected' do
+      expect(provider.send_with_query).to eq('a non-nil value')
+      expect(provider.required_query_params_set?).to be_truthy
+    end
+
+    [
+      [true, 'true'],
+      [false, 'false'],
+      ['one two', 'one+two'],
+      ['a@&?%25', 'a%40%26%3F%2525'],
+    ].each do |given_value, expected_value|
+      context "given #{given_value.inspect}" do
+        before(:each) { provider.send_with_query = given_value }
+
+        it "stringifies and escapes the value" do
+          expect(provider.send_with_query).to eq(expected_value)
+        end
+
+        it "satisfies required_query_params_set?" do
+          expect(provider.required_query_params_set?).to be_truthy
+        end
+      end
+    end
+
+    context "given nil" do
+      before(:each) { provider.send_with_query = nil }
+
+      it "nils the existing value" do
+        expect(provider.send_with_query).to be_nil
+      end
+
+      it "sets required_query_params_set? to falsey" do
+        expect(provider.required_query_params_set?).to be_falsey
+      end
+    end
+  end
 end

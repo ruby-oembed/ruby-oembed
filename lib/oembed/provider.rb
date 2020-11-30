@@ -71,6 +71,7 @@ module OEmbed
         define_singleton_method("#{param}") { @required_query_params[param] } unless respond_to?("#{param}")
         define_singleton_method("#{param}=") { |val| set_required_query_params(param, val) } unless respond_to?("#{param}=")
       end
+      required_query_params_set?(reset_cache: true)
 
       @endpoint = endpoint
       @urls = []
@@ -96,10 +97,26 @@ module OEmbed
       @urls << url
     end
 
+    # Given the name of a required_query_param and a value
+    # store that value internally, so that it can be sent along
+    # with requests to this provider's endpoint.
+    # Raises an ArgumentError if the given param is not listed with required_query_params
+    # during instantiation.
     def set_required_query_params(param, val)
       raise ArgumentError.new("This provider does NOT have a required_query_param named #{param.inspect}") unless @required_query_params.has_key?(param)
 
-      @required_query_params[param] = ::CGI.escape(val)
+      @required_query_params[param] = val.nil? ? nil : ::CGI.escape(val.to_s)
+
+      required_query_params_set?(reset_cache: true)
+
+      @required_query_params[param]
+    end
+
+    # Returns true if all of this provider's required_query_params have a value
+    def required_query_params_set?(reset_cache: false)
+      return @all_required_query_params_set unless reset_cache || @all_required_query_params_set.nil?
+
+      @all_required_query_params_set = !@required_query_params.values.include?(nil)
     end
 
     # Send a request to the Provider endpoint to get information about the
@@ -121,7 +138,7 @@ module OEmbed
     # against the Provider's URL schemes.
     # It will always return false of a provider has required_query_params that are not set.
     def include?(url)
-      return false if @required_query_params.values.include?(nil)
+      return false unless required_query_params_set?
       @urls.empty? || !!@urls.detect{ |u| u =~ url }
     end
 
