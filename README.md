@@ -50,8 +50,8 @@ OEmbed::Providers.register_all
 
 #### Currently supported access tokens
 
-| access_token | environment variable    | Associaed Providers |
-|--------------|-------------------------|---------------------|
+| access_token | environment variable    | Associated Providers |
+|--------------|-------------------------|----------------------|
 | `:facebook`  | `OEMBED_FACEBOOK_TOKEN` | `FacebookPost`, `FacebookVideo`, `Instagram` |
 
 ## Custom Providers

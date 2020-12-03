@@ -10,7 +10,7 @@
 == 0.14.0 - 5 November 2020
 
 * *BREAKING* Built-in providers for Instagram & Facebook are now classes, not instances, and therefore can't manually be registered via `OEmbed::Providers.register(OEmbed::Providers::Instagram)`; See Issue #77
-* Add support for Facebook/Instragram access tokens; Pull #75 (Inge Jørgensen)
+* Add support for Facebook/Instagram access tokens; Pull #75 (Inge Jørgensen)
 
 == 0.13.1 - 25 May 2020
 

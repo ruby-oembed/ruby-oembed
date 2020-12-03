@@ -88,14 +88,14 @@ describe OEmbed::Provider do
     end
 
     it "should allow no URI schema to be given" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
 
-      expect(provier).to include("http://foo.com/1")
-      expect(provier).to include("http://bar.foo.com/1")
-      expect(provier).to include("http://bar.foo.com/show/1")
-      expect(provier).to include("https://bar.foo.com/1")
-      expect(provier).to include("http://asdf.com/1")
-      expect(provier).to include("asdf")
+      expect(provider).to include("http://foo.com/1")
+      expect(provider).to include("http://bar.foo.com/1")
+      expect(provider).to include("http://bar.foo.com/show/1")
+      expect(provider).to include("https://bar.foo.com/1")
+      expect(provider).to include("http://asdf.com/1")
+      expect(provider).to include("asdf")
     end
 
     describe "the required_query_params option" do
@@ -209,97 +209,97 @@ describe OEmbed::Provider do
     end
 
     it "should allow a String as a URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << "http://bar.foo.com/*"
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << "http://bar.foo.com/*"
 
-      expect(provier).to include("http://bar.foo.com/1")
-      expect(provier).to include("http://bar.foo.com/show/1")
+      expect(provider).to include("http://bar.foo.com/1")
+      expect(provider).to include("http://bar.foo.com/show/1")
 
-      expect(provier).to_not include("https://bar.foo.com/1")
-      expect(provier).to_not include("http://foo.com/1")
+      expect(provider).to_not include("https://bar.foo.com/1")
+      expect(provider).to_not include("http://foo.com/1")
     end
 
     it "should allow multiple path wildcards in a String URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << "http://bar.foo.com/*/show/*"
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << "http://bar.foo.com/*/show/*"
 
-      expect(provier).to include("http://bar.foo.com/photo/show/1")
-      expect(provier).to include("http://bar.foo.com/video/show/2")
-      expect(provier).to include("http://bar.foo.com/help/video/show/2")
+      expect(provider).to include("http://bar.foo.com/photo/show/1")
+      expect(provider).to include("http://bar.foo.com/video/show/2")
+      expect(provider).to include("http://bar.foo.com/help/video/show/2")
 
-      expect(provier).to_not include("https://bar.foo.com/photo/show/1")
-      expect(provier).to_not include("http://foo.com/video/show/2")
-      expect(provier).to_not include("http://bar.foo.com/show/1")
-      expect(provier).to_not include("http://bar.foo.com/1")
+      expect(provider).to_not include("https://bar.foo.com/photo/show/1")
+      expect(provider).to_not include("http://foo.com/video/show/2")
+      expect(provider).to_not include("http://bar.foo.com/show/1")
+      expect(provider).to_not include("http://bar.foo.com/1")
     end
 
     it "should NOT allow multiple domain wildcards in a String URI schema", :pending => true do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
 
-      expect { provier << "http://*.com/*" }.
+      expect { provider << "http://*.com/*" }.
       to raise_error(ArgumentError)
 
-      expect(provier).to_not include("http://foo.com/1")
+      expect(provider).to_not include("http://foo.com/1")
     end
 
     it "should allow a sub-domain wildcard in String URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << "http://*.foo.com/*"
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << "http://*.foo.com/*"
 
-      expect(provier).to include("http://bar.foo.com/1")
-      expect(provier).to include("http://foo.foo.com/2")
-      expect(provier).to include("http://foo.com/3")
+      expect(provider).to include("http://bar.foo.com/1")
+      expect(provider).to include("http://foo.foo.com/2")
+      expect(provider).to include("http://foo.com/3")
 
-      expect(provier).to_not include("https://bar.foo.com/1")
-      expect(provier).to_not include("http://my.bar.foo.com/1")
+      expect(provider).to_not include("https://bar.foo.com/1")
+      expect(provider).to_not include("http://my.bar.foo.com/1")
 
-      provier << "http://my.*.foo.com/*"
+      provider << "http://my.*.foo.com/*"
     end
 
     it "should allow multiple sub-domain wildcards in a String URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << "http://*.my.*.foo.com/*"
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << "http://*.my.*.foo.com/*"
 
-      expect(provier).to include("http://my.bar.foo.com/1")
-      expect(provier).to include("http://my.foo.com/2")
-      expect(provier).to include("http://bar.my.bar.foo.com/3")
+      expect(provider).to include("http://my.bar.foo.com/1")
+      expect(provider).to include("http://my.foo.com/2")
+      expect(provider).to include("http://bar.my.bar.foo.com/3")
 
-      expect(provier).to_not include("http://bar.foo.com/1")
-      expect(provier).to_not include("http://foo.bar.foo.com/1")
+      expect(provider).to_not include("http://bar.foo.com/1")
+      expect(provider).to_not include("http://foo.bar.foo.com/1")
     end
 
     it "should NOT allow a scheme wildcard in a String URI schema", :pending => true do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
 
-      expect { provier << "*://foo.com/*" }.
+      expect { provider << "*://foo.com/*" }.
       to raise_error(ArgumentError)
 
-      expect(provier).to_not include("http://foo.com/1")
+      expect(provider).to_not include("http://foo.com/1")
     end
 
     it "should allow a scheme other than http in a String URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << "https://foo.com/*"
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << "https://foo.com/*"
 
-      expect(provier).to include("https://foo.com/1")
+      expect(provider).to include("https://foo.com/1")
 
       gopher_url = "gopher://foo.com/1"
-      expect(provier).to_not include(gopher_url)
-      provier << "gopher://foo.com/*"
-      expect(provier).to include(gopher_url)
+      expect(provider).to_not include(gopher_url)
+      provider << "gopher://foo.com/*"
+      expect(provider).to include(gopher_url)
     end
 
     it "should allow a Regexp as a URI schema" do
-      provier = OEmbed::Provider.new("http://foo.com/oembed")
-      provier << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
+      provider = OEmbed::Provider.new("http://foo.com/oembed")
+      provider << %r{^https?://([^\.]*\.)?foo.com/(show/)?\d+}
 
-      expect(provier).to include("http://bar.foo.com/1")
-      expect(provier).to include("http://bar.foo.com/show/1")
-      expect(provier).to include("http://foo.com/1")
-      expect(provier).to include("https://bar.foo.com/1")
+      expect(provider).to include("http://bar.foo.com/1")
+      expect(provider).to include("http://bar.foo.com/show/1")
+      expect(provider).to include("http://foo.com/1")
+      expect(provider).to include("https://bar.foo.com/1")
 
-      expect(provier).to_not include("http://bar.foo.com/video/1")
-      expect(provier).to_not include("gopher://foo.com/1")
+      expect(provider).to_not include("http://bar.foo.com/video/1")
+      expect(provider).to_not include("gopher://foo.com/1")
     end
   end
 
