@@ -5,6 +5,7 @@
 * *DEPRECATION* When creating an `OEmbed::Provider` instance, specifying the format via positional argument is now deprecated. Please use a named argument instead: `OEmbed::Provider.new(@endpoint_url, format: :json)`
 * Fix Issue #77: Built-in Instagram & Facebook providers are now instances again.
 * Add support for `OEmbed::Provider` instances with `required_query_params` (like access tokens), where the provider will fail to answer until it is fully configured.
+* Support focused rspec tests for local development (e.g. "fcontext" or "fit")
 
 == 0.14.0 - 5 November 2020
 
