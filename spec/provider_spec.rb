@@ -131,6 +131,21 @@ describe OEmbed::Provider do
           expect { provider.other_query = 'val' }
           .to raise_error(NoMethodError)
         end
+
+        context "but no env var name for the required_query_params" do
+          let(:provider) {
+            OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: false })
+          }
+
+          it "has a working getter" do
+            expect(provider.send_with_query).to be_nil
+          end
+
+          it "has a working setter" do
+            provider.send_with_query = 'non-blank-value'
+            expect(provider.send_with_query).to eq('non-blank-value')
+          end
+        end
       end
 
       context "with a nil env var" do

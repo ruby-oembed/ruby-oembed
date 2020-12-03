@@ -17,7 +17,7 @@ describe OEmbed::Providers do
   end
 
   describe ".register" do
-    it "should register providers" do
+    it "should register multiple providers at once" do
       expect(OEmbed::Providers.urls).to be_empty
 
       OEmbed::Providers.register(@flickr, @qik)
@@ -35,11 +35,20 @@ describe OEmbed::Providers do
       end
     end
 
-    it "should find by URLs" do
-      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+    it "should register providers with missing required_query_params" do
+      expect(OEmbed::Providers.urls).to be_empty
 
-      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      provider = OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: nil })
+      provider << 'http://media.foo.com/*'
+
+      OEmbed::Providers.register(provider)
+
+      expect(OEmbed::Providers.urls.keys).to eq(provider.urls)
+
+      provider.urls.each do |regexp|
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(provider)
+      end
     end
   end
 
@@ -121,6 +130,15 @@ describe OEmbed::Providers do
 	#    with(url, {}).
 	#    and_return(valid_response(:object))
   #end
+
+  describe "#find" do
+    it "should find by URLs" do
+      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+
+      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
+      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+    end
+  end
 
   describe "#raw and #get" do
     it "should bridge #get and #raw to the right provider" do
