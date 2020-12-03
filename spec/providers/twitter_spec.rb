@@ -23,7 +23,7 @@ describe 'OEmbed::Providers::Twitter' do
   )
 
   it_should_behave_like(
-    "an OEmbed::Proviers instance",
+    "an OEmbed::Providers instance",
     expected_valid_urls,
     expected_invalid_urls
   )
