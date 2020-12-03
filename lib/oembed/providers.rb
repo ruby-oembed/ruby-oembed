@@ -82,9 +82,18 @@ module OEmbed
       end
 
       # Returns a Provider instance whose url scheme matches the given url.
+      # Skips any Provider with missing required_query_params.
       def find(url)
-        providers = @@urls[@@urls.keys.detect { |u| u =~ url }]
-        Array(providers).first || nil
+        @@urls.keys.each do |url_regexp|
+          next unless url_regexp.match?(url)
+
+          matching_provider = @@urls[url_regexp].detect { |p| p.include?(url) }
+
+          # If we've found a matching provider, return it right away!
+          return matching_provider if matching_provider
+        end
+
+        nil
       end
 
       # Finds the appropriate Provider for this url and return the raw response.

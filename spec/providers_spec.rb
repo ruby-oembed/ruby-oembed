@@ -132,11 +132,130 @@ describe OEmbed::Providers do
   #end
 
   describe "#find" do
-    it "should find by URLs" do
-      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+    let(:url_scheme) { 'http://media.foo.com/*' }
+    let(:providerA) {
+      p = OEmbed::Provider.new("http://a.foo.com/oembed")
+      p << url_scheme
+      p
+    }
+    let(:providerB) {
+      p = OEmbed::Provider.new("http://b.foo.com/oembed")
+      p << url_scheme
+      p
+    }
 
-      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+    let(:url_to_find) { 'http://media.foo.com/which-one?' }
+    subject { OEmbed::Providers.find(url_to_find) }
+
+    context "when there registered providers are distinct" do
+      before { OEmbed::Providers.register(@flickr, @qik, providerA) }
+
+      it "should find providerA" do
+        should eq(providerA)
+      end
+
+      it "should find by any of the registered providers by URL" do
+        expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
+        expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      end
+    end
+
+    context "when the registered provider has missing required_query_params" do
+      let(:providerA) {
+        p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+        p << url_scheme
+        p
+      }
+      before { OEmbed::Providers.register(providerA) }
+
+      it "should NOT find the provider" do
+        should be_nil
+      end
+
+      context "but then later has the required_query_param set" do
+        it "should find providerA" do
+          providerA.send_with_query = 'a non-blank val'
+
+          should eq(providerA)
+        end
+      end
+    end
+
+    context "when multiple providers match the same URL" do
+      it "should find one match" do
+        OEmbed::Providers.register(providerA, providerB)
+
+        should eq(providerA).or eq(providerB)
+      end
+
+      context "when providerA has missing required_query_params" do
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+          p << url_scheme
+          p
+        }
+
+        it "should find the provider with satisfied required_query_params" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerB)
+        end
+
+        it "should find the provider with satisfied required_query_params, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerB)
+        end
+      end
+
+      context "when providerA has satisfied required_query_params" do
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+          p.send_with_query = 'a non-blank value'
+          p << url_scheme
+          p
+        }
+
+        it "should find one match" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerA).or eq(providerB)
+        end
+
+        it "should find one match, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerA).or eq(providerB)
+        end
+      end
+
+      context "but with slightly different URL schemes" do
+        let(:url_to_find) { 'http://media.foo.com/video/which-one?' }
+        let(:broad_url_scheme) { 'http://media.foo.com/*' }
+        let(:specific_url_scheme) { 'http://media.foo.com/video/*' }
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed")
+          p << broad_url_scheme
+          p
+        }
+        let(:providerB) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed")
+          p << specific_url_scheme
+          p
+        }
+
+        it "should find one match" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerA).or eq(providerB)
+        end
+
+        it "should find one match, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerA).or eq(providerB)
+        end
+      end
     end
   end
 
