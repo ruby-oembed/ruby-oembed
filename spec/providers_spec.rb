@@ -367,7 +367,7 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to_not be_a(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to_not eql(OEmbed::Providers::FacebookPost) }
         end
 
         context 'when access token is provided to register_all' do
@@ -375,7 +375,7 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all(access_tokens: { facebook: access_token })
           end
 
-          it { is_expected.to be_a(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to eql(OEmbed::Providers::FacebookPost) }
         end
 
         context 'when access token is set as an environment variable' do
@@ -384,7 +384,7 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to be_a(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to eql(OEmbed::Providers::FacebookPost) }
         end
 
         context 'without access token' do
