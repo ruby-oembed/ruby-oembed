@@ -1,0 +1,267 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_video?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/381763475170840/videos/474308113397163/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"ab6822902548cf6c0e2b9bbcdf39a6d5fa6115b2"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - A6ruZgNjUWuhFscESAIqp_8
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - Gaz8v5GJxn6
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003066442'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - Y+IfIXKJyQkyC4Sv1dVhYbY32agdfoOIMQprM1wgxuttiUKkWowrP7IodVdp7cXYqrDKoC2tRj6hXrJiIwe70w==
+      Date:
+      - Tue, 08 Dec 2020 17:56:20 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '551'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Expo 2020 Dubai","author_url":"https:\/\/www.facebook.com\/381763475170840","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","height":280,"html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"CnQV3E5G\">\u003C\/script>\u003Cdiv class=\"fb-video\" data-href=\"https:\/\/www.facebook.com\/381763475170840\/videos\/474308113397163\/\">\u003Cblockquote
+        cite=\"https:\/\/www.facebook.com\/Expo2020Dubai\/videos\/474308113397163\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Ca href=\"https:\/\/www.facebook.com\/Expo2020Dubai\/videos\/474308113397163\/\">Expo
+        Live I Hello Ruby\u003C\/a>\u003Cp>\ud83d\udd0a Find out how Finnish #ExpoLive
+        grantee Hello Ruby is transforming the way educators teach kids how to code.
+        #Expo2020 #Dubai\u003C\/p>Posted by \u003Ca href=\"https:\/\/www.facebook.com\/381763475170840\">Expo
+        2020 Dubai\u003C\/a> on Saturday, July 6, 2019\u003C\/blockquote>\u003C\/div>","type":"video","version":"1.0","width":500}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_video?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/osherove/videos/10157895173751223/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"8a854c1dc51c670f1079a55c889af31e377c8550"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AaGO8zouEg5GTiQ86GlfkyV
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - EaTptf+5flx
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003066442'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - 3Y8t4fnk/+6Dv7V1EbW+ow/Z55oMkTX23d1t4V/BorKqka0vqGTbuVKxZd1duoFpPi/yygHlNnfIIeKu2IJUQA==
+      Date:
+      - Tue, 08 Dec 2020 17:56:20 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '447'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Roy","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","height":281,"html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"ndZjOam9\">\u003C\/script>\u003Cdiv class=\"fb-video\" data-href=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\">\u003Cblockquote
+        cite=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Ca href=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\">Intro
+        to TDD in Ruby\u003C\/a>\u003Cp>Intro to TDD in Ruby\u003C\/p>Posted by \u003Ca
+        href=\"#\" role=\"button\">Roy Osherove\u003C\/a> on Sunday, April 12, 2020\u003C\/blockquote>\u003C\/div>","type":"video","version":"1.0","width":500}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_video?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/381763475170840/videos/474308113397163/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"bfa0f2c856a75ee1b5ece2cd7eda7528b2ef3bbb"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AujlzY6L7UJ_kMg3JcIdUmy
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - Dsg04jZlU5P
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003066442'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - c1XWGfkM6PRsaLPm+//ZCABd3xtQC/ab/YbguwSFbnS7YGqaPyJw3VOyTKIvpEpUoPF4/oSDkhXoHz/aEh6uRA==
+      Date:
+      - Tue, 08 Dec 2020 17:56:20 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '550'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Expo 2020 Dubai","author_url":"https:\/\/www.facebook.com\/381763475170840","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","height":280,"html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"ydEDBm08\">\u003C\/script>\u003Cdiv class=\"fb-video\" data-href=\"https:\/\/www.facebook.com\/381763475170840\/videos\/474308113397163\/\">\u003Cblockquote
+        cite=\"https:\/\/www.facebook.com\/Expo2020Dubai\/videos\/474308113397163\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Ca href=\"https:\/\/www.facebook.com\/Expo2020Dubai\/videos\/474308113397163\/\">Expo
+        Live I Hello Ruby\u003C\/a>\u003Cp>\ud83d\udd0a Find out how Finnish #ExpoLive
+        grantee Hello Ruby is transforming the way educators teach kids how to code.
+        #Expo2020 #Dubai\u003C\/p>Posted by \u003Ca href=\"https:\/\/www.facebook.com\/381763475170840\">Expo
+        2020 Dubai\u003C\/a> on Saturday, July 6, 2019\u003C\/blockquote>\u003C\/div>","type":"video","version":"1.0","width":500}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_video?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/osherove/videos/10157895173751223/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"8dcd4f3b12dd7ed6cc95f01b73fe48bb48b4f581"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AegDW26TAq1-DlYi_WZbmLa
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - B2qPNKc3R9z
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003066442'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - LDlEMLWUaGfywTro7zPlmkw5qbfpazBKlI/XSY8Rl1/G0YD2ewEF2sngNNG7Zb727lN7gChywtj5AdtLGNAftQ==
+      Date:
+      - Tue, 08 Dec 2020 17:56:20 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '447'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Roy","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","height":281,"html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"uwnpLLjk\">\u003C\/script>\u003Cdiv class=\"fb-video\" data-href=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\">\u003Cblockquote
+        cite=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Ca href=\"https:\/\/www.facebook.com\/osherove\/videos\/10157895173751223\/\">Intro
+        to TDD in Ruby\u003C\/a>\u003Cp>Intro to TDD in Ruby\u003C\/p>Posted by \u003Ca
+        href=\"#\" role=\"button\">Roy Osherove\u003C\/a> on Sunday, April 12, 2020\u003C\/blockquote>\u003C\/div>","type":"video","version":"1.0","width":500}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
+recorded_with: VCR 6.0.0

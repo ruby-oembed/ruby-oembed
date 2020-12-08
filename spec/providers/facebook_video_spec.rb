@@ -1,19 +1,18 @@
 require File.join(File.dirname(__FILE__), '../spec_helper')
 
-describe 'OEmbed::Providers::FacebookPost' do
-  use_custom_vcr_casette('OEmbed_Providers_FacebookPost')
+describe 'OEmbed::Providers::FacebookVideo' do
+  use_custom_vcr_casette('OEmbed_Providers_FacebookVideo')
   include OEmbedSpecHelper
 
-  let(:provider) { OEmbed::Providers::FacebookPost }
+  let(:provider) { OEmbed::Providers::FacebookVideo }
 
   expected_valid_urls = %w(
-    https://www.facebook.com/rubyonrailstogo/posts/3610333842332884
-    https://www.facebook.com/notes/facebook-app/welcome-to-the-facebook-blog/2207517130/
-    https://www.facebook.com/tumocenter/photos/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ/1084373708267461/
+    https://www.facebook.com/381763475170840/videos/474308113397163/
+    https://www.facebook.com/osherove/videos/10157895173751223/
   )
   expected_invalid_urls = %w(
     https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
-    https://www.facebook.com/381763475170840/videos/474308113397163/
+    https://www.facebook.com/rubyonrailstogo/posts/3610333842332884
     https://www.facebook.com/groups/rordevelopers/permalink/1675022489341591/
     https://www.facebook.com/business/news/tips-small-business-digital-tools-in-crisis-and-recovery-report-deloitte/
   )

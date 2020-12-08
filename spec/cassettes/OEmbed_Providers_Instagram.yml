@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - '"388043ed168fea86a1e8e1c9547cf14949d687cf"'
+      - '"b7c50f81bdc2c5c2c04557e6ec00b743c7d4be6c"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Content-Type:
@@ -27,15 +27,15 @@ http_interactions:
       Facebook-Api-Version:
       - v9.0
       X-Fb-Request-Id:
-      - A7rHcbovHdca_-b2GkDxzJR
+      - AzeWfUrmKuEjDS_xsNszIEG
       Strict-Transport-Security:
       - max-age=15552000; preload
       X-Fb-Trace-Id:
-      - Ef4Z3KcqrPD
+      - H4YISGvkZmA
       X-App-Usage:
       - '{"call_count":0,"total_cputime":0,"total_time":0}'
       X-Fb-Rev:
-      - '1003066205'
+      - '1003066442'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Vary:
@@ -45,9 +45,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Debug:
-      - IvUG/ZDX28ecW6lF6AKcZQHEkxsZYlR+sbRsCyfdQbdBeuHvMg+VxB5Fh1EpaT70BJL8LZ+F48uVDgJvXo26ig==
+      - PBItXsl2GbYCCxB+D9hVe/zWE8XdUI2EwqbzrG4yqUWJXj7czaFmKIHG/AZNl5fFL0SR1OPol/Ligw2ofFDGKQ==
       Date:
-      - Tue, 08 Dec 2020 15:43:24 GMT
+      - Tue, 08 Dec 2020 17:56:20 GMT
       Alt-Svc:
       - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
       Connection:
@@ -145,8 +145,8 @@ http_interactions:
         style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
         font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
         post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
-        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=xMv1c-0EYqkAX9K_RHR&tp=1&oh=38589a7e2ba878e709b4334a672f9316&oe=5FF93F59","thumbnail_width":640,"thumbnail_height":640}'
-  recorded_at: Tue, 08 Dec 2020 15:43:24 GMT
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=xMv1c-0EYqkAX8rJ61H&tp=1&oh=6db3dcc19d55d4114e26f80316cc078f&oe=5FF93F59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
 - request:
     method: get
     uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
@@ -166,7 +166,7 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - '"06a1c3f65b7625467c1241da13f7aaa6cfac6b96"'
+      - '"7f7c815d039e47629f3f41ccb524fd37853f8b44"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Content-Type:
@@ -174,15 +174,15 @@ http_interactions:
       Facebook-Api-Version:
       - v9.0
       X-Fb-Request-Id:
-      - AnRC7jTvRFbbhm26A3S4Y_5
+      - A3w8NjuEUhNYZCBQuz3kLOw
       Strict-Transport-Security:
       - max-age=15552000; preload
       X-Fb-Trace-Id:
-      - GfDg3wzoYp2
+      - Dy07tYuoaiD
       X-App-Usage:
       - '{"call_count":0,"total_cputime":0,"total_time":0}'
       X-Fb-Rev:
-      - '1003066205'
+      - '1003066442'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Vary:
@@ -192,9 +192,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Debug:
-      - LGFR0Lui/OXSLzDkWvSXy2ROYSFMIB6jMtbMI+KAs4YPgC2JPqslDcK+L4Ft2AyRex4sm/r6XR5y30FM+QBeNw==
+      - JfVr+4xuI29KvmqPyqZSlVnfEEFAFyZ03RpGboRZNjJ5U9iuWXkdpvX0aNqpnz68ITtjcyX5uj4cxLA2S/Wn+w==
       Date:
-      - Tue, 08 Dec 2020 15:43:24 GMT
+      - Tue, 08 Dec 2020 17:56:20 GMT
       Alt-Svc:
       - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
       Connection:
@@ -292,8 +292,8 @@ http_interactions:
         style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
         font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
         post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
-        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=fdAwnqLE7QYAX9TWbge&tp=1&oh=a00a2c4cee70bac3c1dc84a5b49b24be&oe=5FD1DBDE","thumbnail_width":480,"thumbnail_height":746}'
-  recorded_at: Tue, 08 Dec 2020 15:43:24 GMT
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=fdAwnqLE7QYAX_4L_8R&tp=1&oh=d4444568b09a1ad1a7b325ac64e94be5&oe=5FD1DBDE","thumbnail_width":480,"thumbnail_height":746}'
+  recorded_at: Tue, 08 Dec 2020 17:56:20 GMT
 - request:
     method: get
     uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
@@ -313,7 +313,7 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - '"1f5ddffc29d69a66893eaf67f8edf35db96851b3"'
+      - '"ad8c085afb481f75247b6c62b5f381837f846fa5"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Content-Type:
@@ -321,15 +321,15 @@ http_interactions:
       Facebook-Api-Version:
       - v9.0
       X-Fb-Request-Id:
-      - AxwVu8Q60lHXYlKBfucxrco
+      - Aj2IjJmVderx_QIEUbhL56k
       Strict-Transport-Security:
       - max-age=15552000; preload
       X-Fb-Trace-Id:
-      - GTigeGT/6lO
+      - A1JKhNzafDo
       X-App-Usage:
       - '{"call_count":0,"total_cputime":0,"total_time":0}'
       X-Fb-Rev:
-      - '1003066205'
+      - '1003066442'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Vary:
@@ -339,15 +339,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Debug:
-      - 9oBM49k+Ri3Vrw6m4lRRVObUU2TQBYP4GzjYvHjYMEph/2H0YfUrDRZZJ/fu1ymmNQllXFGC+sWZHrbpN+ZDEQ==
+      - HnaXblhGTfdwKbXVc98VUXWOwG/012aN36I4apXSLAQrpvBEhQkMKgf6UAuQk7GYk7AmDXDjzZojpKyaP39lrA==
       Date:
-      - Tue, 08 Dec 2020 15:43:25 GMT
+      - Tue, 08 Dec 2020 17:56:21 GMT
       Alt-Svc:
       - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
       Connection:
       - keep-alive
       Content-Length:
-      - '2678'
+      - '2680'
     body:
       encoding: ASCII-8BIT
       string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
@@ -439,8 +439,8 @@ http_interactions:
         style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
         font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
         post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
-        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=xMv1c-0EYqkAX97UK2S&tp=1&oh=77f3d3ea311177992da270733423a263&oe=5FF93F59","thumbnail_width":640,"thumbnail_height":640}'
-  recorded_at: Tue, 08 Dec 2020 15:43:25 GMT
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=xMv1c-0EYqkAX-0FzAT&tp=1&oh=0115f0eeb8949814f78ee49e7932ff00&oe=5FF93F59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Tue, 08 Dec 2020 17:56:21 GMT
 - request:
     method: get
     uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
@@ -460,7 +460,7 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - '"b28310331565f6a860a7bba7cc909335d17ea66b"'
+      - '"a126858fcb6a58214ca57235f9283045c29df803"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Content-Type:
@@ -468,15 +468,15 @@ http_interactions:
       Facebook-Api-Version:
       - v9.0
       X-Fb-Request-Id:
-      - AX3wVO3iAn3tGqCqpTVPp9R
+      - AXij5WNNndE9GyveK__2t0q
       Strict-Transport-Security:
       - max-age=15552000; preload
       X-Fb-Trace-Id:
-      - Hb39KACaLfA
+      - FIZDBmCWxSq
       X-App-Usage:
       - '{"call_count":0,"total_cputime":0,"total_time":0}'
       X-Fb-Rev:
-      - '1003066205'
+      - '1003066442'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Vary:
@@ -486,9 +486,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Fb-Debug:
-      - 6pG3RNOHplUiT7KbRCC0zydwG+ImIS0A2YEEZ0TDxFKFPhw0eEex34Nb+S8WXz2BJrsZOPNsibYBrlY3sHe+Iw==
+      - fxUSzi8iFEUpAnbokHcKubJ1hBJ5BPlRuED6V9NgYR2CQZPIluZpGNx1ugahO5LqSP7LlJvdKkSNZvICl4GAVg==
       Date:
-      - Tue, 08 Dec 2020 15:43:25 GMT
+      - Tue, 08 Dec 2020 17:56:21 GMT
       Alt-Svc:
       - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
       Connection:
@@ -586,6 +586,6 @@ http_interactions:
         style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
         font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
         post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
-        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=fdAwnqLE7QYAX_nYlqW&tp=1&oh=2fbde5742a67f428498ade1efd3e5b38&oe=5FD1DBDE","thumbnail_width":480,"thumbnail_height":746}'
-  recorded_at: Tue, 08 Dec 2020 15:43:25 GMT
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=fdAwnqLE7QYAX_E74gZ&tp=1&oh=1ef1161699effcd82b118993d4142e81&oe=5FD1DBDE","thumbnail_width":480,"thumbnail_height":746}'
+  recorded_at: Tue, 08 Dec 2020 17:56:21 GMT
 recorded_with: VCR 6.0.0
