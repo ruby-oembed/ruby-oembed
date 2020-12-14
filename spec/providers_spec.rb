@@ -350,13 +350,16 @@ describe OEmbed::Providers do
     describe 'register_access_token_providers' do
       describe 'tokens[:facebook]' do
         let(:access_token) { 'my-fake-access-token' }
+        let(:provider) { OEmbed::Providers::FacebookPost }
         let(:embed_url) { 'https://www.facebook.com/exampleuser/posts/1234567890' }
 
         around(:each) do |each|
           previous_value = ENV['OEMBED_FACEBOOK_TOKEN']
           ENV['OEMBED_FACEBOOK_TOKEN'] = nil
+          provider.access_token = nil
           each.run
           ENV['OEMBED_FACEBOOK_TOKEN'] = previous_value
+          provider.access_token = previous_value
           OEmbed::Providers.unregister_all
         end
 
@@ -367,7 +370,8 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to_not eql(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to_not eql(provider) }
+          it { is_expected.to eq(nil) }
         end
 
         context 'when access token is provided to register_all' do
@@ -375,22 +379,16 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all(access_tokens: { facebook: access_token })
           end
 
-          it { is_expected.to eql(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to eql(provider) }
         end
 
-        context 'when access token is set as an environment variable' do
+        context 'when access token is set ahead of time' do
           before do
-            ENV['OEMBED_FACEBOOK_TOKEN'] = access_token
+            provider.access_token = access_token
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to eql(OEmbed::Providers::FacebookPost) }
-        end
-
-        context 'without access token' do
-          before { OEmbed::Providers.register_all }
-
-          it { is_expected.to eq(nil) }
+          it { is_expected.to eql(provider) }
         end
       end
     end

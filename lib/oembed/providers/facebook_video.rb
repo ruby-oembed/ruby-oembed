@@ -11,6 +11,12 @@ module OEmbed
     FacebookVideo << 'https://www.facebook.com/*/videos/*'
     FacebookVideo << 'https://www.facebook.com/video*'
 
+    # Note: even though FacebookVideo is automatically registered as an official provider
+    # it will NOT resolve any URLs unless its access_token is set
+    # either via the OEMBED_FACEBOOK_TOKEN environment variable
+    # or by calling `OEmbed::Providers::FacebookVideo.access_token = @your_token`
+    add_official_provider(FacebookVideo, nil, access_token: {name: :facebook, method: :access_token})
+
     # Respond to the `new` method to maintain backwards compatibility with v0.14.0
     # See also:
     # * https://github.com/ruby-oembed/ruby-oembed/pull/75
