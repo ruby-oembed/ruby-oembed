@@ -6,11 +6,16 @@ describe 'OEmbed::Providers::FacebookPost' do
 
   let(:provider) { OEmbed::Providers::FacebookPost }
 
-  expected_valid_urls = %w(
-    https://www.facebook.com/rubyonrailstogo/posts/3610333842332884
-    https://www.facebook.com/notes/facebook-app/welcome-to-the-facebook-blog/2207517130/
-    https://www.facebook.com/tumocenter/photos/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ/1084373708267461/
-  )
+  expected_valid_urls = [
+    # A public "post" by a "page"
+    'https://www.facebook.com/rubyonrailstogo/posts/3610333842332884',
+    # A public "note"
+    'https://www.facebook.com/notes/facebook-app/welcome-to-the-facebook-blog/2207517130/',
+    # A specific photo
+    'https://www.facebook.com/tumocenter/photos/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ/1084373708267461/',
+    # A photo in slideshow view
+    'https://www.facebook.com/photo/?fbid=3348617585198325&set=gm.1675022489341591',
+  ]
   expected_invalid_urls = %w(
     https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
     https://www.facebook.com/381763475170840/videos/474308113397163/
