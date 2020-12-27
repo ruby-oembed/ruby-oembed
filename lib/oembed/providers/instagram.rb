@@ -13,12 +13,18 @@ module OEmbed
     Instagram << "https://instagr.am/p/*"
     Instagram << "https://instagram.com/p/*"
     Instagram << "https://www.instagram.com/p/*"
+
     Instagram << "http://instagr.am/tv/*"
     Instagram << "http://instagram.com/tv/*"
     Instagram << "http://www.instagram.com/tv/*"
     Instagram << "https://instagr.am/tv/*"
     Instagram << "https://instagram.com/tv/*"
     Instagram << "https://www.instagram.com/tv/*"
+
+    Instagram << "http://instagram.com/reel/*"
+    Instagram << "http://www.instagram.com/reel/*"
+    Instagram << "https://instagram.com/reel/*"
+    Instagram << "https://www.instagram.com/reel/*"
 
     # Note: even though Instagram is automatically registered as an official provider
     # it will NOT resolve any URLs unless its access_token is set

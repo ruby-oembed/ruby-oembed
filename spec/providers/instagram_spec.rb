@@ -11,6 +11,7 @@ describe 'OEmbed::Providers::Instagram' do
     https://instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
     http://instagr.am/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
     https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
+    https://www.instagram.com/reel/CIyNZQhH4DQ/?igshid=40rns9jda1ow
   )
   expected_invalid_urls = %w(
     https://www.instagram.com/u/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
