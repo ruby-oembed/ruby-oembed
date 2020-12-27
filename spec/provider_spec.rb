@@ -123,13 +123,19 @@ describe OEmbed::Provider do
         end
 
         it "still throws NoMethodError errors generally" do
-          # puts provider.other_query
-
           expect { provider.other_query }
           .to raise_error(NoMethodError)
 
           expect { provider.other_query = 'val' }
           .to raise_error(NoMethodError)
+        end
+
+        context 'that requires CGI escaping' do
+          let(:env_var_value) { 'non-blank y *muy* especiál' }
+
+          it "has a working getter with escaping" do
+            expect(provider.send_with_query).to eq('non-blank+y+%2Amuy%2A+especi%C3%A1l')
+          end
         end
 
         context "but no env var name for the required_query_params" do
@@ -161,8 +167,6 @@ describe OEmbed::Provider do
         end
 
         it "still throws NoMethodError errors generally" do
-          # puts provider.other_query
-
           expect { provider.other_query }
           .to raise_error(NoMethodError)
 
@@ -501,7 +505,7 @@ describe OEmbed::Provider do
     }
 
     it 'META: the around works as expected' do
-      expect(provider.send_with_query).to eq('a non-nil value')
+      expect(provider.send_with_query).to eq('a+non-nil+value')
       expect(provider.required_query_params_set?).to be_truthy
     end
 

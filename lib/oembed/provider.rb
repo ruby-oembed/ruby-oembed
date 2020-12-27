@@ -65,7 +65,8 @@ module OEmbed
       @required_query_params = {}
       required_query_params.each do |param, default_env_var|
         param = param.to_sym
-        @required_query_params[param] = default_env_var ? ENV[default_env_var] : nil
+        @required_query_params[param] = nil
+        set_required_query_params(param, ENV[default_env_var]) if default_env_var
 
         # Define a getter and a setter for each required_query_param
         define_singleton_method("#{param}") { @required_query_params[param] } unless respond_to?("#{param}")
