@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.youtube.com/oembed?format=json&scheme=https&url=https://www.youtube.com/watch?v=pO5L6vXtxsI
+    uri: https://www.youtube.com/oembed/?format=json&scheme=https&url=https://www.youtube.com/watch?v=pO5L6vXtxsI
     body:
       encoding: US-ASCII
       string: ''
@@ -18,42 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - no-cache
       Content-Type:
       - application/json
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Mon, 28 Dec 2020 15:30:59 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
+      P3p:
+      - CP="This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=en
+        for more info."
+      Expires:
+      - Tue, 27 Apr 1971 19:44:06 GMT
       X-Content-Type-Options:
       - nosniff
+      Date:
+      - Mon, 28 Dec 2020 15:32:04 GMT
+      Server:
+      - YouTube Frontend Proxy
+      X-Xss-Protection:
+      - '0'
       Alt-Svc:
       - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
         ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Accept-Ranges:
       - none
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"title":"CKEditor 4.5 - Embedding Media Resources with oEmbed","author_name":"CKEditor
-        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
-        width=\u0022200\u0022 height=\u0022113\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
+        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":270,"width":480,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
+        width=\u0022480\u0022 height=\u0022270\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
         frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write;
         encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003e\u003c/iframe\u003e"}'
-  recorded_at: Mon, 28 Dec 2020 15:30:59 GMT
+  recorded_at: Mon, 28 Dec 2020 15:32:04 GMT
 - request:
     method: get
-    uri: https://www.youtube.com/oembed?format=json&scheme=https&url=http://www.youtube.com/watch?v=pO5L6vXtxsI
+    uri: https://www.youtube.com/oembed/?format=json&scheme=https&url=http://www.youtube.com/watch?v=pO5L6vXtxsI
     body:
       encoding: US-ASCII
       string: ''
@@ -69,42 +72,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      P3p:
+      - CP="This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=en
+        for more info."
+      Cache-Control:
+      - no-cache
       Content-Type:
       - application/json
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Mon, 28 Dec 2020 15:30:59 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expires:
+      - Tue, 27 Apr 1971 19:44:06 GMT
       X-Content-Type-Options:
       - nosniff
+      Date:
+      - Mon, 28 Dec 2020 15:32:04 GMT
+      Server:
+      - YouTube Frontend Proxy
+      X-Xss-Protection:
+      - '0'
       Alt-Svc:
       - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
         ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Accept-Ranges:
       - none
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"title":"CKEditor 4.5 - Embedding Media Resources with oEmbed","author_name":"CKEditor
-        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
-        width=\u0022200\u0022 height=\u0022113\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
+        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":270,"width":480,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
+        width=\u0022480\u0022 height=\u0022270\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
         frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write;
         encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003e\u003c/iframe\u003e"}'
-  recorded_at: Mon, 28 Dec 2020 15:30:59 GMT
+  recorded_at: Mon, 28 Dec 2020 15:32:04 GMT
 - request:
     method: get
-    uri: https://www.youtube.com/oembed?format=json&scheme=https&url=https://youtu.be/pO5L6vXtxsI
+    uri: https://www.youtube.com/oembed/?format=json&scheme=https&url=https://youtu.be/pO5L6vXtxsI
     body:
       encoding: US-ASCII
       string: ''
@@ -120,42 +126,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Expires:
+      - Tue, 27 Apr 1971 19:44:06 GMT
+      P3p:
+      - CP="This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=en
+        for more info."
       Content-Type:
       - application/json
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Mon, 28 Dec 2020 15:30:59 GMT
-      Server:
-      - scaffolding on HTTPServer2
       Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
+      - no-cache
       X-Content-Type-Options:
       - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Date:
+      - Mon, 28 Dec 2020 15:32:04 GMT
+      Server:
+      - YouTube Frontend Proxy
+      X-Xss-Protection:
+      - '0'
       Alt-Svc:
       - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
         ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Accept-Ranges:
       - none
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"title":"CKEditor 4.5 - Embedding Media Resources with oEmbed","author_name":"CKEditor
-        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
-        width=\u0022200\u0022 height=\u0022113\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
+        Ecosystem","author_url":"https://www.youtube.com/c/CKEditor","type":"video","height":270,"width":480,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_height":360,"thumbnail_width":480,"thumbnail_url":"https://i.ytimg.com/vi/pO5L6vXtxsI/hqdefault.jpg","html":"\u003ciframe
+        width=\u0022480\u0022 height=\u0022270\u0022 src=\u0022https://www.youtube.com/embed/pO5L6vXtxsI?feature=oembed\u0022
         frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write;
         encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003e\u003c/iframe\u003e"}'
-  recorded_at: Mon, 28 Dec 2020 15:30:59 GMT
+  recorded_at: Mon, 28 Dec 2020 15:32:04 GMT
 - request:
     method: get
-    uri: https://www.youtube.com/oembed?format=json&scheme=https&url=https://youtu.be/NHriYTkvd0g
+    uri: https://www.youtube.com/oembed/?format=json&scheme=https&url=https://youtu.be/NHriYTkvd0g
     body:
       encoding: US-ASCII
       string: ''
@@ -168,34 +177,35 @@ http_interactions:
       - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      Content-Type:
-      - text/html
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Mon, 28 Dec 2020 15:30:59 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Length:
+      - '9'
       X-Content-Type-Options:
       - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      P3p:
+      - CP="This is not a P3P policy! See http://support.google.com/accounts/answer/151657?hl=en
+        for more info."
+      Expires:
+      - Tue, 27 Apr 1971 19:44:06 GMT
+      Date:
+      - Mon, 28 Dec 2020 15:32:04 GMT
+      Server:
+      - YouTube Frontend Proxy
+      X-Xss-Protection:
+      - '0'
       Alt-Svc:
       - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
         ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Transfer-Encoding:
-      - chunked
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: Forbidden
-  recorded_at: Mon, 28 Dec 2020 15:30:59 GMT
+  recorded_at: Mon, 28 Dec 2020 15:32:04 GMT
 recorded_with: VCR 6.0.0
