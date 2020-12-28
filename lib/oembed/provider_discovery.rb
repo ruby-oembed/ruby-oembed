@@ -51,6 +51,11 @@ module OEmbed
 
       begin
         provider_endpoint = URI.parse(provider_endpoint)
+        # merge the original resource uri with endpoint url
+        # to set correct protocol in case discoverable
+        # api endpoint had relative protocol
+        # https://tools.ietf.org/html/rfc3986#section-5.2
+        provider_endpoint = uri.merge provider_endpoint
         provider_endpoint.query = nil
         provider_endpoint = provider_endpoint.to_s
       rescue URI::Error
