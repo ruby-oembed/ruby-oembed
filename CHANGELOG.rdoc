@@ -2,6 +2,7 @@
 
 == Unreleased (0.14.1)
 
+* Fix the YouTube provider when given a private video; Issue #79 (Sebastian Schulze)
 
 == 0.14.0 - 5 November 2020
 

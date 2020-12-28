@@ -157,7 +157,7 @@ module OEmbed
     #     OEmbed::Providers::Youtube.endpoint += "?iframe=0"
     # * To require https embed code
     #     OEmbed::Providers::Youtube.endpoint += "?scheme=https"
-    Youtube = OEmbed::Provider.new("https://www.youtube.com/oembed?scheme=https")
+    Youtube = OEmbed::Provider.new("https://www.youtube.com/oembed/?scheme=https")
     Youtube << "http://*.youtube.com/*"
     Youtube << "https://*.youtube.com/*"
     Youtube << "http://*.youtu.be/*"
