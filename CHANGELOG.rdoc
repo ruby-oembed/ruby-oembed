@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.15.0)
+== Unreleased (0.15.1)
+
+== 0.15.0 - 1 January 2021
 
 * *DEPRECATION* When creating an `OEmbed::Provider` instance, specifying the format via positional argument is now deprecated. Please use a named argument instead: `OEmbed::Provider.new(@endpoint_url, format: :json)`
 * *DEPRECATION* Do not use the `new` method for `Instagram`, `FacebookPost`, or `FacebookVideo` providers to set your access token. Instead either use the `OEMBED_FACEBOOK_TOKEN` environment variable or call `Instagram.access_token = @your_token`.
