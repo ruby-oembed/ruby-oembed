@@ -1,0 +1,539 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/rubyonrailstogo/posts/3610333842332884
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"eb01eb59b509bdf14c26fd306c34d0bbf859211d"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AdKS1wszt3TwgqkvKrCDMDW
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - GJsTqVvTC3f
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - qV3+xDvyuW5r5vudtOqgU7WPSATlO4OiDwQGw2e/dTSImhM5syn55sllGPmlfB8reJ+CFkSseguWvKfWQVAyuQ==
+      Date:
+      - Mon, 14 Dec 2020 14:50:47 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '479'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Ruby on Rails","author_url":"https:\/\/www.facebook.com\/1284562961576662","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"rm9rZdxr\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/rubyonrailstogo\/posts\/3610333842332884\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/graph.facebook.com\/1284562961576662\/posts\/3610333842332884\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Nice Article\u003C\/p>Posted by \u003Ca
+        href=\"https:\/\/www.facebook.com\/1284562961576662\">Ruby on Rails\u003C\/a>
+        on&nbsp;\u003Ca href=\"https:\/\/graph.facebook.com\/1284562961576662\/posts\/3610333842332884\/\">Wednesday,
+        August 5, 2020\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:47 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/notes/facebook-app/welcome-to-the-facebook-blog/2207517130/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"ae6d8776377e8db5fa97a82479d1b2280c19a629"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AUKJ0CrM-7a-8mOxYkEJ5r3
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - CYaAQJtJ2Sf
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - UowoKZRRbpsSr1joleqHcdAf8dYgKONagbyEIsT5ai+FiYzZXvcQ7EoandzHzn0T8tFkcmkEpy+fT5xZJjVBeg==
+      Date:
+      - Mon, 14 Dec 2020 14:50:47 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '461'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Facebook App","author_url":"https:\/\/www.facebook.com\/20531316728","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"Is1XBJi7\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/graph.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\"
+        class=\"fb-xfbml-parse-ignore\">Posted by \u003Ca href=\"https:\/\/www.facebook.com\/20531316728\">Facebook
+        App\u003C\/a> on&nbsp;\u003Ca href=\"https:\/\/graph.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\">Tuesday,
+        August 22, 2006\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/tumocenter/photos/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ/1084373708267461/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"87d7cd634363d6de81f5f8e531774d27b51a2f35"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - Ayno64g3gSbFaLe83gltCos
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - DrrNXzxPe3x
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - GFw2+vTyFqyciZOjSQoK1XpSp3j/0smcloILB6zi1DUQD69s7D4SxALdb2Dy/JCNj8rxJymIuM0C9ch0PDLj3g==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '801'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Tumo Center for Creative Technologies","author_url":"https:\/\/www.facebook.com\/193484930689681","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"ohoeVSCy\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/tumocenter\/photos\/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ\/1084373708267461\/\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/www.facebook.com\/tumocenter\/photos\/a.215522485152592\/1084373708267461\/?type=3\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Ruby on Rails-\u0568 \u0563\u0561\u056c\u056b\u057d
+        \u0567 \u0539\u0578\u0582\u0574\u0578: \u0532\u0578\u056c\u0578\u0580 \u0576\u0580\u0561\u0576\u0581
+        \u0570\u0561\u0574\u0561\u0580, \u0578\u057e\u0584\u0565\u0580 \u057f\u0565\u0572\u0575\u0561\u056f
+        \u0579\u0565\u0576 \u057f\u0565\u056d\u0576\u0578\u056c\u0578\u0563\u056b\u0561\u0576\u0565\u0580\u056b
+        \u057e\u0565\u0580\u057b\u056b\u0576 \u0576\u0578\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u056b\u0581\u055d
+        Ruby on...\u003C\/p>Posted by \u003Ca href=\"https:\/\/www.facebook.com\/193484930689681\">Tumo
+        Center for Creative Technologies\u003C\/a> on&nbsp;\u003Ca href=\"https:\/\/www.facebook.com\/tumocenter\/photos\/a.215522485152592\/1084373708267461\/?type=3\">Tuesday,
+        May 17, 2016\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/photo/?fbid=3348617585198325%26set=gm.1675022489341591
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"d40a58ebd369fd17813e41d03ded99c17014d169"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - A1kIvCOU-KbYMzLbLxqMbzS
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - Eo10NuGOv/s
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - 1ZP6Ic5m+YsVb4skcANjJb2jv8bamYCPJfXzUCV95FWaJeT7OMgl9poB57etedj4tTim5dCe/MBMbH8tDbdHXw==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Ruby on Rails Developers","author_url":"\/groups\/rordevelopers\/","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"UszE52ML\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/photo\/?fbid=3348617585198325&amp;set=gm.1675022489341591\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/www.facebook.com\/photo.php?fbid=3348617585198325&amp;set=gm.1675022489341591&amp;type=3\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Why does the While stop at the gets.chomp
+        inside the While knowing that the prompt result is still an empty string?\u003C\/p>Posted
+        by \u003Ca href=\"https:\/\/www.facebook.com\/rickson.rick.9\">Rickson Turra\u003C\/a>
+        on&nbsp;\u003Ca href=\"https:\/\/www.facebook.com\/photo.php?fbid=3348617585198325&amp;set=gm.1675022489341591&amp;type=3\">Monday,
+        August 31, 2020\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/rubyonrailstogo/posts/3610333842332884
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"31314157b1f352820f8abaeb4bc29998667e044c"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AFrunLZ7ugV6DawKIWRHzT6
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - CfVjvSXvNpa
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - kQzAjpJ6Gp05+m5He1OLkeYsTACU1/Gl2mmuRoM6US7GJhmArEWSiGL/MEsJ3kh9VGTNiInMtT0GkZ94u4yJvw==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '481'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Ruby on Rails","author_url":"https:\/\/www.facebook.com\/1284562961576662","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"XjHB4r69\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/rubyonrailstogo\/posts\/3610333842332884\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/graph.facebook.com\/1284562961576662\/posts\/3610333842332884\/\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Nice Article\u003C\/p>Posted by \u003Ca
+        href=\"https:\/\/www.facebook.com\/1284562961576662\">Ruby on Rails\u003C\/a>
+        on&nbsp;\u003Ca href=\"https:\/\/graph.facebook.com\/1284562961576662\/posts\/3610333842332884\/\">Wednesday,
+        August 5, 2020\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/notes/facebook-app/welcome-to-the-facebook-blog/2207517130/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"bc192fea44d349b7893d504d8078b4570ec3be05"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AAWs9LPy1C5vwjOK0hvPiMJ
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - EsNjqM6BXHY
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - lcJMoILabP7ehJu036kK7kcZpkGRCr6HaczqqsFz5GUMm6eozr3p64gtz67O9aNPaKuS7HlU2LOpY0IVFX0dmw==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '459'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Facebook App","author_url":"https:\/\/www.facebook.com\/20531316728","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"DfWuBWwn\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/graph.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\"
+        class=\"fb-xfbml-parse-ignore\">Posted by \u003Ca href=\"https:\/\/www.facebook.com\/20531316728\">Facebook
+        App\u003C\/a> on&nbsp;\u003Ca href=\"https:\/\/graph.facebook.com\/notes\/facebook-app\/welcome-to-the-facebook-blog\/2207517130\/\">Tuesday,
+        August 22, 2006\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/tumocenter/photos/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ/1084373708267461/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"f8aa8ead164d8b30cc3d46001179d3c237b36525"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AHWQjCqwStLeSDpc9iCtCCS
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - CrmVbrSiSG/
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - 1wllTS0vVpbEouDCyRgIxgFYSeDFVlx62pX5wng+CZKFxIXlfU/8pIUm6v+6pE4Yf3xvbL8D3p4DX2AQpw82Eg==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '804'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Tumo Center for Creative Technologies","author_url":"https:\/\/www.facebook.com\/193484930689681","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"I25znXDL\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/tumocenter\/photos\/bc.AbpR7-R7Lu6GodUph_UNg1Ttn-k7Ni-M8X89Io4cWsYkK0OPde6MTVKHSiTNDEanWYkwQGyu-YwpNnS4MXUqeYen_ovuiBPQixaA-tjNBcVUFAMWPaxX-NU1mm2ovExEORQOdohcH339Xmxch3kbSPcJ\/1084373708267461\/\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/www.facebook.com\/tumocenter\/photos\/a.215522485152592\/1084373708267461\/?type=3\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Ruby on Rails-\u0568 \u0563\u0561\u056c\u056b\u057d
+        \u0567 \u0539\u0578\u0582\u0574\u0578: \u0532\u0578\u056c\u0578\u0580 \u0576\u0580\u0561\u0576\u0581
+        \u0570\u0561\u0574\u0561\u0580, \u0578\u057e\u0584\u0565\u0580 \u057f\u0565\u0572\u0575\u0561\u056f
+        \u0579\u0565\u0576 \u057f\u0565\u056d\u0576\u0578\u056c\u0578\u0563\u056b\u0561\u0576\u0565\u0580\u056b
+        \u057e\u0565\u0580\u057b\u056b\u0576 \u0576\u0578\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u056b\u0581\u055d
+        Ruby on...\u003C\/p>Posted by \u003Ca href=\"https:\/\/www.facebook.com\/193484930689681\">Tumo
+        Center for Creative Technologies\u003C\/a> on&nbsp;\u003Ca href=\"https:\/\/www.facebook.com\/tumocenter\/photos\/a.215522485152592\/1084373708267461\/?type=3\">Tuesday,
+        May 17, 2016\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/oembed_post?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.facebook.com/photo/?fbid=3348617585198325%26set=gm.1675022489341591
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"746c14013d2831a130d947d749664d64728f26c4"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AqL_l4lq_solHHaeLLg5mEE
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - C8G87Xr0hP3
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003094866'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - RIJObBKb2E16+q3jHHVBtI4E5VjJSBiPht4FNnrwE8hf5fbXxzDlkKAH612ASQaCHKOxQh3qYw7yKv7lbj1XeQ==
+      Date:
+      - Mon, 14 Dec 2020 14:50:48 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '570'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"author_name":"Ruby on Rails Developers","author_url":"\/groups\/rordevelopers\/","provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1&amp;version=v9.0\"
+        nonce=\"ln3T8s9p\">\u003C\/script>\u003Cdiv class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/photo\/?fbid=3348617585198325&amp;set=gm.1675022489341591\"
+        data-width=\"552\">\u003Cblockquote cite=\"https:\/\/www.facebook.com\/photo.php?fbid=3348617585198325&amp;set=gm.1675022489341591&amp;type=3\"
+        class=\"fb-xfbml-parse-ignore\">\u003Cp>Why does the While stop at the gets.chomp
+        inside the While knowing that the prompt result is still an empty string?\u003C\/p>Posted
+        by \u003Ca href=\"https:\/\/www.facebook.com\/rickson.rick.9\">Rickson Turra\u003C\/a>
+        on&nbsp;\u003Ca href=\"https:\/\/www.facebook.com\/photo.php?fbid=3348617585198325&amp;set=gm.1675022489341591&amp;type=3\">Monday,
+        August 31, 2020\u003C\/a>\u003C\/blockquote>\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Mon, 14 Dec 2020 14:50:49 GMT
+recorded_with: VCR 6.0.0

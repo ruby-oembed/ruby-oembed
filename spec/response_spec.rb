@@ -36,14 +36,14 @@ describe OEmbed::Response do
   }
 
   let(:qik) {
-    qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", :xml)
+    qik = OEmbed::Provider.new("http://qik.com/api/oembed.{format}", format: :xml)
     qik << "http://qik.com/video/*"
     qik << "http://qik.com/*"
     qik
   }
 
   let(:viddler) {
-    viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", :json)
+    viddler = OEmbed::Provider.new("http://lab.viddler.com/services/oembed/", format: :json)
     viddler << "http://*.viddler.com/*"
     viddler
   }

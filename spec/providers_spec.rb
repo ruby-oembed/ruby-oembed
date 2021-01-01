@@ -17,7 +17,7 @@ describe OEmbed::Providers do
   end
 
   describe ".register" do
-    it "should register providers" do
+    it "should register multiple providers at once" do
       expect(OEmbed::Providers.urls).to be_empty
 
       OEmbed::Providers.register(@flickr, @qik)
@@ -35,11 +35,20 @@ describe OEmbed::Providers do
       end
     end
 
-    it "should find by URLs" do
-      OEmbed::Providers.register(@flickr, @qik) # tested in "should register providers"
+    it "should register providers with missing required_query_params" do
+      expect(OEmbed::Providers.urls).to be_empty
 
-      expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
-      expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      provider = OEmbed::Provider.new("http://foo.com/oembed", required_query_params: { send_with_query: nil })
+      provider << 'http://media.foo.com/*'
+
+      OEmbed::Providers.register(provider)
+
+      expect(OEmbed::Providers.urls.keys).to eq(provider.urls)
+
+      provider.urls.each do |regexp|
+        expect(OEmbed::Providers.urls).to have_key(regexp)
+        expect(OEmbed::Providers.urls[regexp]).to include(provider)
+      end
     end
   end
 
@@ -121,6 +130,134 @@ describe OEmbed::Providers do
 	#    with(url, {}).
 	#    and_return(valid_response(:object))
   #end
+
+  describe "#find" do
+    let(:url_scheme) { 'http://media.foo.com/*' }
+    let(:providerA) {
+      p = OEmbed::Provider.new("http://a.foo.com/oembed")
+      p << url_scheme
+      p
+    }
+    let(:providerB) {
+      p = OEmbed::Provider.new("http://b.foo.com/oembed")
+      p << url_scheme
+      p
+    }
+
+    let(:url_to_find) { 'http://media.foo.com/which-one?' }
+    subject { OEmbed::Providers.find(url_to_find) }
+
+    context "when there registered providers are distinct" do
+      before { OEmbed::Providers.register(@flickr, @qik, providerA) }
+
+      it "should find providerA" do
+        should eq(providerA)
+      end
+
+      it "should find by any of the registered providers by URL" do
+        expect(OEmbed::Providers.find(example_url(:flickr))).to eq(@flickr)
+        expect(OEmbed::Providers.find(example_url(:qik))).to eq(@qik)
+      end
+    end
+
+    context "when the registered provider has missing required_query_params" do
+      let(:providerA) {
+        p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+        p << url_scheme
+        p
+      }
+      before { OEmbed::Providers.register(providerA) }
+
+      it "should NOT find the provider" do
+        should be_nil
+      end
+
+      context "but then later has the required_query_param set" do
+        it "should find providerA" do
+          providerA.send_with_query = 'a non-blank val'
+
+          should eq(providerA)
+        end
+      end
+    end
+
+    context "when multiple providers match the same URL" do
+      it "should find one match" do
+        OEmbed::Providers.register(providerA, providerB)
+
+        should eq(providerA).or eq(providerB)
+      end
+
+      context "when providerA has missing required_query_params" do
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+          p << url_scheme
+          p
+        }
+
+        it "should find the provider with satisfied required_query_params" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerB)
+        end
+
+        it "should find the provider with satisfied required_query_params, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerB)
+        end
+      end
+
+      context "when providerA has satisfied required_query_params" do
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed", required_query_params: { send_with_query: false })
+          p.send_with_query = 'a non-blank value'
+          p << url_scheme
+          p
+        }
+
+        it "should find one match" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerA).or eq(providerB)
+        end
+
+        it "should find one match, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerA).or eq(providerB)
+        end
+      end
+
+      context "but with slightly different URL schemes" do
+        let(:url_to_find) { 'http://media.foo.com/video/which-one?' }
+        let(:broad_url_scheme) { 'http://media.foo.com/*' }
+        let(:specific_url_scheme) { 'http://media.foo.com/video/*' }
+        let(:providerA) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed")
+          p << broad_url_scheme
+          p
+        }
+        let(:providerB) {
+          p = OEmbed::Provider.new("http://a.foo.com/oembed")
+          p << specific_url_scheme
+          p
+        }
+
+        it "should find one match" do
+          OEmbed::Providers.register(providerA, providerB)
+
+          should eq(providerA).or eq(providerB)
+        end
+
+        it "should find one match, regardless of register order" do
+          OEmbed::Providers.register(providerB, providerA)
+
+          should eq(providerA).or eq(providerB)
+        end
+      end
+    end
+  end
 
   describe "#raw and #get" do
     it "should bridge #get and #raw to the right provider" do
@@ -213,13 +350,16 @@ describe OEmbed::Providers do
     describe 'register_access_token_providers' do
       describe 'tokens[:facebook]' do
         let(:access_token) { 'my-fake-access-token' }
+        let(:provider) { OEmbed::Providers::FacebookPost }
         let(:embed_url) { 'https://www.facebook.com/exampleuser/posts/1234567890' }
 
         around(:each) do |each|
           previous_value = ENV['OEMBED_FACEBOOK_TOKEN']
           ENV['OEMBED_FACEBOOK_TOKEN'] = nil
+          provider.access_token = nil
           each.run
           ENV['OEMBED_FACEBOOK_TOKEN'] = previous_value
+          provider.access_token = previous_value
           OEmbed::Providers.unregister_all
         end
 
@@ -230,7 +370,8 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to_not be_a(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to_not eql(provider) }
+          it { is_expected.to eq(nil) }
         end
 
         context 'when access token is provided to register_all' do
@@ -238,22 +379,16 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all(access_tokens: { facebook: access_token })
           end
 
-          it { is_expected.to be_a(OEmbed::Providers::FacebookPost) }
+          it { is_expected.to eql(provider) }
         end
 
-        context 'when access token is set as an environment variable' do
+        context 'when access token is set ahead of time' do
           before do
-            ENV['OEMBED_FACEBOOK_TOKEN'] = access_token
+            provider.access_token = access_token
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to be_a(OEmbed::Providers::FacebookPost) }
-        end
-
-        context 'without access token' do
-          before { OEmbed::Providers.register_all }
-
-          it { is_expected.to eq(nil) }
+          it { is_expected.to eql(provider) }
         end
       end
     end

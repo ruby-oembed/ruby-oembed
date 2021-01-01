@@ -1,17 +1,10 @@
 require File.join(File.dirname(__FILE__), '../spec_helper')
-require 'support/shared_examples_for_providers'
 
 describe 'OEmbed::Providers::Slideshare' do
-  before(:all) do
-    VCR.insert_cassette('OEmbed_Providers_Slideshare')
-  end
-  after(:all) do
-    VCR.eject_cassette
-  end
-
+  use_custom_vcr_casette('OEmbed_Providers_Slideshare')
   include OEmbedSpecHelper
 
-  let(:provider_class) { OEmbed::Providers::Slideshare }
+  let(:provider) { OEmbed::Providers::Slideshare }
 
   expected_valid_urls = (
     %w(https:// http://).map do |protocol|

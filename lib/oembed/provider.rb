@@ -36,8 +36,14 @@ module OEmbed
     # In actual requests to this Provider, this string will be replaced with a String
     # representing the request format (e.g. "json").
     #
-    # If give, the format should be the name of the default format for all request
+    # The `format:` option should be the name of the default format for all request
     # to this Provider (e.g. 'json'). Defaults to OEmbed::Formatter.default
+    #
+    # # @deprecated *Note*: The `positional_format` is deprecated. Please used the named argument instead.
+    #
+    # The `required_query_params:` option should be a Hash
+    # representing query params that will be appended to the endpoint on each request
+    # and the optional name of an environment variable (i.e. ENV) whose value will be used
     #
     # For example:
     #   # If requests should be sent to:
@@ -46,14 +52,31 @@ module OEmbed
     #
     #   # If requests should be sent to:
     #   # "http://my.service.com/oembed.xml"
-    #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", :xml)
-    def initialize(endpoint, format = OEmbed::Formatter.default)
+    #   @xml_provider = OEmbed::Provider.new("http://my.service.com/oembed.{format}", format: :xml)
+    #
+    #   # If the endpoint requires an `access_token` be specified:
+    #   @provider_with_auth = OEmbed::Provider.new("http://my.service.com/oembed", required_query_params: { access_token: 'MY_SERVICE_ACCESS_TOKEN' })
+    #   # You can optionally override the value from `ENV['MY_SERVICE_ACCESS_TOKEN']`
+    #   @provider_with_auth.access_token = @my_access_token
+    def initialize(endpoint, positional_format = OEmbed::Formatter.default, format: nil, required_query_params: {})
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
 
+      @required_query_params = {}
+      required_query_params.each do |param, default_env_var|
+        param = param.to_sym
+        @required_query_params[param] = nil
+        set_required_query_params(param, ENV[default_env_var]) if default_env_var
+
+        # Define a getter and a setter for each required_query_param
+        define_singleton_method("#{param}") { @required_query_params[param] } unless respond_to?("#{param}")
+        define_singleton_method("#{param}=") { |val| set_required_query_params(param, val) } unless respond_to?("#{param}=")
+      end
+      required_query_params_set?(reset_cache: true)
+
       @endpoint = endpoint
       @urls = []
-      @format = format
+      @format = format || positional_format
     end
 
     # Adds the given url scheme to this Provider instance.
@@ -75,6 +98,28 @@ module OEmbed
       @urls << url
     end
 
+    # Given the name of a required_query_param and a value
+    # store that value internally, so that it can be sent along
+    # with requests to this provider's endpoint.
+    # Raises an ArgumentError if the given param is not listed with required_query_params
+    # during instantiation.
+    def set_required_query_params(param, val)
+      raise ArgumentError.new("This provider does NOT have a required_query_param named #{param.inspect}") unless @required_query_params.has_key?(param)
+
+      @required_query_params[param] = val.nil? ? nil : ::CGI.escape(val.to_s)
+
+      required_query_params_set?(reset_cache: true)
+
+      @required_query_params[param]
+    end
+
+    # Returns true if all of this provider's required_query_params have a value
+    def required_query_params_set?(reset_cache: false)
+      return @all_required_query_params_set unless reset_cache || @all_required_query_params_set.nil?
+
+      @all_required_query_params_set = !@required_query_params.values.include?(nil)
+    end
+
     # Send a request to the Provider endpoint to get information about the
     # given url and return the appropriate OEmbed::Response.
     #
@@ -92,7 +137,9 @@ module OEmbed
 
     # Determine whether the given url is supported by this Provider by matching
     # against the Provider's URL schemes.
+    # It will always return false of a provider has required_query_params that are not set.
     def include?(url)
+      return false unless required_query_params_set?
       @urls.empty? || !!@urls.detect{ |u| u =~ url }
     end
 
@@ -100,9 +147,11 @@ module OEmbed
     def build(url, query = {})
       raise OEmbed::NotFound, url unless include?(url)
 
-      query = query.merge({:url => ::CGI.escape(url)})
       query.delete(:timeout)
       query.delete(:max_redirects)
+
+      query = query.merge(@required_query_params)
+      query = query.merge({:url => ::CGI.escape(url)})
 
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s

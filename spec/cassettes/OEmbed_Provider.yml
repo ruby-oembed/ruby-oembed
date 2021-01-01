@@ -41,7 +41,7 @@ http_interactions:
       string: '{"version":"1.0","type":"photo","author_url":"http:\/\/www.flickr.com\/photos\/bees\/","cache_age":3600,"provider_name":"Flickr","provider_url":"http:\/\/www.flickr.com\/","title":"Bacon
         Lollys","author_name":"\u202e\u202d\u202cbees\u202c","width":"500","height":"375","url":"http:\/\/farm4.staticflickr.com\/3040\/2362225867_4a87ab8baf.jpg"}
 
-        '
+'
     http_version: '1.1'
   recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
 - request:
@@ -289,7 +289,6 @@ http_interactions:
       encoding: UTF-8
       string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:41:56 GMT
 - request:
     method: get
@@ -396,8 +395,7 @@ http_interactions:
         width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
         charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
 
-        '
-    http_version: null
+'
   recorded_at: Sat, 28 Mar 2020 02:41:57 GMT
 - request:
     method: get
@@ -482,7 +480,6 @@ http_interactions:
         phenomena.\n\nFacebook: Islands And Rivers\nFor licensing information contact
         Dale Dobson - dale@iconiclinx.com","thumbnail_url":"https:\/\/i.vimeocdn.com\/video\/448600816_295x166.jpg","thumbnail_width":295,"thumbnail_height":221,"thumbnail_url_with_play_button":"https:\/\/i.vimeocdn.com\/filter\/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F448600816_295x166.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png","upload_date":"2011-10-26
         14:43:13","video_id":31158841,"uri":"\/videos\/31158841"}'
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:41:57 GMT
 - request:
     method: get
@@ -526,7 +523,6 @@ http_interactions:
       encoding: UTF-8
       string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
 - request:
     method: get
@@ -633,8 +629,7 @@ http_interactions:
         width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
         charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
 
-        '
-    http_version: null
+'
   recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
 - request:
     method: get
@@ -678,7 +673,6 @@ http_interactions:
       encoding: UTF-8
       string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
 - request:
     method: get
@@ -785,8 +779,7 @@ http_interactions:
         width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
         charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
 
-        '
-    http_version: null
+'
   recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
 - request:
     method: get
@@ -830,7 +823,6 @@ http_interactions:
       encoding: UTF-8
       string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:43:37 GMT
 - request:
     method: get
@@ -937,8 +929,7 @@ http_interactions:
         width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
         charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
 
-        '
-    http_version: null
+'
   recorded_at: Sat, 28 Mar 2020 02:43:38 GMT
 - request:
     method: get
@@ -982,6 +973,116 @@ http_interactions:
       encoding: UTF-8
       string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
-    http_version: null
   recorded_at: Sat, 28 Mar 2020 02:57:10 GMT
-recorded_with: VCR 5.1.0
+- request:
+    method: get
+    uri: https://www.flickr.com/services/oembed/?format=json&url=http://flickr.com/photos/bees/2362225867/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 29 Nov 2020 17:06:22 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - flrb=28; expires=Sun, 29-Nov-2020 19:06:22 GMT; Max-Age=7200; path=/; domain=.flickr.com;
+        HttpOnly
+      - flrbgdrp=1606669582-23f5729ecb4b84a5c35b37f838608a94f6d2675e; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbgmrp=1606669582-4e7e32b97697d8df5628cdc19b6debe732025dae; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbgrp=1606669582-f29dbc48a5ccc72a2c8b63edc79f027be12fa534; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbp=1606669582-ba365789131bc9799456f8393d568f2e431b6e65; expires=Fri, 28-May-2021
+        17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbrgs=1606669582-11659fc35e81d354c1d67c8907ecc7f35e995c5d; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbrp=1606669582-bda3f855d73087bc19adc836297ebc425af59d74; expires=Fri, 28-May-2021
+        17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbrst=1606669582-c96cb45050d7bf9fc938b93cbdbb327d58dc1706; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrbs=1606669582-878e099eb89de0040a560d9a26cf63bd0cb144aa; expires=Fri, 28-May-2021
+        17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - flrtags=1606669582-25b5e7641a4e16f3f9ff4c6f68abedb4f81a3fe9; expires=Fri,
+        28-May-2021 17:06:22 GMT; Max-Age=15552000; path=/; domain=.flickr.com; HttpOnly
+      - localization=en-us%3Bus%3Bus; expires=Sun, 27-Nov-2022 17:06:22 GMT; Max-Age=62899200;
+        path=/; domain=.flickr.com
+      - xb=308442; expires=Wed, 27-Nov-2030 17:06:22 GMT; Max-Age=315360000; path=/;
+        domain=.flickr.com
+      Content-Security-Policy:
+      - 'default-src ''unsafe-inline'' https://*.flickr.com https://*.staticflickr.com
+        https://*.flickr.net https://*.braintreegateway.com https://*.kaptcha.com
+        https://*.paypal.com http://api.flickr.com https://*.pinterest.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://tpc.googlesyndication.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://trustarc.mgr.consensu.org/
+        https://consent.trustarc.com https://consent-pref.trustarc.com; img-src data:
+        blob: https://*.flickr.com https://*.flickr.net http://*.flickr.net https://*.staticflickr.com
+        http://*.staticflickr.com https://*.yimg.com https://*.yahoo.com https://image.maps.api.here.com
+        https://*.paypal.com https://*.pinterest.com http://*.static-alpha.flickr.com
+        https://connect.facebook.net https://*.facebook.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://creativecommons.org https://hexagon-analytics.com
+        https://*.2o7.net https://tagmanager.google.com https://www.googletagmanager.com
+        https://*.google.com https://*.google-analytics.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.doubleclick.com https://*.doubleclick.de
+        https://*.doubleclick.net https://*.googletagservices.com https://*.googleadservices.com
+        https://*.googlesyndication.com https://*.googleapis.com https://api.mapbox.com
+        https://consent.trustarc.com https://consent-pref.trustarc.com/; script-src
+        ''unsafe-eval'' ''unsafe-inline'' https://*.flickr.com http://*.flickr.net
+        https://*.flickr.net https://*.staticflickr.com https://*.analytics.yahoo.com
+        https://yep.video.yahoo.com https://video.media.yql.yahoo.com https://*.yahooapis.com
+        https://*.braintreegateway.com https://*.paypalobjects.com https://connect.facebook.net
+        https://*.facebook.com https://*.maps.api.here.com https://*.maps.cit.api.here.com
+        https://cdn.siftscience.com https://assets.adobedtm.com https://securepubads.g.doubleclick.net
+        https://adservice.google.com https://cdn.ampproject.org https://*.google.com
+        https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.doubleclick.com https://*.doubleclick.de https://*.doubleclick.net
+        https://*.googletagservices.com https://*.googleadservices.com https://*.googlesyndication.com
+        https://*.googleapis.com https://consent.trustarc.com https://trustarc.mgr.consensu.org;
+        connect-src https://*.flickr.com https://*.flickr.net http://*.flickr.net
+        https://*.staticflickr.com https://geo.query.yahoo.com https://*.yahooapis.com
+        http://api.flickr.com https://*.pinterest.com http://*.yahoo.com https://*.maps.api.here.com
+        https://*.maps.cit.api.here.com https://cdn.siftscience.com https://*.demdex.net
+        https://securepubads.g.doubleclick.net https://consent.trustarc.com https://consent-pref.trustarc.com;
+        report-uri https://csp.flickr.com/beacon/csp?src=adsecflickr;'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 32c16f33c8f5601364fa8229b0d74dc3.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C2
+      X-Amz-Cf-Id:
+      - aSD9R0Gf6NuljmG08WpU6BlxZDcV1yNpsgwKcZYnKilcRB_wtp4jpA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"photo","flickr_type":"photo","title":"Bacon Lollys","author_name":"\u202e\u202d\u202cbees\u202c","author_url":"https:\/\/www.flickr.com\/photos\/bees\/","width":1024,"height":768,"url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg","web_page":"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/","thumbnail_url":"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_q.jpg","thumbnail_width":150,"thumbnail_height":150,"web_page_short_url":"https:\/\/flic.kr\/p\/4AK2sc","license":"All
+        Rights Reserved","license_id":0,"html":"<a data-flickr-embed=\"true\" href=\"https:\/\/www.flickr.com\/photos\/bees\/2362225867\/\"
+        title=\"Bacon Lollys by \u202e\u202d\u202cbees\u202c, on Flickr\"><img src=\"https:\/\/live.staticflickr.com\/3040\/2362225867_4a87ab8baf_b.jpg\"
+        width=\"1024\" height=\"768\" alt=\"Bacon Lollys\"><\/a><script async src=\"https:\/\/embedr.flickr.com\/assets\/client-code.js\"
+        charset=\"utf-8\"><\/script>","version":"1.0","cache_age":3600,"provider_name":"Flickr","provider_url":"https:\/\/www.flickr.com\/"}
+
+'
+  recorded_at: Sun, 29 Nov 2020 17:06:22 GMT
+recorded_with: VCR 6.0.0

@@ -1,17 +1,10 @@
 require File.join(File.dirname(__FILE__), '../spec_helper')
-require 'support/shared_examples_for_providers'
 
 describe 'OEmbed::Providers::Twitter' do
-  before(:all) do
-    VCR.insert_cassette('OEmbed_Providers_Twitter')
-  end
-  after(:all) do
-    VCR.eject_cassette
-  end
-
+  use_custom_vcr_casette('OEmbed_Providers_Twitter')
   include OEmbedSpecHelper
 
-  let(:provider_class) { OEmbed::Providers::Twitter }
+  let(:provider) { OEmbed::Providers::Twitter }
 
   expected_valid_urls = %w(
     https://twitter.com/RailsGirlsSoC/status/702136612822634496
@@ -34,7 +27,7 @@ describe 'OEmbed::Providers::Twitter' do
         describe ".get" do
           it "should encounter a 400 error" do
             expect {
-              provider_class.get(valid_url, :format=>:xml)
+              provider.get(valid_url, format: :xml)
             }.to raise_error(OEmbed::UnknownResponse, /\b400\b/)
           end
         end

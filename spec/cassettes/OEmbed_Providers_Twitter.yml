@@ -2,396 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.twitter.com/1/statuses/oembed.json?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - must-revalidate, max-age=3153600000
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '511'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 04:42:50 GMT
-      Expires:
-      - Tue, 28 Apr 2116 04:42:50 GMT
-      Last-Modified:
-      - Sun, 22 May 2016 04:42:50 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389217092127692; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 04:42:50 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 94a2de9aaa8f85b2411f08f3a47cd023
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '16'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTb0MiLCJhdXRob3JfdXJsIjoiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DIiwiaHRtbCI6Ilx1MDAzQ2Jsb2NrcXVvdGUgY2xhc3M9XCJ0d2l0dGVyLXR3ZWV0XCJcdTAwM0VcdTAwM0NwIGxhbmc9XCJlblwiIGRpcj1cImx0clwiXHUwMDNFT3VyIDIwMTYgZnVuZHJhaXNpbmcgY2FtcGFpZ24gaXMgbm93IG9wZW4hISBMZXTigJlzIG1ha2UgYW5vdGhlciBhbWF6aW5nIHN1bW1lciBoYXBwZW4h4pyoXHVEODNEXHVEQzlDXHVEODNEXHVEQ0FBXHVEODNEXHVEQzlB4pyoXHVEODNEXHVEQzQ5IFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XCJcdTAwM0VodHRwczpcL1wvdC5jb1wvUjhKZzM2eGFReFx1MDAzQ1wvYVx1MDAzRSBcdTAwM0NhIGhyZWY9XCJodHRwczpcL1wvdC5jb1wvbUl3S1IwZnpHUlwiXHUwMDNFcGljLnR3aXR0ZXIuY29tXC9tSXdLUjBmekdSXHUwMDNDXC9hXHUwMDNFXHUwMDNDXC9wXHUwMDNFJm1kYXNoOyBSYWlscyBHaXJscyBTb0MgKEBSYWlsc0dpcmxzU29DKSBcdTAwM0NhIGhyZWY9XCJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cIlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0UiLCJ3aWR0aCI6NTUwLCJ0eXBlIjoicmljaCIsImNhY2hlX2FnZSI6IjMxNTM2MDAwMDAiLCJwcm92aWRlcl9uYW1lIjoiVHdpdHRlciIsInByb3ZpZGVyX3VybCI6Imh0dHBzOlwvXC90d2l0dGVyLmNvbSIsImhlaWdodCI6bnVsbCwidmVyc2lvbiI6IjEuMCJ9
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://api.twitter.com/1/statuses/oembed.json?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - must-revalidate, max-age=3153600000
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '377'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 04:42:51 GMT
-      Expires:
-      - Tue, 28 Apr 2116 04:42:51 GMT
-      Last-Modified:
-      - Sun, 22 May 2016 04:42:51 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389217180318801; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 04:42:51 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 7a694516718ce415b38581035d0967e0
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '15'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: UTF-8
-      string: '{"url":"https:\/\/twitter.com\/bpoweski\/status\/71633762","author_name":"Ben
-        Poweski","author_url":"https:\/\/twitter.com\/bpoweski","html":"\u003Cblockquote
-        class=\"twitter-tweet\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003Eworking
-        on my Ruby Security book\u003C\/p\u003E&mdash; Ben Poweski (@bpoweski) \u003Ca
-        href=\"https:\/\/twitter.com\/bpoweski\/status\/71633762\"\u003EMay 20, 2007\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript
-        async src=\"\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E","width":550,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","height":null,"version":"1.0"}'
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://api.twitter.com/1/statuses/oembed.xml?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 410
-      message: Gone
-    headers:
-      Content-Length:
-      - '181'
-      Content-Type:
-      - application/xml;charset=utf-8
-      Date:
-      - Sun, 22 May 2016 04:47:50 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389247047875048; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 04:47:50 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 4362d0593f7be75dc40b9a6f51ada770
-      X-Response-Time:
-      - '2'
-    body:
-      encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8"?><errors>  <error code="64">The
-        Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.</error></errors>
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://api.twitter.com/1/statuses/oembed.xml?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 410
-      message: Gone
-    headers:
-      Content-Length:
-      - '181'
-      Content-Type:
-      - application/xml;charset=utf-8
-      Date:
-      - Sun, 22 May 2016 04:47:50 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389247091551370; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 04:47:50 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 0ad11ae6624c326369f0b9f878dd4faa
-      X-Response-Time:
-      - '3'
-    body:
-      encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8"?><errors>  <error code="64">The
-        Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.</error></errors>
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - must-revalidate, max-age=3153600000
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '511'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 05:28:56 GMT
-      Expires:
-      - Tue, 28 Apr 2116 05:28:56 GMT
-      Last-Modified:
-      - Sun, 22 May 2016 05:28:56 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389493674598630; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 05:28:56 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - af69b197ce2eeb32bfa62ea1f1c8647e
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '35'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTb0MiLCJhdXRob3JfdXJsIjoiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DIiwiaHRtbCI6Ilx1MDAzQ2Jsb2NrcXVvdGUgY2xhc3M9XCJ0d2l0dGVyLXR3ZWV0XCJcdTAwM0VcdTAwM0NwIGxhbmc9XCJlblwiIGRpcj1cImx0clwiXHUwMDNFT3VyIDIwMTYgZnVuZHJhaXNpbmcgY2FtcGFpZ24gaXMgbm93IG9wZW4hISBMZXTigJlzIG1ha2UgYW5vdGhlciBhbWF6aW5nIHN1bW1lciBoYXBwZW4h4pyoXHVEODNEXHVEQzlDXHVEODNEXHVEQ0FBXHVEODNEXHVEQzlB4pyoXHVEODNEXHVEQzQ5IFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XCJcdTAwM0VodHRwczpcL1wvdC5jb1wvUjhKZzM2eGFReFx1MDAzQ1wvYVx1MDAzRSBcdTAwM0NhIGhyZWY9XCJodHRwczpcL1wvdC5jb1wvbUl3S1IwZnpHUlwiXHUwMDNFcGljLnR3aXR0ZXIuY29tXC9tSXdLUjBmekdSXHUwMDNDXC9hXHUwMDNFXHUwMDNDXC9wXHUwMDNFJm1kYXNoOyBSYWlscyBHaXJscyBTb0MgKEBSYWlsc0dpcmxzU29DKSBcdTAwM0NhIGhyZWY9XCJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cIlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0UiLCJ3aWR0aCI6NTUwLCJ0eXBlIjoicmljaCIsImNhY2hlX2FnZSI6IjMxNTM2MDAwMDAiLCJwcm92aWRlcl9uYW1lIjoiVHdpdHRlciIsInByb3ZpZGVyX3VybCI6Imh0dHBzOlwvXC90d2l0dGVyLmNvbSIsImhlaWdodCI6bnVsbCwidmVyc2lvbiI6IjEuMCJ9
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://publish.twitter.com/oembed?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - must-revalidate, max-age=3153600000
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '377'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 05:28:58 GMT
-      Expires:
-      - Tue, 28 Apr 2116 05:28:58 GMT
-      Last-Modified:
-      - Sun, 22 May 2016 05:28:58 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389493840609737; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 05:28:58 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 753e3b3ca5ace007543400fc1a736700
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '15'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: UTF-8
-      string: '{"url":"https:\/\/twitter.com\/bpoweski\/status\/71633762","author_name":"Ben
-        Poweski","author_url":"https:\/\/twitter.com\/bpoweski","html":"\u003Cblockquote
-        class=\"twitter-tweet\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003Eworking
-        on my Ruby Security book\u003C\/p\u003E&mdash; Ben Poweski (@bpoweski) \u003Ca
-        href=\"https:\/\/twitter.com\/bpoweski\/status\/71633762\"\u003EMay 20, 2007\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript
-        async src=\"\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E","width":550,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","height":null,"version":"1.0"}'
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2FRailsGirlsSoC%2Fstatus%2F702136612822634496&format=xml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '60'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 05:28:58 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389493885489875; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 05:28:58 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - a457da9c9aa85d3abd203831bbbb83d3
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '7'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: UTF-8
-      string: '{"errors":["xml not implemented"]}'
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
-    uri: https://publish.twitter.com/oembed?url=https%3A%2F%2Fwww.twitter.com%2Fbpoweski%2Fstatus%2F71633762&format=xml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.10.0)
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '60'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 22 May 2016 05:28:59 GMT
-      Server:
-      - tsa_a
-      Set-Cookie:
-      - guest_id=v1%3A146389493910837135; Domain=.twitter.com; Path=/; Expires=Tue,
-        22-May-2018 05:28:59 UTC
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Connection-Hash:
-      - 3543953c1c553fbcf1c441417b26f66d
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '6'
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: UTF-8
-      string: '{"errors":["xml not implemented"]}'
-    http_version: '1.1'
-  recorded_at: Sat, 28 Mar 2020 02:32:33 GMT
-- request:
-    method: get
     uri: https://publish.twitter.com/oembed?format=json&url=https://twitter.com/RailsGirlsSoC/status/702136612822634496
     body:
       encoding: US-ASCII
@@ -402,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
   response:
     status:
       code: 200
@@ -417,36 +27,35 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:53 GMT
       Expires:
-      - Mon, 04 Mar 2120 02:57:13 GMT
+      - Wed, 23 Oct 2120 05:47:53 GMT
       Last-Modified:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:53 GMT
       Server:
-      - tsa_b
+      - tsa_a
       Set-Cookie:
-      - guest_id=v1%3A158536423309272551; Max-Age=63072000; Expires=Mon, 28 Mar 2022
-        02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
-      - personalization_id="v1_KiUPAkKw0EcXtxGVGK/V+g=="; Max-Age=63072000; Expires=Mon,
-        28 Mar 2022 02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id=v1%3A160550567352194169; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_QQcfpv8hqFmaCeCr7/3cPw=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=631138519
       X-Connection-Hash:
-      - 59bf8165569d5ff7d12803bcf8cb4a3d
+      - 22febe103508edd85f03f241512831a9
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '13'
+      - '19'
       X-Xss-Protection:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTdW1tZXIgb2YgQ29kZSIsImF1dGhvcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0MiLCJodG1sIjoiXHUwMDNDYmxvY2txdW90ZSBjbGFzcz1cInR3aXR0ZXItdHdlZXRcIlx1MDAzRVx1MDAzQ3AgbGFuZz1cImVuXCIgZGlyPVwibHRyXCJcdTAwM0VPdXIgMjAxNiBmdW5kcmFpc2luZyBjYW1wYWlnbiBpcyBub3cgb3BlbiEhIExldOKAmXMgbWFrZSBhbm90aGVyIGFtYXppbmcgc3VtbWVyIGhhcHBlbiHinKhcdUQ4M0RcdURDOUNcdUQ4M0RcdURDQUFcdUQ4M0RcdURDOUHinKhcdUQ4M0RcdURDNDkgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3QuY29cL1I4SmczNnhhUXhcIlx1MDAzRWh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XHUwMDNDXC9hXHUwMDNFIFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9tSXdLUjBmekdSXCJcdTAwM0VwaWMudHdpdHRlci5jb21cL21Jd0tSMGZ6R1JcdTAwM0NcL2FcdTAwM0VcdTAwM0NcL3BcdTAwM0UmbWRhc2g7IFJhaWxzIEdpcmxzIFN1bW1lciBvZiBDb2RlIChAUmFpbHNHaXJsc1NvQykgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DXC9zdGF0dXNcLzcwMjEzNjYxMjgyMjYzNDQ5Nj9yZWZfc3JjPXR3c3JjJTVFdGZ3XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0VcbiIsIndpZHRoIjo1NTAsImhlaWdodCI6bnVsbCwidHlwZSI6InJpY2giLCJjYWNoZV9hZ2UiOiIzMTUzNjAwMDAwIiwicHJvdmlkZXJfbmFtZSI6IlR3aXR0ZXIiLCJwcm92aWRlcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb20iLCJ2ZXJzaW9uIjoiMS4wIn0=
-    http_version: null
-  recorded_at: Sat, 28 Mar 2020 02:57:13 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:53 GMT
 - request:
     method: get
     uri: https://publish.twitter.com/oembed?format=json&url=https://www.twitter.com/bpoweski/status/71633762
@@ -459,7 +68,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
   response:
     status:
       code: 200
@@ -474,22 +83,139 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:53 GMT
       Expires:
-      - Mon, 04 Mar 2120 02:57:13 GMT
+      - Wed, 23 Oct 2120 05:47:53 GMT
       Last-Modified:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:53 GMT
       Server:
-      - tsa_b
+      - tsa_a
       Set-Cookie:
-      - guest_id=v1%3A158536423333913733; Max-Age=63072000; Expires=Mon, 28 Mar 2022
-        02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
-      - personalization_id="v1_IZHXNs49gzXyq6HVztwoIA=="; Max-Age=63072000; Expires=Mon,
-        28 Mar 2022 02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id=v1%3A160550567367807532; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_Gx2JUl4tMLziYgzJcZMbow=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=631138519
       X-Connection-Hash:
-      - c8cde87a8443acca9f0c0d47bc2aca11
+      - 5ce605a596ab88d7fa206f0f3016a4b7
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '16'
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https:\/\/twitter.com\/bpoweski\/status\/71633762","author_name":"Ben
+        Poweski","author_url":"https:\/\/twitter.com\/bpoweski","html":"\u003Cblockquote
+        class=\"twitter-tweet\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003Eworking
+        on my Ruby Security book\u003C\/p\u003E&mdash; Ben Poweski (@bpoweski) \u003Ca
+        href=\"https:\/\/twitter.com\/bpoweski\/status\/71633762?ref_src=twsrc%5Etfw\"\u003EMay
+        20, 2007\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\"
+        charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"}'
+  recorded_at: Mon, 16 Nov 2020 05:47:53 GMT
+- request:
+    method: get
+    uri: https://publish.twitter.com/oembed?format=json&url=https://twitter.com/RailsGirlsSoC/status/702136612822634496
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, max-age=3153600000
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '534'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2020 05:47:53 GMT
+      Expires:
+      - Wed, 23 Oct 2120 05:47:53 GMT
+      Last-Modified:
+      - Mon, 16 Nov 2020 05:47:53 GMT
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A160550567382438196; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_ogXV5OmmnUGGj3ymNhFemg=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - e6860321c823a56528644fdefdd16b4c
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '17'
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTdW1tZXIgb2YgQ29kZSIsImF1dGhvcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0MiLCJodG1sIjoiXHUwMDNDYmxvY2txdW90ZSBjbGFzcz1cInR3aXR0ZXItdHdlZXRcIlx1MDAzRVx1MDAzQ3AgbGFuZz1cImVuXCIgZGlyPVwibHRyXCJcdTAwM0VPdXIgMjAxNiBmdW5kcmFpc2luZyBjYW1wYWlnbiBpcyBub3cgb3BlbiEhIExldOKAmXMgbWFrZSBhbm90aGVyIGFtYXppbmcgc3VtbWVyIGhhcHBlbiHinKhcdUQ4M0RcdURDOUNcdUQ4M0RcdURDQUFcdUQ4M0RcdURDOUHinKhcdUQ4M0RcdURDNDkgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3QuY29cL1I4SmczNnhhUXhcIlx1MDAzRWh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XHUwMDNDXC9hXHUwMDNFIFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9tSXdLUjBmekdSXCJcdTAwM0VwaWMudHdpdHRlci5jb21cL21Jd0tSMGZ6R1JcdTAwM0NcL2FcdTAwM0VcdTAwM0NcL3BcdTAwM0UmbWRhc2g7IFJhaWxzIEdpcmxzIFN1bW1lciBvZiBDb2RlIChAUmFpbHNHaXJsc1NvQykgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DXC9zdGF0dXNcLzcwMjEzNjYxMjgyMjYzNDQ5Nj9yZWZfc3JjPXR3c3JjJTVFdGZ3XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0VcbiIsIndpZHRoIjo1NTAsImhlaWdodCI6bnVsbCwidHlwZSI6InJpY2giLCJjYWNoZV9hZ2UiOiIzMTUzNjAwMDAwIiwicHJvdmlkZXJfbmFtZSI6IlR3aXR0ZXIiLCJwcm92aWRlcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb20iLCJ2ZXJzaW9uIjoiMS4wIn0=
+  recorded_at: Mon, 16 Nov 2020 05:47:53 GMT
+- request:
+    method: get
+    uri: https://publish.twitter.com/oembed?format=json&url=https://www.twitter.com/bpoweski/status/71633762
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, max-age=3153600000
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '390'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2020 05:47:53 GMT
+      Expires:
+      - Wed, 23 Oct 2120 05:47:53 GMT
+      Last-Modified:
+      - Mon, 16 Nov 2020 05:47:53 GMT
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A160550567397596942; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_mH/jNzr8rEjwzWo/tGonBw=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:53 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 8178bc5d0e59fe1a42679699f6cf4a3c
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -507,8 +233,7 @@ http_interactions:
         href=\"https:\/\/twitter.com\/bpoweski\/status\/71633762?ref_src=twsrc%5Etfw\"\u003EMay
         20, 2007\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\"
         charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"}'
-    http_version: null
-  recorded_at: Sat, 28 Mar 2020 02:57:13 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:54 GMT
 - request:
     method: get
     uri: https://publish.twitter.com/oembed?format=xml&url=https://twitter.com/RailsGirlsSoC/status/702136612822634496
@@ -521,12 +246,14 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
   response:
     status:
       code: 400
       message: Bad Request
     headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
@@ -534,31 +261,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:54 GMT
       Server:
-      - tsa_b
+      - tsa_a
       Set-Cookie:
-      - guest_id=v1%3A158536423357150992; Max-Age=63072000; Expires=Mon, 28 Mar 2022
-        02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
-      - personalization_id="v1_1iBNx2XMQpbCzil5XE4fYA=="; Max-Age=63072000; Expires=Mon,
-        28 Mar 2022 02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id=v1%3A160550567411289067; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:54 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_DDadQOU1O6JjoE7UgG25RQ=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:54 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=631138519
       X-Connection-Hash:
-      - 8ebc794f0b8d456857bd216adbc36041
+      - 020cf723b9a1b097dd761b8d80eb91fd
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '5'
+      - '6'
       X-Xss-Protection:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: '{"errors":[{"code":356,"message":"xml not implemented"}]}'
-    http_version: null
-  recorded_at: Sat, 28 Mar 2020 02:57:13 GMT
+  recorded_at: Mon, 16 Nov 2020 05:47:54 GMT
 - request:
     method: get
     uri: https://publish.twitter.com/oembed?format=xml&url=https://www.twitter.com/bpoweski/status/71633762
@@ -571,12 +297,14 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.12.0)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
   response:
     status:
       code: 400
       message: Bad Request
     headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
@@ -584,29 +312,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 28 Mar 2020 02:57:13 GMT
+      - Mon, 16 Nov 2020 05:47:54 GMT
       Server:
-      - tsa_b
+      - tsa_a
       Set-Cookie:
-      - guest_id=v1%3A158536423380340030; Max-Age=63072000; Expires=Mon, 28 Mar 2022
-        02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
-      - personalization_id="v1_2BcqqmIDYZ4fd9wqkZG0lg=="; Max-Age=63072000; Expires=Mon,
-        28 Mar 2022 02:57:13 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id=v1%3A160550567426738712; Max-Age=63072000; Expires=Wed, 16 Nov 2022
+        05:47:54 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_rtxo8uv6FK1DBPbCuEa2fA=="; Max-Age=63072000; Expires=Wed,
+        16 Nov 2022 05:47:54 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
       Strict-Transport-Security:
       - max-age=631138519
       X-Connection-Hash:
-      - 7adc752de391db7dc78aaf4c394223fd
+      - a52b4e6570c5f8a4dfec6220951616d0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '5'
+      - '7'
       X-Xss-Protection:
       - '0'
     body:
       encoding: ASCII-8BIT
       string: '{"errors":[{"code":356,"message":"xml not implemented"}]}'
-    http_version: null
-  recorded_at: Sat, 28 Mar 2020 02:57:13 GMT
-recorded_with: VCR 5.1.0
+  recorded_at: Mon, 16 Nov 2020 05:47:54 GMT
+recorded_with: VCR 6.0.0

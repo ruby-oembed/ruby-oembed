@@ -1,37 +1,49 @@
 RSpec.shared_examples "an OEmbed::Providers instance" do |expected_valid_urls, expected_invalid_urls|
+  subject { provider }
+
   expected_valid_urls.each do |valid_url|
     context "given the valid URL #{valid_url}" do
-      describe ".include?" do
-        it "should be true" do
-          expect(provider_class.include?(valid_url)).to be_truthy
-        end
-      end
+      it { should include(valid_url) }
 
       describe ".get" do
-        it "should return a response" do
-          response = nil
-          expect {
-            response = provider_class.get(valid_url)
-          }.to_not raise_error
-          expect(response).to be_a(OEmbed::Response)
-        end
+        subject { provider.get(valid_url) }
+
+        it { should be_a(OEmbed::Response) }
       end
     end
   end
 
   expected_invalid_urls.each do |invalid_url|
     context "given the invalid URL #{invalid_url}" do
-      describe ".include?" do
-        it "should be false" do
-          expect(provider_class.include?(invalid_url)).to be_falsey
-        end
-      end
+      it { should_not include(invalid_url) }
 
       describe ".get" do
-        it "should not find a response" do
-          expect {
-            provider_class.get(invalid_url)
-          }.to raise_error(OEmbed::NotFound)
+        subject { provider.get(invalid_url) }
+
+        it "should raise an OEmbed::NotFound error" do
+          expect { subject }.to raise_error(OEmbed::NotFound)
+        end
+      end
+    end
+  end
+
+  describe "OEmbed::Providers.register(provider)" do
+    before(:each) { OEmbed::Providers.register(provider) }
+    after(:each) { OEmbed::Providers.unregister_all }
+
+    describe('.get') do
+      expected_valid_urls.each do |valid_url|
+        context "given the valid URL #{valid_url}" do
+          subject { OEmbed::Providers.get(valid_url) }
+          it { should be_a(OEmbed::Response) }
+        end
+      end
+      expected_invalid_urls.each do |invalid_url|
+        context "given the invalid URL #{invalid_url}" do
+          let(:url) { invalid_url }
+          it "should raise an OEmbed::NotFound error" do
+            expect { expect(OEmbed::Providers.get(url)) }.to raise_error(OEmbed::NotFound)
+          end
         end
       end
     end

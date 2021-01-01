@@ -1,0 +1,1473 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"17a47eb5a818191edf810e2092f31ae46c3973e5"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - A5iF60C4LkUKka2dgBQMOcv
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - DivX7F7q6/0
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - I4W/Nb/XUQwjUJKpgcC4U/9BSub2aWxICx1X8JYKKdtLNfEwZ51KmlzHguteyOHaXZcfaOaPS0Dxj9SqWB7C7w==
+      Date:
+      - Sun, 27 Dec 2020 15:12:16 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2677'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX86Thej&tp=1&oh=5f6e8099047d85c774518d1cc71c1bea&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:16 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"7dc752783b1609fea30cbf8dfa0659b51c132397"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - ATzOlzXABqrRJVDppVXFpqY
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - AcefmuWFfQT
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - i1Ai9BW58+FQw3Rl+Tg0ot7mVkZEZ3drRqQ2Nn9BCurBFzq8Y4IwEp4148HR3lNzKeeSsazKP7RsGVqV63gnFg==
+      Date:
+      - Sun, 27 Dec 2020 15:12:17 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2680'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX_ZxOEr&tp=1&oh=e5ee658d6be4891bc37f3385563801a4&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:17 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=http://instagr.am/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"cf0d9d42bedf87a32920de5985437fc041e27b14"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - A_gpRk2TcUVMDeIQy0rGqoI
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - Gbp7z7J2qa1
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - boU3P4K5/7up7Bo9w+n7pUhzL8vdmtd+jHdX9dk2xePBuIhIFVKILVXWxc5qv8aiuVw75EsmNLMlK8UuOEmmeQ==
+      Date:
+      - Sun, 27 Dec 2020 15:12:17 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2678'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX_xBhQM&tp=1&oh=0a9040b7bb6c900d5089b702652d6366&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:17 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"8030117c8f735617d997b733a8a2187fc7c65721"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AZiI74MtvvkVT7ZvLavxi_q
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - DanMZnXoFVG
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - Up94ibUU865zNJEKwx1pXWM77YOuwORSD+HedNOSmqA9T7hnbLiDorJNCLZhPEkiKKjKH7PUBB/f2xQabcPOBA==
+      Date:
+      - Sun, 27 Dec 2020 15:12:17 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2673'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=uN6kqE04gp4AX-eU49W&tp=1&oh=88acca242050339b4a4aa834f189065b&oe=5FEAE85E","thumbnail_width":480,"thumbnail_height":746}'
+  recorded_at: Sun, 27 Dec 2020 15:12:17 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/reel/CIyNZQhH4DQ/?igshid=40rns9jda1ow
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"5f7ed930a08d42a83a2acdaefed2949d1f475b55"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AwAiJuNE0UL5Wy0XxfMKCp8
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - FaqqnLHfdi3
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - 6tThT/zFVcJ15Yzn4q0rlpMpmK+mUnfsA03l6EBbm1PsFWP/fNw67ftJ/9o8dYtHB2YxDE8FSM8fMI35LgUJ+w==
+      Date:
+      - Sun, 27 Dec 2020 15:12:17 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2701'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"travellomatic","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Travel | Nature | Animals (\u0040travellomatic)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/p640x640\/131238250_215906636681901_3954041487956195126_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=1&_nc_ohc=DrYKGQA7xcwAX930GcV&tp=1&oh=de0641ea96cb460f2a2a14f88fd90e47&oe=5FEAA7F4","thumbnail_width":640,"thumbnail_height":1137}'
+  recorded_at: Sun, 27 Dec 2020 15:12:17 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"22e1f5fb521a78a6768f8d8e9a0ddfb38fe79d87"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - ADqxtkMTmIxG--fMZELUZ1e
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - EPln5/tX1u9
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - ZpvrqobtJ9eH0UqbCNuF3960wX9i64+GW2RxeHAq1RPkqCuaEKwN+1Vcrg9Qrrcv+siKHw4TJyTrgLlFZh69RA==
+      Date:
+      - Sun, 27 Dec 2020 15:12:17 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2679'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX-q7kbn&tp=1&oh=ff3d2eaadef0bf3732ebd99f4c9fc16c&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:17 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://instagram.com/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"1437d80f2b5b3538992d9d6dcfbcb52f5480c2bc"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - A6KFRUKIGAR2fWaP7vJ56n3
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - EQD4WVfotRw
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - hK01nJmhlgrnsxX833rkTxuBWcg3dcUN+25dwU7TJyrBii8QZaYeOUj0+RIQHafEPiNESChEj/XPWilTDOwGiQ==
+      Date:
+      - Sun, 27 Dec 2020 15:12:18 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2677'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX_NmcX9&tp=1&oh=6f7151442b2379f6d871571490374c21&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:18 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=http://instagr.am/p/B9bOM-6Ax_d/?igshid=1mn51zsvrhoiq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"cb56927d9f74ae9919905522fde3da94d783e780"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - Ae0cT_Zu6HNjiy2g7XoFJEz
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - C//fk5ix1BG
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - lqLh6J6hnJO8S0hU7bDAtRtwtYP47zHNmDW6d5/SVEaZ1VvOJ0/flVuE1ommW1fF7ZvlE8L6PC82opVU+gb6qQ==
+      Date:
+      - Sun, 27 Dec 2020 15:12:18 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2679'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/p\/B9bOM-6Ax_d\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/s640x640\/88197155_239984727028042_9150454769439124705_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=yr5tjvd-_wYAX9BixwA&tp=1&oh=f79ebb56fa16dc938f7aa5f454c12888&oe=6010FA59","thumbnail_width":640,"thumbnail_height":640}'
+  recorded_at: Sun, 27 Dec 2020 15:12:18 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/tv/CCX-gcHArcJ/?igshid=1i0rst4jaz0j
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"6962fe086b0472283c26ba7ce03a93679ac3e12e"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - AdYP-DkKpyAC0dIoeCwf1jC
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - AVu3kxsMAEP
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - Y4GqCYSXVinITi++ktwNyZygdrc4f6wgDRp9NcqcekmH3R32nZY3wTJU5rIXK/qgK0ifcBxXgWk1RS/N1EoemQ==
+      Date:
+      - Sun, 27 Dec 2020 15:12:18 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2673'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"ruby_eloquent","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/tv\/CCX-gcHArcJ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Ruby on Rails (\u0040ruby_eloquent)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/e35\/106552995_302216364249720_8388842132577095117_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=uN6kqE04gp4AX_99aP4&tp=1&oh=56cf4cf7acd9c45a51ac0c95b6ea4a4e&oe=5FEAE85E","thumbnail_width":480,"thumbnail_height":746}'
+  recorded_at: Sun, 27 Dec 2020 15:12:18 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v8.0/instagram_oembed?access_token=A_FAKE_TOKEN_FOR_TESTS&format=json&url=https://www.instagram.com/reel/CIyNZQhH4DQ/?igshid=40rns9jda1ow
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"46a02942d8a13a9f51056265a389564d868885b8"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v9.0
+      X-Fb-Request-Id:
+      - Ak6Z3-R0---zFDoR4rjFEZu
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - D9UkV0J/LeJ
+      X-App-Usage:
+      - '{"call_count":0,"total_cputime":0,"total_time":0}'
+      X-Fb-Rev:
+      - '1003139287'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - w0/OnSMj6dOV7vG5YmkDdFpCZpWy4ccHzXmh9v/npxvrtbo79ZIHvHByunSAMygJdcslTF4JNl5d2iOrSxSHbQ==
+      Date:
+      - Sun, 27 Dec 2020 15:12:18 GMT
+      Alt-Svc:
+      - h3-29=":443"; ma=3600,h3-27=":443"; ma=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2700'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"version":"1.0","author_name":"travellomatic","provider_name":"Instagram","provider_url":"https:\/\/www.instagram.com\/","type":"rich","width":658,"html":"\u003Cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-permalink=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        data-instgrm-version=\"13\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; min-width:326px; padding:0; width:99.375\u0025; width:-webkit-calc(100\u0025
+        - 2px); width:calc(100\u0025 - 2px);\">\u003Cdiv style=\"padding:16px;\">
+        \u003Ca href=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center;
+        text-decoration:none; width:100\u0025;\" target=\"_blank\"> \u003Cdiv style=\"
+        display: flex; flex-direction: row; align-items: center;\"> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; flex-grow: 0; height: 40px; margin-right:
+        14px; width: 40px;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction:
+        column; flex-grow: 1; justify-content: center;\"> \u003Cdiv style=\" background-color:
+        #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px;
+        width: 100px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\">\u003C\/div>\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"padding: 19\u0025 0;\">\u003C\/div> \u003Cdiv style=\"display:block;
+        height:50px; margin:0 auto 12px; width:50px;\">\u003Csvg width=\"50px\" height=\"50px\"
+        viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\"
+        xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\">\u003Cg stroke=\"none\"
+        stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\u003Cg transform=\"translate(-511.000000,
+        -20.000000)\" fill=\"#000000\">\u003Cg>\u003Cpath d=\"M556.869,30.41 C554.814,30.41
+        553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852
+        C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41
+        M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342
+        541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657
+        541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899
+        532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1
+        549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663
+        C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803
+        558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521
+        548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244
+        524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106
+        C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022
+        516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056
+        516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938
+        518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654
+        C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448
+        541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244
+        558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942
+        563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899
+        C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101
+        M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377
+        567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575
+        C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20
+        C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575
+        C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377
+        512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831
+        511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562
+        511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965
+        C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673
+        528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965
+        553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658
+        564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651
+        C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50
+        C571,41.851 570.966,40.831 570.82,37.631\">\u003C\/path>\u003C\/g>\u003C\/g>\u003C\/g>\u003C\/svg>\u003C\/div>\u003Cdiv
+        style=\"padding-top: 8px;\"> \u003Cdiv style=\" color:#3897f0; font-family:Arial,sans-serif;
+        font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View
+        this post on Instagram\u003C\/div>\u003C\/div>\u003Cdiv style=\"padding: 12.5\u0025
+        0;\">\u003C\/div> \u003Cdiv style=\"display: flex; flex-direction: row; margin-bottom:
+        14px; align-items: center;\">\u003Cdiv> \u003Cdiv style=\"background-color:
+        #F4F4F4; border-radius: 50\u0025; height: 12.5px; width: 12.5px; transform:
+        translateX(0px) translateY(7px);\">\u003C\/div> \u003Cdiv style=\"background-color:
+        #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px);
+        width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\">\u003C\/div>
+        \u003Cdiv style=\"background-color: #F4F4F4; border-radius: 50\u0025; height:
+        12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: 8px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 50\u0025; flex-grow: 0; height: 20px; width: 20px;\">\u003C\/div>
+        \u003Cdiv style=\" width: 0; height: 0; border-top: 2px solid transparent;
+        border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform:
+        translateX(16px) translateY(-4px) rotate(30deg)\">\u003C\/div>\u003C\/div>\u003Cdiv
+        style=\"margin-left: auto;\"> \u003Cdiv style=\" width: 0px; border-top: 8px
+        solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\">\u003C\/div>
+        \u003Cdiv style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px;
+        width: 16px; transform: translateY(-4px);\">\u003C\/div> \u003Cdiv style=\"
+        width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid
+        transparent; transform: translateY(-4px) translateX(8px);\">\u003C\/div>\u003C\/div>\u003C\/div>
+        \u003Cdiv style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content:
+        center; margin-bottom: 24px;\"> \u003Cdiv style=\" background-color: #F4F4F4;
+        border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width:
+        224px;\">\u003C\/div> \u003Cdiv style=\" background-color: #F4F4F4; border-radius:
+        4px; flex-grow: 0; height: 14px; width: 144px;\">\u003C\/div>\u003C\/div>\u003C\/a>\u003Cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\">\u003Ca href=\"https:\/\/www.instagram.com\/reel\/CIyNZQhH4DQ\/?utm_source=ig_embed&amp;utm_campaign=loading\"
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A
+        post shared by Travel | Nature | Animals (\u0040travellomatic)\u003C\/a>\u003C\/p>\u003C\/div>\u003C\/blockquote>\n\u003Cscript
+        async src=\"\/\/platform.instagram.com\/en_US\/embeds.js\">\u003C\/script>","thumbnail_url":"https:\/\/scontent.cdninstagram.com\/v\/t51.2885-15\/sh0.08\/e35\/p640x640\/131238250_215906636681901_3954041487956195126_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=1&_nc_ohc=DrYKGQA7xcwAX84GNHg&tp=1&oh=fbe0aa7316c56618ecf29847f7ef321c&oe=5FEAA7F4","thumbnail_width":640,"thumbnail_height":1137}'
+  recorded_at: Sun, 27 Dec 2020 15:12:18 GMT
+recorded_with: VCR 6.0.0

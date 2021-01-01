@@ -1,16 +1,10 @@
 require File.join(File.dirname(__FILE__), '../spec_helper')
 
 describe 'OEmbed::Providers::Youtube' do
-  before(:all) do
-    VCR.insert_cassette('OEmbed_Providers_Youtube')
-  end
-  after(:all) do
-    VCR.eject_cassette
-  end
-
+  use_custom_vcr_casette('OEmbed_Providers_Youtube')
   include OEmbedSpecHelper
 
-  let(:provider_class) { OEmbed::Providers::Youtube }
+  let(:provider) { OEmbed::Providers::Youtube }
 
   expected_valid_urls = %w(
     https://www.youtube.com/watch?v=pO5L6vXtxsI
@@ -34,7 +28,7 @@ describe 'OEmbed::Providers::Youtube' do
 
       it "should throw an UnknownResponse error" do
         expect {
-          provider_class.get(invalid_url)
+          provider.get(invalid_url)
         }.to raise_error(OEmbed::UnknownResponse, /403/)
       end
     end

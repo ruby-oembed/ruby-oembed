@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://codepen.io/api/oembed?format=json&url=https://codepen.io/maximakymenko/pen/mdbpeXm
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d58b6838d8b02b3aee68a5267dca2a9531605505667; expires=Wed, 16-Dec-20
+        05:47:47 GMT; path=/; domain=.codepen.io; HttpOnly; SameSite=Lax; Secure
+      - __cfruid=181713fe255d24b57c1f12fedcd894ebbbf72abf-1605505667; path=/; domain=.codepen.io;
+        HttpOnly; Secure; SameSite=None
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - bdee9208-3c74-4234-82f2-77fa93acd4fc
+      X-Download-Options:
+      - noopen
+      X-Env:
+      - production
+      Etag:
+      - W/"964b76525e93bf121b7284a64730e6e3"
+      X-Frame-Options:
+      - ALLOWALL
+      X-Runtime:
+      - '0.028484'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger Enterprise
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 06713167e10000093dae0e5000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5f2eeb530872093d-SEA
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "success": true,
+          "type": "rich",
+          "version": "1.0",
+          "provider_name": "CodePen",
+          "provider_url": "https://codepen.io",
+          "title": "Day/night mode switch toggle with React and ThemeProvider",
+          "author_name": "Maks Akymenko",
+          "author_url": "https://codepen.io/maximakymenko/",
+          "height": "300",
+          "width": "800",
+          "thumbnail_width": "384",
+          "thumbnail_height": "225",
+          "thumbnail_url": "https://assets.codepen.io/2163704/internal/screenshots/pens/mdbpeXm.default.png?fit=cover&amp;format=auto&amp;ha=false&amp;height=360&amp;quality=75&amp;v=2&amp;version=1568797448&amp;width=640",
+          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?height=300&amp;slug-hash=mdbpeXm&amp;default-tabs=js,result&amp;host=https://codepen.io\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
+        }
+  recorded_at: Mon, 16 Nov 2020 05:47:47 GMT
+- request:
+    method: get
+    uri: https://codepen.io/api/oembed?format=json&url=https://codepen.io/maximakymenko/pen/mdbpeXm
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Nov 2020 05:47:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d521f9b17190910e1d2851fcb0c3d87471605505667; expires=Wed, 16-Dec-20
+        05:47:47 GMT; path=/; domain=.codepen.io; HttpOnly; SameSite=Lax; Secure
+      - __cfruid=181713fe255d24b57c1f12fedcd894ebbbf72abf-1605505667; path=/; domain=.codepen.io;
+        HttpOnly; Secure; SameSite=None
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - '08ba5511-ff94-4c20-8b26-efd2876a5fc3'
+      X-Download-Options:
+      - noopen
+      X-Env:
+      - production
+      Etag:
+      - W/"964b76525e93bf121b7284a64730e6e3"
+      X-Frame-Options:
+      - ALLOWALL
+      X-Runtime:
+      - '0.049626'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger Enterprise
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '06713168920000bcb4fdacd000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5f2eeb541d38bcb4-SEA
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "success": true,
+          "type": "rich",
+          "version": "1.0",
+          "provider_name": "CodePen",
+          "provider_url": "https://codepen.io",
+          "title": "Day/night mode switch toggle with React and ThemeProvider",
+          "author_name": "Maks Akymenko",
+          "author_url": "https://codepen.io/maximakymenko/",
+          "height": "300",
+          "width": "800",
+          "thumbnail_width": "384",
+          "thumbnail_height": "225",
+          "thumbnail_url": "https://assets.codepen.io/2163704/internal/screenshots/pens/mdbpeXm.default.png?fit=cover&amp;format=auto&amp;ha=false&amp;height=360&amp;quality=75&amp;v=2&amp;version=1568797448&amp;width=640",
+          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?height=300&amp;slug-hash=mdbpeXm&amp;default-tabs=js,result&amp;host=https://codepen.io\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
+        }
+  recorded_at: Mon, 16 Nov 2020 05:47:47 GMT
+recorded_with: VCR 6.0.0
