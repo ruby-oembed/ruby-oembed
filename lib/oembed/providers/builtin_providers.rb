@@ -5,6 +5,7 @@
 require 'oembed/providers/facebook_post'
 require 'oembed/providers/facebook_video'
 require 'oembed/providers/instagram'
+require 'oembed/providers/tik_tok'
 
 module OEmbed
   class Providers

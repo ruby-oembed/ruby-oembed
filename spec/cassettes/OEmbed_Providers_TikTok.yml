@@ -1,0 +1,293 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.tiktok.com/oembed?format=json&url=https://www.tiktok.com/@sowylie/video/6903556111169899781
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Janus-Mini-Api-Forward:
+      - Janus-Mini(fast)
+      X-Krakend:
+      - Version 2
+      X-Krakend-Completed:
+      - 'false'
+      X-Download-Options:
+      - noopen
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Tt-Logid:
+      - 20210101211853010189074016027927A6
+      Rip:
+      - www.tiktok.com
+      X-Tt-Trace-Host:
+      - 0117a3ac7fea25ef0c1d7ebb77cbef10ddd4897ce28855beaae13300c6ff2b88ea4ffd4becdf096c84b4d6f857e97ec3ca3e8010063aa2b1534a80ca2ca24ce96f9f5f07889c6c1c0bf6942d5cc2a6deaa4bd701c3cdacfec8d2f4f410fc80cd58
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Origin-Response-Time:
+      - 37,23.46.153.62
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 01 Jan 2021 21:18:53 GMT
+      Content-Length:
+      - '1738'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - tt_csrf_token=chbag4_n8j4IWds2yEPBGwNi; path=/; domain=.tiktok.com; samesite=lax;
+        secure; httponly
+      X-Tt-Trace-Tag:
+      - id=16;cdn-cache=miss;type=dyn
+      Server-Timing:
+      - cdn-cache; desc=MISS, edge; dur=66, origin; dur=37
+      - inner; dur=36
+      X-Parent-Response-Time:
+      - 103,23.59.190.47
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ2ZXJzaW9uIjoiMS4wIiwidHlwZSI6InZpZGVvIiwidGl0bGUiOiJQQVJUIDI6IEJBUlJFRCBPV0wuIEkganVzdCB3YW50IHRoZSBiaXJkZXJzIHRvIGhhdmUgYSBnb29kIGRheSB54oCZYWxsLiBXaGF0IGJpcmQgY2FsbCBzaG91bGQgSSBkbyBuZXh0PyAjYmlyZGluZyAjd2lsZGxpZmUgI3Byb2R1Y2VyICNyZW1peCIsImF1dGhvcl91cmwiOiJodHRwczovL3d3dy50aWt0b2suY29tL0Bzb3d5bGllIiwiYXV0aG9yX25hbWUiOiJTbyBXeWxpZSIsIndpZHRoIjoiMTAwJSIsImhlaWdodCI6IjEwMCUiLCJodG1sIjoiPGJsb2NrcXVvdGUgY2xhc3M9XCJ0aWt0b2stZW1iZWRcIiBjaXRlPVwiaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9Ac293eWxpZS92aWRlby82OTAzNTU2MTExMTY5ODk5NzgxXCIgZGF0YS12aWRlby1pZD1cIjY5MDM1NTYxMTExNjk4OTk3ODFcIiBzdHlsZT1cIm1heC13aWR0aDogNjA1cHg7bWluLXdpZHRoOiAzMjVweDtcIiA+IDxzZWN0aW9uPiA8YSB0YXJnZXQ9XCJfYmxhbmtcIiB0aXRsZT1cIkBzb3d5bGllXCIgaHJlZj1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vQHNvd3lsaWVcIj5Ac293eWxpZTwvYT4gPHA+UEFSVCAyOiBCQVJSRUQgT1dMLiBJIGp1c3Qgd2FudCB0aGUgYmlyZGVycyB0byBoYXZlIGEgZ29vZCBkYXkgeeKAmWFsbC4gV2hhdCBiaXJkIGNhbGwgc2hvdWxkIEkgZG8gbmV4dD8gPGEgdGl0bGU9XCJiaXJkaW5nXCIgdGFyZ2V0PVwiX2JsYW5rXCIgaHJlZj1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vdGFnL2JpcmRpbmdcIj4jYmlyZGluZzwvYT4gPGEgdGl0bGU9XCJ3aWxkbGlmZVwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy93aWxkbGlmZVwiPiN3aWxkbGlmZTwvYT4gPGEgdGl0bGU9XCJwcm9kdWNlclwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy9wcm9kdWNlclwiPiNwcm9kdWNlcjwvYT4gPGEgdGl0bGU9XCJyZW1peFwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy9yZW1peFwiPiNyZW1peDwvYT48L3A+IDxhIHRhcmdldD1cIl9ibGFua1wiIHRpdGxlPVwi4pmsIFNvIFd5bGllIEJhcnJlZCBPd2wgQmlyZCBCZWF0IC0gU28gV3lsaWVcIiBocmVmPVwiaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9tdXNpYy9Tby1XeWxpZS1CYXJyZWQtT3dsLUJpcmQtQmVhdC02OTAzNTU2MTEyNzM0MzQxODkzXCI+4pmsIFNvIFd5bGllIEJhcnJlZCBPd2wgQmlyZCBCZWF0IC0gU28gV3lsaWU8L2E+IDwvc2VjdGlvbj4gPC9ibG9ja3F1b3RlPiA8c2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vZW1iZWQuanNcIj48L3NjcmlwdD4iLCJ0aHVtYm5haWxfd2lkdGgiOjU3NiwidGh1bWJuYWlsX2hlaWdodCI6MTAyNCwidGh1bWJuYWlsX3VybCI6Imh0dHBzOi8vcDE2LXNpZ24tdmEudGlrdG9rY2RuLmNvbS90b3MtbWFsaXZhLXAtMDA2OC8wYzA2NGNhODhhOTg0MzU5YjQxMTEyMGQ1ODhiMzMwY350cGx2LWRtdC1sb2dvbTp0b3MtbWFsaXZhLXAtMDAwMC81NjA0OTVmYmY5ZWU0MDA5ODhiYWMwYWNhOTJjNzYxYS5pbWFnZT94LWV4cGlyZXM9MTYwOTU1NjQwMCZ4LXNpZ25hdHVyZT1NcmRjWGslMkIlMkJmMGdZejRqTmo2aGVnUU1yaDlNJTNEIiwicHJvdmlkZXJfdXJsIjoiaHR0cHM6Ly93d3cudGlrdG9rLmNvbSIsInByb3ZpZGVyX25hbWUiOiJUaWtUb2sifQ==
+  recorded_at: Fri, 01 Jan 2021 21:18:53 GMT
+- request:
+    method: get
+    uri: https://www.tiktok.com/oembed?format=json&url=https://www.tiktok.com/@cassidoo/video/6841722789502749957
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Janus-Mini-Api-Forward:
+      - Janus-Mini(fast)
+      X-Krakend:
+      - Version 2
+      X-Krakend-Completed:
+      - 'false'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Tt-Logid:
+      - 202101012118530101902090810F7A715F
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Download-Options:
+      - noopen
+      Rip:
+      - www.tiktok.com
+      X-Tt-Trace-Host:
+      - 0117a3ac7fea25ef0c1d7ebb77cbef10ddd4897ce28855beaae13300c6ff2b88ea0bf519f30be34cee9b34dfc2e422d21c896aef76d0bb525ab15eed033b7f52fe2782db365d3c8b77cd19cb85b84c9288e9a8d46ea59ea82f043140e58a6fdf70
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Origin-Response-Time:
+      - 40,23.46.239.14
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 01 Jan 2021 21:18:53 GMT
+      Content-Length:
+      - '1098'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - tt_csrf_token=EfQ6ILjZTtFQVzGt2Sv-oOmr; path=/; domain=.tiktok.com; samesite=lax;
+        secure; httponly
+      X-Tt-Trace-Tag:
+      - id=16;cdn-cache=miss;type=dyn
+      Server-Timing:
+      - cdn-cache; desc=MISS, edge; dur=67, origin; dur=40
+      - inner; dur=36
+      X-Parent-Response-Time:
+      - 107,23.59.190.47
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ2ZXJzaW9uIjoiMS4wIiwidHlwZSI6InZpZGVvIiwidGl0bGUiOiJBU01SIGZvciBkZXZlbG9wZXJzIiwiYXV0aG9yX3VybCI6Imh0dHBzOi8vd3d3LnRpa3Rvay5jb20vQGNhc3NpZG9vIiwiYXV0aG9yX25hbWUiOiJDYXNzaWR5IFdpbGxpYW1zIiwid2lkdGgiOiIxMDAlIiwiaGVpZ2h0IjoiMTAwJSIsImh0bWwiOiI8YmxvY2txdW90ZSBjbGFzcz1cInRpa3Rvay1lbWJlZFwiIGNpdGU9XCJodHRwczovL3d3dy50aWt0b2suY29tL0BjYXNzaWRvby92aWRlby82ODQxNzIyNzg5NTAyNzQ5OTU3XCIgZGF0YS12aWRlby1pZD1cIjY4NDE3MjI3ODk1MDI3NDk5NTdcIiBzdHlsZT1cIm1heC13aWR0aDogNjA1cHg7bWluLXdpZHRoOiAzMjVweDtcIiA+IDxzZWN0aW9uPiA8YSB0YXJnZXQ9XCJfYmxhbmtcIiB0aXRsZT1cIkBjYXNzaWRvb1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL0BjYXNzaWRvb1wiPkBjYXNzaWRvbzwvYT4gPHA+QVNNUiBmb3IgZGV2ZWxvcGVyczwvcD4gPGEgdGFyZ2V0PVwiX2JsYW5rXCIgdGl0bGU9XCLimawgSWxsdW1pbmF0aW9uIGJ5IEthaSBFbmdlbCAtIFZJQ1RPUklBTUlTVVwiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL211c2ljL0lsbHVtaW5hdGlvbi1ieS1LYWktRW5nZWwtNjc4NjMwNTkyNDY4NTQzMzYwNVwiPuKZrCBJbGx1bWluYXRpb24gYnkgS2FpIEVuZ2VsIC0gVklDVE9SSUFNSVNVPC9hPiA8L3NlY3Rpb24+IDwvYmxvY2txdW90ZT4gPHNjcmlwdCBhc3luYyBzcmM9XCJodHRwczovL3d3dy50aWt0b2suY29tL2VtYmVkLmpzXCI+PC9zY3JpcHQ+IiwidGh1bWJuYWlsX3dpZHRoIjo1NzYsInRodW1ibmFpbF9oZWlnaHQiOjEwMjQsInRodW1ibmFpbF91cmwiOiJodHRwczovL3AxNi1zaWduLXZhLnRpa3Rva2Nkbi5jb20vb2JqL3Rvcy1tYWxpdmEtcC0wMDY4L2VlMmU1NDMwZDFiODQzZmZhMzQyYmNiMjYyZTFiODU5XzE1OTI5NjI3Mjc/eC1leHBpcmVzPTE2MDk1NTY0MDAmeC1zaWduYXR1cmU9WGpmUE1jdzU1R3RTUm9OJTJGOTI3c3I0OFlrRjglM0QiLCJwcm92aWRlcl91cmwiOiJodHRwczovL3d3dy50aWt0b2suY29tIiwicHJvdmlkZXJfbmFtZSI6IlRpa1RvayJ9
+  recorded_at: Fri, 01 Jan 2021 21:18:53 GMT
+- request:
+    method: get
+    uri: https://www.tiktok.com/oembed?format=json&url=https://www.tiktok.com/@sowylie/video/6903556111169899781
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Janus-Mini-Api-Forward:
+      - Janus-Mini(fast)
+      X-Krakend:
+      - Version 2
+      X-Krakend-Completed:
+      - 'false'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Tt-Logid:
+      - 202101012118530101901851523A797065
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      Rip:
+      - www.tiktok.com
+      Server-Timing:
+      - cdn-cache; desc=MISS, edge; dur=1, origin; dur=110
+      - inner; dur=40
+      X-Tt-Trace-Host:
+      - '0190be5b0439cb25b73e5d3e0b764e2a976ae7745a0563d597b9c7e24f6f6e91047316d44c1c93f7f05335c5f29bcba07a3b55d436cedd914fe1cb2d24eb95b015c6ea745e5cad8cdf156af029cb1b1b4c'
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 01 Jan 2021 21:18:53 GMT
+      Content-Length:
+      - '1738'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - tt_csrf_token=lTYehO4c6AJrSocprRi9e8pu; path=/; domain=.tiktok.com; samesite=lax;
+        secure; httponly
+      X-Tt-Trace-Tag:
+      - id=16;cdn-cache=miss;type=dyn
+      X-Origin-Response-Time:
+      - 110,23.59.190.47
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ2ZXJzaW9uIjoiMS4wIiwidHlwZSI6InZpZGVvIiwidGl0bGUiOiJQQVJUIDI6IEJBUlJFRCBPV0wuIEkganVzdCB3YW50IHRoZSBiaXJkZXJzIHRvIGhhdmUgYSBnb29kIGRheSB54oCZYWxsLiBXaGF0IGJpcmQgY2FsbCBzaG91bGQgSSBkbyBuZXh0PyAjYmlyZGluZyAjd2lsZGxpZmUgI3Byb2R1Y2VyICNyZW1peCIsImF1dGhvcl91cmwiOiJodHRwczovL3d3dy50aWt0b2suY29tL0Bzb3d5bGllIiwiYXV0aG9yX25hbWUiOiJTbyBXeWxpZSIsIndpZHRoIjoiMTAwJSIsImhlaWdodCI6IjEwMCUiLCJodG1sIjoiPGJsb2NrcXVvdGUgY2xhc3M9XCJ0aWt0b2stZW1iZWRcIiBjaXRlPVwiaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9Ac293eWxpZS92aWRlby82OTAzNTU2MTExMTY5ODk5NzgxXCIgZGF0YS12aWRlby1pZD1cIjY5MDM1NTYxMTExNjk4OTk3ODFcIiBzdHlsZT1cIm1heC13aWR0aDogNjA1cHg7bWluLXdpZHRoOiAzMjVweDtcIiA+IDxzZWN0aW9uPiA8YSB0YXJnZXQ9XCJfYmxhbmtcIiB0aXRsZT1cIkBzb3d5bGllXCIgaHJlZj1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vQHNvd3lsaWVcIj5Ac293eWxpZTwvYT4gPHA+UEFSVCAyOiBCQVJSRUQgT1dMLiBJIGp1c3Qgd2FudCB0aGUgYmlyZGVycyB0byBoYXZlIGEgZ29vZCBkYXkgeeKAmWFsbC4gV2hhdCBiaXJkIGNhbGwgc2hvdWxkIEkgZG8gbmV4dD8gPGEgdGl0bGU9XCJiaXJkaW5nXCIgdGFyZ2V0PVwiX2JsYW5rXCIgaHJlZj1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vdGFnL2JpcmRpbmdcIj4jYmlyZGluZzwvYT4gPGEgdGl0bGU9XCJ3aWxkbGlmZVwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy93aWxkbGlmZVwiPiN3aWxkbGlmZTwvYT4gPGEgdGl0bGU9XCJwcm9kdWNlclwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy9wcm9kdWNlclwiPiNwcm9kdWNlcjwvYT4gPGEgdGl0bGU9XCJyZW1peFwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL3RhZy9yZW1peFwiPiNyZW1peDwvYT48L3A+IDxhIHRhcmdldD1cIl9ibGFua1wiIHRpdGxlPVwi4pmsIFNvIFd5bGllIEJhcnJlZCBPd2wgQmlyZCBCZWF0IC0gU28gV3lsaWVcIiBocmVmPVwiaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9tdXNpYy9Tby1XeWxpZS1CYXJyZWQtT3dsLUJpcmQtQmVhdC02OTAzNTU2MTEyNzM0MzQxODkzXCI+4pmsIFNvIFd5bGllIEJhcnJlZCBPd2wgQmlyZCBCZWF0IC0gU28gV3lsaWU8L2E+IDwvc2VjdGlvbj4gPC9ibG9ja3F1b3RlPiA8c2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOi8vd3d3LnRpa3Rvay5jb20vZW1iZWQuanNcIj48L3NjcmlwdD4iLCJ0aHVtYm5haWxfd2lkdGgiOjU3NiwidGh1bWJuYWlsX2hlaWdodCI6MTAyNCwidGh1bWJuYWlsX3VybCI6Imh0dHBzOi8vcDE2LXNpZ24tdmEudGlrdG9rY2RuLmNvbS90b3MtbWFsaXZhLXAtMDA2OC8wYzA2NGNhODhhOTg0MzU5YjQxMTEyMGQ1ODhiMzMwY350cGx2LWRtdC1sb2dvbTp0b3MtbWFsaXZhLXAtMDAwMC81NjA0OTVmYmY5ZWU0MDA5ODhiYWMwYWNhOTJjNzYxYS5pbWFnZT94LWV4cGlyZXM9MTYwOTU1NjQwMCZ4LXNpZ25hdHVyZT1NcmRjWGslMkIlMkJmMGdZejRqTmo2aGVnUU1yaDlNJTNEIiwicHJvdmlkZXJfdXJsIjoiaHR0cHM6Ly93d3cudGlrdG9rLmNvbSIsInByb3ZpZGVyX25hbWUiOiJUaWtUb2sifQ==
+  recorded_at: Fri, 01 Jan 2021 21:18:53 GMT
+- request:
+    method: get
+    uri: https://www.tiktok.com/oembed?format=json&url=https://www.tiktok.com/@cassidoo/video/6841722789502749957
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.14.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Janus-Mini-Api-Forward:
+      - Janus-Mini(fast)
+      X-Krakend:
+      - Version 2
+      X-Krakend-Completed:
+      - 'false'
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Tt-Logid:
+      - 202101012118530101890711492A794025
+      Rip:
+      - www.tiktok.com
+      X-Tt-Trace-Host:
+      - 0117a3ac7fea25ef0c1d7ebb77cbef10ddd4897ce28855beaae13300c6ff2b88ea4ffd4becdf096c84b4d6f857e97ec3caee452cd84813f2ca8e752926c843924ba6e0723e92743442af1a1e9de544d4926dcda3fb2350c1464fc6330e850f4f29
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Origin-Response-Time:
+      - 60,23.46.153.62
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 01 Jan 2021 21:18:54 GMT
+      Content-Length:
+      - '1098'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - tt_csrf_token=NQHu_c2ITS7IazWSajPaYiZ-; path=/; domain=.tiktok.com; samesite=lax;
+        secure; httponly
+      X-Tt-Trace-Tag:
+      - id=16;cdn-cache=miss;type=dyn
+      Server-Timing:
+      - cdn-cache; desc=MISS, edge; dur=67, origin; dur=60
+      - inner; dur=60
+      X-Parent-Response-Time:
+      - 127,23.59.190.47
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ2ZXJzaW9uIjoiMS4wIiwidHlwZSI6InZpZGVvIiwidGl0bGUiOiJBU01SIGZvciBkZXZlbG9wZXJzIiwiYXV0aG9yX3VybCI6Imh0dHBzOi8vd3d3LnRpa3Rvay5jb20vQGNhc3NpZG9vIiwiYXV0aG9yX25hbWUiOiJDYXNzaWR5IFdpbGxpYW1zIiwid2lkdGgiOiIxMDAlIiwiaGVpZ2h0IjoiMTAwJSIsImh0bWwiOiI8YmxvY2txdW90ZSBjbGFzcz1cInRpa3Rvay1lbWJlZFwiIGNpdGU9XCJodHRwczovL3d3dy50aWt0b2suY29tL0BjYXNzaWRvby92aWRlby82ODQxNzIyNzg5NTAyNzQ5OTU3XCIgZGF0YS12aWRlby1pZD1cIjY4NDE3MjI3ODk1MDI3NDk5NTdcIiBzdHlsZT1cIm1heC13aWR0aDogNjA1cHg7bWluLXdpZHRoOiAzMjVweDtcIiA+IDxzZWN0aW9uPiA8YSB0YXJnZXQ9XCJfYmxhbmtcIiB0aXRsZT1cIkBjYXNzaWRvb1wiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL0BjYXNzaWRvb1wiPkBjYXNzaWRvbzwvYT4gPHA+QVNNUiBmb3IgZGV2ZWxvcGVyczwvcD4gPGEgdGFyZ2V0PVwiX2JsYW5rXCIgdGl0bGU9XCLimawgSWxsdW1pbmF0aW9uIGJ5IEthaSBFbmdlbCAtIFZJQ1RPUklBTUlTVVwiIGhyZWY9XCJodHRwczovL3d3dy50aWt0b2suY29tL211c2ljL0lsbHVtaW5hdGlvbi1ieS1LYWktRW5nZWwtNjc4NjMwNTkyNDY4NTQzMzYwNVwiPuKZrCBJbGx1bWluYXRpb24gYnkgS2FpIEVuZ2VsIC0gVklDVE9SSUFNSVNVPC9hPiA8L3NlY3Rpb24+IDwvYmxvY2txdW90ZT4gPHNjcmlwdCBhc3luYyBzcmM9XCJodHRwczovL3d3dy50aWt0b2suY29tL2VtYmVkLmpzXCI+PC9zY3JpcHQ+IiwidGh1bWJuYWlsX3dpZHRoIjo1NzYsInRodW1ibmFpbF9oZWlnaHQiOjEwMjQsInRodW1ibmFpbF91cmwiOiJodHRwczovL3AxNi1zaWduLXZhLnRpa3Rva2Nkbi5jb20vb2JqL3Rvcy1tYWxpdmEtcC0wMDY4L2VlMmU1NDMwZDFiODQzZmZhMzQyYmNiMjYyZTFiODU5XzE1OTI5NjI3Mjc/eC1leHBpcmVzPTE2MDk1NTY0MDAmeC1zaWduYXR1cmU9WGpmUE1jdzU1R3RTUm9OJTJGOTI3c3I0OFlrRjglM0QiLCJwcm92aWRlcl91cmwiOiJodHRwczovL3d3dy50aWt0b2suY29tIiwicHJvdmlkZXJfbmFtZSI6IlRpa1RvayJ9
+  recorded_at: Fri, 01 Jan 2021 21:18:54 GMT
+recorded_with: VCR 6.0.0
