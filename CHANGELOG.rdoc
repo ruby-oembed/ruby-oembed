@@ -4,6 +4,7 @@
 
 * *DEPRECATION* When creating an `OEmbed::Provider` instance, specifying the format via positional argument is now deprecated. Please use a named argument instead: `OEmbed::Provider.new(@endpoint_url, format: :json)`
 * *DEPRECATION* Do not use the `new` method for `Instagram`, `FacebookPost`, or `FacebookVideo` providers to set your access token. Instead either use the `OEMBED_FACEBOOK_TOKEN` environment variable or call `Instagram.access_token = @your_token`.
+* Updated the list of {Embedly}[https://embed.ly/] and {Noembed}[https://noembed.com/] URL schemes.
 * Fix Issue #77: Built-in Instagram & Facebook providers are now instances again.
 * Add support for `OEmbed::Provider` instances with `required_query_params` (like access tokens), where the provider will fail to answer until it is fully configured.
 * Add support for Instgram Reels URLs to the built-in OEmbed::Providers::Instagram.
