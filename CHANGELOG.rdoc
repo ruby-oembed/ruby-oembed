@@ -10,6 +10,10 @@
 * Support focused rspec tests for local development (e.g. "fcontext" or "fit")
 * Fix a few typos in documentation & tests; Pull #76 (Inge Jørgensen)
 
+== 0.14.1 - 28 December 2020
+
+* Fix the YouTube provider when given a private video; Issue #79 (Sebastian Schulze)
+
 == 0.14.0 - 5 November 2020
 
 * *BREAKING* Built-in providers for Instagram & Facebook are now classes, not instances, and therefore can't manually be registered via `OEmbed::Providers.register(OEmbed::Providers::Instagram)`; See Issue #77
