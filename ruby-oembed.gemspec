@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
 
   s.files = `git ls-files`.split("\n")
-  s.test_files = s.files.grep(%r{^(test|spec|features,integration_test)/})
 
   s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-#{OEmbed::Version}", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
   s.extra_rdoc_files = s.files.grep(%r{\.rdoc$}) + %w{LICENSE}
