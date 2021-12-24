@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/ruby-oembed/ruby-oembed"
   s.licenses = ["MIT"]
 
-  s.files = `git ls-files`.split("\n")
+  s.files = `git ls-files`.split("\n").reject { |f| f.start_with?('spec/') || f.start_with?('integration_test/') }
 
   s.rdoc_options = ["--main", "README.rdoc", "--title", "ruby-oembed-#{OEmbed::Version}", "--inline-source", "--exclude", "tasks", "CHANGELOG.rdoc"]
   s.extra_rdoc_files = s.files.grep(%r{\.rdoc$}) + %w{LICENSE}
