@@ -127,7 +127,7 @@ If you encounter any bug, feel free to [create an Issue](https://github.com/ruby
 
 We gladly accept pull requests! Just [fork](http://help.github.com/forking/) the library and commit your changes along with relevant tests. Once you're happy with the changes, [send a pull request](http://help.github.com/pull-requests/).
 
-We do our best to [keep our tests green](http://travis-ci.org/ruby-oembed/ruby-oembed)
+We do our best to [keep our tests green](https://app.travis-ci.com/github/ruby-oembed/ruby-oembed)
 
 # Contributors
 
