@@ -1,6 +1,10 @@
 = CHANGELOG
 
-== Unreleased (0.15.0)
+== Unreleased (0.16.0)
+
+* Reduce gem size by excluding test files; Pull #81 (fauno)
+
+== 0.15.0 - 1 January 2021
 
 * *DEPRECATION* When creating an `OEmbed::Provider` instance, specifying the format via positional argument is now deprecated. Please use a named argument instead: `OEmbed::Provider.new(@endpoint_url, format: :json)`
 * *DEPRECATION* Do not use the `new` method for `Instagram`, `FacebookPost`, or `FacebookVideo` providers to set your access token. Instead either use the `OEMBED_FACEBOOK_TOKEN` environment variable or call `Instagram.access_token = @your_token`.
@@ -9,7 +13,6 @@
 * Add support for Instgram Reels URLs to the built-in OEmbed::Providers::Instagram.
 * Support focused rspec tests for local development (e.g. "fcontext" or "fit")
 * Fix a few typos in documentation & tests; Pull #76 (Inge Jørgensen)
-* Reduce gem size by removing test files.
 
 == 0.14.1 - 28 December 2020
 
