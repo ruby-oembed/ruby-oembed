@@ -2,6 +2,7 @@
 
 == Unreleased (0.16.0)
 
+* Add a built-in TikTok provider.
 * Reduce gem size by excluding test files; Pull #81 (fauno)
 
 == 0.15.0 - 1 January 2021
