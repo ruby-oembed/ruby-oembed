@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.16.0)
+== Unreleased (0.16.1)
+
+== 0.16.0 - 8 January 2022
 
 * Add a built-in TikTok provider.
 * Reduce gem size by excluding test files; Pull #81 (fauno)
