@@ -205,11 +205,6 @@ module OEmbed
     Ted << "https://*.ted.com/talks/*"
     add_official_provider(Ted)
 
-    # Provider for TikTok
-    # See https://developers.tiktok.com/doc/embed-videos
-    TikTok = OEmbed::Provider.new("https://www.tiktok.com/oembed", format: :json)
-    TikTok << "https://www.tiktok.com/*/video/*"
-
     # Provider for tumblr.com
     Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", format: :json)
     Tumblr << "http://*.tumblr.com/post/*"
