@@ -1,6 +1,10 @@
 = CHANGELOG
 
-== Unreleased (0.16.1)
+== Unreleased (0.16.2)
+
+== 0.16.1 - 13 January 2022
+
+* Fix the "already initialized constant OEmbed::Providers::TikTok" warning; Pull #84 (Christopher Nelson)
 
 == 0.16.0 - 8 January 2022
 
