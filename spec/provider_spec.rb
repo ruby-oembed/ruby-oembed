@@ -452,17 +452,17 @@ describe OEmbed::Provider do
 
     it "should send the provider's format if none is specified" do
       expect(@flickr).to receive(:raw).
-        with(example_url(:flickr), { :format => @default }).
+        with(example_url(:flickr), :format => @default).
         and_return(valid_response(@default))
       @flickr.get(example_url(:flickr))
 
       expect(@qik).to receive(:raw).
-        with(example_url(:qik), { :format=>:xml }).
+        with(example_url(:qik), :format=>:xml).
         and_return(valid_response(:xml))
       @qik.get(example_url(:qik))
 
       expect(@viddler).to receive(:raw).
-        with(example_url(:viddler), { :format=>:json }).
+        with(example_url(:viddler), :format=>:json).
         and_return(valid_response(:json))
       @viddler.get(example_url(:viddler))
     end
@@ -474,7 +474,7 @@ describe OEmbed::Provider do
         provider.send_with_query = 'non-blank-value'
 
         expect(provider).to receive(:http_get).
-          with(have_attributes(query: match(/send_with_query=non-blank-value/)), { :format => @default }).
+          with(have_attributes(query: match(/send_with_query=non-blank-value/)), :format => @default).
           and_return(valid_response(:json))
         provider.get(example_url(:fake))
       end
