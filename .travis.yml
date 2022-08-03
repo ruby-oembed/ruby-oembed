@@ -5,8 +5,8 @@ before_install:
 bundler_args: --without guard
 cache: bundler
 rvm:
-  - 2.6.9
-  - 3.0.3
+  - 2.6.10
+  - 3.1.2
 env:
   global:
     - RUN_ALL_TESTS=true
