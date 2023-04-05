@@ -354,12 +354,12 @@ describe OEmbed::Providers do
         let(:embed_url) { 'https://www.facebook.com/exampleuser/posts/1234567890' }
 
         around(:each) do |each|
-          previous_value = ENV['OEMBED_FACEBOOK_TOKEN']
+          @previous_oembed_facebook_token = ENV['OEMBED_FACEBOOK_TOKEN']
           ENV['OEMBED_FACEBOOK_TOKEN'] = nil
           provider.access_token = nil
           each.run
-          ENV['OEMBED_FACEBOOK_TOKEN'] = previous_value
-          provider.access_token = previous_value
+          ENV['OEMBED_FACEBOOK_TOKEN'] = @previous_oembed_facebook_token
+          provider.access_token = @previous_oembed_facebook_token
           OEmbed::Providers.unregister_all
         end
 
@@ -380,6 +380,10 @@ describe OEmbed::Providers do
           end
 
           it { is_expected.to eql(provider) }
+
+          after do
+            OEmbed::Providers.register_all(access_tokens: { facebook: @previous_oembed_facebook_token })
+          end
         end
 
         context 'when access token is set ahead of time' do
