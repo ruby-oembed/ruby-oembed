@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 describe "OEmbed::Formatter::JSON::Backends::Yaml" do
   include OEmbedSpecHelper
 
-  before(:all) do
+  before(:each) do
     expect {
       OEmbed::Formatter::JSON.backend = 'Yaml'
     }.to_not raise_error
