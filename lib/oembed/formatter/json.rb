@@ -15,11 +15,6 @@ module OEmbed
           @backend
         end
 
-        def reset_backend
-          @backend = nil
-          remove_instance_variable(:@backend)
-        end
-
         def set_default_backend
           DECODERS.find do |name|
             begin
