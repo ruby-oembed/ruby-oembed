@@ -9,7 +9,9 @@ describe "OEmbed::Formatter::XML::Backends::XmlSimple" do
     }.to raise_error(LoadError)
 
     require 'xmlsimple'
+  end
 
+  before(:each) do
     expect {
       OEmbed::Formatter::XML.backend = 'XmlSimple'
     }.to_not raise_error

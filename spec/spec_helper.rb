@@ -34,6 +34,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     OEmbed::Formatter::JSON.reset_backend
+    OEmbed::Formatter::XML.reset_backend
   end
 end
 
