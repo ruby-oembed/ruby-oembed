@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '../spec_helper')
+require 'spec_helper'
 
 describe 'OEmbed::Providers::TikTok' do
   use_custom_vcr_casette('OEmbed_Providers_TikTok')
@@ -9,7 +9,7 @@ describe 'OEmbed::Providers::TikTok' do
   expected_valid_urls = [
     'https://www.tiktok.com/@shmemmmy/video/7005293332821822726',
     # video via iOS share card doesn't work
-    # 'https://vm.tiktok.com/TTPdMy6pFT/', 
+    # 'https://vm.tiktok.com/TTPdMy6pFT/',
   ]
   expected_invalid_urls = [
     'https://tiktok.com/@shmemmmy/video/7005293332821822726', # www is required

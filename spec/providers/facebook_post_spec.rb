@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '../spec_helper')
+require 'spec_helper'
 
 describe 'OEmbed::Providers::FacebookPost' do
   use_custom_vcr_casette('OEmbed_Providers_FacebookPost')
