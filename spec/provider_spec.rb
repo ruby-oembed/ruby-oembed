@@ -200,7 +200,9 @@ describe OEmbed::Provider do
 
   describe "<<" do
     it "should add URL schemes" do
-      expect(@flickr.urls).to eq([%r{^http://([^.]+\.)?flickr\.com/(.*?)}])
+      # rubocop:disable Style/RedundantRegexpEscape
+      expect(@flickr.urls).to eq([%r{^http://([^\.]+\.)?flickr\.com/(.*?)}])
+      # rubocop:enable Style/RedundantRegexpEscape
       expect(@qik.urls).to eq([
         %r{^http://qik\.com/video/(.*?)},
         %r{^http://qik\.com/(.*?)}
