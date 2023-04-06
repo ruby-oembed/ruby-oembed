@@ -122,7 +122,7 @@ module OEmbed
     def required_query_params_set?(reset_cache: false)
       return @all_required_query_params_set unless reset_cache || @all_required_query_params_set.nil?
 
-      @all_required_query_params_set = !@required_query_params.values.include?(nil)
+      @all_required_query_params_set = !@required_query_params.value?(nil)
     end
 
     # Send a request to the Provider endpoint to get information about the
