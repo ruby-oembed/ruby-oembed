@@ -72,8 +72,10 @@ module OEmbed
         set_required_query_params(param, ENV[default_env_var]) if default_env_var
 
         # Define a getter and a setter for each required_query_param
+        # rubocop:disable Style/RedundantInterpolation
         define_singleton_method("#{param}") { @required_query_params[param] } unless respond_to?("#{param}")
         define_singleton_method("#{param}=") { |val| set_required_query_params(param, val) } unless respond_to?("#{param}=")
+        # rubocop:enable Style/RedundantInterpolation
       end
       required_query_params_set?(reset_cache: true)
 
