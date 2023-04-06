@@ -47,13 +47,13 @@ describe "OEmbed::Formatter::JSON::Backends::JSONGem" do
 
   it "should raise an OEmbed::ParseError when decoding an invalid JSON String" do
     expect {
-      decode = OEmbed::Formatter.decode(:json, invalid_response("unclosed_container", :json))
+      OEmbed::Formatter.decode(:json, invalid_response("unclosed_container", :json))
     }.to raise_error(OEmbed::ParseError)
     expect {
-      decode = OEmbed::Formatter.decode(:json, invalid_response("unclosed_tag", :json))
+      OEmbed::Formatter.decode(:json, invalid_response("unclosed_tag", :json))
     }.to raise_error(OEmbed::ParseError)
     expect {
-      decode = OEmbed::Formatter.decode(:json, invalid_response("invalid_syntax", :json))
+      OEmbed::Formatter.decode(:json, invalid_response("invalid_syntax", :json))
     }.to raise_error(OEmbed::ParseError)
   end
 
@@ -65,7 +65,7 @@ describe "OEmbed::Formatter::JSON::Backends::JSONGem" do
       .and_throw(error_to_raise.new("unknown error"))
 
     expect {
-      decode = OEmbed::Formatter.decode(:json, valid_response(:json))
+      OEmbed::Formatter.decode(:json, valid_response(:json))
     }.to raise_error(OEmbed::ParseError)
   end
 end

@@ -93,7 +93,7 @@ module OEmbed
     #   @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
       if !url.is_a?(Regexp)
-        full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
+        _full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
         domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
         path = Regexp.escape(path).gsub("\\*", "(.*?)")
         url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")

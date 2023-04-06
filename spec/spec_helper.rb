@@ -106,7 +106,7 @@ module OEmbedSpecHelper
 
   def invalid_response(case_name, format)
     format = format.to_s
-    valid = valid_response(format)
+    valid_response(format)
     case case_name.to_s
     when "unclosed_container"
       case format

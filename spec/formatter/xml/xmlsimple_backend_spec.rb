@@ -37,13 +37,13 @@ describe "OEmbed::Formatter::XML::Backends::XmlSimple" do
 
   it "should raise an OEmbed::ParseError when decoding an invalid XML String" do
     expect {
-      decode = OEmbed::Formatter.decode(:xml, invalid_response("unclosed_container", :xml))
+      OEmbed::Formatter.decode(:xml, invalid_response("unclosed_container", :xml))
     }.to raise_error(OEmbed::ParseError)
     expect {
-      decode = OEmbed::Formatter.decode(:xml, invalid_response("unclosed_tag", :xml))
+      OEmbed::Formatter.decode(:xml, invalid_response("unclosed_tag", :xml))
     }.to raise_error(OEmbed::ParseError)
     expect {
-      decode = OEmbed::Formatter.decode(:xml, invalid_response("invalid_syntax", :xml))
+      OEmbed::Formatter.decode(:xml, invalid_response("invalid_syntax", :xml))
     }.to raise_error(OEmbed::ParseError)
   end
 
@@ -55,7 +55,7 @@ describe "OEmbed::Formatter::XML::Backends::XmlSimple" do
       .and_raise(error_to_raise.new("unknown error"))
 
     expect {
-      decode = OEmbed::Formatter.decode(:xml, valid_response(:xml))
+      OEmbed::Formatter.decode(:xml, valid_response(:xml))
     }.to raise_error(OEmbed::ParseError)
   end
 end

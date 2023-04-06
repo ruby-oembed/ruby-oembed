@@ -91,8 +91,6 @@ describe OEmbed::Providers do
 
       OEmbed::Providers.unregister(@qik)
 
-      urls = OEmbed::Providers.urls.dup
-
       @qik_mirror.urls.each do |regexp|
         expect(OEmbed::Providers.urls[regexp]).to include(@qik_mirror)
       end

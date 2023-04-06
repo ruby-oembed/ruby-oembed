@@ -32,14 +32,14 @@ module OEmbed
           # Ensure that ":" and "," are always followed by a space
           def convert_json_to_yaml(json) # :nodoc:
             require "strscan" unless defined? ::StringScanner
-            scanner, quoting, marks, pos = ::StringScanner.new(json), false, [], nil
+            scanner, quoting, marks, _pos = ::StringScanner.new(json), false, [], nil
             scanner.scan_until(/\{/)
             while scanner.scan_until(/(\\['"]|['":,\\]|\\.)/)
               case char = scanner[1]
               when '"', "'"
                 if !quoting
                   quoting = char
-                  pos = scanner.pos
+                  scanner.pos
                 elsif quoting == char
                   quoting = false
                 end

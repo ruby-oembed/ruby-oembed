@@ -8,7 +8,7 @@ passed = "failed"
 File.open("test_urls.csv", "r") do |infile|
   while (line = infile.gets)
     begin
-      res = OEmbed::Providers.raw(line, format: :json)
+      OEmbed::Providers.raw(line, format: :json)
       passed = "passed"
     rescue OEmbed::NotFound => e
       if e.message == "OEmbed::NotFound"

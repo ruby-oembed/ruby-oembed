@@ -387,7 +387,7 @@ describe OEmbed::Provider do
       stub_request(:get, /flickr/).to_return(status: 501)
 
       expect {
-        result = @flickr.send(:raw, File.join(example_url(:flickr), "501"))
+        @flickr.send(:raw, File.join(example_url(:flickr), "501"))
       }.to raise_error(OEmbed::UnknownFormat)
     end
 
