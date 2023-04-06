@@ -187,11 +187,7 @@ describe OEmbed::Response do
     end
 
     it "should not protect already defined methods that are specifically overridable" do
-      class Object
-        def version
-          "two point oh"
-        end
-      end
+      allow_any_instance_of(Object).to receive(:version).and_return("two point oh")
 
       expect(Object.new).to respond_to("version")
       expect("").to respond_to("version")

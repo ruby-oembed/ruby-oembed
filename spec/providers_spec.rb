@@ -326,17 +326,10 @@ describe OEmbed::Providers do
   end
 
   describe ".register_all" do
-    after(:each) do
-      OEmbed::Providers.send(:remove_const, :Fake) if defined?(OEmbed::Providers::Fake)
-    end
-
     it "should not register a provider that is not marked as official" do
-      expect(defined?(OEmbed::Providers::Fake)).to_not be
-
-      class OEmbed::Providers
-        Fake = OEmbed::Provider.new("http://new.fa.ke/oembed/")
-        Fake << "http://new.fa.ke/*"
-      end
+      fake = OEmbed::Provider.new("http://new.fa.ke/oembed/")
+      fake << "http://new.fa.ke/*"
+      stub_const("OEmbed::Providers::Fake", fake)
 
       OEmbed::Providers.register_all
       ["http://new.fa.ke/20C285E0"].each do |url|
@@ -397,13 +390,10 @@ describe OEmbed::Providers do
 
     describe "add_official_provider" do
       it "should register a new official provider" do
-        expect(defined?(OEmbed::Providers::Fake)).to_not be
-
-        class OEmbed::Providers
-          Fake = OEmbed::Provider.new("http://official.fa.ke/oembed/")
-          Fake << "http://official.fa.ke/*"
-          add_official_provider(Fake)
-        end
+        fake = OEmbed::Provider.new("http://official.fa.ke/oembed/")
+        fake << "http://official.fa.ke/*"
+        stub_const("OEmbed::Providers::Fake", fake)
+        OEmbed::Providers.send(:add_official_provider, fake)
 
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
@@ -411,6 +401,7 @@ describe OEmbed::Providers do
         end
 
         OEmbed::Providers.register_all
+
         ["http://official.fa.ke/20C285E0"].each do |url|
           provider = OEmbed::Providers.find(url)
           expect(provider).to be_a(OEmbed::Provider)
@@ -418,13 +409,10 @@ describe OEmbed::Providers do
       end
 
       it "should register an official sub_type provider separately" do
-        expect(defined?(OEmbed::Providers::Fake)).to_not be
-
-        class OEmbed::Providers
-          Fake = OEmbed::Provider.new("http://sub.fa.ke/oembed/")
-          Fake << "http://sub.fa.ke/*"
-          add_official_provider(Fake, :fakes)
-        end
+        fake = OEmbed::Provider.new("http://sub.fa.ke/oembed/")
+        fake << "http://sub.fa.ke/*"
+        OEmbed::Providers.send(:add_official_provider, fake, :fakes)
+        stub_const("OEmbed::Providers::Fake", fake)
 
         OEmbed::Providers.register_all
         ["http://sub.fa.ke/20C285E0"].each do |url|
