@@ -63,7 +63,7 @@ module OEmbed
                 chunk.gsub!(/\\([\\\/]|u[[:xdigit:]]{4})/) do
                   ustr = $1
                   if ustr.index("u") == 0
-                    [ustr[1..-1].to_i(16)].pack("U")
+                    [ustr[1..].to_i(16)].pack("U")
                   elsif ustr == "\\"
                     "\\\\"
                   else
