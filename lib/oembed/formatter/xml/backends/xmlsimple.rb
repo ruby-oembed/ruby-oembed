@@ -14,24 +14,23 @@ module OEmbed
             if !xml.respond_to?(:read)
               xml = StringIO.new(xml)
             end
-            ::XmlSimple.xml_in(xml, 'ForceArray'=>false)
+            ::XmlSimple.xml_in(xml, "ForceArray" => false)
           rescue
             case $!
             when parse_error
               raise $!
             else
               raise parse_error, "Couldn't parse the given document."
-            end  
+            end
           end
-          
+
           def decode_fail_msg
             "The version of the xml-simple library you have installed isn't parsing XML like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::ArgumentError
           end
-        
         end
       end
     end

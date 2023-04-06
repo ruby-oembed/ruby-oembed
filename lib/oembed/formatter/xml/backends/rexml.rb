@@ -1,5 +1,5 @@
 # Unlike other backends, require REXML if it's not already loaded
-require 'rexml/document' unless defined?(REXML)
+require "rexml/document" unless defined?(REXML)
 
 module OEmbed
   module Formatter
@@ -26,17 +26,16 @@ module OEmbed
               raise $!
             else
               raise parse_error, "Couldn't parse the given document."
-            end  
+            end
           end
-          
+
           def decode_fail_msg
             "The version of the REXML library you have installed isn't parsing XML like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::REXML::ParseException
           end
-        
         end
       end
     end

@@ -1,20 +1,22 @@
-require 'spec_helper'
+require "spec_helper"
 
 class WorkingDuck
   # The WorkingDuck Class should work as a Backend
   class << self
     # Fakes a correct deocde response
     def decode(value)
-      {"version"=>1.0, "string"=>"test", "int"=>42, "html"=>"<i>Cool's</i>\n the \"word\"!",}
+      {"version" => 1.0, "string" => "test", "int" => 42, "html" => "<i>Cool's</i>\n the \"word\"!"}
     end
-    def parse_error; RuntimeError; end
+
+    def parse_error = RuntimeError
   end
 
   # A WorkingDuck instance should work as a Backend
   def decode(value)
     self.class.decode(value)
   end
-  def parse_error; RuntimeError; end
+
+  def parse_error = RuntimeError
 end
 
 class FailingDuckDecode
@@ -22,7 +24,8 @@ class FailingDuckDecode
   def decode(value)
     {}
   end
-  def parse_error; RuntimeError; end
+
+  def parse_error = RuntimeError
 end
 
 describe "OEmbed::Formatter::JSON::Backends::DuckType" do

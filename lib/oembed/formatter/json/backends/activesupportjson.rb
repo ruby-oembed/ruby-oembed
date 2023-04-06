@@ -12,15 +12,14 @@ module OEmbed
           def decode(json)
             ::ActiveSupport::JSON.decode(json)
           end
-          
+
           def decode_fail_msg
             "The version of ActiveSupport::JSON you have installed isn't parsing JSON like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::ActiveSupport::JSON.parse_error
           end
-        
         end
       end
     end

@@ -31,7 +31,7 @@ RSpec.shared_examples "an OEmbed::Providers instance" do |expected_valid_urls, e
     before(:each) { OEmbed::Providers.register(provider) }
     after(:each) { OEmbed::Providers.unregister_all }
 
-    describe('.get') do
+    describe(".get") do
       expected_valid_urls.each do |valid_url|
         context "given the valid URL #{valid_url}" do
           subject { OEmbed::Providers.get(valid_url) }

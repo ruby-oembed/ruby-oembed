@@ -1,35 +1,35 @@
-require 'bundler/setup'
+require "bundler/setup"
 
-require 'vcr'
+require "vcr"
 VCR.configure do |c|
-  c.default_cassette_options = { :record => :new_episodes }
-  c.cassette_library_dir = 'spec/cassettes'
+  c.default_cassette_options = {record: :new_episodes}
+  c.cassette_library_dir = "spec/cassettes"
   c.hook_into :webmock
   # Try to prevent a real-world Facebook token from being recorded by VCR
-  if ENV['OEMBED_FACEBOOK_TOKEN'] && !ENV['OEMBED_FACEBOOK_TOKEN'].to_s.empty?
-    c.filter_sensitive_data('A_FAKE_TOKEN_FOR_TESTS') { ENV['OEMBED_FACEBOOK_TOKEN'] }
-    c.filter_sensitive_data('A_FAKE_TOKEN_FOR_TESTS') { ::CGI.escape(ENV['OEMBED_FACEBOOK_TOKEN']) }
+  if ENV["OEMBED_FACEBOOK_TOKEN"] && !ENV["OEMBED_FACEBOOK_TOKEN"].to_s.empty?
+    c.filter_sensitive_data("A_FAKE_TOKEN_FOR_TESTS") { ENV["OEMBED_FACEBOOK_TOKEN"] }
+    c.filter_sensitive_data("A_FAKE_TOKEN_FOR_TESTS") { ::CGI.escape(ENV["OEMBED_FACEBOOK_TOKEN"]) }
   else
     # If the developer doesn't have an OEMBED_FACEBOOK_TOKEN set
     # use a fake one that will match data in the vcr cassettes.
-    ENV['OEMBED_FACEBOOK_TOKEN'] = 'A_FAKE_TOKEN_FOR_TESTS'
+    ENV["OEMBED_FACEBOOK_TOKEN"] = "A_FAKE_TOKEN_FOR_TESTS"
   end
 end
 
-require 'webmock/rspec'
-require 'coveralls'
+require "webmock/rspec"
+require "coveralls"
 Coveralls.wear!
 
-require 'support/shared_examples_for_providers'
+require "support/shared_examples_for_providers"
 
-require 'oembed'
+require "oembed"
 
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!
   config.tty = true
   config.color = true
-  config.example_status_persistence_file_path = '.rspec-status'
-  config.filter_run_including :focus => true unless ENV['RUN_ALL_TESTS']
+  config.example_status_persistence_file_path = ".rspec-status"
+  config.filter_run_including focus: true unless ENV["RUN_ALL_TESTS"]
   config.run_all_when_everything_filtered = true
 
   config.before(:each) do
@@ -44,7 +44,7 @@ def use_custom_vcr_casette(casette_name)
 end
 
 module OEmbedSpecHelper
-  EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, '../spec_helper_examples.yml'))) unless defined?(EXAMPLE)
+  EXAMPLE = YAML.load_file(File.expand_path(File.join(__FILE__, "../spec_helper_examples.yml"))) unless defined?(EXAMPLE)
 
   def example_url(site)
     return "http://fake.com/" if site == :fake
@@ -52,7 +52,7 @@ module OEmbedSpecHelper
   end
 
   def all_example_urls(*fallback)
-    results = EXAMPLE.values.map{ |v| v[:url] }
+    results = EXAMPLE.values.map { |v| v[:url] }
 
     # By default don't return example_urls that won't be recognized by
     # the included default providers
@@ -75,14 +75,14 @@ module OEmbedSpecHelper
 
   def valid_response(format)
     case format.to_s
-    when 'object'
+    when "object"
       {
         "type" => "photo",
         "version" => "1.0",
         "fields" => "hello",
         "__id__" => 1234
       }
-    when 'json'
+    when "json"
       <<-JSON.strip
         {
           "type": "photo",
@@ -91,7 +91,7 @@ module OEmbedSpecHelper
           "__id__": 1234
         }
       JSON
-    when 'xml'
+    when "xml"
       <<-XML.strip
         <?xml version="1.0" encoding="utf-8" standalone="yes"?>
         <oembed>
@@ -108,26 +108,26 @@ module OEmbedSpecHelper
     format = format.to_s
     valid = valid_response(format)
     case case_name.to_s
-    when 'unclosed_container'
+    when "unclosed_container"
       case format
-      when 'json'
-        valid_response(format).gsub(/\}\s*\z/, '')
-      when 'xml'
-        valid_response(format).gsub(%r{</oembed[^>]*>}, '')
+      when "json"
+        valid_response(format).gsub(/\}\s*\z/, "")
+      when "xml"
+        valid_response(format).gsub(%r{</oembed[^>]*>}, "")
       end
-    when 'unclosed_tag'
+    when "unclosed_tag"
       case format
-      when 'json'
+      when "json"
         valid_response(format).gsub('"photo"', '"photo')
-      when 'xml'
-        valid_response(format).gsub('</type>', '')
+      when "xml"
+        valid_response(format).gsub("</type>", "")
       end
-    when 'invalid_syntax'
+    when "invalid_syntax"
       case format
-      when 'json'
+      when "json"
         valid_response(format).gsub('"type"', '"type":')
-      when 'xml'
-        valid_response(format).gsub('type', 'ty><pe')
+      when "xml"
+        valid_response(format).gsub("type", "ty><pe")
       end
     end
   end
