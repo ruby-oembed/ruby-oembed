@@ -194,15 +194,15 @@ describe OEmbed::Response do
       end
 
       expect(Object.new).to respond_to("version")
-      expect(String.new).to respond_to("version")
+      expect("").to respond_to("version")
 
       expect(all_expected.keys).to include("version")
-      expect(all_expected["version"]).to_not eq(String.new.version)
+      expect(all_expected["version"]).to_not eq("".version)
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
       expect(local_res.version).to eq(local_res.field("version"))
-      expect(local_res.version).to_not eq(String.new.version)
+      expect(local_res.version).to_not eq("".version)
     end
   end
 
