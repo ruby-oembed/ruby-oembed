@@ -3,11 +3,14 @@ require 'json'
 
 describe OEmbed::ProviderDiscovery do
   before(:all) do
-    OEmbed::Formatter::JSON.backend = 'JSONGem'
     VCR.insert_cassette('OEmbed_ProviderDiscovery')
   end
   after(:all) do
     VCR.eject_cassette
+  end
+
+  before(:each) do
+    OEmbed::Formatter::JSON.backend = 'JSONGem'
   end
 
   include OEmbedSpecHelper

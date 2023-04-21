@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 describe "OEmbed::Formatter::XML::Backends::REXML" do
   include OEmbedSpecHelper
 
-  before(:all) do
+  before(:each) do
     expect {
       OEmbed::Formatter::XML.backend = 'REXML'
     }.to_not raise_error

@@ -50,6 +50,11 @@ module OEmbed
         self.backend = old_backend
       end
 
+      def reset_backend
+        @backend = nil
+        remove_instance_variable(:@backend)
+      end
+
       private
 
       # Makes sure the given backend can correctly parse values using the decode

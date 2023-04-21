@@ -31,6 +31,11 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec-status'
   config.filter_run_including :focus => true unless ENV['RUN_ALL_TESTS']
   config.run_all_when_everything_filtered = true
+
+  config.before(:each) do
+    OEmbed::Formatter::JSON.reset_backend
+    OEmbed::Formatter::XML.reset_backend
+  end
 end
 
 def use_custom_vcr_casette(casette_name)

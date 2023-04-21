@@ -9,7 +9,9 @@ describe "OEmbed::Formatter::XML::Backends::Nokogiri" do
     }.to raise_error(LoadError)
 
     require 'nokogiri'
+  end
 
+  before(:each) do
     expect {
       OEmbed::Formatter::XML.backend = 'Nokogiri'
     }.to_not raise_error
