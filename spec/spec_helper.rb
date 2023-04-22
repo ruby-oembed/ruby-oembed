@@ -1,4 +1,4 @@
-require 'rubygems'
+require 'bundler/setup'
 
 require 'vcr'
 VCR.configure do |c|
@@ -22,7 +22,7 @@ Coveralls.wear!
 
 require 'support/shared_examples_for_providers'
 
-require File.dirname(__FILE__) + '/../lib/oembed'
+require 'oembed'
 
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!
