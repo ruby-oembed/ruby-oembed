@@ -1,7 +1,7 @@
 # ruby-oembed
 
 [![Gem](https://img.shields.io/gem/v/ruby-oembed.svg)](https://rubygems.org/gems/ruby-oembed)
-[![Travis CI](https://img.shields.io/travis/com/ruby-oembed/ruby-oembed.svg)](https://app.travis-ci.com/github/ruby-oembed/ruby-oembed)
+[![Test Coverage](https://github.com/ruby-oembed/ruby-oembed/actions/workflows/ruby.yml/badge.svg)](https://github.com/ruby-oembed/ruby-oembed/actions/workflows/ruby.yml)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/ruby-oembed/ruby-oembed.svg)](https://codeclimate.com/github/ruby-oembed/ruby-oembed)
 [![Coveralls](https://coveralls.io/repos/github/ruby-oembed/ruby-oembed/badge.svg?branch=coveralls)](https://coveralls.io/github/ruby-oembed/ruby-oembed?branch=coveralls)
 ![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)
@@ -125,7 +125,7 @@ If you encounter any bug, feel free to [create an Issue](https://github.com/ruby
 
 We gladly accept pull requests! Just [fork](http://help.github.com/forking/) the library and commit your changes along with relevant tests. Once you're happy with the changes, [send a pull request](http://help.github.com/pull-requests/).
 
-We do our best to [keep our tests green](https://app.travis-ci.com/github/ruby-oembed/ruby-oembed)
+We do our best to [keep our tests green](https://github.com/ruby-oembed/ruby-oembed/actions/workflows/ruby.yml)
 
 # Contributors
 
