@@ -2,6 +2,9 @@
 
 == Unreleased (0.16.2)
 
+* Updated tests to run with Ruby 2.6, 3.0, & 3.2
+* Switched to using GitHub Actions for CI instead of Travis CI
+
 == 0.16.1 - 13 January 2022
 
 * Fix the "already initialized constant OEmbed::Providers::TikTok" warning; Pull #84 (Christopher Nelson)
