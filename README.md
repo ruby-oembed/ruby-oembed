@@ -119,6 +119,8 @@ bundle install
 bundle exec rake
 # or run the test continually
 bundle exec guard
+# lint and autocorrect ruby files
+bundle exec standardrb --fix
 ```
 
 If you encounter any bug, feel free to [create an Issue](https://github.com/ruby-oembed/ruby-oembed/issues).
