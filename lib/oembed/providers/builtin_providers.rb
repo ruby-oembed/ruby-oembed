@@ -2,10 +2,10 @@
 # In the short term most of them are specified in this file
 # though we've _started_ moving provider definitions into their own files!
 
-require 'oembed/providers/facebook_post'
-require 'oembed/providers/facebook_video'
-require 'oembed/providers/instagram'
-require 'oembed/providers/tiktok'
+require "oembed/providers/facebook_post"
+require "oembed/providers/facebook_video"
+require "oembed/providers/instagram"
+require "oembed/providers/tiktok"
 
 module OEmbed
   class Providers
@@ -87,10 +87,10 @@ module OEmbed
     # Provider for slideshare.net
     # http://www.slideshare.net/developers/oembed
     Slideshare = OEmbed::Provider.new("https://www.slideshare.net/api/oembed/2")
-    Slideshare << 'http://*.slideshare.net/*/*'
-    Slideshare << 'https://*.slideshare.net/*/*'
-    Slideshare << 'http://*.slideshare.net/mobile/*/*'
-    Slideshare << 'https://*.slideshare.net/mobile/*/*'
+    Slideshare << "http://*.slideshare.net/*/*"
+    Slideshare << "https://*.slideshare.net/*/*"
+    Slideshare << "http://*.slideshare.net/mobile/*/*"
+    Slideshare << "https://*.slideshare.net/mobile/*/*"
     add_official_provider(Slideshare)
 
     # Provider for yfrog
@@ -125,9 +125,9 @@ module OEmbed
     add_official_provider(MlgTv)
 
     # pownce.com closed in 2008
-    #Pownce = OEmbed::Provider.new("http://api.pownce.com/2.1/oembed.{format}")
-    #Pownce << "http://*.pownce.com/*"
-    #add_official_provider(Pownce)
+    # Pownce = OEmbed::Provider.new("http://api.pownce.com/2.1/oembed.{format}")
+    # Pownce << "http://*.pownce.com/*"
+    # add_official_provider(Pownce)
 
     # Provider for polleverywhere.com
     PollEverywhere = OEmbed::Provider.new("http://www.polleverywhere.com/services/oembed/")
@@ -189,7 +189,7 @@ module OEmbed
     Spotify << "https://open.spotify.com/*"
     Spotify << "http://play.spotify.com/*"
     Spotify << "https://play.spotify.com/*"
-    Spotify << /^spotify\:(.*?)/
+    Spotify << /^spotify:(.*?)/
     add_official_provider(Spotify)
 
     # Provider for skitch.com
@@ -213,15 +213,15 @@ module OEmbed
 
     ## Provider for clikthrough.com
     # http://corporate.clikthrough.com/wp/?p=275
-    #Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
-    #Clickthrough << "http://*.clikthrough.com/theater/video/*"
-    #add_official_provider(Clickthrough)
+    # Clickthrough = OEmbed::Provider.new("http://www.clikthrough.com/services/oembed/")
+    # Clickthrough << "http://*.clikthrough.com/theater/video/*"
+    # add_official_provider(Clickthrough)
 
     ## Provider for kinomap.com
     # http://www.kinomap.com/#!oEmbed
-    #Kinomap = OEmbed::Provider.new("http://www.kinomap.com/oembed")
-    #Kinomap << "http://www.kinomap.com/*"
-    #add_official_provider(Kinomap)
+    # Kinomap = OEmbed::Provider.new("http://www.kinomap.com/oembed")
+    # Kinomap << "http://www.kinomap.com/*"
+    # add_official_provider(Kinomap)
 
     # Provider for oohembed.com, which is a provider aggregator. See
     # OEmbed::Providers::OohEmbed.urls for a full list of supported url schemas.

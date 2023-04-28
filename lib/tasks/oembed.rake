@@ -1,7 +1,7 @@
 begin
-  require 'yaml'
-  require 'json'
-  require 'open-uri'
+  require "yaml"
+  require "json"
+  require "open-uri"
 
   namespace :oembed do
     desc "Update the noembed_urls.yml file using the services api."
@@ -14,11 +14,11 @@ begin
 
       url_regexps = []
       services.each do |service|
-        url_regexps += service['patterns'].map{|r| r.strip }
+        url_regexps += service["patterns"].map { |r| r.strip }
       end
       url_regexps.sort!
 
-      YAML.dump(url_regexps, File.open(yaml_path, 'w'))
+      YAML.dump(url_regexps, File.open(yaml_path, "w"))
     end
 
     desc "Update the embedly_urls.yml file using the services api."
@@ -31,11 +31,11 @@ begin
 
       url_regexps = []
       services.each do |service|
-        url_regexps += service['regex'].map{|r| r.strip }
+        url_regexps += service["regex"].map { |r| r.strip }
       end
       url_regexps.sort!
 
-      YAML.dump(url_regexps, File.open(yaml_path, 'w'))
+      YAML.dump(url_regexps, File.open(yaml_path, "w"))
     end
 
     task :update_oohembed do

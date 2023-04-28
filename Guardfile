@@ -2,15 +2,15 @@ guard "bundler" do
   watch("Gemfile")
 end
 
-group :red_green_refactor, :halt_on_fail => true do
-  guard "rspec", :cmd => "bundle exec rspec" do
+group :red_green_refactor, halt_on_fail: true do
+  guard "rspec", cmd: "bundle exec rspec" do
     watch(%r{^spec/.+_spec\.rb$})
     watch(%r{^spec/cassettes/.+.yml$}) { "spec" }
     watch(%r{^lib/(.+)\.rb$}) do |m|
       # Split up the file path into an Array
       path_parts = []
       remaining_path = m[1]
-      while File.dirname(remaining_path) != '.'
+      while File.dirname(remaining_path) != "."
         remaining_path, file = File.split(remaining_path)
         path_parts << file
       end
@@ -20,8 +20,8 @@ group :red_green_refactor, :halt_on_fail => true do
       # Specs don't contain an oembed subdir
       path_parts.shift
       # Special case for formatter specs
-      if path_parts.include?('formatter') && path_parts.include?('backends')
-        path_parts.delete('backends')
+      if path_parts.include?("formatter") && path_parts.include?("backends")
+        path_parts.delete("backends")
         path_parts.last.gsub!(/$/, "_backend")
       end
       # Add on the _spec.rb postfix

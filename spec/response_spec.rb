@@ -1,11 +1,11 @@
-require 'spec_helper'
+require "spec_helper"
 
 def expected_helpers
   {
     "type" => "random",
     "version" => "1.0",
     "html" => "&lt;em&gt;Hello world!&lt;/em&gt;",
-    "url" => "http://foo.com/bar",
+    "url" => "http://foo.com/bar"
   }.freeze
 end
 
@@ -14,7 +14,7 @@ def expected_skipped
     "fields" => "hello",
     "__id__" => 1234,
     "provider" => "oohEmbed",
-    "to_s" => "random string",
+    "to_s" => "random string"
   }.freeze
 end
 
@@ -70,16 +70,16 @@ describe OEmbed::Response do
       # non-string values to be recognized correctly.
 
       expect(new_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(new_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(new_res.fields.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
 
       expect(default_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(default_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(default_res.fields.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
 
       expect(xml_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(xml_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(xml_res.fields.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
 
       expect(json_res.fields.keys).to eq(valid_response(:object).keys)
-      expect(json_res.fields.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+      expect(json_res.fields.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
     end
 
     it "should set the provider" do
@@ -91,9 +91,9 @@ describe OEmbed::Response do
 
     it "should set the format" do
       expect(new_res.format).to be_nil
-      expect(default_res.format.to_s).to eq('json')
-      expect(xml_res.format.to_s).to eq('xml')
-      expect(json_res.format.to_s).to eq('json')
+      expect(default_res.format.to_s).to eq("json")
+      expect(xml_res.format.to_s).to eq("xml")
+      expect(json_res.format.to_s).to eq("json")
     end
 
     it "should set the request_url" do
@@ -174,35 +174,31 @@ describe OEmbed::Response do
     end
 
     it "should protect most already defined methods" do
-      expect(Object.new).to respond_to('__id__')
-      expect(Object.new).to respond_to('to_s')
+      expect(Object.new).to respond_to("__id__")
+      expect(Object.new).to respond_to("to_s")
 
-      expect(all_expected.keys).to include('__id__')
-      expect(all_expected.keys).to include('to_s')
+      expect(all_expected.keys).to include("__id__")
+      expect(all_expected.keys).to include("to_s")
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
-      expect(local_res.__id__).to_not eq(local_res.field('__id__'))
-      expect(local_res.to_s).to_not eq(local_res.field('to_s'))
+      expect(local_res.__id__).to_not eq(local_res.field("__id__"))
+      expect(local_res.to_s).to_not eq(local_res.field("to_s"))
     end
 
     it "should not protect already defined methods that are specifically overridable" do
-      class Object
-        def version
-          "two point oh"
-        end
-      end
+      allow_any_instance_of(Object).to receive(:version).and_return("two point oh")
 
-      expect(Object.new).to respond_to('version')
-      expect(String.new).to respond_to('version')
+      expect(Object.new).to respond_to("version")
+      expect("").to respond_to("version")
 
-      expect(all_expected.keys).to include('version')
-      expect(all_expected['version']).to_not eq(String.new.version)
+      expect(all_expected.keys).to include("version")
+      expect(all_expected["version"]).to_not eq("".version)
 
       local_res = OEmbed::Response.new(all_expected, OEmbed::Providers::OohEmbed)
 
-      expect(local_res.version).to eq(local_res.field('version'))
-      expect(local_res.version).to_not eq(String.new.version)
+      expect(local_res.version).to eq(local_res.field("version"))
+      expect(local_res.version).to_not eq("".version)
     end
   end
 
@@ -226,5 +222,4 @@ describe OEmbed::Response do
       end
     end
   end
-
 end

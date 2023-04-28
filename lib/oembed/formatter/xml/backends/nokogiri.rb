@@ -23,17 +23,16 @@ module OEmbed
               raise $!
             else
               raise parse_error, "Couldn't parse the given document."
-            end  
+            end
           end
-          
+
           def decode_fail_msg
             "The version of the nokogiri library you have installed isn't parsing XML like ruby-oembed expected."
           end
-          
+
           def parse_error
             ::Nokogiri::XML::SyntaxError
           end
-        
         end
       end
     end

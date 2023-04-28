@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe OEmbed::Formatter do
   include OEmbedSpecHelper
@@ -10,7 +10,7 @@ describe OEmbed::Formatter do
   end
 
   it "should default to JSON" do
-    expect(OEmbed::Formatter.default).to eq('json')
+    expect(OEmbed::Formatter.default).to eq("json")
   end
 
   it "should decode a JSON String" do
@@ -18,7 +18,7 @@ describe OEmbed::Formatter do
     # We need to compare keys & values separately because we don't expect all
     # non-string values to be recognized correctly.
     expect(decoded.keys).to eq(valid_response(:object).keys)
-    expect(decoded.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+    expect(decoded.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
   end
 
   it "should support XML" do
@@ -32,6 +32,6 @@ describe OEmbed::Formatter do
     # We need to compare keys & values separately because we don't expect all
     # non-string values to be recognized correctly.
     expect(decoded.keys).to eq(valid_response(:object).keys)
-    expect(decoded.values.map{|v|v.to_s}).to eq(valid_response(:object).values.map{|v|v.to_s})
+    expect(decoded.values.map { |v| v.to_s }).to eq(valid_response(:object).values.map { |v| v.to_s })
   end
 end

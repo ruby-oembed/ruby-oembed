@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'yaml'
+require "rubygems"
+require "yaml"
 
 module OEmbed
   # Allows OEmbed to perform tasks across several, registered, Providers
@@ -101,7 +101,9 @@ module OEmbed
           provider.raw(url, options)
         else
           fallback.each do |p|
-            return p.raw(url, options) rescue OEmbed::Error
+            return p.raw(url, options)
+          rescue
+            OEmbed::Error
           end
           raise(OEmbed::NotFound)
         end
@@ -115,7 +117,9 @@ module OEmbed
           provider.get(url, options)
         else
           fallback.each do |p|
-            return p.get(url, options) rescue OEmbed::Error
+            return p.get(url, options)
+          rescue
+            OEmbed::Error
           end
           raise(OEmbed::NotFound)
         end
@@ -132,7 +136,7 @@ module OEmbed
       # :access_token takes a Hash with the following required keys:
       # * :name: A Symbol: the name of access token, to be used with `register_all`
       # * :method: A Symbol: the name of the required_query_params for the access token.
-      def add_official_provider(provider_class, sub_type=nil, access_token: nil)
+      def add_official_provider(provider_class, sub_type = nil, access_token: nil)
         raise TypeError, "Expected OEmbed::Provider instance but was #{provider_class.class}" \
           unless provider_class.is_a?(OEmbed::Provider)
 

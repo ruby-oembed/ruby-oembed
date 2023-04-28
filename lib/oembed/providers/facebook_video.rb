@@ -5,11 +5,11 @@ module OEmbed
     # See https://developers.facebook.com/docs/graph-api/reference/v8.0/oembed-video
     FacebookVideo = OEmbed::Provider.new(
       "https://graph.facebook.com/v8.0/oembed_video",
-      required_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
+      required_query_params: {access_token: "OEMBED_FACEBOOK_TOKEN"},
       format: :json
     )
-    FacebookVideo << 'https://www.facebook.com/*/videos/*'
-    FacebookVideo << 'https://www.facebook.com/video*'
+    FacebookVideo << "https://www.facebook.com/*/videos/*"
+    FacebookVideo << "https://www.facebook.com/video*"
 
     # Note: even though FacebookVideo is automatically registered as an official provider
     # it will NOT resolve any URLs unless its access_token is set

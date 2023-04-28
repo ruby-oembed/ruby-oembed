@@ -1,5 +1,5 @@
-require 'cgi'
-require 'oembed/http_helper'
+require "cgi"
+require "oembed/http_helper"
 
 module OEmbed
   # An OEmbed::Provider has information about an individual oEmbed enpoint.
@@ -26,7 +26,6 @@ module OEmbed
     # @deprecated *Note*: Added in a fork of the gem, a while back. I really would like
     # to get rid of it, though. --Marcos
     attr_accessor :url
-
 
     # Construct a new OEmbed::Provider instance, pointing at a specific oEmbed
     # endpoint.
@@ -59,8 +58,12 @@ module OEmbed
     #   # You can optionally override the value from `ENV['MY_SERVICE_ACCESS_TOKEN']`
     #   @provider_with_auth.access_token = @my_access_token
     def initialize(endpoint, positional_format = OEmbed::Formatter.default, format: nil, required_query_params: {})
-      endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
-      raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
+      endpoint_uri = begin
+        URI.parse(endpoint.gsub(/[{}]/, ""))
+      rescue
+        nil
+      end
+      raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint}" unless endpoint_uri.is_a?(URI::HTTP)
 
       @required_query_params = {}
       required_query_params.each do |param, default_env_var|
@@ -69,8 +72,10 @@ module OEmbed
         set_required_query_params(param, ENV[default_env_var]) if default_env_var
 
         # Define a getter and a setter for each required_query_param
+        # rubocop:disable Style/RedundantInterpolation
         define_singleton_method("#{param}") { @required_query_params[param] } unless respond_to?("#{param}")
         define_singleton_method("#{param}=") { |val| set_required_query_params(param, val) } unless respond_to?("#{param}=")
+        # rubocop:enable Style/RedundantInterpolation
       end
       required_query_params_set?(reset_cache: true)
 
@@ -90,7 +95,7 @@ module OEmbed
     #   @provider << %r{^http://my.service.com/((help)|(faq))/\d+[#\?].*}
     def <<(url)
       if !url.is_a?(Regexp)
-        full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
+        _full, scheme, domain, path = *url.match(%r{([^:]*)://?([^/?]*)(.*)})
         domain = Regexp.escape(domain).gsub("\\*", "(.*?)").gsub("(.*?)\\.", "([^\\.]+\\.)?")
         path = Regexp.escape(path).gsub("\\*", "(.*?)")
         url = Regexp.new("^#{Regexp.escape(scheme)}://#{domain}#{path}")
@@ -117,7 +122,7 @@ module OEmbed
     def required_query_params_set?(reset_cache: false)
       return @all_required_query_params_set unless reset_cache || @all_required_query_params_set.nil?
 
-      @all_required_query_params_set = !@required_query_params.values.include?(nil)
+      @all_required_query_params_set = !@required_query_params.value?(nil)
     end
 
     # Send a request to the Provider endpoint to get information about the
@@ -140,7 +145,7 @@ module OEmbed
     # It will always return false of a provider has required_query_params that are not set.
     def include?(url)
       return false unless required_query_params_set?
-      @urls.empty? || !!@urls.detect{ |u| u =~ url }
+      @urls.empty? || !!@urls.detect { |u| u =~ url }
     end
 
     # @deprecated *Note*: This method will be made private in the future.
@@ -151,7 +156,7 @@ module OEmbed
       query.delete(:max_redirects)
 
       query = query.merge(@required_query_params)
-      query = query.merge({:url => ::CGI.escape(url)})
+      query = query.merge({url: ::CGI.escape(url)})
 
       # TODO: move this code exclusively into the get method, once build is private.
       this_format = (query[:format] ||= @format.to_s).to_s
@@ -163,7 +168,7 @@ module OEmbed
         query.delete(:format)
       end
 
-      base = endpoint.include?('?') ? '&' : '?'
+      base = endpoint.include?("?") ? "&" : "?"
       query = base + query.inject("") do |memo, (key, value)|
         "#{key}=#{value}&#{memo}"
       end.chop
