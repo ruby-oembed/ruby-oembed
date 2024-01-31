@@ -1,0 +1,221 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my.matterport.com/api/v1/models/oembed/?format=json&url=https://my.matterport.com/show/?m=FmDYedjofjo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin, Accept-Encoding
+      Last-Modified:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Cf-Cache-Status:
+      - MISS
+      Content-Security-Policy:
+      - frame-ancestors 'self' https://matterport.com https://*.matterport.com;
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - private, no-store, must-revalidate
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84e2bb909b9832c4-DTW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"provider_url": "https://matterport.com", "version": "1.0", "thumbnail_width":
+        1920, "height": 480, "thumbnail_url": "https://my.matterport.com/api/v2/player/models/FmDYedjofjo/thumb/",
+        "thumbnail_height": 1080, "title": "Southern California Luxury Home", "width":
+        640, "html": "<iframe width=\"640\" height=\"480\" frameborder=\"0\" allowfullscreen
+        allow=\"xr-spatial-tracking\" src=\"https://my.matterport.com/show/?m=FmDYedjofjo\"
+        ></iframe>", "provider_name": "Matterport", "type": "rich"}'
+  recorded_at: Wed, 31 Jan 2024 14:44:26 GMT
+- request:
+    method: get
+    uri: https://my.matterport.com/api/v1/models/oembed/?format=json&url=https://my.matterport.com/show/?m=iNvAlIdUrL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin, Accept-Encoding
+      Cf-Cache-Status:
+      - MISS
+      Content-Security-Policy:
+      - frame-ancestors 'self' https://matterport.com https://*.matterport.com;
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - private, no-store, must-revalidate
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84e2bb91c8e532c4-DTW
+    body:
+      encoding: UTF-8
+      string: '{"message": "Not found.", "code": "not.found"}'
+  recorded_at: Wed, 31 Jan 2024 14:44:26 GMT
+- request:
+    method: get
+    uri: https://my.matterport.com/api/v1/models/oembed/?format=json&url=https://my.matterport.com/show/?m=FmDYedjofjo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin, Accept-Encoding
+      Last-Modified:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'self' https://matterport.com https://*.matterport.com;
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - private, no-store, must-revalidate
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84e2bb92cda432c2-DTW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"provider_url": "https://matterport.com", "version": "1.0", "thumbnail_width":
+        1920, "height": 480, "thumbnail_url": "https://my.matterport.com/api/v2/player/models/FmDYedjofjo/thumb/",
+        "thumbnail_height": 1080, "title": "Southern California Luxury Home", "width":
+        640, "html": "<iframe width=\"640\" height=\"480\" frameborder=\"0\" allowfullscreen
+        allow=\"xr-spatial-tracking\" src=\"https://my.matterport.com/show/?m=FmDYedjofjo\"
+        ></iframe>", "provider_name": "Matterport", "type": "rich"}'
+  recorded_at: Wed, 31 Jan 2024 14:44:26 GMT
+- request:
+    method: get
+    uri: https://my.matterport.com/api/v1/models/oembed/?format=json&url=https://my.matterport.com/show/?m=iNvAlIdUrL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Wed, 31 Jan 2024 14:44:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin, Accept-Encoding
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'self' https://matterport.com https://*.matterport.com;
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - private, no-store, must-revalidate
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84e2bb938b1d6a25-DTW
+    body:
+      encoding: UTF-8
+      string: '{"message": "Not found.", "code": "not.found"}'
+  recorded_at: Wed, 31 Jan 2024 14:44:26 GMT
+recorded_with: VCR 6.2.0
