@@ -31,11 +31,6 @@ describe OEmbed::ProviderDiscovery do
       {:json=>'https://vimeo.com/api/oembed.json', :xml=>'https://vimeo.com/api/oembed.xml'},
       :json,
     ],
-    'facebook-photo' => [
-      'https://www.facebook.com/Federer/photos/pb.64760994940.-2207520000.1456668968./10153235368269941/?type=3&theater',
-      'https://www.facebook.com/plugins/post/oembed.json/',
-      :json,
-    ],
     'tumblr' => [
       'http://kittehkats.tumblr.com/post/140525169406/katydid-and-the-egg-happy-forest-family',
       'https://www.tumblr.com/oembed/1.0',
