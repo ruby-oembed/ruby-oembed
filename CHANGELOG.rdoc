@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.17.0)
+== Unreleased (0.17.1)
+
+== 0.17.0 - 25 February 2024
 
 * Add a built-in Matterport provider; Pull #93 (Nathan Papes)
 * Updated tests to run with Ruby 2.6, 3.0, & 3.2
