@@ -23,7 +23,7 @@ describe OEmbed::ProviderDiscovery do
     # ]
     'youtube' => [
       'http://www.youtube.com/watch?v=u6XAPnuFjJc',
-      {:json=>'http://www.youtube.com/oembed', :xml=>'http://www.youtube.com/oembed'},
+      {:json=>'https://www.youtube.com/oembed', :xml=>'https://www.youtube.com/oembed'},
       :json,
     ],
     'vimeo' => [
