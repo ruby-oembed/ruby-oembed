@@ -336,4 +336,191 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"errors":[{"code":356,"message":"xml not implemented"}]}'
   recorded_at: Mon, 16 Nov 2020 05:47:54 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: get
+    uri: https://publish.twitter.com/oembed?format=json&url=https://x.com/RailsGirlsSoC/status/702136612822634496
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.17.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 01 Jun 2024 15:02:48 GMT
+      Perf:
+      - '7402827104'
+      Server:
+      - tsa_f
+      Expires:
+      - Mon, 08 May 2124 15:02:48 GMT
+      Set-Cookie:
+      - guest_id=v1%3A171725416837911908; Max-Age=63072000; Expires=Mon, 01 Jun 2026
+        15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_ads=v1%3A171725416837911908; Max-Age=63072000; Expires=Mon, 01 Jun
+        2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_marketing=v1%3A171725416837911908; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_daRWOpDCqX4Yx8o0LLen4Q=="; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - must-revalidate, max-age=3153600000
+      Last-Modified:
+      - Sat, 01 Jun 2024 15:02:48 GMT
+      Content-Length:
+      - '536'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Transaction-Id:
+      - 34590b3306409c5d
+      X-Xss-Protection:
+      - '0'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Response-Time:
+      - '121'
+      X-Connection-Hash:
+      - 82fee37cbda0b72d9a7aa5147c0ec38168f8b7383cae972c1ed485eab09f1aec
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTdW1tZXIgb2YgQ29kZSIsImF1dGhvcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0MiLCJodG1sIjoiXHUwMDNDYmxvY2txdW90ZSBjbGFzcz1cInR3aXR0ZXItdHdlZXRcIlx1MDAzRVx1MDAzQ3AgbGFuZz1cImVuXCIgZGlyPVwibHRyXCJcdTAwM0VPdXIgMjAxNiBmdW5kcmFpc2luZyBjYW1wYWlnbiBpcyBub3cgb3BlbiEhIExldOKAmXMgbWFrZSBhbm90aGVyIGFtYXppbmcgc3VtbWVyIGhhcHBlbiHinKhcdUQ4M0RcdURDOUNcdUQ4M0RcdURDQUFcdUQ4M0RcdURDOUHinKhcdUQ4M0RcdURDNDkgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3QuY29cL1I4SmczNnhhUXhcIlx1MDAzRWh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XHUwMDNDXC9hXHUwMDNFIFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9tSXdLUjBmekdSXCJcdTAwM0VwaWMudHdpdHRlci5jb21cL21Jd0tSMGZ6R1JcdTAwM0NcL2FcdTAwM0VcdTAwM0NcL3BcdTAwM0UmbWRhc2g7IFJhaWxzIEdpcmxzIFN1bW1lciBvZiBDb2RlIChAUmFpbHNHaXJsc1NvQykgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DXC9zdGF0dXNcLzcwMjEzNjYxMjgyMjYzNDQ5Nj9yZWZfc3JjPXR3c3JjJTVFdGZ3XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0VcblxuIiwid2lkdGgiOjU1MCwiaGVpZ2h0IjpudWxsLCJ0eXBlIjoicmljaCIsImNhY2hlX2FnZSI6IjMxNTM2MDAwMDAiLCJwcm92aWRlcl9uYW1lIjoiVHdpdHRlciIsInByb3ZpZGVyX3VybCI6Imh0dHBzOlwvXC90d2l0dGVyLmNvbSIsInZlcnNpb24iOiIxLjAifQ==
+  recorded_at: Sat, 01 Jun 2024 15:02:48 GMT
+- request:
+    method: get
+    uri: https://publish.twitter.com/oembed?format=json&url=https://x.com/RailsGirlsSoC/status/702136612822634496
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.17.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 01 Jun 2024 15:02:48 GMT
+      Perf:
+      - '7402827104'
+      Server:
+      - tsa_f
+      Expires:
+      - Mon, 08 May 2124 15:02:48 GMT
+      Set-Cookie:
+      - guest_id=v1%3A171725416863975257; Max-Age=63072000; Expires=Mon, 01 Jun 2026
+        15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_ads=v1%3A171725416863975257; Max-Age=63072000; Expires=Mon, 01 Jun
+        2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_marketing=v1%3A171725416863975257; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_kAY5urv5dRS0JlTkS3uEMA=="; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - must-revalidate, max-age=3153600000
+      Last-Modified:
+      - Sat, 01 Jun 2024 15:02:48 GMT
+      Content-Length:
+      - '536'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Transaction-Id:
+      - 86df04e743702e92
+      X-Xss-Protection:
+      - '0'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Response-Time:
+      - '128'
+      X-Connection-Hash:
+      - 843e2e154ce940fc76126bfaeb0c44fae4b32f7ea9e813fe1b8bf8bc04b7b870
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0NcL3N0YXR1c1wvNzAyMTM2NjEyODIyNjM0NDk2IiwiYXV0aG9yX25hbWUiOiJSYWlscyBHaXJscyBTdW1tZXIgb2YgQ29kZSIsImF1dGhvcl91cmwiOiJodHRwczpcL1wvdHdpdHRlci5jb21cL1JhaWxzR2lybHNTb0MiLCJodG1sIjoiXHUwMDNDYmxvY2txdW90ZSBjbGFzcz1cInR3aXR0ZXItdHdlZXRcIlx1MDAzRVx1MDAzQ3AgbGFuZz1cImVuXCIgZGlyPVwibHRyXCJcdTAwM0VPdXIgMjAxNiBmdW5kcmFpc2luZyBjYW1wYWlnbiBpcyBub3cgb3BlbiEhIExldOKAmXMgbWFrZSBhbm90aGVyIGFtYXppbmcgc3VtbWVyIGhhcHBlbiHinKhcdUQ4M0RcdURDOUNcdUQ4M0RcdURDQUFcdUQ4M0RcdURDOUHinKhcdUQ4M0RcdURDNDkgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3QuY29cL1I4SmczNnhhUXhcIlx1MDAzRWh0dHBzOlwvXC90LmNvXC9SOEpnMzZ4YVF4XHUwMDNDXC9hXHUwMDNFIFx1MDAzQ2EgaHJlZj1cImh0dHBzOlwvXC90LmNvXC9tSXdLUjBmekdSXCJcdTAwM0VwaWMudHdpdHRlci5jb21cL21Jd0tSMGZ6R1JcdTAwM0NcL2FcdTAwM0VcdTAwM0NcL3BcdTAwM0UmbWRhc2g7IFJhaWxzIEdpcmxzIFN1bW1lciBvZiBDb2RlIChAUmFpbHNHaXJsc1NvQykgXHUwMDNDYSBocmVmPVwiaHR0cHM6XC9cL3R3aXR0ZXIuY29tXC9SYWlsc0dpcmxzU29DXC9zdGF0dXNcLzcwMjEzNjYxMjgyMjYzNDQ5Nj9yZWZfc3JjPXR3c3JjJTVFdGZ3XCJcdTAwM0VGZWJydWFyeSAyMywgMjAxNlx1MDAzQ1wvYVx1MDAzRVx1MDAzQ1wvYmxvY2txdW90ZVx1MDAzRVxuXHUwMDNDc2NyaXB0IGFzeW5jIHNyYz1cImh0dHBzOlwvXC9wbGF0Zm9ybS50d2l0dGVyLmNvbVwvd2lkZ2V0cy5qc1wiIGNoYXJzZXQ9XCJ1dGYtOFwiXHUwMDNFXHUwMDNDXC9zY3JpcHRcdTAwM0VcblxuIiwid2lkdGgiOjU1MCwiaGVpZ2h0IjpudWxsLCJ0eXBlIjoicmljaCIsImNhY2hlX2FnZSI6IjMxNTM2MDAwMDAiLCJwcm92aWRlcl9uYW1lIjoiVHdpdHRlciIsInByb3ZpZGVyX3VybCI6Imh0dHBzOlwvXC90d2l0dGVyLmNvbSIsInZlcnNpb24iOiIxLjAifQ==
+  recorded_at: Sat, 01 Jun 2024 15:02:48 GMT
+- request:
+    method: get
+    uri: https://publish.twitter.com/oembed?format=xml&url=https://x.com/RailsGirlsSoC/status/702136612822634496
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.17.0)
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 01 Jun 2024 15:02:48 GMT
+      Perf:
+      - '7402827104'
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A171725416890717757; Max-Age=63072000; Expires=Mon, 01 Jun 2026
+        15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_ads=v1%3A171725416890717757; Max-Age=63072000; Expires=Mon, 01 Jun
+        2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - guest_id_marketing=v1%3A171725416890717757; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_sYtpoFblan8fLvRq2lyH7A=="; Max-Age=63072000; Expires=Mon,
+        01 Jun 2026 15:02:48 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      Content-Length:
+      - '82'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Transaction-Id:
+      - 1f09de68b10eb1a6
+      X-Xss-Protection:
+      - '0'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Response-Time:
+      - '113'
+      X-Connection-Hash:
+      - b2c8341c81ff6b61bc50f303d127be3ec74e1b45ac466b35b1b209e776db48be
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":356,"message":"xml not implemented"}]}'
+  recorded_at: Sat, 01 Jun 2024 15:02:48 GMT
+recorded_with: VCR 6.2.0

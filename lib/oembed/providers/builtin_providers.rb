@@ -76,6 +76,7 @@ module OEmbed
     # https://dev.twitter.com/rest/reference/get/statuses/oembed
     Twitter = OEmbed::Provider.new("https://publish.twitter.com/oembed", format: :json)
     Twitter << "https://*.twitter.com/*/status/*"
+    Twitter << "https://*.x.com/*/status/*"
     add_official_provider(Twitter)
 
     # Provider for vine.co
