@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.18.0)
+== Unreleased (0.18.1)
+
+== 0.18.0 - 31 August 2024
 
 * Add support for `x.com` URLs to `OEmbed::Providers::Twitter`; Pull #97 (Maxime)
 * Refresh a few test casettes; Pull #96 (Marcos Wright-Kuhns)
