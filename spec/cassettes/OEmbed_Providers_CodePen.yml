@@ -12,61 +12,68 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.17.0)
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 05:47:47 GMT
+      - Sun, 25 Feb 2024 23:25:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d58b6838d8b02b3aee68a5267dca2a9531605505667; expires=Wed, 16-Dec-20
-        05:47:47 GMT; path=/; domain=.codepen.io; HttpOnly; SameSite=Lax; Secure
-      - __cfruid=181713fe255d24b57c1f12fedcd894ebbbf72abf-1605505667; path=/; domain=.codepen.io;
-        HttpOnly; Secure; SameSite=None
-      Status:
-      - 200 OK
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Permitted-Cross-Domain-Policies:
-      - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - bdee9208-3c74-4234-82f2-77fa93acd4fc
-      X-Download-Options:
-      - noopen
-      X-Env:
-      - production
-      Etag:
-      - W/"964b76525e93bf121b7284a64730e6e3"
-      X-Frame-Options:
-      - ALLOWALL
-      X-Runtime:
-      - '0.028484'
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Phusion Passenger Enterprise
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - 'default-src ''self''; base-uri ''self''; block-all-mixed-content; connect-src
+        blob: *; font-src data: *; frame-src data: blob: *; img-src ''self'' assets.codepen.io
+        assets.codepen.io cpwebassets.codepen.io shots.codepen.io *.codepen-staging.com
+        *.codepen.website *.codepen.io *.wp.com gravatar.com static.filestackapi.com
+        *.buysellads.net *.buysellads.com *.activemetering.com *.carbonads.net *.doubleclick.net
+        *.adsafeprotected.com *.unsplash.com *.googleusercontent.com avatars.githubusercontent.com
+        data: blob:; form-action ''self''; media-src ''self'' assets.codepen.io blog.codepen.io
+        assets.codepen.io; object-src ''none''; script-src ''self'' ''unsafe-eval''
+        ''nonce-siJXDj/wOoU='' cpwebassets.codepen.io apc.codepen.io *.buysellads.com
+        *.buysellads.net *.doubleclick.net *.carbonads.com *.carbonads.net *.filestackapi.com
+        *.firebaseio.com *.paypal.com *.paypalobjects.com *.braintreegateway.com *.stripe.com
+        *.wufoo.com wufoo.com www.google.com www.gstatic.com; style-src ''unsafe-inline''
+        *; report-uri /cpe/csp'
+      Etag:
+      - W/"548b2f3196584228879ee8b4ce66e472"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2a99dfe6-9577-4832-a8e4-dd109216216c
+      X-Runtime:
+      - '0.018172'
       Cf-Cache-Status:
       - DYNAMIC
-      Cf-Request-Id:
-      - 06713167e10000093dae0e5000000001
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Set-Cookie:
+      - __cf_bm=PMCKV22L1QKy0T.HB8tT2zxk1r215E_npgEH4YsZnjw-1708903505-1.0-AZuzmqdlC0kU3DJynO8ozdTNBWbmxJSFzMsu9gbkjNXadi5Ylm+igYqPimDFpu9dQGkrPJ2Ui7+dj7tRSI7NKAY=;
+        path=/; expires=Sun, 25-Feb-24 23:55:05 GMT; domain=.codepen.io; HttpOnly;
+        Secure; SameSite=None
+      - __cfruid=2e0b7979e5ba0e29807c17971b96eeb23823863f-1708903505; path=/; domain=.codepen.io;
+        HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
       Server:
       - cloudflare
       Cf-Ray:
-      - 5f2eeb530872093d-SEA
+      - 85b3b49bdaccc555-SEA
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
@@ -78,15 +85,15 @@ http_interactions:
           "provider_url": "https://codepen.io",
           "title": "Day/night mode switch toggle with React and ThemeProvider",
           "author_name": "Maks Akymenko",
-          "author_url": "https://codepen.io/maximakymenko/",
+          "author_url": "https://codepen.io/maximakymenko",
           "height": "300",
           "width": "800",
           "thumbnail_width": "384",
           "thumbnail_height": "225",
-          "thumbnail_url": "https://assets.codepen.io/2163704/internal/screenshots/pens/mdbpeXm.default.png?fit=cover&amp;format=auto&amp;ha=false&amp;height=360&amp;quality=75&amp;v=2&amp;version=1568797448&amp;width=640",
-          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?height=300&amp;slug-hash=mdbpeXm&amp;default-tabs=js,result&amp;host=https://codepen.io\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
+          "thumbnail_url": "https://shots.codepen.io/username/pen/mdbpeXm-512.jpg?version=1568797448",
+          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?default-tabs=js%2Cresult&amp;height=300&amp;host=https%3A%2F%2Fcodepen.io&amp;slug-hash=mdbpeXm\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
         }
-  recorded_at: Mon, 16 Nov 2020 05:47:47 GMT
+  recorded_at: Sun, 25 Feb 2024 23:25:05 GMT
 - request:
     method: get
     uri: https://codepen.io/api/oembed?format=json&url=https://codepen.io/maximakymenko/pen/mdbpeXm
@@ -99,61 +106,68 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.13.1)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.17.0)
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 16 Nov 2020 05:47:47 GMT
+      - Sun, 25 Feb 2024 23:25:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d521f9b17190910e1d2851fcb0c3d87471605505667; expires=Wed, 16-Dec-20
-        05:47:47 GMT; path=/; domain=.codepen.io; HttpOnly; SameSite=Lax; Secure
-      - __cfruid=181713fe255d24b57c1f12fedcd894ebbbf72abf-1605505667; path=/; domain=.codepen.io;
-        HttpOnly; Secure; SameSite=None
-      Status:
-      - 200 OK
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Permitted-Cross-Domain-Policies:
-      - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - '08ba5511-ff94-4c20-8b26-efd2876a5fc3'
-      X-Download-Options:
-      - noopen
-      X-Env:
-      - production
-      Etag:
-      - W/"964b76525e93bf121b7284a64730e6e3"
-      X-Frame-Options:
-      - ALLOWALL
-      X-Runtime:
-      - '0.049626'
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Phusion Passenger Enterprise
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - 'default-src ''self''; base-uri ''self''; block-all-mixed-content; connect-src
+        blob: *; font-src data: *; frame-src data: blob: *; img-src ''self'' assets.codepen.io
+        assets.codepen.io cpwebassets.codepen.io shots.codepen.io *.codepen-staging.com
+        *.codepen.website *.codepen.io *.wp.com gravatar.com static.filestackapi.com
+        *.buysellads.net *.buysellads.com *.activemetering.com *.carbonads.net *.doubleclick.net
+        *.adsafeprotected.com *.unsplash.com *.googleusercontent.com avatars.githubusercontent.com
+        data: blob:; form-action ''self''; media-src ''self'' assets.codepen.io blog.codepen.io
+        assets.codepen.io; object-src ''none''; script-src ''self'' ''unsafe-eval''
+        ''nonce-lZGC94v2l1g='' cpwebassets.codepen.io apc.codepen.io *.buysellads.com
+        *.buysellads.net *.doubleclick.net *.carbonads.com *.carbonads.net *.filestackapi.com
+        *.firebaseio.com *.paypal.com *.paypalobjects.com *.braintreegateway.com *.stripe.com
+        *.wufoo.com wufoo.com www.google.com www.gstatic.com; style-src ''unsafe-inline''
+        *; report-uri /cpe/csp'
+      Etag:
+      - W/"548b2f3196584228879ee8b4ce66e472"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a250c7de-d428-4729-b6d7-02a075ef8d1e
+      X-Runtime:
+      - '0.027888'
       Cf-Cache-Status:
       - DYNAMIC
-      Cf-Request-Id:
-      - '06713168920000bcb4fdacd000000001'
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Set-Cookie:
+      - __cf_bm=Jn0LTqm7n5FAn0j9WzWEf7awHzy5qZ_S9xM_N079i78-1708903505-1.0-AVbOX9g7897HftMLTVuOepBo00mdjv2e/arcnuoYSjq2LPO/zZ44Wj+mlntlzZxIIwnbBHhOYcXEZch/sWzjcEE=;
+        path=/; expires=Sun, 25-Feb-24 23:55:05 GMT; domain=.codepen.io; HttpOnly;
+        Secure; SameSite=None
+      - __cfruid=2e0b7979e5ba0e29807c17971b96eeb23823863f-1708903505; path=/; domain=.codepen.io;
+        HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
       Server:
       - cloudflare
       Cf-Ray:
-      - 5f2eeb541d38bcb4-SEA
+      - 85b3b49c8ad22802-SEA
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
@@ -165,13 +179,13 @@ http_interactions:
           "provider_url": "https://codepen.io",
           "title": "Day/night mode switch toggle with React and ThemeProvider",
           "author_name": "Maks Akymenko",
-          "author_url": "https://codepen.io/maximakymenko/",
+          "author_url": "https://codepen.io/maximakymenko",
           "height": "300",
           "width": "800",
           "thumbnail_width": "384",
           "thumbnail_height": "225",
-          "thumbnail_url": "https://assets.codepen.io/2163704/internal/screenshots/pens/mdbpeXm.default.png?fit=cover&amp;format=auto&amp;ha=false&amp;height=360&amp;quality=75&amp;v=2&amp;version=1568797448&amp;width=640",
-          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?height=300&amp;slug-hash=mdbpeXm&amp;default-tabs=js,result&amp;host=https://codepen.io\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
+          "thumbnail_url": "https://shots.codepen.io/username/pen/mdbpeXm-512.jpg?version=1568797448",
+          "html": "<iframe id=\"cp_embed_mdbpeXm\" src=\"https://codepen.io/maximakymenko/embed/preview/mdbpeXm?default-tabs=js%2Cresult&amp;height=300&amp;host=https%3A%2F%2Fcodepen.io&amp;slug-hash=mdbpeXm\" title=\"Day/night mode switch toggle with React and ThemeProvider\" scrolling=\"no\" frameborder=\"0\" height=\"300\" allowtransparency=\"true\" class=\"cp_embed_iframe\" style=\"width: 100%; overflow: hidden;\"></iframe>"
         }
-  recorded_at: Mon, 16 Nov 2020 05:47:47 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 25 Feb 2024 23:25:05 GMT
+recorded_with: VCR 6.1.0
