@@ -13,9 +13,10 @@ module OEmbed
     def http_get(uri, options = {})
       found = false
       remaining_redirects = options[:max_redirects] ? options[:max_redirects].to_i : 4
+      scheme, host, port = uri.scheme, uri.host, uri.port
       until found
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = uri.scheme == 'https'
+        http = Net::HTTP.new(host, port)
+        http.use_ssl = scheme == 'https'
         http.verify_mode = OpenSSL::SSL::VERIFY_PEER
         http.read_timeout = http.open_timeout = options[:timeout] if options[:timeout]
 
@@ -33,6 +34,10 @@ module OEmbed
           found = true
         elsif res.is_a?(Net::HTTPRedirection) && res.header['location']
           uri = URI.parse(res.header['location'])
+          # If the 'location' is a relative path, keep the last scheme, host, & port.
+          scheme = uri.scheme || scheme
+          host = uri.host || host
+          port = uri.port || port
           remaining_redirects -= 1
         else
           found = true
