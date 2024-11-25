@@ -9,8 +9,10 @@ describe 'OEmbed::Providers::Twitter' do
   expected_valid_urls = %w(
     https://twitter.com/RailsGirlsSoC/status/702136612822634496
     https://www.twitter.com/bpoweski/status/71633762
+    https://x.com/RailsGirlsSoC/status/702136612822634496
   )
   expected_invalid_urls = %w(
+    http://x.com/RailsGirlsSoC/status/702136612822634496
     http://twitter.com/RailsGirlsSoC/status/702136612822634496
     https://twitter.es/FCBarcelona_es/status/734194638697959424
   )
