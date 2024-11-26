@@ -11,6 +11,7 @@ module OEmbed
     Spotify << "https://open.spotify.com/*"
     Spotify << "http://play.spotify.com/*"
     Spotify << "https://play.spotify.com/*"
+    # https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids
     Spotify << /^spotify\:(.*?)/
 
     add_official_provider(Spotify)

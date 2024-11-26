@@ -13,6 +13,8 @@ describe 'OEmbed::Providers::Spotify' do
     'https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d',
     # Artist
     'https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g',
+    # Artist via Spotify URI
+    'spotify:artist:1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g',
     # Podcast: Show
     'https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr',
     # Podcast: Episode
