@@ -2,926 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Date:
-      - Thu, 24 Aug 2023 08:59:21 GMT
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json
-      Sp-Trace-Id:
-      - 4f18f5f0f6ce7dcb
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-  recorded_at: Thu, 24 Aug 2023 08:59:21 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 24 Aug 2023 08:59:21 GMT
-      Content-Type:
-      - application/json
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Set-Cookie:
-      - sp_landing=https%3A%2F%2Fembed.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D39d74b1e4728e01c3f29087515183f15%26device%3Ddesktop;
-        Max-Age=86400000; Domain=.spotify.com; Path=/; Expires=Wed, 20 May 2026 08:59:21
-        GMT; HttpOnly; Secure; SameSite=None
-      - sp_t=39d74b1e4728e01c3f29087515183f15; Max-Age=31536000000; Domain=.spotify.com;
-        Path=/; Expires=Wed, 25 Dec 3022 08:59:21 GMT; Secure; SameSite=None
-      Access-Control-Allow-Origin:
-      - "*"
-      Sp-Trace-Id:
-      - 1d3672cddb05eeb7
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: Don&apos;t Bring Me Down\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
-        Bring Me Down","thumbnail_url":"https://i.scdn.co/image/ab67616d00001e02c74f62d1a5d6a4e10b6f8c99","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Thu, 24 Aug 2023 08:59:21 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Date:
-      - Thu, 24 Aug 2023 08:59:21 GMT
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json
-      Sp-Trace-Id:
-      - 33df8822a8c9a18f
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-  recorded_at: Thu, 24 Aug 2023 08:59:21 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.16.1)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 24 Aug 2023 08:59:21 GMT
-      Content-Type:
-      - application/json
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Set-Cookie:
-      - sp_landing=https%3A%2F%2Fembed.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Dfb78071d0a562a38049ebffb0edc5027%26device%3Ddesktop;
-        Max-Age=86400000; Domain=.spotify.com; Path=/; Expires=Wed, 20 May 2026 08:59:21
-        GMT; HttpOnly; Secure; SameSite=None
-      - sp_t=fb78071d0a562a38049ebffb0edc5027; Max-Age=31536000000; Domain=.spotify.com;
-        Path=/; Expires=Wed, 25 Dec 3022 08:59:21 GMT; Secure; SameSite=None
-      Access-Control-Allow-Origin:
-      - "*"
-      Sp-Trace-Id:
-      - be6fdaf09ca39308
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - envoy
-      Via:
-      - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: Don&apos;t Bring Me Down\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
-        Bring Me Down","thumbnail_url":"https://i.scdn.co/image/ab67616d00001e02c74f62d1a5d6a4e10b6f8c99","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Thu, 24 Aug 2023 08:59:21 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:37 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '80'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-357578ddb4dd41efa1c2fdc6a0a74afd''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:37 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3Dc21c2908b5f0557494cc5d909f97c801%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:37 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=c21c2908b5f0557494cc5d909f97c801; Path=/; Expires=Wed, 26 Nov 2025 01:34:37
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=c21c2908b5f0557494cc5d909f97c801; Path=/; Expires=Wed, 26 Nov 2025 01:34:37
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3Dc21c2908b5f0557494cc5d909f97c801%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:37 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:37 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '20'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-e5f4da4ee3da45d486a73a5d61f2f415''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"352\"
-        title=\"Spotify Embed: Flock of Dimes\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed","width":456,"height":352,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Flock
-        of Dimes"}'
-  recorded_at: Tue, 26 Nov 2024 01:34:37 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:37 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '1'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-360674331509445b996db1e1fc9e2a04''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:37 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3De798c54dc3397f723f887e4769f907e0%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:37 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=e798c54dc3397f723f887e4769f907e0; Path=/; Expires=Wed, 26 Nov 2025 01:34:37
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=e798c54dc3397f723f887e4769f907e0; Path=/; Expires=Wed, 26 Nov 2025 01:34:37
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3De798c54dc3397f723f887e4769f907e0%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:37 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:38 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '185'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-6a79dc404af047489ebe3ba991bdce2b''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: the memory palace\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"the
-        memory palace","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1f735fed67686bd4c85d3a7b55","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Tue, 26 Nov 2024 01:34:38 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:38 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '4'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-121587e161764c579106457624bcefcb''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:38 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D37a4420d7731b61a7c673a267eaf4dc4%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:38 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=37a4420d7731b61a7c673a267eaf4dc4; Path=/; Expires=Wed, 26 Nov 2025 01:34:38
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=37a4420d7731b61a7c673a267eaf4dc4; Path=/; Expires=Wed, 26 Nov 2025 01:34:38
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D37a4420d7731b61a7c673a267eaf4dc4%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:38 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:38 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '105'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-3f61566cdb814bf6989f077f5f628271''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: Paisley\" frameborder=\"0\" allowfullscreen allow=\"autoplay;
-        clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"
-        src=\"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Paisley","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1fd037ae675d717b3ddf564f52","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Tue, 26 Nov 2024 01:34:38 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:38 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '18'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-b65eb06ecdec44c89a02593d00d21567''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1TTfuOdEtj8lin2zR4OWmP%3Fsi%3DNoNEzt24RtyGKIg77zXf8g&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:38 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3Dbf238a1323f9a7ecb16eac7f103287ae%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:39 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=bf238a1323f9a7ecb16eac7f103287ae; Path=/; Expires=Wed, 26 Nov 2025 01:34:39
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=bf238a1323f9a7ecb16eac7f103287ae; Path=/; Expires=Wed, 26 Nov 2025 01:34:39
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3Dbf238a1323f9a7ecb16eac7f103287ae%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:39 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:39 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '112'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-4f5a0427d16648e28b33eb37d3f0543b''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"352\"
-        title=\"Spotify Embed: Flock of Dimes\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed","width":456,"height":352,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Flock
-        of Dimes"}'
-  recorded_at: Tue, 26 Nov 2024 01:34:39 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:39 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '3'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-3a66cff8cc334e9597452085d83751bc''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F0gWT8X6lgGuJkpcx0XJ3yr&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:39 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D34228b3477fb4c7d58d01c8c8110484d%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:39 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=34228b3477fb4c7d58d01c8c8110484d; Path=/; Expires=Wed, 26 Nov 2025 01:34:39
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=34228b3477fb4c7d58d01c8c8110484d; Path=/; Expires=Wed, 26 Nov 2025 01:34:39
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D34228b3477fb4c7d58d01c8c8110484d%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:39 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:40 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '695'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-c86ea69afdf14a75bc08a2480b8583a5''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: the memory palace\" frameborder=\"0\" allowfullscreen
-        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
-        loading=\"lazy\" src=\"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"the
-        memory palace","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1f735fed67686bd4c85d3a7b55","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Tue, 26 Nov 2024 01:34:40 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:34:40 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '236'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-255b0c28f3834544a3145b2a304e4af0''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fepisode%2F6z1oAq0SxQ6jPUiLQMEDC6%3Fsi%3D2DUQZ9taQuKaCXGTa48uNw&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:34:41 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D5086c46cc2c7fdd1ee97ac66ebf007ce%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:41 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=5086c46cc2c7fdd1ee97ac66ebf007ce; Path=/; Expires=Wed, 26 Nov 2025 01:34:41
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=5086c46cc2c7fdd1ee97ac66ebf007ce; Path=/; Expires=Wed, 26 Nov 2025 01:34:41
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D5086c46cc2c7fdd1ee97ac66ebf007ce%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:34:41 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:34:41 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '121'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-7f962501fbd94684a4143b78c35323a5''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
-        title=\"Spotify Embed: Paisley\" frameborder=\"0\" allowfullscreen allow=\"autoplay;
-        clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"
-        src=\"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Paisley","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1fd037ae675d717b3ddf564f52","thumbnail_width":300,"thumbnail_height":300}'
-  recorded_at: Tue, 26 Nov 2024 01:34:41 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:37:14 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '3'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-30f8e526742448d0adc64329679e0d81''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:37:14 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF
     body:
       encoding: US-ASCII
       string: ''
@@ -937,201 +18,56 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
+      Connection:
+      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D0db362a553bd54896e8542c55f262caf%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:37 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=0db362a553bd54896e8542c55f262caf; Path=/; Expires=Wed, 26 Nov 2025 01:46:37
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      X-Envoy-Upstream-Service-Time:
+      - '233'
+      X-Middleware-Set-Cookie:
+      - sp_t=0db362a553bd54896e8542c55f262caf; Path=/; Expires=Wed, 26 Nov 2025 01:46:37
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D0db362a553bd54896e8542c55f262caf%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:37 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
       Origin-Trial:
       - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Accept-Ranges:
+      - bytes
+      Server:
+      - envoy
       Critical-Origin-Trial:
       - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D7e1cfbacdce7212676b1f01bde61979d%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:37:14 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=7e1cfbacdce7212676b1f01bde61979d; Path=/; Expires=Wed, 26 Nov 2025 01:37:14
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=7e1cfbacdce7212676b1f01bde61979d; Path=/; Expires=Wed, 26 Nov 2025 01:37:14
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D7e1cfbacdce7212676b1f01bde61979d%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:37:14 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Date:
-      - Tue, 26 Nov 2024 01:37:14 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '115'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-d6e2933bbbee48cf93c1ffdc5c1755d4''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
+      - Tue, 26 Nov 2024 01:46:38 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300033-BFI, cache-bfi-krnt7300033-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585598.912736,VS0,VE302
       Vary:
       - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
       string: ''
-  recorded_at: Tue, 26 Nov 2024 01:37:15 GMT
+  recorded_at: Tue, 26 Nov 2024 01:46:38 GMT
 - request:
     method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:37:15 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '6'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-1c01f68f99984126899b148882849c81''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F5HcLrk4q1DPf9CucFfGLWF&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:37:15 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3De1165dc079ff896c1a505672530e83ed%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:37:15 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=e1165dc079ff896c1a505672530e83ed; Path=/; Expires=Wed, 26 Nov 2025 01:37:15
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=e1165dc079ff896c1a505672530e83ed; Path=/; Expires=Wed, 26 Nov 2025 01:37:15
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3De1165dc079ff896c1a505672530e83ed%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:37:15 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Date:
-      - Tue, 26 Nov 2024 01:37:15 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '51'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-7cc85f6eb78443b8af2296e37a5a1497''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-  recorded_at: Tue, 26 Nov 2024 01:37:15 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:43:29 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '68'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-f7959608483246bf8bcc753e1692551f''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:43:30 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
     body:
       encoding: US-ASCII
       string: ''
@@ -1147,44 +83,51 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D8d22256fac06c64a8d0d125359defded%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:43:30 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=8d22256fac06c64a8d0d125359defded; Path=/; Expires=Wed, 26 Nov 2025 01:43:30
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=8d22256fac06c64a8d0d125359defded; Path=/; Expires=Wed, 26 Nov 2025 01:43:30
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D8d22256fac06c64a8d0d125359defded%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:43:30 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:43:30 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '295'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-14d6f9f6b2244c359c5ab342d62b2636''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
+      Connection:
+      - keep-alive
       Server:
       - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D27d6b2ba1385a917239f54b298af6b0f%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:38 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=27d6b2ba1385a917239f54b298af6b0f; Path=/; Expires=Wed, 26 Nov 2025 01:46:38
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '50'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
       Strict-Transport-Security:
       - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
       X-Content-Type-Options:
       - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=27d6b2ba1385a917239f54b298af6b0f; Path=/; Expires=Wed, 26 Nov 2025 01:46:38
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D27d6b2ba1385a917239f54b298af6b0f%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:38 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
       Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:38 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300025-BFI, cache-bfi-krnt7300025-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585599.619427,VS0,VE112
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
@@ -1194,57 +137,10 @@ http_interactions:
         allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
         loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
         Bring Me Down"}'
-  recorded_at: Tue, 26 Nov 2024 01:43:31 GMT
+  recorded_at: Tue, 26 Nov 2024 01:46:38 GMT
 - request:
     method: get
-    uri: https://embed.spotify.com/oembed/?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
-  response:
-    status:
-      code: 308
-      message: Permanent Redirect
-    headers:
-      Location:
-      - "/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-      Refresh:
-      - 0;url=/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json
-      Date:
-      - Tue, 26 Nov 2024 01:43:31 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '1'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-708e0f0555d14f7bb00e8ef289188aaf''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
-      Server:
-      - envoy
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      Vary:
-      - Accept-Encoding
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: "/oembed?url=https%3A%2F%2Fplay.spotify.com%2Ftrack%2F7y8NWS6gR3Wz4C7W8Bh0WL%3Fsi%3Daa84a1d637ac4b3d&format=json"
-  recorded_at: Tue, 26 Nov 2024 01:43:31 GMT
-- request:
-    method: get
-    uri: https://embed.spotify.com/oembed?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
+    uri: https://open.spotify.com/oembed?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
     body:
       encoding: US-ASCII
       string: ''
@@ -1260,44 +156,51 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Origin-Trial:
-      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
-      Critical-Origin-Trial:
-      - Tpcd
-      Set-Cookie:
-      - sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D1f05a5eb3f8f58719108db17ed1f7b0b%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:43:31 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      - sp_t=1f05a5eb3f8f58719108db17ed1f7b0b; Path=/; Expires=Wed, 26 Nov 2025 01:43:31
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
-      X-Middleware-Set-Cookie:
-      - sp_t=1f05a5eb3f8f58719108db17ed1f7b0b; Path=/; Expires=Wed, 26 Nov 2025 01:43:31
-        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fembed.spotify.com%2Foembed%3Fsp_cid%3D1f05a5eb3f8f58719108db17ed1f7b0b%26device%3Ddesktop;
-        Path=/; Expires=Wed, 27 Nov 2024 01:43:31 GMT; Max-Age=86400; Domain=.spotify.com;
-        Secure; HttpOnly; SameSite=none
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Vary:
-      - Accept-Encoding
-      Date:
-      - Tue, 26 Nov 2024 01:43:31 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '11'
-      Content-Security-Policy:
-      - 'base-uri ''none''; object-src ''none''; script-src ''nonce-dd2ded6e3ab54e6d8081f417a08ef12c''
-        ''strict-dynamic'' ''unsafe-inline'' https:'
+      Connection:
+      - keep-alive
       Server:
       - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D5cd0368316093d60708853801fc32f25%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:38 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=5cd0368316093d60708853801fc32f25; Path=/; Expires=Wed, 26 Nov 2025 01:46:38
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
       Strict-Transport-Security:
       - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
       X-Content-Type-Options:
       - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=5cd0368316093d60708853801fc32f25; Path=/; Expires=Wed, 26 Nov 2025 01:46:38
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D5cd0368316093d60708853801fc32f25%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:38 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
       Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:38 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300072-BFI, cache-bfi-krnt7300072-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585599.853019,VS0,VE94
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
@@ -1307,5 +210,587 @@ http_interactions:
         allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
         loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
         Bring Me Down"}'
-  recorded_at: Tue, 26 Nov 2024 01:43:31 GMT
+  recorded_at: Tue, 26 Nov 2024 01:46:38 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D2372adda6d17da6e99973ea97936e5cf%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:39 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=2372adda6d17da6e99973ea97936e5cf; Path=/; Expires=Wed, 26 Nov 2025 01:46:39
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '14'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=2372adda6d17da6e99973ea97936e5cf; Path=/; Expires=Wed, 26 Nov 2025 01:46:39
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D2372adda6d17da6e99973ea97936e5cf%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:39 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:39 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300063-BFI, cache-bfi-krnt7300063-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585599.076927,VS0,VE88
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"352\"
+        title=\"Spotify Embed: Flock of Dimes\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed","width":456,"height":352,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Flock
+        of Dimes"}'
+  recorded_at: Tue, 26 Nov 2024 01:46:39 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D7b8fdec5a321051c35e646e6a6471268%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:39 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=7b8fdec5a321051c35e646e6a6471268; Path=/; Expires=Wed, 26 Nov 2025 01:46:39
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '190'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=7b8fdec5a321051c35e646e6a6471268; Path=/; Expires=Wed, 26 Nov 2025 01:46:39
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D7b8fdec5a321051c35e646e6a6471268%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:39 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:39 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300075-BFI, cache-bfi-krnt7300075-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585599.292134,VS0,VE267
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: the memory palace\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"the
+        memory palace","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1f735fed67686bd4c85d3a7b55","thumbnail_width":300,"thumbnail_height":300}'
+  recorded_at: Tue, 26 Nov 2024 01:46:39 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D2ccf5450aba30b1abe45438673ebe7b4%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:40 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=2ccf5450aba30b1abe45438673ebe7b4; Path=/; Expires=Wed, 26 Nov 2025 01:46:40
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '1278'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=2ccf5450aba30b1abe45438673ebe7b4; Path=/; Expires=Wed, 26 Nov 2025 01:46:40
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D2ccf5450aba30b1abe45438673ebe7b4%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:40 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:41 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300060-BFI, cache-bfi-krnt7300060-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585600.192923,VS0,VE1348
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: Paisley\" frameborder=\"0\" allowfullscreen allow=\"autoplay;
+        clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"
+        src=\"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Paisley","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1fd037ae675d717b3ddf564f52","thumbnail_width":300,"thumbnail_height":300}'
+  recorded_at: Tue, 26 Nov 2024 01:46:41 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Db304ec298276dacd2af291d315c12247%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=b304ec298276dacd2af291d315c12247; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '471'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=b304ec298276dacd2af291d315c12247; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Db304ec298276dacd2af291d315c12247%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:42 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300020-BFI, cache-bfi-krnt7300020-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585602.672528,VS0,VE548
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: Don&apos;t Bring Me Down\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
+        Bring Me Down"}'
+  recorded_at: Tue, 26 Nov 2024 01:46:42 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Df22a39080838e996a073a8de098104f8%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=f22a39080838e996a073a8de098104f8; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '12'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=f22a39080838e996a073a8de098104f8; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Df22a39080838e996a073a8de098104f8%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:42 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300092-BFI, cache-bfi-krnt7300092-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585603.617840,VS0,VE89
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: Don&apos;t Bring Me Down\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Don''t
+        Bring Me Down"}'
+  recorded_at: Tue, 26 Nov 2024 01:46:42 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      X-Envoy-Upstream-Service-Time:
+      - '10'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Dce1e868f36997f94a520be39ccd7da3a%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=ce1e868f36997f94a520be39ccd7da3a; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Critical-Origin-Trial:
+      - Tpcd
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Middleware-Set-Cookie:
+      - sp_t=ce1e868f36997f94a520be39ccd7da3a; Path=/; Expires=Wed, 26 Nov 2025 01:46:42
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3Dce1e868f36997f94a520be39ccd7da3a%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:42 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 26 Nov 2024 01:46:42 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300078-BFI, cache-bfi-krnt7300078-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585603.817165,VS0,VE80
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"352\"
+        title=\"Spotify Embed: Flock of Dimes\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g&utm_source=oembed","width":456,"height":352,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Flock
+        of Dimes"}'
+  recorded_at: Tue, 26 Nov 2024 01:46:42 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D8036fce7fd9666c1555ee6f84e9b96fe%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:43 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=8036fce7fd9666c1555ee6f84e9b96fe; Path=/; Expires=Wed, 26 Nov 2025 01:46:43
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '190'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=8036fce7fd9666c1555ee6f84e9b96fe; Path=/; Expires=Wed, 26 Nov 2025 01:46:43
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D8036fce7fd9666c1555ee6f84e9b96fe%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:43 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:43 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300055-BFI, cache-bfi-krnt7300055-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585603.012509,VS0,VE273
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: the memory palace\" frameborder=\"0\" allowfullscreen
+        allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"
+        loading=\"lazy\" src=\"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/show/0gWT8X6lgGuJkpcx0XJ3yr?utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"the
+        memory palace","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1f735fed67686bd4c85d3a7b55","thumbnail_width":300,"thumbnail_height":300}'
+  recorded_at: Tue, 26 Nov 2024 01:46:43 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/oembed?format=json&url=https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.18.0)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - envoy
+      Accept-Ranges:
+      - bytes
+      Set-Cookie:
+      - sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D77cdd741e48007da38187607a13bc9e9%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:43 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      - sp_t=77cdd741e48007da38187607a13bc9e9; Path=/; Expires=Wed, 26 Nov 2025 01:46:43
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Envoy-Upstream-Service-Time:
+      - '275'
+      Origin-Trial:
+      - AjTBCzHiqtNU3PxD6GL8VpVl68/SfxkZJuLQbbyvSNj6/o9VuhZ5EPb/2dTYqi+Mot0AD6XOHBeIatAwEt4lAQcAAABOeyJvcmlnaW4iOiJodHRwczovL29wZW4uc3BvdGlmeS5jb206NDQzIiwiZmVhdHVyZSI6IlRwY2QiLCJleHBpcnkiOjE3MzUzNDM5OTl9
+      Strict-Transport-Security:
+      - max-age=31536000
+      Critical-Origin-Trial:
+      - Tpcd
+      X-Content-Type-Options:
+      - nosniff
+      X-Middleware-Set-Cookie:
+      - sp_t=77cdd741e48007da38187607a13bc9e9; Path=/; Expires=Wed, 26 Nov 2025 01:46:43
+        GMT; Max-Age=31536000; Domain=.spotify.com; Secure; SameSite=none,sp_landing=http%3A%2F%2Fopen.spotify.com%2Fapi%2Foembed%3Fsp_cid%3D77cdd741e48007da38187607a13bc9e9%26device%3Ddesktop;
+        Path=/; Expires=Wed, 27 Nov 2024 01:46:43 GMT; Max-Age=86400; Domain=.spotify.com;
+        Secure; HttpOnly; SameSite=none
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Nov 2024 01:46:43 GMT
+      X-Served-By:
+      - cache-bfi-krnt7300059-BFI, cache-bfi-krnt7300059-BFI
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1732585603.417808,VS0,VE341
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"html":"<iframe style=\"border-radius: 12px\" width=\"100%\" height=\"152\"
+        title=\"Spotify Embed: Paisley\" frameborder=\"0\" allowfullscreen allow=\"autoplay;
+        clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"
+        src=\"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed\"></iframe>","iframe_url":"https://open.spotify.com/embed/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw&utm_source=oembed","width":456,"height":152,"version":"1.0","provider_name":"Spotify","provider_url":"https://spotify.com","type":"rich","title":"Paisley","thumbnail_url":"https://i.scdn.co/image/ab67656300005f1fd037ae675d717b3ddf564f52","thumbnail_width":300,"thumbnail_height":300}'
+  recorded_at: Tue, 26 Nov 2024 01:46:43 GMT
 recorded_with: VCR 6.1.0
