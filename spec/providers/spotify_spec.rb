@@ -7,7 +7,14 @@ describe 'OEmbed::Providers::Spotify' do
   let(:provider) { OEmbed::Providers::Spotify }
 
   expected_valid_urls = [
+    # Track
     'https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d',
+    # Artist
+    'https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g',
+    # Podcast: Show
+    'https://open.spotify.com/show/0gWT8X6lgGuJkpcx0XJ3yr',
+    # Podcast: Episode
+    'https://open.spotify.com/episode/6z1oAq0SxQ6jPUiLQMEDC6?si=2DUQZ9taQuKaCXGTa48uNw',
   ]
   expected_invalid_urls = [
   ]
