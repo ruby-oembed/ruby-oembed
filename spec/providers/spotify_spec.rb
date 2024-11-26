@@ -25,5 +25,12 @@ describe 'OEmbed::Providers::Spotify' do
       expected_valid_urls,
       expected_invalid_urls
     )
+
+    it "should raise NotFound for a private playlist" do
+      expect {
+        # A private playlist
+        provider.get('https://open.spotify.com/playlist/5HcLrk4q1DPf9CucFfGLWF')
+      }.to raise_error(OEmbed::NotFound)
+    end
   end
 end
