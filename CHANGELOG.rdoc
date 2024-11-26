@@ -1,6 +1,8 @@
 = CHANGELOG
 
-== Unreleased (0.18.1)
+== Unreleased (0.18.2)
+
+== 0.18.1 - 25 November 2024
 
 * Fix the built-in Spotify provider; Pull #95 & #92 (Lewis Buckley)
 * Update the built-in Spotify provider to use a new API endpoint; Pull #95 (Marcos Wright-Kuhns)
