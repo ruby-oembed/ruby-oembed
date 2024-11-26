@@ -6,6 +6,7 @@ require 'oembed/providers/facebook_post'
 require 'oembed/providers/facebook_video'
 require 'oembed/providers/instagram'
 require 'oembed/providers/matterport'
+require 'oembed/providers/spotify'
 require 'oembed/providers/tiktok'
 
 module OEmbed
@@ -182,17 +183,6 @@ module OEmbed
     SoundCloud << "http://*.soundcloud.com/*"
     SoundCloud << "https://*.soundcloud.com/*"
     add_official_provider(SoundCloud)
-
-    # Provider for spotify.com
-    # https://twitter.com/nicklas2k/status/330094611202723840
-    # http://blog.embed.ly/post/45149936446/oembed-for-spotify
-    Spotify = OEmbed::Provider.new("https://embed.spotify.com/oembed/")
-    Spotify << "http://open.spotify.com/*"
-    Spotify << "https://open.spotify.com/*"
-    Spotify << "http://play.spotify.com/*"
-    Spotify << "https://play.spotify.com/*"
-    Spotify << /^spotify\:(.*?)/
-    add_official_provider(Spotify)
 
     # Provider for skitch.com
     # http://skitch.com/oembed/%3C/endpoint
