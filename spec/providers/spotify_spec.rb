@@ -9,6 +9,8 @@ describe 'OEmbed::Providers::Spotify' do
   expected_valid_urls = [
     # Track
     'https://open.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d',
+    # Track with play.spotify.com
+    'https://play.spotify.com/track/7y8NWS6gR3Wz4C7W8Bh0WL?si=aa84a1d637ac4b3d',
     # Artist
     'https://open.spotify.com/artist/1TTfuOdEtj8lin2zR4OWmP?si=NoNEzt24RtyGKIg77zXf8g',
     # Podcast: Show
