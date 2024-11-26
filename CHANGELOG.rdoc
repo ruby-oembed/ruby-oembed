@@ -2,6 +2,9 @@
 
 == Unreleased (0.18.1)
 
+* Fix the built-in Spotify provider; Pull #95 & #92 (Lewis Buckley)
+* Update the built-in Spotify provider to use a new API endpoint; Pull #95 (Marcos Wright-Kuhns)
+
 == 0.18.0 - 31 August 2024
 
 * Add support for `x.com` URLs to `OEmbed::Providers::Twitter`; Pull #97 (Maxime)
