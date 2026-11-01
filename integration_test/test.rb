@@ -1,7 +1,7 @@
 require 'rubygems'
 require File.dirname(__FILE__) + '/../lib/oembed'
 OEmbed::Providers.register_all()
-OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery, OEmbed::Providers::Embedly, OEmbed::Providers::OohEmbed)
+OEmbed::Providers.register_fallback(OEmbed::ProviderDiscovery, OEmbed::Providers::Embedly)
 
 
 passed = "passed"
