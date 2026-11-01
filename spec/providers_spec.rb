@@ -284,16 +284,16 @@ describe OEmbed::Providers do
 
   describe ".register_fallback" do
     it "should register fallback providers" do
-      OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Noembed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
-      expect(OEmbed::Providers.fallback).to eq([ OEmbed::Providers::Hulu, OEmbed::Providers::OohEmbed])
+      expect(OEmbed::Providers.fallback).to eq([ OEmbed::Providers::Noembed, OEmbed::Providers::Embedly])
     end
 
     it "should fallback to the appropriate provider when URL isn't found" do
       OEmbed::Providers.register_all
-      OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Noembed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
       url = example_url(:google_video)
 
@@ -317,8 +317,8 @@ describe OEmbed::Providers do
 
     it "should still raise an error if no embeddable content is found" do
       OEmbed::Providers.register_all
-      OEmbed::Providers.register_fallback(OEmbed::Providers::Hulu)
-      OEmbed::Providers.register_fallback(OEmbed::Providers::OohEmbed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Noembed)
+      OEmbed::Providers.register_fallback(OEmbed::Providers::Embedly)
 
       ["http://fa.ke/"].each do |url|
         expect { OEmbed::Providers.get(url) }.to raise_error(OEmbed::NotFound)
