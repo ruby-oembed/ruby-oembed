@@ -3,7 +3,7 @@ module OEmbed
     # Provider for instagram.com
     # See https://developers.facebook.com/docs/instagram/oembed/
     Instagram = OEmbed::Provider.new(
-      "https://graph.facebook.com/v8.0/instagram_oembed",
+      "https://graph.facebook.com/v26.0/instagram_oembed",
       optional_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
       format: :json
     )

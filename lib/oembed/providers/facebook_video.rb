@@ -2,9 +2,9 @@ module OEmbed
   class Providers
     # Provider for Facebook videos
     # See https://developers.facebook.com/docs/plugins/oembed
-    # See https://developers.facebook.com/docs/graph-api/reference/v8.0/oembed-video
+    # See https://developers.facebook.com/docs/graph-api/reference/v26.0/oembed-video
     FacebookVideo = OEmbed::Provider.new(
-      "https://graph.facebook.com/v8.0/oembed_video",
+      "https://graph.facebook.com/v26.0/oembed_video",
       optional_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
       format: :json
     )
