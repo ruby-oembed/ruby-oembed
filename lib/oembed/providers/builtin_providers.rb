@@ -103,7 +103,7 @@ module OEmbed
     add_official_provider(Yfrog)
 
     # Provider for Giphy
-    Giphy = OEmbed::Provider.new("http://giphy.com/services/oembed")
+    Giphy = OEmbed::Provider.new("https://giphy.com/services/oembed")
     Giphy << "http://giphy.com/*"
     Giphy << "https://giphy.com/*"
     add_official_provider(Giphy)
@@ -133,10 +133,13 @@ module OEmbed
     #add_official_provider(Pownce)
 
     # Provider for polleverywhere.com
-    PollEverywhere = OEmbed::Provider.new("http://www.polleverywhere.com/services/oembed/")
+    PollEverywhere = OEmbed::Provider.new("https://www.polleverywhere.com/services/oembed/")
     PollEverywhere << "http://www.polleverywhere.com/polls/*"
     PollEverywhere << "http://www.polleverywhere.com/multiple_choice_polls/*"
     PollEverywhere << "http://www.polleverywhere.com/free_text_polls/*"
+    PollEverywhere << "https://www.polleverywhere.com/polls/*"
+    PollEverywhere << "https://www.polleverywhere.com/multiple_choice_polls/*"
+    PollEverywhere << "https://www.polleverywhere.com/free_text_polls/*"
     add_official_provider(PollEverywhere)
 
     # Provider for my.opera.com
@@ -151,8 +154,9 @@ module OEmbed
     add_official_provider(ClearspringWidgets)
 
     # Provider for nfb.ca
-    NFBCanada = OEmbed::Provider.new("http://www.nfb.ca/remote/services/oembed/")
+    NFBCanada = OEmbed::Provider.new("https://www.nfb.ca/remote/services/oembed/")
     NFBCanada << "http://*.nfb.ca/film/*"
+    NFBCanada << "https://*.nfb.ca/film/*"
     add_official_provider(NFBCanada)
 
     # Provider for scribd.com
@@ -173,8 +177,9 @@ module OEmbed
     add_official_provider(MovieClips)
 
     # Provider for 23hq.com
-    TwentyThree = OEmbed::Provider.new("http://www.23hq.com/23/oembed")
+    TwentyThree = OEmbed::Provider.new("https://www.23hq.com/23/oembed")
     TwentyThree << "http://www.23hq.com/*"
+    TwentyThree << "https://www.23hq.com/*"
     add_official_provider(TwentyThree)
 
     # Provider for soundcloud.com
@@ -198,7 +203,7 @@ module OEmbed
     add_official_provider(Ted)
 
     # Provider for tumblr.com
-    Tumblr = OEmbed::Provider.new("http://www.tumblr.com/oembed/1.0/", format: :json)
+    Tumblr = OEmbed::Provider.new("https://www.tumblr.com/oembed/1.0/", format: :json)
     Tumblr << "http://*.tumblr.com/post/*"
     Tumblr << "https://*.tumblr.com/post/*"
     add_official_provider(Tumblr)
@@ -274,7 +279,7 @@ module OEmbed
     #     OEmbed::Providers::Embedly.endpoint += "?key=#{my_embedly_key}"
     #
     # If you don't yet have an API key you'll need to sign up here: http://embed.ly/pricing
-    Embedly = OEmbed::Provider.new("http://api.embed.ly/1/oembed")
+    Embedly = OEmbed::Provider.new("https://api.embed.ly/1/oembed")
     # Add all known URL regexps for Embedly. To update this list run `rake oembed:update_embedly`
     YAML.load_file(File.join(File.dirname(__FILE__), "/aggregators/embedly_urls.yml")).each do |url|
       Embedly << url
