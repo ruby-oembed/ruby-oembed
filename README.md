@@ -34,9 +34,11 @@ resource.html #=> <<-HTML
 HTML
 ```
 
-### Providers requiring an access token
+### Providers with access tokens
 
-Some built-in providers require authorization in order to work. These providers won't be registered unless an access token is provided. You can either pass access tokens to the `register_app` method.
+Some built-in providers accept an optional access token. The Facebook and Instagram providers work without one, but Meta limits tokenless requests to 1,000 calls per hour per endpoint. Only set a token if your Meta app has been approved for the Meta oEmbed Read feature, since Meta rejects requests with a token from an unapproved app. See [Meta's oEmbed documentation](https://developers.facebook.com/docs/plugins/oembed) for details.
+
+You can either pass access tokens to the `register_all` method.
 
 ```ruby
 OEmbed::Providers.register_all(access_tokens: { facebook: @my_facebook_token })

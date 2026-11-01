@@ -196,6 +196,63 @@ describe OEmbed::Provider do
         end
       end
     end
+
+    describe "the optional_query_params option" do
+      let(:provider) {
+        OEmbed::Provider.new("http://foo.com/oembed", optional_query_params: { send_with_query: 'PROVIDER_ENV_VAR' })
+      }
+
+      around(:example) { |example|
+        orig_value = ENV['PROVIDER_ENV_VAR']
+        ENV['PROVIDER_ENV_VAR'] = env_var_value
+        example.run
+        ENV['PROVIDER_ENV_VAR'] = orig_value
+      }
+
+      context "with a non-blank env var" do
+        let(:env_var_value) { 'non-blank y *muy* especiál' }
+
+        it "has a working getter with escaping" do
+          expect(provider.send_with_query).to eq('non-blank+y+%2Amuy%2A+especi%C3%A1l')
+        end
+
+        it "has a working setter" do
+          provider.send_with_query = 'a-new-val'
+          expect(provider.send_with_query).to eq('a-new-val')
+        end
+      end
+
+      [nil, ''].each do |blank_value|
+        context "with a #{blank_value.inspect} env var" do
+          let(:env_var_value) { blank_value }
+
+          it "has a nil getter" do
+            expect(provider.send_with_query).to be_nil
+          end
+
+          it "still matches URLs" do
+            expect(provider).to include(example_url(:fake))
+          end
+        end
+      end
+
+      context "where the optional_query_param conflicts with an existing method name" do
+        let(:provider) {
+          OEmbed::Provider.new("http://foo.com/oembed", optional_query_params: { get: 'PROVIDER_ENV_VAR' })
+        }
+        let(:env_var_value) { 'a-conflicted-val' }
+
+        it "does NOT override the get method" do
+          expect { provider.get }
+          .to raise_error(ArgumentError)
+        end
+
+        it "DOES have a working setter" do
+          provider.get = 'a-new-val'
+          expect(provider.instance_variable_get('@optional_query_params')).to eq({ get: 'a-new-val' })
+        end
+      end
+    end
   end
 
   describe "<<" do
@@ -484,6 +541,26 @@ describe OEmbed::Provider do
 
         expect { provider.get(example_url(:fake)) }.
         to raise_error(OEmbed::NotFound)
+      end
+    end
+
+    context "with optional_query_params" do
+      let(:provider) { OEmbed::Provider.new("http://foo.com/oembed", optional_query_params: { send_with_query: nil }) }
+
+      it "should add set optional_query_params to the URI" do
+        provider.send_with_query = 'non-blank-value'
+
+        expect(provider).to receive(:http_get).
+          with(have_attributes(query: match(/send_with_query=non-blank-value/)), { :format => @default }).
+          and_return(valid_response(:json))
+        provider.get(example_url(:fake))
+      end
+
+      it "should leave unset optional_query_params out of the URI" do
+        expect(provider).to receive(:http_get).
+          with(have_attributes(query: satisfy { |q| !q.include?('send_with_query') }), { :format => @default }).
+          and_return(valid_response(:json))
+        provider.get(example_url(:fake))
       end
     end
 

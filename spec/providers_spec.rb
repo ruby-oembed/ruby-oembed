@@ -370,8 +370,11 @@ describe OEmbed::Providers do
             OEmbed::Providers.register_all
           end
 
-          it { is_expected.to_not eql(provider) }
-          it { is_expected.to eq(nil) }
+          it { is_expected.to eql(provider) }
+
+          it 'does not send an access_token' do
+            expect(provider.build(embed_url).query).to_not include('access_token')
+          end
         end
 
         context 'when access token is provided to register_all' do
