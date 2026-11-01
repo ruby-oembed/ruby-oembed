@@ -5,7 +5,7 @@ module OEmbed
     # See https://developers.facebook.com/docs/graph-api/reference/v8.0/oembed-post
     FacebookPost = OEmbed::Provider.new(
       "https://graph.facebook.com/v8.0/oembed_post",
-      required_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
+      optional_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
       format: :json
     )
     FacebookPost << 'https://www.facebook.com/*/posts/*'
@@ -16,9 +16,8 @@ module OEmbed
     FacebookPost << 'https://www.facebook.com/questions*'
     FacebookPost << 'https://www.facebook.com/notes*'
 
-    # Note: even though FacebookPost is automatically registered as an official provider
-    # it will NOT resolve any URLs unless its access_token is set
-    # either via the OEMBED_FACEBOOK_TOKEN environment variable
+    # An access_token is optional. Set one only if your Meta app has been approved
+    # for the Meta oEmbed Read feature, either via the OEMBED_FACEBOOK_TOKEN environment variable
     # or by calling `OEmbed::Providers::FacebookPost.access_token = @your_token`
     add_official_provider(FacebookPost, nil, access_token: {name: :facebook, method: :access_token})
 

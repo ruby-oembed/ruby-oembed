@@ -4,7 +4,7 @@ module OEmbed
     # See https://developers.facebook.com/docs/instagram/oembed/
     Instagram = OEmbed::Provider.new(
       "https://graph.facebook.com/v8.0/instagram_oembed",
-      required_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
+      optional_query_params: { access_token: 'OEMBED_FACEBOOK_TOKEN' },
       format: :json
     )
     Instagram << "http://instagr.am/p/*"
@@ -26,9 +26,8 @@ module OEmbed
     Instagram << "https://instagram.com/reel/*"
     Instagram << "https://www.instagram.com/reel/*"
 
-    # Note: even though Instagram is automatically registered as an official provider
-    # it will NOT resolve any URLs unless its access_token is set
-    # either via the OEMBED_FACEBOOK_TOKEN environment variable
+    # An access_token is optional. Set one only if your Meta app has been approved
+    # for the Meta oEmbed Read feature, either via the OEMBED_FACEBOOK_TOKEN environment variable
     # or by calling `OEmbed::Providers::Instagram.access_token = @your_token`
     add_official_provider(Instagram, nil, access_token: {name: :facebook, method: :access_token})
 
