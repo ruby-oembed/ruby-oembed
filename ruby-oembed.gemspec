@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = s.files.grep(%r{\.rdoc$}) + %w{LICENSE}
 
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.19"
+  s.required_ruby_version = ">= 2.0"
   s.summary = "oEmbed for Ruby"
 
   s.add_development_dependency 'xml-simple', '>= 0'

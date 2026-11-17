@@ -11,7 +11,8 @@ and this project adheres to {Semantic Versioning}[https://semver.org/spec/v2.0.0
 
 Welcome to 1.0.0 and {semver}[https://semver.org/spec/v2.0.0.html]!
 
-This 1.0.0 is identical to the 0.18.1 version of this gem.
+* Set the gem `required_ruby_version` to `>= 2.0`
+* Otherwise 1.0.0 is identical to the 0.18.1 version of this gem
 
 There are some minor breaking changes coming up and I decided that was a great reason to finally use semantic versioning.
 
