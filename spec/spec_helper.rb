@@ -51,22 +51,12 @@ module OEmbedSpecHelper
     EXAMPLE[site][:url]
   end
 
-  def all_example_urls(*fallback)
+  def all_example_urls
     results = EXAMPLE.values.map{ |v| v[:url] }
 
-    # By default don't return example_urls that won't be recognized by
+    # Don't return example_urls that won't be recognized by
     # the included default providers
-    results.delete(example_url(:google_video))
-
-    # If requested, return URLs that should work with various fallback providers
-    fallback.each do |f|
-      case f
-      when OEmbed::Providers::OohEmbed
-        results << example_url(:google_video)
-      end
-    end
-
-    results
+    results - %i[google_video qik skitch viddler].map { |site| example_url(site) }
   end
 
   def example_body(site)

@@ -37,10 +37,6 @@ begin
 
       YAML.dump(url_regexps, File.open(yaml_path, 'w'))
     end
-
-    task :update_oohembed do
-      raise "Unfortunately the oohembed has discontinued."
-    end
   end
 rescue LoadError
   puts "The oembed rake tasks require JSON. Install it with: gem install json"
