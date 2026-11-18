@@ -58,7 +58,16 @@ module OEmbed
     #   @provider_with_auth = OEmbed::Provider.new("http://my.service.com/oembed", required_query_params: { access_token: 'MY_SERVICE_ACCESS_TOKEN' })
     #   # You can optionally override the value from `ENV['MY_SERVICE_ACCESS_TOKEN']`
     #   @provider_with_auth.access_token = @my_access_token
-    def initialize(endpoint, positional_format = OEmbed::Formatter.default, format: nil, required_query_params: {})
+    #
+    # The `optional_query_params:` option works like `required_query_params:`,
+    # except that a param without a value is left out of the request
+    # instead of stopping the provider from matching any URLs.
+    # Blank values count as missing.
+    #
+    # For example:
+    #   # If the endpoint accepts, but doesn't require, an `access_token`:
+    #   @provider_with_optional_auth = OEmbed::Provider.new("http://my.service.com/oembed", optional_query_params: { access_token: 'MY_SERVICE_ACCESS_TOKEN' })
+    def initialize(endpoint, positional_format = OEmbed::Formatter.default, format: nil, required_query_params: {}, optional_query_params: {})
       endpoint_uri = URI.parse(endpoint.gsub(/[\{\}]/,'')) rescue nil
       raise ArgumentError, "The given endpoint isn't a valid http(s) URI: #{endpoint.to_s}" unless endpoint_uri.is_a?(URI::HTTP)
 
@@ -73,6 +82,16 @@ module OEmbed
         define_singleton_method("#{param}=") { |val| set_required_query_params(param, val) } unless respond_to?("#{param}=")
       end
       required_query_params_set?(reset_cache: true)
+
+      @optional_query_params = {}
+      optional_query_params.each do |param, default_env_var|
+        param = param.to_sym
+        @optional_query_params[param] = nil
+        set_optional_query_params(param, ENV[default_env_var]) if default_env_var
+
+        define_singleton_method("#{param}") { @optional_query_params[param] } unless respond_to?("#{param}")
+        define_singleton_method("#{param}=") { |val| set_optional_query_params(param, val) } unless respond_to?("#{param}=")
+      end
 
       @endpoint = endpoint
       @urls = []
@@ -113,6 +132,18 @@ module OEmbed
       @required_query_params[param]
     end
 
+    # Given the name of an optional_query_param and a value
+    # store that value internally, so that it can be sent along
+    # with requests to this provider's endpoint.
+    # A nil or blank value means the param won't be sent.
+    # Raises an ArgumentError if the given param is not listed with optional_query_params
+    # during instantiation.
+    def set_optional_query_params(param, val)
+      raise ArgumentError.new("This provider does NOT have an optional_query_param named #{param.inspect}") unless @optional_query_params.has_key?(param)
+
+      @optional_query_params[param] = val.nil? || val.to_s.empty? ? nil : ::CGI.escape(val.to_s)
+    end
+
     # Returns true if all of this provider's required_query_params have a value
     def required_query_params_set?(reset_cache: false)
       return @all_required_query_params_set unless reset_cache || @all_required_query_params_set.nil?
@@ -150,6 +181,7 @@ module OEmbed
       query.delete(:timeout)
       query.delete(:max_redirects)
 
+      query = query.merge(@optional_query_params.compact)
       query = query.merge(@required_query_params)
       query = query.merge({:url => ::CGI.escape(url)})
 

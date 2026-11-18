@@ -5,16 +5,10 @@ VCR.configure do |c|
   c.default_cassette_options = { :record => :new_episodes }
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
-  # Try to prevent a real-world Facebook token from being recorded by VCR
-  if ENV['OEMBED_FACEBOOK_TOKEN'] && !ENV['OEMBED_FACEBOOK_TOKEN'].to_s.empty?
-    c.filter_sensitive_data('A_FAKE_TOKEN_FOR_TESTS') { ENV['OEMBED_FACEBOOK_TOKEN'] }
-    c.filter_sensitive_data('A_FAKE_TOKEN_FOR_TESTS') { ::CGI.escape(ENV['OEMBED_FACEBOOK_TOKEN']) }
-  else
-    # If the developer doesn't have an OEMBED_FACEBOOK_TOKEN set
-    # use a fake one that will match data in the vcr cassettes.
-    ENV['OEMBED_FACEBOOK_TOKEN'] = 'A_FAKE_TOKEN_FOR_TESTS'
-  end
 end
+
+# The cassettes are recorded without a Meta access token
+ENV.delete('OEMBED_FACEBOOK_TOKEN')
 
 require 'webmock/rspec'
 require 'coveralls'
